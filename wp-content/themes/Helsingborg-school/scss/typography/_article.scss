@@ -6,8 +6,16 @@ article {
     color: #333;
 
     header {
+        .accessability-menu {
+            margin-bottom: 30px;
+        }
+
+        .accessability-menu + h1 {
+            margin-top: 0;
+        }
+
         h1 {
-            margin-top: 15px;
+            margin-top: 30px;
         }
     }
 
@@ -31,6 +39,10 @@ article {
             margin-right: 3px;
             @include hbg-icons($icon-external-link);
         }
+    }
+
+    & + div {
+        margin-top: 30px;
     }
 }
 
