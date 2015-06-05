@@ -26,6 +26,7 @@ function Helsingborg_sidebar_widgets_override() {
       'description' => __('Lägg till det som ska visas under innehållet.', 'Helsingborg')
   ));
 
+  /*
   register_sidebar(array(
       'id' => 'content-area-bottom',
       'name' => __('Innehåll bottenarea', 'Helsingborg'),
@@ -51,6 +52,7 @@ function Helsingborg_sidebar_widgets_override() {
       'before_title' => '<h2>',
       'after_title' => '</h2>'
   ));
+  */
 
   register_sidebar(array(
       'id' => 'right-sidebar',
@@ -61,6 +63,10 @@ function Helsingborg_sidebar_widgets_override() {
       'before_title' => '<h2>',
       'after_title' => '</h2>'
   ));
+
+  unregister_sidebar('content-area-bottom');
+  unregister_sidebar('left-sidebar');
+  unregister_sidebar('left-sidebar-bottom');
 }
 
 add_action('widgets_init', 'Helsingborg_sidebar_widgets_override', 100);
