@@ -16,8 +16,8 @@ function Helsingborg_sidebar_widgets_override() {
       'id' => 'slider-area',
       'name' => __('Bildarea', 'Helsingborg'),
       'description' => __('Lägg till de sliders som ska visas på sidan.', 'Helsingborg'),
-      'before_widget' => '<div class="large-12 columns slider-container %2$s"><div class="orbit-container"><ul class="example-orbit" data-orbit>',
-      'after_widget' => '</ul></div></div>'
+      'before_widget' => '<div class="widget large-12 columns %2$s"><div class="widget-content">',
+      'after_widget' => '</div></div>'
   ));
 
   register_sidebar(array(

@@ -44,14 +44,19 @@
                         </div>
                     </div>
 
-                    <?php
-                        /**
-                         * Include the slider area
-                         */
-                        if ((is_active_sidebar('slider-area') == true)) {
-                            dynamic_sidebar('slider-area');
-                        }
+                    <div class="hero widgets-test-color clearfix">
+                        <div class="color-band color-band-red"></div>
+                        <?php
+                            /**
+                             * Include the slider area
+                             */
+                            if ((is_active_sidebar('slider-area') == true)) {
+                                dynamic_sidebar('slider-area');
+                            }
+                        ?>
+                    </div>
 
+                    <?php
                         /**
                          * Display Welcome section if this is the font page and if the slide widget area has a text widget (uses the first to populate the welcome text)
                          */

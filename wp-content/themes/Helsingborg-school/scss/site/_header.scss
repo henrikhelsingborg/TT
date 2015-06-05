@@ -87,10 +87,38 @@
  * Hero area (with slider)
  */
 .hero {
-    height: 350px;
-    overflow: hidden;
     position: relative;
 
+    .slider-container {
+        height: 350px;
+        overflow: hidden;
+
+        .slider-columns {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    /**
+     * Widgets in hero
+     */
+    > .widget {
+        margin-left: 25px;
+        padding: 0;
+
+        @media #{$medium-only} {
+            margin-left: 10px;
+        }
+
+        @media #{$small-only} {
+            margin-left: 5px;
+        }
+    }
+
+    /**
+     * Remove margin, padding and set background size
+     */
     > .columns.no-margin {
         background-size: cover;
         background-position: center center;
@@ -99,6 +127,9 @@
         margin: 0;
     }
 
+    /**
+     * Move the orbit prev button to not overlap the color band
+     */
     .orbit-prev {
         left: 25px;
 
@@ -111,11 +142,17 @@
         }
     }
 
+    /**
+     * The orbit container
+     */
     .orbit-container {
         width: 100%;
         height: 100%;
     }
 
+    /**
+     * The orbit element
+     */
     .hero-orbit {
         width: 100%;
         height: 100%;
