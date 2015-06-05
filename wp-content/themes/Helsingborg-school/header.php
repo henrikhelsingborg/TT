@@ -28,8 +28,6 @@
 
             <div class="main-site-container">
                 <header class="header-main">
-                    <div class="color-band color-band-red"></div>
-
                     <div class="nav-bar">
                         <div class="row">
                             <div class="large-3 medium-4 small-12 columns logotype">

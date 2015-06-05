@@ -1,5 +1,6 @@
 .color-band {
     &.color-band-red {
-        background: url('../assets/images/color-band-red.png');
+        background: url('../assets/images/color-band-red.svg') repeat-x;
+        background-size: cover;
     }
 }

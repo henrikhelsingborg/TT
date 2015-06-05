@@ -3,34 +3,22 @@
  */
 .header-main {
     position: relative;
+}
 
-    @media #{$bp-container-max} {
-        padding-left: 20px;
-    }
+.color-band {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
 
     @media #{$medium-only} {
-        padding-left: 10px;
+        width: 10px;
     }
 
     @media #{$small-only} {
-        padding-left: 5px;
-    }
-
-    .color-band {
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: 0;
-        width: 20px;
-        height: 100%;
-
-        @media #{$medium-only} {
-            width: 10px;
-        }
-
-        @media #{$small-only} {
-            width: 5px;
-        }
+        width: 5px;
     }
 }
 
@@ -101,6 +89,7 @@
 .hero {
     height: 350px;
     overflow: hidden;
+    position: relative;
 
     > .columns.no-margin {
         background-size: cover;
@@ -110,9 +99,15 @@
         margin: 0;
     }
 
-    @media #{$bp-container-min} {
-        .orbit-prev {
-            left: 20px;
+    .orbit-prev {
+        left: 25px;
+
+        @media #{$medium-only} {
+            left: 10px;
+        }
+
+        @media #{$small-only} {
+            left: 5px;
         }
     }
 

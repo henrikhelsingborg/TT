@@ -1,4 +1,5 @@
 <div class="hero">
+    <div class="color-band color-band-red"></div>
     <div class="columns large-12 no-margin">
         <ul class="hero-orbit" data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;">
 
