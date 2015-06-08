@@ -2,7 +2,7 @@
 
 <div class="content-container">
     <div class="row">
-        <div class="columns large-8 medium-8">
+        <div class="main-content columns large-8 medium-8">
             <?php
 
                 /**

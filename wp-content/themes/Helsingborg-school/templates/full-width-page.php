@@ -2,7 +2,7 @@
 
 <div class="content-container">
     <div class="row">
-        <div class="columns large-12">
+        <div class="main-content columns large-12">
             <?php
 
                 /**
