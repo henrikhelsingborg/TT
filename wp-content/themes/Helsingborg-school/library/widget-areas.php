@@ -23,7 +23,9 @@ function Helsingborg_sidebar_widgets_override() {
   register_sidebar(array(
       'id' => 'content-area',
       'name' => __('Innehållsarea', 'Helsingborg'),
-      'description' => __('Lägg till det som ska visas under innehållet.', 'Helsingborg')
+      'description' => __('Lägg till det som ska visas under innehållet.', 'Helsingborg'),
+      'before_widget' => '<div class="widget large-12 columns %2$s"><div class="widget-content">',
+      'after_widget' => '</div></div>'
   ));
 
   /*
