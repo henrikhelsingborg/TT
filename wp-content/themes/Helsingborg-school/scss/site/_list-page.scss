@@ -1,0 +1,117 @@
+$gray-3: #ddd;
+$headline-color: #333;
+
+.table-list {
+    width: 100%;
+    font-family: $font-roboto;
+    letter-spacing: .5px;
+    border-spacing: 0;
+    border-collapse: inherit;
+    border: 2px solid $band-color-2;
+
+    /**
+     * Table head
+     */
+    thead {
+        background: $band-color-2;
+
+        th:first-child {
+            display: none;
+        }
+
+        td, th {
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: .5px;
+            font-size: 11pt;
+            text-transform: uppercase;
+            line-height: 100%;
+        }
+
+        // Sorting arrows
+        .header {
+            background: url(#{$wp-root-url}/assets/images/tablesorter-icons/bg.gif) 95% center no-repeat;
+            cursor: pointer;
+            padding-right: 25px;
+
+            &.headerSortDown {
+                background: url(#{$wp-root-url}/assets/images/tablesorter-icons/asc.gif) 95% center no-repeat;
+            }
+
+            &.headerSortUp {
+                background: url(#{$wp-root-url}/assets/images/tablesorter-icons/desc.gif) 95% center no-repeat;
+            }
+
+            &:last-child {
+                background-position: 95% center;
+            }
+        }
+    }
+
+    /**
+     * Table body
+     */
+    tbody {
+        &:nth-child(odd) {
+            background-color: scale-color($gray-3, $lightness: 70%);
+        }
+
+        tbody tr th {
+            display: none;
+        }
+    }
+
+    /**
+     * List item
+     */
+    .table-item {
+        // Expand icon last row column
+        td:last-child {
+            background: url(#{$wp-root-url}/assets/images/tablesorter-icons/asc.gif) 95% center no-repeat;
+            padding-right: rem-calc(24);
+        }
+
+
+        // Hover state
+        &:hover {
+            cursor: pointer;
+            background-color: scale-color($gray-3, $lightness: 40%);
+        }
+
+        // Active state
+        &.active {
+            background-color: #fbdbe8;
+        }
+    }
+
+    /**
+     * Expandeble content style
+     */
+    .table-content {
+        td {
+            display: none;
+            padding: 15px 20px;
+        }
+
+        &.open td {
+            display: table-cell;
+        }
+
+        p {
+            margin: 0;
+
+            & + p {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+.filter-search {
+    @include input-placeholder(#999);
+
+    input[type="text"] {
+        max-width: 400px;
+        width: 100%;
+    }
+}
