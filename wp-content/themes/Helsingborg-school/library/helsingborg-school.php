@@ -39,3 +39,25 @@
 
         return $result;
     }
+
+    /**
+     * Remove unwanted parent theme templates
+     * @param  array $templates Loaded templates
+     * @return array            New list of templates
+     */
+    function hbg_remove_page_templates($templates) {
+        $to_disable = array(
+            'templates/alarm-list-page.php',
+            'templates/alarm-page.php',
+            'templates/alarm-rss.php',
+            'templates/event-list-page.php',
+            'templates/start-page.php'
+        );
+
+        foreach($to_disable as $disable) {
+            unset($templates[$disable]);
+        }
+
+        return $templates;
+    }
+    add_filter('theme_page_templates', 'hbg_remove_page_templates');
