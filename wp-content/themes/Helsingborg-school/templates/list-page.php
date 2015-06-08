@@ -103,7 +103,11 @@ $content = $the_content['extended']; // If content is empty, no <!--more--> tag 
 
 <div class="content-container">
     <div class="row">
+        <?php if ((is_active_sidebar('right-sidebar') == TRUE)) : ?>
         <div class="columns large-8 medium-8">
+        <?php else : ?>
+        <div class="columns large-12 medium-12">
+        <?php endif; ?>
 
             <?php
                 /**
