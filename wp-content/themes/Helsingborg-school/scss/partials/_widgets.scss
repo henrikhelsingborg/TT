@@ -118,8 +118,21 @@
             &:hover {
                 background: rgba(0, 0, 0, .2);
             }
+
+            .date {
+                float: right;
+                font-size: 9pt;
+                position: relative;
+                top: 3px;
+            }
         }
     }
+}
+
+.main-content .quick-links-widget {
+    margin: 0;
+    padding: 0;
+    background: $band-color-4;
 }
 
 /**
@@ -217,6 +230,43 @@
             background-position: center center;
             height: 100%;
             width: 100%;
+        }
+    }
+}
+
+/**
+ * Nyhetslista
+ */
+
+.news-list-large {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li + li {
+        margin-top: 30px;
+    }
+
+    .news-item {
+        a {
+            color: #000;
+
+            h2 {
+                color: $band-color-4;
+                text-deoration: underline;
+            }
+
+            .read-more {
+                display: inline-block;
+                margin-top: 15px;
+                color: $band-color-4;
+            }
+
+            &:hover {
+                h2, .read-more {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 }

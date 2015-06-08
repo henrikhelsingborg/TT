@@ -46,18 +46,22 @@
             $date = date_i18n('Y-m-d', $datetime);
             $time = date('H:i',   $datetime);
     ?>
-        <li <?php echo $class; ?>><a href="<?php echo $link; ?>" <?php echo $target; ?>><?php echo $title; ?></a></li>
-        <?php
-            if ($show_dates) :
-            if ($today == $date) :
-        ?>
-            <span class="date">Idag <?php echo $time; ?></span>
-        <?php else : ?>
-            <span class="date"><?php echo $date; ?></span>
-        <?php
-            endif;
-            endif;
-        ?>
+        <li <?php echo $class; ?>>
+            <a href="<?php echo $link; ?>" <?php echo $target; ?>>
+                <?php echo $title; ?>
+                <?php
+                    if ($show_dates) :
+                    if ($today == $date) :
+                ?>
+                    <span class="date">Idag <?php echo $time; ?></span>
+                <?php else : ?>
+                    <span class="date"><?php echo $date; ?></span>
+                <?php
+                    endif;
+                    endif;
+                ?>
+            </a>
+        </li>
     <?php endforeach; ?>
     </ul>
 </div>
