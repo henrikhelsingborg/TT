@@ -123,10 +123,11 @@
 }
 
 /**
- * Text widget
+ * Text widget and inherit widget
  */
 
-.widget.widget_text {
+.widget.widget_text,
+.widget_helsingborgpostinheritwidget {
     .widget-content {
         padding: $widget-padding;
 
@@ -136,6 +137,23 @@
 
         .flex-video {
             margin-bottom: 0;
+        }
+    }
+}
+
+.main-content {
+    .widget_helsingborgpostinheritwidget {
+        color: #000;
+        padding: 0;
+        margin: 0;
+
+        .widget-content {
+            color: #000;
+            padding: 0;
+        }
+
+        h2 {
+            color: #000;
         }
     }
 }
@@ -153,5 +171,52 @@
     a {
         display: block;
         color: #fff;
+    }
+}
+
+/**
+ * Push links list
+ */
+.push-links-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin: 0;
+        padding: 0;
+
+        & + li {
+            margin-top: 15px;
+        }
+    }
+}
+
+/**
+ * Image list (slider)
+ */
+.widget_image_list_widget {
+    position: relative;
+
+    .main-content & {
+        padding: 0;
+        margin: 0;
+    }
+
+    .widget-content {
+        background: transparent !important;
+    }
+
+    .orbit-slider {
+        width: 100%;
+        padding-bottom: 20%;
+        overflow: hidden;
+
+        li {
+            background-size: cover;
+            background-position: center center;
+            height: 100%;
+            width: 100%;
+        }
     }
 }
