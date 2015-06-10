@@ -5,6 +5,26 @@
      * @return string The menu wrapper
      */
     function sidebarMenuStaticItems() {
+
+        /**
+         * Set up split test
+         * @var hbgSplitTest
+         */
+        /*
+        $splitTest = new hbgSplitTest();
+        $splitTest
+            ->addVariation('a', '<i class="fa fa-search"></i>')
+            ->addVariation('b', '<i class="fa fa-search-plus"></i>');
+        */
+
+        /**
+         * Get the split test Google Experiment code
+         * @var [type]
+         */
+        //$script = $splitTest->getScript('103617170-1');
+
+        // <a href="#" onclick="ga(\'send\', \'event\', \'Search Toggle\', \'Click\', \'Opened search\');">' . $splitTest->getVariation() . '</a>
+
         $wrap = '<ul class="%2$s">';
         $wrap .= '%3$s';
         $wrap .= '<li class="item-search">
@@ -20,8 +40,7 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
-                  </li>';
+                    </div>';
         $wrap .= '</ul>';
 
         return $wrap;

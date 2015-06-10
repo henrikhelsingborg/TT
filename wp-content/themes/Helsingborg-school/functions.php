@@ -6,6 +6,7 @@
     require_once(TEMPLATEPATH . '/library/helsingborg-ajax.php');
 
     require_once('library/enqueue-scripts.php');
+    require_once('library/hbg-split-test.php');
     require_once('library/helsingborg-school.php');
     require_once('library/widget-areas.php');
     require_once('library/widget-filters.php');
