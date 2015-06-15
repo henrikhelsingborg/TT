@@ -6,7 +6,7 @@
 ?>
 
 <!-- Pinterest feed -->
-<h2><i class="fa fa-pinterest"></i> Pinterest</h2>
+<h2><i class="fa fa-pinterest"></i> <?php echo (isset($instance['title']) && strlen($instance['title']) > 0) ? $instance['title'] : 'Pinterest'; ?></h2>
 <div class="divider">
     <div class="upper-divider"></div>
     <div class="lower-divider"></div>

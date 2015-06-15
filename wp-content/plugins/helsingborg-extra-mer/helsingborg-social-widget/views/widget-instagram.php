@@ -7,7 +7,7 @@
 ?>
 
 <!-- Instagram feed -->
-<h2><i class="fa fa-instagram"></i> Instagram</h2>
+<h2><i class="fa fa-instagram"></i> <?php echo (isset($instance['title']) && strlen($instance['title']) > 0) ? $instance['title'] : 'Instagram'; ?></h2>
 <div class="divider">
     <div class="upper-divider"></div>
     <div class="lower-divider"></div>

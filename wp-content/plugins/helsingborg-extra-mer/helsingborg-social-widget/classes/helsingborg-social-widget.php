@@ -104,6 +104,7 @@ if (!class_exists('HelsingborgSocialWidget')) {
 
             $instance = array();
             $instance['feedType'] = $newInstance['feedType'];
+            $instance['title'] = $newInstance['title'] ?: $oldInstance['title'];
 
             switch ($type = $instance['feedType']) {
                 case 'facebook':
@@ -356,8 +357,6 @@ if (!class_exists('HelsingborgSocialWidget')) {
             return json_decode($response)->data->pins;
         }
 
-
-
         /**
          * Gets the username from a Facebook page URL
          * @param  string $url The url
@@ -365,11 +364,17 @@ if (!class_exists('HelsingborgSocialWidget')) {
          */
         public function getFbUserFromUrl($url) {
             $matches = null;
-            preg_match_all('/([A-Z1-9-_])\w+/', $url, $matches);
-            $username = $matches[0][0];
+            preg_match_all('#https?\://(?:www\.)?facebook\.com/(\d+|[A-Za-z0-9\.]+)/?#', $url, $matches);
+            $username = $matches[1][0];
             return $username;
         }
 
+        /**
+         * Checks if settings menu item exists
+         * @param  string  $handle Menu slug id
+         * @param  boolean $sub    Submenu
+         * @return boolean
+         */
         public function menuExist($handle, $sub = false){
             if (!is_admin() || (defined('DOING_AJAX') && DOING_AJAX)) return false;
 

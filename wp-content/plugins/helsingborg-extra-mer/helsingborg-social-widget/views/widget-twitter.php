@@ -1,5 +1,5 @@
 <!-- Twitter feed -->
-<h2><i class="fa fa-twitter"></i> Twitter</h2>
+<h2><i class="fa fa-twitter"></i> <?php echo (isset($instance['title']) && strlen($instance['title']) > 0) ? $instance['title'] : 'Twitter'; ?></h2>
 <div class="divider">
     <div class="upper-divider"></div>
     <div class="lower-divider"></div>

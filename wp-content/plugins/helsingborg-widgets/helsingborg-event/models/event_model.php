@@ -64,7 +64,7 @@ class HelsingborgEventModel {
                                     		e.Approved = 1
                                     		AND et.Date >= CURDATE()
                                             AND eau.AdministrationUnitID IN (' . $administation_unit_ids . ')
-                                		ORDER BY et.Date', OBJECT);
+                                		ORDER BY et.Date, et.Time', OBJECT);
 
 		/*
 		$events = $wpdb->get_results('SELECT DISTINCT hE.EventID,
