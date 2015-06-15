@@ -104,6 +104,7 @@ if (!class_exists('HelsingborgSocialWidget')) {
 
             $instance = array();
             $instance['feedType'] = $newInstance['feedType'];
+            $instance['title'] = $newInstance['title'] ?: $oldInstance['title'];
 
             switch ($type = $instance['feedType']) {
                 case 'facebook':

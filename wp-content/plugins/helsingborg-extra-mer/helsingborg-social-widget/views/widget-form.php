@@ -1,4 +1,8 @@
 <p>
+    <label>Titel</label>
+    <input type="text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" class="widefat" value="<?php echo (isset($instance['title'])) ? $instance['title'] : ''; ?>">
+</p>
+<p>
     <label>Välj typ av flöde: <?=$instance['feedType']?></label>
     <div class="button-group hbg-social-widget-type">
         <a href="#" class="button <?php if ($instance['feedType'] == 'facebook') echo 'active'; ?>" data-toggle=".hbg-social-widget-section-facebook" data-type="facebook"><i class="fa fa-facebook-square"></i> Facebook</a>
