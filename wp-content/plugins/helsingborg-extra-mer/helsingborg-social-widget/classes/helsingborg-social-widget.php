@@ -357,8 +357,6 @@ if (!class_exists('HelsingborgSocialWidget')) {
             return json_decode($response)->data->pins;
         }
 
-
-
         /**
          * Gets the username from a Facebook page URL
          * @param  string $url The url
@@ -371,6 +369,12 @@ if (!class_exists('HelsingborgSocialWidget')) {
             return $username;
         }
 
+        /**
+         * Checks if settings menu item exists
+         * @param  string  $handle Menu slug id
+         * @param  boolean $sub    Submenu
+         * @return boolean
+         */
         public function menuExist($handle, $sub = false){
             if (!is_admin() || (defined('DOING_AJAX') && DOING_AJAX)) return false;
 
