@@ -88,7 +88,7 @@ $end_date   = $number_of_dates > 1 ? $times[$number_of_dates - 1] : null;
 
 <table width="100%">
   <tr>
-    <th width="50%">Enhet</th>
+    <th width="50%">Publiceringsplats</th>
     <th width="25%">Typ av evenemang</th>
     <th width="25%">Arrangör</th>
   </tr>
