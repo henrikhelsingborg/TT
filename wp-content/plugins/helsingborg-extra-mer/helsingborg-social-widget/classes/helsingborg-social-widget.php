@@ -366,8 +366,8 @@ if (!class_exists('HelsingborgSocialWidget')) {
          */
         public function getFbUserFromUrl($url) {
             $matches = null;
-            preg_match_all('/([A-Z1-9-_])\w+/', $url, $matches);
-            $username = $matches[0][0];
+            preg_match_all('#https?\://(?:www\.)?facebook\.com/(\d+|[A-Za-z0-9\.]+)/?#', $url, $matches);
+            $username = $matches[1][0];
             return $username;
         }
 

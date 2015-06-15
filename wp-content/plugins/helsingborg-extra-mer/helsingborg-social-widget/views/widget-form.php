@@ -17,7 +17,7 @@
     <section class="hbg-social-widget-section-facebook <?php if ($instance['feedType'] == 'facebook') echo 'active'; ?>">
         <p>
             <label>URL till Facebook-sida:</label>
-            <input type="text" id="<?php echo $this->get_field_id('facebook-url'); ?>" name="<?php echo $this->get_field_name('facebook-url'); ?>" class="widefat" value="<?php if ($instance['feedType'] == 'facebook') : ?>https://facebook.com/<?php echo $instance['username']; ?><?php endif; ?>">
+            <input type="text" id="<?php echo $this->get_field_id('facebook-url'); ?>" name="<?php echo $this->get_field_name('facebook-url'); ?>" class="widefat" value="<?php if ($instance['feedType'] == 'facebook') : ?>https://www.facebook.com/<?php echo $instance['username']; ?><?php endif; ?>">
         </p>
         <p>
             <label>Antal poster att visa:</label>
