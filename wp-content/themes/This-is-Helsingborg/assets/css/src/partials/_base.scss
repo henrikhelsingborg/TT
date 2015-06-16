@@ -1,5 +1,5 @@
 body {
-    background: #fff;
+    background-color: #fff;
     margin: 0;
     padding: 0;
 
@@ -30,6 +30,21 @@ body {
 .row {
     max-width: none;
     width: 100%;
+
+    & + .row {
+        margin-top: 50px;
+    }
+}
+
+// Responsive image
+//
+// Markup:
+// <img class="responsive" src="image.jpg">
+
+img.responsive {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
 }
 
 // Prepends a link indicator icon before the link text
@@ -37,11 +52,17 @@ body {
 // Markup:
 // <a class="link-item" href="#">Link</a>
 
-a.link-item {
+.link-item {
     &::before {
         @include hbg-icon($icon-link-arrow);
         display: inline-block;
         margin-right: 8px;
-        color: #8f8f8f;
+        color: rgba(0,0,0,.4);
+    }
+}
+
+.link-item-light {
+    &::before {
+        color: rgba(255,255,255,.7);
     }
 }

@@ -43,13 +43,16 @@
 @import 'partials/hero';
 @import 'partials/forms';
 @import 'partials/btn';
-@import 'partials/featured';
 @import 'partials/box';
-@import 'partials/utilities';
 @import 'partials/typography';
+@import 'partials/list';
+@import 'partials/index';
+@import 'partials/utilities';
 
 /**
- * ## Widgets
- * Style rules for widgets
+ * ## Sections
+ * Sections is also partials, really. But to separete them from the partials partials
+ * I've moved them to it's own folder.
  */
-@import 'widgets/list';
+@import 'sections/featured';
+@import 'sections/news';

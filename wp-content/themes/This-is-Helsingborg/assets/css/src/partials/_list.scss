@@ -1,0 +1,151 @@
+// A list of items in a box
+//
+// .list-links          - A list of links
+// .list-events         - A list of events (with date)
+//
+// Markup:
+// <ul class="list {{modifier_class}}">
+//      <li>Item</li>
+// </ul>
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-weight: bold;
+
+    li {
+        padding: 12px 18px;
+    }
+
+    li + li {
+        border-top: 1px solid $creamy-darker;
+    }
+
+    a {
+        display: block;
+        padding: 12px 15px;
+        color: $palette-red-4;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    label {
+        display: block;
+        font-family: $base-font-family;
+        font-size: 11pt;
+        font-weight: 300;
+        letter-spacing: .5px;
+    }
+
+    .text-lg {
+        line-height: 100%;
+    }
+
+    .featured {
+        margin-left: -1px;
+        margin-right: -1px;
+        background-color: $palette-red-2;
+        color: #fff;
+    }
+}
+
+.list-links {
+    font-weight: normal;
+
+    li {
+        padding: 0;
+    }
+}
+
+.list-events {
+    .event-item {
+        display: table;
+
+        &:hover {
+            text-decoration: none;
+
+            .title {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .featured {
+        padding: 10px;
+        padding-top: 6px;
+
+        [class*="columns"] {
+            padding: 0;
+            margin: 0;
+        }
+
+        .featured-image {
+            padding-right: 15px;
+        }
+
+        .link-item {
+            display: block;
+            font-weight: 300;
+            font-size: 11pt;
+            letter-spacing: .5px;
+            color: lighten($palette-red-2, 40%);
+        }
+
+        &:hover {
+            .link-item {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .date {
+        display: table-cell;
+        vertical-align: middle;
+        width: 70px;
+        height: 100%;
+        padding: 10px;
+        border-right: 1px solid $creamy-darker;
+        font-weight: 100;
+        font-size: 11pt;
+        line-height: 140%;
+        letter-spacing: .5px;
+        text-align: center;
+        color: $text-default;
+
+        span {
+            display: block;
+        }
+    }
+
+    .title {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 10px 15px;
+    }
+
+    li, a {
+        padding: 0;
+    }
+}
+
+.list-more {
+    display: block;
+    background: $creamy;
+    color: #7d7d7b !important;
+    font-weight: normal;
+    font-size: 12pt;
+    padding: 10px 15px !important;
+
+    &::before {
+        position: relative;
+        top: -1px;
+        @include hbg-icon($icon-more-plus);
+        display: inline-block;
+        margin-right: 5px;
+        font-size: 10pt;
+    }
+}

@@ -8,3 +8,10 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+.creamy {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: $creamy;
+    border: 1px solid $creamy-darker;
+}

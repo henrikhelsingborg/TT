@@ -23,3 +23,13 @@
         border-top: none;
     }
 }
+
+.box-outlined {
+    h3 {
+        padding: 0;
+        padding-bottom: 5px;
+        border-bottom: 4px solid $palette-red-2;
+        background-color: transparent;
+        color: $palette-red-2;
+    }
+}
