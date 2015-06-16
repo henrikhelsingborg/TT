@@ -1,0 +1,25 @@
+.box {
+    h3 {
+        padding: 10px 15px;
+        margin: 0;
+        background-color: $palette-red-4;
+        color: #fff;
+        font-weight: bold;
+
+        .fa {
+            margin-right: 5px;
+        }
+    }
+
+    .box-content {
+        background: #fff;
+        border-top: 1px solid $creamy-darker;
+        border-bottom: 1px solid $creamy-darker;
+        border-left: 1px solid $creamy-darker;
+        border-right: 1px solid $creamy-darker;
+    }
+
+    h3 + .box-content {
+        border-top: none;
+    }
+}

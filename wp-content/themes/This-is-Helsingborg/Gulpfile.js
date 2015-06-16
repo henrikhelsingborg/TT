@@ -15,10 +15,27 @@ var autoprefixer = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
 
 /**
+ * Variables
+ */
+var bower_components = 'bower_components/';
+
+/**
+ * Compiles jQuery and jQuery UI
+ */
+gulp.task('jquery', function () {
+    return gulp.src([
+                bower_components + 'jquery/dist/jquery.min.js',
+                bower_components + 'jquery-ui/jquery-ui.min.js'
+            ])
+            .pipe(concat('packaged.jquery.min.js'))
+            .pipe(gulp.dest('assets/js/dist'))
+});
+
+/**
  * Compiles the SASS for distribution
  */
 gulp.task('sass-dist', function () {
-    return gulp.src('assets/styles/src/app.scss')
+    return gulp.src('assets/css/src/app.scss')
             .pipe(plumber())
             .pipe(sass())
             .pipe(autoprefixer(
@@ -32,7 +49,7 @@ gulp.task('sass-dist', function () {
                 suffix: '.min'
             }))
             .pipe(minifycss())
-            .pipe(gulp.dest('assets/styles/dist/'))
+            .pipe(gulp.dest('assets/css/dist/'))
 });
 
 /**
@@ -40,9 +57,9 @@ gulp.task('sass-dist', function () {
  */
 gulp.task('scripts-dist', function () {
     return gulp.src('assets/js/src/dev/*.js')
-            .pipe(concat('packaged.js'))
+            .pipe(concat('app.js'))
             .pipe(gulp.dest('assets/js/dist'))
-            .pipe(rename('packaged.min.js'))
+            .pipe(rename('app.min.js'))
             .pipe(uglify())
             .pipe(gulp.dest('assets/js/dist'))
 });
@@ -52,7 +69,7 @@ gulp.task('scripts-dist', function () {
  * Recompile any changes to js or scss
  */
 gulp.task('watch', function () {
-    gulp.watch('assets/styles/src/**/*.scss', ['sass-dist']);
+    gulp.watch('assets/css/src/**/*.scss', ['sass-dist']);
     gulp.watch('assets/js/src/dev/*.js', ['scripts-dist']);
 });
 
@@ -60,4 +77,4 @@ gulp.task('watch', function () {
  * Default task
  * Compiles sass, js and starts the watch task
  */
-gulp.task('default', ['sass-dist', 'scripts-dist', 'watch']);
+gulp.task('default', ['jquery', 'sass-dist', 'scripts-dist', 'watch']);

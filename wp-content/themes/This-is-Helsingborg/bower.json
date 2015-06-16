@@ -1,0 +1,6 @@
+{
+  "name": "This-is-Helsingborg",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation"
+  }
+}

@@ -1,0 +1,55 @@
+/**
+ * HELSINGBORG 2.0
+ *
+ * All SASS should be written with as low specificity as possible.
+ * Follow the guidelines at http://codeguide.co and you will be off to a good start.
+ *
+ * Keep in mind to organize your attributes in the following order
+ * 1. Positioning
+ * 2. Box model
+ * 3. Typography
+ * 4. Visual
+ * 5. Misc
+ */
+
+
+/**
+ * ## Global
+ * SASS that does not output any actual css itself.
+ * Example: Mixins, functions and variables
+ */
+@import 'global/config';
+@import 'global/colors';
+@import 'global/fonts';
+@import 'global/mixins';
+
+/**
+ * ## Dependencies
+ * These are required dependencies that we use as a base
+ */
+@import '../../../bower_components/foundation/scss/normalize.scss'; // Foundation normalize
+@import '../../../bower_components/foundation/scss/foundation/components/grid'; // Foundation grid system
+@import '../../../bower_components/foundation/scss/foundation/components/visibility'; // Foundation visibility
+
+/**
+ * ## Partials
+ * This is where the most part of our sass/css lives.
+ * This is all the different style for all elements on our site.
+ */
+@import 'partials/base';
+@import 'partials/brand';
+@import 'partials/site-header';
+@import 'partials/nav';
+@import 'partials/hero';
+@import 'partials/forms';
+@import 'partials/btn';
+@import 'partials/featured';
+@import 'partials/box';
+@import 'partials/utilities';
+@import 'partials/typography';
+
+/**
+ * ## Widgets
+ * Style rules for widgets
+ */
+@import 'widgets/list';

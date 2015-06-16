@@ -25,7 +25,7 @@ if (!function_exists('hbgScripts')) {
         hbgPageSpecificScripts();
 
         // App.js
-        wp_register_script( 'foundation', get_template_directory_uri() . '/js/app.min.js', array('jquery'), '1.0.0', true);
+        wp_register_script('foundation', get_template_directory_uri() . '/js/app.min.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('foundation');
 
         // Readspeaker

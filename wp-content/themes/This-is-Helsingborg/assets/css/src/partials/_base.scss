@@ -1,0 +1,47 @@
+body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+}
+
+// Site wrapper that should wrap the main site elements
+//
+// Markup:
+// <div class="site-wrapper"></div>
+
+.site-wrapper {
+
+}
+
+// Container element
+//
+// Markup:
+// <div class="container"></div>
+
+.container {
+    margin: 0 auto;
+    max-width: $container-max-width;
+    width: 100%;
+}
+
+.row {
+    max-width: none;
+    width: 100%;
+}
+
+// Prepends a link indicator icon before the link text
+//
+// Markup:
+// <a class="link-item" href="#">Link</a>
+
+a.link-item {
+    &::before {
+        @include hbg-icon($icon-link-arrow);
+        display: inline-block;
+        margin-right: 8px;
+        color: #8f8f8f;
+    }
+}

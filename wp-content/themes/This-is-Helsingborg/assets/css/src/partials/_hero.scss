@@ -1,0 +1,70 @@
+// Hero image
+//
+// Markup:
+// <div class="hero"></div>
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.hero-search {
+    width: 100%;
+    margin-top: -20px;
+    text-align: center;
+
+    h2 {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        font-size: 28pt;
+        font-weight: 300;
+        letter-spacing: 1px;
+        color: #fff;
+        text-shadow: 0 0 40px #000;
+    }
+
+    .input-group {
+        position: relative;
+        z-index: 1;
+        top: 10px;
+        display: inline-block;
+        box-shadow: 0 0 40px rgba(0,0,0,.5);
+    }
+
+    input[type="search"] {
+        padding: 15px;
+        width: 400px;
+        height: 26px;
+        border: none;
+        font-size: 15pt;
+        letter-spacing: 1px;
+    }
+
+    .btn-submit {
+        padding: 15px 20px;
+        border: none;
+    }
+
+    @include input-placeholder(#858585, 1, 100);
+}
+
+// A color stripe band based on the color palette that covers the height of the container
+// Set the containers position to relative to get it to work.
+//
+// Markup:
+// <div class="stripe"></div>
+
+.stripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+    background-image: url('../../images/palette-red.svg');
+    background-size: cover;
+}

@@ -1,0 +1,22 @@
+// Button in different styles
+//
+// .btn-submit      - Orange button to use for submit
+//
+// Markup:
+// <button class="btn {{modifier_class}}">Button</button>
+// <a href="#" class="btn {{modifier_class}}">Button</a>
+
+.btn {
+    display: inline-block;
+}
+
+.btn-submit {
+    background: $palette-red-3;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    &:hover {
+        background: darken($palette-red-3, 5%);
+    }
+}

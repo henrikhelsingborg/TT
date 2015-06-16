@@ -1,0 +1,57 @@
+// Navigation bar
+//
+// Markup:
+// <nav class="navbar"></nav>
+
+.navbar {
+    .nav {
+        @extend .nav-horizontal;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 14pt;
+
+        a {
+            color: $navbar-main-color;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                color: $palette-red-4;
+            }
+        }
+
+        li:first-child {
+            text-align: left;
+        }
+    }
+}
+
+// Navigation list
+//
+// .nav-horizontal      - Makes the nav horizontal
+//
+// Markup:
+// <ul class="nav {{modifier_class}}">
+//     <li><a href="#">Item 1</a></li>
+//     <li><a href="#">Item 2</a></li>
+// </ul>
+
+.nav {
+    @extend .no-margin-padding;
+    list-style-type: none;
+
+    li {
+        @extend .no-margin-padding;
+        list-style-type: none;
+    }
+}
+
+.nav-horizontal {
+    display: table;
+    width: 100%;
+
+    li {
+        display: table-cell;
+        text-align: center;
+    }
+}
