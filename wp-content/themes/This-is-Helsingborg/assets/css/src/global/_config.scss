@@ -1,13 +1,34 @@
 // Base font
+//
+// Base font settings
+
 $base-font-family: 'Roboto', 'Helvetica', 'Arial';
 $base-font-size: 13pt;
 
-// Container settings
+// Container
+//
+// Settings of the container element
+
 $container-max-width: 1280px;
 
 // Navbar
+//
+// Settings of the navbar element
+
 $navbar-main-color: #252525;
 
 // Icons
+//
+// Here you can predefine icons to use with the hbg-icon mixin.
+// Currently we use the Font Awesome icon library.
+// You can find the Unicode values on their site: http://fontawesome.io
+
 $icon-link-arrow: "\f18e";
 $icon-more-plus: "\f0fe";
+
+// Breakpoints and media queries
+//
+// Here you can change and define breakpoints and media queries
+
+$screen: "only screen";
+

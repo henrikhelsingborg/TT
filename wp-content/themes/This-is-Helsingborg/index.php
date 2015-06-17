@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="columns large-12">
                         <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad"></a>
-                        <nav class="navbar">
+                        <nav class="navbar navbar-mainmenu">
                             <ul class="nav">
                                 <li><a href="#">Arbeta</a></li>
                                 <li><a href="#">Bo, bygga &amp; miljö</a></li>
@@ -130,7 +130,7 @@
                                 <span class="index-caption">Sommarlovsprogrammet är här</span>
                             </a>
                         </div>
-                        <div class="columns large-4 medium-6">
+                        <div class="columns large-4 medium-6 end">
                             <a href="#" class="index-item" data-equalizer-watch>
                                 <img src="http://www.helsingborg.se/wp-content/uploads/2015/06/kommunfullmaktige_300.jpg">
                                 <span class="index-caption">Kommunfullmäktige beslutar om budgeten</span>

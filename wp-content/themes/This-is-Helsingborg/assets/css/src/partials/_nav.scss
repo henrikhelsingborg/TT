@@ -10,6 +10,11 @@
         margin-bottom: 20px;
         font-size: 14pt;
 
+        li {
+            padding-right: 20px;
+            text-align: left;
+        }
+
         a {
             color: $navbar-main-color;
             text-decoration: none;
@@ -22,6 +27,29 @@
 
         li:first-child {
             text-align: left;
+        }
+    }
+}
+
+.navbar-mainmenu {
+    display: none; // Hides the navbar-mainmenu on small devices/screens
+    margin-bottom: 0;
+
+    .nav {
+        margin-bottom: 0;
+    }
+
+    @media #{$medium-up} {
+        display: block; // Show the navbar-mainmenu on medium up devices/screens
+    }
+
+    @media #{$medium-only} {
+        .nav li {
+            font-size: 12pt;
+
+            &:last-child {
+                padding-right: 0;
+            }
         }
     }
 }
@@ -52,6 +80,5 @@
 
     li {
         display: table-cell;
-        text-align: center;
     }
 }

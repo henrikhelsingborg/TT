@@ -1,5 +1,5 @@
 .index {
-
+    
 }
 
 .index-item {
@@ -30,5 +30,17 @@
     img {
         width: 100%;
         height: auto;
+    }
+}
+
+@media #{$small-up} {
+    .index-item {
+        margin-bottom: $column-gutter;
+    }
+}
+
+@media #{$large-up} {
+    .index-item {
+        margin-bottom: 0;
     }
 }

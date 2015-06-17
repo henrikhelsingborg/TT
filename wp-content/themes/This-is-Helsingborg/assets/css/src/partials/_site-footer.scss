@@ -18,3 +18,9 @@
     background-color: $palette-red-4;
     color: #fff;
 }
+
+@media screen and (max-width: ($container-max-width + 70)) {
+    .site-footer-content {
+        padding-left: 35px;
+    }
+}
