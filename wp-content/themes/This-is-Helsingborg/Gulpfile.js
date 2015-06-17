@@ -56,7 +56,11 @@ gulp.task('sass-dist', function () {
  * Compiles the JavaScripts for distribution
  */
 gulp.task('scripts-dist', function () {
-    return gulp.src('assets/js/src/dev/*.js')
+    return gulp.src([
+                'assets/js/src/dev/*.js',
+                bower_components + 'foundation/js/foundation/foundation.js',
+                bower_components + 'foundation/js/foundation/foundation.equalizer.js'
+            ])
             .pipe(concat('app.js'))
             .pipe(gulp.dest('assets/js/dist'))
             .pipe(rename('app.min.js'))

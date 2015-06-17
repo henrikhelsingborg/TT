@@ -117,21 +117,21 @@
                         <h2 class="text-magenta"><i class="fa fa-newspaper-o"></i> Aktuellt i Helsingborg</h2>
                     </div>
 
-                    <div class="index">
+                    <div class="index" data-equalizer>
                         <div class="columns large-4 medium-6">
-                            <a href="#" class="index-item">
+                            <a href="#" class="index-item" data-equalizer-watch>
                                 <img src="http://www.helsingborg.se/wp-content/uploads/2014/12/nsr_avfallskarl_300x200_foto_NSR_Rickard_Johansson_Studio-E.jpg">
                                 <span class="index-caption">Ändrade dagar för sophämtning i midsommar</span>
                             </a>
                         </div>
                         <div class="columns large-4 medium-6">
-                            <a href="#" class="index-item">
+                            <a href="#" class="index-item" data-equalizer-watch>
                                 <img src="http://www.helsingborg.se/wp-content/uploads/2015/01/sommarlov-nyhet.jpg">
                                 <span class="index-caption">Sommarlovsprogrammet är här</span>
                             </a>
                         </div>
                         <div class="columns large-4 medium-6">
-                            <a href="#" class="index-item">
+                            <a href="#" class="index-item" data-equalizer-watch>
                                 <img src="http://www.helsingborg.se/wp-content/uploads/2015/06/kommunfullmaktige_300.jpg">
                                 <span class="index-caption">Kommunfullmäktige beslutar om budgeten</span>
                             </a>
