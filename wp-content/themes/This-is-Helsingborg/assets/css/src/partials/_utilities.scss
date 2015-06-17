@@ -1,7 +1,22 @@
+// Removes any padding and margin from any element
+//
+// Markup:
+// <h1 class="no-margin-padding">Headline withour margin and padding</h1>
+
 .no-margin-padding {
     padding: 0;
     margin: 0;
 }
+
+// Centers an element vertically by using position absolute.
+// Make sure parent has position: relative;
+//
+// .center-vertical-rel         - Uses position: relative; instead of absolute
+//
+// Markup:
+// <div class="parent-element">
+//      <div class="center-vertical">This will be vetically centered in the parent-element</div>
+// </div>
 
 .center-vertical {
     position: absolute;
@@ -9,9 +24,32 @@
     transform: translateY(-50%);
 }
 
+.center-vertical-rel {
+    position: relative;
+}
+
+// Creamy colored section with border top and bottom
+// Can be used on any type of element
+//
+// Markup:
+// <section class="creamy"></section>
+
 .creamy {
     padding-top: 40px;
     padding-bottom: 40px;
     background: $creamy;
     border: 1px solid $creamy-darker;
+}
+
+// Text modifiers
+//
+// .text-lg         - Large text
+// .text-magenta    - Magenta colored text
+
+.text-lg {
+    font-size: 28pt;
+}
+
+.text-magenta {
+    color: $palette-red-2;
 }
