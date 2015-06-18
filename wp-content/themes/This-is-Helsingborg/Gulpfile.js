@@ -12,6 +12,7 @@ var uglify = require('gulp-uglify');
 var minifycss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
+var copy = require('gulp-copy');
 var plumber = require('gulp-plumber');
 
 /**
@@ -67,6 +68,15 @@ gulp.task('scripts-dist', function () {
             .pipe(uglify())
             .pipe(gulp.dest('assets/js/dist'))
 });
+
+gulp.task('scripts-copy', function () {
+    return gulp.src([
+                bower_components + 'jquery-ui/jquery-ui.min.js'
+            ])
+            .pipe(copy('assets/js/dist/', {
+                prefix: 2
+            }));
+})
 
 /**
  * Watch for changes

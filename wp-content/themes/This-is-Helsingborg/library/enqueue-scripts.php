@@ -33,4 +33,20 @@ if (!function_exists('hbg_enqueue_scripts')) {
     }
     add_action('wp_enqueue_scripts', 'hbg_enqueue_scripts');
 
+    /**
+     * Admin specific scripts to enqueue
+     * @return void
+     */
+    function load_custom_wp_admin_style() {
+        wp_register_style('custom_wp_admin_css', get_template_directory_uri() . 'assets/css/dist/admin-hbg.css', array(), '1.0.0');
+        wp_enqueue_style('custom_wp_admin_css');
+
+        wp_register_script('jquery-ui', get_template_directory_uri() . '/assets/js/dist/jquery-ui.min.js', array(), '1.0.0', false);
+        //wp_register_script('select2' , (get_template_directory_uri() . '/assets/js/helsingborg/select2.min.js'), array(), '1.0.0', false);
+
+        wp_enqueue_script('jquery-ui');
+        //wp_enqueue_script('select2');
+    }
+    add_action('admin_enqueue_scripts', 'load_custom_wp_admin_style');
+
 }
