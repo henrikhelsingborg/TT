@@ -2,6 +2,7 @@
 
     require('library/enqueue-scripts.php');
     require('library/widget-areas.php');
+    require_once('library/helsingborg-ajax.php');
 
     /*
     if (isset($_GET['flush-inactive']) && $_GET['flush-inactive'] == "true") {

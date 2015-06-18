@@ -2,13 +2,13 @@
     $today = date('Y-m-d');
     echo $before_widget;
 ?>
-<div class="widget-content-holder">
-    <h2 class="widget-title">
-        <?php echo $title ?>
-        <?php if ($show_rss == 'rss_yes') { echo('<a href="'.$rss_link.'"><span class="icon"></span></a>'); } ?>
-    </h2>
+<h3 class="widget-title">
+    <i class="fa fa-dot-circle-o"></i> <?php echo $instance['title']; ?>
+    <?php if ($show_rss == 'rss_yes') { echo('<a href="'.$rss_link.'" class="link-rss"><i class="fa fa-rss-square"></i></a>'); } ?>
+</h3>
 
-    <ul class="quick-links-list">
+<div class="box-content">
+    <ul class="list list-links">
     <?php
         foreach ($items as $num => $item) :
             $title;
@@ -47,7 +47,7 @@
             $time = date('H:i',   $datetime);
     ?>
         <li <?php echo $class; ?>>
-            <a href="<?php echo $link; ?>" <?php echo $target; ?>>
+            <a class="link-item" href="<?php echo $link; ?>" <?php echo $target; ?>>
                 <?php echo $title; ?>
                 <?php
                     if ($show_dates) :

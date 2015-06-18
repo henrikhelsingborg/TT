@@ -61,6 +61,13 @@
     li {
         padding: 0;
     }
+
+    .date {
+        float: right;
+        color: $text-gray-light;
+        font-size: 10pt;
+        margin-top: 2px;
+    }
 }
 
 .list-icons {
