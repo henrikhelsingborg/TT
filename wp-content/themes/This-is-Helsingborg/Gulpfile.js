@@ -69,6 +69,9 @@ gulp.task('scripts-dist', function () {
             .pipe(gulp.dest('assets/js/dist'))
 });
 
+/**
+ * Copies given bower components to the assets/js/dist directory
+ */
 gulp.task('scripts-copy', function () {
     return gulp.src([
                 bower_components + 'jquery-ui/jquery-ui.min.js'
@@ -91,4 +94,4 @@ gulp.task('watch', function () {
  * Default task
  * Compiles sass, js and starts the watch task
  */
-gulp.task('default', ['jquery', 'sass-dist', 'scripts-dist', 'watch']);
+gulp.task('default', ['jquery', 'sass-dist', 'scripts-dist', 'scripts-copy', 'watch']);
