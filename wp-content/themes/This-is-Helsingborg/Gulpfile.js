@@ -60,7 +60,8 @@ gulp.task('scripts-dist', function () {
     return gulp.src([
                 'assets/js/src/dev/*.js',
                 bower_components + 'foundation/js/foundation/foundation.js',
-                bower_components + 'foundation/js/foundation/foundation.equalizer.js'
+                bower_components + 'foundation/js/foundation/foundation.equalizer.js',
+                bower_components + 'foundation/js/foundation/foundation.orbit.js'
             ])
             .pipe(concat('app.js'))
             .pipe(gulp.dest('assets/js/dist'))
