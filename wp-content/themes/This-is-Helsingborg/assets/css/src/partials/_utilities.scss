@@ -53,3 +53,10 @@
 .text-magenta {
     color: $palette-red-2;
 }
+
+// Better font rendering for Font Awesome icons
+
+.fa {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

@@ -6,21 +6,21 @@
     }
 
     :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-       color: $color;
-       opacity: $opacity;
-       font-weight: $font-weight;
+        color: $color;
+        opacity: $opacity;
+        font-weight: $font-weight;
     }
 
     ::-moz-placeholder { /* Mozilla Firefox 19+ */
-       color: $color;
-       opacity: $opacity;
-       font-weight: $font-weight;
+        color: $color;
+        opacity: $opacity;
+        font-weight: $font-weight;
     }
 
     :-ms-input-placeholder { /* Internet Explorer 10+ */
-       color: $color;
-       opacity: $opacity;
-       font-weight: $font-weight;
+        color: $color;
+        opacity: $opacity;
+        font-weight: $font-weight;
     }
 }
 
@@ -33,4 +33,6 @@
     text-transform: none;
     line-height: 1;
     content: $icon;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

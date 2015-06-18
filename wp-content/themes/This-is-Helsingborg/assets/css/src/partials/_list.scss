@@ -2,6 +2,8 @@
 //
 // .list-links          - A list of links
 // .list-events         - A list of events (with date)
+// .list-horizontal     - Makes the list flow from left to right
+// .list-icons          - A list of icons
 //
 // Markup:
 // <ul class="list {{modifier_class}}">
@@ -58,6 +60,36 @@
 
     li {
         padding: 0;
+    }
+}
+
+.list-icons {
+    font-size: 40pt;
+    line-height: 100%;
+
+    li {
+        margin: 0;
+        padding: 0;
+
+        a {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .icon-link {
+        line-height: 100%;
+    }
+}
+
+.list-horizontal {
+    li {
+        float: left;
+
+        & + li {
+            border-top: none;
+            margin-left: 10px;
+        }
     }
 }
 
