@@ -140,7 +140,7 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                     $this->modifiedDisturbances[] = $disturbance->IDnr;
 
                     if (!$post || $post->post_parent == $this->disturbanceDir->ID) {
-                    //if ("hej" == "hej") {
+
                         /**
                          * Add to news list widget
                          */
@@ -266,6 +266,10 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
             if (isset($_GET['dist']) && $_GET['dist'] == 'debug') echo "<strong>STORSTÖRNINGAR SLUT</strong><br><br>";
         }
 
+        /**
+         * Removes alarms that have been "turned off" i.e set to false
+         * @return void
+         */
         public function removeTurnedOffAlarms() {
             if (isset($_GET['dist']) && $_GET['dist'] == 'debug') echo "<strong>INAKTUELLA ALARM</strong><br>";
             foreach ($this->existingDisturbances as $key => $disturbance) {
