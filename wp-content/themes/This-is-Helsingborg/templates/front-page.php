@@ -6,55 +6,15 @@
     get_header();
 ?>
 
+<?php if (is_active_sidebar('slider-area')) : ?>
 <section class="section-featured creamy">
     <div class="container">
         <div class="row">
-
-            <div class="columns large-6">
-                <div class="box widget">
-                    <h3><i class="fa fa-dot-circle-o"></i> Genvägar</h3>
-                    <div class="box-content">
-                        <ul class="list list-links">
-                            <li><a class="link-item" href="#">Sommarlovsaktiviteter 2015</a></li>
-                            <li><a class="link-item" href="#">Ansökan om bygglov</a></li>
-                            <li><a class="link-item" href="#">Ansökan till förskola</a></li>
-                            <li><a class="link-item" href="#">Felanmäl fel på gator, torg och parker</a></li>
-                            <li><a class="link-item" href="#">Tider för studentutspringet 2015</a></li>
-                            <li><a class="link-item" href="#">Barnets tider/schema på fritids</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="columns large-6">
-                <div class="box">
-                    <h3><i class="fa fa-phone"></i> Helsingborgs Kontaktcenter</h3>
-                    <div class="box-content">
-                        <ul class="list">
-                            <li>
-                                <label>Telefonnummer</label>
-                                <span class="text-lg">042-10 50 00</span>
-                            </li>
-                            <li>
-                                <label>E-postadress</label>
-                                kontaktcenter@helsingborg.se
-                            </li>
-                            <li>
-                                <label>Öppettider</label>
-                                Mån–tor 07:00–19:00, Fre 07:00–17:00, Lör 10:00–15:00
-                            </li>
-                            <li>
-                                <label>Besöksadress</label>
-                                Stortorget 17, Helsingborg
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
+            <?php dynamic_sidebar('slider-area'); ?>
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <section class="section-news">
     <div class="container">

@@ -14,10 +14,12 @@ function Helsingborg_sidebar_widgets() {
 
   register_sidebar(array(
       'id' => 'slider-area',
-      'name' => __('Bildarea', 'Helsingborg'),
+      'name' => __('Topparea', 'Helsingborg'),
       'description' => __('Lägg till de sliders som ska visas på sidan.', 'Helsingborg'),
-      'before_widget' => '<div class="large-12 columns slider-container"><div class="orbit-container"><ul class="example-orbit" data-orbit>',
-      'after_widget' => '</ul></div></div>'
+      'before_widget' => '<div class="large-6 medium-6 columns"><div class="box widget">',
+      'after_widget' => '</div></div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>'
   ));
 
   register_sidebar(array(
@@ -63,6 +65,6 @@ function Helsingborg_sidebar_widgets() {
   ));
 }
 
-add_action( 'widgets_init', 'Helsingborg_sidebar_widgets' );
+add_action('widgets_init', 'Helsingborg_sidebar_widgets');
 
 ?>
