@@ -26,6 +26,31 @@ jQuery(document).ready(function ($) {
         $('body').removeClass('no-scroll');
     })
 
+    /**
+     * Mobile menu
+     */
+    var navHeight = $('.off-canvas').height();
+    $('.off-canvas').css({
+        maxHeight: 0,
+        position: 'relative'
+    });
+
+    $(document).on('click', '[data-action="toggle-mobile-menu"]', function (e) {
+        e.preventDefault();
+        var body = $('body');
+        $('body').toggleClass('off-canvas-in');
+
+        if (body.hasClass('off-canvas-in')) {
+            $('.off-canvas').css('visibility', 'visible').animate({
+                maxHeight: navHeight + 'px'
+            }, 300);
+        } else {
+            $('.off-canvas').css('visibility', 'visible').animate({
+                maxHeight: 0 + 'px'
+            }, 300);
+        }
+    })
+
 });
 /*
  * Foundation Responsive Library

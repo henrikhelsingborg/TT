@@ -1,6 +1,9 @@
 .off-canvas {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    overflow: hidden;
+    visibility: hidden;
     background-color: $palette-red-2;
 
     .stripe {
@@ -9,5 +12,11 @@
 
     .container {
         padding: 10px 15px 10px 20px;
+    }
+}
+
+.off-canvas-in {
+    .off-canvas {
+
     }
 }

@@ -92,16 +92,18 @@
 
 .nav-mobilemenu {
     margin: 10px 0;
-    padding-left: 10px;
-
-    li + li {
-        margin-top: 5px;
-    }
 
     a {
         font-weight: 300;
         letter-spacing: .5px;
         color: #fff;
         text-decoration: none;
+        display: block;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: darken($palette-red-2, 10%);
+        }
     }
 }

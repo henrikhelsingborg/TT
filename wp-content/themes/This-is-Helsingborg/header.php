@@ -41,6 +41,7 @@
                 <div class="row">
                     <div class="columns large-12">
                         <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad"></a>
+                        <button class="btn btn-mobile-menu" data-action="toggle-mobile-menu"><i class="fa fa-bars"></i></button>
                         <?php
 
                             /**

@@ -2,3 +2,19 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.btn.btn-mobile-menu {
+    display: block;
+    float: right;
+    margin-top: 14px;
+    background-color: transparent;
+    padding: 0;
+    color: $palette-red-4;
+    font-size: 20pt;
+}
+
+@media #{$medium-up} {
+    .btn.btn-mobile-menu {
+        display: none;
+    }
+}
