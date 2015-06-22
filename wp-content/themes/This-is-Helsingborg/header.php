@@ -33,6 +33,7 @@
                     <div class="columns large-12">
                         <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad"></a>
                         <?php
+
                             /**
                              * Displays the main menu navigation
                              */
@@ -43,6 +44,7 @@
                                 'items_wrap'      => '<ul class="nav">%3$s</ul>',
                                 'depth'           => 1
                             ));
+
                         ?>
                     </div>
                 </div>
