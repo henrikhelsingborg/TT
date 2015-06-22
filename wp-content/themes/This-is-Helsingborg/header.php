@@ -32,17 +32,18 @@
                 <div class="row">
                     <div class="columns large-12">
                         <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad"></a>
-                        <nav class="navbar navbar-mainmenu">
-                            <ul class="nav">
-                                <li><a href="#">Arbeta</a></li>
-                                <li><a href="#">Bo, bygga &amp; miljö</a></li>
-                                <li><a href="#">Förskola &amp; utbildning</a></li>
-                                <li><a href="#">Kommun &amp; politik</a></li>
-                                <li><a href="#">Omsorg &amp; stöd</a></li>
-                                <li><a href="#">Trafik &amp; stadsplanering</a></li>
-                                <li><a href="#">Uppleva &amp; göra</a></li>
-                            </ul>
-                        </nav>
+                        <?php
+                            /**
+                             * Displays the main menu navigation
+                             */
+                            wp_nav_menu(array(
+                                'theme_location'  => 'main-menu',
+                                'container'       => 'nav',
+                                'container_class' => 'navbar navbar-mainmenu',
+                                'items_wrap'      => '<ul class="nav">%3$s</ul>',
+                                'depth'           => 1
+                            ));
+                        ?>
                     </div>
                 </div>
             </div>
