@@ -55,6 +55,19 @@
     }
 }
 
+.list-horizontal {
+    li {
+        float: left;
+
+        & + li {
+            border-top: none;
+            margin-left: 10px;
+        }
+    }
+}
+
+// List types
+
 .list-links {
     font-weight: normal;
 
@@ -86,17 +99,6 @@
 
     .icon-link {
         line-height: 100%;
-    }
-}
-
-.list-horizontal {
-    li {
-        float: left;
-
-        & + li {
-            border-top: none;
-            margin-left: 10px;
-        }
     }
 }
 
@@ -168,6 +170,18 @@
 
     li, a {
         padding: 0;
+    }
+}
+
+.list-event-times {
+    font-weight: normal;
+
+    span {
+        display: block;
+    }
+
+    .event-location {
+        font-weight: bold;
     }
 }
 

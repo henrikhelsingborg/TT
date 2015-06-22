@@ -36,7 +36,7 @@ function update_event_calendar_callback() {
 
     foreach( $events as $event ) {
         $list .= '<li>';
-            $list .= '<a href="#" class="event-item"><span class="date">';
+            $list .= '<a href="#" id="'.$event->EventID.'" class="event-item" data-reveal="eventModal"><span class="date">';
                 if ($today == $event->Date) {
                     $list .= '<span class="date-day"><strong>Idag</strong></span><span class="date-time">' . $event->Time . '</span>';
                 } else {

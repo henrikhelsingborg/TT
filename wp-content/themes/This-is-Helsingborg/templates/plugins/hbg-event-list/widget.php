@@ -3,47 +3,36 @@
     <h3 class="widget-title"><?php echo $title; ?></h3>
     <div class="box-content">
         <ul id="event-list" class="list list-events">
+            <li class="event-loading"><i class="hbg-loading">Läser in evenemang</i></li>
             <li><a href="<?php echo $reference; ?>" class="list-more"><?php echo $link_text; ?></a></li>
         </ul>
 
-        <div id="eventModal" class="reveal-modal" data-reveal>
-            <img class="modal-image"/>
-
-            <div class="row">
-                <div class="modal-event-info large-12 columns">
-                    <h2 class="modal-title"></h2>
-                    <p class="modal-description"></p>
-                    <p class="modal-link"></p>
-                    <!--<p class="modal-date"></p>-->
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" data-action="modal-close"><i class="fa fa-times-circle"></i></button>
+                <div class="row">
+                    <div class="columns large-4">
+                        <img class="modal-image responsive">
+                        <div id="event-times" class="box">
+                            <div class="box-content">
+                            <ul class="list list-event-times" id="time-modal">
+                                <li class="event-times-loading"><i class="hbg-loading">Läser in datum &amp; tider</i></li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns large-8">
+                        <h1 class="modal-title"></h1>
+                        <article>
+                            <p class="modal-description"></p>
+                            <p class="modal-link"></p>
+                        </article>
+                        <div id="event-organizers">
+                            <ul class="list" id="organizer-modal"></ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- IF arrangör exist -->
-            <div class="row">
-                <div class="large-6 columns" id="event-times">
-                    <h2 class="section-title">Datum, tid och plats</h2>
-
-                    <div class="divider fade">
-                        <div class="upper-divider"></div>
-                        <div class="lower-divider"></div>
-                    </div>
-
-                    <ul class="modal-list" id="time-modal"></ul>
-                </div>
-
-                <div class="large-6 columns" id="event-organizers">
-                    <h2 class="section-title">Arrangör</h2>
-
-                    <div class="divider fade">
-                        <div class="upper-divider"></div>
-                        <div class="lower-divider"></div>
-                    </div>
-
-                    <ul class="modal-list" id="organizer-modal"></ul>
-                </div>
-            </div>
-
-            <a class="close-reveal-modal">&#215;</a>
         </div>
 
         <script type="text/javascript">
@@ -52,17 +41,20 @@
 
         <script>
             var events = {};
+            var defaultImagePath = '<?php echo get_template_directory_uri(); ?>/assets/images/event-placeholder.jpg';
             jQuery(document).ready(function() {
                 var data = { action: 'update_event_calendar', amount: '<?php echo $amount; ?>', ids: '<?php echo $administration_ids; ?>' };
 
                 jQuery.post(ajaxurl, data, function(response) {
                     var obj = JSON.parse(response);
                     events = obj.events;
+                    jQuery('.event-loading').remove();
                     jQuery('#event-list').prepend(obj.list);
                 });
 
-                jQuery(document).on('click', '.modalLink', function(event) {
+                jQuery(document).on('click', '.event-item', function(event) {
                     event.preventDefault();
+
                     var image = $('.modal-image');
                     var title = $('.modal-title');
                     var link = $('.modal-link');
@@ -71,8 +63,9 @@
                     var time_list = $('#time-modal');
                     var organizer_list = $('#organizer-modal');
 
-                    document.getElementById('event-times').style.display = 'none';
-                    document.getElementById('event-times').className = 'large-6 columns';
+                    document.getElementById('event-times').style.display = 'block';
+                    jQuery('.event-times-loading').show();
+                    jQuery('.event-times-item').remove();
                     document.getElementById('event-organizers').style.display = 'none';
 
                     var result;
@@ -84,23 +77,23 @@
                     }
 
                     var dates_data = { action: 'load_event_dates', id: this.id, location: result.Location };
-
                     jQuery.post(ajaxurl, dates_data, function(response) {
                         html = "";
                         var dates = JSON.parse(response);
 
                         for (var i=0;i<dates.length;i++) {
-                            html += '<li>';
-                            html += '<span>' + dates[i].Date + '</span>';
-                            html += '<span>' + dates[i].Time + '</span>';
-                            html += '<span>' + dates_data.location + '</span>';
+                            html += '<li class="event-times-item">';
+                            html += '<span class="event-date"><i class="fa fa-clock-o"></i> ' + dates[i].Date;
+                            if (dates[i].Time) html += ' kl. ' + dates[i].Time;
+                            html += '</span><span class="event-location">' + dates_data.location + '</span>';
                             html += '</li>';
                         }
 
-                        jQuery('#time-modal').html(html);
+                        jQuery('#time-modal').prepend(html);
+                        jQuery('.event-times-loading').hide();
 
-                        if (dates.length > 0) {
-                        document.getElementById('event-times').style.display = 'block';
+                        if (dates.length == 0) {
+                            document.getElementById('event-times').style.display = 'none';
                         }
                     });
 
@@ -117,11 +110,15 @@
                         if (organizers.length > 0) {
                             document.getElementById('event-organizers').style.display = 'block';
                         } else {
-                            document.getElementById('event-times').className = 'large-12 columns';
+                            document.getElementById('event-times').className = '';
                         }
                     });
 
-                    jQuery(image).attr("src", result.ImagePath);
+                    if (result.ImagePath) {
+                        jQuery(image).attr("src", result.ImagePath);
+                    } else {
+                        jQuery(image).attr("src", defaultImagePath);
+                    }
                     jQuery(title).html(result.Name);
 
                     if (result.Link) {

@@ -17,6 +17,12 @@ $container-max-width: 1280px;
 
 $navbar-main-color: #252525;
 
+// Modal
+//
+// Settings of modal window
+
+$modal-max-width: $container-max-width - 100;
+
 // Icons
 //
 // Here you can predefine icons to use with the hbg-icon mixin.

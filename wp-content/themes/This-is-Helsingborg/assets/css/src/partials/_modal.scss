@@ -13,8 +13,8 @@
 .modal-content {
     position: relative;
     margin: 70px auto;
-    padding: 40px 20px;
-    max-width: $container-max-width - 100;
+    padding: 30px;
+    max-width: $modal-max-width;
     width: 100%;
     background: #fff;
 }
@@ -34,5 +34,21 @@
 
     &:hover {
         color: darken($palette-red-5, 10%);
+    }
+
+    &:active {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: $modal-max-width) {
+    .modal {
+        padding: 20px;
+    }
+
+    .modal-content {
+        width: auto;
+        margin: 0;
     }
 }

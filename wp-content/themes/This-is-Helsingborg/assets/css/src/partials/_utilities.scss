@@ -64,3 +64,23 @@
 .no-scroll {
     overflow: hidden;
 }
+
+// Loading indicator HBG
+
+.hbg-loading {
+    display: block;
+    width: auto;
+    height: 100%;
+    min-height: 67px;
+    min-width: 70px;
+    padding-top: 67px;
+    margin: 20px;
+    background-image: url('../../../assets/images/loading-icon.gif');
+    background-repeat: no-repeat;
+    background-position: top center;
+    text-align: center;
+    font-size: 10pt;
+    font-weight: normal;
+    font-style: normal;
+    color: $text-gray-light;
+}
