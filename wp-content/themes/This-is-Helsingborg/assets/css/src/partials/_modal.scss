@@ -17,6 +17,15 @@
     max-width: $modal-max-width;
     width: 100%;
     background: #fff;
+
+    a {
+        color: $palette-red-2;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .modal-close {

@@ -122,7 +122,7 @@
                     jQuery(title).html(result.Name);
 
                     if (result.Link) {
-                        jQuery(link).html('<a href="' + result.Link + '" target="blank">' + result.Link + '</a>').show();
+                        jQuery(link).html('<a class="link-item" href="' + result.Link + '" target="blank">' + result.Link + '</a>').show();
                     } else {
                         jQuery(link).hide();
                     }
