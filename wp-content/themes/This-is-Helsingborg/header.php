@@ -25,23 +25,13 @@
     <?php wp_head(); ?>
 </head>
 <body>
-    <div class="off-canvas">
-        <div class="stripe"></div>
-        <div class="container">
-            <?php
-                get_template_part('templates/partials/mobile', 'search');
-                get_template_part('templates/partials/mobile', 'navigation');
-            ?>
-        </div>
-    </div>
-
     <div class="site-wrapper">
         <header class="site-header">
             <div class="container">
                 <div class="row">
                     <div class="columns large-12">
                         <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad"></a>
-                        <button class="btn btn-mobile-menu" data-action="toggle-mobile-menu"><i class="fa fa-bars"></i></button>
+                        <button class="btn btn-mobile-menu" data-action="toggle-mobile-menu"><i class="hbg-hamburger"></i></button>
                         <?php
 
                             /**
@@ -54,11 +44,20 @@
                                 'items_wrap'      => '<ul class="nav">%3$s</ul>',
                                 'depth'           => 1
                             ));
-
                         ?>
                     </div>
                 </div>
             </div>
         </header>
+
+        <div class="mobile-menu-wrapper">
+            <div class="stripe"></div>
+            <div class="container">
+                <?php
+                    get_template_part('templates/partials/mobile', 'search');
+                    get_template_part('templates/partials/mobile', 'navigation');
+                ?>
+            </div>
+        </div>
 
         <?php get_template_part('templates/partials/hero');

@@ -90,6 +90,22 @@
 //      <ul class="nav"></ul>
 // </nav>
 
+.mobile-menu-wrapper {
+    position: absolute;
+    z-index: -10;
+    background-color: $palette-red-2;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+
+    .stripe {
+        width: 5px;
+    }
+
+    .container {
+        padding: 10px 15px 10px 20px;
+    }
+}
+
 .nav-mobilemenu {
     margin: 10px 0;
 

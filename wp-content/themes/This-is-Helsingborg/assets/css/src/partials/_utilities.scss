@@ -100,3 +100,59 @@
 .inline-block {
     display: inline-block;
 }
+
+.btn-mobile-menu {
+    width: 30px;
+    height: 30px;
+}
+
+.hbg-hamburger {
+    $bar-height: 5px;
+    $bar-radius: 5px;
+    position: relative;
+    display: block;
+    height: $bar-height;
+    width: 100%;
+    border-radius: $bar-radius;
+    background-color: $palette-red-4;
+    transition: all .2s;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -$bar-height * 2;
+        height: $bar-height;
+        width: 100%;
+        border-radius: $bar-radius;
+        background-color: $palette-red-4;
+        transition: all .2s;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: $bar-height * 2;
+        height: $bar-height;
+        width: 100%;
+        border-radius: $bar-radius;
+        background-color: $palette-red-4;
+        transition: all .2s;
+    }
+
+    &.open,
+    .open & {
+        height: 0;
+
+        &::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+    }
+}
