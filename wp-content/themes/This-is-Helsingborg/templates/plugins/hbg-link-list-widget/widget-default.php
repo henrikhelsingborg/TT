@@ -40,8 +40,7 @@
                               }
                   ?>
                   <li>
-                        <a href="<?php echo $link; ?>" class="link-item" <?php echo $target; ?>>
-                              <?php echo $title; ?>
+                        <a href="<?php echo $link; ?>" class="link-item" <?php echo $target; ?>><?php echo $title; ?>
                               <?php
                                     if ($show_dates && !empty($datetime)) :
                                     $date = date_i18n('d M Y', $datetime );
