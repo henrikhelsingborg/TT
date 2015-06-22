@@ -68,4 +68,44 @@ function Helsingborg_sidebar_widgets() {
 }
 add_action('widgets_init', 'Helsingborg_sidebar_widgets');
 
+function HelsingborgContentAreaClassNames($params) {
+
+    global $myWidgetNum;
+
+    if ($params[0]['id'] == 'content-area') {
+        $myWidgetNum++;
+
+        $class = 'class="columns ';
+
+        /**
+         * Add classnames to widget
+         */
+        switch ($myWidgetNum) {
+            case 1:
+                $class .= 'large-12 ';
+                break;
+
+            default:
+                $class .= 'large-6 medium-6 small-12 ';
+                break;
+        }
+
+        $params[0]['before_widget'] = str_replace('class="', $class, $params[0]['before_widget']);
+
+        if ($myWidgetNum == 1) {
+            $params[0]['before_widget'] = '<div class="row">' . $params[0]['before_widget'];
+            $params[0]['after_widget'] .= '</div>';
+        } else if ($myWidgetNum % 2 == 0) {
+            $params[0]['before_widget'] = '<div class="row">' . $params[0]['before_widget'];
+        } else if ($myWidgetNum % 2 == 1) {
+            $params[0]['after_widget'] .= '</div>';
+        }
+
+        return $params;
+    }
+
+    return $params;
+}
+add_filter('dynamic_sidebar_params', 'HelsingborgContentAreaClassNames');
+
 ?>
