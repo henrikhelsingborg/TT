@@ -10,6 +10,22 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    /**
+     * Modal window
+     */
+    $('[data-reveal]').on('click', function (e) {
+        e.preventDefault();
+        var target = $(this).data('reveal');
+        $('#' + target).fadeIn(300);
+        $('body').addClass('no-scroll');
+    })
+
+    $('[data-action="modal-close"]').on('click', function (e) {
+        e.preventDefault();
+        $(this).parents('.modal').fadeOut(300);
+        $('body').removeClass('no-scroll');
+    })
+
 });
 /*
  * Foundation Responsive Library
