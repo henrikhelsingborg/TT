@@ -73,10 +73,14 @@
 
     li {
         padding: 0;
+        position: relative;
+        padding-right: 90px;
     }
 
     .date {
-        float: right;
+        position: absolute;
+        right: 15px;
+        top: 13px;
         color: $text-gray-light;
         font-size: 10pt;
         margin-top: 2px;
