@@ -1,0 +1,19 @@
+.mobile-search {
+    input {
+        padding: 10px 12px;
+        background-color: darken($palette-red-2, 30%);
+        border: none;
+        border-radius: 5px 0 0 5px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        color: #fff;
+        width: auto;
+    }
+
+    button[type="submit"] {
+        padding: 8px;
+        border-radius: 0 5px 5px 0;
+        background-color: lighten($palette-red-2, 40%);
+        color: $text-default;
+    }
+}

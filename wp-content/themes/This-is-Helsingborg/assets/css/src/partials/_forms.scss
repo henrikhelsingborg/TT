@@ -16,10 +16,18 @@ input[type="week"] {
 }
 
 .input-group {
-    input,
-    button {
-        vertical-align: top;
-        display: inline-block;
-        margin-left: -5px;
+    display: table;
+    width: 100%;
+
+    .form-element {
+        display: table-cell;
+        height: 100%;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
     }
 }

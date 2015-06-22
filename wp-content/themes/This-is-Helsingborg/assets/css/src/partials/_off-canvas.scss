@@ -1,0 +1,13 @@
+.off-canvas {
+    position: relative;
+    z-index: 1;
+    background-color: $palette-red-2;
+
+    .stripe {
+        width: 5px;
+    }
+
+    .container {
+        padding: 10px 15px 10px 20px;
+    }
+}

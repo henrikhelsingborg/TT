@@ -1,3 +1,9 @@
 .section-featured {
     
 }
+
+@media #{$small-only} {
+    .section-featured .columns + .columns {
+        margin-top: 20px;
+    }
+}

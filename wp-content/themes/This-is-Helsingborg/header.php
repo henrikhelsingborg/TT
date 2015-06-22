@@ -25,8 +25,17 @@
     <?php wp_head(); ?>
 </head>
 <body>
-    <div class="site-wrapper">
+    <div class="off-canvas">
+        <div class="stripe"></div>
+        <div class="container">
+            <?php
+                get_template_part('templates/partials/mobile', 'search');
+                get_template_part('templates/partials/mobile', 'navigation');
+            ?>
+        </div>
+    </div>
 
+    <div class="site-wrapper">
         <header class="site-header">
             <div class="container">
                 <div class="row">
