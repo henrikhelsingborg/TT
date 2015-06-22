@@ -61,11 +61,19 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+// Disable scrolling on any element
+//
+// Markup:
+// <body class="no-scrolling">
+
 .no-scroll {
     overflow: hidden;
 }
 
 // Loading indicator HBG
+//
+// Markup:
+// <i class="hbg-loading">Optional text</i>
 
 .hbg-loading {
     display: block;
@@ -83,4 +91,12 @@
     font-weight: normal;
     font-style: normal;
     color: $text-gray-light;
+}
+
+// Make any element display as inline-block
+//
+// .inline-block
+
+.inline-block {
+    display: inline-block;
 }

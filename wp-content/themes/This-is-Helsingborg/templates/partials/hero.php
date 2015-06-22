@@ -2,9 +2,15 @@
     <div class="stripe"></div>
     <form class="hero-search center-vertical" method="post" action="#">
         <h2><strong>Hej,</strong> vad letar du efter?</h2>
-        <div class="input-group">
-            <input type="search" name="q" placeholder="Här kan du skriva vad du letar efter…">
-            <button type="submit" class="btn btn-submit">Sök</button>
+        <div class="inline-block">
+            <div class="input-group">
+                <div class="form-element">
+                    <input class="form-control" type="search" name="q" placeholder="Här kan du skriva vad du letar efter…">
+                </div>
+                <div class="form-element">
+                    <button class="form-control btn btn-submit" type="submit">Sök</button>
+                </div>
+            </div>
         </div>
     </form>
 </div>
