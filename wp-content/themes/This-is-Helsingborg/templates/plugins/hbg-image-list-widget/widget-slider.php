@@ -2,7 +2,7 @@
 <?php echo $before_widget; ?>
 <?php echo $before_title . '<i class="fa fa-picture-o"></i> ' . (($instance['title']) ? $instance['title'] : 'Bildspel') . $after_title; ?>
 <div class="box-content">
-    <ul class="orbit-slider" data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;">
+    <ul class="orbit-slider" <?php if (count($items) > 1) : ?>data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;"<?php endif; ?>>
         <?php
             foreach ($items as $num => $item) :
                 $force_width  = (!empty($item_force_widths[$num])) ? 'width:100%;' : '';
@@ -35,7 +35,7 @@
 <?php echo $after_widget; ?>
 <?php else : ?>
 <?php echo $before_widget; ?>
-    <ul class="orbit-slider" data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;">
+    <ul class="orbit-slider" <?php if (count($items) > 1) : ?>data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;"<?php endif; ?>>
 
         <?php
             foreach ($items as $num => $item) :
