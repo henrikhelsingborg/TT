@@ -18,3 +18,15 @@ function hbg_remove_image_size($sizes) {
     return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'hbg_remove_image_size');
+
+/**
+ * Fix to rename Default Template text to 'Artikel', since this page is default
+ */
+function change_default_template_to_artikel($translation, $text, $domain) {
+    if ( $text == 'Default Template' ) {
+        return _('Artikel');
+    }
+
+    return $translation;
+}
+add_filter('gettext', 'change_default_template_to_artikel', 10, 3);

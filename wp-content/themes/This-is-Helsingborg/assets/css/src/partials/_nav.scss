@@ -25,8 +25,41 @@
             }
         }
 
+        li.current-page-ancestor,
+        li.current-menu-item {
+            a {
+                background-color: $palette-red-4;
+                color: #fff;
+                padding: 5px 8px;
+            }
+        }
+
         li:first-child {
             text-align: left;
+        }
+    }
+}
+
+.navbar-aside {
+    border: 1px solid $creamy-darker;
+
+    li {
+        position: relative;
+
+        & + li {
+            border-top: 1px solid $creamy-darker;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 6px 10px;
+        font-size: 12pt;
+        color: $text-default;
+        text-decoration: none;
+
+        &:hover {
+            color: $palette-red-4;
         }
     }
 }
