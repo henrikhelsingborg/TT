@@ -32,7 +32,7 @@
                     </header>
 
                     <?php if (!empty($content)) : ?>
-                    <div class="ingress">
+                    <div class="article-ingress">
                         <?php echo apply_filters('the_content', $main); ?>
                     </div>
                     <?php endif; ?>

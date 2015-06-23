@@ -1,0 +1,33 @@
+.article {
+    a {
+        color: $link-a;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $link-a-hover;
+            text-decoration: underline;
+        }
+
+        &:visited {
+            color: $link-a-visited;
+        }
+    }
+}
+
+.article-header {
+    h1 {
+        color: $palette-red-4;
+    }
+}
+
+.article-ingress {
+    margin-bottom: 20px;
+    font-size: 16pt;
+    font-weight: 300;
+    line-height: 150%;
+}
+
+.article-body {
+
+}
