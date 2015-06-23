@@ -20,7 +20,9 @@
         ?>
         <div class="columns large-4 medium-6 end">
             <a href="<?php echo $link; ?>" class="index-item" data-equalizer-watch>
+                <?php if (isset($image[0])) : ?>
                 <img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>">
+                <?php endif; ?>
                 <span class="index-caption"><?php echo $page->post_title ?></span>
             </a>
         </div>

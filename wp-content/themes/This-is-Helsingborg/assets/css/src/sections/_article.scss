@@ -1,3 +1,12 @@
 .section-article {
     border-top: 1px solid $creamy-darker;
+    padding-bottom: 60px;
+}
+
+#widget-content-area {
+    margin-top: 30px;
+}
+
+#widget-content-area .widget + .widget {
+    margin-top: 20px;
 }

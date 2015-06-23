@@ -38,9 +38,3 @@
         margin-bottom: $column-gutter;
     }
 }
-
-@media #{$large-up} {
-    .index-item {
-        margin-bottom: 0;
-    }
-}

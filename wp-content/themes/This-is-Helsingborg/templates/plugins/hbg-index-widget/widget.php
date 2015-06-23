@@ -1,5 +1,6 @@
-<div class="collection collection-test-colors">
-    <div class="row">
+<?php echo $before_widget; ?>
+<div class="row">
+    <div class="index" data-equalizer>
         <?php
             foreach ($items as $num => $item) :
                 $item_id = $item_ids[$num];
@@ -24,14 +25,16 @@
                     $title = $instance['headline' . ($num+1)];
                 }
         ?>
-        <a href="<?php echo $link ?>" class="collection-item columns large-6 medium-6 small-12 left">
-            <div class="collection-item-content">
-                <div class="collection-item-image" style="background-image:url('<?php echo $image[0]; ?>');"></div>
-                <div class="collection-item-headline">
-                    <?php echo $title; ?>
-                </div>
-            </div>
-        </a>
+        <div class="columns large-6 medium-6 end">
+            <a href="<?php echo $link; ?>" class="index-item" data-equalizer-watch>
+                <?php if (isset($image[0])) : ?>
+                <img src="<?php echo $image[0]; ?>">
+                <?php endif; ?>
+                <span class="index-caption"><?php echo $title; ?></span>
+                <span class="index-description hidden"><?php echo wpautop($main, true); ?></span>
+            </a>
+        </div>
         <?php endforeach; ?>
     </div>
 </div>
+<?php echo $after_widget; ?>

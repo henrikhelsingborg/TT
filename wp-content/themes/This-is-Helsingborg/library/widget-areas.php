@@ -72,7 +72,7 @@ function HelsingborgContentAreaClassNames($params) {
 
     global $myWidgetNum;
 
-    if ($params[0]['id'] == 'content-area') {
+    if ($params[0]['id'] == 'content-area' && is_front_page()) {
         $myWidgetNum++;
 
         $class = 'class="columns ';
