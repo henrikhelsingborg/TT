@@ -1,0 +1,61 @@
+.sidebar-right {
+    padding-top: 40px;
+
+    .widget + .widget {
+        margin-top: 20px;
+    }
+}
+
+.sidebar-right {
+    .widget {
+        &:nth-child(1n) {
+            .widget-content {
+                background: $palette-red-1;
+
+                p > a {
+                    color: darken($palette-red-1, 20%);
+                }
+            }
+        }
+
+        &:nth-child(2n) {
+            .widget-content {
+                background: $palette-red-2;
+
+                p > a {
+                    color: darken($palette-red-2, 20%);
+                }
+            }
+        }
+
+        &:nth-child(3n) {
+            .widget-content {
+                background: $palette-red-3;
+
+                p > a {
+                    color: darken($palette-red-3, 20%);
+                }
+            }
+        }
+
+        &:nth-child(4n) {
+            .widget-content {
+                background: $palette-red-4;
+
+                p > a {
+                    color: darken($palette-red-4, 20%);
+                }
+            }
+        }
+
+        &:nth-child(5n) {
+            .widget-content {
+                background: $palette-red-5;
+
+                p > a {
+                    color: darken($palette-red-5, 20%);
+                }
+            }
+        }
+    }
+}

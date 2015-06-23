@@ -29,7 +29,7 @@
             </div>
 
             <?php if (is_active_sidebar('right-sidebar')) : ?>
-            <aside class="columns large-3 medium-3 small-12">
+            <aside class="sidebar-right columns large-3 medium-3 small-12">
                 <?php dynamic_sidebar('right-sidebar'); ?>
             </aside>
             <?php endif; ?>

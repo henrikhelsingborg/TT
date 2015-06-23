@@ -1,0 +1,35 @@
+.quick-links-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin: 0;
+        padding: 0;
+
+        & + li {
+            margin-top: 3px;
+        }
+
+        a {
+            display: block;
+            background: rgba(0, 0, 0, .1);
+            padding: 8px 12px;
+            color: #fff;
+            letter-spacing: .8px;
+            font-weight: 300;
+            text-decoration: none;
+
+            &:hover {
+                background: rgba(0, 0, 0, .2);
+            }
+
+            .date {
+                float: right;
+                font-size: 9pt;
+                position: relative;
+                top: 3px;
+            }
+        }
+    }
+}

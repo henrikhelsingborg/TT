@@ -43,7 +43,7 @@ function Helsingborg_sidebar_widgets() {
         'before_widget' => '<div class="widget large-12 medium-6 columns"><div class="widget-content">',
         'after_widget' => '</div></div>',
         'before_title' => '<h2>',
-        'after_title' => '</h2><div class="divider"><div class="upper-divider"></div><div class="lower-divider"></div></div>'
+        'after_title' => '</h2>'
     ));
 
     register_sidebar(array(
@@ -53,23 +53,22 @@ function Helsingborg_sidebar_widgets() {
         'before_widget' => '<div class="widget large-12 medium-6 columns"><div class="widget-content">',
         'after_widget' => '</div></div>',
         'before_title' => '<h2>',
-        'after_title' => '</h2><div class="divider"><div class="upper-divider"></div><div class="lower-divider"></div></div>'
+        'after_title' => '</h2>'
     ));
 
     register_sidebar(array(
         'id' => 'right-sidebar',
         'name' => __('Höger area', 'Helsingborg'),
         'description' => __('Lägg till de widgets som ska visas i högra sidebaren.', 'Helsingborg'),
-        'before_widget' => '<div class="widget large-12 medium-6 columns"><div class="widget-content">',
+        'before_widget' => '<div class="widget large-12 medium-6 columns %2$s"><div class="widget-content">',
         'after_widget' => '</div></div>',
         'before_title' => '<h2>',
-        'after_title' => '</h2><div class="divider"><div class="upper-divider"></div><div class="lower-divider"></div></div>'
+        'after_title' => '</h2>'
     ));
 }
 add_action('widgets_init', 'Helsingborg_sidebar_widgets');
 
 function HelsingborgContentAreaClassNames($params) {
-
     global $myWidgetNum;
 
     if ($params[0]['id'] == 'content-area' && is_front_page()) {

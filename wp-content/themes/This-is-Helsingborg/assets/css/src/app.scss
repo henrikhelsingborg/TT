@@ -55,6 +55,7 @@
 @import 'partials/modal';
 @import 'partials/breadcrumbs';
 @import 'partials/search';
+@import 'partials/sidebars';
 @import 'partials/utilities';
 
 @import 'partials/mobile-search';
@@ -63,7 +64,10 @@
  * ## Widgets
  * Style of WordPress widgets
  */
+@import 'widgets/widget-base';
 @import 'widgets/orbit';
+@import 'widgets/sp-image';
+@import 'widgets/quick-links-list';
 
 /**
  * ## Sections

@@ -1,0 +1,38 @@
+/**
+ * Widget structure
+ */
+.widget-content, {
+    color: #fff;
+
+    .widget-title,
+    h2 {
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+        font-size: 15pt;
+        font-weight: 500;
+        line-height: 120%;
+        //word-break: break-word;
+        //hyphens: auto;
+
+        .fa {
+            margin-right: 5px;
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    p > a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/**
+ * Widget content holder
+ */
+.widget-content-holder {
+    padding: $widget-padding;
+}
