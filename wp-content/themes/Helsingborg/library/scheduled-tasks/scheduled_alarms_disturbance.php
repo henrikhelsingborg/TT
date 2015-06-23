@@ -323,6 +323,7 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                     alarm_alarms a
                 WHERE
                     a.SmallDisturbance = 'true'
+                    AND a.Place = 'Helsingborg'
                 ORDER BY a.SentTime DESC
             ", OBJECT);
         }
@@ -357,6 +358,7 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                     alarm_alarms a
                 WHERE
                     a.BigDisturbance = 'true'
+                    AND a.Place = 'Helsingborg'
                 ORDER BY a.SentTime DESC
             ", OBJECT);
         }
