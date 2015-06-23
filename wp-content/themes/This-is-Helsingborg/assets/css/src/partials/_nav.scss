@@ -62,6 +62,91 @@
             color: $palette-red-4;
         }
     }
+
+    .sub-menu {
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid $creamy-darker;
+        border-left: 8px solid $creamy-darker;
+    }
+
+    .has-childs {
+        > a {
+            padding-right: 30px;
+        }
+
+        &::after {
+            position: absolute;
+            right: 10px;
+            top: 11px;
+            @include hbg-icon($icon-plus-square);
+            font-size: 10pt;
+            color: $text-gray-light;
+        }
+    }
+
+    .has-childs.current {
+        > a {
+            padding-right: 30px;
+        }
+
+        &::after {
+            position: absolute;
+            right: 12px;
+            top: 11px;
+            @include hbg-icon($icon-caret-down);
+            font-size: 10pt;
+            color: $text-gray-light;
+        }
+    }
+
+    .current-ancestor:not(.current-node),
+    .current-ancestor.has-childs {
+        //background-color: $creamy;
+
+        > a {
+            padding-right: 30px;
+        }
+
+        &::after {
+            position: absolute;
+            right: 12px;
+            top: 11px;
+            @include hbg-icon($icon-caret-down);
+            font-size: 10pt;
+            color: $text-gray-light;
+        }
+    }
+
+    .current-ancestor-last {
+        background-color: $creamy;
+    }
+
+    .current {
+        > a {
+            position: relative;
+            color: $palette-red-4;
+        }
+
+        &:not(.has-childs) > a {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -10px;
+                bottom: 0;
+                width: 10px;
+                display: block;
+                background-color: $palette-red-4;
+            }
+        }
+    }
+
+    .nav > .current > a {
+        &::after {
+            display: none;
+        }
+    }
 }
 
 .navbar-mainmenu {

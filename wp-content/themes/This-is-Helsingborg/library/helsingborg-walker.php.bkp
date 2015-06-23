@@ -41,7 +41,7 @@ class Helsingborg_Walker extends Walker {
         $top_level_elements = array();
         $children_elements  = array();
         $parent_field       = $this->db_fields['parent'];
-        $child_of           = (array_reverse(get_post_ancestors($post->ID))[1]) ? array_reverse(get_post_ancestors($post->ID))[1] : $post->ID;
+        $child_of           = intval(get_option('page_on_front'));
 
         /**
          * Loop elements
@@ -128,8 +128,6 @@ class Helsingborg_Walker extends Walker {
 
         if (!empty($current_page)) {
 
-            $page_on_front = (array_reverse(get_post_ancestors($post->ID))[1]) ? array_reverse(get_post_ancestors($post->ID))[1] : $post->ID;
-
             /**
              * Get current page object
              * @var object
@@ -145,7 +143,7 @@ class Helsingborg_Walker extends Walker {
             /**
              * Add class "current-node" if this page is the current node
              */
-            if (in_array($page->ID, $_current_page->ancestors) && $page->post_parent == $page_on_front) {
+            if (in_array($page->ID, $_current_page->ancestors) && $page->post_parent == get_option('page_on_front')) {
                 array_push($css_class_list, 'current-node');
             }
 
@@ -157,34 +155,13 @@ class Helsingborg_Walker extends Walker {
             }
 
             /**
-             * Add class "current-ancestor" if this page is the current ancestor
-             */
-            $args = array(
-                'post_type' => 'page',
-                'post_status' => 'publish',
-                'post_parent' => $_current_page->ID,
-            );
-
-            $current_page_children = get_children($args);
-            $current_page_has_children = empty($children);
-
-            if ($page->ID == $_current_page->ancestors[0] && !$current_page_has_children) {
-                array_push($css_class_list, 'current-ancestor-last');
-            }
-
-            /**
              * Add class "current-page" if this is the current page
              * @var [type]
              */
             if ($page->ID == $current_page) {
                 array_push($css_class_list, 'current');
-
-                if ($page->post_parent == $page_on_front) {
+                if ($page->post_parent == get_option('page_on_front')) {
                     array_push($css_class_list, 'current-node');
-                }
-
-                if ($current_page_has_children) {
-                    array_push($css_class_list, 'current-ancestor-last');
                 }
             }
 
@@ -205,7 +182,7 @@ class Helsingborg_Walker extends Walker {
              * Check if page got childrens or not, if it does, add has-child class
              * - Exclude list page childrens
              */
-            if ($has_children && get_post_meta($page->ID,'_wp_page_template',TRUE) != 'templates/list-page.php') {
+            if (!in_array( $page->ID, $_current_page->ancestors ) && $has_children && ($page->post_parent != get_option('page_on_front')) && get_post_meta($page->ID,'_wp_page_template',TRUE) != 'templates/list-page.php') {
                 array_push($css_class_list, 'has-childs');
             }
 
