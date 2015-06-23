@@ -31,3 +31,20 @@
 .article-body {
 
 }
+
+.article-accessibility {
+    li + li {
+        margin-left: 20px;
+    }
+
+    a {
+        font-weight: 300;
+        color: $text-gray-dark !important;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none !important;
+            color: #000 !important;
+        }
+    }
+}

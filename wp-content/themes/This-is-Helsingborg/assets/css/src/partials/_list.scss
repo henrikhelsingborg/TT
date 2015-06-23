@@ -55,6 +55,18 @@
     }
 }
 
+.list-plain {
+    display: block;
+
+    li {
+        padding: 0;
+    }
+
+    a {
+        padding: 0;
+    }
+}
+
 .list-horizontal {
     li {
         float: left;
