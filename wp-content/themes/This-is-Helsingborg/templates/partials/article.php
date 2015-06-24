@@ -9,12 +9,13 @@
         <h1><?php the_title(); ?></h1>
     </header>
 
-    <?php if (!empty($content)) : ?>
+    <?php if (!empty($main)) : ?>
     <div class="article-ingress">
         <?php echo apply_filters('the_content', $main); ?>
     </div>
     <?php endif; ?>
 
+    <?php if (!empty($content)) : ?>
     <div class="article-body">
     <?php
         if (!empty($content)) {
@@ -24,4 +25,5 @@
         }
     ?>
     </div>
+    <?php endif; ?>
 </article>
