@@ -44,7 +44,7 @@
         <div id="<?php echo $this->get_field_id($num); ?>" class="list-item">
             <h5 class="moving-handle">
                 <span class="number"><?php echo $num; ?></span>.
-                <span class="item-title"><?php echo $name; ?> <?php echo ($page->post_status !== 'publish') ? '<span style="color:#ff0000;font-weight:bold;font-style:italic;">(Ej publicerad)</span>' : ''; ?></span>
+                <span class="item-title"><?php echo $name; ?> <?php echo ($item_id && $page->post_status !== 'publish') ? '<span style="color:#ff0000;font-weight:bold;font-style:italic;">(Ej publicerad)</span>' : ''; ?></span>
                 <a class="hbgllw-action hide-if-no-js"></a>
             </h5>
 

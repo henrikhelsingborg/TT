@@ -12,7 +12,8 @@
             .widget-content {
                 background: $palette-red-1;
 
-                p > a {
+                p > a,
+                .textwidget a {
                     color: darken($palette-red-1, 20%);
                 }
             }
@@ -22,7 +23,8 @@
             .widget-content {
                 background: $palette-red-2;
 
-                p > a {
+                p > a,
+                .textwidget a {
                     color: darken($palette-red-2, 20%);
                 }
             }
@@ -32,7 +34,8 @@
             .widget-content {
                 background: $palette-red-3;
 
-                p > a {
+                p > a,
+                .textwidget a {
                     color: darken($palette-red-3, 20%);
                 }
             }
@@ -42,7 +45,8 @@
             .widget-content {
                 background: $palette-red-4;
 
-                p > a {
+                p > a,
+                .textwidget a {
                     color: darken($palette-red-4, 20%);
                 }
             }
@@ -52,7 +56,8 @@
             .widget-content {
                 background: $palette-red-5;
 
-                p > a {
+                p > a,
+                .textwidget a {
                     color: darken($palette-red-5, 20%);
                 }
             }

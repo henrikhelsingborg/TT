@@ -72,4 +72,19 @@ if (!function_exists("hbg_purge_page")) {
     add_filter('hbg_page_widget_save', 'hbg_purge_page');
 }
 
+if (!function_exists('')) {
+    function is_external_url($external_url, $internal_url = null) {
+        if (!$internal_url) $internal_url = 'http://' . $_SERVER['SERVER_NAME'];
+
+        $url_host = parse_url($external_url, PHP_URL_HOST);
+        $base_url_host = parse_url($internal_url, PHP_URL_HOST);
+
+        if ($url_host == $base_url_host || empty($url_host)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+}
+
 

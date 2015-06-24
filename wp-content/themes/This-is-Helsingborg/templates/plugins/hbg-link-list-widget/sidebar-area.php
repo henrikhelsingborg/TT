@@ -43,8 +43,7 @@
             $time = date('H:i',   $datetime);
     ?>
         <li <?php echo $class; ?>>
-            <a href="<?php echo $link; ?>" <?php echo $target; ?>>
-                <?php echo $title; ?>
+            <a class="link-item link-item-light" href="<?php echo $link; ?>" <?php echo $target; ?>><?php echo $title; ?>
                 <?php
                     if ($show_dates) :
                     if ($today == $date) :
