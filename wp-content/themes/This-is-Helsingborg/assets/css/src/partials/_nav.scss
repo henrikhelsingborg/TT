@@ -227,19 +227,38 @@
 }
 
 .nav-mobilemenu {
-    margin: 10px 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 0;
+    border: none;
 
-    a {
-        font-weight: 300;
-        letter-spacing: .5px;
+    li + li {
+        border: none;
+    }
+
+    > ul > li > a {
         color: #fff;
-        text-decoration: none;
-        display: block;
-        padding: 5px 10px;
-        border-radius: 5px;
+        padding-left: 15px;
 
         &:hover {
+            color: #fff;
             background-color: darken($palette-red-2, 10%);
+        }
+    }
+
+    .current-node > a {
+        background-color: darken($palette-red-2, 10%);
+        color: #fff;
+    }
+
+    .sub-menu {
+        background-color: lighten($palette-red-2, 50%);
+        border-top: none;
+        border-left-color: #ddd;
+
+        a:hover {
+            background-color: lighten($palette-red-2, 46%);
         }
     }
 }

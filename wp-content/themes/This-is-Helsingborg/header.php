@@ -52,12 +52,10 @@
 
         <div class="mobile-menu-wrapper">
             <div class="stripe"></div>
-            <div class="container">
-                <?php
-                    get_template_part('templates/partials/mobile', 'search');
-                    get_template_part('templates/partials/mobile', 'navigation');
-                ?>
-            </div>
+            <?php
+                get_template_part('templates/partials/mobile', 'search');
+                get_template_part('templates/partials/mobile', 'navigation');
+            ?>
         </div>
 
         <?php
