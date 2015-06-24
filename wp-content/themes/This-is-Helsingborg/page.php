@@ -28,13 +28,11 @@
                 <?php endif; ?>
             </div>
 
-            <?php if (is_active_sidebar('right-sidebar')) : ?>
-            <aside class="sidebar-right columns large-3 medium-3 small-12">
-                <div class="row">
-                    <?php dynamic_sidebar('right-sidebar'); ?>
-                </div>
-            </aside>
-            <?php endif; ?>
+            <?php
+                if (is_active_sidebar('right-sidebar')) {
+                    get_template_part('templates/partials/sidebar', 'right');
+                }
+            ?>
         </div>
     </div>
 </section>

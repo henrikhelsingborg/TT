@@ -16,7 +16,7 @@ function Helsingborg_sidebar_widgets() {
         'id' => 'slider-area',
         'name' => __('Topparea', 'Helsingborg'),
         'description' => __('Lägg till de sliders som ska visas på sidan.', 'Helsingborg'),
-        'before_widget' => '<div class="large-6 medium-6 columns"><div class="box widget">',
+        'before_widget' => (is_front_page()) ? '<div class="large-6 medium-6 columns"><div class="box widget">' : '<div class="large-12 medium-12 columns"><div class="box widget">',
         'after_widget' => '</div></div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
