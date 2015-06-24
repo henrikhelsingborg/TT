@@ -1,20 +1,3 @@
-.article {
-    a {
-        color: $link-a;
-        text-decoration: none;
-
-        &:hover,
-        &:focus {
-            color: $link-a-hover;
-            text-decoration: underline;
-        }
-
-        &:visited {
-            color: $link-a-visited;
-        }
-    }
-}
-
 .article-header {
     h1 {
         color: $palette-red-4;
@@ -29,7 +12,42 @@
 }
 
 .article-body {
+    a {
+        color: $link-a;
+        text-decoration: none;
 
+        &:hover,
+        &:focus {
+            color: $link-a-hover;
+            text-decoration: underline;
+        }
+
+        &:visited {
+            color: $link-a-visited;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            position: relative;
+
+            & + li {
+                margin-top: 5px;
+            }
+
+            &::before {
+                position: absolute;
+                left: -20px;
+                top: 9px;
+                content: '';
+                width: 6px;
+                height: 6px;
+                background-color: $palette-red-3;
+            }
+        }
+    }
 }
 
 .article-accessibility {
