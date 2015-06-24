@@ -23,7 +23,9 @@
                 <?php if (isset($image[0])) : ?>
                 <img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>">
                 <?php endif; ?>
-                <span class="index-caption"><?php echo $page->post_title ?></span>
+                <span class="index-container">
+                    <span class="index-caption"><?php echo $page->post_title ?></span>
+                </span>
             </a>
         </div>
         <?php endforeach; ?>

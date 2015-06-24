@@ -30,8 +30,10 @@
                 <?php if (isset($image[0])) : ?>
                 <img src="<?php echo $image[0]; ?>">
                 <?php endif; ?>
-                <span class="index-caption"><?php echo $title; ?></span>
-                <span class="index-description hidden"><?php echo wpautop($main, true); ?></span>
+                <span class="index-container">
+                    <span class="index-caption"><?php echo $title; ?></span>
+                    <span class="index-description"><?php echo wpautop($main, true); ?></span>
+                </span>
             </a>
         </div>
         <?php endforeach; ?>

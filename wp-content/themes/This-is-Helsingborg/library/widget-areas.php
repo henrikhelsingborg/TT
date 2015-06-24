@@ -16,7 +16,7 @@ function Helsingborg_sidebar_widgets() {
         'id' => 'slider-area',
         'name' => __('Topparea', 'Helsingborg'),
         'description' => __('Lägg till de sliders som ska visas på sidan.', 'Helsingborg'),
-        'before_widget' => (is_front_page()) ? '<div class="large-6 medium-6 columns"><div class="box widget">' : '<div class="large-12 medium-12 columns"><div class="box widget">',
+        'before_widget' => '<div class="large-12 medium-12 small-12 columns"><div class="box widget">',
         'after_widget' => '</div></div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
@@ -70,6 +70,13 @@ add_action('widgets_init', 'Helsingborg_sidebar_widgets');
 
 function HelsingborgContentAreaClassNames($params) {
     global $myWidgetNum;
+
+    /**
+     * Set column width to 6 on frontpage "featured" section
+     */
+    if ($params[0]['id'] == 'slider-area' && is_front_page()) {
+        $params[0]['before_widget'] = '<div class="large-6 medium-6 small-6 columns"><div class="box widget">';
+    }
 
     if ($params[0]['id'] == 'content-area' && is_front_page()) {
         $myWidgetNum++;
