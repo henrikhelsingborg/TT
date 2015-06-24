@@ -1,6 +1,6 @@
 <?php
 
-class Helsingborg_Walker extends Walker {
+class Helsingborg_Walker_Mobile extends Walker {
 
     public $tree_type = 'page';
     public $db_fields = array(
