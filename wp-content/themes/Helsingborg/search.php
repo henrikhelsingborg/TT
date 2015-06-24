@@ -88,6 +88,7 @@
 					}
 				}
 				item += '<h2 class="list-title">' + data.items[i].title + '</h2></a>';
+
 				if (meta['moddate'] !== undefined ) {
 					item += '<span class="news-date">' + convertDate(meta['moddate']) + '</span>';
 				} else if (meta['creationdate'] !== undefined) {

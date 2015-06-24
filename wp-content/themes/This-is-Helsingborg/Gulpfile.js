@@ -56,7 +56,7 @@ gulp.task('sass-dist', function () {
 /**
  * Compiles the JavaScripts for distribution
  */
-gulp.task('scripts-dist', function () {
+gulp.task('scripts-dev', function () {
     return gulp.src([
                 'assets/js/src/dev/*.js',
                 bower_components + 'foundation/js/foundation/foundation.js',
@@ -67,8 +67,19 @@ gulp.task('scripts-dist', function () {
             .pipe(gulp.dest('assets/js/dist'))
             .pipe(rename('app.min.js'))
             .pipe(uglify())
-            .pipe(gulp.dest('assets/js/dist'))
+            .pipe(gulp.dest('assets/js/dist'));
 });
+
+gulp.task('scripts-search', function () {
+    return gulp.src('assets/js/src/search/*.js')
+            .pipe(concat('search.js'))
+            .pipe(gulp.dest('assets/js/dist'))
+            .pipe(rename('search.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('assets/js/dist'));
+});
+
+gulp.task('scripts-dist', ['scripts-dev', 'scripts-search']);
 
 /**
  * Copies given bower components to the assets/js/dist directory
@@ -88,7 +99,7 @@ gulp.task('scripts-copy', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('assets/css/src/**/*.scss', ['sass-dist']);
-    gulp.watch('assets/js/src/dev/*.js', ['scripts-dist']);
+    gulp.watch('assets/js/src/**/*.js', ['scripts-dist']);
 });
 
 /**

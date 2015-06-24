@@ -30,8 +30,20 @@ if (!function_exists('hbg_enqueue_scripts')) {
          * Stylesheet
          */
         wp_enqueue_style('style-app', get_template_directory_uri() . '/assets/css/dist/app.min.css');
+
+        hbgPageSpecificScripts();
     }
     add_action('wp_enqueue_scripts', 'hbg_enqueue_scripts');
+
+    function hbgPageSpecificScripts() {
+        /**
+         * Search result page
+         */
+        if (is_search()) {
+            wp_register_script('app-search', get_template_directory_uri() . '/assets/js/dist/search.min.js', array(), '1.0.0', true);
+            wp_enqueue_script('app-search');
+        }
+    }
 
     /**
      * Admin specific scripts to enqueue
