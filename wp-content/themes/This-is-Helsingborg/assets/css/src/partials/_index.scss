@@ -44,6 +44,21 @@
     }
 }
 
+.index-horizontal {
+    .index-item {
+        img {
+            float: left;
+            margin-right: $widget-padding;
+            width: auto;
+            height: 100%;
+        }
+
+        .index-description {
+            font-size: 10pt;
+        }
+    }
+}
+
 @media #{$small-up} {
     .index-item {
         margin-bottom: $column-gutter;
