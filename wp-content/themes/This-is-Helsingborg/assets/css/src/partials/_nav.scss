@@ -233,13 +233,15 @@
     margin-right: 0;
     border: none;
 
-    li + li {
+    > ul > li + li {
         border: none;
     }
 
     > ul > li > a {
         color: #fff;
         padding-left: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
 
         &:hover {
             color: #fff;
@@ -254,11 +256,33 @@
 
     .sub-menu {
         background-color: lighten($palette-red-2, 50%);
-        border-top: none;
         border-left-color: #ddd;
+
+        a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
         a:hover {
             background-color: lighten($palette-red-2, 46%);
+        }
+    }
+
+    .has-childs,
+    .has-childs.current,
+    .current-ancestor:not(.current-node),
+    .current-ancestor.has-childs {
+        &::after {
+            top: 13px;
+        }
+    }
+
+    .current {
+        &:not(.has-childs) > a {
+            &::after {
+                left: -8px;
+                width: 8px;
+            }
         }
     }
 }
