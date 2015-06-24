@@ -321,9 +321,11 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                     a.Cities
                 FROM
                     alarm_alarms a
+                LEFT JOIN alarm_stations s
+                    ON a.Station = s.StationID
                 WHERE
                     a.SmallDisturbance = 'true'
-                    AND a.Place = 'Helsingborg'
+                    AND s.CityName = 'Helsingborg'
                 ORDER BY a.SentTime DESC
             ", OBJECT);
         }
@@ -356,9 +358,11 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                     a.Cities
                 FROM
                     alarm_alarms a
+                LEFT JOIN alarm_stations s
+                    ON a.Station = s.StationID
                 WHERE
                     a.BigDisturbance = 'true'
-                    AND a.Place = 'Helsingborg'
+                    AND s.CityName = 'Helsingborg'
                 ORDER BY a.SentTime DESC
             ", OBJECT);
         }
