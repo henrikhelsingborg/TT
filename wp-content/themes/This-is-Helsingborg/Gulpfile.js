@@ -36,8 +36,12 @@ gulp.task('jquery', function () {
  * Compiles the SASS for distribution
  */
 gulp.task('sass-dist', function () {
-    return gulp.src('assets/css/src/app.scss')
+    return gulp.src([
+                'assets/css/src/app.scss',
+                bower_components + 'foundation-multiselect/zmultiselect/zurb5-multiselect.css'
+            ])
             .pipe(plumber())
+            .pipe(concat('app.css'))
             .pipe(sass())
             .pipe(autoprefixer(
                 'last 2 version',
@@ -61,7 +65,8 @@ gulp.task('scripts-dev', function () {
                 'assets/js/src/dev/*.js',
                 bower_components + 'foundation/js/foundation/foundation.js',
                 bower_components + 'foundation/js/foundation/foundation.equalizer.js',
-                bower_components + 'foundation/js/foundation/foundation.orbit.js'
+                bower_components + 'foundation/js/foundation/foundation.orbit.js',
+                bower_components + 'foundation-multiselect/zmultiselect/zurb5-multiselect.js'
             ])
             .pipe(concat('app.js'))
             .pipe(gulp.dest('assets/js/dist'))

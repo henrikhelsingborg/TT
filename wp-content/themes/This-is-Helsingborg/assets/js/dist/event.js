@@ -427,7 +427,17 @@ jQuery(document).ready(function($) {
     $.post(ajaxurl, requestParams, function(response) {
         _eventPageModel.eventTypes(ExtractModels(_eventPageModel, JSON.parse(response), TypeModel));
 
-        // PUT THE MULTISELECT HERE
+        $("select#municipality_multiselect").zmultiselect({
+            live: "#selectedTypes",
+            filter: true,
+            filterPlaceholder: 'Filtrera...',
+            filterResult: true,
+            filterResultText: "Visar",
+            selectedText: ['Valt','av'],
+            selectAll: true,
+            selectAllText: ['Markera alla','Avmarkera alla'],
+            placeholder: 'Välj evenemangstyp(er)…'
+        });
     });
 
     /**

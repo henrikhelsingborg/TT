@@ -15,7 +15,7 @@ input[type="text"],
 select {
     &.form-control {
         padding: 8px;
-        background: #fff;
+        background-color: #fff;
         border: 1px solid $creamy-darker;
         font-weight: 300;
         width: 100%;
@@ -87,5 +87,36 @@ input[type="checkbox"] {
 @media #{$small-only} {
     .columns + .columns, .section-featured .columns + .columns {
         margin-top: 0 !important;
+    }
+}
+
+// Zmultiselect overriders
+
+.zselect {
+    background-color: #fff;
+    border: 1px solid $creamy-darker;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        right: 12px;
+        top: 17px;
+        @include hbg-icon($icon-caret-down);
+        font-size: 10pt;
+        color: $text-gray-light;
+        cursor: default;
+    }
+
+    ul {
+        padding-bottom: 12px !important;
+    }
+
+    .selectall,
+    .deselectall {
+        cursor: pointer;
+    }
+
+    .zmsfilter input {
+        @extend .form-control;
     }
 }
