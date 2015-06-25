@@ -118,6 +118,75 @@
     color: $text-gray-light;
 }
 
+// Loading indicator three blinking dots
+
+.dots-loading {
+    $dots-size: 12px;
+    $dots-space: 3px;
+
+    position: relative;
+    display: inline-block;
+    width: $dots-size;
+    height: $dots-size;
+    border-radius: 50%;
+    background: rgba(#fff, .5);
+    animation: blink 1.5s .33s ease-in-out infinite;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: -($dots-size + $dots-space);
+        width: $dots-size;
+        height: $dots-size;
+        border-radius: 50%;
+        background-color: rgba(#fff, .5);
+        animation: blink 1.5s 0s ease-in-out infinite;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: -($dots-size + $dots-space);
+        width: $dots-size;
+        height: $dots-size;
+        border-radius: 50%;
+        background-color: rgba(#fff, .5);
+        animation: blink 1.5s .66s ease-in-out infinite;
+    }
+}
+
+.dots-loading-small {
+    $dots-size: 10px;
+    $dots-space: 3px;
+
+    width: $dots-size;
+    height: $dots-size;
+
+    &::before {
+        left: -($dots-size + $dots-space);
+        width: $dots-size;
+        height: $dots-size;
+    }
+
+    &::after {
+        right: -($dots-size + $dots-space);
+        width: $dots-size;
+        height: $dots-size;
+    }
+}
+
+@keyframes blink {
+    0% {
+        background-color: rgba(#fff, .5);
+    }
+    50% {
+        background-color: rgba(#fff, 1);
+    }
+    100% {
+        background-color: rgba(#fff, .5);
+    }
+}
+
 // Make any element display as inline-block
 //
 // .inline-block

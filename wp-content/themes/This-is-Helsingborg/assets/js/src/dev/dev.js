@@ -52,6 +52,17 @@ jQuery(document).ready(function ($) {
                 maxHeight: 0 + 'px'
             }, 100);
         }
-    })
+    });
+
+    /**
+     * Search button click
+     */
+    $('.search .btn-submit').on('click', function (e) {
+        if ($(this).parents('.hero').length) {
+            $(this).html('<i class="dots-loading dots-loading-small"></i>');
+        } else {
+            $(this).html('<i class="dots-loading"></i>');
+        }
+    });
 
 });
