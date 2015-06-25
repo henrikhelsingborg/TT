@@ -22,7 +22,7 @@
     }
 }
 
-.section-featured .sidebar-search {
+.section-featured .search {
     margin: 0;
 
     input {
@@ -86,6 +86,10 @@
 
     & + .search-result-item {
         border-top: 1px solid $creamy;
+    }
+
+    b {
+        background-color: lighten($palette-red-4, 55%);
     }
 }
 
