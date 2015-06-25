@@ -38,7 +38,8 @@ gulp.task('jquery', function () {
 gulp.task('sass-dist', function () {
     return gulp.src([
                 'assets/css/src/app.scss',
-                bower_components + 'foundation-multiselect/zmultiselect/zurb5-multiselect.css'
+                bower_components + 'foundation-multiselect/zmultiselect/zurb5-multiselect.css',
+                bower_components + 'datetimepicker/jquery.datetimepicker.css'
             ])
             .pipe(plumber())
             .pipe(concat('app.css'))
@@ -66,7 +67,8 @@ gulp.task('scripts-dev', function () {
                 bower_components + 'foundation/js/foundation/foundation.js',
                 bower_components + 'foundation/js/foundation/foundation.equalizer.js',
                 bower_components + 'foundation/js/foundation/foundation.orbit.js',
-                bower_components + 'foundation-multiselect/zmultiselect/zurb5-multiselect.js'
+                bower_components + 'foundation-multiselect/zmultiselect/zurb5-multiselect.js',
+                bower_components + 'datetimepicker/jquery.datetimepicker.js'
             ])
             .pipe(concat('app.js'))
             .pipe(gulp.dest('assets/js/dist'))

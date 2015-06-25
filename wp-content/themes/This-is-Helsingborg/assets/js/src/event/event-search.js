@@ -1,6 +1,6 @@
 var _eventPageModel = null;
 
-jQuery(document).ready(function($) {
+$(document).ready(function($) {
     var events = {};
     var eventTypes = {};
 
@@ -75,6 +75,39 @@ jQuery(document).ready(function($) {
     var currentDate = new Date();
     currentDate.setDate(currentDate.getDate());
 
+    $('#datetimepickerstart').datetimepicker({
+        minDate: currentDate,
+        weeks: true,
+        lang: 'se',
+        timepicker: false,
+        format: 'Y-m-d',
+        formatDate: 'Y-m-d',
+        scrollMonth: false,
+        scrollTime: false,
+        scrollInput: false,
+        onShow: function(ct) {
+            this.setOptions({
+                maxDate: $('#datetimepickerend').val() ? $('#datetimepickerend').val() : false
+            })
+        }
+    });
+
+    $('#datetimepickerend').datetimepicker({
+        weeks: true,
+        lang: 'se',
+        timepicker: false,
+        format: 'Y-m-d',
+        formatDate: 'Y-m-d',
+        scrollMonth: false,
+        scrollTime: false,
+        scrollInput: false,
+        onShow:function(ct) {
+            this.setOptions({
+                minDate: $('#datetimepickerstart').val() ? $('#datetimepickerstart').val() : false
+            })
+        }
+    });
+
     /**
      * Open modal
      */
@@ -90,8 +123,8 @@ jQuery(document).ready(function($) {
         var organizer_list = $('#organizer-modal');
 
         document.getElementById('event-times').style.display = 'block';
-        jQuery('.event-times-loading').show();
-        jQuery('.event-times-item').remove();
+        $('.event-times-loading').show();
+        $('.event-times-item').remove();
         document.getElementById('event-organizers').style.display = 'none';
 
         var events = _eventPageModel.events();
@@ -104,7 +137,7 @@ jQuery(document).ready(function($) {
         }
 
         var dates_data = { action: 'load_event_dates', id: this.id, location: result.Location };
-        jQuery.post(ajaxurl, dates_data, function(response) {
+        $.post(ajaxurl, dates_data, function(response) {
             html = "";
             var dates = JSON.parse(response);
 
@@ -116,8 +149,8 @@ jQuery(document).ready(function($) {
                 html += '</li>';
             }
 
-            jQuery('#time-modal').prepend(html);
-            jQuery('.event-times-loading').hide();
+            $('#time-modal').prepend(html);
+            $('.event-times-loading').hide();
 
             if (dates.length == 0) {
                 document.getElementById('event-times').style.display = 'none';
@@ -126,34 +159,34 @@ jQuery(document).ready(function($) {
 
         var organizers_data = { action: 'load_event_organizers', id: this.id };
 
-        jQuery.post(ajaxurl, organizers_data, function(response) {
+        $.post(ajaxurl, organizers_data, function(response) {
             var organizers = JSON.parse(response); html = '';
 
             for (var i=0;i<organizers.length;i++) {
                 html += '<li><span>' + organizers[i].Name + '</span></li>';
             }
 
-            jQuery('#organizer-modal').html(html);
+            $('#organizer-modal').html(html);
             if (organizers.length > 0) {
                 document.getElementById('event-organizers').style.display = 'block';
             }
         });
 
         if (result.ImagePath) {
-            jQuery(image).attr("src", result.ImagePath);
+            $(image).attr("src", result.ImagePath);
         } else {
-            jQuery(image).attr("src", defaultImagePath);
+            $(image).attr("src", defaultImagePath);
         }
-        jQuery(title).html(result.Name);
+        $(title).html(result.Name);
 
         if (result.Link) {
-            jQuery(link).html('<a class="link-item" href="' + result.Link + '" target="blank">' + result.Link + '</a>').show();
+            $(link).html('<a class="link-item" href="' + result.Link + '" target="blank">' + result.Link + '</a>').show();
         } else {
-            jQuery(link).hide();
+            $(link).hide();
         }
 
-        jQuery(date).html(result.Date);
-        jQuery(description).html(nl2br(result.Description));
+        $(date).html(result.Date);
+        $(description).html(nl2br(result.Description));
     });
 });
 
