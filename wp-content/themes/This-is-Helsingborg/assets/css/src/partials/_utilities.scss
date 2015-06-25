@@ -37,6 +37,22 @@
     position: relative;
 }
 
+// Centers an element inside its parent
+// Make sure parent has position: relative;
+//
+//
+// Markup:
+// <div class="parent-element">
+//      <div class="center-in-parent">This will be vetically centered in the parent-element</div>
+// </div>
+
+.center-in-parent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
 // Creamy colored section with border top and bottom
 // Can be used on any type of element
 //
