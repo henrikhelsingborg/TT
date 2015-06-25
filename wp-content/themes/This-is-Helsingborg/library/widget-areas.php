@@ -75,7 +75,7 @@ function HelsingborgContentAreaClassNames($params) {
      * Set column width to 6 on frontpage "featured" section
      */
     if ($params[0]['id'] == 'slider-area' && is_front_page()) {
-        $params[0]['before_widget'] = '<div class="large-6 medium-6 small-6 columns"><div class="box widget">';
+        $params[0]['before_widget'] = '<div class="large-6 medium-6 small-12 columns"><div class="box widget">';
     }
 
     if ($params[0]['id'] == 'content-area' && is_front_page()) {
