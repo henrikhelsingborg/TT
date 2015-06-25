@@ -74,3 +74,23 @@ img.responsive {
         color: rgba(255,255,255,.7);
     }
 }
+
+// Prepends a pdf icon before the link text
+//
+// Markup:
+// <a class="pdf-item" href="#">Link</a>
+
+.pdf-item {
+    &::before {
+        @include hbg-icon($icon-pdf);
+        display: inline-block;
+        margin-right: 8px;
+        color: rgba(0,0,0,.4);
+    }
+}
+
+.pdf-item-light {
+    &::before {
+        color: rgba(255,255,255,.7);
+    }
+}
