@@ -79,17 +79,27 @@ gulp.task('scripts-search', function () {
             .pipe(gulp.dest('assets/js/dist'));
 });
 
-gulp.task('scripts-dist', ['scripts-dev', 'scripts-search']);
+gulp.task('scripts-event', function () {
+    return gulp.src('assets/js/src/event/*.js')
+            .pipe(concat('event.js'))
+            .pipe(gulp.dest('assets/js/dist'))
+            .pipe(rename('event.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('assets/js/dist'));
+});
+
+gulp.task('scripts-dist', ['scripts-dev', 'scripts-search', 'scripts-event']);
 
 /**
  * Copies given bower components to the assets/js/dist directory
  */
 gulp.task('scripts-copy', function () {
     return gulp.src([
-                bower_components + 'jquery-ui/jquery-ui.min.js'
+                bower_components + 'jquery-ui/jquery-ui.min.js',
+                bower_components + 'knockout/dist/knockout.js'
             ])
             .pipe(copy('assets/js/dist/', {
-                prefix: 2
+                prefix: 10
             }));
 })
 

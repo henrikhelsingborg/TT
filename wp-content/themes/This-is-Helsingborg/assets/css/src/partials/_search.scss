@@ -63,6 +63,13 @@
 .search-result-item {
     padding: 20px 0;
 
+    &.row {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
     h3 {
         margin-bottom: 5px;
     }
@@ -91,6 +98,11 @@
     b {
         background-color: lighten($palette-red-4, 55%);
     }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .search-result-item-info,
@@ -106,5 +118,6 @@
 }
 
 .search-result-item-date {
-    margin-left: 10px;
+    display: block;
+    margin-top: 0;
 }

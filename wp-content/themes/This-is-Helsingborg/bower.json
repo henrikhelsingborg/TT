@@ -2,6 +2,7 @@
   "name": "This-is-Helsingborg",
   "dependencies": {
     "foundation": "zurb/bower-foundation",
-    "jquery-ui": "~1.11.4"
+    "jquery-ui": "~1.11.4",
+    "knockout": "3.2.0"
   }
 }

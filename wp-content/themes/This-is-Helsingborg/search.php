@@ -4,7 +4,6 @@
 ?>
 
 <script>
-    var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
     var query = '<?php echo $query; ?>';
 </script>
 

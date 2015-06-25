@@ -43,6 +43,14 @@ if (!function_exists('hbg_enqueue_scripts')) {
             wp_register_script('app-search', get_template_directory_uri() . '/assets/js/dist/search.min.js', array(), '1.0.0', true);
             wp_enqueue_script('app-search');
         }
+
+        if (is_page_template('templates/event-search.php')) {
+            wp_register_script('knockout', get_template_directory_uri() . '/assets/js/dist/knockout.js', array(), '3.3.0', false);
+            wp_enqueue_script('knockout');
+
+            wp_register_script('event-list-model', get_template_directory_uri() . '/assets/js/dist/event.js', array(), '1.0.0', false);
+            wp_enqueue_script('event-list-model');
+        }
     }
 
     /**

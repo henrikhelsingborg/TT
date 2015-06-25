@@ -22,6 +22,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/apple-touch-icon-precomposed.png">
 
+    <script>var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';</script>
+
     <?php wp_head(); ?>
 </head>
 <body>

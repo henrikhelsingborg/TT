@@ -7,41 +7,17 @@
             <li><a href="<?php echo $reference; ?>" class="list-more"><?php echo $link_text; ?></a></li>
         </ul>
 
-        <div id="eventModal" class="modal">
-            <div class="modal-content">
-                <button class="modal-close" data-action="modal-close"><i class="fa fa-times-circle"></i></button>
-                <div class="row">
-                    <div class="columns large-4">
-                        <img class="modal-image responsive">
-                        <div id="event-times" class="box">
-                            <div class="box-content">
-                            <ul class="list list-event-times" id="time-modal">
-                                <li class="event-times-loading"><i class="hbg-loading">Läser in datum &amp; tider</i></li>
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columns large-8">
-                        <h1 class="modal-title"></h1>
-                        <article>
-                            <p class="modal-description"></p>
-                            <p class="modal-link"></p>
-                        </article>
-                        <div id="event-organizers">
-                            <ul class="list" id="organizer-modal"></ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script type="text/javascript">
-            var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
-        </script>
+        <?php
+            /**
+             * Get the modal window markup
+             */
+            get_template_part('templates/partials/modal', 'event');
+        ?>
 
         <script>
             var events = {};
             var defaultImagePath = '<?php echo get_template_directory_uri(); ?>/assets/images/event-placeholder.jpg';
+
             jQuery(document).ready(function() {
                 var data = { action: 'update_event_calendar', amount: '<?php echo $amount; ?>', ids: '<?php echo $administration_ids; ?>' };
 
