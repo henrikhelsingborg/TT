@@ -36,6 +36,8 @@ if (!function_exists('hbg_enqueue_scripts')) {
     add_action('wp_enqueue_scripts', 'hbg_enqueue_scripts');
 
     function hbgPageSpecificScripts() {
+        wp_register_script('knockout', get_template_directory_uri() . '/assets/js/dist/knockout.js', array(), '3.3.0', false);
+
         /**
          * Search result page
          */
@@ -44,12 +46,21 @@ if (!function_exists('hbg_enqueue_scripts')) {
             wp_enqueue_script('app-search');
         }
 
+        /**
+         * Event search page
+         */
         if (is_page_template('templates/event-search.php')) {
-            wp_register_script('knockout', get_template_directory_uri() . '/assets/js/dist/knockout.js', array(), '3.3.0', false);
             wp_enqueue_script('knockout');
 
-            wp_register_script('event-list-model', get_template_directory_uri() . '/assets/js/dist/event.js', array(), '1.0.0', false);
+            wp_register_script('event-list-model', get_template_directory_uri() . '/assets/js/dist/event.min.js', array(), '1.0.0', false);
             wp_enqueue_script('event-list-model');
+        }
+
+        /**
+         * List page
+         */
+        if (is_page_template('templates/list-page.php')) {
+            wp_enqueue_script('knockout');
         }
     }
 
@@ -58,14 +69,14 @@ if (!function_exists('hbg_enqueue_scripts')) {
      * @return void
      */
     function load_custom_wp_admin_style() {
-        wp_register_style('custom_wp_admin_css', get_template_directory_uri() . '/assets/css/dist/admin-hbg.css', array(), '1.0.0');
+        wp_register_style('custom_wp_admin_css', get_template_directory_uri() . '/assets/css/dist/admin.min.css', array(), '1.0.0');
         wp_enqueue_style('custom_wp_admin_css');
 
         wp_register_script('jquery-ui', get_template_directory_uri() . '/assets/js/dist/jquery-ui.min.js', array(), '1.0.0', false);
-        //wp_register_script('select2' , (get_template_directory_uri() . '/assets/js/helsingborg/select2.min.js'), array(), '1.0.0', false);
+        wp_register_script('custom-admin', get_template_directory_uri() . '/assets/js/dist/admin.min.js', array(), '1.0.0', false);
 
         wp_enqueue_script('jquery-ui');
-        //wp_enqueue_script('select2');
+        wp_enqueue_script('custom-admin');
     }
     add_action('admin_enqueue_scripts', 'load_custom_wp_admin_style');
 

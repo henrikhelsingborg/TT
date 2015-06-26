@@ -58,6 +58,27 @@ gulp.task('sass-dist', function () {
             .pipe(gulp.dest('assets/css/dist/'))
 });
 
+gulp.task('sass-admin-dist', function () {
+    return gulp.src([
+                'assets/css/src/admin.scss'
+            ])
+            .pipe(plumber())
+            .pipe(concat('admin.css'))
+            .pipe(sass())
+            .pipe(autoprefixer(
+                'last 2 version',
+                'safari 5',
+                'ie 8',
+                'ie 9',
+                'opera 12.1'
+            ))
+            .pipe(rename({
+                suffix: '.min'
+            }))
+            .pipe(minifycss())
+            .pipe(gulp.dest('assets/css/dist/'))
+});
+
 /**
  * Compiles the JavaScripts for distribution
  */
@@ -95,7 +116,16 @@ gulp.task('scripts-event', function () {
             .pipe(gulp.dest('assets/js/dist'));
 });
 
-gulp.task('scripts-dist', ['scripts-dev', 'scripts-search', 'scripts-event']);
+gulp.task('scripts-admin', function () {
+    return gulp.src('assets/js/src/admin/*.js')
+            .pipe(concat('admin.js'))
+            .pipe(gulp.dest('assets/js/dist'))
+            .pipe(rename('admin.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('assets/js/dist'));
+});
+
+gulp.task('scripts-dist', ['scripts-dev', 'scripts-search', 'scripts-event', 'scripts-admin']);
 
 /**
  * Copies given bower components to the assets/js/dist directory
@@ -115,7 +145,7 @@ gulp.task('scripts-copy', function () {
  * Recompile any changes to js or scss
  */
 gulp.task('watch', function () {
-    gulp.watch('assets/css/src/**/*.scss', ['sass-dist']);
+    gulp.watch('assets/css/src/**/*.scss', ['sass-dist', 'sass-admin-dist']);
     gulp.watch('assets/js/src/**/*.js', ['scripts-dist']);
 });
 
@@ -123,4 +153,4 @@ gulp.task('watch', function () {
  * Default task
  * Compiles sass, js and starts the watch task
  */
-gulp.task('default', ['jquery', 'sass-dist', 'scripts-dist', 'scripts-copy', 'watch']);
+gulp.task('default', ['jquery', 'sass-dist', 'sass-admin-dist', 'scripts-dist', 'scripts-copy', 'watch']);

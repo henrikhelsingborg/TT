@@ -5,6 +5,8 @@
     require_once('library/enqueue-scripts.php');
     require_once('library/widget-areas.php');
     require_once('library/helsingborg-ajax.php');
+    require_once('library/meta-boxes.php');
+    require_once('meta_boxes/meta-functions.php');
     require_once('library/helpers.php');
 
     /*
