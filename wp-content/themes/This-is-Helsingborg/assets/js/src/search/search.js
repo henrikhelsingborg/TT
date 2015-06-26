@@ -10,10 +10,12 @@ jQuery(document).ready(function ($) {
     var prevData = null;
 
     $.post(ajaxurl, searchRequestData, function(response) {
-        presnetSearchResult(JSON.parse(response));
+        presentSearchResult(JSON.parse(response));
     });
 
-    function presnetSearchResult(data) {
+    $('[data-action="prev-page"], [data-action="next-page"]').hide();
+
+    function presentSearchResult(data) {
 
         var $resultContainer = $('.search-result');
         $resultContainer.empty();
@@ -49,6 +51,8 @@ jQuery(document).ready(function ($) {
             }
 
             /* Create dom for information */
+            $item.find('.search-result-item-content').append('<span class="search-result-item-date">' + dateMod + '</span>');
+
             if (item.fileFormat == 'PDF/Adobe Acrobat') {
                 $item.find('.search-result-item-content').append('<h3><a href="' + item.link + '" class="pdf-item">' + item.htmlTitle + '</a></h3>');
             } else {
@@ -58,13 +62,42 @@ jQuery(document).ready(function ($) {
             $item.find('.search-result-item-content').append('<p>' + $.trim(item.htmlSnippet) + '</p>');
             $item.find('.search-result-item-content').append('<div class="search-result-item-info"></div>');
             $item.find('.search-result-item-info').append('<span class="search-result-item-url"><i class="fa fa-globe"></i> <a href="' + item.link + '">' + item.htmlFormattedUrl + '</a></span>');
-            $item.find('h3').append('<span class="search-result-item-date"><i class="fa fa-clock-o"></i> ' + dateMod + '</span>');
 
 
             /* Append the item to the result container */
             $resultContainer.append($item);
         });
+
+        if (prev !== undefined) {
+            prevData = { action: 'search', keyword: query, index: prev['startIndex'].toString() };
+            $('[data-action="prev-page"]').show();
+        } else {
+            $('[data-action="prev-page"]').hide();
+        }
+
+        if (next !== undefined) {
+            nextData = { action: 'search', keyword: query, index: next['startIndex'].toString() };
+            $('[data-action="next-page"]').show();
+        } else {
+            $('[data-action="next-page"]').hide();
+        }
     }
+
+    $('[data-action="next-page"]').on('click', function () {
+        $('.search-result').html('<li class="event-times-loading"><i class="hbg-loading">Läser in resultat…</i></li>');
+        $.post(ajaxurl, nextData, function(response) {
+            $("html, body").animate({ scrollTop: 0 }, 'fast');
+            presentSearchResult(JSON.parse(response));
+        });
+    });
+
+    $('[data-action="prev-page"]').on('click', function () {
+        $('.search-result').html('<li class="event-times-loading"><i class="hbg-loading">Läser in resultat…</i></li>');
+        $.post(ajaxurl, prevData, function(response) {
+            $("html, body").animate({ scrollTop: 0 }, 'fast');
+            presentSearchResult(JSON.parse(response));
+        });
+    });
 
     function convertDate(value) {
         if (value.length > 20) {
