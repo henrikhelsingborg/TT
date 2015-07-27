@@ -116,6 +116,15 @@ gulp.task('scripts-event', function () {
             .pipe(gulp.dest('assets/js/dist'));
 });
 
+gulp.task('scripts-alarm', function () {
+    return gulp.src('assets/js/src/alarm/*.js')
+            .pipe(concat('alarm.js'))
+            .pipe(gulp.dest('assets/js/dist'))
+            .pipe(rename('alarm.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('assets/js/dist'));
+});
+
 gulp.task('scripts-admin', function () {
     return gulp.src('assets/js/src/admin/*.js')
             .pipe(concat('admin.js'))
@@ -125,7 +134,7 @@ gulp.task('scripts-admin', function () {
             .pipe(gulp.dest('assets/js/dist'));
 });
 
-gulp.task('scripts-dist', ['scripts-dev', 'scripts-search', 'scripts-event', 'scripts-admin']);
+gulp.task('scripts-dist', ['scripts-dev', 'scripts-search', 'scripts-event', 'scripts-alarm', 'scripts-admin']);
 
 /**
  * Copies given bower components to the assets/js/dist directory

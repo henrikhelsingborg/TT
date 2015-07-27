@@ -223,3 +223,30 @@
         text-decoration: underline;
     }
 }
+
+// A list formatted with a label and a value
+//
+// Markup:
+// <ul class="label-list">
+//     <li>
+//         <span class="item-label">Label</span>
+//         <span class="item-value">Value</span>
+//     </li>
+// </ul>
+
+.label-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .item-label {
+        display: inline-block;
+        width: 200px;
+        color: $text-gray-light;
+    }
+
+    .item-value {
+        display: inline-block;
+        font-weight: bold;
+    }
+}

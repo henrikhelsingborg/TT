@@ -57,6 +57,16 @@ if (!function_exists('hbg_enqueue_scripts')) {
         }
 
         /**
+         * Alarm search page
+         */
+        if (is_page_template('templates/alarm-search.php')) {
+            wp_enqueue_script('knockout');
+
+            wp_register_script('alarm-list-page', get_template_directory_uri() . '/assets/js/dist/alarm.js', array(), '1.0.0', false);
+            wp_enqueue_script('alarm-list-page');
+        }
+
+        /**
          * List page
          */
         if (is_page_template('templates/list-page.php')) {
