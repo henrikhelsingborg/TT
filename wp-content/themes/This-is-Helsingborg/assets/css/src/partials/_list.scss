@@ -208,6 +208,7 @@
     font-weight: normal;
     font-size: 12pt;
     padding: 10px 15px !important;
+    text-decoration: none;
 
     &::before {
         position: relative;
@@ -216,5 +217,9 @@
         display: inline-block;
         margin-right: 5px;
         font-size: 10pt;
+    }
+
+    &:hover {
+        text-decoration: underline;
     }
 }

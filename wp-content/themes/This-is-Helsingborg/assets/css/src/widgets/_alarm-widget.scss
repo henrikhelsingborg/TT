@@ -1,0 +1,54 @@
+.alarm-widget {
+    .zselect {
+        color: $text-default;
+        border: none;
+
+        ul {
+            margin: 11px 0 0 -12px;
+            padding-top: 10px;
+            background: $creamy;
+            border: none;
+        }
+
+        li {
+            cursor: default;
+        }
+
+        li:hover {
+            background: transparent;
+            color: $text-default;
+        }
+    }
+}
+
+.alarm-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+
+    li {
+        .date {
+            float: none !important;
+            display: block;
+            top: 0 !important;
+        }
+
+        a {
+            font-weight: normal;
+        }
+    }
+}
+
+#alarmModal {
+    .item-label {
+        display: block;
+        font-weight: bold;
+    }
+}
+
+.alarm-widget-update {
+    margin: 15px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
