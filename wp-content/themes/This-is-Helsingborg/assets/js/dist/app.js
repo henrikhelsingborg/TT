@@ -1,3 +1,5 @@
+var Helsingborg;
+
 jQuery(document).ready(function ($) {
 
     /**

@@ -1,56 +1,105 @@
-jQuery(document).ready(function ($) {
+Helsingborg = Helsingborg || {};
+Helsingborg.Search = Helsingborg.Search || {};
 
-    var searchRequestData = {
-        action:     'search',
-        keyword:    query,
-        index:      '1'
-    };
+Helsingborg.Search.Search = (function ($) {
 
-    var nextData = null;
-    var prevData = null;
+    var _resultContainer = '.search-result';
 
-    $.post(ajaxurl, searchRequestData, function(response) {
-        presentSearchResult(JSON.parse(response));
-    });
+    var _nextRequest;
+    var _nextData;
 
-    $('[data-action="prev-page"], [data-action="next-page"]').hide();
+    var _prevRequest;
+    var _prevData;
 
-    function presentSearchResult(data) {
+    var _currRequest;
 
-        var $resultContainer = $('.search-result');
-        $resultContainer.empty();
+    var _totalResults;
+    var _resultsPerPage;
 
-        /**
-         * Get next and prev an request
-         * @type {Function}
-         */
-        var next     = data.queries.nextPage       !== undefined ? data.queries.nextPage[0]       : undefined;
-        var prev     = data.queries.previousPage   !== undefined ? data.queries.previousPage[0]   : undefined;
-        var request  = data.queries.request        !== undefined ? data.queries.request[0]        : undefined;
+    function Search() {
+        $(function(){
 
-        /**
-         * Get and set the number of hits text
-         * @type {String}
-         */
-        var searchHitsInfo    = '<span class="search-hits">' + data.searchInformation.formattedTotalResults + '</span> träffar på <span class="search-query">' + data.queries.request[0].searchTerms + '</span> inom Helsingborg.se';
+            this.handleEvents();
+
+        }.bind(this));
+    }
+
+    /**
+     * Performs an ajax request to get the search results
+     * @param  {object} query The query
+     * @return {void}
+     */
+    Search.prototype.request = function(requestData) {
+        $.post(ajaxurl, requestData, function(response) {
+            response = $.parseJSON(response);
+            this.handleResponse(response);
+        }.bind(this));
+    }
+
+    /**
+     * Handles the request response
+     * @param  {object} response The request response
+     * @return {[type]}          [description]
+     */
+    Search.prototype.handleResponse = function(response) {
+        $(_resultContainer).empty();
+
+        _nextRequest = response.queries.nextPage       !== undefined ? response.queries.nextPage[0]       : undefined;
+        _prevRequest = response.queries.previousPage   !== undefined ? response.queries.previousPage[0]   : undefined;
+        _currRequest = response.queries.request        !== undefined ? response.queries.request[0]        : undefined;
+
+        _resultsPerPage = _currRequest.count;
+        _totalResults = _currRequest.totalResults;
+
+        this.searchInfo(response);
+        this.outputResults(response);
+        this.setupPagination();
+    }
+
+    /**
+     * Show/hide and setup data for pagination
+     * @return {void}
+     */
+    Search.prototype.setupPagination = function() {
+        if (_prevRequest !== undefined) {
+            _prevData = { action: 'search', keyword: query, index: _prevRequest.startIndex.toString() };
+            $('[data-action="prev-page"]').show();
+        } else {
+            $('[data-action="prev-page"]').hide();
+        }
+
+        if (_nextRequest !== undefined) {
+            _nextData = { action: 'search', keyword: query, index: _nextRequest.startIndex.toString() };
+            $('[data-action="next-page"]').show();
+        } else {
+            $('[data-action="next-page"]').hide();
+        }
+    }
+
+    /**
+     * Outputs search results information
+     * @param  {object} response The response
+     * @return {void}
+     */
+    Search.prototype.searchInfo = function(response) {
+        var searchHitsInfo = '<span class="search-hits">' + response.searchInformation.formattedTotalResults + '</span> träffar på <span class="search-query">' + response.queries.request[0].searchTerms + '</span> inom Helsingborg.se';
         $('.search-hits-info').html(searchHitsInfo);
+    }
 
-        $.each(data.items, function (index, item) {
-            /* Create the dom element */
+    /**
+     * Output the result markup
+     * @param  {object} response The response
+     * @return {void}
+     */
+    Search.prototype.outputResults = function(response) {
+
+        $.each(response.items, function (index, item) {
+            var meta = item.pagemap.metatags[0];
             var $item = $('<li class="search-result-item"><div class="search-result-item-content"></div></li>');
 
-            /* Store meta values in a variable */
-            var meta = item.pagemap.metatags[0];
-
             /* Get a date */
-            var dateMod = null;
-            if (meta.moddate !== undefined) {
-                dateMod = convertDate(meta.moddate);
-            } else if (meta.pubdate !== undefined) {
-                dateMod = convertDate(meta.pubdate);
-            }
+            var dateMod = this.getDateModified(item);
 
-            /* Create dom for information */
             $item.find('.search-result-item-content').append('<span class="search-result-item-date">' + dateMod + '</span>');
 
             if (item.fileFormat == 'PDF/Adobe Acrobat') {
@@ -65,46 +114,42 @@ jQuery(document).ready(function ($) {
 
 
             /* Append the item to the result container */
-            $resultContainer.append($item);
-        });
+            $(_resultContainer).append($item);
+        }.bind(this));
 
-        if (prev !== undefined) {
-            prevData = { action: 'search', keyword: query, index: prev['startIndex'].toString() };
-            $('[data-action="prev-page"]').show();
-        } else {
-            $('[data-action="prev-page"]').hide();
-        }
-
-        if (next !== undefined) {
-            nextData = { action: 'search', keyword: query, index: next['startIndex'].toString() };
-            $('[data-action="next-page"]').show();
-        } else {
-            $('[data-action="next-page"]').hide();
-        }
     }
 
-    $('[data-action="next-page"]').on('click', function () {
-        $('.search-result').html('<li class="event-times-loading"><i class="hbg-loading">Läser in resultat…</i></li>');
-        $.post(ajaxurl, nextData, function(response) {
-            $("html, body").animate({ scrollTop: 0 }, 'fast');
-            presentSearchResult(JSON.parse(response));
-        });
-    });
+    /**
+     * Get last modified date for result
+     * @param  {object} item Result item
+     * @return {string}      Last modified date
+     */
+    Search.prototype.getDateModified = function(item) {
+        var meta = item.pagemap.metatags[0];
+        var dateMod = null;
 
-    $('[data-action="prev-page"]').on('click', function () {
-        $('.search-result').html('<li class="event-times-loading"><i class="hbg-loading">Läser in resultat…</i></li>');
-        $.post(ajaxurl, prevData, function(response) {
-            $("html, body").animate({ scrollTop: 0 }, 'fast');
-            presentSearchResult(JSON.parse(response));
-        });
-    });
+        if (meta.moddate !== undefined) {
+            dateMod = this.convertDate(meta.moddate);
+        } else if (meta.pubdate !== undefined) {
+            dateMod = this.convertDate(meta.pubdate);
+        } else if (meta['last-modified'] !== undefined) {
+            dateMod = meta['last-modified'];
+        }
 
-    function convertDate(value) {
+        return dateMod;
+    }
+
+    /**
+     * Convert google date to readable date
+     * @param  {string} value Google date
+     * @return {string}       Readable date
+     */
+    Search.prototype.convertDate = function(value) {
         if (value.length > 20) {
             var year = value.substring(2,6);
             var month = value.substring(6,8);
             var day = value.substring(8,10);
-            month = convertDateToMonth(month);
+            month = this.convertDateToMonth(month);
             return day + ' ' + month + ' ' + year;
         } else if (value.length == 11) {
             value = value.replace('May', 'Maj');
@@ -114,14 +159,19 @@ jQuery(document).ready(function ($) {
             var year = value.substring(0,4);
             var month = value.substring(4,6);
             var day = value.substring(6,value.length);
-            month = convertDateToMonth(month);
+            month = this.convertDateToMonth(month);
             return day + ' ' + month + ' ' + year;
         } else {
             return '';
         }
     }
 
-    function convertDateToMonth(month) {
+    /**
+     * Convert month number to month name
+     * @param  {int} month Month number
+     * @return {string}    Month name
+     */
+    Search.prototype.convertDateToMonth = function (month) {
         switch (month) {
             case '01':
                 return "Jan";
@@ -150,4 +200,34 @@ jQuery(document).ready(function ($) {
         }
     }
 
-});
+    /**
+     * Keeps track of events
+     * @return {void}
+     */
+    Search.prototype.handleEvents = function() {
+
+        $(document).ready(function () {
+            this.request({
+                action:     'search',
+                keyword:    query,
+                index:      '1'
+            });
+        }.bind(this));
+
+        $('[data-action="next-page"]').on('click', function () {
+            $(_resultContainer).html('<li class="event-times-loading"><i class="hbg-loading">Läser in resultat…</i></li>');
+            $("html, body").animate({ scrollTop: 0 }, 'fast');
+            this.request(_nextData);
+        }.bind(this));
+
+        $('[data-action="prev-page"]').on('click', function () {
+            $(_resultContainer).html('<li class="event-times-loading"><i class="hbg-loading">Läser in resultat…</i></li>');
+            $("html, body").animate({ scrollTop: 0 }, 'fast');
+            this.request(_prevData);
+        }.bind(this));
+
+    }
+
+    return new Search();
+
+})(jQuery);
