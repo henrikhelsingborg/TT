@@ -4,6 +4,9 @@ Helsingborg.Search = Helsingborg.Search || {};
 Helsingborg.Search.Search = (function ($) {
 
     var _resultContainer = '.search-result';
+    var _pagination = '.pagination';
+    var _paginationInitialized = false;
+    var _currentPage = 1;
 
     var _nextRequest;
     var _nextData;
@@ -61,18 +64,35 @@ Helsingborg.Search.Search = (function ($) {
      * @return {void}
      */
     Search.prototype.setupPagination = function() {
+        // Prev button
         if (_prevRequest !== undefined) {
             _prevData = { action: 'search', keyword: query, index: _prevRequest.startIndex.toString() };
             $('[data-action="prev-page"]').show();
         } else {
-            $('[data-action="prev-page"]').hide();
+            //$('[data-action="prev-page"]').hide();
         }
 
+        // Next button
         if (_nextRequest !== undefined) {
             _nextData = { action: 'search', keyword: query, index: _nextRequest.startIndex.toString() };
             $('[data-action="next-page"]').show();
         } else {
-            $('[data-action="next-page"]').hide();
+            //$('[data-action="next-page"]').hide();
+        }
+
+        // Pages
+        if (_resultsPerPage < _totalResults && _paginationInitialized !== true) {
+            var numPages = _totalResults / _resultsPerPage;
+            for (var i = 1; i <= numPages; i++) {
+                if (i == _currentPage) {
+                    $('.pagination li:last-child').before('<li class="current"><a href="#" data-paginate-index="' + i + '">' + i + '</a></li>');
+                } else {
+                    $('.pagination li:last-child').before('<li><a href="#" data-paginate-index="' + i + '">' + i + '</a></li>');
+                }
+            };
+
+            _paginationInitialized = true;
+            this.setPaginationCurrent();
         }
     }
 
@@ -200,6 +220,48 @@ Helsingborg.Search.Search = (function ($) {
         }
     }
 
+    Search.prototype.browse = function(browseTo) {
+        if (browseTo == 'next') {
+            _currentPage++;
+            this.request(_nextData);
+        } else if (browseTo == 'prev') {
+            _currentPage--;
+            this.request(_prevData);
+        } else {
+            // Browse to specific page number
+            _currentPage = browseTo;
+
+            var index = ((_currentPage * 10) + 1);
+            var data = {
+                action: 'search',
+                keyword: query,
+                index: index
+            };
+
+            this.request(data);
+        }
+
+        this.setPaginationCurrent();
+    }
+
+    Search.prototype.setPaginationCurrent = function() {
+        $(_pagination).find('li.current').removeClass('current');
+        $(_pagination).find('li').filter(function () {
+            return $(this).text() == _currentPage;
+        }).addClass('current');
+
+        if (_currentPage > 3) {
+            $(_pagination).find('li').show();
+            $(_pagination).find('li:gt(' + (_currentPage+2) + ')').hide();
+            $(_pagination).find('li:lt(' + (_currentPage-2) + ')').hide();
+            $(_pagination).find('li:first-child').show();
+            $(_pagination).find('li:last-child').show();
+        } else {
+            $(_pagination).find('li:gt(5)').hide();
+            $(_pagination).find('li:last-child').show();
+        }
+    }
+
     /**
      * Keeps track of events
      * @return {void}
@@ -214,16 +276,28 @@ Helsingborg.Search.Search = (function ($) {
             });
         }.bind(this));
 
-        $('[data-action="next-page"]').on('click', function () {
+        // Next page button
+        $('[data-action="next-page"]').on('click', function (e) {
+            e.preventDefault();
             $(_resultContainer).html('<li class="event-times-loading"><i class="hbg-loading">Läser in resultat…</i></li>');
             $("html, body").animate({ scrollTop: 0 }, 'fast');
-            this.request(_nextData);
+            this.browse('next');
         }.bind(this));
 
-        $('[data-action="prev-page"]').on('click', function () {
+        // Prev page button
+        $('[data-action="prev-page"]').on('click', function (e) {
+            e.preventDefault();
             $(_resultContainer).html('<li class="event-times-loading"><i class="hbg-loading">Läser in resultat…</i></li>');
             $("html, body").animate({ scrollTop: 0 }, 'fast');
-            this.request(_prevData);
+            this.browse('prev');
+        }.bind(this));
+
+        // Prev page button
+        $(document).on('click', '[data-paginate-index]', function (e) {
+            e.preventDefault();
+            $(_resultContainer).html('<li class="event-times-loading"><i class="hbg-loading">Läser in resultat…</i></li>');
+            $("html, body").animate({ scrollTop: 0 }, 'fast');
+            this.browse($(e.target).data('paginate-index'));
         }.bind(this));
 
     }
