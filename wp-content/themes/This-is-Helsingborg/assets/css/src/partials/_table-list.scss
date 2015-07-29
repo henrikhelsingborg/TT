@@ -4,24 +4,21 @@ $headline-color: #333;
 .table-list {
     width: 100%;
     letter-spacing: .5px;
-    border-spacing: 0;
-    border-collapse: inherit;
-    border: 1px solid $creamy-darker;
-    border-top: 0;
     margin-top: 20px;
 
     /**
      * Table head
      */
     thead {
-        background: $creamy-darker;
+        background: $palette-red-2;
+        border: 1px solid $palette-red-2;
 
         th:first-child {
             display: none;
         }
 
         td, th {
-            color: $text-default;
+            color: #fff;
             font-weight: bold;
             letter-spacing: .5px;
             font-size: 11pt;
@@ -55,6 +52,7 @@ $headline-color: #333;
      */
     tbody {
         font-size: 11pt;
+        border: 1px solid $creamy-darker;
 
         &:nth-child(odd) {
             //background-color: scale-color($gray-3, $lightness: 70%);
@@ -73,6 +71,10 @@ $headline-color: #333;
      * List item
      */
     .table-item {
+        td:first-child {
+            font-weight: bold;
+        }
+
         td {
             padding: 10px 15px;
             vertical-align: top;
@@ -88,7 +90,7 @@ $headline-color: #333;
                 right: 10px;
                 top: 14px;
                 @include hbg-icon($icon-plus-square);
-                color: $palette-red-4;
+                color: $palette-red-2;
                 font-size: 13pt;
             }
         }
@@ -101,6 +103,8 @@ $headline-color: #333;
 
         // Active state
         &.active {
+            background-color: lighten($palette-red-2, 48%);
+
             td:last-child {
                 &::after {
                     @include hbg-icon($icon-minus-square);
