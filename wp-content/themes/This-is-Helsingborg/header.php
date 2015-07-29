@@ -40,6 +40,18 @@
                              * Displays the main menu navigation
                              */
                             wp_nav_menu(array(
+                                'theme_location'  => 'top-menu',
+                                'container'       => 'nav',
+                                'container_class' => 'nav-topmenu',
+                                'items_wrap'      => '<ul class="nav">%3$s</ul>'
+                            ));
+
+                            echo '<div class="clearfix"></div>';
+
+                            /**
+                             * Displays the main menu navigation
+                             */
+                            wp_nav_menu(array(
                                 'theme_location'  => 'main-menu',
                                 'container'       => 'nav',
                                 'container_class' => 'navbar navbar-mainmenu',
