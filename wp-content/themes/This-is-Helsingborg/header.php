@@ -42,7 +42,7 @@
                             wp_nav_menu(array(
                                 'theme_location'  => 'top-menu',
                                 'container'       => 'nav',
-                                'container_class' => 'nav-topmenu',
+                                'container_class' => 'navbar-topmenu',
                                 'items_wrap'      => '<ul class="nav">%3$s</ul>'
                             ));
 
