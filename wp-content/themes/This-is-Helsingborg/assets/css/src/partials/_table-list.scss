@@ -6,7 +6,7 @@ $headline-color: #333;
     letter-spacing: .5px;
     border-spacing: 0;
     border-collapse: inherit;
-    border: 3px solid $palette-red-4;
+    border: 1px solid $creamy-darker;
     border-top: 0;
     margin-top: 20px;
 
@@ -14,19 +14,19 @@ $headline-color: #333;
      * Table head
      */
     thead {
-        background: $palette-red-4;;
+        background: $creamy-darker;
 
         th:first-child {
             display: none;
         }
 
         td, th {
-            color: #fff;
-            font-weight: 300;
+            color: $text-default;
+            font-weight: bold;
             letter-spacing: .5px;
             font-size: 11pt;
             line-height: 100%;
-            padding: 10px 10px;
+            padding: 10px 15px;
             text-align: left;
         }
 
@@ -54,8 +54,14 @@ $headline-color: #333;
      * Table body
      */
     tbody {
+        font-size: 11pt;
+
         &:nth-child(odd) {
-            background-color: scale-color($gray-3, $lightness: 70%);
+            //background-color: scale-color($gray-3, $lightness: 70%);
+        }
+
+        & + tbody tr:first-child td {
+            border-top: 1px solid $creamy-darker;
         }
 
         tbody tr th {
@@ -75,15 +81,15 @@ $headline-color: #333;
         // Expand icon last row column
         td:last-child {
             position: relative;
-            padding-right: 30px;
+            padding-right: 50px;
 
             &::after {
                 position: absolute;
                 right: 10px;
-                top: 18px;
-                @include hbg-icon($icon-caret-down);
-                color: $text-gray-light;
-                font-size: 10pt;
+                top: 14px;
+                @include hbg-icon($icon-plus-square);
+                color: $palette-red-4;
+                font-size: 13pt;
             }
         }
 
@@ -95,7 +101,11 @@ $headline-color: #333;
 
         // Active state
         &.active {
-            background-color: lighten($palette-red-5, 40%);
+            td:last-child {
+                &::after {
+                    @include hbg-icon($icon-minus-square);
+                }
+            }
         }
     }
 
@@ -103,9 +113,13 @@ $headline-color: #333;
      * Expandeble content style
      */
     .table-content {
+        background-color: $creamy;
+
         td {
             display: none;
             padding: 15px 20px;
+            border-top: 1px solid $creamy-darker;
+            box-shadow: inset 0 5px 6px $creamy-darker;
         }
 
         &.open td {
