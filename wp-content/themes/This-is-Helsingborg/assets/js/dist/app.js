@@ -1,5 +1,7 @@
 var Helsingborg;
 
+
+
 jQuery(document).ready(function ($) {
 
     /**
@@ -11,22 +13,6 @@ jQuery(document).ready(function ($) {
             equalize_on_stack: true
         }
     });
-
-    /**
-     * Modal window
-     */
-    $(document).on('click', '[data-reveal]', function (e) {
-        e.preventDefault();
-        var target = $(this).data('reveal');
-        $('#' + target).fadeIn(300);
-        $('body').addClass('no-scroll');
-    })
-
-    $(document).on('click', '[data-action="modal-close"]', function (e) {
-        e.preventDefault();
-        $(this).parents('.modal').fadeOut(300);
-        $('body').removeClass('no-scroll');
-    })
 
     /**
      * Mobile menu
@@ -85,6 +71,63 @@ jQuery(document).ready(function ($) {
     }
 
 });
+Helsingborg = Helsingborg || {};
+Helsingborg.Prompt = Helsingborg.Search || {};
+
+Helsingborg.Prompt.Modal = (function ($) {
+
+    var fadeSpeed = 300;
+
+
+    function Modal() {
+        $(function(){
+
+            this.handleEvents();
+
+        }.bind(this));
+    }
+
+    Modal.prototype.open = function(element) {
+        var targetElement = $(element).closest('[data-reveal]').data('reveal');
+        $('#' + targetElement).fadeIn(fadeSpeed);
+        this.disableBodyScroll();
+    }
+
+    Modal.prototype.close = function(element) {
+        $(element).closest('.modal').fadeOut(fadeSpeed);
+    }
+
+    Modal.prototype.disableBodyScroll = function() {
+        $('body').addClass('no-scroll');
+    }
+
+    Modal.prototype.enableBodyScroll = function() {
+        $('body').removeClass('no-scroll');
+    }
+
+    /**
+     * Keeps track of events
+     * @return {void}
+     */
+    Modal.prototype.handleEvents = function() {
+
+        // Open modal
+        $(document).on('click', '[data-reveal]', function (e) {
+            e.preventDefault();
+            this.open(e.target);
+        }.bind(this));
+
+        // Close modal
+        $(document).on('click', '[data-action="modal-close"]', function (e) {
+            e.preventDefault();
+            this.close(e.target);
+        }.bind(this));
+
+    }
+
+    return new Modal();
+
+})(jQuery);
 /*
  * Foundation Responsive Library
  * http://foundation.zurb.com
