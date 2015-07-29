@@ -15,34 +15,6 @@ jQuery(document).ready(function ($) {
     });
 
     /**
-     * Mobile menu
-     */
-    var navHeight = $('.mobile-menu-wrapper').height();
-    $('.mobile-menu-wrapper').css({
-        maxHeight: 0,
-        position: 'relative',
-        zIndex: 1
-    });
-    $('.mobile-menu-wrapper .stripe').css('height', navHeight + 'px');
-
-    $(document).on('click', '[data-action="toggle-mobile-menu"]', function (e) {
-        e.preventDefault();
-        var body = $('body');
-        $(this).toggleClass('open');
-        $('body').toggleClass('mobile-menu-in');
-
-        if (body.hasClass('mobile-menu-in')) {
-            $('.mobile-menu-wrapper').css('visibility', 'visible').animate({
-                maxHeight: navHeight + 'px'
-            }, 100);
-        } else {
-            $('.mobile-menu-wrapper').css('visibility', 'visible').animate({
-                maxHeight: 0 + 'px'
-            }, 100);
-        }
-    });
-
-    /**
      * Search button click
      */
     $('.search .btn-submit').on('click', function (e) {
@@ -72,12 +44,108 @@ jQuery(document).ready(function ($) {
 
 });
 Helsingborg = Helsingborg || {};
-Helsingborg.Prompt = Helsingborg.Search || {};
+Helsingborg.Mobile = Helsingborg.Mobile || {};
+
+Helsingborg.Mobile.Menu = (function ($) {
+
+    var navHeight = 0;
+    var animationSpeed = 100;
+
+    function Menu() {
+        $(function(){
+
+            this.handleEvents();
+
+        }.bind(this));
+    }
+
+    /**
+     * Get the height of the navigation
+     * @param  {object} element The navigation
+     * @return {void}
+     */
+    Menu.prototype.getNavHeight = function(element) {
+        navHeight = $('.mobile-menu-wrapper').height();
+    }
+
+    /**
+     * Set default element style attributes
+     * @return {void}
+     */
+    Menu.prototype.initialize = function() {
+        $('.mobile-menu-wrapper').css({
+            maxHeight: 0,
+            position: 'relative',
+            zIndex: 1
+        });
+
+        $('.mobile-menu-wrapper .stripe').css('height', navHeight + 'px');
+    }
+
+    /**
+     * Toggles the mobile menu
+     * @param  {void} element The reference element clicked
+     * @return {void}
+     */
+    Menu.prototype.toggle = function(element) {
+        element = $(element);
+        element.toggleClass('open');
+        $('body').toggleClass('mobile-menu-in');
+
+        if ($('body').hasClass('mobile-menu-in')) {
+            this.show();
+        } else {
+            this.hide();
+        }
+    }
+
+    /**
+     * Shows the mobile menu
+     * @return {void}
+     */
+    Menu.prototype.show = function() {
+        $('.mobile-menu-wrapper').css('visibility', 'visible').animate({
+            maxHeight: navHeight + 'px'
+        }, animationSpeed);
+    }
+
+    /**
+     * Hides the mobile menu
+     * @return {void}
+     */
+    Menu.prototype.hide = function () {
+        $('.mobile-menu-wrapper').css('visibility', 'visible').animate({
+            maxHeight: 0 + 'px'
+        }, animationSpeed);
+    }
+
+    /**
+     * Keeps track of events
+     * @return {void}
+     */
+    Menu.prototype.handleEvents = function() {
+
+        $(document).ready(function () {
+            this.getNavHeight();
+            this.initialize();
+        }.bind(this));
+
+        $(document).on('click', '[data-action="toggle-mobile-menu"]', function (e) {
+            e.preventDefault();
+            this.toggle(e.target);
+        }.bind(this));
+
+    }
+
+    return new Menu();
+
+})(jQuery);
+Helsingborg = Helsingborg || {};
+Helsingborg.Prompt = Helsingborg.Prompt || {};
 
 Helsingborg.Prompt.Modal = (function ($) {
 
     var fadeSpeed = 300;
-
 
     function Modal() {
         $(function(){
@@ -87,20 +155,39 @@ Helsingborg.Prompt.Modal = (function ($) {
         }.bind(this));
     }
 
+    /**
+     * Opens a modal window
+     * @param  {object} element Link item clicked
+     * @return {void}
+     */
     Modal.prototype.open = function(element) {
         var targetElement = $(element).closest('[data-reveal]').data('reveal');
         $('#' + targetElement).fadeIn(fadeSpeed);
         this.disableBodyScroll();
     }
 
+    /**
+     * Closes a modal window
+     * @param  {object} element Link item clicked
+     * @return {void}
+     */
     Modal.prototype.close = function(element) {
         $(element).closest('.modal').fadeOut(fadeSpeed);
+        this.enableBodyScroll();
     }
 
+    /**
+     * Disables scroll on body
+     * @return {void}
+     */
     Modal.prototype.disableBodyScroll = function() {
         $('body').addClass('no-scroll');
     }
 
+    /**
+     * Enables scroll on body
+     * @return {void}
+     */
     Modal.prototype.enableBodyScroll = function() {
         $('body').removeClass('no-scroll');
     }

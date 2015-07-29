@@ -16,10 +16,6 @@
     border: none;
     color: #fff;
     text-decoration: none;
-
-    &:hover {
-        background-color: darken($palette-red-4, 10%);
-    }
 }
 
 .btn-submit {

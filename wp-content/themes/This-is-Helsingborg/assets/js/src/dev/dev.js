@@ -15,34 +15,6 @@ jQuery(document).ready(function ($) {
     });
 
     /**
-     * Mobile menu
-     */
-    var navHeight = $('.mobile-menu-wrapper').height();
-    $('.mobile-menu-wrapper').css({
-        maxHeight: 0,
-        position: 'relative',
-        zIndex: 1
-    });
-    $('.mobile-menu-wrapper .stripe').css('height', navHeight + 'px');
-
-    $(document).on('click', '[data-action="toggle-mobile-menu"]', function (e) {
-        e.preventDefault();
-        var body = $('body');
-        $(this).toggleClass('open');
-        $('body').toggleClass('mobile-menu-in');
-
-        if (body.hasClass('mobile-menu-in')) {
-            $('.mobile-menu-wrapper').css('visibility', 'visible').animate({
-                maxHeight: navHeight + 'px'
-            }, 100);
-        } else {
-            $('.mobile-menu-wrapper').css('visibility', 'visible').animate({
-                maxHeight: 0 + 'px'
-            }, 100);
-        }
-    });
-
-    /**
      * Search button click
      */
     $('.search .btn-submit').on('click', function (e) {
