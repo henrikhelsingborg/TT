@@ -7,25 +7,23 @@
 // <button class="btn {{modifier_class}}">Button</button>
 // <a href="#" class="btn {{modifier_class}}">Button</a>
 
-.btn:not(li),
-li.btn > a {
+.btn {
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: $palette-red-4;
     border: none;
     color: #fff;
     text-decoration: none;
 
     &:hover {
-        background: darken($palette-red-4, 10%);
+        background-color: darken($palette-red-4, 10%);
     }
 }
 
 .btn-submit {
-    background: $palette-red-3;
+    background-color: $palette-red-3;
     color: #fff;
     font-weight: 500;
     letter-spacing: 1px;
