@@ -1,7 +1,5 @@
 var Helsingborg;
 
-
-
 jQuery(document).ready(function ($) {
 
     /**
@@ -11,17 +9,6 @@ jQuery(document).ready(function ($) {
     $(document).foundation({
         equalizer: {
             equalize_on_stack: true
-        }
-    });
-
-    /**
-     * Search button click
-     */
-    $('.search .btn-submit').on('click', function (e) {
-        if ($(this).parents('.hero').length) {
-            $(this).html('<i class="dots-loading dots-loading-small"></i>');
-        } else {
-            $(this).html('<i class="dots-loading"></i>');
         }
     });
 

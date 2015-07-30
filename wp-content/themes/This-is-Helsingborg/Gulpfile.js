@@ -84,7 +84,7 @@ gulp.task('sass-admin-dist', function () {
  */
 gulp.task('scripts-dev', function () {
     return gulp.src([
-                'assets/js/src/dev/*.js',
+                'assets/js/src/dev/**/*.js',
                 bower_components + 'foundation/js/foundation/foundation.js',
                 bower_components + 'foundation/js/foundation/foundation.equalizer.js',
                 bower_components + 'foundation/js/foundation/foundation.orbit.js',

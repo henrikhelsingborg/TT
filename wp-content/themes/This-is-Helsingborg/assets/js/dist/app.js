@@ -1,7 +1,5 @@
 var Helsingborg;
 
-
-
 jQuery(document).ready(function ($) {
 
     /**
@@ -11,17 +9,6 @@ jQuery(document).ready(function ($) {
     $(document).foundation({
         equalizer: {
             equalize_on_stack: true
-        }
-    });
-
-    /**
-     * Search button click
-     */
-    $('.search .btn-submit').on('click', function (e) {
-        if ($(this).parents('.hero').length) {
-            $(this).html('<i class="dots-loading dots-loading-small"></i>');
-        } else {
-            $(this).html('<i class="dots-loading"></i>');
         }
     });
 
@@ -213,6 +200,38 @@ Helsingborg.Prompt.Modal = (function ($) {
     }
 
     return new Modal();
+
+})(jQuery);
+Helsingborg = Helsingborg || {};
+Helsingborg.Search = Helsingborg.Search || {};
+
+Helsingborg.Search.Button = (function ($) {
+
+    function Button() {
+        $(function(){
+
+            this.handleEvents();
+
+        }.bind(this));
+    }
+
+    /**
+     * Keeps track of events
+     * @return {void}
+     */
+    Button.prototype.handleEvents = function() {
+
+        $(document).on('click', '.search .btn-submit', function (e) {
+            if ($(this).parents('.hero').length) {
+                $(this).html('<i class="dots-loading dots-loading-small"></i>');
+            } else {
+                $(this).html('<i class="dots-loading"></i>');
+            }
+        });
+
+    }
+
+    return new Button();
 
 })(jQuery);
 /*
