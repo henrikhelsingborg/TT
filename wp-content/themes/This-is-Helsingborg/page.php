@@ -19,16 +19,15 @@
             <?php get_template_part('templates/partials/sidebar', 'left'); ?>
 
             <div class="columns <?php echo $centerClasses; ?>">
-                <?php
-                    get_template_part('templates/partials/article');
-                    get_template_part('templates/partials/article', 'share');
-                ?>
+                <?php get_template_part('templates/partials/article'); ?>
 
                 <?php if (is_active_sidebar('content-area')) : ?>
                 <div class="widget-area" id="widget-content-area">
                     <?php dynamic_sidebar("content-area"); ?>
                 </div>
                 <?php endif; ?>
+
+                <?php get_template_part('templates/partials/article', 'share'); ?>
             </div>
 
             <?php
