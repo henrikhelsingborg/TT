@@ -6,7 +6,7 @@ function Helsingborg_sidebar_widgets() {
         'id' => 'footer-area',
         'name' => __('Footerarea', 'Helsingborg'),
         'description' => __('Arean längst ner', 'Helsingborg'),
-        'before_widget' => '<div class="left large-4 medium-4 columns"><div class="footer-content">',
+        'before_widget' => '<div class="left large-6 medium-6 columns"><div class="footer-content">',
         'after_widget' => '</div></div>',
         'before_title' => '<h2 class="footer-title">',
         'after_title' => '</h2>'

@@ -40,11 +40,29 @@
                         </div>
                     </div>
                     <div class="row">
-                        <?php
-                            if (is_active_sidebar('footer-area')) {
-                                dynamic_sidebar('footer-area');
-                            }
-                        ?>
+                        <div class="columns large-8 medium-8">
+                            <div class="row">
+                            <?php
+                                if (is_active_sidebar('footer-area')) {
+                                    dynamic_sidebar('footer-area');
+                                }
+                            ?>
+                            </div>
+                        </div>
+                        <div class="columns large-3 medium-4 right">
+                            <?php
+                                /**
+                                 * Displays the main menu navigation
+                                 */
+                                wp_nav_menu(array(
+                                    'theme_location'  => 'footer-menu',
+                                    'container'       => null,
+                                    'container_class' => null,
+                                    'items_wrap'      => '<ul class="nav nav-block-list nav-footer-menu">%3$s</ul>',
+                                    'depth'           => 1
+                                ));
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -268,6 +268,23 @@
     }
 }
 
+.nav-block-list {
+    a {
+        display: block;
+    }
+}
+
+.nav-footer-menu {
+    a {
+        padding: 8px 10px;
+        background-color: darken($palette-red-4, 10%);
+    }
+
+    li + li {
+        margin-top: 2px;
+    }
+}
+
 // Mobile navigation
 //
 // Markup:
