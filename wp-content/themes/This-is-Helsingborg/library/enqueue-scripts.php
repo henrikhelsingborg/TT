@@ -20,6 +20,10 @@ if (!function_exists('hbg_enqueue_scripts')) {
         wp_register_script('jquery', get_template_directory_uri() . '/assets/js/dist/packaged.jquery.min.js', array(), '1.0.0', false);
         wp_enqueue_script('jquery');
 
+        // Readspeaker
+        wp_register_script('readspeaker', 'http://f1.eu.readspeaker.com/script/5507/ReadSpeaker.js?pids=embhl', array(), '1.0.0', false);
+        wp_enqueue_script('readspeaker');
+
         /**
          * Register app.min.js
          */
