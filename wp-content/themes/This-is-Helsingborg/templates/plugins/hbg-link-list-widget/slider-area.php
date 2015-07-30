@@ -1,5 +1,5 @@
 <h3 class="widget-title">
-    <i class="fa fa-dot-circle-o"></i> <?php echo $instance['title']; ?>
+    <?php echo $instance['title']; ?>
     <?php if ($show_rss == 'rss_yes') { echo('<a href="'.$rss_link.'" class="link-rss"><i class="fa fa-rss-square"></i></a>'); } ?>
 </h3>
 

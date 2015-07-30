@@ -1,6 +1,6 @@
 <?php if ($args['id'] == 'slider-area' && is_front_page()) : ?>
 <?php echo $before_widget; ?>
-<?php echo $before_title . '<i class="fa fa-picture-o"></i> ' . (($instance['title']) ? $instance['title'] : 'Bildspel') . $after_title; ?>
+<?php echo $before_title . (($instance['title']) ? $instance['title'] : 'Bildspel') . $after_title; ?>
 <div class="box-content">
     <ul class="orbit-slider" <?php if (count($items) > 1) : ?>data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;"<?php endif; ?>>
         <?php
