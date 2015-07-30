@@ -176,13 +176,28 @@
 }
 
 .navbar-topmenu {
-    float: right;
+
+    text-align: center;
+    background-color: $creamy;
+    margin: -20px;
+    margin-bottom: 20px;
+    padding: 10px;
+
+    @media #{$medium-up} {
+        margin: 0;
+        padding: 0;
+        float: right;
+        text-align: left;
+        background-color: transparent;
+    }
 
     ul {
+        display: inline-block;
         border: 1px solid $creamy-darker;
         border-radius: 3px;
         font-size: 0px;
         box-shadow: 0 2px 2px $creamy;
+        background-color: #fff;
 
         li {
             display: inline-block;

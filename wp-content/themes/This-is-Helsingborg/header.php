@@ -32,10 +32,7 @@
             <div class="container">
                 <div class="row">
                     <div class="columns large-12">
-                        <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad"></a>
-                        <button class="btn btn-mobile-menu" data-action="toggle-mobile-menu"><i class="hbg-hamburger"></i></button>
                         <?php
-
                             /**
                              * Displays the main menu navigation
                              */
@@ -45,9 +42,11 @@
                                 'container_class' => 'navbar-topmenu',
                                 'items_wrap'      => '<ul class="nav">%3$s</ul>'
                             ));
-
-                            echo '<div class="clearfix"></div>';
-
+                        ?>
+                        <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad"></a>
+                        <button class="btn btn-mobile-menu" data-action="toggle-mobile-menu"><i class="hbg-hamburger"></i></button>
+                        <div class="clearfix"></div>
+                        <?php
                             /**
                              * Displays the main menu navigation
                              */
