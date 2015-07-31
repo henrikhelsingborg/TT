@@ -4,9 +4,9 @@
     $easyToRead = get_post_meta($post->ID, 'hbg_easy_to_read', TRUE);
 ?>
 <ul class="article-accessibility list list-plain list-horizontal clearfix">
-    <li><a href="http://app.eu.readspeaker.com/cgi-bin/rsent?customerid=5507&amp;lang=sv_se&amp;readid=article&amp;url=<?php echo $current_url; ?>" onclick="javascript:readpage(this.href, 'read-speaker-player'); return false;" title="Lyssna på innehållet"><i class="fa fa-volume-up"></i> Lyssna</a></li>
+    <li><a href="http://app.eu.readspeaker.com/cgi-bin/rsent?customerid=5507&amp;lang=sv_se&amp;readid=article&amp;url=<?php echo $current_url; ?>" onclick="javascript:readpage(this.href, 'read-speaker-player'); return false;" title="Lyssna på: <?php the_title(); ?>"><i class="fa fa-volume-up"></i> Lyssna</a></li>
     <?php if ($easyToRead) : ?>
-    <li><a href="<?php echo $easyToRead; ?>" title="Lättläst version av innehållet"><i class="fa hbgic-easy-to-read"></i> Lättläst</a></li>
+    <li><a href="<?php echo $easyToRead; ?>" title="Lättläst: <?php the_title(); ?>"><i class="fa hbgic-easy-to-read"></i> Lättläst</a></li>
     <?php endif; ?>
 </ul>
 
