@@ -76,6 +76,7 @@ Helsingborg.Prompt.Alert = (function ($) {
 
     /**
      * Clear the saved "acceptCookies" value from html5localstorage
+     * To clear from JS Console: Helsingborg.Prompt.Alert.clearAcceptCookies();
      * @return {string} Success message
      */
     Alert.prototype.clearAcceptCookies = function() {
