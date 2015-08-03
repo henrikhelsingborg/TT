@@ -130,6 +130,17 @@ jQuery(document).ready(function ($) {
     });
 
     /**
+     * Get disturbances
+     */
+    jQuery.post(ajaxurl, { action: 'big_notification' }, function(response) {
+        response = JSON.parse(response);
+        $.each(response, function (index, item) {
+            var message = '<a href="' + item.link + '">' + item.title + '</a><br>' + item.main;
+            Helsingborg.Prompt.Alert.show(item.class, message);
+        });
+    });
+
+    /**
      * Table list
      */
     if ($('.table-list').length > 0) {

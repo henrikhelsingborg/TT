@@ -84,7 +84,9 @@ function big_notification_callback() {
     if (!$notifications) {die();}
 
     // Sort all notifications by date
-    usort( $notifications, create_function('$a,$b', 'return strcmp($b->post_date, $a->post_date);'));
+    usort($notifications, create_function('$a,$b', 'return strcmp($b->post_date, $a->post_date);'));
+
+    $retArr = array();
 
     // Print the alarms
     foreach($notifications as $notification) {
@@ -95,16 +97,18 @@ function big_notification_callback() {
         if (strlen($main) > 50) $main = trim(substr($main, 0, 100)) . "…";
         $content = $the_content['extended'];
 
-        echo(
-            '<div class="small-12 columns">'.
-            '<div class="alert-msg '.$class.'">'.
-            '<a href="' . $link . '" class="alert-link" title="link-title">' . $notification->post_title . ' </a>'.
-            '<p>' . $main . '</p></div><!-- /.alert-msg --></div><!-- /.columns -->'
+        $retArr[] = array(
+            'class' => $class,
+            'link' => $link,
+            'main' => $main,
+            'title' => $notification->post_title
         );
     }
 
+    echo json_encode($retArr);
+
     // Return
-    die();
+    wp_die();
 }
 
 /* Uses Google Custom Search to get JSON with search results */

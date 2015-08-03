@@ -70,6 +70,7 @@
         </footer>
     </div>
 
+    <script>var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';</script>
     <?php wp_footer(); ?>
 
     <script type="text/javascript">function googleTranslateElementInit() {new google.translate.TranslateElement({pageLanguage:"sv",autoDisplay:false,gaTrack:true,gaId:"UA-16678811-1"},"google-translate-element");}</script>

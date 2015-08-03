@@ -19,7 +19,7 @@
 }
 
 .alert-info {
-    background-color: $alert-blue;
+    background-color: $alert-info;
 
     .columns:first-child {
         padding-left: 60px;
@@ -32,7 +32,7 @@
             transform: translateY(-50%);
             left: 20px;
             font-size: 18pt;
-            color: darken($alert-blue, 60%);
+            color: darken($alert-info, 60%);
         }
     }
 
@@ -41,6 +41,40 @@
     }
 
     .btn-submit {
-        background-color: darken($alert-blue, 50%);
+        background-color: darken($alert-info, 50%);
+    }
+}
+
+.alert-warning {
+    background-color: $alert-warning;
+    color: darken($alert-warning, 60%);
+
+    .columns:first-child {
+        padding-left: 60px;
+        position: relative;
+
+        &::before {
+            @include hbg-icon("\f071");
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            font-size: 18pt;
+            color: darken($alert-warning, 60%);
+        }
+    }
+
+    a {
+        color: darken($alert-warning, 60%);
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .btn-alert-close {
+        color: $text-default;
     }
 }

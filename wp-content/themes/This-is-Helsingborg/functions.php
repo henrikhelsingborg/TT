@@ -8,6 +8,7 @@
     require_once('library/meta-boxes.php');
     require_once('meta_boxes/meta-functions.php');
     require_once('library/helpers.php');
+    require_once('library/scheduled-tasks.php');
 
     /*
     if (isset($_GET['flush-inactive']) && $_GET['flush-inactive'] == "true") {
@@ -17,3 +18,10 @@
         echo "Tog bort inaktiva widgets";
     }
     */
+
+
+    if (isset($_GET['dist'])) {
+        require_once('library/scheduled-tasks/scheduled_alarms_disturbance.php');
+        $hbgDistrubance = new HbgScheduledAlarmsDisturbance();
+        $hbgDistrubance->createAlarmPages();
+    }
