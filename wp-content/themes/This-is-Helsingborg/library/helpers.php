@@ -66,3 +66,14 @@ function remove_empty_p($content) {
     return preg_replace('#<p>(\s|&nbsp;)*+(<br\s*/*>)*(\s|&nbsp;)*</p>#i', '', $content);
 }
 add_filter('the_content', 'remove_empty_p', 20, 1);
+
+function get_excerpt_by_id($post_id = 0) {
+    global $post;
+    $save_post = $post;
+    $post = get_post($post_id);
+    setup_postdata($post);
+    $excerpt = get_the_excerpt();
+    $post = $save_post;
+    wp_reset_postdata($post);
+    return $excerpt;
+}

@@ -466,4 +466,27 @@ function load_alarms_callback() {
     echo json_encode($result);
     die();
 }
-?>
+
+add_action('wp_ajax_search_pages', 'search_pages_callback');
+function search_pages_callback() {
+    $s = $_POST['s'];
+    $result = array();
+
+    $args = array(
+        's' => $s,
+        'post_type' => 'page',
+        'posts_per_page' => 5,
+        'post_status' => 'publish'
+    );
+
+    $pages = new WP_Query($args);
+
+    foreach ($pages->posts as $page) {
+        $result[$page->ID]['page'] = $page;
+        $result[$page->ID]['permalink'] = get_permalink($page->ID);
+        $result[$page->ID]['excerpt'] = get_excerpt_by_id($page->ID);
+    }
+
+    echo json_encode($result);
+    wp_die();
+}
