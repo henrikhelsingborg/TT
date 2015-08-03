@@ -1,0 +1,46 @@
+.alert {
+    display: none;
+    padding: 15px 0;
+    font-size: 11pt;
+    color: $text-default;
+
+    .buttons {
+        text-align: right;
+    }
+
+    .btn {
+        border-radius: 5px;
+        letter-spacing: 0;
+
+        & + .btn {
+            margin-left: 5px;
+        }
+    }
+}
+
+.alert-info {
+    background-color: $alert-blue;
+
+    .columns:first-child {
+        padding-left: 60px;
+        position: relative;
+
+        &::before {
+            @include hbg-icon("\f05a");
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            font-size: 18pt;
+            color: darken($alert-blue, 60%);
+        }
+    }
+
+    .btn-danger {
+        background-color: $palette-red-4;
+    }
+
+    .btn-submit {
+        background-color: darken($alert-blue, 50%);
+    }
+}
