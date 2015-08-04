@@ -10,6 +10,9 @@
     text-decoration: none;
     letter-spacing: .5px;
     font-weight: bold;
+    box-shadow: 0 5px 5px $creamy;
+    border: 1px solid $creamy-darker;
+    padding: 5px;
 
     &:hover {
         background-color: $creamy;
@@ -19,7 +22,6 @@
         display: block;
         position: relative;
         padding: $widget-padding;
-        border: 1px solid $creamy-darker;
     }
 
     img + .index-container {

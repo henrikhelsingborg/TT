@@ -26,11 +26,11 @@
                 }
         ?>
         <div class="columns <?php if (is_active_sidebar('right-sidebar')) : ?>large-6 medium-6<?php else : ?>large-4 medium-6<?php endif; ?> end">
-            <a href="<?php echo $link; ?>" class="index-item">
+            <a href="<?php echo $link; ?>" class="index-item" data-equalizer-watch>
                 <?php if (isset($image[0])) : ?>
                 <img src="<?php echo $image[0]; ?>">
                 <?php endif; ?>
-                <span class="index-container" data-equalizer-watch>
+                <span class="index-container">
                     <span class="index-caption link-item"><?php echo $title; ?></span>
                     <span class="index-description"><?php echo wpautop($main, true); ?></span>
                 </span>
