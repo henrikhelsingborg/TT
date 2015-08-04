@@ -11,6 +11,12 @@ Helsingborg.Search.Autocomplete = (function ($) {
         }.bind(this));
     }
 
+    /**
+     * Performs an ajax post to retrive matching pages
+     * @param  {string} searchString The search string
+     * @param  {string} element      Element selector
+     * @return {void}
+     */
     Autocomplete.prototype.search = function(searchString, element) {
         if (searchString.length >= 3) {
             jQuery.post(
@@ -43,14 +49,29 @@ Helsingborg.Search.Autocomplete = (function ($) {
         }
     }
 
+    /**
+     * Hides the autocomplete container
+     * @param  {string} element Element selector
+     * @return {void}
+     */
     Autocomplete.prototype.hide = function(element) {
         $(element).siblings('ul.autocomplete').hide();
     }
 
+    /**
+     * Shows the autocomplete container
+     * @param  {string} element Element selector
+     * @return {void}
+     */
     Autocomplete.prototype.show = function(element) {
         $(element).siblings('ul.autocomplete').show();
     }
 
+    /**
+     * Handles highlighting "next"
+     * @param  {string} element Element selecotr
+     * @return {void}
+     */
     Autocomplete.prototype.arrowNext = function(element) {
         var autocomplete = $(element).siblings('ul.autocomplete');
         var selected = autocomplete.find('li.selected');
@@ -64,6 +85,11 @@ Helsingborg.Search.Autocomplete = (function ($) {
         }
     }
 
+    /**
+     * Handles highlighting "prev"
+     * @param  {string} element Element selector
+     * @return {void}
+     */
     Autocomplete.prototype.arrowPrev = function(element) {
         var autocomplete = $(element).siblings('ul.autocomplete');
         var selected = autocomplete.find('li.selected');
