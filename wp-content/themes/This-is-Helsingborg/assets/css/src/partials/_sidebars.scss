@@ -6,7 +6,8 @@
     }
 }
 
-.sidebar-right {
+.sidebar-right,
+.sidebar-left {
     .widget {
         &:nth-child(1n) {
             .widget-content {
@@ -63,4 +64,12 @@
             }
         }
     }
+}
+
+.sidebar-left-widgets {
+    margin-bottom: 20px !important;
+}
+
+.sidebar-left-widgets-bottom {
+    margin-top: 20px !important;
 }

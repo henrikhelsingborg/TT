@@ -40,7 +40,7 @@ function Helsingborg_sidebar_widgets() {
         'id' => 'left-sidebar',
         'name' => __('Vänster area', 'Helsingborg'),
         'description' => __('Lägg till de widgets som ska visas i högra sidebaren.', 'Helsingborg'),
-        'before_widget' => '<div class="widget large-12 medium-12 small-12 columns"><div class="widget-content">',
+        'before_widget' => '<div class="widget large-12 medium-12 small-12 columns %2$s"><div class="widget-content">',
         'after_widget' => '</div></div>',
         'before_title' => '<h2>',
         'after_title' => '</h2>'
@@ -50,7 +50,7 @@ function Helsingborg_sidebar_widgets() {
         'id' => 'left-sidebar-bottom',
         'name' => __('Vänster bottenarea', 'Helsingborg'),
         'description' => __('Lägg till de widgets som ska visas i högra sidebaren.', 'Helsingborg'),
-        'before_widget' => '<div class="widget large-12 medium-12 small-12 columns"><div class="widget-content">',
+        'before_widget' => '<div class="widget large-12 medium-12 small-12 columns %2$s"><div class="widget-content">',
         'after_widget' => '</div></div>',
         'before_title' => '<h2>',
         'after_title' => '</h2>'
