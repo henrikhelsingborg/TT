@@ -467,6 +467,7 @@ function load_alarms_callback() {
     die();
 }
 
+add_action('wp_ajax_nopriv_search_pages', 'search_pages_callback');
 add_action('wp_ajax_search_pages', 'search_pages_callback');
 function search_pages_callback() {
     $s = $_POST['s'];

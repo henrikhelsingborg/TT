@@ -119,6 +119,16 @@
     color: $text-gray-light;
 }
 
+.hbg-loading-sm {
+    $size: 40px;
+    min-width: $size;
+    min-height: $size;
+    width: $size;
+    height: $size;
+    padding: 0;
+    background-size: 100%;
+}
+
 // Loading indicator three blinking dots
 
 .dots-loading {

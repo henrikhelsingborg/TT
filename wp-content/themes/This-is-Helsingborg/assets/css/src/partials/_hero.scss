@@ -78,6 +78,14 @@
             height: 100%;
         }
 
+        .hbg-loading {
+            display: none;
+            position: absolute;
+            top: 54px;
+            right: 70px;
+            z-index: 10;
+        }
+
         @include input-placeholder(#858585, 1, 100);
     }
 }

@@ -3,6 +3,9 @@ Helsingborg.Search = Helsingborg.Search || {};
 
 Helsingborg.Search.Autocomplete = (function ($) {
 
+    var typingTimer;
+    var doneTypingInterval = 1000;
+
     function Autocomplete() {
         $(function(){
 
@@ -19,29 +22,40 @@ Helsingborg.Search.Autocomplete = (function ($) {
      */
     Autocomplete.prototype.search = function(searchString, element) {
         if (searchString.length >= 3) {
+            $(element).parents('.form-element').find('.hbg-loading').show();
+
             jQuery.post(
                 ajaxurl,
                 {
-                    action: 'search_pages',
-                    s: searchString
+                    action: 'search',
+                    keyword: searchString,
+                    index:   '1'
                 },
                 function(response) {
                     response = JSON.parse(response);
 
-                    var autocomplete = $(element).siblings('ul.autocomplete');
-                    autocomplete.empty();
-                    autocomplete.append('<li class="heading">Utvalda resultat (klicka på "sök" för alla resultat):</li>');
+                    if (response.items !== undefined) {
+                        var autocomplete = $(element).siblings('ul.autocomplete');
+                        autocomplete.empty();
+                        autocomplete.append('<li class="heading">Utvalda resultat (klicka på "sök" för alla resultat):</li>');
 
-                    $.each(response, function (index, item) {
-                        autocomplete.append('<li>\
-                            <a href="' + item.permalink + '">\
-                                <strong class="link-item">' + item.page.post_title + '</strong>\
-                                <p>' + item.excerpt + '</p>\
-                            </a>\
-                        </li>')
-                    });
+                        $.each(response.items, function (index, item) {
+                            var snippet = $.trim(item.htmlSnippet);
 
-                    this.show(element);
+                            autocomplete.append('<li>\
+                                <a href="' + item.link + '">\
+                                    <strong class="link-item">' + item.htmlTitle + '</strong>\
+                                    <p>' + snippet + '</p>\
+                                </a>\
+                            </li>');
+
+                            if (index >= 5) return false;
+                        });
+
+                        this.show(element);
+                    }
+
+                    $(element).parents('.form-element').find('.hbg-loading').hide();
                 }.bind(this)
             );
         } else {
@@ -77,11 +91,11 @@ Helsingborg.Search.Autocomplete = (function ($) {
         var selected = autocomplete.find('li.selected');
 
         if (selected.length) {
-            var next = selected.next('li');
+            var next = selected.next('li:not(.heading)');
             selected.removeClass('selected');
             next.addClass('selected');
         } else {
-            autocomplete.find('li:first-child').addClass('selected');
+            autocomplete.find('li:nth-child(2)').addClass('selected');
         }
     }
 
@@ -95,11 +109,11 @@ Helsingborg.Search.Autocomplete = (function ($) {
         var selected = autocomplete.find('li.selected');
 
         if (selected.length) {
-            var next = selected.prev('li');
+            var next = selected.prev('li:not(.heading)');
             selected.removeClass('selected');
             next.addClass('selected');
         } else {
-            autocomplete.find('li:last-child').addClass('selected');
+            autocomplete.find('li:not(.heading):last-child').addClass('selected');
         }
     }
 
@@ -110,8 +124,11 @@ Helsingborg.Search.Autocomplete = (function ($) {
     Autocomplete.prototype.handleEvents = function() {
 
         $(document).on('input', '[data-autocomplete="pages"]', function (e) {
-            var val = $(e.target).closest('input').val();
-            this.search(val, e.target);
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(function () {
+                var val = $(e.target).closest('input').val();
+                this.search(val, e.target);
+            }.bind(this), doneTypingInterval);
         }.bind(this));
 
         $(document).on('blur', '[data-autocomplete="pages"]', function (e) {
@@ -146,6 +163,15 @@ Helsingborg.Search.Autocomplete = (function ($) {
                 }
             }
         }.bind(this));
+
+        $(document).on('mouseenter', '.autocomplete li:not(.heading)', function (e) {
+            $(this).siblings('.selected').removeClass('selected');
+        });
+
+        $(document).on('mousedown', '.autocomplete li a', function (e) {
+            e.preventDefault();
+            location.href = $(e.target).closest('a').attr('href');;
+        });
 
     }
 
