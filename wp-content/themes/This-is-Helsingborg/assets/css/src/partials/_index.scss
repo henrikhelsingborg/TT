@@ -20,6 +20,9 @@
         position: relative;
         padding: $widget-padding;
         border: 1px solid $creamy-darker;
+    }
+
+    img + .index-container {
         border-top: 0;
     }
 
