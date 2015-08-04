@@ -19,12 +19,12 @@
                 $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
         ?>
         <div class="columns large-4 medium-6 end">
-            <a href="<?php echo $link; ?>" class="index-item" data-equalizer-watch>
+            <a href="<?php echo $link; ?>" class="index-item index-item-filled" data-equalizer-watch>
                 <?php if (isset($image[0])) : ?>
                 <img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>">
                 <?php endif; ?>
                 <span class="index-container">
-                    <span class="index-caption"><?php echo $page->post_title ?></span>
+                    <span class="index-caption link-item link-item-light"><?php echo $page->post_title ?></span>
                 </span>
             </a>
         </div>

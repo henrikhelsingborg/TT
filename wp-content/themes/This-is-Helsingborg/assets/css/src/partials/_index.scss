@@ -4,31 +4,29 @@
 
 .index-item {
     display: block;
-    background-color: $palette-red-2;
-    color: #fff;
+    position: relative;
+    background-color: #fff;
+    color: $text-default;
     text-decoration: none;
     letter-spacing: .5px;
     font-weight: bold;
 
     &:hover {
-        background-color: darken($palette-red-2, 5%);
+        background-color: $creamy;
     }
 
     .index-container {
         display: block;
+        position: relative;
         padding: $widget-padding;
+        border: 1px solid $creamy-darker;
+        border-top: 0;
     }
 
     .index-caption {
         display: block;
         line-height: 130%;
-
-        &::before {
-            @include hbg-icon($icon-link-arrow);
-            display: inline-block;
-            margin-right: 8px;
-            color: rgba(255,255,255,.6);
-        }
+        color: $palette-red-4;
     }
 
     .index-description {
@@ -41,6 +39,23 @@
     img {
         width: 100%;
         height: auto;
+    }
+}
+
+.index-item-filled {
+    background-color: $palette-red-2;
+    color: #fff;
+
+    &:hover {
+        background-color: darken($palette-red-2, 5%);
+    }
+
+    .index-container {
+        border: none;
+    }
+
+    .index-caption {
+        color: #fff;
     }
 }
 
