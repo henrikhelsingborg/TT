@@ -9,7 +9,7 @@
 
     <?php get_template_part('templates/partials/sidebar', 'navigation'); ?>
 
-    <?php if (is_active_sidebar('left-sidebar')) : ?>
+    <?php if (is_active_sidebar('left-sidebar-bottom')) : ?>
     <div class="row sidebar-left-widgets-bottom">
         <?php dynamic_sidebar('left-sidebar-bottom'); ?>
     </div>
