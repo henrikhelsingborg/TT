@@ -4,7 +4,7 @@
 ?>
 
 <script>
-    var query = '<?php echo $query; ?>';
+    var query = '<?php echo urldecode($query); ?>';
 </script>
 
 <section class="section-featured section-featured-search creamy">
