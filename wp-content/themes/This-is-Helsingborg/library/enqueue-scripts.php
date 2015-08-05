@@ -45,7 +45,7 @@ if (!function_exists('hbg_enqueue_scripts')) {
         /**
          * Search result page
          */
-        if (is_search()) {
+        if (is_search() || is_404()) {
             wp_register_script('app-search', get_template_directory_uri() . '/assets/js/dist/search.min.js', array(), '1.0.0', true);
             wp_enqueue_script('app-search');
         }
