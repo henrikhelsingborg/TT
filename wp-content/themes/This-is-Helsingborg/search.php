@@ -20,6 +20,7 @@
 
 <section class="section-search-result">
     <div class="container">
+        <?php if (strlen($query) > 0) : ?>
         <div class="row">
             <div class="columns large-12">
                 <ul class="pagination" role="menubar" arial-label="pagination">
@@ -45,6 +46,11 @@
                 </ul>
             </div>
         </div>
+        <?php else : ?>
+        <div class="row">
+            <div class="columns large-12">Skriv vad du letar efter i sökrutan ovan och klicka på knappen "sök" för att visa resultat.</div>
+        </div>
+        <?php endif; ?>
     </div>
 </section>
 

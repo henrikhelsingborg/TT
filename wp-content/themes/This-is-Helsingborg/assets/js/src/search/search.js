@@ -271,11 +271,13 @@ Helsingborg.Search.Search = (function ($) {
     Search.prototype.handleEvents = function() {
 
         $(document).ready(function () {
-            this.request({
-                action:     'search',
-                keyword:    query,
-                index:      '1'
-            });
+            if (query.length) {
+                this.request({
+                    action:     'search',
+                    keyword:    query,
+                    index:      '1'
+                });
+            }
         }.bind(this));
 
         // Next page button
