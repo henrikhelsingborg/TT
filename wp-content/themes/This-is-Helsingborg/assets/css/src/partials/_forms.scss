@@ -85,9 +85,7 @@ input[type="checkbox"] {
 }
 
 @media #{$small-only} {
-    .columns + .columns, .section-featured .columns + .columns {
-        margin-top: 0 !important;
-    }
+
 }
 
 // Zmultiselect overriders

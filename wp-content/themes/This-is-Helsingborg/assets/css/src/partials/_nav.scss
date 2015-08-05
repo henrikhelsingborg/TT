@@ -176,12 +176,13 @@
 }
 
 .navbar-topmenu {
-
     text-align: center;
     background-color: $creamy;
-    margin: -20px;
-    margin-bottom: 20px;
+    margin: 0;
     padding: 10px;
+    margin-left: -$column-gutter/2;
+    margin-right: -$column-gutter/2;
+    margin-bottom: $column-gutter;
 
     @media #{$medium-up} {
         margin: 0;
