@@ -94,6 +94,8 @@ Helsingborg.Search.Search = (function ($) {
             _paginationInitialized = true;
             this.setPaginationCurrent();
         }
+
+        $('.pagination').show();
     }
 
     /**
