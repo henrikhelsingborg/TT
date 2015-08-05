@@ -458,11 +458,13 @@ Helsingborg.Search.Autocomplete = (function ($) {
     Autocomplete.prototype.handleEvents = function() {
 
         $(document).on('input', '[data-autocomplete="pages"]', function (e) {
-            clearTimeout(typingTimer);
-            typingTimer = setTimeout(function () {
-                var val = $(e.target).closest('input').val();
-                this.search(val, e.target);
-            }.bind(this), doneTypingInterval);
+            if ($(e.target).parents('.mobile-menu-wrapper').length == 0) {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(function () {
+                    var val = $(e.target).closest('input').val();
+                    this.search(val, e.target);
+                }.bind(this), doneTypingInterval);
+            }
         }.bind(this));
 
         $(document).on('blur', '[data-autocomplete="pages"]', function (e) {
