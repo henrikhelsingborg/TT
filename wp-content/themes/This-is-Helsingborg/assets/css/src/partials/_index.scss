@@ -50,6 +50,9 @@
 .index-item-filled {
     background-color: $palette-red-2;
     color: #fff;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
 
     &:hover {
         background-color: darken($palette-red-2, 5%);
