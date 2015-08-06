@@ -28,6 +28,8 @@
 </head>
 <body <?php echo (is_404()) ? 'id="page-not-found"' : ''; ?>>
     <div class="site-wrapper">
+        <a href="#main" class="btn btn-default btn-offcanvas" tabindex="1">Hoppa till innehållet</a>
+
         <header class="site-header">
             <div class="container">
                 <div class="row">
@@ -78,3 +80,5 @@
                 get_template_part('templates/partials/hero');
             }
         ?>
+
+        <main id="main">

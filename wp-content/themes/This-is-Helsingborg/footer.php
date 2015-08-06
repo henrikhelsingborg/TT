@@ -1,3 +1,5 @@
+        </main>
+
         <section class="creamy">
             <div class="container">
                 <ul class="row teasers">
