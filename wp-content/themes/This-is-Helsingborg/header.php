@@ -26,7 +26,7 @@
 
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php echo (is_404()) ? 'id="page-not-found"' : ''; ?>>
     <div class="site-wrapper">
         <header class="site-header">
             <div class="container">
