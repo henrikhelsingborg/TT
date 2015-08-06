@@ -18,6 +18,10 @@
         background-color: $creamy;
     }
 
+    &:focus {
+        border-color: $focus-color;
+    }
+
     .index-container {
         display: block;
         position: relative;

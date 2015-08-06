@@ -156,7 +156,8 @@
                 border: 3px solid $palette-red-2;
                 color: #fff;
 
-                &:hover {
+                &:hover,
+                &:focus {
                     background-color: darken($palette-red-2, 20%);
                 }
 

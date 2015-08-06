@@ -19,9 +19,14 @@
             color: $navbar-main-color;
             text-decoration: none;
 
-            &:hover {
+            &:hover,
+            &:focus {
                 text-decoration: underline;
                 color: $palette-red-4;
+            }
+
+            &:focus {
+                color: $focus-color;
             }
         }
 
@@ -63,6 +68,11 @@
         &:hover {
             color: $palette-red-4;
         }
+
+        &:focus {
+            background-color: $focus-color;
+            color: #fff;
+        }
     }
 
     .sub-menu {
@@ -72,12 +82,16 @@
         border-left: 8px solid $creamy-darker;
     }
 
-    .has-childs {
+    .has-childs:not(.current-node) {
         > a {
             padding-right: 30px;
+
+            &:focus::after {
+                color: #fff;
+            }
         }
 
-        &::after {
+        > a::after {
             position: absolute;
             right: 10px;
             top: 11px;
@@ -89,10 +103,15 @@
 
     .has-childs.current {
         > a {
+            position: relative;
             padding-right: 30px;
+
+            &:focus::after {
+                color: #fff;
+            }
         }
 
-        &::after {
+        > a::after {
             position: absolute;
             right: 12px;
             top: 11px;
@@ -128,6 +147,10 @@
         > a {
             position: relative;
             color: $palette-red-4;
+
+            &:focus {
+                color: #fff;
+            }
         }
 
         &:not(.has-childs) > a {
@@ -141,12 +164,6 @@
                 display: block;
                 background-color: $palette-red-4;
             }
-        }
-    }
-
-    .nav > .current > a {
-        &::after {
-            display: none;
         }
     }
 }
@@ -196,6 +213,7 @@
         display: inline-block;
         border: 1px solid $creamy-darker;
         border-radius: 3px;
+        overflow: hidden;
         font-size: 0px;
         box-shadow: 0 2px 2px $creamy;
         background-color: #fff;
@@ -215,8 +233,13 @@
                     text-decoration: underline;
                 }
 
+                &:focus {
+                    background-color: $focus-color;
+                    color: #fff;
+                }
+
                 &:active {
-                    box-shadow: inset 0 0 3px $creamy-darker;
+                    box-shadow: inset 0 0 3px darken($focus-color, 5%);
                 }
             }
 
@@ -229,6 +252,10 @@
             &.highlight-red {
                 a {
                     color: $palette-red-4;
+
+                    &:focus {
+                        color: #fff;
+                    }
                 }
             }
         }
