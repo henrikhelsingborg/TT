@@ -33,8 +33,14 @@
         <div class="row">
             <div class="columns large-12">
                 <ul class="search-result">
-                    <li class="event-times-loading"><i class="hbg-loading">Läser in resultat…</i></li>
+                    <li class="loading-results"><i class="hbg-loading">Läser in resultat…</i></li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="row infinite-scroll-load-more" style="display:none;">
+            <div class="columns large-12">
+                <button class="btn btn-submit btn-block" data-action="infinite-scroll-more">Läs in fler resultat…</button>
             </div>
         </div>
 

@@ -3,6 +3,11 @@ Helsingborg.Search = Helsingborg.Search || {};
 
 Helsingborg.Search.Search = (function ($) {
 
+    var _useInfiniteScroll = true;
+    var _containerOriginBottom = 0;
+    var _infiniteScrollExtraBottom = 100;
+    var _numLoads = 0;
+
     var _resultContainer = '.search-result';
     var _pagination = '.pagination';
     var _paginationInitialized = false;
@@ -34,6 +39,7 @@ Helsingborg.Search.Search = (function ($) {
      */
     Search.prototype.request = function(requestData) {
         $.post(ajaxurl, requestData, function(response) {
+            _numLoads++;
             response = $.parseJSON(response);
             this.handleResponse(response);
         }.bind(this));
@@ -45,7 +51,11 @@ Helsingborg.Search.Search = (function ($) {
      * @return {[type]}          [description]
      */
     Search.prototype.handleResponse = function(response) {
-        $(_resultContainer).empty();
+        if (!_useInfiniteScroll) {
+            $(_resultContainer).empty();
+        } else {
+            $('.loading-results').remove();
+        }
 
         _nextRequest = response.queries.nextPage       !== undefined ? response.queries.nextPage[0]       : undefined;
         _prevRequest = response.queries.previousPage   !== undefined ? response.queries.previousPage[0]   : undefined;
@@ -54,9 +64,57 @@ Helsingborg.Search.Search = (function ($) {
         _resultsPerPage = _currRequest.count;
         _totalResults = _currRequest.totalResults;
 
-        this.searchInfo(response);
-        this.outputResults(response);
-        this.setupPagination();
+        if (_totalResults > 0) {
+            this.searchInfo(response);
+            this.outputResults(response);
+            if (_useInfiniteScroll) {
+                this.setupInfiniteScroll();
+            } else {
+                this.setupPagination();
+            }
+        } else {
+            this.emptyResult();
+        }
+    }
+
+    Search.prototype.emptyResult = function() {
+        if ($(_resultContainer).find('li').length > 0) {
+            $(_resultContainer).append('Inga fler resultat att visa.');
+        } else {
+            $(_resultContainer).append('Din sökning gav inga resultat.');
+        }
+    }
+
+    Search.prototype.setupInfiniteScroll = function() {
+        // Scrollevent
+        // Om man scrollar till botten av search result containern så ska den fyllas på med nya resultat
+
+        $('.infinite-scroll-load-more').hide();
+
+        _containerOriginBottom = $(_resultContainer).height() + $(_resultContainer).offset().top - $(window).height() + _infiniteScrollExtraBottom;
+        _nextData = { action: 'search', keyword: query, index: _nextRequest.startIndex.toString() };
+
+        $(window).on('scroll', function () {
+            var scrollPos = $(window).scrollTop();
+            if (scrollPos >= _containerOriginBottom) {
+                $(window).off('scroll');
+                if (_numLoads != 2) {
+                    $(_resultContainer).append('<li class="loading-results"><i class="hbg-loading">Läser in resultat…</i></li>');
+                    this.request(_nextData);
+                } else {
+                    $('.infinite-scroll-load-more').show();
+                }
+            }
+        }.bind(this));
+
+        $(document).off('click', '[data-action="infinite-scroll-more"]');
+        $(document).on('click', '[data-action="infinite-scroll-more"]', function (e) {
+            e.preventDefault();
+            $(window).off('scroll');
+            $(_resultContainer).append('<li class="loading-results"><i class="hbg-loading">Läser in resultat…</i></li>');
+            $('.infinite-scroll-load-more').hide();
+            this.request(_nextData);
+        }.bind(this));
     }
 
     /**

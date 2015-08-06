@@ -39,3 +39,10 @@
         color: darken($palette-red-4, 10%);
     }
 }
+
+.btn-block {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
