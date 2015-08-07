@@ -67,7 +67,7 @@ $administration_unit_ids = (isset($_GET['q']) && strlen($_GET['q']) > 0) ? $_GET
         <div class="row">
             <div class="columns large-12">
                 <!-- ko if: pager.maxPageIndex() > 0 -->
-                <ul class="pagination" role="menubar" arial-label="pagination">
+                <ul class="pagination" role="menubar" arial-label="pagination" style="display:block;">
                     <li><a href="#" data-bind="click: pager.movePrevious, enable: pager.currentPageIndex() > 0">&laquo; Föregående</a></li>
 
                     <!-- ko foreach: pager.pagerPages() -->
@@ -94,7 +94,7 @@ $administration_unit_ids = (isset($_GET['q']) && strlen($_GET['q']) > 0) ? $_GET
         <div class="row">
             <div class="columns large-12">
                 <!-- ko if: pager.maxPageIndex() > 0 -->
-                <ul class="pagination" role="menubar" arial-label="pagination">
+                <ul class="pagination" role="menubar" arial-label="pagination" style="display:block;">
                     <li><a href="#" data-bind="click: pager.movePrevious, enable: pager.currentPageIndex() > 0">&laquo; Föregående</a></li>
 
                     <!-- ko foreach: pager.pagerPages() -->
