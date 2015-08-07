@@ -10,14 +10,12 @@
     require_once('library/helpers.php');
     require_once('library/scheduled-tasks.php');
 
-    /*
     if (isset($_GET['flush-inactive']) && $_GET['flush-inactive'] == "true") {
         $widgets = get_option('sidebars_widgets');
         $widgets['wp_inactive_widgets'] = array();
         update_option('sidebars_widgets', $widgets);
         echo "Tog bort inaktiva widgets";
     }
-    */
 
 
     if (isset($_GET['dist'])) {

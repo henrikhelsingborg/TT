@@ -37,6 +37,14 @@ function Helsingborg_sidebar_widgets() {
     ));
 
     register_sidebar(array(
+        'id' => 'service-area',
+        'name' => __('Servicearea', 'Helsingborg'),
+        'description' => __('Lägg till det som ska visas under innehållet.', 'Helsingborg'),
+        'before_widget' => '<div class="widget columns large-4 medium-4 small-12">',
+        'after_widget' => '</div>'
+    ));
+
+    register_sidebar(array(
         'id' => 'left-sidebar',
         'name' => __('Vänster area', 'Helsingborg'),
         'description' => __('Lägg till de widgets som ska visas i högra sidebaren.', 'Helsingborg'),

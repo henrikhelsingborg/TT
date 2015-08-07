@@ -1,29 +1,14 @@
         </main>
 
+        <?php if (is_active_sidebar('service-area')) : ?>
         <section class="creamy">
             <div class="container">
-                <ul class="row teasers">
-                    <li class="columns large-4 medium-4 small-12">
-                        <i class="fa fa-comment-o"></i>
-                        <h3>Tyck till</h3>
-                        <p>Hjälp oss att bli bättre genom att lämna dina synpunkter till oss.</p>
-                        <a href="#" class="btn btn-plain">Skicka in synpunkter</a>
-                    </li>
-                    <li class="columns large-4 medium-4 small-12">
-                        <i class="fa fa-wrench"></i>
-                        <h3>Felanmälan</h3>
-                        <p>Ett trevligare Helsingborg. Här kan du annmäla fel på gator, torg och parker.</p>
-                        <a href="#" class="btn btn-plain">Gör en felanmälan</a>
-                    </li>
-                    <li class="columns large-4 medium-4 small-12">
-                        <i class="fa fa-map-marker"></i>
-                        <h3>Helsingborgskartan</h3>
-                        <p>Hitta kommunala verksamheter och service i Helsingborg.</p>
-                        <a href="#" class="btn btn-plain">Visa kartan</a>
-                    </li>
-                </ul>
+                <div class="row">
+                <?php dynamic_sidebar('service-area'); ?>
+                </div>
             </div>
         </section>
+        <?php endif; ?>
 
         <footer class="site-footer">
             <div class="container">
