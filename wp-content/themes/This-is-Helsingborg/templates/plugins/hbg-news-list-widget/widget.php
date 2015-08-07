@@ -29,8 +29,8 @@
                 <?php endif; ?>
 
                 <div class="large-8 medium-8 small-12 columns news-content">
-                    <h2 class="news-title"><?php echo $page->post_title ?></h2>
-                    <span class="news-date"><?php echo $page->post_modified ?></span>
+                    <h2 class="news-title"><?php echo $page->post_title; ?></h2>
+                    <span class="news-date"><?php echo date('Y-m-d \k\l\. H:i', strtotime($page->post_modified)); ?></span>
                     <p><?php echo wpautop($main, true); ?></p>
                     <span class="read-more link-item">Läs mer</span>
                 </div>
