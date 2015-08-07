@@ -11,6 +11,7 @@
 
     <script>
         var query = '<?php echo urldecode($searchKeyword); ?>';
+        var is404 = true;
     </script>
 
     <section class="creamy message">

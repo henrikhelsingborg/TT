@@ -73,7 +73,12 @@ Helsingborg.Search.Search = (function ($) {
                 this.setupPagination();
             }
         } else {
-            this.emptyResult();
+            if (!is404) {
+                this.emptyResult();
+            } else {
+                $('input[name="s"]').val('');
+                $('.section-search-result').hide();
+            }
         }
     }
 
