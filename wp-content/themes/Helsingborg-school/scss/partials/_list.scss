@@ -1,0 +1,24 @@
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+        text-decoration: none;
+    }
+
+    a > h4 {
+        color: $band-red-4;
+        line-height: 90%;
+    }
+
+    li + li {
+        margin-top: 20px;
+    }
+
+    a > .news-date {
+        font-size: 11pt;
+        font-weight: normal;
+        color: #333;
+    }
+}
