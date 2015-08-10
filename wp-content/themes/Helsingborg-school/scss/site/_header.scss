@@ -35,7 +35,7 @@
  * Top navigation bar
  */
 .nav-bar {
-    background: $band-color-4;
+    background: $band-red-4;
     padding: 0;
     position: relative;
 
@@ -182,7 +182,7 @@
 
                     a.read-more {
                         font: 300 12pt $font-roboto;
-                        color: $band-color-1;
+                        color: $band-red-1;
                         display: block;
 
                         &:hover {
