@@ -20,7 +20,7 @@
         wp_dequeue_script('jquery-ui');
 
         // Register app.jquery (includes jquery, jquery ui)
-        wp_register_script('jquery', get_stylesheet_directory_uri() . '/js/app.jquery.min.js', array(), '1.0.0', false);
+        wp_register_script('jquery', get_stylesheet_directory_uri() . '/js/jquery.app.min.js', array(), '1.0.0', false);
         wp_enqueue_script('jquery');
 
         // Style.css
@@ -36,5 +36,5 @@
         wp_enqueue_script('readspeaker');
 
         // App.css
-        wp_enqueue_style('style-app', get_stylesheet_directory_uri() . '/css/app.css');
+        wp_enqueue_style('style-app', get_stylesheet_directory_uri() . '/css/app.min.css');
     }
