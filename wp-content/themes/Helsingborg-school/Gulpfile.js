@@ -90,8 +90,8 @@ gulp.task('scripts-dist', ['scripts-dev', 'scripts-jquery']);
  */
 gulp.task('watch', function () {
     gulp.watch('scss/**/*.scss', ['sass-dist']);
-    gulp.watch('js/**/*.js', ['scripts-dist']);
+    gulp.watch(['js/**/*.js', '!js/app.js', '!js/app.min.js'], ['scripts-dev']);
 });
 
 
-gulp.task('default', ['sass-dist', 'scripts-dist', 'watch']);
+gulp.task('default', ['sass-dist', 'scripts-dist']);
