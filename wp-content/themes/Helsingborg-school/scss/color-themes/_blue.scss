@@ -4,3 +4,213 @@ $band-blue-2: #0069b4;
 $band-blue-3: #5ba1d8;
 $band-blue-4: #005c86;
 $band-blue-5: #0095db;
+
+body[data-theme="blue"] {
+
+    .color-band {
+        background-image: url('../assets/images/color-band-blue.svg');
+    }
+
+    .nav-bar {
+        background: $band-blue-4;
+    }
+
+    /**
+     * Navigation
+     */
+    .nav-mainmenu {
+        > ul {
+            li {
+                // Submenus
+                ul {
+                    background: darken($band-blue-4, 5%);
+
+                    li {
+                        a:hover {
+                            background: darken($band-blue-4, 8%);
+                        }
+                    }
+                }
+
+                // Display submenu on hover
+                &:hover {
+                    background: darken($band-blue-4, 5%);
+                }
+            }
+
+            // Search
+            .item-search {
+                &.show-search {
+                    background: darken($band-blue-4, 5%);
+                }
+
+                .search-container {
+                    background: darken($band-blue-4, 5%);
+
+                    .button.search {
+                        background: $band-blue-1;
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Mobile nav
+     */
+    .right-off-canvas-menu {
+        > ul {
+            // # Current node
+            .current-menu-item {
+                a {
+                    background: $band-blue-1;
+                }
+
+                &.menu-item-has-children {
+                    > a::after {
+                        background: darken($band-blue-1, 8%);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Breadcrumbs
+     */
+    .breadcrumbs {
+        a, strong {
+            color: $band-blue-4;
+        }
+    }
+
+    /**
+     * Collection
+     */
+    .collection {
+        /**
+         * Test colors for the collection items
+         * The colors should be set back-end in the future
+         */
+        &.collection-test-colors {
+            .collection-item {
+
+                &:nth-child(1n) {
+                    .collection-item-content {
+                        background: $band-blue-1;
+
+                        &:hover {
+                            background: darken($band-blue-1, 5%);
+                        }
+                    }
+                }
+
+                &:nth-child(2n) {
+                    .collection-item-content {
+                        background: $band-blue-2;
+
+                        &:hover {
+                            background: darken($band-blue-2, 5%);
+                        }
+                    }
+                }
+
+                &:nth-child(3n) {
+                    .collection-item-content {
+                        background: $band-blue-3;
+
+                        &:hover {
+                            background: darken($band-blue-3, 5%);
+                        }
+                    }
+                }
+
+                &:nth-child(4n) {
+                    .collection-item-content {
+                        background: $band-blue-4;
+
+                        &:hover {
+                            background: darken($band-blue-4, 5%);
+                        }
+                    }
+                }
+
+                &:nth-child(5n) {
+                    .collection-item-content {
+                        background: $band-blue-5;
+
+                        &:hover {
+                            background: darken($band-blue-5, 5%);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    /**
+     * Widggets
+     */
+    .widgets-test-color {
+        .widget {
+            &:nth-child(1n) {
+                .widget-content {
+                    background: $band-blue-1;
+
+                    p > a {
+                        color: darken($band-blue-1, 20%);
+                    }
+                }
+            }
+
+            &:nth-child(2n) {
+                .widget-content {
+                    background: $band-blue-2;
+
+                    p > a {
+                        color: darken($band-blue-2, 20%);
+                    }
+                }
+            }
+
+            &:nth-child(3n) {
+                .widget-content {
+                    background: $band-blue-3;
+
+                    p > a {
+                        color: darken($band-blue-3, 20%);
+                    }
+                }
+            }
+
+            &:nth-child(4n) {
+                .widget-content {
+                    background: $band-blue-4;
+
+                    p > a {
+                        color: darken($band-blue-4, 20%);
+                    }
+                }
+            }
+
+            &:nth-child(5n) {
+                .widget-content {
+                    background: $band-blue-5;
+
+                    p > a {
+                        color: darken($band-blue-5, 20%);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Footer
+     */
+    .main-footer {
+        background: $band-blue-4;
+    }
+
+}
