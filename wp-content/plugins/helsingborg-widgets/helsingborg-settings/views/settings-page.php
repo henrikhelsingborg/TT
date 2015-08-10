@@ -12,6 +12,9 @@ if (isset($_POST["update_settings"])) {
     $color_code = esc_attr($_POST["color_code"]);
     update_option('helsingborg_color_code', $color_code);
 
+    $color_theme = esc_attr($_POST['color_theme']);
+    update_option('helsingborg_color_theme', $color_theme);
+
     $event_form_id = esc_attr($_POST["event_form_id"]);
     update_option('helsingborg_event_form_id', $event_form_id);
 
@@ -69,6 +72,7 @@ wp_enqueue_media();
 
 // Get all the values
 $color_code           = get_option('helsingborg_color_code');
+$color_theme          = get_option('helsingborg_color_theme');
 $event_form_id        = get_option('helsingborg_event_form_id');
 $big_disturbance_root = get_option('helsingborg_big_disturbance_root');
 $big_information_root = get_option('helsingborg_big_information_root');
@@ -109,6 +113,20 @@ $alarm_location  = get_option('helsingborg_alarm_location');
         </th>
         <td>
           <input type="text" name="color_code" value="<?php echo $color_code; ?>" />
+        </td>
+      </tr>
+
+      <tr valign="top">
+        <th scope="row">
+          <label for="color_code">
+            Färgtema för domän:
+          </label>
+        </th>
+        <td>
+          <label><input type="radio" name="color_theme" value="red" <?php echo ($color_theme == 'red') ? 'checked' : ''; ?> /> Röd</label><br>
+          <label><input type="radio" name="color_theme" value="purple" <?php echo ($color_theme == 'purple') ? 'checked' : ''; ?> /> Lila</label><br>
+          <label><input type="radio" name="color_theme" value="blue" <?php echo ($color_theme == 'blue') ? 'checked' : ''; ?> /> Blå</label><br>
+          <label><input type="radio" name="color_theme" value="green" <?php echo ($color_theme == 'green') ? 'checked' : ''; ?> /> Grön</label>
         </td>
       </tr>
 
