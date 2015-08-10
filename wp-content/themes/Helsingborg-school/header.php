@@ -20,6 +20,18 @@
     <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/assets/img/icons/apple-touch-icon-precomposed.png">
 
     <?php wp_head(); ?>
+
+    <?php if (strlen(get_option('helsingborg_color_code')) > 0) : $colorCode = get_option('helsingborg_color_code'); ?>
+    <style>
+        .nav-bar {
+            background: <?=$colorCode?> !important;
+        }
+
+        .main-footer {
+            background: <?=$colorCode?> !important;
+        }
+    </style>
+    <?php endif; ?>
 </head>
 <body data-theme="<?php echo get_option('helsingborg_color_theme'); ?>">
     <div class="off-canvas-wrap" data-offcanvas>
