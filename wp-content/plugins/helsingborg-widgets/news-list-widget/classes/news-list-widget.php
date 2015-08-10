@@ -83,7 +83,7 @@ if (!class_exists('News_List_Widget_Box')) {
                 }
 
             } else {
-                $order = explode(',',$new_instance['or der']);
+                $order = explode(',',$new_instance['order']);
 
                 foreach ($order as $key => $order_str){
                     $num = strrpos($order_str,'-');
@@ -108,9 +108,12 @@ if (!class_exists('News_List_Widget_Box')) {
         public function form ( $instance ) {
             $amount = empty($instance['amount']) ? 1 : $instance['amount'];
 
+            $items = array();
+            $item_ids = array();
+
             for ($i = 1; $i <= $amount; $i++) {
-            $items[$i] = empty($instance['item'.$i]) ? '' : $instance['item'.$i];
-            $item_ids[$i] = empty($instance['item_id'.$i]) ? '' : $instance['item_id'.$i];
+                $items[$i] = empty($instance['item'.$i]) ? '' : $instance['item'.$i];
+                $item_ids[$i] = empty($instance['item_id'.$i]) ? '' : $instance['item_id'.$i];
             }
 
             require($this->_viewsPath . 'widget-form.php');

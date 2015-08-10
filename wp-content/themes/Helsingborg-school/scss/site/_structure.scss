@@ -53,3 +53,7 @@
 #wpadminbar {
     position: fixed;
 }
+
+.content-area .widget + .widget {
+    margin-top: 30px;
+}
