@@ -99,23 +99,24 @@ $alarm_password  = get_option('helsingborg_alarm_password');
 $alarm_location  = get_option('helsingborg_alarm_location');
 
 ?>
+<script>
+  jQuery(document).ready(function ($) {
+
+    $('[name="color_theme"]').on('change', function () {
+        var val = $(this).val();
+        $('div[class*=-colors]').hide();
+        $('div.' + val + '-colors').show();
+    });
+
+  });
+</script>
+
 <div class="wrap">
   <h2>Inställningar</h2>
   Här finns inställningar specifikt för denna domän.
 
   <form method="POST" action="">
     <table class="form-table">
-      <tr valign="top">
-        <th scope="row">
-          <label for="color_code">
-            Färgkod för domän:
-          </label>
-        </th>
-        <td>
-          <input type="text" name="color_code" value="<?php echo $color_code; ?>" />
-        </td>
-      </tr>
-
       <tr valign="top">
         <th scope="row">
           <label for="color_code">
@@ -129,6 +130,131 @@ $alarm_location  = get_option('helsingborg_alarm_location');
           <label><input type="radio" name="color_theme" value="green" <?php echo ($color_theme == 'green') ? 'checked' : ''; ?> /> Grön</label>
         </td>
       </tr>
+
+      <tr valign="top">
+        <th scope="row">
+          <label for="color_code">
+            Färgkod för domän:
+          </label>
+        </th>
+        <td>
+          <div class="red-colors" <?php echo ($color_theme == 'red') ? '' : 'style="display:none;"'; ?>>
+            <label>
+              <input type="radio" name="color_code" value="#f7a600" <?php echo ($color_code == '#f7a600') ? 'checked' : ''; ?> />
+              <div style="background:#f7a600;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #f7a600
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#cb0050" <?php echo ($color_code == '#cb0050') ? 'checked' : ''; ?> />
+              <div style="background:#cb0050;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #cb0050
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#ec6701" <?php echo ($color_code == '#ec6701') ? 'checked' : ''; ?> />
+              <div style="background:#ec6701;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #ec6701
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#ae0b05" <?php echo ($color_code == '#ae0b05') ? 'checked' : ''; ?> />
+              <div style="background:#ae0b05;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #ae0b05
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#e3000f" <?php echo ($color_code == '#e3000f') ? 'checked' : ''; ?> />
+              <div style="background:#e3000f;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #e3000f
+            </label><br>
+          </div>
+
+          <div class="purple-colors" <?php echo ($color_theme == 'purple') ? '' : 'style="display:none;"'; ?>>
+            <label>
+              <input type="radio" name="color_code" value="#d35098" <?php echo ($color_code == '#d35098') ? 'checked' : ''; ?> />
+              <div style="background:#d35098;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #d35098
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#712082" <?php echo ($color_code == '#712082') ? 'checked' : ''; ?> />
+              <div style="background:#712082;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #712082
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#a84c98" <?php echo ($color_code == '#a84c98') ? 'checked' : ''; ?> />
+              <div style="background:#a84c98;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #a84c98
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#7b075e" <?php echo ($color_code == '#7b075e') ? 'checked' : ''; ?> />
+              <div style="background:#7b075e;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #7b075e
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#a61380" <?php echo ($color_code == '#a61380') ? 'checked' : ''; ?> />
+              <div style="background:#a61380;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #a61380
+            </label><br>
+          </div>
+
+
+          <div class="blue-colors" <?php echo ($color_theme == 'blue') ? '' : 'style="display:none;"'; ?>>
+            <label>
+              <input type="radio" name="color_code" value="#4db4e7" <?php echo ($color_code == '#4db4e7') ? 'checked' : ''; ?> />
+              <div style="background:#4db4e7;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #4db4e7
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#0069b4" <?php echo ($color_code == '#0069b4') ? 'checked' : ''; ?> />
+              <div style="background:#0069b4;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #0069b4
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#5ba1d8" <?php echo ($color_code == '#5ba1d8') ? 'checked' : ''; ?> />
+              <div style="background:#5ba1d8;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #5ba1d8
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#005c86" <?php echo ($color_code == '#005c86') ? 'checked' : ''; ?> />
+              <div style="background:#005c86;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #005c86
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#0095db" <?php echo ($color_code == '#0095db') ? 'checked' : ''; ?> />
+              <div style="background:#0095db;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #0095db
+            </label><br>
+          </div>
+
+
+          <div class="green-colors" <?php echo ($color_theme == 'green') ? '' : 'style="display:none;"'; ?>>
+            <label>
+              <input type="radio" name="color_code" value="#afca05" <?php echo ($color_code == '#afca05') ? 'checked' : ''; ?> />
+              <div style="background:#afca05;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #afca05
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#11a636" <?php echo ($color_code == '#11a636') ? 'checked' : ''; ?> />
+              <div style="background:#11a636;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #11a636
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#a0c855" <?php echo ($color_code == '#a0c855') ? 'checked' : ''; ?> />
+              <div style="background:#a0c855;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #a0c855
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#50811b" <?php echo ($color_code == '#50811b') ? 'checked' : ''; ?> />
+              <div style="background:#50811b;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #50811b
+            </label><br>
+            <label>
+              <input type="radio" name="color_code" value="#76b828" <?php echo ($color_code == '#76b828') ? 'checked' : ''; ?> />
+              <div style="background:#76b828;width: 15px;height: 15px;display:inline-block;vertical-align:middle;margin-top: -4px;"></div>
+              #76b828
+            </label><br>
+          </div>
+        </td>
+      </tr>
+
+
 
       <tr valign="top">
         <th scope="row">
