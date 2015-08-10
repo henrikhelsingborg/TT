@@ -1,0 +1,18 @@
+/* Purple */
+$band-purple-1: #d35098;
+$band-purple-2: #712082;
+$band-purple-3: #a84c98;
+$band-purple-4: #7b075e;
+$band-purple-5: #a61380;
+
+body[data-theme="purple"] {
+
+    .nav-bar {
+        background: $band-purple-4;
+    }
+
+    .color-band {
+        background-image: url('../assets/images/color-band-purple.svg');
+    }
+
+}
