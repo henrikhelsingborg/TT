@@ -254,6 +254,10 @@
             h2 {
                 color: $band-color-4;
                 text-deoration: underline;
+                -webkit-hyphens: auto;
+                -moz-hyphens: auto;
+                hyphens: auto;
+                line-height: 100%;
             }
 
             .read-more {
