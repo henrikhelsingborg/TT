@@ -21,7 +21,7 @@
 
     <?php wp_head(); ?>
 </head>
-<body>
+<body data-theme="<?php echo get_option('helsingborg_color_theme'); ?>">
     <div class="off-canvas-wrap" data-offcanvas>
         <div class="inner-wrap">
             <?php get_template_part('templates/partials/navigation','off-canvas'); ?>
@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="hero widgets-test-color clearfix">
-                        <div class="color-band color-band-red"></div>
+                        <div class="color-band"></div>
                         <?php
                             /**
                              * Include the slider area
