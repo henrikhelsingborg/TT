@@ -251,6 +251,11 @@ $alarm_location  = get_option('helsingborg_alarm_location');
               #76b828
             </label><br>
           </div>
+
+          <label>
+              <input type="radio" name="color_code" value="" <?php echo ($color_code == '') ? 'checked' : ''; ?> />
+              Använd standardfärg
+            </label>
         </td>
       </tr>
 
