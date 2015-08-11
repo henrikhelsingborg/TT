@@ -37,4 +37,9 @@
 
         // App.css
         wp_enqueue_style('style-app', get_stylesheet_directory_uri() . '/css/app.min.css');
+
+        if (is_search()) {
+            wp_register_script('app-search', get_stylesheet_directory_uri() . '/js/search.js', array(), '1.0.0', true);
+            wp_enqueue_script('app-search');
+        }
     }

@@ -7,7 +7,7 @@
         text-decoration: none;
     }
 
-    a > h4 {
+    h3 a {
         color: $band-red-4;
         line-height: 90%;
     }
@@ -21,4 +21,18 @@
         font-weight: normal;
         color: #333;
     }
+
+    .search-result-item-url {
+        a {
+            text-decoration: underline;
+        }
+
+        .fa {
+            font-size: 10pt;
+        }
+    }
+}
+
+.search-query {
+    font-weight: bold;
 }
