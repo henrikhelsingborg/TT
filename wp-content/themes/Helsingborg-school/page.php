@@ -31,6 +31,13 @@
                     dynamic_sidebar("content-area");
                     echo '</aside>';
                 }
+
+                /**
+                 * Comments
+                 */
+                if (comments_open()) {
+                    comments_template();
+                }
             ?>
         </div>
 

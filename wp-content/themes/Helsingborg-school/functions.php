@@ -11,6 +11,7 @@
     require_once('library/widget-areas.php');
     require_once('library/widget-filters.php');
     require_once('library/navigation.php');
+    require_once('library/comments.php');
 
     require_once('meta_boxes/meta-functions.php');
 

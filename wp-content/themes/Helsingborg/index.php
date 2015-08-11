@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php get_template_part('templates/partials/beforeblogloop','section'); ?>
 <div class="row">
-	<div class="small-12 medium-12 large-12 columns" role="main">
+	<div class="small-12 medium-12 large-12 lumns" role="main">
 	<?php
 		if (have_posts()) {
 			while (have_posts()) {

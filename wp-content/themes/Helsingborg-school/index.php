@@ -2,53 +2,48 @@
 
 <div class="content-container">
     <div class="row">
-        <div class="columns large-8">
-            <div class="collection collection-test-colors">
-                <div class="row">
-                    <a href="#" class="collection-item columns large-6 medium-6 small-12 left">
-                        <div class="collection-item-content">
-                            <div class="collection-item-image" style="background-image:url('http://www.helsingborg.se/olympiaskolan/wp-content/uploads/sites/71/2015/04/02_olympia_program_640x250.jpg');"></div>
-                            <div class="collection-item-headline">
-                                Humanistiska programmet
-                            </div>
-                            <!--<div class="collection-item-text"></div>-->
-                        </div>
-                    </a>
+        <div class="main-content columns large-8 medium-8">
+            <?php
 
-                    <a href="#" class="collection-item columns large-6 medium-6 small-12 left">
-                        <div class="collection-item-content">
-                            <div class="collection-item-image" style="background-image:url('http://www.helsingborg.se/olympiaskolan/wp-content/uploads/sites/71/2015/04/03_olympia_program_640x250.jpg');"></div>
-                            <div class="collection-item-headline">
-                                Naturvetenskap
-                            </div>
-                            <!--<div class="collection-item-text"></div>-->
-                        </div>
-                    </a>
+                /**
+                 * Breadcrumb
+                 */
+                if (!is_front_page()) {
+                    the_breadcrumb();
+                }
 
-                    <a href="#" class="collection-item columns large-6 medium-6 small-12 left">
-                        <div class="collection-item-content">
-                            <div class="collection-item-image" style="background-image:url('http://www.helsingborg.se/olympiaskolan/wp-content/uploads/sites/71/2015/04/04_olympia_program_640x250.jpg');"></div>
-                            <div class="collection-item-headline">
-                                Samhällsvetenskap
-                            </div>
-                            <!--<div class="collection-item-text"></div>-->
-                        </div>
-                    </a>
+                /**
+                 * If this is the front_page, only show content if there is any
+                 * If this is not the front_page, always show the content
+                 */
+                the_post();
+                if ((is_front_page() && strlen(get_the_content()) > 0) || !is_front_page()) {
+                    get_template_part('templates/partials/article', 'content');
+                } else {
+                    get_template_part('templates/partials/accessability', 'menu');
+                }
 
-                    <a href="#" class="collection-item columns large-6 medium-6 small-12 left">
-                        <div class="collection-item-content">
-                            <div class="collection-item-image" style="background-image:url('http://www.helsingborg.se/olympiaskolan/wp-content/uploads/sites/71/2015/04/ansok_640x250.jpg');"></div>
-                            <div class="collection-item-headline">
-                                Ansök nu
-                            </div>
-                            <!--<div class="collection-item-text"></div>-->
-                        </div>
-                    </a>
-                </div>
-            </div>
+                /**
+                 * Widget content-area
+                 */
+                if ((is_active_sidebar('content-area') == true)) {
+                    echo '<aside class="content-area">';
+                    dynamic_sidebar("content-area");
+                    echo '</aside>';
+                }
+            ?>
         </div>
 
-        <?php get_template_part('templates/partials/sidebar', 'right'); ?>
+        <?php
+            /**
+             * Include sidebar here if welcome text does not exist
+             * - If it's exists sidebar will be included in templates/partials/header-welcome.php instead
+             */
+            global $has_welcome_text;
+            if (!$has_welcome_text) {
+                get_template_part('templates/partials/sidebar', 'right');
+            }
+        ?>
     </div>
 </div>
 

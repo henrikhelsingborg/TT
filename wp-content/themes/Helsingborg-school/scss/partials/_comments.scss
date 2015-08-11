@@ -1,0 +1,44 @@
+.comments-area {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+
+    .comments-title {
+        font-size: 18pt;
+        padding: 20px;
+        margin: 0;
+        line-height: 100%;
+    }
+
+    .comment {
+        border-bottom: 1px solid #ddd;
+        padding: 20px;
+        background: #f9f9f9;
+        margin: 0;
+    }
+
+    .comment:nth-child(even) {
+        background: #fff;
+    }
+
+    .comment:first-child {
+        border-top: 1px solid #ddd;
+    }
+
+    .comment-info {
+        font-size: 10pt;
+        font-weight: bold;
+    }
+
+    .comment-respond {
+        padding: 20px;
+
+        .form-submit {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .button {
+            margin-bottom: 0;
+        }
+    }
+}
