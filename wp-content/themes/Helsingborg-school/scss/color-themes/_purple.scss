@@ -7,6 +7,10 @@ $band-purple-5: #a61380;
 
 body[data-theme="purple"] {
 
+    .button-primary {
+        background: $band-purple-4;
+    }
+
     .color-band {
         background-image: url('../assets/images/color-band-purple.svg');
     }
@@ -159,7 +163,8 @@ body[data-theme="purple"] {
                     background: $band-purple-1;
 
                     p > a {
-                        color: darken($band-purple-1, 20%);
+                        color: lighten($band-purple-1, 50%);
+                        text-decoration: underline;
                     }
                 }
             }
@@ -169,7 +174,8 @@ body[data-theme="purple"] {
                     background: $band-purple-2;
 
                     p > a {
-                        color: darken($band-purple-2, 20%);
+                        color: lighten($band-purple-2, 50%);
+                        text-decoration: underline;
                     }
                 }
             }
@@ -179,7 +185,8 @@ body[data-theme="purple"] {
                     background: $band-purple-3;
 
                     p > a {
-                        color: darken($band-purple-3, 20%);
+                        color: lighten($band-purple-3, 50%);
+                        text-decoration: underline;
                     }
                 }
             }
@@ -189,7 +196,8 @@ body[data-theme="purple"] {
                     background: $band-purple-4;
 
                     p > a {
-                        color: darken($band-purple-4, 20%);
+                        color: lighten($band-purple-4, 50%);
+                        text-decoration: underline;
                     }
                 }
             }
@@ -199,7 +207,8 @@ body[data-theme="purple"] {
                     background: $band-purple-5;
 
                     p > a {
-                        color: darken($band-purple-5, 20%);
+                        color: lighten($band-purple-5, 50%);
+                        text-decoration: underline;
                     }
                 }
             }

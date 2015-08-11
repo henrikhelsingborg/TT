@@ -46,7 +46,7 @@ if ( post_password_required() ) {
 
     <?php
         comment_form(array(
-            'class_submit' => 'button',
+            'class_submit' => 'button button-primary',
             'comment_notes_after' => ''
         ));
     ?>

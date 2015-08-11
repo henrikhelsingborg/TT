@@ -7,6 +7,10 @@ $band-blue-5: #0095db;
 
 body[data-theme="blue"] {
 
+    .button-primary {
+        background: $band-blue-4;
+    }
+
     .color-band {
         background-image: url('../assets/images/color-band-blue.svg');
     }
@@ -159,7 +163,8 @@ body[data-theme="blue"] {
                     background: $band-blue-1;
 
                     p > a {
-                        color: darken($band-blue-1, 20%);
+                        color: lighten($band-blue-1, 50%);
+                        text-decoration: underline;
                     }
                 }
             }
@@ -169,7 +174,8 @@ body[data-theme="blue"] {
                     background: $band-blue-2;
 
                     p > a {
-                        color: darken($band-blue-2, 20%);
+                        color: lighten($band-blue-2, 50%);
+                        text-decoration: underline;
                     }
                 }
             }
@@ -179,7 +185,8 @@ body[data-theme="blue"] {
                     background: $band-blue-3;
 
                     p > a {
-                        color: darken($band-blue-3, 20%);
+                        color: lighten($band-blue-3, 50%);
+                        text-decoration: underline;
                     }
                 }
             }
@@ -189,7 +196,8 @@ body[data-theme="blue"] {
                     background: $band-blue-4;
 
                     p > a {
-                        color: darken($band-blue-4, 20%);
+                        color: lighten($band-blue-4, 50%);
+                        text-decoration: underline;
                     }
                 }
             }
@@ -199,7 +207,8 @@ body[data-theme="blue"] {
                     background: $band-blue-5;
 
                     p > a {
-                        color: darken($band-blue-5, 20%);
+                        color: lighten($band-blue-5, 50%);
+                        text-decoration: underline;
                     }
                 }
             }

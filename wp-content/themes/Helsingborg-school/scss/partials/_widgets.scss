@@ -43,7 +43,8 @@
                 background: $band-color-1;
 
                 p > a {
-                    color: darken($band-color-1, 20%);
+                    color: lighten($band-color-1, 50%);
+                    text-decoration: underline;
                 }
             }
         }
@@ -53,7 +54,8 @@
                 background: $band-color-2;
 
                 p > a {
-                    color: darken($band-color-2, 20%);
+                    color: lighten($band-color-2, 50%);
+                    text-decoration: underline;
                 }
             }
         }
@@ -63,7 +65,8 @@
                 background: $band-color-3;
 
                 p > a {
-                    color: darken($band-color-3, 20%);
+                    color: lighten($band-color-3, 50%);
+                    text-decoration: underline;
                 }
             }
         }
@@ -73,7 +76,8 @@
                 background: $band-color-4;
 
                 p > a {
-                    color: darken($band-color-4, 20%);
+                    color: lighten($band-color-4, 50%);
+                    text-decoration: underline;
                 }
             }
         }
@@ -83,7 +87,8 @@
                 background: $band-color-5;
 
                 p > a {
-                    color: darken($band-color-5, 20%);
+                    color: lighten($band-color-5, 50%);
+                    text-decoration: underline;
                 }
             }
         }

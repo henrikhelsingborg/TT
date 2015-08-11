@@ -23,12 +23,11 @@
 
     <?php if (strlen(get_option('helsingborg_color_code')) > 0) : $colorCode = get_option('helsingborg_color_code'); ?>
     <style>
-        .nav-bar {
+        .nav-bar,
+        .main-footer,
+        .button-primary {
             background: <?=$colorCode?> !important;
-        }
-
-        .main-footer {
-            background: <?=$colorCode?> !important;
+            background-color: <?=$colorCode?> !important;
         }
     </style>
     <?php endif; ?>

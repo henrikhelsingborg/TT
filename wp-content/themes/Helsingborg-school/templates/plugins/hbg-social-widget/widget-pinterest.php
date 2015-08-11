@@ -33,7 +33,7 @@
 
         <?php if (isset($instance['show_visit_button']) && $instance['show_visit_button'] == 'on') : ?>
         <div class="text-center hbg-social-feed-actions">
-            <a href="http://pinterest.com/<?php echo $instance['username']; ?>" target="_blank" class="button button-hbg">Besök oss på Pinterest</a>
+            <a href="http://pinterest.com/<?php echo $instance['username']; ?>" target="_blank" class="button button-darker">Besök oss på Pinterest</a>
         </div>
         <?php endif; ?>
     </div>
