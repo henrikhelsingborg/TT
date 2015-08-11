@@ -30,7 +30,7 @@
         $wrap .= '<li class="item-search">
                     <a href="#"><i class="fa fa-search"></i></a>
                     <div class="search-container">
-                        <form id="searchform" class="search-inputs" action="" method="get" role="search">
+                        <form id="searchform" class="search-inputs" action="' . get_site_url() . '/" method="get" role="search">
                             <div class="row collapse">
                                 <div class="small-10 columns">
                                     <input id="s" class="input-field" type="text" placeholder="Vad letar du efter?" name="s" value="">
