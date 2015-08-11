@@ -1,7 +1,7 @@
 <?php if ($args['id'] == 'slider-area') : ?>
 <div class="slider-container">
     <div class="slider-columns columns large-12 no-margin">
-        <ul class="hero-orbit" data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;">
+        <ul class="hero-orbit" <?php if (count($items) > 1) : ?>data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;"<?php endif; ?>>
 
             <?php
                 foreach ($items as $num => $item) :
