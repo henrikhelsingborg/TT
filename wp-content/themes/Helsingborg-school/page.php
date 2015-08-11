@@ -27,7 +27,7 @@
                  * Widget content-area
                  */
                 if ((is_active_sidebar('content-area') == true)) {
-                    echo '<aside class="content-area">';
+                    echo '<aside class="content-area clearfix">';
                     dynamic_sidebar("content-area");
                     echo '</aside>';
                 }
