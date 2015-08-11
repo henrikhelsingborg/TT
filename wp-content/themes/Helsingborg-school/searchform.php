@@ -1,4 +1,4 @@
-<form class="search" method="get" role="search" action="/">
+<form class="search" method="get" role="search" action="<?php echo get_site_url(); ?>/">
     <div class="form-container">
         <div class="input-group">
             <div class="form-element">
