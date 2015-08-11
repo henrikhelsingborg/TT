@@ -50,7 +50,6 @@
             'templates/alarm-list-page.php',
             'templates/alarm-page.php',
             'templates/alarm-rss.php',
-            'templates/event-list-page.php',
             'templates/start-page.php'
         );
 
