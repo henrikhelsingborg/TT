@@ -288,3 +288,31 @@
         }
     }
 }
+
+.gform_widget {
+    .widget-content {
+        padding: $widget-padding;
+    }
+
+    label {
+        color: #fff;
+    }
+
+    .charleft.ginput_counter {
+        color: rgba(255,255,255,.8);
+    }
+
+    input, select, textarea {
+        border: none;
+    }
+
+    input[type="submit"] {
+        margin: 0;
+    }
+}
+
+.gform_wrapper .top_label input.medium,
+.gform_wrapper .top_label select.medium,
+.gform_wrapper textarea.medium {
+    width: 100% !important;
+}
