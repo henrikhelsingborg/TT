@@ -28,3 +28,12 @@
         }
     }
 }
+
+input[type="submit"] {
+    @extend .button;
+    @extend .button-primary;
+
+    &:hover {
+        @extend .button-primary;
+    }
+}
