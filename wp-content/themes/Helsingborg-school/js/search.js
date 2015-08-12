@@ -180,13 +180,18 @@ Helsingborg.Search.Search = (function ($) {
     Search.prototype.outputResults = function(response) {
 
         $.each(response.items, function (index, item) {
-            var meta = item.pagemap.metatags[0];
+            var meta = 0;
+            if (item.pagemap) {
+                var meta = item.pagemap.metatags[0];
+            }
             var $item = $('<li class="search-result-item"><div class="search-result-item-content"></div></li>');
 
             /* Get a date */
             var dateMod = this.getDateModified(item);
 
-            $item.find('.search-result-item-content').append('<span class="search-result-item-date">' + dateMod + '</span>');
+            if (dateMod) {
+                $item.find('.search-result-item-content').append('<span class="search-result-item-date">' + dateMod + '</span>');
+            }
 
             if (item.fileFormat == 'PDF/Adobe Acrobat') {
                 $item.find('.search-result-item-content').append('<h3><a href="' + item.link + '" class="pdf-item">' + item.htmlTitle + '</a></h3>');
@@ -211,7 +216,11 @@ Helsingborg.Search.Search = (function ($) {
      * @return {string}      Last modified date
      */
     Search.prototype.getDateModified = function(item) {
-        var meta = item.pagemap.metatags[0];
+        var meta = 0;
+        if (item.pagemap) {
+            var meta = item.pagemap.metatags[0];
+        }
+
         var dateMod = null;
 
         if (meta.moddate !== undefined) {

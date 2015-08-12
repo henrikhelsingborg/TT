@@ -226,7 +226,8 @@ body[data-theme="purple"] {
      * Widgets
      */
     .news-list-large .news-item a h2,
-    .news-list-large .news-item a .read-more {
+    .news-list-large .news-item a .read-more,
+    .list h3 a {
         color: $band-purple-4;
     }
 
