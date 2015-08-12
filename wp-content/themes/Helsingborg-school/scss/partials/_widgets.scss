@@ -113,7 +113,8 @@
         }
 
         a {
-            display: block;
+            display: table;
+            width: 100%;
             background: rgba(0, 0, 0, .1);
             padding: 8px 12px;
             color: #fff;
@@ -124,11 +125,19 @@
                 background: rgba(0, 0, 0, .2);
             }
 
+            .text-label {
+                display: table-cell;
+            }
+
             .date {
-                float: right;
+                display: table-cell;
                 font-size: 9pt;
-                position: relative;
-                top: 3px;
+                text-align: right;
+                width: 1%;
+                white-space: nowrap;
+                vertical-align: top;
+                padding-top: 2.5px;
+                padding-left: 10px;
             }
         }
     }
