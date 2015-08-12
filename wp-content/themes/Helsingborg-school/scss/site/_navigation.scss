@@ -217,7 +217,7 @@
         }
 
         // Node with children
-        .menu-item-has-children:not(.current-menu-item):not(.current-page-parent) {
+        .menu-item-has-children:not(.current-menu-item):not(.current-page-parent):not(.current-menu-ancestor) {
             > a::after {
                 position: absolute;
                 top: 0;
@@ -227,6 +227,20 @@
                 padding: 11.5px;
                 box-sizing: border-box;
                 @include hbg-icons($icon-plus);
+            }
+        }
+
+        .menu-item-has-children.current-menu-ancestor {
+            background: #111;
+            > a::after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                background: transparent;
+                padding: 11.5px;
+                box-sizing: border-box;
+                @include hbg-icons($icon-caret-down);
             }
         }
 
