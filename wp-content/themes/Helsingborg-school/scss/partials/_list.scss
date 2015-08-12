@@ -121,3 +121,9 @@
 .search-query {
     font-weight: bold;
 }
+
+.news-list-large {
+    .news-item + .news-item {
+        margin-top: 20px;
+    }
+}

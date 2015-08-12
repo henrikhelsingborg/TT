@@ -95,6 +95,11 @@
     }
 }
 
+.widget_index_large_box .widget-content,
+.widget_news_list_box .widget-content {
+    background: transparent !important;
+}
+
 /**
  * Quick links widget
  */

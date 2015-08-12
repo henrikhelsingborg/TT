@@ -222,4 +222,12 @@ body[data-theme="blue"] {
         background: $band-blue-4;
     }
 
+    /**
+     * Widgets
+     */
+    .news-list-large .news-item a h2,
+    .news-list-large .news-item a .read-more {
+        color: $band-blue-4;
+    }
+
 }
