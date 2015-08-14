@@ -1,8 +1,18 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles_and_scripts' );
-function child_theme_enqueue_styles_and_scripts() {
-    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style-app')
-    );
-}
+
+    $has_welcome_text = false;
+
+    // Add Helsingborg AJAX functions
+    require_once(TEMPLATEPATH . '/library/helsingborg-ajax.php');
+
+    require_once('library/enqueue-scripts.php');
+    require_once('library/hbg-split-test.php');
+    require_once('library/helsingborg-school.php');
+    require_once('library/widget-areas.php');
+    require_once('library/widget-filters.php');
+    require_once('library/navigation.php');
+    require_once('library/comments.php');
+
+    require_once('meta_boxes/meta-functions.php');
+
 ?>

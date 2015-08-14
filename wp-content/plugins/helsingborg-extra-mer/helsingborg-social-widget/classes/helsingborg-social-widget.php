@@ -104,6 +104,7 @@ if (!class_exists('HelsingborgSocialWidget')) {
 
             $instance = array();
             $instance['feedType'] = $newInstance['feedType'];
+            $instance['title'] = $newInstance['title'] ?: $oldInstance['title'];
 
             switch ($type = $instance['feedType']) {
                 case 'facebook':
@@ -150,30 +151,34 @@ if (!class_exists('HelsingborgSocialWidget')) {
 
             if ($id != 'content-area' && $id != 'content-area-bottom') echo $before_widget;
 
+            $view = 'widget-none.php';
+
             switch ($instance['feedType']) {
                 case 'instagram':
                     $feed = $this->getInstagramFeed($instance['username'], $instance['show_count']);
-                    require($this->_viewsPath . 'widget-instagram.php');
+                    $view = 'widget-instagram.php';
                     break;
 
                 case 'facebook':
                     $feed = $this->getFacebookFeed($instance['username'], $instance['show_count']);
-                    require($this->_viewsPath . 'widget-facebook.php');
+                    $view = 'widget-facebook.php';
                     break;
 
                 case 'twitter':
                     $feed = $this->getTwitterFeed($instance['username'], $instance['show_count']);
-                    require($this->_viewsPath . 'widget-twitter.php');
+                    $view = 'widget-twitter.php';
                     break;
 
                 case 'pinterest':
                     $feed = $this->getPinterestFeed($instance['username'], $instance['show_count']);
-                    require($this->_viewsPath . 'widget-pinterest.php');
+                    $view = 'widget-pinterest.php';
                     break;
+            }
 
-                default:
-                    require($this->_viewsPath . 'widget-none.php');
-                    break;
+            if ($templatePath = locate_template('templates/plugins/hbg-social-widget/' . $view)) {
+                require($templatePath);
+            } else {
+                require($this->_viewsPath . $view);
             }
 
             if ($id != 'content-area' && $id != 'content-area-bottom') echo $after_widget;
@@ -352,8 +357,6 @@ if (!class_exists('HelsingborgSocialWidget')) {
             return json_decode($response)->data->pins;
         }
 
-
-
         /**
          * Gets the username from a Facebook page URL
          * @param  string $url The url
@@ -361,11 +364,17 @@ if (!class_exists('HelsingborgSocialWidget')) {
          */
         public function getFbUserFromUrl($url) {
             $matches = null;
-            preg_match_all('/([A-Z1-9-_])\w+/', $url, $matches);
-            $username = $matches[0][0];
+            preg_match_all('#https?\://(?:www\.)?facebook\.com/(\d+|[A-Za-z0-9\.]+)/?#', $url, $matches);
+            $username = $matches[1][0];
             return $username;
         }
 
+        /**
+         * Checks if settings menu item exists
+         * @param  string  $handle Menu slug id
+         * @param  boolean $sub    Submenu
+         * @return boolean
+         */
         public function menuExist($handle, $sub = false){
             if (!is_admin() || (defined('DOING_AJAX') && DOING_AJAX)) return false;
 

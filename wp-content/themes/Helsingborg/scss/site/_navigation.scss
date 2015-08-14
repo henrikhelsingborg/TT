@@ -27,14 +27,14 @@
 
 		// # Sub level
 		.sub-menu {
-			margin-left: rem-calc(33);
+			margin-left: rem-calc(17);
+
+			.sub-menu {
+				//margin-left: 0;
+			}
 
 			a {
 				font-size: rem-calc(14);
-			}
-
-			.sub-menu {
-				margin-left: rem-calc(44);
 			}
 		}
 
@@ -43,10 +43,11 @@
 			> a {
 				&:before {
 					position: absolute;
-					left: -18px;
+					left: -14px;
 					top: 3px;
 					@include hbg-icons($arrow-solid-right);
 					color: $blue-1;
+					font-size: rem-calc(17);
 				}
 			}
 		}
@@ -57,24 +58,21 @@
 				font-weight: bold;
 				color: $blue-1;
 			}
-
-			/*
-			> .sub-menu {
-				margin-left: rem-calc(30);
-			}
-			*/
 		}
 
 		// # Current ancestor
 		li.current-ancestor:not(.current-node) {
+			//margin-left: rem-calc(17);
+
 			> a {
 				&:before {
 					position: absolute;
-					left: -18px;
+					left: -14px;
 					top: 3px;
 					@include hbg-icons($arrow-solid-down);
 					color: $blue-1;
 					margin-right: 5px;
+					font-size: rem-calc(17);
 				}
 
 				&:hover {
@@ -86,20 +84,19 @@
 		// # Current page
 		li.current {
 			background-color: scale-color($gray-3, $lightness: 70%);
-			padding: rem-calc(8) 0;
-			margin-left: -16px;
+			padding: rem-calc(8) rem-calc(15);
+			margin-left: rem-calc(-17);
 
 			> a {
 				color: $blue-1;
 				font-weight: bold;
-				margin-left: rem-calc(15);
 			}
 
 			&.has-childs {
-				margin-left: -28px;
-				> a {
-					margin-left: rem-calc(28);
+				padding-left: rem-calc(30);
+				margin-left: rem-calc(-32);
 
+				> a {
 					&::before {
 						@include hbg-icons($arrow-solid-down);
 						color: $blue-1;
@@ -314,7 +311,10 @@ nav > ul > li.nav-home a
 	background: $mobile-nav-bg-color;
 	@extend .clearfix;
 	@include drop-shadow;
+	position: fixed;
+	z-index: 99;
 }
+
 .mobile-navigation {
 		display: block;
 		> a {
@@ -519,10 +519,45 @@ nav > ul > li.nav-home a
 	.mobile-nav {
 		display: block;
 		background-color: $mobile-nav-bg-color;
+		transition: all 500ms ease 0s;
+		z-index: 1004;
+	}
 
+	.main-site-container {
+		margin-top: 45px;
+	}
+
+	.left-off-canvas-menu {
+		height: 100vh;
+		overflow: auto;
+		position: fixed
 	}
 
 	.support-nav {
 		display: none;
+	}
+
+	.inner-wrap {
+		z-index: 1003;
+	}
+
+	footer {
+		margin: -20px;
+    	margin-top: 2rem;
+	}
+}
+
+.mobile-nav-is-open {
+	overflow: hidden;
+
+	.mobile-nav {
+		transform: translateX(15.625rem);
+	}
+}
+
+.move-right {
+
+	> .left-off-canvas-menu {
+		transform: none;
 	}
 }

@@ -89,7 +89,7 @@ function cbis_event() {
         /**
          * Map attributes to correct variables
          */
-        $title        = $product->SystemName   ?: '';
+        $title        = $attributes[99]->Data  ?: '';
         $status       = $product->Status       ?: 'Övrigt';
         $imageid      = $product->Image->Url   ?: '';
         $introduction = $attributes[101]->Data ?: '';

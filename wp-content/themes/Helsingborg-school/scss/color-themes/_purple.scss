@@ -1,0 +1,234 @@
+/* Purple */
+$band-purple-1: #d35098;
+$band-purple-2: #712082;
+$band-purple-3: #a84c98;
+$band-purple-4: #7b075e;
+$band-purple-5: #a61380;
+
+body[data-theme="purple"] {
+
+    .button-primary {
+        background: $band-purple-4;
+    }
+
+    .color-band {
+        background-image: url('../assets/images/color-band-purple.svg');
+    }
+
+    .nav-bar {
+        background: $band-purple-4;
+    }
+
+    /**
+     * Navigation
+     */
+    .nav-mainmenu {
+        > ul {
+            li {
+                // Submenus
+                ul {
+                    background: darken($band-purple-4, 5%);
+
+                    li {
+                        a:hover {
+                            background: darken($band-purple-4, 8%);
+                        }
+                    }
+                }
+
+                // Display submenu on hover
+                &:hover {
+                    background: darken($band-purple-4, 5%);
+                }
+            }
+
+            // Search
+            .item-search {
+                &.show-search {
+                    background: darken($band-purple-4, 5%);
+                }
+
+                .search-container {
+                    background: darken($band-purple-4, 5%);
+
+                    .button.search {
+                        background: $band-purple-1;
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Mobile nav
+     */
+    .right-off-canvas-menu {
+        > ul {
+            // # Current node
+            .current-menu-item {
+                a {
+                    background: $band-purple-1;
+                }
+
+                &.menu-item-has-children {
+                    > a::after {
+                        background: darken($band-purple-1, 8%);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Breadcrumbs
+     */
+    .breadcrumbs {
+        a, strong {
+            color: $band-purple-4;
+        }
+    }
+
+    /**
+     * Collection
+     */
+    .collection {
+        /**
+         * Test colors for the collection items
+         * The colors should be set back-end in the future
+         */
+        &.collection-test-colors {
+            .collection-item {
+
+                &:nth-child(1n) {
+                    .collection-item-content {
+                        background: $band-purple-1;
+
+                        &:hover {
+                            background: darken($band-purple-1, 5%);
+                        }
+                    }
+                }
+
+                &:nth-child(2n) {
+                    .collection-item-content {
+                        background: $band-purple-2;
+
+                        &:hover {
+                            background: darken($band-purple-2, 5%);
+                        }
+                    }
+                }
+
+                &:nth-child(3n) {
+                    .collection-item-content {
+                        background: $band-purple-3;
+
+                        &:hover {
+                            background: darken($band-purple-3, 5%);
+                        }
+                    }
+                }
+
+                &:nth-child(4n) {
+                    .collection-item-content {
+                        background: $band-purple-4;
+
+                        &:hover {
+                            background: darken($band-purple-4, 5%);
+                        }
+                    }
+                }
+
+                &:nth-child(5n) {
+                    .collection-item-content {
+                        background: $band-purple-5;
+
+                        &:hover {
+                            background: darken($band-purple-5, 5%);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    /**
+     * Widggets
+     */
+    .widgets-test-color {
+        .widget {
+            &:nth-child(1n) {
+                .widget-content {
+                    background: $band-purple-1;
+
+                    p > a {
+                        color: lighten($band-purple-1, 50%);
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            &:nth-child(2n) {
+                .widget-content {
+                    background: $band-purple-2;
+
+                    p > a {
+                        color: lighten($band-purple-2, 50%);
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            &:nth-child(3n) {
+                .widget-content {
+                    background: $band-purple-3;
+
+                    p > a {
+                        color: lighten($band-purple-3, 50%);
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            &:nth-child(4n) {
+                .widget-content {
+                    background: $band-purple-4;
+
+                    p > a {
+                        color: lighten($band-purple-4, 50%);
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            &:nth-child(5n) {
+                .widget-content {
+                    background: $band-purple-5;
+
+                    p > a {
+                        color: lighten($band-purple-5, 50%);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Footer
+     */
+    .main-footer {
+        background: $band-purple-4;
+    }
+
+    /**
+     * Widgets
+     */
+    .news-list-large .news-item a h2,
+    .news-list-large .news-item a .read-more,
+    .list h3 a {
+        color: $band-purple-4;
+    }
+
+}

@@ -150,6 +150,7 @@ function add_mime_types($mimes) {
     'bmp'                          => 'image/bmp',
     'tif|tiff'                     => 'image/tiff',
     'ico'                          => 'image/x-icon',
+    'svg'                          => 'image/svg+xml',
 
     // Video formats
     'asf|asx'                      => 'video/x-ms-asf',
@@ -231,7 +232,7 @@ function add_mime_types($mimes) {
     'odt'                          => 'application/vnd.oasis.opendocument.text',
     'odp'                          => 'application/vnd.oasis.opendocument.presentation',
     'ods'                          => 'application/vnd.oasis.opendocument.spreadsheet',
-    'o dg'                          => 'application/vnd.oasis.opendocument.graphics',
+    'odg'                          => 'application/vnd.oasis.opendocument.graphics',
     'odc'                          => 'application/vnd.oasis.opendocument.chart',
     'odb'                          => 'application/vnd.oasis.opendocument.database',
     'odf'                          => 'application/vnd.oasis.opendocument.formula',
@@ -244,6 +245,7 @@ function add_mime_types($mimes) {
     'numbers'                      => 'application/vnd.apple.numbers',
     'pages'                        => 'application/vnd.apple.pages',
   );
+
   return $mimes;
 }
 add_filter('upload_mimes','add_mime_types');

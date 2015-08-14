@@ -1,0 +1,323 @@
+/**
+ * Widget structure
+ */
+.widget-content {
+    color: #fff;
+
+    .widget-title,
+    h2 {
+        font: bold 18pt $font-roboto;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+
+        .fa {
+            margin-right: 5px;
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    p > a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/**
+ * Widget content holder
+ */
+.widget-content-holder {
+    padding: $widget-padding;
+}
+
+/**
+ * Widget colors from color band
+ */
+.widgets-test-color {
+    .widget {
+        &:nth-child(1n) {
+            .widget-content {
+                background: $band-color-1;
+
+                p > a {
+                    color: lighten($band-color-1, 50%);
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &:nth-child(2n) {
+            .widget-content {
+                background: $band-color-2;
+
+                p > a {
+                    color: lighten($band-color-2, 50%);
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &:nth-child(3n) {
+            .widget-content {
+                background: $band-color-3;
+
+                p > a {
+                    color: lighten($band-color-3, 50%);
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &:nth-child(4n) {
+            .widget-content {
+                background: $band-color-4;
+
+                p > a {
+                    color: lighten($band-color-4, 50%);
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &:nth-child(5n) {
+            .widget-content {
+                background: $band-color-5;
+
+                p > a {
+                    color: lighten($band-color-5, 50%);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.widget_index_large_box .widget-content,
+.widget_news_list_box .widget-content {
+    background: transparent !important;
+}
+
+/**
+ * Quick links widget
+ */
+
+.quick-links-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin: 0;
+        padding: 0;
+
+        & + li {
+            margin-top: 3px;
+        }
+
+        a {
+            display: table;
+            width: 100%;
+            background: rgba(0, 0, 0, .1);
+            padding: 8px 12px;
+            color: #fff;
+            letter-spacing: .8px;
+            font-weight: 300;
+
+            &:hover {
+                background: rgba(0, 0, 0, .2);
+            }
+
+            .text-label {
+                display: table-cell;
+            }
+
+            .date {
+                display: table-cell;
+                font-size: 9pt;
+                text-align: right;
+                width: 1%;
+                white-space: nowrap;
+                vertical-align: top;
+                padding-top: 2.5px;
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+.main-content .quick-links-widget {
+    margin: 0;
+    padding: 0;
+    background: $band-color-4;
+}
+
+/**
+ * Text widget and inherit widget
+ */
+
+.widget.widget_text,
+.widget_helsingborgpostinheritwidget {
+    .widget-content {
+        padding: $widget-padding;
+
+        p + p {
+            margin-top: 10px;
+        }
+
+        .flex-video {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.main-content {
+    .widget_helsingborgpostinheritwidget {
+        color: #000;
+        padding: 0;
+        margin: 0;
+
+        .widget-content {
+            color: #000;
+            padding: 0;
+        }
+
+        h2 {
+            color: #000;
+        }
+    }
+}
+
+/**
+ * Image widget
+ */
+
+.widget_sp_image {
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    a {
+        display: block;
+        color: #fff;
+    }
+}
+
+/**
+ * Push links list
+ */
+.push-links-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin: 0;
+        padding: 0;
+
+        & + li {
+            margin-top: 15px;
+        }
+    }
+}
+
+/**
+ * Image list (slider)
+ */
+.widget_image_list_widget {
+    position: relative;
+
+    .main-content & {
+        padding: 0;
+        margin: 0;
+    }
+
+    .widget-content {
+        background: transparent !important;
+    }
+
+    .orbit-slider {
+        width: 100%;
+        padding-bottom: 20%;
+        overflow: hidden;
+
+        li {
+            background-size: cover;
+            background-position: center center;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+/**
+ * Nyhetslista
+ */
+
+.news-list-large {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li + li {
+        margin-top: 30px;
+    }
+
+    .news-item {
+        a {
+            color: #000;
+
+            h2 {
+                color: $band-color-4;
+                text-deoration: underline;
+                -webkit-hyphens: auto;
+                -moz-hyphens: auto;
+                hyphens: auto;
+                line-height: 100%;
+            }
+
+            .read-more {
+                display: inline-block;
+                margin-top: 15px;
+                color: $band-color-4;
+            }
+
+            &:hover {
+                h2, .read-more {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.gform_widget {
+    .widget-content {
+        padding: $widget-padding;
+    }
+
+    label {
+        color: #fff;
+    }
+
+    .charleft.ginput_counter {
+        color: rgba(255,255,255,.8);
+    }
+
+    input, select, textarea {
+        border: none;
+    }
+
+    input[type="submit"] {
+        margin: 0;
+    }
+}
+
+.gform_wrapper .top_label input.medium,
+.gform_wrapper .top_label select.medium,
+.gform_wrapper textarea.medium {
+    width: 100% !important;
+}

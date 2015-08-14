@@ -1,17 +1,37 @@
 {
   "name": "Helsingborg-libsass-template",
-  "version": "5.4.0",
-  "devDependencies": {
-    "node-sass": "~0.7.0",
-    "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-sass": "~0.8.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.7"
+  "version": "5.5.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "node-sass": "3.2.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "0.5.1",
+    "grunt-contrib-copy": "0.8.0",
+    "grunt-contrib-uglify": "0.9.1",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-sass": "1.0.0"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/olefredrik/Helsingborg.git"
-  }
+  "devDependencies": {
+    "node-sass": "3.2.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "0.5.1",
+    "grunt-contrib-copy": "0.8.0",
+    "grunt-contrib-uglify": "0.9.1",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-sass": "1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/helsingborg-stad/helsingborg.se.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helsingborg-stad/helsingborg.se/issues"
+  },
+  "homepage": "https://github.com/helsingborg-stad/helsingborg.se"
 }

@@ -1,0 +1,24 @@
+.button {
+    border-radius: $border-radius;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    font: 12pt $font-roboto;
+}
+
+.button-darker {
+    background: rgba(0,0,0,.1);
+}
+
+.button-lighter {
+    background: rgba(255,255,255,.1);
+}
+
+.button-block {
+    display: block;
+    width: 100%;
+}
+
+.button-primary {
+    background: $band-color-4;
+}
