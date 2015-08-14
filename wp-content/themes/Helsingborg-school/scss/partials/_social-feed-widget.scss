@@ -111,13 +111,28 @@
             border-radius: 50%;
             background-size: cover;
             background-position: center center;
-            border: 2px solid #ED8B00;
+            border: 2px solid #FFF;
         }
 
         .hbg-social-feed-post-content {
             margin-left: 60px;
             font-size: 10pt;
             line-height: 140%;
+
+            article {
+                color: #fff !important;
+                font-weight: normal;
+
+                a {
+                    color: #fff;
+                }
+
+                .read-more {
+                    display: block;
+                    margin-top: 10px;
+                    text-decoration: none;
+                }
+            }
         }
 
         .hbg-social-feed-post-attachment {
@@ -125,8 +140,10 @@
         }
 
         .hbg-social-feed-post-date {
+            display: block;
             font-weight: bold;
             font-size: 9pt;
+            margin-bottom: 5px;
 
             img {
                 display: inline-block;
@@ -141,10 +158,9 @@
             font-size: 8pt;
             line-height: 140%;
             margin-top: 8px;
-            color: #555;
+            color: rgba(255,255,255,.8);
 
             .hbg-social-feed-post-attachment-title {
-                color: #555;
                 font-weight: bold;
                 display: block;
             }
@@ -155,7 +171,6 @@
 
             .hbg-social-feed-post-attachment-caption {
                 font-size: 7pt;
-                color: #999;
             }
         }
     }
@@ -182,4 +197,8 @@
         margin: rem-calc(-10);
         margin-bottom: rem-calc(-11);
     }
+}
+
+.widget_helsingborgsocialwidget h2 {
+    margin-bottom: 20px;
 }
