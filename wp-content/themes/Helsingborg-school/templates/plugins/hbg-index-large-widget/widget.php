@@ -1,5 +1,5 @@
 <?php echo $before_widget; ?>
-    <ul class="news-list-large row">
+    <ul class="news-list-large">
         <?php
             foreach ($items as $num => $item) :
                 $item_id = $item_ids[$num];
