@@ -1,0 +1,320 @@
+/**
+ * Main menu
+ */
+
+.nav-mainmenu {
+    height: 100%;
+
+    a, ul, li {
+        font-family: $font-roboto;
+        font-weight: 300;
+    }
+
+    > ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        float: right;
+
+        // ## All levels
+        li {
+            position: relative;
+
+            // Submenus
+            ul {
+                position: absolute;
+                z-index: 99;
+                background: $band-color-4;
+                background: darken($band-color-4, 5%);
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                min-width: 200px;
+
+                li {
+                    a {
+                        display: block;
+                        color: #fff;
+                        font-size: 13pt;
+                        padding: 10px 15px;
+
+                        &:hover {
+                            background: darken($band-color-4, 8%);
+                        }
+                    }
+
+                    &.menu-item-has-children > a {
+                        &::after {
+                            content: "\f0da";
+                            font-family: 'FontAwesome';
+                            position: absolute;
+                            right: 15px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            -moz-transform: translateY(-50%);
+                            -webkit-transform: translateY(-50%);
+                        }
+                    }
+
+                    // ## 2nd level submenu and deeper
+                    ul {
+                        left: 100%;
+                        top: 0;
+                    }
+                }
+            }
+
+            // Display submenu on hover
+            &:hover {
+                background: darken($band-color-4, 5%);
+                > ul {
+                    display: block;
+                }
+            }
+        }
+
+        // ## Only top level
+        > li {
+            display: inline-block;
+
+            > a {
+                font-size: rem-calc(18);
+                letter-spacing: 1px;
+                color: #fff;
+                display: block;
+                padding: 19px 10px;
+
+                &:hover {
+                    //text-decoration: underline;
+                }
+            }
+        }
+
+        // Hide submenus by default
+        .sub-menu {
+            display: none;
+        }
+
+        // Search
+        .item-search {
+            position: relative;
+
+            &.show-search {
+                background: darken($band-color-4, 5%);
+
+                .search-container {
+                    display: block;
+                }
+            }
+
+            .search-container {
+                display: none;
+                position: absolute;
+                z-index: 5;
+                right: 0;
+                width: 400px;
+                background: darken($band-color-4, 5%);
+                padding: 10px;
+
+                .input-field {
+                    margin: 0;
+                    background: #fff;
+                    border: none;
+
+                    &::-webkit-input-placeholder {
+                        color: #bcbcbc;
+                    }
+
+                    &:-moz-placeholder {
+                        color: #bcbcbc;
+                        opacity: 1;
+                    }
+
+                    &::-moz-placeholder {
+                        color: #bcbcbc;
+                        opacity: 1;
+                    }
+
+                    &:-ms-input-placeholder {
+                        color: #bcbcbc;
+                    }
+                }
+
+                .button.search {
+                    padding: 9px 15px;
+                    border-radius: 0;
+                    background: $band-color-1;
+                    margin: 0;
+                    font-weight: bold;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Mobile navigation
+ */
+
+// The menu bar icons and search
+.mobile-nav {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -2px;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+
+    .mobile-navigation {
+        a {
+            color: #fff;
+            font-size: 17pt;
+
+            & + a {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    .mobile-search {
+        display: none;
+    }
+}
+
+// The menu itself
+.right-off-canvas-menu {
+
+    font-family: $font-roboto;
+    background: #212121;
+
+    // # Top level
+    > ul {
+        list-style-type: none;
+        margin: 50px 0;
+        padding: 20px 0;
+
+        // # Current node
+        .current-menu-item {
+            a {
+                background: #333;
+            }
+
+            &.menu-item-has-children {
+                > a::after {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    background: darken(#333, 8%);
+                    padding: 11.5px;
+                    box-sizing: border-box;
+                    @include hbg-icons($icon-caret-down);
+                }
+            }
+        }
+
+        // Node with children
+        .menu-item-has-children:not(.current-menu-item):not(.current-page-parent):not(.current-menu-ancestor) {
+            > a::after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                background: transparent;
+                padding: 11.5px;
+                box-sizing: border-box;
+                @include hbg-icons($icon-plus);
+            }
+        }
+
+        .menu-item-has-children.current-menu-ancestor {
+            background: #111;
+            > a::after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                background: transparent;
+                padding: 11.5px;
+                box-sizing: border-box;
+                @include hbg-icons($icon-caret-down);
+            }
+        }
+
+        // Display current nodes submenus
+        .current-menu-item,
+        .current_page_parent {
+            .sub-menu {
+                display: block;
+            }
+        }
+
+        > li {
+            & + li {
+                margin-top: 3px;
+            }
+        }
+
+        a {
+            position: relative;
+            display: block;
+            color: #fff;
+            font-size: rem-calc(18);
+            padding: 5px 18px;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
+        }
+    }
+
+    .sub-menu {
+        display: none;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+// Off canvas wrap
+.off-canvas-wrap {
+    background: $mobile-nav-bg-color;
+}
+
+// Exit off canvas
+.move-left, .move-right {
+    .exit-off-canvas {
+        background: transparent;
+        box-shadow: none;
+    }
+}
+
+/**
+ * Media queries
+ */
+
+@media #{$small-only} {
+    .nav-mainmenu {
+        display: none;
+    }
+    .mobile-nav {
+        display: block;
+    }
+}
+
+@media #{$small-up} {
+
+}
+
+@media #{$medium-up} {
+
+}
+
+@media #{$large-up} {
+    .dropdown-search {
+        width: 50%;
+        left: auto;
+    }
+}

@@ -56,7 +56,7 @@ jQuery(document).ready(function(){
         $(this).toggleClass('active');
     });
 
-    if($('.table-list').length > 0) {
+    if ($('.table-list').length > 0) {
         $('.table-list').delegate('tbody tr.table-item','click', function(){
             if(!$(this).is('.active')) {
                 $('.table-item').removeClass('active');

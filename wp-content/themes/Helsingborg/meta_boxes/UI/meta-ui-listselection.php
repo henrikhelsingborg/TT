@@ -1,5 +1,5 @@
 <p>
-<link href="<?php echo get_stylesheet_directory_uri() ; ?>/css/multiple-select.css" rel="stylesheet"/>
+<link href="<?php echo get_template_directory_uri() ; ?>/css/multiple-select.css" rel="stylesheet"/>
 
 <style>
   ul.position {width:20px;display:inline-block;vertical-align:top}
@@ -32,7 +32,7 @@
 <ul class="position"></ul>
 <ul class="chosen"></ul>
 
-<script src="<?php echo get_stylesheet_directory_uri() ; ?>/js/dev/jquery.multiple.select.js"></script>
+<script src="<?php echo get_template_directory_uri() ; ?>/js/dev/jquery.multiple.select.js"></script>
 <script>
 jQuery(document).ready( function() {
   var options = $('#helsingborg_meta_box_select_options option');

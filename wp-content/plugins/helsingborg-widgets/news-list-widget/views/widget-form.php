@@ -7,6 +7,7 @@
         foreach ($items as $num => $item) :
             $item = esc_attr($item);
             $item_id = esc_attr($item_ids[$num]);
+
             $h5 = esc_attr($item);
 
             if (!empty($item_id)) {
