@@ -35,7 +35,7 @@
  * Top navigation bar
  */
 .nav-bar {
-    background: $band-color-4;
+    background: $band-red-4;
     padding: 0;
     position: relative;
 
@@ -154,6 +154,9 @@
      * The orbit element
      */
     .hero-orbit {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
         width: 100%;
         height: 100%;
 
@@ -182,7 +185,7 @@
 
                     a.read-more {
                         font: 300 12pt $font-roboto;
-                        color: $band-color-1;
+                        color: $band-red-1;
                         display: block;
 
                         &:hover {

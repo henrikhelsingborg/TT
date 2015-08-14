@@ -20,8 +20,19 @@
     <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/assets/img/icons/apple-touch-icon-precomposed.png">
 
     <?php wp_head(); ?>
+
+    <?php if (strlen(get_option('helsingborg_color_code')) > 0) : $colorCode = get_option('helsingborg_color_code'); ?>
+    <style>
+        .nav-bar,
+        .main-footer,
+        .button-primary {
+            background: <?=$colorCode?> !important;
+            background-color: <?=$colorCode?> !important;
+        }
+    </style>
+    <?php endif; ?>
 </head>
-<body>
+<body data-theme="<?php echo get_option('helsingborg_color_theme'); ?>">
     <div class="off-canvas-wrap" data-offcanvas>
         <div class="inner-wrap">
             <?php get_template_part('templates/partials/navigation','off-canvas'); ?>
@@ -45,7 +56,7 @@
                     </div>
 
                     <div class="hero widgets-test-color clearfix">
-                        <div class="color-band color-band-red"></div>
+                        <div class="color-band"></div>
                         <?php
                             /**
                              * Include the slider area

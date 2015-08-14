@@ -46,7 +46,7 @@
 
         <?php if (isset($instance['show_visit_button']) && $instance['show_visit_button'] == 'on') : ?>
         <div class="text-center hbg-social-feed-actions">
-            <a href="https://www.facebook.com/<?php echo $instance['username']; ?>" target="_blank" class="button button-hbg">Besök oss på Facebook</a>
+            <a href="https://www.facebook.com/<?php echo $instance['username']; ?>" target="_blank" class="button button-darker">Besök oss på Facebook</a>
         </div>
         <?php endif; ?>
     </div>

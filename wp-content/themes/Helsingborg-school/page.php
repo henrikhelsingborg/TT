@@ -2,7 +2,7 @@
 
 <div class="content-container">
     <div class="row">
-        <div class="main-content columns large-8 medium-8">
+        <div class="main-content columns large-8 medium-12">
             <?php
 
                 /**
@@ -27,7 +27,16 @@
                  * Widget content-area
                  */
                 if ((is_active_sidebar('content-area') == true)) {
+                    echo '<aside class="content-area widgets-test-color clearfix">';
                     dynamic_sidebar("content-area");
+                    echo '</aside>';
+                }
+
+                /**
+                 * Comments
+                 */
+                if (comments_open()) {
+                    comments_template();
                 }
             ?>
         </div>
@@ -38,9 +47,9 @@
              * - If it's exists sidebar will be included in templates/partials/header-welcome.php instead
              */
             global $has_welcome_text;
-            if (!$has_welcome_text) {
-                get_template_part('templates/partials/sidebar', 'right');
-            }
+            if ($has_welcome_text) echo '<div class="hide-for-large-up">';
+            get_template_part('templates/partials/sidebar', 'right');
+            if ($has_welcome_text) echo '</div>';
         ?>
     </div>
 </div>

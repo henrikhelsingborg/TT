@@ -1,4 +1,4 @@
-<section class="news-section">
+<?php echo $before_widget; ?>
     <ul class="news-list-large row">
         <?php
             foreach ($items as $num => $item) :
@@ -13,29 +13,27 @@
 
                 $link = get_permalink($page->ID);
         ?>
-        <li class="news-item large-12 columns">
-            <div class="row">
-                <div class="large-5 medium-4 small-12 columns news-image">
-                <?php if (has_post_thumbnail( $page->ID ) ) : ?>
-                    <?php
-                        $image_id = get_post_thumbnail_id( $page->ID );
-                        $image = wp_get_attachment_image_src( $image_id, 'single-post-thumbnail' );
-                        $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-                    ?>
-                    <a href="<?php echo $link; ?>"><img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>"></a>
-                <?php endif; ?>
-                </div>
+        <li class="news-item row">
+            <div class="large-5 medium-4 small-12 columns news-image">
+            <?php if (has_post_thumbnail( $page->ID ) ) : ?>
+                <?php
+                    $image_id = get_post_thumbnail_id( $page->ID );
+                    $image = wp_get_attachment_image_src( $image_id, 'single-post-thumbnail' );
+                    $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+                ?>
+                <a href="<?php echo $link; ?>"><img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>"></a>
+            <?php endif; ?>
+            </div>
 
-                <div class="large-7 medium-8 small-12 columns news-content">
-                    <a href="<?php echo $link; ?>">
-                        <h2 class="news-title"><?php echo $page->post_title ?></h2>
-                        <span class="news-date>"></span>
-                        <?php echo wpautop($main, true); ?>
-                        <span class="read-more">Läs mer</span>
-                    </a>
-                </div>
+            <div class="large-7 medium-8 small-12 columns news-content">
+                <a href="<?php echo $link; ?>">
+                    <h2 class="news-title"><?php echo $page->post_title ?></h2>
+                    <span class="news-date>"></span>
+                    <?php echo wpautop($main, true); ?>
+                    <span class="read-more">Läs mer</span>
+                </a>
             </div>
         </li>
         <?php endforeach; ?>
     </ul>
-</section>
+<?php echo $after_widget; ?>

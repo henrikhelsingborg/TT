@@ -29,7 +29,7 @@
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
-                width: 200px;
+                min-width: 200px;
 
                 li {
                     a {
@@ -188,17 +188,18 @@
 .right-off-canvas-menu {
 
     font-family: $font-roboto;
+    background: #212121;
 
     // # Top level
     > ul {
         list-style-type: none;
         margin: 50px 0;
-        padding: 0 20px 0 0;
+        padding: 20px 0;
 
         // # Current node
         .current-menu-item {
             a {
-                background: $band-color-1;
+                background: #333;
             }
 
             &.menu-item-has-children {
@@ -207,7 +208,7 @@
                     top: 0;
                     right: 0;
                     height: 100%;
-                    background: darken($band-color-1, 8%);
+                    background: darken(#333, 8%);
                     padding: 11.5px;
                     box-sizing: border-box;
                     @include hbg-icons($icon-caret-down);
@@ -216,7 +217,7 @@
         }
 
         // Node with children
-        .menu-item-has-children:not(.current-menu-item):not(.current-page-parent) {
+        .menu-item-has-children:not(.current-menu-item):not(.current-page-parent):not(.current-menu-ancestor) {
             > a::after {
                 position: absolute;
                 top: 0;
@@ -229,10 +230,24 @@
             }
         }
 
+        .menu-item-has-children.current-menu-ancestor {
+            background: #111;
+            > a::after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                background: transparent;
+                padding: 11.5px;
+                box-sizing: border-box;
+                @include hbg-icons($icon-caret-down);
+            }
+        }
+
         // Display current nodes submenus
         .current-menu-item,
-        .current-page-parent {
-            > .sub-menu {
+        .current_page_parent {
+            .sub-menu {
                 display: block;
             }
         }
@@ -248,8 +263,10 @@
             display: block;
             color: #fff;
             font-size: rem-calc(18);
-            padding: 5px 12px;
-            background: darken($mobile-nav-bg-color, 5%)
+            padding: 5px 18px;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
         }
     }
 

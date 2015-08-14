@@ -1,11 +1,19 @@
 jQuery(document).ready(function ($) {
 
+    $(document).foundation();
+
+    $('#start-jr').on('click', function() {
+      $(document).foundation('joyride','start');
+    });
+
     /**
      * Opens the search form from the desktop main menu
      */
     $('.item-search a').on('click', function (e) {
-        e.preventDefault;
+        e.preventDefault();
         $(this).parent('.item-search').toggleClass('show-search');
+        $(this).parent('.item-search').find('input[type="text"]').focus();
+        return false;
     });
 
     $('.show-mobile-nav').bind('click', function(){

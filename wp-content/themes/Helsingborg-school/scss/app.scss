@@ -1,5 +1,5 @@
 /* Core dependencies */
-@import "foundation";
+@import "../bower_components/foundation/scss/foundation";
 
 /* Assets */
 @import "assets/fonts";
@@ -21,3 +21,13 @@
 @import "partials/widgets";
 @import "partials/social-feed-widget";
 @import "partials/breadcrumbs";
+@import "partials/list";
+@import "partials/zmulti";
+@import "partials/form";
+@import "partials/comments";
+@import "partials/gallery";
+
+/* Color themes */
+@import "color-themes/purple";
+@import "color-themes/blue";
+@import "color-themes/green";

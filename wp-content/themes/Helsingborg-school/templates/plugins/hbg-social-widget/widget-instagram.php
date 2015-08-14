@@ -31,7 +31,7 @@
 
         <?php if (isset($instance['show_visit_button']) && $instance['show_visit_button'] == 'on') : ?>
         <div class="text-center hbg-social-feed-actions">
-            <a href="http://instagram.com/<?php echo $instance['username']; ?>" target="_blank" class="button button-hbg">Besök oss på Instagram</a>
+            <a href="http://instagram.com/<?php echo $instance['username']; ?>" target="_blank" class="button button-darker">Besök oss på Instagram</a>
         </div>
         <?php endif; ?>
     </div>

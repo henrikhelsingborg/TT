@@ -1,4 +1,4 @@
-<section class="news-section">
+<?php echo $before_widget; ?>
     <ul class="news-list-large row">
         <?php
             foreach ($items as $num => $item) :
@@ -39,4 +39,4 @@
         </li>
         <?php endforeach; ?>
     </ul>
-</section>
+<?php echo $after_widget; ?>
