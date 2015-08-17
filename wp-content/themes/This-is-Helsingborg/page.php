@@ -1,10 +1,5 @@
 <?php
     get_header();
-
-    $centerClasses = 'large-6 medium-6 small-12';
-    if (!is_active_sidebar('right-sidebar')) {
-        $centerClasses = 'large-9 medium-9 small-12';
-    }
 ?>
 
 <section class="section-article">
@@ -18,7 +13,7 @@
         <div class="row">
             <?php get_template_part('templates/partials/sidebar', 'left'); ?>
 
-            <div class="columns <?php echo $centerClasses; ?>">
+            <div class="columns large-6 medium-6 small-12 left">
                 <?php get_template_part('templates/partials/article'); ?>
 
                 <?php if (is_active_sidebar('content-area')) : ?>
