@@ -1,13 +1,29 @@
 <?php
 
-    require_once('library/theme-support.php');
-    require_once('library/navigation.php');
-    require_once('library/enqueue-scripts.php');
-    require_once('library/widget-areas.php');
+    define('HELSINGBORG_PATH', get_template_directory());
+    define('HELSINGBORG_URL', get_template_directory_uri());
+
+    require_once HELSINGBORG_PATH . '/lib/Vendor/Psr4ClassLoader.php';
+    require_once HELSINGBORG_PATH . '/lib/Public.php';
+
+    $loader = new Helsingborg\Vendor\Psr4ClassLoader();
+    $loader->addPrefix('Helsingborg', HELSINGBORG_PATH);
+    $loader->addPrefix('Helsingborg', HELSINGBORG_PATH . '/lib/');
+    $loader->register();
+
+    new Helsingborg\App();
+
+
+    // DESSA ÄR REFAKTORERADE TILL /LIB MAPPEN
+    //require_once('library/theme-support.php');
+    //require_once('library/navigation.php');
+    //require_once('library/enqueue-scripts.php');
+    //require_once('library/widget-areas.php');
+    //require_once('library/meta-boxes.php');
+    //require_once('library/helpers.php');
+
     require_once('library/helsingborg-ajax.php');
-    require_once('library/meta-boxes.php');
     require_once('meta_boxes/meta-functions.php');
-    require_once('library/helpers.php');
     require_once('library/scheduled-tasks.php');
 
     if (isset($_GET['flush-inactive']) && $_GET['flush-inactive'] == "true") {
