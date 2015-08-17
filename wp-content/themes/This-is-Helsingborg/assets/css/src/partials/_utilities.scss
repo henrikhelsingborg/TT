@@ -207,17 +207,17 @@
 }
 
 .btn-mobile-menu {
-    width: 30px;
     height: 30px;
 }
 
 .hbg-hamburger {
-    $bar-height: 5px;
-    $bar-radius: 5px;
+    $bar-height: 4px;
+    $bar-radius: 4px;
     position: relative;
-    display: block;
+    display: inline-block;
+    vertical-align: middle;
     height: $bar-height;
-    width: 100%;
+    width: 25px;
     border-radius: $bar-radius;
     background-color: $palette-red-4;
     transition: all .2s;
@@ -249,6 +249,7 @@
     &.open,
     .open & {
         height: 0;
+        margin-top: -3px;
 
         &::before {
             top: 0;

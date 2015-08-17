@@ -3,6 +3,7 @@
 }
 
 .btn.btn-mobile-menu {
+    position: relative;
     display: block;
     float: right;
     margin-top: 14px;
@@ -10,6 +11,13 @@
     padding: 0;
     color: $palette-red-4;
     font-size: 20pt;
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 13pt;
+        margin-left: 8px;
+    }
 }
 
 @media #{$medium-up} {
