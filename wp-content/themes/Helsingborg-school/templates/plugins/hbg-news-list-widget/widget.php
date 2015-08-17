@@ -15,16 +15,16 @@
         ?>
 
         <li class="news-item row">
-            <div class="large-4 medium-4 small-12 columns news-image">
             <?php
                 if (has_post_thumbnail( $page->ID ) ) :
                     $image_id = get_post_thumbnail_id( $page->ID );
                     $image = wp_get_attachment_image_src( $image_id, 'single-post-thumbnail' );
                     $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
             ?>
+                <div class="large-4 medium-4 small-12 columns news-image">
                 <a href="<?php echo $link; ?>"><img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>"></a>
+                </div>
             <?php endif; ?>
-            </div>
 
             <div class="large-8 medium-8 small-12 columns news-content">
                 <a href="<?php echo $link; ?>">
