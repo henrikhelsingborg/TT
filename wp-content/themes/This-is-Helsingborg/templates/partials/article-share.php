@@ -24,3 +24,14 @@
         <div class="clearfix"></div>
     </div>
 </div>
+
+<?php if (get_the_modified_time() != get_the_time()) : ?>
+    <ul class="timestamps">
+        <li><strong>Publicerad:</strong> <?php the_time('j F Y'); ?> kl <?php the_time('H:i'); ?></li>
+        <li><strong>Senast ändrad:</strong> <?php the_modified_time('j F Y'); ?> kl <?php the_modified_time('H:i'); ?></li>
+    </ul>
+<?php else: ?>
+    <ul class="timestamps">
+        <li><p class= "timestamp"><strong>Publicerad:</strong> <?php the_time('j F Y'); ?> kl <?php the_time('H:i'); ?></p></li>
+    </ul>
+<?php endif; ?>
