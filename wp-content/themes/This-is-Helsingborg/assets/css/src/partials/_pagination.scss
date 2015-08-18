@@ -2,9 +2,14 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    font-size: 0;
+    font-weight: normal;
 
     li {
         display: inline-block;
+        font-size: $base-font-size;
+        line-height: 120%;
+        margin-right: 3px;
     }
 
     a {
@@ -21,7 +26,8 @@
         }
     }
 
-    .current a {
+    .current a,
+    .current-pager a {
         background-color: $palette-red-2;
         border-color: $palette-red-2;
         color: #fff;

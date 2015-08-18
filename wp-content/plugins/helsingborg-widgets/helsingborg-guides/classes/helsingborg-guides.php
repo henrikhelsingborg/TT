@@ -340,20 +340,15 @@ function hbg_guide_func( $atts ) {
         $guide = '<section class="guide-section">';
         $guide .= '<h2 class="section-title">' . $post->post_title . '</h2>';
 
-        $guide .= '<div class="divider fade">';
-        $guide .= '<div class="upper-divider"></div>';
-        $guide .= '<div class="lower-divider"></div>';
-        $guide .= '</div>';
-
         $guide .= '<ul class="guide-list">';
 
         if (count($article_steps_meta["guide_step"])) {
             for ($i = 0; $i < count($article_steps_meta["guide_step"]); $i++){
 
                 if ($i == 0) {
-                    $guide .= '<li class="current">';
+                    $guide .= '<li class="box current">';
                 } else {
-                    $guide .= '<li>';
+                    $guide .= '<li class="box">';
                 }
 
                 if (isset($article_steps_meta["guide_step_image"][$i])){
@@ -361,23 +356,25 @@ function hbg_guide_func( $atts ) {
                     $guide .= '<img src="'.$kk[0].'" alt="" >';
                 }
 
-                $guide .= '<span class="title">' . $article_steps_meta["guide_step"][$i] . ' </span>';
-                $guide .= '<div class="description">' . wpautop($article_steps_meta["guide_step_title"][$i], true) . '</div>';
-                $guide .= '<p class="notes">' . $article_steps_meta["guide_note"][$i] . '</p>';
-                $guide .= '</li>';
+                $guide .= '<h3 class="title">' . $article_steps_meta["guide_step"][$i] . ' </h3>';
+                $guide .= '<div class="box-content box-content-padding-x2 description">' . wpautop($article_steps_meta["guide_step_title"][$i], true) . '';
+                if (strlen($article_steps_meta["guide_note"][$i]) > 0) {
+                  $guide .= '<p class="notes">' . $article_steps_meta["guide_note"][$i] . '</p>';
+                }
+                $guide .= '</div></li>';
             }
         }
 
-        $guide .= '</ul>'; //<!-- /.guide-list -->
+        $guide .= '</ul></div>'; //<!-- /.guide-list -->
 
-        $guide .= '<ul class="pagination" role="menubar" aria-label="Pagination">';
-        $guide .= '<li><a href="#" class="button radius prev-step">' . __(Föregående) . '</a></li>';
+        $guide .= '<ul class="pagination" arial-label="pagination" role="menubar">';
+        $guide .= '<li><a href="#" class="button radius prev-step">&laquo; ' . __(Föregående) . '</a></li>';
 
         for($i=0;$i<count($article_steps_meta["guide_step"]);$i++){
             $guide .= '<li' . ($i==0?' class="current-pager"':'') . '><a href="#">' . ($i+1) . '</a></li>';
         }
 
-        $guide .= '<li><a href="#" class="button radius next-step">' . __ (Nästa) . '</a></li>';
+        $guide .= '<li><a href="#" class="button radius next-step">' . __ (Nästa) . ' &raquo;</a></li>';
         $guide .= '</ul>';
         $guide .= '</section>';
 
