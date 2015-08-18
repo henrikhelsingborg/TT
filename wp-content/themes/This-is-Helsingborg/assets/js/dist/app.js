@@ -243,6 +243,7 @@ Helsingborg.Mobile.Menu = (function ($) {
     Menu.prototype.handleEvents = function() {
 
         $(document).ready(function () {
+            $('.mobile-menu-wrapper').css('opacity', 1);
             this.getNavHeight();
             this.initialize();
         }.bind(this));

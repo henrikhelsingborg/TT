@@ -332,6 +332,7 @@
 // </nav>
 
 .mobile-menu-wrapper {
+    opacity: 0;
     position: absolute;
     z-index: -10;
     background-color: $palette-red-2;
