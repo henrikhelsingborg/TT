@@ -4,10 +4,10 @@
 
     a {
         color: lighten($palette-red-4, 50%);
-        text-decoration: none;
+        text-decoration: underline;
 
         &::before {
-            margin-right: 2px;
+            margin-right: 5px;
         }
 
         &:hover {
