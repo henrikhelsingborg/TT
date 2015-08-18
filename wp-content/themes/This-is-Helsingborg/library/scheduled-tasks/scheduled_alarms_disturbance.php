@@ -266,6 +266,10 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
             if (isset($_GET['dist']) && $_GET['dist'] == 'debug') echo "<strong>STORSTÖRNINGAR SLUT</strong><br><br>";
         }
 
+        /**
+         * Remove alarms that have been "turned off"
+         * @return void
+         */
         public function removeTurnedOffAlarms() {
             if (isset($_GET['dist']) && $_GET['dist'] == 'debug') echo "<strong>INAKTUELLA ALARM</strong><br>";
             foreach ($this->existingDisturbances as $key => $disturbance) {
