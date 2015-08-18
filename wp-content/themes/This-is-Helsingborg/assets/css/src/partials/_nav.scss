@@ -154,15 +154,26 @@
         }
 
         &:not(.has-childs) > a {
+            padding-left: 20px;
+
             &::after {
                 content: '';
                 position: absolute;
                 top: 0;
-                left: -10px;
+                left: 0;
                 bottom: 0;
                 width: 10px;
                 display: block;
                 background-color: $palette-red-4;
+            }
+        }
+    }
+
+    li > ul {
+        .current:not(.has-childs) > a {
+            padding-left: 10px;
+            &::after {
+                left: -10px;
             }
         }
     }
