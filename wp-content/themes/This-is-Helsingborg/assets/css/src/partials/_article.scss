@@ -24,7 +24,7 @@
 .article-body {
     a {
         color: $link-a;
-        text-decoration: none;
+        text-decoration: underline;
 
         &:hover,
         &:focus {
