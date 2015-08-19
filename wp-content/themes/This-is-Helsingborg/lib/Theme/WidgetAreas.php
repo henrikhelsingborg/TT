@@ -7,6 +7,7 @@ class WidgetAreas {
     {
         add_action('widgets_init', '\Helsingborg\Theme\WidgetAreas::registerWidgetAreas');
         add_filter('dynamic_sidebar_params', '\Helsingborg\Theme\WidgetAreas::filterContentAreaClassNames');
+        add_filter('sidebars_widgets', '\Helsingborg\Theme\WidgetAreas::shuffleFactsWidgets');
     }
 
     /**
@@ -54,6 +55,14 @@ class WidgetAreas {
             'name' => __('Servicearea', 'Helsingborg'),
             'description' => __('Lägg till det som ska visas under innehållet.', 'Helsingborg'),
             'before_widget' => '<div class="widget columns large-4 medium-4 small-12">',
+            'after_widget' => '</div>'
+        ));
+
+        register_sidebar(array(
+            'id' => 'fun-facts-area',
+            'name' => __('Fakta', 'Helsingborg'),
+            'description' => __('Lägg till det som ska visas som faktarutor (visar tre slumpmässiga).', 'Helsingborg'),
+            'before_widget' => '<div class="widget columns large-3 medium-3 left">',
             'after_widget' => '</div>'
         ));
 
@@ -136,5 +145,17 @@ class WidgetAreas {
         }
 
         return $params;
+    }
+
+    public static function shuffleFactsWidgets($widgets)
+    {
+        $limit = 3;
+
+        if (!is_admin()) {
+            shuffle($widgets['fun-facts-area']);
+            $widgets['fun-facts-area'] = array_slice($widgets['fun-facts-area'], 0, $limit);
+        }
+
+        return $widgets;
     }
 }
