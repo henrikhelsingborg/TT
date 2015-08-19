@@ -340,7 +340,7 @@ function hbg_guide_func( $atts ) {
         $guide = '<section class="guide-section">';
         $guide .= '<h2 class="section-title">' . $post->post_title . '</h2>';
 
-        $guide .= '<ul class="guide-list">';
+        $guide .= '<div class="row"><div class="columns large-12"><ul class="guide-list">';
 
         if (count($article_steps_meta["guide_step"])) {
             for ($i = 0; $i < count($article_steps_meta["guide_step"]); $i++){
@@ -365,9 +365,9 @@ function hbg_guide_func( $atts ) {
             }
         }
 
-        $guide .= '</ul></div>'; //<!-- /.guide-list -->
+        $guide .= '</ul></div></div>'; //<!-- /.guide-list -->
 
-        $guide .= '<ul class="pagination" arial-label="pagination" role="menubar">';
+        $guide .= '<div class="row"><div class="columns large-12"><ul class="pagination" arial-label="pagination" role="menubar">';
         $guide .= '<li><a href="#" class="button radius prev-step">&laquo; ' . __(Föregående) . '</a></li>';
 
         for($i=0;$i<count($article_steps_meta["guide_step"]);$i++){
@@ -375,7 +375,7 @@ function hbg_guide_func( $atts ) {
         }
 
         $guide .= '<li><a href="#" class="button radius next-step">' . __ (Nästa) . ' &raquo;</a></li>';
-        $guide .= '</ul>';
+        $guide .= '</ul></div></div>';
         $guide .= '</section>';
 
         return $guide;
