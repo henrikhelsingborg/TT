@@ -194,7 +194,9 @@ Helsingborg.Search.Search = (function ($) {
             }
 
             if (item.fileFormat == 'PDF/Adobe Acrobat') {
-                $item.find('.search-result-item-content').append('<h3><a href="' + item.link + '" class="pdf-item">' + item.htmlTitle + '</a></h3>');
+                $item.find('.search-result-item-content').append('<h3><a target="_blank" href="' + item.link + '" class="pdf-item">' + item.htmlTitle + '</a></h3>');
+            } else if (item.fileFormat == 'Microsoft Word') {
+                $item.find('.search-result-item-content').append('<h3><a target="_blank" href="' + item.link + '" class="word-item">' + item.htmlTitle + '</a></h3>');
             } else {
                 $item.find('.search-result-item-content').append('<h3><a href="' + item.link + '" class="link-item">' + item.htmlTitle + '</a></h3>');
             }

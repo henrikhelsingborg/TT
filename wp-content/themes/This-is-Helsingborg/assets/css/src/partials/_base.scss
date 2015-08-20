@@ -103,3 +103,12 @@ img.responsive {
         color: rgba(255,255,255,.7);
     }
 }
+
+.word-item {
+    &::before {
+        @include hbg-icon($icon-word);
+        display: inline-block;
+        margin-right: 8px;
+        color: rgba(0,0,0,.4);
+    }
+}
