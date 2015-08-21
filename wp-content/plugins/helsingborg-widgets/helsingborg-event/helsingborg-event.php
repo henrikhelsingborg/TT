@@ -31,3 +31,15 @@
       }
     }
     add_action('wp', 'setup_scheduled_xcap');
+
+    /* Manually start fetch of XCap */
+    add_action('wp_ajax_start_manual_xcap', 'start_manual_xcap_callback');
+    function start_manual_xcap_callback() {
+        xcap_event();
+    }
+
+    /* Manually start fetch of CBIS */
+    add_action('wp_ajax_start_manual_cbis', 'start_manual_cbis_callback');
+    function start_manual_cbis_callback() {
+        cbis_event();
+    }

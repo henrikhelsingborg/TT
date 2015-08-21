@@ -3,23 +3,6 @@
 /* AJAX FUNCTIONS */
 /******************/
 
-/* Manually start fetch of alarms */
-add_action('wp_ajax_start_manual_alarms', 'start_manual_alarms_callback');
-function start_manual_alarms_callback() {
-    alarms_event();
-}
-
-/* Manually start fetch of XCap */
-add_action('wp_ajax_start_manual_xcap', 'start_manual_xcap_callback');
-function start_manual_xcap_callback() {
-    xcap_event();
-}
-
-/* Manually start fetch of CBIS */
-add_action('wp_ajax_start_manual_cbis', 'start_manual_cbis_callback');
-function start_manual_cbis_callback() {
-    cbis_event();
-}
 
 /* Loads the list of event, to be presented inside a widget */
 add_action('wp_ajax_nopriv_update_event_calendar', 'update_event_calendar_callback');

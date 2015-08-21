@@ -69,3 +69,9 @@ function setup_scheduled_alarms() {
     }
 }
 add_action('wp', 'setup_scheduled_alarms');
+
+/* Manually start fetch of alarms */
+add_action('wp_ajax_start_manual_alarms', 'start_manual_alarms_callback');
+function start_manual_alarms_callback() {
+    alarms_event();
+}
