@@ -7,6 +7,7 @@
 ?>
 
 <!-- Instagram feed -->
+<?php echo $before_widget; ?>
 <div class="widget-content-holder">
     <h2><i class="fa fa-instagram"></i> Instagram</h2>
     <div class="textwidget hbg-social-feed hbg-social-feed-instagram">
@@ -36,3 +37,4 @@
         <?php endif; ?>
     </div>
 </div>
+<?php echo $after_widget; ?>

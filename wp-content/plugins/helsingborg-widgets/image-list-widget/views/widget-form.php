@@ -13,14 +13,6 @@
     </label>
 </div>
 
-<div class="hbgllw-instructions">
-    <?php echo __("<b>Bildmått: 1024 x 400 pixlar.</b>"); ?>
-</div>
-
-<ul class="hbgllw-instructions">
-    <li style="word-break: break-all;"><?php echo __("Notera att <b>minst</b> två bilder måste användas i denna <br> widget om den ska befinna sig under innehållet!"); ?></li>
-</ul>
-
 <div class="helsingborg-link-list">
     <?php
         // Now render each item

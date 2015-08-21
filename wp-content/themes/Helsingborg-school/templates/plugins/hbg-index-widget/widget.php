@@ -1,3 +1,4 @@
+<?php echo $before_widget; ?>
 <div class="collection collection-test-colors">
     <div class="row">
         <?php
@@ -35,3 +36,4 @@
         <?php endforeach; ?>
     </div>
 </div>
+<?php echo $after_widget; ?>

@@ -78,16 +78,34 @@
 			jQuery('#result').append(total);
 
 			for (var i = 0; i < data.items.length; i++) {
-				var meta = data.items[i].pagemap.metatags[0];
+				var meta = 0;
+				if (data.items[i].pagemap) {
+					meta = data.items[i].pagemap.metatags[0];
+				}
+
 				var item = '<li>';
 
-				item += '<a href="' + data.items[i].link + '" desc="link-desc">';
-				if (data.items[i].fileFormat !== undefined) {
+				var filetypes = ['Microsoft Word', 'PDF/Adobe Acrobat'];
+
+				console.log(filetypes.indexOf(data.items[i].fileFormat));
+
+				item += '<h2 class="list-title">';
+
+				if (data.items[i].fileFormat !== undefined && filetypes.indexOf(data.items[i].fileFormat) > -1) {
+					item += '<a target="_blank" href="' + data.items[i].link + '" desc="link-desc">';
+
 					if (data.items[i].fileFormat == 'PDF/Adobe Acrobat') {
-						item += '<span class="pdf-icon"></span>';
+						item += '<i class="fa fa-file-pdf-o"></i> ';
 					}
+
+					if (data.items[i].fileFormat == 'Microsoft Word') {
+						item += '<i class="fa fa-file-word-o"></i> '
+					}
+				} else {
+					item += '<a href="' + data.items[i].link + '" desc="link-desc">';
 				}
-				item += '<h2 class="list-title">' + data.items[i].title + '</h2></a>';
+
+				item += '' + data.items[i].title + '</h2></a>';
 				if (meta['moddate'] !== undefined ) {
 					item += '<span class="news-date">' + convertDate(meta['moddate']) + '</span>';
 				} else if (meta['creationdate'] !== undefined) {

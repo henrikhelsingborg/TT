@@ -325,6 +325,7 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                     ON a.Station = s.StationID
                 WHERE
                     a.SmallDisturbance = 'true'
+                    AND a.SmallDisturbance = 'True'
                     AND s.CityName = 'Helsingborg'
                 ORDER BY a.SentTime DESC
             ", OBJECT);
@@ -362,6 +363,7 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                     ON a.Station = s.StationID
                 WHERE
                     a.BigDisturbance = 'true'
+                    AND a.BigDisturbance = 'True'
                     AND s.CityName = 'Helsingborg'
                 ORDER BY a.SentTime DESC
             ", OBJECT);
