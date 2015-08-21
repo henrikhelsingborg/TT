@@ -46,7 +46,7 @@ class Ajax {
         echo $result;
 
         die();
-    };
+    }
 
     /**
      * Search pages with wp query
