@@ -43,3 +43,38 @@
     function start_manual_cbis_callback() {
         cbis_event();
     }
+
+    /* Loads the list of event, to be presented inside a widget */
+    add_action('wp_ajax_nopriv_update_event_calendar', 'update_event_calendar_callback');
+    add_action('wp_ajax_update_event_calendar', 'update_event_calendar_callback');
+    function update_event_calendar_callback() {
+        $amount = $_POST['amount'];
+        $ids    = $_POST['ids'];
+
+        // Get the events
+        $events = HelsingborgEventModel::load_events_simple($amount, $ids);
+
+        $today = date('Y-m-d');
+        $list = '';
+
+        foreach( $events as $event ) {
+            $list .= '<li>';
+                $list .= '<a href="#" id="'.$event->EventID.'" class="event-item" data-reveal="eventModal"><span class="date">';
+                    if ($today == $event->Date) {
+                        $list .= '<span class="date-day"><strong>Idag</strong></span><span class="date-time">' . $event->Time . '</span>';
+                    } else {
+                        $list .= '<span class="date-day">' . date('d', strtotime($event->Date)) . '</span><span class="date-time">' . date('M', strtotime($event->Date)) . '</span>';
+                    }
+                $list .= '</span>';
+                $list .= '<span class="title link-item">' . $event->Name . '</span>';
+                $list .= '</a>';
+            $list .= '</li>';
+
+            //$list .= '<a href="#" class="modalLink" id="'.$event->EventID.'" data-reveal-id="eventModal">'.$event->Name.'</a>';
+        }
+
+        $result = array('events' => $events, 'list' => $list);
+        echo json_encode($result);
+
+        die();
+    }
