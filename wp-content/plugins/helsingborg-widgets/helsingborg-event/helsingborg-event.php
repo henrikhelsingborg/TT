@@ -78,3 +78,153 @@
 
         die();
     }
+
+
+    /* Load all organizers with event ID */
+    add_action('wp_ajax_nopriv_load_event_organizers', 'load_event_organizers_callback');
+    add_action('wp_ajax_load_event_organizers', 'load_event_organizers_callback');
+    function load_event_organizers_callback() {
+        $id     = $_POST['id'];
+        $result = HelsingborgEventModel::get_organizers_with_event_id($id);
+        echo json_encode($result);
+        die();
+    }
+
+    /* Load all event times for a certain event ID */
+    add_action( 'wp_ajax_nopriv_load_event_dates', 'load_event_dates_callback');
+    add_action( 'wp_ajax_load_event_dates', 'load_event_dates_callback' );
+    function load_event_dates_callback() {
+        $id     = $_POST['id'];
+        $result = HelsingborgEventModel::load_event_times_with_event_id($id);
+        echo json_encode($result);
+        die();
+    }
+
+    /* Load event types */
+    add_action('wp_ajax_nopriv_load_event_types', 'load_event_types_callback');
+    add_action('wp_ajax_load_event_types', 'load_event_types_callback' );
+    function load_event_types_callback() {
+        $result = HelsingborgEventModel::load_event_types();
+        echo json_encode($result);
+        die();
+    }
+
+    /* Load events */
+    add_action('wp_ajax_nopriv_load_events', 'load_events_callback');
+    add_action('wp_ajax_load_events', 'load_events_callback' );
+    function load_events_callback() {
+        $ids     = $_POST['ids'];
+        $result = HelsingborgEventModel::load_events($ids);
+        echo json_encode($result);
+        die();
+    }
+
+    /* Add AJAX functions for admin. So Event may be changed by users
+    Note: wp_ajax_nopriv_X is not used, since events cannot be changed by other than logged in users */
+    /* Function for approving events, returns true if success. */
+    add_action('wp_ajax_approve_event', 'approve_event_callback');
+    function approve_event_callback() {
+        global $wpdb;
+        $id     = $_POST['id'];
+        $result = HelsingborgEventModel::approve_event($id);
+        die();
+    }
+
+    /* Function for denying events, returns true if success. */
+    add_action('wp_ajax_deny_event', 'deny_event_callback');
+    function deny_event_callback() {
+        global $wpdb;
+        $id     = $_POST['id'];
+        $result = HelsingborgEventModel::deny_event($id);
+
+        die();
+    }
+
+    /* Function for saving events, returns true if success. */
+    add_action('wp_ajax_save_event',    'save_event_callback');
+    function save_event_callback() {
+        global $wpdb;
+
+        $id          = $_POST['id'];
+        $type        = $_POST['type'];
+        $name        = $_POST['name'];
+        $description = $_POST['description'];
+        $link        = $_POST['link'];
+        $days        = $_POST['days'];
+        $start_date  = $_POST['startDate'];
+        $end_date    = $_POST['endDate'];
+        $time        = $_POST['time'];
+        $units       = $_POST['units'];
+        $types       = $_POST['types'];
+        $organizer   = $_POST['organizer'];
+        $location    = $_POST['location'];
+        $imageUrl    = $_POST['imageUrl'];
+        $author      = $_POST['author'];
+        $days_array  = $_POST['days'];
+        $days_array  = explode(',', $days_array);
+
+        // Create event
+        $event = array (
+            'EventID'         => $id,
+            'Name'            => $name,
+            'Description'     => $description,
+            'Link'            => $link,
+            'Approved'        => $approved,
+            'OrganizerID'     => $organizer,
+            'Location'        => $location,
+            'ExternalEventID' => $external_id,
+        );
+
+        // Event types
+        $event_types_x  = explode(',', $types);
+        $event_types = array();
+
+        foreach ($event_types_x as $type) {
+            $new_type = array('Name' => $type);
+            array_push($event_types, $new_type);
+        }
+
+        // Administration units
+        if ($units && !empty($units)){
+            $administrations = explode(',', $units);
+
+            foreach($administrations as $unit) {
+                $administration_units[] = HelsingborgEventModel::get_administration_id_from_name($unit)->AdministrationUnitID;
+            }
+        }
+
+        // Image
+        $image = null;
+
+        if ($imageUrl) {
+            $image = array( 'ImagePath' => $imageUrl, 'Author' => $author);
+        }
+
+        // Create time/times
+        $event_times = array();
+        if (!$end_date) { // Single occurence
+            $event_time = array(
+                'Date'  => $start_date,
+                'Time'  => $time,
+                'Price' => 0
+            );
+            array_push($event_times, $event_time);
+        } else { // Must be start and end then
+            $dates_array = create_date_range_array($start_date, $end_date);
+            $filtered_days = filter_date_array_by_days($dates_array, $days_array);
+
+            foreach($filtered_days as $date) {
+                $event_time = array(
+                    'Date'  => $date,
+                    'Time'  => $time,
+                    'Price' => 0
+                );
+                array_push($event_times, $event_time);
+                echo $date;
+            }
+        }
+
+        HelsingborgEventModel::update_event($event, $event_types, $administration_units, $image, $event_times);
+
+        die();
+    }

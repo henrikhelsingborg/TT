@@ -88,3 +88,63 @@ if (!function_exists('')) {
 }
 
 
+/**
+ * AJAX FUNCTIONS
+ */
+
+/* Loads pages where post_title has keyword $title */
+add_action('wp_ajax_load_page_with_id', 'load_page_with_id_callback');
+function load_page_with_id_callback() {
+    global $wpdb;
+
+    $id        = $_POST['id'];
+    $sql = "SELECT ID, post_title FROM $wpdb->posts WHERE ID = " . $id;
+    $pages = $wpdb->get_results($sql);
+
+    if ($pages) {$page = $pages[0];} else {die();}
+
+    echo $page->post_title . '|' . get_permalink($page->ID);
+
+    die();
+}
+
+/* Loads pages where post_title has keyword $title */
+add_action('wp_ajax_load_pages_with_update', 'load_pages_with_update_callback');
+function load_pages_with_update_callback() {
+    global $wpdb;
+
+    $title     = $_POST['title'];
+    $id        = $_POST['id'];
+    $num       = $_POST['num'];
+    $update    = $_POST['update'];
+
+    if (is_numeric($title)) {
+        $sql = "SELECT ID, post_title FROM $wpdb->posts WHERE ID = " . $title;
+    } else {
+        $sql = "SELECT ID, post_title FROM $wpdb->posts WHERE post_type = 'page' AND post_title LIKE '%" . $title . "%'";
+    }
+
+    $pages = $wpdb->get_results($sql);
+
+    $onchange = '';
+
+    if ($update) {
+        $onchange = 'onchange="'.$update.'(\''.$id.'\', \''.$num.'\')"';
+    }
+
+    $list = '<select '.$onchange.' id=\'select_' . $id . $num . '\'">';
+    $list .= '<option value="-1">' . __(" -- Välj sida i listan -- ") . '</option>';
+
+    foreach ($pages as $page) {
+        $list .= '<option value="' . $page->ID . '">';
+        $list .= $page->post_title . ' (' . $page->ID . ')';
+        $list .= '</option>';
+    }
+
+    $list .= '</select>';
+
+    echo $list;
+    die();
+}
+
+

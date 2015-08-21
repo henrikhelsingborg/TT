@@ -130,3 +130,12 @@ function big_notification_callback() {
     // Return
     wp_die();
 }
+
+/* Load all alarms */
+add_action('wp_ajax_nopriv_load_alarms', 'load_alarms_callback');
+add_action('wp_ajax_load_alarms', 'load_alarms_callback');
+function load_alarms_callback() {
+    $result = HelsingborgAlarmModel::load_alarms();
+    echo json_encode($result);
+    die();
+}

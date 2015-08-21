@@ -21,10 +21,10 @@
     //require_once('library/widget-areas.php');
     //require_once('library/meta-boxes.php');
     //require_once('library/helpers.php');
+    //require_once('library/scheduled-tasks.php');
 
     require_once('library/helsingborg-ajax.php');
     require_once('meta_boxes/meta-functions.php');
-    //require_once('library/scheduled-tasks.php');
 
     if (isset($_GET['flush-inactive']) && $_GET['flush-inactive'] == "true") {
         $widgets = get_option('sidebars_widgets');
