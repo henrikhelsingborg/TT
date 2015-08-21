@@ -12,7 +12,7 @@ wp_nav_menu(array(
 ));
 */
 
-require_once(get_template_directory() . '/library/helsingborg-walker-mobile.php');
+require_once(get_template_directory() . '/lib/Walker/helsingborg-walker-mobile.php');
     $walker_page = new Helsingborg_Walker_Mobile();
 ?>
 

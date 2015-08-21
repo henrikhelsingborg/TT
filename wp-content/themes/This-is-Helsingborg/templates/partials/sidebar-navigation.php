@@ -1,6 +1,6 @@
 <?php
     /* Generates the page tree, skips drafted pages */
-    require_once(get_template_directory() . '/library/helsingborg-walker.php');
+    require_once(get_template_directory() . '/lib/Walker/helsingborg-walker.php');
     $walker_page = new Helsingborg_Walker();
 ?>
 <nav class="navbar-aside">
