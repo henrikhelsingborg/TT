@@ -55,3 +55,17 @@ function encode_values($options, $delimiter_in, $delimiter_out) {
   }
   return implode($delimiter_out, $values);
 }
+
+
+/**
+ * Add scheduled work for alarm
+ * @return void
+ */
+require_once('cron/scheduled_alarms.php');
+function setup_scheduled_alarms() {
+    if ( ! wp_next_scheduled( 'scheduled_alarms' ) ) {
+        // Set scheduled task to occur each 3rd minute
+        wp_schedule_event(time(), '3min', 'scheduled_alarms');
+    }
+}
+add_action('wp', 'setup_scheduled_alarms');
