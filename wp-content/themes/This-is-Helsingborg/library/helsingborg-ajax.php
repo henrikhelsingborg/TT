@@ -4,61 +4,6 @@
 /******************/
 
 
-/* Loads the big notifications i.e. warning/information and prints the alert messages */
-/* The IDs being fetched are set from Helsingborg settings */
-add_action('wp_ajax_nopriv_big_notification', 'big_notification_callback');
-add_action('wp_ajax_big_notification', 'big_notification_callback');
-function big_notification_callback() {
-    global $wpdb;
-    $disturbances = array();
-    $informations = array();
-
-    // Get the parent IDs from where the notifications are being fetched
-    $disturbance_root_id = get_option('helsingborg_big_disturbance_root');
-    $information_root_id = get_option('helsingborg_big_information_root');
-
-    // Get the child pages for these IDs
-    $wp_query     = new WP_Query();
-    $all_wp_pages = $wp_query->query(array('post_type' => 'page'));
-
-    // Get the children
-    if ($disturbance_root_id != '') $disturbances = get_page_children($disturbance_root_id, $all_wp_pages);
-    if ($information_root_id != '') $informations = get_page_children($information_root_id, $all_wp_pages);
-
-    // Merge the notifications and sort the new array by date
-    $notifications = array_merge($disturbances, $informations);
-
-    // No notifications to show, just die
-    if (!$notifications) {die();}
-
-    // Sort all notifications by date
-    usort($notifications, create_function('$a,$b', 'return strcmp($b->post_date, $a->post_date);'));
-
-    $retArr = array();
-
-    // Print the alarms
-    foreach($notifications as $notification) {
-        $class = in_array($notification, $disturbances, TRUE) ? 'warning' : 'info';
-        $link = get_permalink($notification->ID);
-        $the_content = get_extended($notification->post_content);
-        $main = strip_tags($the_content['main']);
-        if (strlen($main) > 50) $main = trim(substr($main, 0, 100)) . "…";
-        $content = $the_content['extended'];
-
-        $retArr[] = array(
-            'class' => $class,
-            'link' => $link,
-            'main' => $main,
-            'title' => $notification->post_title
-        );
-    }
-
-    echo json_encode($retArr);
-
-    // Return
-    wp_die();
-}
-
 /* Uses Google Custom Search to get JSON with search results */
 /* Show these search results instead of WP original */
 add_action('wp_ajax_nopriv_search', 'search_callback');
