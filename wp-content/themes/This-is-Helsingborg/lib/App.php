@@ -11,6 +11,7 @@ class App
     public function __construct()
     {
         new Helper\Wp;
+        new Helper\Ajax;
 
         new Theme\Support;
         new Theme\Enqueue;
