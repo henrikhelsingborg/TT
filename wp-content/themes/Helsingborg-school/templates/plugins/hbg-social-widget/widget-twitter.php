@@ -1,5 +1,4 @@
 <!-- Twitter feed -->
-<?php echo $before_widget; ?>
 <div class="widget-content-holder">
     <h2><i class="fa fa-twitter"></i> Twitter</h2>
     <div class="divider">
@@ -46,5 +45,4 @@
         </div>
         <?php endif; ?>
     </div>
-</div>
-<?php echo $after_widget; ?>
+</div>>
