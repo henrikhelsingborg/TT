@@ -82,7 +82,7 @@
         border-left: 8px solid $creamy-darker;
     }
 
-    .has-childs:not(.current-node) {
+    .has-childs:not(.current-node):not(.current-ancestor):not(.current) {
         > a {
             padding-right: 30px;
 
@@ -111,7 +111,7 @@
             }
         }
 
-        > a::after {
+        > ::after {
             position: absolute;
             right: 12px;
             top: 11px;
@@ -151,18 +151,14 @@
             &:focus {
                 color: #fff;
             }
-        }
 
-        &:not(.has-childs) > a {
-            padding-left: 20px;
-
-            &::after {
+            &::before {
                 content: '';
                 position: absolute;
                 top: 0;
-                left: 0;
+                left: -8px;
                 bottom: 0;
-                width: 10px;
+                width: 8px;
                 display: block;
                 background-color: $palette-red-4;
             }
@@ -173,7 +169,7 @@
         .current:not(.has-childs) > a {
             padding-left: 10px;
             &::after {
-                left: -10px;
+                left: -8px;
             }
         }
     }
