@@ -5,6 +5,7 @@
  * @param  [type] $schedules [description]
  * @return [type]            [description]
  */
+/*
 function cron_add_3min( $schedules ) {
     $schedules['3min'] = array(
         'interval' => 3*60,
@@ -14,11 +15,13 @@ function cron_add_3min( $schedules ) {
     return $schedules;
 }
 add_filter('cron_schedules', 'cron_add_3min');
+*/
 
 /**
  * Add scheduled work for alarm
  * @return void
  */
+/*
 require_once('scheduled-tasks/scheduled_alarms.php');
 function setup_scheduled_alarms() {
     if ( ! wp_next_scheduled( 'scheduled_alarms' ) ) {
@@ -27,11 +30,13 @@ function setup_scheduled_alarms() {
     }
 }
 add_action('wp', 'setup_scheduled_alarms');
+*/
 
  /**
   * Add scheduled work for CBIS events
   * @return void
   */
+ /*
 require_once('scheduled-tasks/scheduled_cbis.php');
 function setup_scheduled_cbis() {
   if ( ! wp_next_scheduled( 'scheduled_cbis' ) ) {
@@ -40,11 +45,13 @@ function setup_scheduled_cbis() {
   }
 }
 add_action('wp', 'setup_scheduled_cbis');
+*/
 
 /**
  * Add scheduled work for XCap events
  * @return void
  */
+/*
 require_once('scheduled-tasks/scheduled_xcap.php');
 function setup_scheduled_xcap() {
   if ( ! wp_next_scheduled( 'scheduled_xcap' ) ) {
@@ -53,3 +60,4 @@ function setup_scheduled_xcap() {
   }
 }
 add_action('wp', 'setup_scheduled_xcap');
+*/
