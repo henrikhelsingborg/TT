@@ -326,7 +326,10 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                 WHERE
                     a.SmallDisturbance = 'true'
                     AND a.SmallDisturbance = 'True'
-                    AND s.CityName = 'Helsingborg'
+                    AND (
+                        s.CityName = 'Helsingborg'
+                        OR LOWER(a.Cities) LIKE '%helsingborg%'
+                    )
                 ORDER BY a.SentTime DESC
             ", OBJECT);
         }
@@ -364,7 +367,10 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                 WHERE
                     a.BigDisturbance = 'true'
                     AND a.BigDisturbance = 'True'
-                    AND s.CityName = 'Helsingborg'
+                    AND (
+                        s.CityName = 'Helsingborg'
+                        OR LOWER(a.Cities) LIKE '%helsingborg%'
+                    )
                 ORDER BY a.SentTime DESC
             ", OBJECT);
         }
