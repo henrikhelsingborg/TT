@@ -6,7 +6,6 @@
 ?>
 
 <!-- Pinterest feed -->
-<?php echo $before_widget; ?>
 <div class="widget-content-holder">
     <h2><i class="fa fa-pinterest"></i> Pinterest</h2>
     <div class="divider">
@@ -39,4 +38,3 @@
         <?php endif; ?>
     </div>
 </div>
-<?php echo $after_widget; ?>

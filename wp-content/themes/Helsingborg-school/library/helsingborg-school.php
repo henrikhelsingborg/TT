@@ -60,3 +60,17 @@
         return $templates;
     }
     add_filter('theme_page_templates', 'hbg_remove_page_templates');
+
+    function hbgWrapYoutube($content) {
+        $pattern = '~<iframe.*?</iframe>~';
+        $content = preg_replace_callback($pattern, function ($matches) {
+            if (strpos($matches[0], 'youtube') !== false) {
+                return '<div class="flex-video widescreen">' . $matches[0] . '</div>';
+            }
+
+            return $matches[0];
+        }, $content);
+
+        return $content;
+    }
+    add_filter('the_content', 'hbgWrapYoutube');
