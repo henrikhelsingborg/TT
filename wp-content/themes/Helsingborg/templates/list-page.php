@@ -109,7 +109,7 @@ $content = $the_content['extended']; // If content is empty, no <!--more--> tag 
 
             <?php get_template_part('templates/partials/sidebar-left'); ?>
 
-            <div class="large-9 medium-8 columns article-column">
+            <div class="large-8 medium-8 columns article-column">
                 <div class="alert row"></div>
                 <?php get_template_part('templates/partials/header','image'); ?>
 
