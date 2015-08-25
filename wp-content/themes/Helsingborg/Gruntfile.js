@@ -16,6 +16,17 @@ module.exports = function(grunt) {
             }
         },
 
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions', 'ie 8', 'ie 9']
+            },
+            dist: {
+                files: {
+                    'css/app.css' : 'css/app.css'
+                }
+            },
+        },
+
         copy: {
             scripts: {
                 expand: true,
@@ -69,7 +80,7 @@ module.exports = function(grunt) {
 
             sass: {
                 files: 'scss/**/*.scss',
-                tasks: ['sass']
+                tasks: ['sass', 'autoprefixer']
             },
 
             concat: {
@@ -84,6 +95,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
     grunt.registerTask('build', ['sass', 'copy', 'uglify', 'concat:dist1', 'concat:dist2']);
     grunt.registerTask('build-sass', ['sass']);
