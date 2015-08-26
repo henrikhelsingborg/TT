@@ -25,7 +25,8 @@
     <style>
         .nav-bar,
         .main-footer,
-        .button-primary {
+        .button-primary,
+        article ul li::before {
             background: <?=$colorCode?> !important;
             background-color: <?=$colorCode?> !important;
         }
