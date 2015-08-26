@@ -34,15 +34,22 @@ article {
     a[href^="https://"]:not([href*="helsingborg.se"]):not([href*="readspeaker.com"]),
     a[href^="//"]:not([href*="helsingborg.se"]):not([href*="readspeaker.com"]) {
         &::before {
+            display: inline-block;
             $icon-size: 12px;
             font-size: $icon-size;
             margin-right: 3px;
             @include hbg-icons($icon-external-link);
+            text-decoration: none !important;
         }
     }
 
     a {
         text-decoration: underline;
+        color: $band-blue-4;
+
+        &:visited {
+            color: $band-purple-4;
+        }
     }
 
     & + div {
