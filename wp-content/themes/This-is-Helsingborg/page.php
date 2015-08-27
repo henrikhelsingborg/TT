@@ -31,6 +31,12 @@
                 }
             ?>
         </div>
+
+        <?php if (is_active_sidebar('content-area-bottom')) : ?>
+        <div class="row" id="widget-content-area-bottom">
+            <?php dynamic_sidebar('content-area-bottom'); ?>
+        </div>
+        <?php endif; ?>
     </div>
 </section>
 
