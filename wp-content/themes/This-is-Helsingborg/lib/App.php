@@ -12,6 +12,7 @@ class App
     {
         new Helper\Wp;
         new Helper\Ajax;
+        new Helper\Rss;
 
         new Theme\Support;
         new Theme\Enqueue;
