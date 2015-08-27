@@ -19,7 +19,7 @@ class WidgetAreas {
         register_sidebar(array(
             'id' => 'footer-area',
             'name' => __('Footerarea', 'Helsingborg'),
-            'description' => __('Arean längst ner', 'Helsingborg'),
+            'description' => __('Arean längst ner på sidan', 'Helsingborg'),
             'before_widget' => '<div class="left large-6 medium-6 columns"><div class="footer-content">',
             'after_widget' => '</div></div>',
             'before_title' => '<h2 class="footer-title">',
@@ -29,7 +29,7 @@ class WidgetAreas {
         register_sidebar(array(
             'id' => 'slider-area',
             'name' => __('Topparea', 'Helsingborg'),
-            'description' => __('Lägg till de sliders som ska visas på sidan.', 'Helsingborg'),
+            'description' => __('Visas under huvudmenyn', 'Helsingborg'),
             'before_widget' => '<div class="large-12 medium-12 small-12 columns"><div class="box widget">',
             'after_widget' => '</div></div>',
             'before_title' => '<h3>',
@@ -39,7 +39,7 @@ class WidgetAreas {
         register_sidebar(array(
             'id' => 'content-area',
             'name' => __('Innehållsarea', 'Helsingborg'),
-            'description' => __('Lägg till det som ska visas under innehållet.', 'Helsingborg'),
+            'description' => __('Visas strax under en artikels brödtext', 'Helsingborg'),
             'before_widget' => '<div class="widget">',
             'after_widget' => '</div>'
         ));
@@ -47,13 +47,15 @@ class WidgetAreas {
         register_sidebar(array(
             'id' => 'content-area-bottom',
             'name' => __('Innehåll bottenarea', 'Helsingborg'),
-            'description' => __('Lägg till det som ska visas under "Innehållsarea".', 'Helsingborg')
+            'description' => __('Visas under vänstermeny och artikel (fullbredd) ', 'Helsingborg'),
+            'before_widget' => '<div class="widget columns large-4 medium-4 small-12">',
+            'after_widget' => '</div>'
         ));
 
         register_sidebar(array(
             'id' => 'service-area',
             'name' => __('Servicearea', 'Helsingborg'),
-            'description' => __('Lägg till det som ska visas under innehållet.', 'Helsingborg'),
+            'description' => __('De service-länkar som visas i grått fält på startsidan', 'Helsingborg'),
             'before_widget' => '<div class="widget columns large-4 medium-4 small-12">',
             'after_widget' => '</div>'
         ));
@@ -61,7 +63,7 @@ class WidgetAreas {
         register_sidebar(array(
             'id' => 'fun-facts-area',
             'name' => __('Fakta', 'Helsingborg'),
-            'description' => __('Lägg till det som ska visas som faktarutor (visar tre slumpmässiga).', 'Helsingborg'),
+            'description' => __('Faktarutor som visas innan footer (visar tre slumpmässiga).', 'Helsingborg'),
             'before_widget' => '<div class="widget columns large-3 medium-3 left">',
             'after_widget' => '</div>'
         ));
@@ -69,7 +71,7 @@ class WidgetAreas {
         register_sidebar(array(
             'id' => 'left-sidebar',
             'name' => __('Vänster area', 'Helsingborg'),
-            'description' => __('Lägg till de widgets som ska visas i högra sidebaren.', 'Helsingborg'),
+            'description' => __('Visas ovanför vänstermenyn.', 'Helsingborg'),
             'before_widget' => '<div class="widget large-12 medium-12 small-12 columns %2$s"><div class="widget-content">',
             'after_widget' => '</div></div>',
             'before_title' => '<h2>',
@@ -79,7 +81,7 @@ class WidgetAreas {
         register_sidebar(array(
             'id' => 'left-sidebar-bottom',
             'name' => __('Vänster bottenarea', 'Helsingborg'),
-            'description' => __('Lägg till de widgets som ska visas i högra sidebaren.', 'Helsingborg'),
+            'description' => __('Visas under vänstermenyn.', 'Helsingborg'),
             'before_widget' => '<div class="widget large-12 medium-12 small-12 columns %2$s"><div class="widget-content">',
             'after_widget' => '</div></div>',
             'before_title' => '<h2>',
@@ -89,7 +91,7 @@ class WidgetAreas {
         register_sidebar(array(
             'id' => 'right-sidebar',
             'name' => __('Höger area', 'Helsingborg'),
-            'description' => __('Lägg till de widgets som ska visas i högra sidebaren.', 'Helsingborg'),
+            'description' => __('Visas i högerspalten.', 'Helsingborg'),
             'before_widget' => '<div class="widget large-12 medium-12 small-12 columns %2$s"><div class="widget-content">',
             'after_widget' => '</div></div>',
             'before_title' => '<h2>',
