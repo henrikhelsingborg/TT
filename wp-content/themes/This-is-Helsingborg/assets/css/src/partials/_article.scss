@@ -28,6 +28,10 @@
 .article-body {
     margin-bottom: 30px;
 
+    iframe {
+        width: 100%;
+    }
+
     a {
         color: $link-a;
         text-decoration: underline;

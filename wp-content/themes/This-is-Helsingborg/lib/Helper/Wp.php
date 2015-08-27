@@ -144,7 +144,7 @@ class Wp {
     public static function wrapYoutube($content) {
         $pattern = '~<iframe.*?</iframe>~';
         $content = preg_replace_callback($pattern, function ($matches) {
-            if (strpos($matches[0], 'youtube') !== false) {
+            if (stripos($matches[0], 'youtube') !== false) {
                 return '<div class="flex-video widescreen">' . $matches[0] . '</div>';
             }
 
