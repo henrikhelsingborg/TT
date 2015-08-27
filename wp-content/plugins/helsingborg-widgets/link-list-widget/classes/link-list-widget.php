@@ -43,7 +43,6 @@ if (!class_exists('SimpleLinkListWidget')) {
             $title = apply_filters('widget_title', empty($instance['title']) ? __('List') : $instance['title']);
             $rss_link = empty($instance['rss_link']) ? '' : $instance['rss_link'];
             $show_rss = !empty($rss_link);
-            $show_placement = empty($instance['show_placement']) ? 'show_in_sidebar' : $instance['show_placement'];
             $show_dates = isset($instance['show_dates']) ? $instance['show_dates'] : false;
             $amount = empty($instance['amount']) ? 1 : $instance['amount'];
 
@@ -62,8 +61,16 @@ if (!class_exists('SimpleLinkListWidget')) {
             $before_widget = str_replace('widget', $widget_class . 'widget', $before_widget);
 
             $view = 'widget-default.php';
-            switch ($show_placement) {
-                case 'show_in_sidebar':
+            switch ($args['id']) {
+                case 'right-sidebar':
+                    $view = 'widget-sidebar.php';
+                    break;
+
+                case 'left-sidebar':
+                    $view = 'widget-sidebar.php';
+                    break;
+
+                case 'slider-area':
                     $view = 'widget-sidebar.php';
                     break;
             }

@@ -1,14 +1,3 @@
-<div class="hbgllw-row">
-    <label>
-        <b><?php echo __("OBS! Vart ska denna visas?"); ?></b>
-    </label><br>
-    <label for="<?php echo $this->get_field_id('show_in_content'); ?>">
-            <input type="radio" name="<?php echo $this->get_field_name('show_placement'); ?>" value="show_in_content" id="<?php echo $this->get_field_id('show_in_content'); ?>" <?php checked($show_placement, "show_in_content"); ?> />  <?php echo __("Under innehållet"); ?>
-    </label>
-    <label for="<?php echo $this->get_field_id('show_in_sidebar'); ?>"><input type="radio" name="<?php echo $this->get_field_name('show_placement'); ?>" value="show_in_sidebar" id="<?php echo $this->get_field_id('show_in_sidebar'); ?>" <?php checked($show_placement, "show_in_sidebar"); ?> /> <?php echo __("I högerkolumnen"); ?>
-    </label>
-</div>
-
 <ul class="hbgllw-instructions">
     <li><?php echo __("Titel är det som visas i widgetens header."); ?></li>
 </ul>
