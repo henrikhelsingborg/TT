@@ -151,8 +151,11 @@
             &:focus {
                 color: #fff;
             }
+        }
+    }
 
-            &::before {
+    .sub-menu .current > a {
+        &::before {
                 content: '';
                 position: absolute;
                 top: 0;
@@ -162,7 +165,6 @@
                 display: block;
                 background-color: $palette-red-4;
             }
-        }
     }
 
     li > ul {
