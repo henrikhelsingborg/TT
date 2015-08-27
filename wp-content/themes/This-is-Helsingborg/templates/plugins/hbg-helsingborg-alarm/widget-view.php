@@ -42,11 +42,11 @@
     var _alarms = <?php echo json_encode($alarms); ?>;
 </script>
 
-<?php echo $after_widget; ?>
-
 <?php
     /**
      * Get the modal window markup
      */
     get_template_part('templates/partials/modal', 'alarm');
 ?>
+
+<?php echo $after_widget; ?>
