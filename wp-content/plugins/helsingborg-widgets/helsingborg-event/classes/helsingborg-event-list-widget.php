@@ -28,7 +28,7 @@ if (!class_exists('EventListWidget')) {
          * Constructor
          */
         function EventListWidget() {
-            parent::WP_Widget(false, '* Evenemangskalender', array('description' => 'Listar de senaste evenemangen.'));
+            parent::WP_Widget(false, '* Evenemangskalender', array('description' => 'Listar kommande evenemang.'));
             $this->_viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
         }
 

@@ -29,7 +29,7 @@ if (!class_exists('Image_List_Widget')) {
          */
         function Image_List_Widget() {
             // Register the widget
-            parent::WP_Widget(false, '* Bildlistor', array('description' => 'Lägg till de bilder du vill rendera ut.'));
+            parent::WP_Widget(false, '* Bildlistor', array('description' => 'En bild eller flera bilder i ett bildspel'));
             $this->_viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
         }
 

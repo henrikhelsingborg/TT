@@ -26,7 +26,7 @@ if (!class_exists('SimpleLinkListWidget')) {
          * Constructor
          */
         function SimpleLinkListWidget() {
-            parent::WP_Widget(false, '* Listor', array('description' => 'Lägg till de länkar som du vill visa.'));
+            parent::WP_Widget(false, '* Listor', array('description' => 'Lista med länkar.'));
             $this->_viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
         }
 
