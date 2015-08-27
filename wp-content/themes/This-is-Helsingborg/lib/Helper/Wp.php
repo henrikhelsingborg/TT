@@ -7,6 +7,7 @@ class Wp {
     public function __construct()
     {
         add_filter('the_content', '\Helsingborg\Helper\Wp::removeEmptyP', 20, 1);
+        add_filter('the_content', '\Helsingborg\Helper\Wp::wrapYoutube');
     }
 
     /**
@@ -133,6 +134,24 @@ class Wp {
         wp_reset_postdata($post);
 
         return $excerpt;
+    }
+
+    /**
+     * Wrap YouTube embeds in the content to make them responsive
+     * @param  string $content The content before
+     * @return string          The content after
+     */
+    public static function wrapYoutube($content) {
+        $pattern = '~<iframe.*?</iframe>~';
+        $content = preg_replace_callback($pattern, function ($matches) {
+            if (strpos($matches[0], 'youtube') !== false) {
+                return '<div class="flex-video widescreen">' . $matches[0] . '</div>';
+            }
+
+            return $matches[0];
+        }, $content);
+
+        return $content;
     }
 
 }
