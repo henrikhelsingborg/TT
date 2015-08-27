@@ -66,7 +66,7 @@
                         $list .= '<span class="date-day">' . date('d', strtotime($event->Date)) . '</span><span class="date-time">' . date('M', strtotime($event->Date)) . '</span>';
                     }
                 $list .= '</span>';
-                $list .= '<span class="title link-item">' . $event->Name . '</span>';
+                $list .= '<span class="title">' . $event->Name . '</span>';
                 $list .= '</a>';
             $list .= '</li>';
 

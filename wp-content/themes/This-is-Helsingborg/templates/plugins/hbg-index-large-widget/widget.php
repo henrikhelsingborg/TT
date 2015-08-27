@@ -24,7 +24,12 @@
                 <img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>">
                 <?php endif; ?>
                 <span class="index-container">
-                    <span class="index-caption link-item link-item-light"><?php echo $page->post_title ?></span>
+                    <span class="index-caption">
+                        <span class="index-caption-table">
+                            <span class="index-link-item"></span>
+                            <span class="index-link-title"><?php echo $page->post_title ?></span>
+                        </span>
+                    </span>
                 </span>
             </a>
         </div>
