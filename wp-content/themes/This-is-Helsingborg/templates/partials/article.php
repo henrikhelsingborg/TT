@@ -5,18 +5,18 @@
 ?>
 <article class="article">
     <header class="article-header">
+        <?php if (is_active_sidebar('slider-area')) : ?>
+        <div class="row">
+            <?php dynamic_sidebar('slider-area'); ?>
+        </div>
+        <?php endif; ?>
+
         <div class="row">
             <div class="columns large-12">
                 <?php get_template_part('templates/partials/accessibility', 'article'); ?>
                 <h1><?php the_title(); ?></h1>
             </div>
         </div>
-
-        <?php if (is_active_sidebar('slider-area')) : ?>
-        <div class="row">
-            <?php dynamic_sidebar('slider-area'); ?>
-        </div>
-        <?php endif; ?>
     </header>
 
     <?php if (!empty($main)) : ?>
