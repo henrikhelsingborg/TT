@@ -53,6 +53,15 @@
                             <nav class="mobile-nav" role="navigation">
                                 <?php get_template_part('templates/partials/navigation', 'mobile'); ?>
                             </nav>
+
+                            <div class="mobile-search">
+                                <div class="mobile-search-input-container">
+                                    <form role="search" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
+                                        <input type="text" class="mobile-search-input" name="s" placeholder="Din S&ouml;kning"/>
+                                        <input type="submit" class="mobile-search-btn" value="Sök" />
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

@@ -192,9 +192,31 @@
             }
         }
     }
+}
 
-    .mobile-search {
-        display: none;
+.mobile-search {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    padding: 10px;
+    background: #fff;
+
+    .mobile-search-btn {
+        width: 25%;
+        float: left;
+        padding: 8px 0;
+        text-align: center;
+        border-radius: 0 3px 3px 0;
+        margin-bottom: 0;
+    }
+
+    .mobile-search-input {
+        width: 75%;
+        float: left;
+        margin-bottom: 0;
     }
 }
 
