@@ -30,6 +30,8 @@
     <div class="site-wrapper">
         <a href="#main" class="btn btn-default btn-offcanvas" tabindex="1">Hoppa till innehållet</a>
 
+        <div data-prompt-wrapper="alert"></div>
+
         <header class="site-header">
             <div class="container">
                 <div class="row">
@@ -72,8 +74,6 @@
                 get_template_part('templates/partials/mobile', 'navigation');
             ?>
         </div>
-
-        <div data-prompt-wrapper="alert"></div>
 
         <?php
             if (is_front_page()) {

@@ -19,7 +19,7 @@ jQuery(document).ready(function ($) {
         if (response) {
             response = JSON.parse(response);
             $.each(response, function (index, item) {
-                var message = '<a href="' + item.link + '">' + item.title + '</a><br>' + item.main;
+                var message = '<a href="' + item.link + '">' + item.title + '</a>';
                 Helsingborg.Prompt.Alert.show(item.class, message);
             });
         }

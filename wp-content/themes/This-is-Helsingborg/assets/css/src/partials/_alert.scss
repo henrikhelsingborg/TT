@@ -47,7 +47,8 @@
 
 .alert-warning {
     background-color: $alert-warning;
-    color: darken($alert-warning, 60%);
+    color: $text-default;
+    font-size: 15pt;
 
     .columns:first-child {
         padding-left: 60px;
@@ -60,7 +61,7 @@
             transform: translateY(-50%);
             left: 20px;
             font-size: 18pt;
-            color: darken($alert-warning, 60%);
+            color: #ff0000;
         }
     }
 
