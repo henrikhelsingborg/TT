@@ -1,7 +1,11 @@
 .article-header {
+    margin-bottom: 10px;
+
     h1 {
         color: $palette-red-4;
-        margin-bottom: 0;
+        margin-bottom: 5px;
+        margin-top: -7px;
+        line-height: 120%;
     }
 
     img {
@@ -81,6 +85,7 @@
 
     a {
         font-weight: 300;
+        font-size: 12pt;
         color: $text-gray-dark !important;
         text-decoration: none;
 

@@ -13,8 +13,8 @@
 
         <div class="row">
             <div class="columns large-12">
-                <?php get_template_part('templates/partials/accessibility', 'article'); ?>
                 <h1><?php the_title(); ?></h1>
+                <?php get_template_part('templates/partials/accessibility', 'article'); ?>
             </div>
         </div>
     </header>

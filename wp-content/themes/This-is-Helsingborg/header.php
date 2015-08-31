@@ -36,17 +36,22 @@
             <div class="container">
                 <div class="row">
                     <div class="columns large-12">
+                        <nav class="nav-topmenu">
                         <?php
                             /**
-                             * Displays the main menu navigation
+                             * Displays the top menu navigation
                              */
                             wp_nav_menu(array(
                                 'theme_location'  => 'top-menu',
-                                'container'       => 'nav',
-                                'container_class' => 'navbar-topmenu',
-                                'items_wrap'      => '<ul class="nav">%3$s</ul>'
+                                'container'       => '',
+                                'container_class' => '',
+                                'items_wrap'      => '<ul class="navbar-topmenu">%3$s</ul>'
                             ));
+
+                            if (!is_front_page()) get_search_form();
                         ?>
+                        </nav>
+
                         <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad"></a>
                         <button class="btn btn-mobile-menu" data-action="toggle-mobile-menu"><i class="hbg-hamburger"></i><span>Meny</span></button>
                         <div class="clearfix"></div>
