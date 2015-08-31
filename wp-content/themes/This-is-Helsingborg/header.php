@@ -48,6 +48,8 @@
                                 'items_wrap'      => '<ul class="navbar-topmenu">%3$s</ul>'
                             ));
 
+                            echo '<br>';
+
                             if (!is_front_page()) get_search_form();
                         ?>
                         </nav>

@@ -75,6 +75,12 @@
     .search-web-archive {
         display: none;
     }
+
+    @media screen and (max-width: 555px) {
+        float: none;
+        display: inline-block;
+        margin-left: 0;
+    }
 }
 
 .section-featured .search {

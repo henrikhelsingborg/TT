@@ -202,7 +202,6 @@
 }
 
 .nav-topmenu {
-    text-align: center;
     background-color: $creamy;
     margin: 0;
     padding: 10px;
@@ -210,12 +209,24 @@
     margin-right: -$column-gutter/2;
     margin-bottom: $column-gutter;
 
-    @media #{$medium-up} {
+    @media screen and (max-width: 555px) {
+        text-align: center;
+
+        br {
+            display: block !important;
+        }
+    }
+
+    @media screen and (min-width: 850px) {
         margin: 0;
         padding: 0;
         float: right;
         text-align: left;
         background-color: transparent;
+    }
+
+    br {
+        display: none;
     }
 }
 
