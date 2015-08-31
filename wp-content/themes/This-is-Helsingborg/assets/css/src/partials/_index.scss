@@ -36,22 +36,6 @@
         display: block;
         line-height: 130%;
         color: $palette-red-4;
-
-        .index-caption-table {
-            display: table;
-        }
-
-        .index-link-item {
-            @extend .link-item;
-            @extend .link-item-light;
-            display: table-cell;
-            width: 20px;
-        }
-
-        .index-link-title {
-            display: table-cell;
-            margin-left: 20px;
-        }
     }
 
     .index-description {
