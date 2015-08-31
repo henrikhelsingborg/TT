@@ -61,11 +61,15 @@ img.responsive {
 // <a class="link-item" href="#">Link</a>
 
 .link-item {
+    $padding-left: 20px;
+    padding-left: $padding-left;
+
     &::before {
         @include hbg-icon($icon-link-arrow);
         display: inline-block;
-        margin-right: 8px;
+        margin-right: 6px;
         color: rgba(0,0,0,.4);
+        margin-left: -$padding-left;
     }
 }
 
@@ -73,7 +77,7 @@ img.responsive {
     &::before {
         @include hbg-icon($icon-link-outbound);
         display: inline-block;
-        margin-right: 8px;
+        margin-right: 6px;
         color: rgba(0,0,0,.4);
     }
 }
