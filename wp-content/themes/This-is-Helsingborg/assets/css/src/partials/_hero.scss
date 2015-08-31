@@ -25,7 +25,7 @@
 
         .form-container {
             display: inline-block;
-            margin-top: -20px;
+            margin-top: 0px;
             @extend .center-in-parent;
             z-index: 99;
         }
@@ -84,6 +84,28 @@
             background-color: rgba(0,0,0,.8);
             width: 100%;
             height: 100%;
+        }
+
+        .search-web-archive {
+            text-align: left;
+
+            a {
+                display: inline-block;
+                padding: 3px 8px;
+                margin-top: 10px;
+                background: rgba(0,0,0,.8);
+                text-decoration: none;
+                font-size: 11pt;
+                color: #fff;
+
+                .fa {
+                    margin-right: 5px;
+                }
+
+                &:hover {
+                    background: rgba(0,0,0,1);
+                }
+            }
         }
 
         .hbg-loading {

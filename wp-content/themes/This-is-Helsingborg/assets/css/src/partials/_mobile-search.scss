@@ -24,5 +24,19 @@
         .hbg-loading {
             display: none;
         }
+
+        .search-web-archive {
+            text-align: left;
+
+            a {
+                text-decoration: underline;
+                font-size: 11pt;
+                color: rgba(255,255,255,.8);
+
+                .fa {
+                    margin-right: 5px;
+                }
+            }
+        }
     }
 }

@@ -3,7 +3,7 @@
         display: none;
     }
 
-    .fa {
+    .btn-submit .fa {
         display: none;
     }
 }
@@ -18,6 +18,19 @@
 
         .btn-submit {
             padding: 9px 14px;
+        }
+
+        .search-web-archive {
+            text-align: left;
+
+            a {
+                font-size: 11pt;
+                color: $palette-red-4;
+
+                .fa {
+                    margin-right: 5px;
+                }
+            }
         }
     }
 }

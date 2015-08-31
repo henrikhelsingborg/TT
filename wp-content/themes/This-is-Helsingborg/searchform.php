@@ -13,5 +13,7 @@
                 <button class="form-control btn btn-submit" type="submit"><i class="fa fa-search"></i>Sök</button>
             </div>
         </div>
+
+        <div class="search-web-archive"><a href="http://helsingborg.arkivbyran.se/"><i class="fa fa-archive"></i>Du kan också söka i webbarkivet</a></div>
     </div>
 </form>
