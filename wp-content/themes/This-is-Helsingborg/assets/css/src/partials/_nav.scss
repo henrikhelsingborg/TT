@@ -47,6 +47,21 @@
     }
 }
 
+.nav-fixed:not(body) {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-top: 0 !important;
+    background-color: rgba(255,255,255,.95);
+    border-bottom: 1px solid $creamy-darker;
+}
+
+body.nav-fixed .site-header {
+    padding-bottom: 68px
+}
+
 .navbar-aside {
     border: 1px solid $creamy-darker;
 

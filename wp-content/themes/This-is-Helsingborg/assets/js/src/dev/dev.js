@@ -42,4 +42,13 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    var mobile_menu_offset = $('.nav-mainmenu-container').offset().top;
+    $(window).on('scroll', function (e) {
+        if ($(window).scrollTop() >= mobile_menu_offset) {
+            $('.nav-mainmenu-container, body').addClass('nav-fixed');
+        } else {
+            $('.nav-mainmenu-container, body').removeClass('nav-fixed');
+        }
+    });
+
 });

@@ -57,18 +57,27 @@
                         <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad"></a>
                         <button class="btn btn-mobile-menu" data-action="toggle-mobile-menu"><i class="hbg-hamburger"></i><span>Meny</span></button>
                         <div class="clearfix"></div>
-                        <?php
-                            /**
-                             * Displays the main menu navigation
-                             */
-                            wp_nav_menu(array(
-                                'theme_location'  => 'main-menu',
-                                'container'       => 'nav',
-                                'container_class' => 'navbar navbar-mainmenu',
-                                'items_wrap'      => '<ul class="nav">%3$s</ul>',
-                                'depth'           => 1
-                            ));
-                        ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-mainmenu-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="columns large-12">
+                            <?php
+                                /**
+                                 * Displays the main menu navigation
+                                 */
+                                wp_nav_menu(array(
+                                    'theme_location'  => 'main-menu',
+                                    'container'       => 'nav',
+                                    'container_class' => 'navbar navbar-mainmenu',
+                                    'items_wrap'      => '<ul class="nav">%3$s</ul>',
+                                    'depth'           => 1
+                                ));
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
