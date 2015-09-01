@@ -173,6 +173,9 @@
     width: $dots-size;
     height: $dots-size;
 
+    margin-left: $dots-size + $dots-space;
+    margin-right: $dots-size + $dots-space;
+
     &::before {
         left: -($dots-size + $dots-space);
         width: $dots-size;
