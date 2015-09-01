@@ -100,10 +100,10 @@ Helsingborg.Search.Search = (function ($) {
         _containerOriginBottom = $(_resultContainer).height() + $(_resultContainer).offset().top - $(window).height() + _infiniteScrollExtraBottom;
         _nextData = { action: 'search', keyword: query, index: _nextRequest.startIndex.toString() };
 
-        $(window).on('scroll', function () {
+        $(window).on('scroll.infiniteScrolling', function () {
             var scrollPos = $(window).scrollTop();
             if (scrollPos >= _containerOriginBottom) {
-                $(window).off('scroll');
+                $(window).off('scroll.infiniteScrolling');
                 if (_numLoads != 2) {
                     $(_resultContainer).append('<li class="loading-results"><i class="hbg-loading">Läser in resultat…</i></li>');
                     this.request(_nextData);
@@ -116,7 +116,7 @@ Helsingborg.Search.Search = (function ($) {
         $(document).off('click', '[data-action="infinite-scroll-more"]');
         $(document).on('click', '[data-action="infinite-scroll-more"]', function (e) {
             e.preventDefault();
-            $(window).off('scroll');
+            $(window).off('scroll.infiniteScrolling');
             $(_resultContainer).append('<li class="loading-results"><i class="hbg-loading">Läser in resultat…</i></li>');
             $('.infinite-scroll-load-more').hide();
             this.request(_nextData);

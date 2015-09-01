@@ -44,6 +44,7 @@ jQuery(document).ready(function ($) {
 
     var mobile_menu_offset = $('.nav-mainmenu-container').offset().top;
     $(window).on('scroll', function (e) {
+        console.log(mobile_menu_offset);
         if ($(window).scrollTop() >= mobile_menu_offset) {
             $('.nav-mainmenu-container, body').addClass('nav-fixed');
         } else {
