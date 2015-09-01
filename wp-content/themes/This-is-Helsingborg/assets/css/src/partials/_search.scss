@@ -73,7 +73,18 @@
     }
 
     .search-web-archive {
-        display: none;
+        a {
+            font-size: 10pt;
+            color: #999;
+
+            .fa {
+                display: none;
+            }
+
+            &:hover {
+                color: darken(#999, 10%);
+            }
+        }
     }
 
     @media screen and (max-width: 555px) {
@@ -98,6 +109,19 @@
 
     .form-element:nth-child(2) {
         width: 100px;
+    }
+
+    .search-web-archive {
+        margin-top: 5px;
+
+        a {
+            font-size: 11pt;
+            color: $palette-red-4;
+
+            .fa {
+                margin-right: 5px;
+            }
+        }
     }
 }
 
