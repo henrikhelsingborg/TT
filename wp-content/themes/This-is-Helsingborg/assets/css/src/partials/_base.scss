@@ -64,6 +64,7 @@ img.responsive {
     $padding-left: 20px;
     position: relative;
     left: 20px;
+    padding-right: $padding-left;
 
     &::before {
         @include hbg-icon($icon-link-arrow);
