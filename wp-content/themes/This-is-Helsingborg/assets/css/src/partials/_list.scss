@@ -193,6 +193,61 @@
     }
 }
 
+.list-events-sidebar {
+    li {
+        padding: 0;
+
+        & + li {
+            border-top: 0;
+            margin-top: 3px;
+        }
+    }
+
+    .event-item {
+        padding: 10px 20px 10px 10px;
+        background: rgba(0, 0, 0, .1);
+
+        &:hover {
+            background: rgba(0, 0, 0, .2);
+            text-decoration: none;
+        }
+    }
+
+    .date {
+        display: table-cell;
+        vertical-align: middle;
+        width: 40px;
+        height: 100%;
+        padding: 0px;
+        font-weight: 100;
+        font-size: 11pt;
+        line-height: 140%;
+        letter-spacing: .5px;
+        text-align: center;
+        color: #fff;
+
+        span {
+            display: block;
+        }
+    }
+
+    .title {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 10px 15px;
+        color: #fff;
+    }
+
+    .link-item {
+        @extend .link-item-light;
+    }
+
+    .hbg-loading {
+        width: 100%;
+        margin: 0;
+    }
+}
+
 .list-event-times {
     font-weight: normal;
 
