@@ -23,7 +23,8 @@
 
 .section-featured .widget_alarmlistwidget,
 .section-news .widget_alarmlistwidget,
-.article-header .widget_alarmlistwidget {
+.article-header .widget_alarmlistwidget,
+#widget-content-area .widget_alarmlistwidget {
     .alarm-list {
         margin-bottom: 0;
     }
@@ -33,6 +34,7 @@
         border-left: 0;
         border-right: 0;
         border-color: $creamy-darker;
+        border-top: 0;
         cursor: normal;
 
         ul {
