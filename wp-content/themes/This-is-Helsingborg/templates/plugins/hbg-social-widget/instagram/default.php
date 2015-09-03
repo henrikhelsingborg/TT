@@ -7,9 +7,10 @@
 ?>
 
 <!-- Instagram feed -->
-<div class="widget-content-holder">
-    <h2><i class="fa fa-instagram"></i> <?php echo $instance['title']; ?></h2>
-    <div class="textwidget hbg-social-feed hbg-social-feed-instagram">
+<?php echo $before_widget; ?>
+<div class="box box-outlined">
+    <h3><i class="fa fa-instagram"></i> <?php echo $instance['title']; ?></h3>
+    <div class="box-content hbg-social-feed hbg-social-feed-instagram">
         <?php if ($feed && count($feed) > 0) : ?>
         <ul>
             <?php $int = 0; foreach ($feed as $post) : ?>
@@ -31,8 +32,9 @@
 
         <?php if (isset($instance['show_visit_button']) && $instance['show_visit_button'] == 'on') : ?>
         <div class="text-center hbg-social-feed-actions">
-            <a href="http://instagram.com/<?php echo $instance['username']; ?>" target="_blank" class="button button-hbg">Besök oss på Instagram</a>
+            <a href="http://instagram.com/<?php echo $instance['username']; ?>" target="_blank" class="list-more">Besök oss på Instagram</a>
         </div>
         <?php endif; ?>
     </div>
 </div>
+<?php echo $after_widget; ?>

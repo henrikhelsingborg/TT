@@ -40,7 +40,7 @@ class WidgetAreas {
             'id' => 'content-area',
             'name' => __('Innehållsarea', 'Helsingborg'),
             'description' => __('Visas strax under en artikels brödtext', 'Helsingborg'),
-            'before_widget' => '<div class="widget">',
+            'before_widget' => '<div class="widget %2$s">',
             'after_widget' => '</div>'
         ));
 
@@ -104,7 +104,8 @@ class WidgetAreas {
      * @param  [type] $params [description]
      * @return [type]         [description]
      */
-    public static function filterContentAreaClassNames($params) {
+    public static function filterContentAreaClassNames($params)
+    {
         global $myWidgetNum;
 
         /**
@@ -121,7 +122,7 @@ class WidgetAreas {
         if ($params[0]['id'] == 'content-area' && is_front_page()) {
             $myWidgetNum++;
 
-            $class = 'class="' . $widgetClass . 'columns ';
+            $class = 'class="' . $widgetClass . ' columns ';
 
             /**
              * Add classnames to widget
@@ -153,6 +154,11 @@ class WidgetAreas {
         return $params;
     }
 
+    /**
+     * Randomize the presentation order of widgets
+     * @param  array $widgets The widgets in original order
+     * @return array          The widgets in random order
+     */
     public static function shuffleFactsWidgets($widgets)
     {
         $limit = 3;

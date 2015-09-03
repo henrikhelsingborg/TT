@@ -3,3 +3,46 @@
         padding: $widget-padding;
     }
 }
+
+.section-featured .widget_text {
+    .textwidget {
+        @extend .box-content;
+        @extend .box-content-padding-x2;
+    }
+}
+
+.section-news .widget_text {
+    .widgettitle {
+        @extend h3;
+        font-size: 15pt;
+        padding: 0;
+        padding-bottom: 5px;
+        margin: 0;
+        background-color: transparent;
+        border-bottom: 4px solid $palette-red-2;
+        color: $palette-red-2;
+        font-weight: bold;
+
+        .fa {
+            margin-right: 5px;
+        }
+
+        .link-rss {
+            float: right;
+            color: #fff;
+
+            .fa {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .textwidget {
+        background: #fff;
+        border-top: 1px solid $creamy-darker;
+        border-bottom: 1px solid $creamy-darker;
+        border-left: 1px solid $creamy-darker;
+        border-right: 1px solid $creamy-darker;
+        padding: 20px;
+    }
+}

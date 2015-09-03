@@ -1,11 +1,9 @@
 <!-- Twitter feed -->
-<div class="widget-content-holder">
-    <h2><i class="fa fa-twitter"></i> <?php echo $instance['title']; ?></h2>
-    <div class="divider">
-        <div class="upper-divider"></div>
-        <div class="lower-divider"></div>
-    </div>
-    <div class="textwidget hbg-social-feed hbg-social-feed-twitter">
+<?php echo $before_widget; ?>
+<div class="box box-outlined">
+    <h3><i class="fa fa-twitter"></i> <?php echo $instance['title']; ?></h3>
+
+    <div class="box-content hbg-social-feed hbg-social-feed-twitter">
         <?php if ($feed && count($feed) > 0) : ?>
         <ul>
             <?php
@@ -41,8 +39,9 @@
 
         <?php if (isset($instance['show_visit_button']) && $instance['show_visit_button'] == 'on') : ?>
         <div class="text-center hbg-social-feed-actions">
-            <a href="https://www.twitter.com/<?php echo $instance['username']; ?>" target="_blank" class="button button-hbg">Besök oss på Twitter</a>
+            <a href="https://www.twitter.com/<?php echo $instance['username']; ?>" target="_blank" class="list-more">Besök oss på Twitter</a>
         </div>
         <?php endif; ?>
     </div>
 </div>
+<?php echo $after_widget; ?>
