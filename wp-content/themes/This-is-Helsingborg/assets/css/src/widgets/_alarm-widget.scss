@@ -21,7 +21,9 @@
     }
 }
 
-.section-featured .widget_alarmlistwidget {
+.section-featured .widget_alarmlistwidget,
+.section-news .widget_alarmlistwidget,
+.article-header .widget_alarmlistwidget {
     .alarm-list {
         margin-bottom: 0;
     }
