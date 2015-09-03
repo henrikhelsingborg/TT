@@ -1,14 +1,21 @@
 <?php
 
-    $sidebars = array(
-        'right-sidebar',
-        'left-sidebar'
-    );
+    switch ($args['id']) {
+        case 'right-sidebar':
+            include('widget-filled.php');
+            break;
 
-    if (in_array($args['id'], $sidebars)) {
-        include('widget-filled.php');
-    } else {
-        include('widget-outlined.php');
+        case 'left-sidebar':
+            include('widget-filled.php');
+            break;
+
+        case 'slider-area':
+            include('widget-slider-area.php');
+            break;
+
+        default:
+            include('widget-outlined.php');
+            break;
     }
 
 ?>
