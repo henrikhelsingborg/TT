@@ -65,16 +65,7 @@ if (!class_exists('Image_List_Widget')) {
                 $item_force_margin_values[$i-1] = $instance['item_force_margin_value'.$i];
             }
 
-            $view = 'widget-under.php';
-            switch ($show_placement) {
-                case 'show_in_sidebar':
-                    $view = 'widget-sidebar.php';
-                    break;
-
-                case 'show_in_slider':
-                    $view = 'widget-slider.php';
-                    break;
-            }
+            $view = 'widget.php';
 
             if ($templatePath = locate_template('templates/plugins/hbg-image-list-widget/' . $view)) {
                 require($templatePath);

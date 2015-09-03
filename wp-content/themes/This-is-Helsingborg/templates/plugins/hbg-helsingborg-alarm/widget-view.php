@@ -5,7 +5,12 @@
             include('widget-slider-area.php');
             break;
 
+        case 'content-area':
+            include('widget-content-area.php');
+            break;
+
+
         default:
-            inclide('widget-sidebar.php');
+            include('widget-sidebar.php');
             break;
     }

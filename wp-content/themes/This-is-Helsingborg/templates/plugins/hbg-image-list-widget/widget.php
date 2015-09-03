@@ -10,6 +10,6 @@ switch ($args['id']) {
         break;
 
     default:
-        include('widget-slider.php');
+        include('widget-default.php');
         break;
 }
