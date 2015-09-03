@@ -1,18 +1,3 @@
-<div class="hbgllw-row">
-    <label>
-        <b>OBS! Vart ska denna visas?</b>
-    </label><br>
-    <label for="<?php echo $this->get_field_id('show_in_content'); ?>">
-        <input type="radio" name="<?php echo $this->get_field_name('show_placement'); ?>" value="show_in_content" id="<?php echo $this->get_field_id('show_in_content'); ?>" <?php checked($show_placement, "show_in_content"); ?> />  <?php echo __("Under innehållet"); ?>
-    </label>
-    <label for="<?php echo $this->get_field_id('show_in_sidebar'); ?>">
-        <input type="radio" name="<?php echo $this->get_field_name('show_placement'); ?>" value="show_in_sidebar" id="<?php echo $this->get_field_id('show_in_sidebar'); ?>" <?php checked($show_placement, "show_in_sidebar"); ?> /> <?php echo __("I sidokolumn"); ?>
-    </label>
-    <label for="<?php echo $this->get_field_id('show_in_slider'); ?>">
-        <input type="radio" name="<?php echo $this->get_field_name('show_placement'); ?>" value="show_in_slider" id="<?php echo $this->get_field_id('show_in_slider'); ?>" <?php checked($show_placement, "show_in_slider"); ?> /> <?php echo __("I bildspel"); ?>
-    </label>
-</div>
-
 <div class="hbgllw-instructions">
     <?php echo __("<b>Bildmått: 1024 x 400 pixlar.</b>"); ?>
 </div>
