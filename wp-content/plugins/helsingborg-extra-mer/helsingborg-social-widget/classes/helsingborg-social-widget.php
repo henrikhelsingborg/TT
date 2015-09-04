@@ -149,7 +149,9 @@ if (!class_exists('HelsingborgSocialWidget')) {
 
             $this->addJs();
 
-            if ($id != 'content-area' && $id != 'content-area-bottom') echo $before_widget;
+            $currentTheme = get_current_theme();
+
+            if ($currentTheme == 'Helsingborg Stad - Skola' || ($id != 'content-area' && $id != 'content-area-bottom')) echo $before_widget;
 
             $view = 'widget-none.php';
 
@@ -181,7 +183,7 @@ if (!class_exists('HelsingborgSocialWidget')) {
                 require($this->_viewsPath . $view);
             }
 
-            if ($id != 'content-area' && $id != 'content-area-bottom') echo $after_widget;
+            if ($currentTheme == 'Helsingborg Stad - Skola' || ($id != 'content-area' && $id != 'content-area-bottom')) echo $after_widget;
         }
 
         /**

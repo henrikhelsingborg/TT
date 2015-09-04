@@ -171,11 +171,12 @@ function update_alarms_in_database($downloadTo) {
                        'BigDisturbance'     => $BigDisturbance,
                        'SmallDisturbance'   => $SmallDisturbance,
                        'ChangeDate'         => $ChangeDate,
-                       'Station'            => $Station
+                       'Station'            => $Station,
+                       'Cities'             => $County
                      ),
                      array(
                        '%s','%s','%s','%s','%s','%s','%s','%s','%s',
-                       '%s','%s','%s','%s','%s','%s','%s','%s'
+                       '%s','%s','%s','%s','%s','%s','%s','%s', '%s'
                      )
                    );
     }

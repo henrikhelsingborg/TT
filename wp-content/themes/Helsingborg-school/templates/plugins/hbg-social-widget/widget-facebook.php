@@ -1,10 +1,6 @@
 <!-- Facebook feed -->
 <div class="widget-content-holder">
     <h2><i class="fa fa-facebook-square"></i> Facebook</h2>
-    <div class="divider">
-        <div class="upper-divider"></div>
-        <div class="lower-divider"></div>
-    </div>
     <div class="textwidget hbg-social-feed hbg-social-feed-facebook">
         <?php if ($feed && count($feed) > 0) : ?>
         <ul>

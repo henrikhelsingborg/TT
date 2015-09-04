@@ -27,7 +27,7 @@
                  * Widget content-area
                  */
                 if ((is_active_sidebar('content-area') == true)) {
-                    echo '<aside class="content-area widgets-test-color clearfix">';
+                    echo '<aside class="content-area widgets-test-color row clearfix">';
                     dynamic_sidebar("content-area");
                     echo '</aside>';
                 }

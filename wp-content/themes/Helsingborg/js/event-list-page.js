@@ -59,16 +59,17 @@ jQuery(document).ready(function() {
 
         var dates_data = { action: 'load_event_dates', id: this.id, location: result.Location };
         jQuery.post(ajaxurl, dates_data, function(response) {
-            html = "<li>";
+            html = "";
             var dates = JSON.parse(response);
 
             for (var i=0;i<dates.length;i++) {
+                html += '<li>';
                 html += '<span>' + dates[i].Date + '</span>';
                 html += '<span>' + dates[i].Time + '</span>';
                 html += '<span>' + dates_data.location + '</span>';
+                html += '</li>';
             }
 
-            html += '</li>';
             jQuery(time_list).html(html);
 
             if (dates.length > 0) {

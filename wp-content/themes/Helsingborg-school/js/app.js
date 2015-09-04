@@ -65,6 +65,27 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    /**
+     * Submenu positioning
+     */
+    $('.nav-mainmenu li').on('mouseenter', function (e) {
+        var $submenu = $(this).children('.sub-menu');
+
+        if ($submenu.length) {
+            $submenu.removeClass('sub-menu-left');
+
+            // Get right edge offset of the submenu to open
+            var submenuRightEdge = $submenu.offset().left + $submenu.width();
+
+            // If submenu right edge is outside the window, add css class which moves
+            // the menu to the right of the parent menu
+            if (submenuRightEdge > $(window).width()) {
+                $submenu.addClass('sub-menu-left');
+            }
+        }
+
+    });
+
 });
 /*!
  * Modernizr v2.8.3

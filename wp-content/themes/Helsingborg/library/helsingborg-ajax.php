@@ -106,7 +106,7 @@ function big_notification_callback() {
             '<div class="small-12 columns">'.
             '<div class="alert-msg '.$class.'">'.
             '<a href="' . $link . '" class="alert-link" title="link-title">' . $notification->post_title . ' </a>'.
-            '<p>' . $main . '</p></div><!-- /.alert-msg --></div><!-- /.columns -->'
+            '</div><!-- /.alert-msg --></div><!-- /.columns -->'
         );
     }
 

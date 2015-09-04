@@ -1,6 +1,6 @@
 article {
     font-family: $font-roboto;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 12pt;
     letter-spacing: .5px;
     color: #333;
@@ -19,6 +19,30 @@ article {
         }
     }
 
+    .article-body ul {
+        list-style-type: none;
+        margin: 20px;
+        margin-left: 40px;
+
+        li {
+            position: relative;
+
+            & + li {
+                margin-top: 5px;
+            }
+
+            &::before {
+                position: absolute;
+                left: -20px;
+                top: 9px;
+                content: '';
+                width: 6px;
+                height: 6px;
+                background-color: #999;
+            }
+        }
+    }
+
     .article-ingress {
         font-weight: bold;
         margin-bottom: rem-calc(20);
@@ -34,15 +58,22 @@ article {
     a[href^="https://"]:not([href*="helsingborg.se"]):not([href*="readspeaker.com"]),
     a[href^="//"]:not([href*="helsingborg.se"]):not([href*="readspeaker.com"]) {
         &::before {
+            display: inline-block;
             $icon-size: 12px;
             font-size: $icon-size;
             margin-right: 3px;
             @include hbg-icons($icon-external-link);
+            text-decoration: none !important;
         }
     }
 
     a {
         text-decoration: underline;
+        color: $band-blue-4;
+
+        &:visited {
+            color: $band-purple-4;
+        }
     }
 
     & + div {

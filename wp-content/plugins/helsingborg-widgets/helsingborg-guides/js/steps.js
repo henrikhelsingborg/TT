@@ -1,15 +1,19 @@
 jQuery(document).ready(function($) {
 
+    if ($('.guide-list li.current:first-child').length) {
+        $('.prev-step').hide();
+    }
+
     $('.next-step').on('click', function(e) {
         e.preventDefault();
 
         var currentElem = $('.guide-list li.current');
 
-        if (currentElem.next().length) {
-            currentElem.next().addClass("current");
-            currentElem.removeClass("current");
-            setPager();
-        }
+        currentElem.next().addClass("current");
+        currentElem.removeClass("current");
+        removeNext();
+        removePrev();
+        setPager();
     });
 
     $('.prev-step').on('click', function(e) {
@@ -17,11 +21,11 @@ jQuery(document).ready(function($) {
 
         var currentElem = $('.guide-list li.current');
 
-        if (currentElem.prev().length) {
-            currentElem.prev().addClass("current");
-            currentElem.removeClass("current");
-            setPager();
-        }
+        currentElem.prev().addClass("current");
+        currentElem.removeClass("current");
+        removePrev();
+        removeNext();
+        setPager();
     });
 
     $('.pagination li a').on('click', function(e) {
@@ -34,6 +38,8 @@ jQuery(document).ready(function($) {
 
             currentElem.removeClass("current");
             newElem.addClass("current");
+            removePrev();
+            removeNext();
             setPager();
         }
     });

@@ -9,6 +9,11 @@
 @import "config/colors";
 @import "config/mixins";
 
+/* Color themes */
+@import "color-themes/purple";
+@import "color-themes/blue";
+@import "color-themes/green";
+
 /* Typography */
 @import "typography/article";
 @import "typography/headlines";
@@ -26,8 +31,3 @@
 @import "partials/form";
 @import "partials/comments";
 @import "partials/gallery";
-
-/* Color themes */
-@import "color-themes/purple";
-@import "color-themes/blue";
-@import "color-themes/green";

@@ -4,6 +4,15 @@
     color: #fff;
     font-family: $font-roboto;
 
+    a {
+        color: rgba(255, 255, 255, .8);
+        text-decoration: underline;
+
+        &:hover {
+            color: rgba(255, 255, 255, .7);
+        }
+    }
+
     .footer-title {
         color: #fff;
         font-size: 15pt;
@@ -33,6 +42,7 @@
             overflow: hidden;
             color: #fff;
             opacity: .8;
+            text-decoration: none;
 
             &:hover {
                 opacity: 1;
