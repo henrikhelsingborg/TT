@@ -4,14 +4,17 @@
     }
 }
 
-.section-featured .widget_text {
+.section-featured .widget_text,
+.article-header .widget_text {
     .textwidget {
         @extend .box-content;
         @extend .box-content-padding-x2;
     }
 }
 
-.section-news .widget_text {
+.section-news .widget_text,
+#widget-content-area .widget_text,
+#widget-content-area-bottom .widget_text {
     .widgettitle {
         @extend h3;
         font-size: 15pt;
