@@ -48,7 +48,7 @@ class WidgetAreas {
             'id' => 'content-area-bottom',
             'name' => __('Innehåll bottenarea', 'Helsingborg'),
             'description' => __('Visas under vänstermeny och artikel (fullbredd) ', 'Helsingborg'),
-            'before_widget' => '<div class="widget columns large-4 medium-4 small-12">',
+            'before_widget' => '<div class="widget columns large-12 medium-12 small-12">',
             'after_widget' => '</div>'
         ));
 
