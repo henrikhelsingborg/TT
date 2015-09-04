@@ -60,20 +60,7 @@ if (!class_exists('SimpleLinkListWidget')) {
             $widget_class = ($show_rss == 'rss_yes') ? 'news-widget ' : 'quick-links-widget ';
             $before_widget = str_replace('widget', $widget_class . 'widget', $before_widget);
 
-            $view = 'widget-default.php';
-            switch ($args['id']) {
-                case 'right-sidebar':
-                    $view = 'widget-sidebar.php';
-                    break;
-
-                case 'left-sidebar':
-                    $view = 'widget-sidebar.php';
-                    break;
-
-                case 'slider-area':
-                    $view = 'widget-sidebar.php';
-                    break;
-            }
+            $view = 'widget.php';
 
             if ($templatePath = locate_template('templates/plugins/hbg-link-list-widget/' . $view)) {
                 require($templatePath);
