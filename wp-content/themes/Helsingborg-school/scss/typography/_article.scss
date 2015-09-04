@@ -19,6 +19,25 @@ article {
         }
     }
 
+    figure {
+        margin: 0;
+        padding: 0;
+
+        a {
+            &::before {
+                content: '' !important;
+            }
+        }
+
+        &.alignright {
+            text-align: right;
+        }
+
+        &.alignleft {
+            text-align: left;
+        }
+    }
+
     .article-body ul {
         list-style-type: none;
         margin: 20px;
