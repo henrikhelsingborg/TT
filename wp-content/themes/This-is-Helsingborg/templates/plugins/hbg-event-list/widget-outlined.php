@@ -1,8 +1,8 @@
 <?php echo $before_widget; ?>
 <div class="box box-outlined">
     <h3 class="widget-title"><?php echo $title; ?></h3>
-    <div class="box-content">
-        <ul id="event-list" class="list list-events">
+    <div class="box-content" id="widget-<?php echo $args['widget_id']; ?>">
+        <ul class="event-list list list-events">
             <li class="event-loading"><i class="hbg-loading">Läser in evenemang</i></li>
             <li><a href="<?php echo $reference; ?>" class="list-more"><?php echo $link_text; ?></a></li>
         </ul>
@@ -24,8 +24,8 @@
                 jQuery.post(ajaxurl, data, function(response) {
                     var obj = JSON.parse(response);
                     events = obj.events;
-                    jQuery('.event-loading').remove();
-                    jQuery('#event-list').prepend(obj.list);
+                    jQuery('#widget-<?php echo $args['widget_id']; ?> .event-loading').remove();
+                    jQuery('#widget-<?php echo $args['widget_id']; ?> .event-list').prepend(obj.list);
                 });
 
                 jQuery(document).on('click', '.event-item', function(event) {
