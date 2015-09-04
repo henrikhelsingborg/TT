@@ -1,0 +1,17 @@
+.sidebar-right,
+.sidebar-left {
+    .widget_image_list_widget {
+        h3 {
+            margin-bottom: 0;
+        }
+
+        .orbit-slider {
+            li {
+                width: 100%;
+                padding-bottom: 65%;
+                background-size: cover;
+                background-position: center center;
+            }
+        }
+    }
+}

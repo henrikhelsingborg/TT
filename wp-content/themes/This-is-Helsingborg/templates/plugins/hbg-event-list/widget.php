@@ -9,6 +9,10 @@
             include('widget-filled.php');
             break;
 
+        case 'left-sidebar-bottom':
+            include('widget-filled.php');
+            break;
+
         case 'slider-area':
             include('widget-slider-area.php');
             break;
