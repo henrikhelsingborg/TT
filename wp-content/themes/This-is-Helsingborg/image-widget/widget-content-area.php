@@ -11,8 +11,8 @@
     }
 
 ?>
-
-    <?php echo (!empty($title)) ? $before_title . $title . $after_title : ''; ?>
+<div class="box box-outlined">
+    <?php echo (!empty($title)) ? '<h3>' . $title . '</h3>' : ''; ?>
     <div class="box-content">
         <?php if (!empty($instance['link'])) : ?>
         <a href="<?php echo $instance['link']; ?>" target="<?php echo $instance['linktarget']; ?>">
@@ -32,5 +32,5 @@
         </a>
         <?php endif; ?>
     </div>
-
+</div>
 <?php echo $after_widget; ?>

@@ -14,6 +14,10 @@ switch ($args['id']) {
 
         break;
 
+    case 'content-area-bottom':
+        include('widget-content-area.php');
+        break;
+
     default:
         include('widget-default.php');
         break;
