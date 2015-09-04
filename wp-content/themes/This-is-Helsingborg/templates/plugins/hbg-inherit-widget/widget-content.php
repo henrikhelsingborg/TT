@@ -9,6 +9,10 @@ switch ($args['id']) {
         include('widget-content-area.php');
         break;
 
+    case 'content-area-bottom':
+        include('widget-content-area.php');
+        break;
+
     case 'right-sidebar':
         include('widget-sidebar.php');
         break;
