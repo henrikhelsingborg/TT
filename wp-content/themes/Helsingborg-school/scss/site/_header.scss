@@ -76,6 +76,31 @@
     .logotype {
         margin: 6px 0;
     }
+
+    @media #{$small-only} {
+        .row {
+            display: table;
+            width: 100%;
+        }
+
+        .logotype {
+            display: table-cell;
+            vertical-align: middle;
+            max-width: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .mobile-nav {
+            display: table-cell;
+            width: 68px;
+            vertical-align: middle;
+            padding-right: 15px;
+        }
+    }
 }
 
 /**
