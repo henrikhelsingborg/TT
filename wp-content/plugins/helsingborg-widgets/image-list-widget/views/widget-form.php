@@ -1,12 +1,9 @@
-<div class="hbgllw-instructions">
-    <?php echo __("<b>Bildmått: 1024 x 400 pixlar.</b>"); ?>
-</div>
-
-<ul class="hbgllw-instructions">
-    <li style="word-break: break-all;"><?php echo __("Notera att <b>minst</b> två bilder måste användas i denna <br> widget om den ska befinna sig under innehållet!"); ?></li>
-</ul>
-
 <div class="helsingborg-link-list">
+    <p>
+        <label>Rubrik</label>
+        <input type="text" name="<?php echo $this->get_field_name('title'); ?>" id="<?php echo $this->get_field_id('title'); ?>" class="widefat" value="<?php echo $instance['title']; ?>">
+    </p>
+
     <?php
         // Now render each item
         foreach ($items as $num => $item) :
@@ -23,7 +20,6 @@
             $checked            = checked($item_targets[$num],       'on', false);
             $button_click       = "helsingborgMediaSelector.create('" . $this->get_field_id($num) . "', '" . $this->get_field_id('') . "', '" . $num . "' ); return false;";
     ?>
-
             <div id="<?php echo $this->get_field_id($num); ?>" class="list-item">
                 <h5 class="moving-handle">
                     <span class="number"><?php echo $num; ?></span>. <span class="item-title"><?php echo $image_title; ?></span>
