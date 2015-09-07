@@ -23,7 +23,22 @@
 }
 
 .logotype {
-    max-height: 50px;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 15px;
+        max-height: 50px;
+        height: 41px;
+        width: auto;
+
+        @media #{$small-only} {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    }
 
     @media #{$small-only} {
         max-width: 250px;
@@ -39,8 +54,12 @@
     padding: 0;
     position: relative;
 
+    .row {
+        position: relative;
+    }
+
     .logotype {
-        margin: 5px 0;
+        margin: 6px 0;
     }
 }
 

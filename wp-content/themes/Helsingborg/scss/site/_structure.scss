@@ -693,6 +693,10 @@ ul.breadcrumbs strong {
  */
 
  @media #{$small-only} {
+ 	#article + footer {
+ 		margin: 0 !important;
+ 	}
+
 	.main-content {
 		background: $white;
 		@include border-top-radius;
@@ -731,7 +735,6 @@ ul.breadcrumbs strong {
 	 	}
  	}
  	*/
-	
 
  	.filter-search {
  		input[type="text"] {
