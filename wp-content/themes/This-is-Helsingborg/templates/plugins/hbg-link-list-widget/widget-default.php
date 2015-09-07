@@ -1,6 +1,6 @@
 <?php
       $today = date('Y-m-d');
-      echo $before_widget;
+      //echo $before_widget;
 ?>
 <div class="box box-outlined">
       <h3>
@@ -60,4 +60,4 @@
             </ul>
       </div>
 </div>
-<?php echo $after_widget; ?>
+<?php //echo $after_widget; ?>
