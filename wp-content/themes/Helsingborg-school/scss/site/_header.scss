@@ -46,6 +46,21 @@
     }
 }
 
+.mobile-header-image {
+    width: 100%;
+    height: auto;
+
+    @media #{$medium-up} {
+        display: none;
+    }
+}
+
+.hero .slider-area {
+    @media #{$small-only} {
+        display: none;
+    }
+}
+
 /**
  * Top navigation bar
  */
