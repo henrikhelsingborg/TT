@@ -12,23 +12,25 @@
     <h3><i class="fa fa-instagram"></i> <?php echo $instance['title']; ?></h3>
     <div class="box-content hbg-social-feed hbg-social-feed-instagram">
         <?php if ($feed && count($feed) > 0) : ?>
-        <ul>
-            <?php $int = 0; foreach ($feed as $post) : ?>
-            <li class="large-<?php echo $columns; ?> medium-6 small-6 columns left <?php echo $columns; ?>">
-                <a href="<?php echo $post->link; ?>" target="_blank" style="background-image:url('<?php echo $post->images->low_resolution->url; ?>');">
-                    <i class="zoom-icon fa fa-eye"></i>
-                    <?php if ($instance['show_likes'] == 'on') : ?>
-                    <span class="hbg-social-feed-instagram-likes"><i class="fa fa-heart"></i> <span><?php echo $post->likes->count; ?></span></span>
-                    <?php endif; ?>
-                    <img src="<?php echo $post->images->low_resolution->url; ?>" class="instagram-image">
-                </a>
-            </li>
-            <?php $int++; if ($int == $instance['show_count']) break; endforeach; ?>
-        </ul>
-        <?php else : ?>
-            <p>Inga bilder att visa</p>
-        <?php endif; ?>
-        <div class="clearfix"></div>
+        <div class="box-content-padding">
+            <ul>
+                <?php $int = 0; foreach ($feed as $post) : ?>
+                <li class="large-<?php echo $columns; ?> medium-6 small-6 columns left <?php echo $columns; ?>">
+                    <a href="<?php echo $post->link; ?>" target="_blank" style="background-image:url('<?php echo $post->images->low_resolution->url; ?>');">
+                        <i class="zoom-icon fa fa-eye"></i>
+                        <?php if ($instance['show_likes'] == 'on') : ?>
+                        <span class="hbg-social-feed-instagram-likes"><i class="fa fa-heart"></i> <span><?php echo $post->likes->count; ?></span></span>
+                        <?php endif; ?>
+                        <img src="<?php echo $post->images->low_resolution->url; ?>" class="instagram-image">
+                    </a>
+                </li>
+                <?php $int++; if ($int == $instance['show_count']) break; endforeach; ?>
+            </ul>
+            <?php else : ?>
+                <p>Inga bilder att visa</p>
+            <?php endif; ?>
+            <div class="clearfix"></div>
+        </div>
 
         <?php if (isset($instance['show_visit_button']) && $instance['show_visit_button'] == 'on') : ?>
         <div class="text-center hbg-social-feed-actions">
