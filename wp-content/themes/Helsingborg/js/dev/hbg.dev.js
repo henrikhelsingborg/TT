@@ -1,6 +1,8 @@
 /* HBG dev JS - To merged into app.js, minified with grunt */
 jQuery(document).foundation({
-
+    orbit: {
+        slide_number_text: ' av '
+    }
 });
 
 
