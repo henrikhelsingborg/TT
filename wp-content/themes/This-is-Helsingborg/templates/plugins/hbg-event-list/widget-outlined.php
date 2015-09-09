@@ -3,6 +3,22 @@
     <h3 class="widget-title"><?php echo $title; ?></h3>
     <div class="box-content" id="widget-<?php echo $args['widget_id']; ?>">
         <ul class="event-list list list-events">
+            <?php if ($featured) : ?>
+            <li class="event-item-featured">
+                <a href="<?php echo get_permalink($featured->ID); ?>" class="event-item featured">
+                    <?php if ($featuredImage) : ?>
+                    <div class="columns large-4 medium-4 small-12 featured-image">
+                        <img src="<?php echo $featuredImage[0]; ?>" class="responsive">
+                    </div>
+                    <?php endif; ?>
+                    <div class="columns <?php if ($featuredImage) : ?>large-8 medium-8 small-12<?php else : ?>large-12 medium-12 small-12<?php endif; ?>">
+                        <?php echo $featured->post_title; ?>
+                        <span class="link-item link-item-light"><?php echo $instance['link-text']; ?></span>
+                    </div>
+                    <div class="clearfix"></div>
+                </a>
+            </li>
+            <?php endif; ?>
             <li class="event-loading"><i class="hbg-loading">Läser in evenemang</i></li>
             <li><a href="<?php echo $reference; ?>" class="list-more"><?php echo $link_text; ?></a></li>
         </ul>
@@ -25,7 +41,11 @@
                     var obj = JSON.parse(response);
                     events = obj.events;
                     jQuery('#widget-<?php echo $args['widget_id']; ?> .event-loading').remove();
-                    jQuery('#widget-<?php echo $args['widget_id']; ?> .event-list').prepend(obj.list);
+                    if (jQuery('#widget-<?php echo $args['widget_id']; ?> .event-list li:first').hasClass('event-item-featured')) {
+                        jQuery('#widget-<?php echo $args['widget_id']; ?> .event-list .event-item-featured').after(obj.list);
+                    } else {
+                        jQuery('#widget-<?php echo $args['widget_id']; ?> .event-list').prepend(obj.list);
+                    }
                 });
 
                 jQuery(document).on('click', '.event-item', function(event) {

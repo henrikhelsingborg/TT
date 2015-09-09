@@ -49,4 +49,8 @@
     <input style="width: 70%;" id="<?php echo $this->get_field_id('search'); ?>" type="text" class="input-text hbg-event-widget-search-string" />
     <button type="button" class="button-secondary hbg-event-widget-search"><?php echo __("Sök"); ?></button>
 </p>
+<p>
+    <label for="<?php echo $this->get_field_id('link-text'); ?>"><?php _e('"Läs mer" länktext:'); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id('link-text'); ?>" name="<?php echo $this->get_field_name('link-text'); ?>" type="text" value="<?php echo esc_attr($instance['link-text']); ?>" />
+</p>
 </div>

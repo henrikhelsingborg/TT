@@ -48,10 +48,21 @@
     }
 
     .featured {
+        display: block !important;
         margin-left: -1px;
         margin-right: -1px;
         background-color: $palette-red-2;
         color: #fff;
+    }
+}
+
+.section-featured .list .featured {
+    background-color: $creamy-darker;
+    color: $text-default;
+    padding: 15px !important;
+
+    .link-item {
+        color: $palette-red-4;
     }
 }
 

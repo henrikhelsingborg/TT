@@ -86,6 +86,7 @@ if (!class_exists('EventListWidget')) {
             if ($new_instance['post_id'] != 0) {
                 $instance['post_id'] = $new_instance['post_id'];
                 $instance['post_title'] = $new_instance['post_title'];
+                $instance['link-text'] = $new_instance['link-text'];
             }
 
             return $instance;
