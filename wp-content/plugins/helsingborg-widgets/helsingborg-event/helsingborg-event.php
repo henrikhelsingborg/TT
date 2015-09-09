@@ -228,3 +228,30 @@
 
         die();
     }
+
+    add_action('wp_ajax_hbgPostEventLoad', 'hbgPostEventLoad_callback');
+    function hbgPostEventLoad_callback() {
+        global $wpdb;
+
+        $title = $_POST['q'];
+        $list  = '';
+
+        $posts = $wpdb->get_results("
+            SELECT ID, post_title
+            FROM $wpdb->posts
+            WHERE post_type = 'page'
+            AND post_status = 'publish'
+            AND post_title LIKE '%" . $title . "%'
+        ");
+
+        $list .= '<option value="0">Ingen sida vald</option>';
+
+        foreach ($posts as $post) {
+            $list .= '<option value="' . $post->ID . '">';
+            $list .= $post->post_title . ' (' . $post->ID . ')';
+            $list .= '</option>';
+        }
+
+        echo $list;
+        die();
+    }
