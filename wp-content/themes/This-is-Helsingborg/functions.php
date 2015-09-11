@@ -22,14 +22,12 @@
         echo "Tog bort inaktiva widgets";
     }
 
-    /*
     // Kör larm manuellt
     if (isset($_GET['dist'])) {
-        require_once('library/scheduled-tasks/scheduled_alarms_disturbance.php');
+        require(ABSPATH . 'wp-content/plugins/helsingborg-alarm/cron/scheduled_alarms_disturbance.php');
         $hbgDistrubance = new HbgScheduledAlarmsDisturbance();
         $hbgDistrubance->createAlarmPages();
     }
-    */
 
     /*
     // STÄNG AV ALLA KOMMENTARER FÖR HELA NÄTVERKET
