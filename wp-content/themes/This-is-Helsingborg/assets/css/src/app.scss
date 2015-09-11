@@ -71,14 +71,14 @@
  * ## Widgets
  * Style of WordPress widgets
  */
-@import 'widgets/widget-base';
+@import 'widgets/alarm-widget';
+@import 'widgets/event-widget';
 @import 'widgets/text-widget';
 @import 'widgets/orbit';
 @import 'widgets/sp-image';
-@import 'widgets/quick-links-list';
-@import 'widgets/alarm-widget';
 @import 'widgets/social-feed-widget';
 @import 'widgets/image-list';
+@import 'widgets/widget-base';
 
 /**
  * ## Sections

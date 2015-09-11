@@ -1,3 +1,22 @@
+// Article
+//
+// Markup:
+// <article class="article">
+//     <header class="article-header">
+//         <div class="row">
+//             <div class="columns large-12">
+//                 <h1>Headline</h1>
+//             </div>
+//         </div>
+//     </header>
+//     <div class="article-ingress">
+//         <p>The article ingress</p>
+//     </div>
+//     <div class="article-body">
+//         <p>The article body</p>
+//     </div>
+// </article>
+
 .article-header {
     margin-bottom: 10px;
 
@@ -11,10 +30,6 @@
     .row {
         margin-bottom: 10px;
     }
-}
-
-#read-speaker-player {
-    margin-top: 0;
 }
 
 .article-ingress {
@@ -103,24 +118,6 @@
     font-size: 11pt;
 }
 
-.hbgic-easy-to-read {
-    width: 17px;
-    height: 17px;
-    margin-top: 1px;
-    vertical-align: middle;
-    position: relative;
-    font-family: 'Arial', 'Verdana', 'Tahoma';
-    font-weight: bold;
-
-    &::before {
-        content: 'L';
-        position: absolute;
-    }
-
-    &::after {
-        content: 'L';
-        position: absolute;
-        bottom: 3px;
-        left: 5px;
-    }
+#read-speaker-player {
+    margin-top: 0;
 }

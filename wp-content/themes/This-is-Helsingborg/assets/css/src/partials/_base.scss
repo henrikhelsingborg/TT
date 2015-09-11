@@ -29,6 +29,12 @@ body {
     width: 100%;
 }
 
+// Row
+// Foundation row
+//
+// Markup:
+// <div class="row"></div>
+
 .row {
     max-width: none;
     width: 100%;
@@ -57,8 +63,10 @@ img.responsive {
 
 // Prepends a link indicator icon before the link text
 //
+// .link-item-light         - Lighter link item icon and text color (works on dark background)
+//
 // Markup:
-// <a class="link-item" href="#">Link</a>
+// <a class="link-item {{modifier_class}}" href="#">Link</a>
 
 .link-item {
     $padding-left: 20px;
@@ -92,8 +100,10 @@ img.responsive {
 
 // Prepends a pdf icon before the link text
 //
+// .pdf-item-light              - Light pdf icon
+//
 // Markup:
-// <a class="pdf-item" href="#">Link</a>
+// <a class="pdf-item {{modifier_class}}" href="#">Link</a>
 
 .pdf-item {
     &::before {
@@ -109,6 +119,11 @@ img.responsive {
         color: rgba(255,255,255,.7);
     }
 }
+
+// Preprends a MS Word icon before link text
+//
+// Markup:
+// <a class="pdf-item" href="#">Link</a>
 
 .word-item {
     &::before {

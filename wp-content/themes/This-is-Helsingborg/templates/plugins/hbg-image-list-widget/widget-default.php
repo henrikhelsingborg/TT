@@ -1,12 +1,7 @@
 <?php echo $before_widget; ?>
-    <?php if ($instance['title']) : ?>
-    <div class="widget-content-holder">
-        <h3><?php echo $instance['title']; ?></h3>
-    </div>
-    <?php endif; ?>
-
-    <div>
-        <ul class="orbit-slider" <?php if (count($items) > 1) : ?>data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;"<?php endif; ?>>
+    <h3 class="box-title"><?php echo (($instance['title']) ? $instance['title'] : 'Bildspel'); ?></h3>
+    <div class="box-content">
+        <ul class="orbit-slider" data-orbit<?php if (count($items) == 1) : ?>data-options="animation:fade; timer_speed:10000; slide_number:false;"<?php endif; ?>>
             <?php
                 foreach ($items as $num => $item) :
                     $force_width  = (!empty($item_force_widths[$num])) ? 'width:100%;' : '';

@@ -1,9 +1,7 @@
 <?php echo $before_widget; ?>
-<div class="box box-outlined">
-    <?php echo '<h3>' . $title . '</h3>'; ?>
+    <h3 class="box-title"><?php echo $title; ?></h3>
 
     <div class="box-content">
-
         <div>
             <select id="municipality_multiselect">
                 <option value="Bjuv">Bjuv</option>
@@ -28,7 +26,7 @@
             <li>
                 <a href="#" class="modalLinkAlarm" id="<?php echo $alarms[$i]->ID ?>" data-reveal="alarmModal">
                     <span class="link-item"><?php echo $alarms[$i]->HtText ?></span>
-                   <span class="date"><?php echo date_i18n(get_option('date_format'), strtotime($alarms[$i]->SentTime)) . ' kl. ' . date('H:i', strtotime($alarms[$i]->SentTime)); ?></span>
+                    <span class="date"><?php echo date_i18n(get_option('date_format'), strtotime($alarms[$i]->SentTime)) . ' kl. ' . date('H:i', strtotime($alarms[$i]->SentTime)); ?></span>
                 </a>
             </li>
             <?php endfor; ?>
@@ -38,12 +36,11 @@
 
         <a href="<?php echo $link; ?>" class="list-more" title="Visa fler alarm">Fler alarm</a>
     </div>
-</div>
 
-<script>
-    var _amount = <?php echo $amount; ?>;
-    var _alarms = <?php echo json_encode($alarms); ?>;
-</script>
+    <script>
+        var _amount = <?php echo $amount; ?>;
+        var _alarms = <?php echo json_encode($alarms); ?>;
+    </script>
 
 <?php
     /**

@@ -56,6 +56,57 @@
     }
 }
 
+// List in sidebar
+
+[class^="sidebar-"] .list {
+    font-weight: normal;
+
+    li {
+        margin: 0;
+        padding: 0;
+
+        & + li {
+            margin-top: 3px;
+            border-top: none;
+        }
+    }
+
+    a:not(.list-more) {
+        display: block;
+        background: rgba(0, 0, 0, .1);
+        padding: 8px 12px;
+        color: #fff;
+        letter-spacing: .8px;
+        font-weight: 300;
+        text-decoration: none;
+
+        &:hover {
+            background: rgba(0, 0, 0, .2);
+        }
+
+        .date {
+            float: none;
+            font-size: 9pt;
+            position: static;
+            color: rgba(#fff, .8);
+        }
+    }
+
+    span {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+    .link-item {
+        left: 0;
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
 .section-featured .list .featured {
     background-color: $creamy-darker;
     color: $text-default;

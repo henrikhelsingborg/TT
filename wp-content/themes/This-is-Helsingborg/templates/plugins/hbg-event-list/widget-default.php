@@ -1,6 +1,5 @@
 <?php echo $before_widget; ?>
-<div class="box box-outlined">
-    <h3 class="widget-title"><?php echo $title; ?></h3>
+    <h3 class="box-title"><?php echo $title; ?></h3>
     <div class="box-content" id="widget-<?php echo $args['widget_id']; ?>">
         <ul class="event-list list list-events">
             <?php if ($featured) : ?>
@@ -134,5 +133,4 @@
             }
         </script>
     </div>
-</div>
 <?php echo $after_widget; ?>

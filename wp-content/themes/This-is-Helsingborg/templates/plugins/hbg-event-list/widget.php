@@ -9,26 +9,5 @@
         $featuredImage = wp_get_attachment_image_src($image_id, 'single-post-thumbnail');
     }
 
-    switch ($args['id']) {
-        case 'right-sidebar':
-            include('widget-filled.php');
-            break;
-
-        case 'left-sidebar':
-            include('widget-filled.php');
-            break;
-
-        case 'left-sidebar-bottom':
-            include('widget-filled.php');
-            break;
-
-        case 'slider-area':
-            include('widget-slider-area.php');
-            break;
-
-        default:
-            include('widget-outlined.php');
-            break;
-    }
-
+    include('widget-default.php');
 ?>

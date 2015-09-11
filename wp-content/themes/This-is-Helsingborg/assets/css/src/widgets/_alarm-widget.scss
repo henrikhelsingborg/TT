@@ -21,6 +21,11 @@
     }
 }
 
+[class*="sidebar-"] .widget_alarmlistwidget .box-content {
+    @extend .padding-x1;
+    padding-top: 0;
+}
+
 .section-featured .widget_alarmlistwidget,
 .section-news .widget_alarmlistwidget,
 .article-header .widget_alarmlistwidget,

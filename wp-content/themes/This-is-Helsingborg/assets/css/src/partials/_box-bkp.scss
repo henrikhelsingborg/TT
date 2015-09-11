@@ -1,68 +1,64 @@
-// Box
+// A content box
 //
-// .box-outlined            - Outlined box
-// .box-filled              - Filled box
-// .box-creamy              - Creamy box
+// .box-outlined        - Outlined box
+// .box-creamy          - "Creamy" filled box
+// .box-share           - Share box
 //
 // Markup:
-// <div class="box {{modified_class}}">
-//     <h3 class="box-title">Title</h3>
-//     <div class="box-content">
-//          The box content
-//     </div>
+// <div class="box {{modifier_class}}">
+//     <h3>Title</h3>
+//     <div class="box-content">Content</div>
 // </div>
 
 .box {
-
-}
-
-// Box title
-//
-// Markup:
-// <h3 class="box-title">The title</h3>
-
-.box-title {
-    padding: 10px 15px;
-    margin: 0;
-    background-color: $palette-red-4;
-    color: #fff;
-    font-weight: bold;
-
-    .fa {
-        margin-right: 5px;
+    &.box-inline {
+        display: inline-block;
     }
 
-    .link-rss {
-        float: right;
+    h3 {
+        padding: 10px 15px;
+        margin: 0;
+        background-color: $palette-red-4;
         color: #fff;
+        font-weight: bold;
 
         .fa {
-            margin-right: 0;
+            margin-right: 5px;
         }
+
+        .link-rss {
+            float: right;
+            color: #fff;
+
+            .fa {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .box-content {
+        background: #fff;
+        border-top: 1px solid $creamy-darker;
+        border-bottom: 1px solid $creamy-darker;
+        border-left: 1px solid $creamy-darker;
+        border-right: 1px solid $creamy-darker;
+    }
+
+    .box-content-padding {
+        padding: 10px;
+    }
+
+    .box-content-padding-x2 {
+        padding: 20px;
+    }
+
+    h3 + .box-content {
+        border-top: none;
     }
 }
 
-// Box content
-//
-// Markup:
-// <div class="box-content">The content</div>
-
-.box-content {
-    background: #fff;
-    border-top: 1px solid $creamy-darker;
-    border-bottom: 1px solid $creamy-darker;
-    border-left: 1px solid $creamy-darker;
-    border-right: 1px solid $creamy-darker;
-}
-
-.box-title + .box-content {
-    border-top: none;
-}
-
-// Box Outlined
-
 .box-outlined {
-    .box-title {
+    h3 {
         padding: 0;
         padding-bottom: 5px;
         border-bottom: 4px solid $palette-red-2;
@@ -71,32 +67,12 @@
     }
 }
 
-// Box Filled
-
-.box-filled {
-    .box-title {
-        background-color: transparent;
-    }
-
-    .box-content {
-        background-color: transparent;
-        border: none;
-        color: #fff;
-    }
-
-    .box-title + [class*="padding-x"] {
-        padding-top: 0;
-    }
-}
-
-// Box creamy
-
 .box-creamy {
     padding: 15px;
     background: $creamy;
     border: 1px solid $creamy-darker;
 
-    .box-title {
+    h3 {
         background-color: transparent;
         display: none;
         color: $text-default;
@@ -110,15 +86,13 @@
     }
 }
 
-// Box share
-
 .box-share {
     width: 100%;
     margin-top: 30px;
     line-height: 100%;
     display: table;
 
-    .box-title {
+    h3 {
         font-size: 13pt;
         padding: 0;
         padding-bottom: 4px;
@@ -218,4 +192,3 @@
         }
     }
 }
-

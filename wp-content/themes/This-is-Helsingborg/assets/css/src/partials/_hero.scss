@@ -9,15 +9,11 @@
     height: 350px;
     background-size: cover;
     background-position: center center;
-}
 
-@media #{$small-only} {
-    .hero {
+    @media #{$small-only} {
         display: none;
     }
-}
 
-.hero {
     .search {
         width: 100%;
         height: 100%;

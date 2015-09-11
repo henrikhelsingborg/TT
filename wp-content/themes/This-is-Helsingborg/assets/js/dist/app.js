@@ -551,7 +551,7 @@ Helsingborg.Search.Button = (function ($) {
 
         $(document).on('click', '.search .btn-submit', function (e) {
             if ($(this).parents('.hero').length || $(this).parents('.site-header').length) {
-                $(this).html('<i class="dots-loading dots-loading-small"></i>');
+                $(this).html('<i class="dots-loading dots-loading-sm"></i>');
             } else {
                 $(this).html('<i class="dots-loading"></i>');
             }

@@ -67,12 +67,28 @@
         margin-bottom: 24px;
         margin-left: auto;
         margin-right: auto;
+        padding: 0;
 
         li.active {
             background-color: $palette-red-2;
         }
     }
 
+}
+
+[class^="sidebar-"] .box .orbit-container {
+    margin-left: -10px;
+    margin-right: -10px;
+
+    .orbit-bullets {
+        li {
+            background-color: rgba(#fff, .4);
+
+            &.active {
+                background-color: #fff;
+            }
+        }
+    }
 }
 
 .article-header .orbit-slider {

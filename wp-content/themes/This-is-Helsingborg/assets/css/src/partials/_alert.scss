@@ -1,3 +1,11 @@
+// Alert
+//
+// .alert-info              - Blue alert (info)
+// .alert-warning           - Yellow alert (warning)
+//
+// Markup:
+// <div class="alert {{modifier_class}}"></div>
+
 .alert {
     display: none;
     padding: 15px 0;

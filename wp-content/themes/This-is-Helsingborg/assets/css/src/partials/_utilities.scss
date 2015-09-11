@@ -1,10 +1,32 @@
-// Hides an element with display none
+// Display propterties
+//
+// .inline-block
 //
 // Markup:
-// <div class="hidden"></div>
+// <div class="{{modifier_class}}"></div>
+
+.inline-block {
+    display: inline-block;
+}
 
 .hidden {
     display: none;
+}
+
+// Padding
+//
+// .padding-x1          - 10px padding
+// .padding-x2          - 20px padding
+//
+// Markup:
+// <div class="{{modifier_class}}">The content</div>
+
+.padding-x1 {
+    padding: 10px;
+}
+
+.padding-x2 {
+    padding: 20px;
 }
 
 // Removes any padding and margin from any element
@@ -70,6 +92,9 @@
 //
 // .text-lg         - Large text
 // .text-magenta    - Magenta colored text
+//
+// Markup:
+// <span class="{{modifier_class}}">The text</span>
 
 .text-lg {
     font-size: 28pt;
@@ -79,7 +104,12 @@
     color: $palette-red-2;
 }
 
-// Better font rendering for Font Awesome icons
+// Better font rendering for Font Awesome icon
+//
+// .fa-XXXXXX           - Font Awesome icon class
+//
+// Markup:
+// <i class="fa {{modifier_class}}"></i>
 
 .fa {
     -webkit-font-smoothing: antialiased;
@@ -97,8 +127,10 @@
 
 // Loading indicator HBG
 //
+// .hbg-loading-sm          - Smaller sized dots
+//
 // Markup:
-// <i class="hbg-loading">Optional text</i>
+// <i class="hbg-loading {{modifier_class}}>Optional text</i>
 
 .hbg-loading {
     display: block;
@@ -129,7 +161,12 @@
     background-size: 100%;
 }
 
-// Loading indicator three blinking dots
+// Loading indicator, three blinking dots
+//
+// .dots-loading-sm          - Smaller sized dots
+//
+// Markup:
+// <i class="dots-loading {{modifier_class}}"></i>
 
 .dots-loading {
     $dots-size: 12px;
@@ -166,7 +203,7 @@
     }
 }
 
-.dots-loading-small {
+.dots-loading-sm {
     $dots-size: 10px;
     $dots-space: 3px;
 
@@ -212,6 +249,11 @@
 .btn-mobile-menu {
     height: 30px;
 }
+
+// Hamburger menu icon
+//
+// Markup:
+// <i class="hbg-hamburger"></i>
 
 .hbg-hamburger {
     $bar-height: 4px;
@@ -263,5 +305,32 @@
             top: 0;
             transform: rotate(-45deg);
         }
+    }
+}
+
+// Easy to read icon
+//
+// Markup:
+// <i class="hbgic-easy-to-read"></i>
+
+.hbgic-easy-to-read {
+    width: 17px;
+    height: 17px;
+    margin-top: 1px;
+    vertical-align: middle;
+    position: relative;
+    font-family: 'Arial', 'Verdana', 'Tahoma';
+    font-weight: bold;
+
+    &::before {
+        content: 'L';
+        position: absolute;
+    }
+
+    &::after {
+        content: 'L';
+        position: absolute;
+        bottom: 3px;
+        left: 5px;
     }
 }

@@ -1,3 +1,10 @@
+// Breadcrumbs
+//
+// Markup:
+// <ul class="breadcrumbs">
+//     <li><a href="#">Parent</a></li>
+//     <li><span class="breadcrumbs-current">Children</span></li>
+// </ul>
 .breadcrumbs {
     margin: 0;
     margin-top: 20px;
