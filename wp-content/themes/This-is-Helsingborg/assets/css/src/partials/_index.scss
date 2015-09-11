@@ -1,4 +1,15 @@
-// Index
+// Index item
+//
+// .index-item-filled           - Filled index item
+//
+// Markup:
+// <a class="index-item" href="#">
+//     <img src="...">
+//     <span class="index-container">
+//         <span class="index-caption">Headline</span>
+//         <span class="index-description">Description</span>
+//     </span>
+// </a>
 
 .index-item {
     display: block;
@@ -12,6 +23,10 @@
     border: 1px solid $creamy-darker;
     padding: 5px;
 
+    @media #{$small-up} {
+        margin-bottom: $column-gutter;
+    }
+
     &:hover {
         background-color: $creamy;
     }
@@ -20,34 +35,34 @@
         border-color: $focus-color;
     }
 
-    .index-container {
-        display: block;
-        position: relative;
-        padding: $widget-padding;
-    }
-
     img + .index-container {
         border-top: 0;
-    }
-
-    .index-caption {
-        display: block;
-        line-height: 130%;
-        color: $palette-red-4;
-    }
-
-    .index-description {
-        display: block;
-        margin-top: 5px;
-        font-weight: 300;
-        font-size: 11pt;
-        white-space: break-word;
     }
 
     img {
         width: 100%;
         height: auto;
     }
+}
+
+.index-container {
+    display: block;
+    position: relative;
+    padding: $widget-padding;
+}
+
+.index-description {
+    display: block;
+    margin-top: 5px;
+    font-weight: 300;
+    font-size: 11pt;
+    white-space: break-word;
+}
+
+.index-caption {
+    display: block;
+    line-height: 130%;
+    color: $palette-red-4;
 }
 
 .index-item-filled {
@@ -82,11 +97,5 @@
         .index-description {
             font-size: 10pt;
         }
-    }
-}
-
-@media #{$small-up} {
-    .index-item {
-        margin-bottom: $column-gutter;
     }
 }

@@ -1,3 +1,11 @@
+// Modal
+//
+// Markup:
+// <div class="modal">
+//     <button class="modal-close">Close</button>
+//     <div class="modal-content">The content</div>
+// </div>
+
 .modal {
     display: none;
     position: fixed;

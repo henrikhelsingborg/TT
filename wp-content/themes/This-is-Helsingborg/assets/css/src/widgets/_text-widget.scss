@@ -1,6 +1,16 @@
-.widget_text {
-    .widget-content {
-        padding: $widget-padding;
+[class^="sidebar-"] .widget_text {
+    h2 {
+        @extend h3;
+        @extend .box-title;
+        background-color: transparent;
+        font-size: 15pt;
+        margin: 0;
+    }
+
+    .textwidget {
+        @extend .padding-x2;
+        padding-top: 0;
+        color: #fff;
     }
 }
 
@@ -8,7 +18,7 @@
 .article-header .widget_text {
     .textwidget {
         @extend .box-content;
-        @extend .box-content-padding-x2;
+        @extend .padding-x2;
     }
 }
 
