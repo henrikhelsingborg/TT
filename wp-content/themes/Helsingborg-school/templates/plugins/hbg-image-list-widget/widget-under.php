@@ -1,7 +1,4 @@
-<?php
-    $grid_size = (count($items) >= 3) ? "3" : "2";
-?>
-<section class="large-8 columns">
+<?php echo $before_widget; ?>
     <ul class="block-list news-block large-block-grid-<?php echo $grid_size; ?> medium-block-grid-<?php echo $grid_size; ?> small-block-grid-2">
         <?php foreach ($items as $num => $item) : ?>
             <li>
@@ -9,4 +6,4 @@
             </li>
         <?php endforeach; ?>
     </ul>
-</section>
+<?php echo $after_widget; ?>
