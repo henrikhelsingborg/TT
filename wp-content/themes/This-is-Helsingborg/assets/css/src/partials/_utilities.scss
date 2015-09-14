@@ -22,11 +22,15 @@
 // <div class="{{modifier_class}}">The content</div>
 
 .padding-x1 {
-    padding: 10px;
+    padding: 10px !important;
+}
+
+.padding-x1-5 {
+    padding: 15px !important;
 }
 
 .padding-x2 {
-    padding: 20px;
+    padding: 20px !important;
 }
 
 // Removes any padding and margin from any element
