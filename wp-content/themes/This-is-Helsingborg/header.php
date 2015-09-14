@@ -36,6 +36,8 @@
         <div data-prompt-wrapper="alert"></div>
 
         <header class="site-header">
+            <div class="stripe"></div>
+
             <div class="container">
                 <div class="row">
                     <div class="columns large-12">
@@ -84,6 +86,12 @@
                     </div>
                 </div>
             </div>
+
+            <?php
+                if (is_front_page()) {
+                    get_template_part('templates/partials/hero');
+                }
+            ?>
         </header>
 
         <div class="mobile-menu-wrapper">
@@ -93,11 +101,5 @@
                 get_template_part('templates/partials/mobile', 'navigation');
             ?>
         </div>
-
-        <?php
-            if (is_front_page()) {
-                get_template_part('templates/partials/hero');
-            }
-        ?>
 
         <main id="main">

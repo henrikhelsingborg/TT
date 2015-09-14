@@ -1,5 +1,11 @@
 .site-header {
-    padding-bottom: 20px;
+    position: relative;
+    padding-bottom: 0;
+
+    .stripe {
+        z-index: 9;
+        display: none;
+    }
 }
 
 .btn.btn-mobile-menu {
@@ -23,6 +29,10 @@
 @media #{$medium-up} {
     .site-header {
         padding-top: 20px;
+
+        .stripe {
+            display: block;
+        }
     }
 
     .btn.btn-mobile-menu {
@@ -33,5 +43,28 @@
 @media screen and (max-width: 850px) {
     .site-header {
         padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 1349px) {
+    .site-header .stripe {
+        width: 15px;
+    }
+}
+
+@media screen and (max-width: 1319px) {
+    .site-header {
+        padding-left: 15px;
+
+        .stripe {
+            width: 15px;
+         }
+    }
+}
+
+@media #{$small-only} {
+    .site-header {
+        padding-left: 0;
+        padding-bottom: 20px;
     }
 }
