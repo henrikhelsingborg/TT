@@ -1,7 +1,4 @@
 <?php
-/*
-Template Name: Indexsida
-*/
     get_header();
 ?>
 
