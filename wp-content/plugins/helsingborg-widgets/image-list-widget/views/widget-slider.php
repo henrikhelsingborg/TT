@@ -1,5 +1,6 @@
 <div class="large-12 columns slider-container">
-    <ul class="helsingborg-orbit" <?php if (count($items)) : ?>data-orbit data-options="navigation_arrows:false;slide_number:false;timer:false;"<?php endif; ?>>
+    <ul class="helsingborg-orbit" data-orbit <?php if (count($items) == 1) : ?>data-options="navigation_arrows:false;slide_number:false;timer:false;"<?php endif; ?>>
+
         <?php
             foreach ($items as $num => $item) :
                 $force_width  = (!empty($item_force_widths[$num])) ? 'width:100%;' : '';

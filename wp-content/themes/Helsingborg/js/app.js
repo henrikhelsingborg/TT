@@ -425,7 +425,7 @@ sticky_class:"sticky",custom_back_text:!0,back_text:"Back",mobile_show_parent_li
       stack_on_small : false,
       navigation_arrows : true,
       slide_number : true,
-      slide_number_text : 'of',
+      slide_number_text : ' av ',
       container_class : 'orbit-container',
       stack_on_small_class : 'orbit-stack-on-small',
       next_class : 'orbit-next',
@@ -492,7 +492,9 @@ $('#start-jr').on('click', function() {
 });
 /* HBG dev JS - To merged into app.js, minified with grunt */
 jQuery(document).foundation({
-
+    orbit: {
+        slide_number_text: ' av '
+    }
 });
 
 
