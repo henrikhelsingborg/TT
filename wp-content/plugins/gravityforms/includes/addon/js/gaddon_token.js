@@ -14,7 +14,6 @@ window.GFToken = null;
 		this.init = function() {
 		
 			var GFTokenObj = this;
-			
 			this.tokens = {};
 
 			/* Initialize spinner. */
@@ -58,6 +57,7 @@ window.GFToken = null;
 		
 		this.processTokens = function() {
 			
+
 			/* Process feeds. */
 			for ( var feed_id in this.feeds ) {
 				
@@ -103,6 +103,7 @@ window.GFToken = null;
 			} );
 		
 		}
+
 		
 		this.saveToken = function( token ) {
 			

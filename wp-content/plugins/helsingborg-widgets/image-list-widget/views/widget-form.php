@@ -1,19 +1,9 @@
-<div class="hbgllw-row">
-    <label>
-        <b>OBS! Vart ska denna visas?</b>
-    </label><br>
-    <label for="<?php echo $this->get_field_id('show_in_content'); ?>">
-        <input type="radio" name="<?php echo $this->get_field_name('show_placement'); ?>" value="show_in_content" id="<?php echo $this->get_field_id('show_in_content'); ?>" <?php checked($show_placement, "show_in_content"); ?> />  <?php echo __("Under innehållet"); ?>
-    </label>
-    <label for="<?php echo $this->get_field_id('show_in_sidebar'); ?>">
-        <input type="radio" name="<?php echo $this->get_field_name('show_placement'); ?>" value="show_in_sidebar" id="<?php echo $this->get_field_id('show_in_sidebar'); ?>" <?php checked($show_placement, "show_in_sidebar"); ?> /> <?php echo __("I sidokolumn"); ?>
-    </label>
-    <label for="<?php echo $this->get_field_id('show_in_slider'); ?>">
-        <input type="radio" name="<?php echo $this->get_field_name('show_placement'); ?>" value="show_in_slider" id="<?php echo $this->get_field_id('show_in_slider'); ?>" <?php checked($show_placement, "show_in_slider"); ?> /> <?php echo __("I bildspel"); ?>
-    </label>
-</div>
-
 <div class="helsingborg-link-list">
+    <p>
+        <label>Rubrik</label>
+        <input type="text" name="<?php echo $this->get_field_name('title'); ?>" id="<?php echo $this->get_field_id('title'); ?>" class="widefat" value="<?php echo $instance['title']; ?>">
+    </p>
+
     <?php
         // Now render each item
         foreach ($items as $num => $item) :
@@ -30,7 +20,6 @@
             $checked            = checked($item_targets[$num],       'on', false);
             $button_click       = "helsingborgMediaSelector.create('" . $this->get_field_id($num) . "', '" . $this->get_field_id('') . "', '" . $num . "' ); return false;";
     ?>
-
             <div id="<?php echo $this->get_field_id($num); ?>" class="list-item">
                 <h5 class="moving-handle">
                     <span class="number"><?php echo $num; ?></span>. <span class="item-title"><?php echo $image_title; ?></span>

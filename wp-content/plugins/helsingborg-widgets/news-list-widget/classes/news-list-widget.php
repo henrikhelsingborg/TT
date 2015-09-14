@@ -27,7 +27,7 @@ if (!class_exists('News_List_Widget_Box')) {
          * Constructor
          */
         function News_List_Widget_Box() {
-            parent::WP_Widget(false, '* Nyhetsobjekt', array('description' => 'Renderar ut valda sidor som nyheter.'));
+            parent::WP_Widget(false, '* Nyhetsobjekt', array('description' => 'Nyheter med bild, rubrik och ingress.'));
             $this->_viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
         }
 

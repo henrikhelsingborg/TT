@@ -1,0 +1,117 @@
+// Hero image
+//
+// Markup:
+// <div class="hero"></div>
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center center;
+
+    @media #{$small-only} {
+        display: none;
+    }
+
+    .search {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        .form-container {
+            display: inline-block;
+            margin-top: 0px;
+            @extend .center-in-parent;
+            z-index: 99;
+        }
+
+        .search-label {
+            display: block;
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            font-size: 28pt;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #fff;
+            text-shadow: 0 0 40px #000;
+            margin-bottom: 10px;
+
+            &.search-label-alt {
+                background: $palette-red-4;
+                font-size: 13pt;
+                text-shadow: none;
+                float: left;
+                padding: 5px 10px;
+                margin: 0;
+            }
+        }
+
+        .input-group {
+            z-index: 1;
+            top: 10px;
+            box-shadow: 0 0 40px rgba(0,0,0,.5);
+        }
+
+        input[type="search"] {
+            padding: 15px;
+            width: 400px;
+            height: 100%;
+            border: none;
+            font-size: 15pt;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .btn-submit {
+            padding: 14px 20px;
+            border: none;
+            width: 80px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .search-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,.8);
+            width: 100%;
+            height: 100%;
+        }
+
+        .search-web-archive {
+            text-align: left;
+
+            a {
+                display: inline-block;
+                padding: 3px 8px;
+                margin-top: 10px;
+                background: rgba(0,0,0,.8);
+                text-decoration: none;
+                font-size: 11pt;
+                color: #fff;
+
+                .fa {
+                    margin-right: 5px;
+                }
+
+                &:hover {
+                    background: rgba(0,0,0,1);
+                }
+            }
+        }
+
+        .hbg-loading {
+            display: none;
+            position: absolute;
+            top: 54px;
+            right: 70px;
+            z-index: 10;
+        }
+
+        @include input-placeholder(#858585, 1, 100);
+    }
+}

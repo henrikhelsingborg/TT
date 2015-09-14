@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------------------------------------------
-Version 1.9.13
 
+Version 1.9.13
     - Added security enhancements. Credits to Jonathan Desrosiers & Aaron Ware of Linchpin and Thomas Kräftner (http://kraftner.com).
 
     - Updated the German translation.

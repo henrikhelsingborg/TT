@@ -81,6 +81,16 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 			add_filter( 'gform_enable_entry_info_payment_details', array( $this, 'disable_entry_info_payment' ), 10, 2 );
 		}
 	}
+	
+	public function init_frontend() {
+		
+		parent::init_frontend();
+		
+		add_filter( 'gform_register_init_scripts', array( $this, 'register_creditcard_token_script' ), 10, 3 );
+		add_filter( 'gform_field_content', array( $this, 'add_creditcard_token_input' ), 10, 5 );
+		add_filter( 'gform_form_args', array( $this, 'force_ajax_for_creditcard_tokens' ), 10, 1 );
+		
+	}
 
 	public function init_frontend() {
 
@@ -1129,7 +1139,6 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 			$result = GFAPI::update_entry( $entry );
 			$this->add_note( $entry['id'], sprintf( esc_html__( 'Subscription has been created. Subscription Id: %s.', 'gravityforms' ), $subscription['subscription_id'] ), 'success' );
 
-
 			/**
 			 * Fires when someone starts a subscription
 			 *
@@ -1427,6 +1436,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 
 	public function requires_credit_card_message() {
 		$url = add_query_arg( array( 'view' => null, 'subview' => null ) );
+
 
 		return sprintf( esc_html__( "You must add a Credit Card field to your form before creating a feed. Let's go %sadd one%s!", 'gravityforms' ), "<a href='" . esc_url( $url ) . "'>", '</a>' );
 	}
@@ -2364,7 +2374,134 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 
 		return array_merge( parent::scripts(), $scripts );
 	}
+	
+		
+	//----- Javascript Credit Card Tokens ----
+	/**
+	 * Override to support creating credit card tokens via Javascript.
+	 * 
+	 * @access public
+	 * @param mixed $form
+	 * @return array
+	 */
+	public function creditcard_token_info( $form ) {
+		
+		return array();
+		
+	}
+	
+	/**
+	 * Add input field for credit card token response.
+	 * 
+	 * @access public
+	 * @param string $content
+	 * @param array $field
+	 * @param string $value
+	 * @param string $entry_id
+	 * @param string $form_id
+	 * @return string
+	 */
+	public function add_creditcard_token_input( $content, $field, $value, $entry_id, $form_id ) {
+		
+		if ( ! $this->has_feed( $form_id ) || GFFormsModel::get_input_type( $field ) != 'creditcard' ) {
+			return $content;
+		}
+		
+		$form = GFAPI::get_form( $form_id );
+		if ( ! $this->creditcard_token_info( $form ) ) {
+			return $content;
+		}
+		
+		$slug     = str_replace( 'gravityforms', '', $this->_slug );
+		$content .= '<input type=\'hidden\' name=\'' . $slug . '_response\' id=\'gf_' . $slug . '_response\' value=\'' . rgpost( $slug . '_response' ) . '\' />';
+		
+		return $content;
+		
+	} 
 
+	/**
+	 * Enables AJAX for forms that create credit card tokens via Javascript.
+	 * 
+	 * @access public
+	 * @param array $args
+	 * @return array
+	 */
+	public function force_ajax_for_creditcard_tokens( $args ) {
+		
+		$form = GFAPI::get_form( rgar( $args, 'form_id' ) );
+		
+		$args['ajax'] = $this->enqueue_creditcard_token_script( $form ) ? true : $args['ajax'];
+		
+		return $args;
+		
+	}
+	
+	/**
+	 * Determines if GFToken script should be enqueued.
+	 * 
+	 * @access public
+	 * @param array $form
+	 * @return bool
+	 */
+	public function enqueue_creditcard_token_script( $form ) {
+		
+		return $form && $this->has_feed( $form['id'] ) && $this->creditcard_token_info( $form );
+		
+	}
+	
+	/**
+	 * Prepare Javascript for creating credit card tokens.
+	 * 
+	 * @access public
+	 * @param array $form
+	 * @param array $field_values
+	 * @param bool $is_ajax
+	 * @return void
+	 */
+	public function register_creditcard_token_script( $form, $field_values, $is_ajax ) {
+		
+		if ( ! $this->enqueue_creditcard_token_script( $form ) ) {
+			return;
+		}
+		
+		/* Prepare GFToken object. */
+		$gftoken = array(
+			'callback'      => 'GF_' . str_replace( ' ', '', $this->_short_title ),
+			'feeds'         => $this->creditcard_token_info( $form ),
+			'formId'        => rgar( $form, 'id' ),
+			'hasPages'      => GFCommon::has_pages( $form ),
+			'pageCount'     => GFFormDisplay::get_max_page_number( $form ),
+			'responseField' => '#gf_' . str_replace( 'gravityforms', '', $this->_slug ) . '_response'
+		);
+		
+		/* Get needed fields. */
+		$gftoken['fields'] = $this->get_creditcard_token_entry_fields( $gftoken['feeds'] );
+		
+		$script = 'new GFToken( ' . json_encode( $gftoken ) . ' );';
+		GFFormDisplay::add_init_script( $form['id'], 'GFToken', GFFormDisplay::ON_PAGE_RENDER, $script );
+
+	}
+	
+	/**
+	 * Get needed fields for creating credit card tokens.
+	 * 
+	 * @access public
+	 * @param array $feeds
+	 * @return array $fields
+	 */
+	public function get_creditcard_token_entry_fields( $feeds ) {
+		
+		$fields = array();
+		
+		foreach ( $feeds as $feed ) {
+			foreach ( $feed['billing_fields'] as $billing_field ) {
+				$fields[] = $billing_field;
+			}
+		}
+		 
+		return array_unique( $fields );
+		
+	}
 
 	//----- Javascript Credit Card Tokens ----
 	/**

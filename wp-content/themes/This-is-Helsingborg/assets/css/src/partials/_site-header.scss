@@ -1,0 +1,37 @@
+.site-header {
+    padding-bottom: 20px;
+}
+
+.btn.btn-mobile-menu {
+    position: relative;
+    display: block;
+    float: right;
+    margin-top: 14px;
+    background-color: transparent;
+    padding: 0;
+    color: $palette-red-4;
+    font-size: 20pt;
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 13pt;
+        margin-left: 8px;
+    }
+}
+
+@media #{$medium-up} {
+    .site-header {
+        padding-top: 20px;
+    }
+
+    .btn.btn-mobile-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .site-header {
+        padding-top: 0;
+    }
+}

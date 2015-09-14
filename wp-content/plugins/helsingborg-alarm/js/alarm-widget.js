@@ -9,8 +9,16 @@ jQuery(document).ready(function() {
 			selectedText: ['Valt', 'av'],
 			selectAll: true,
 			addButton: onUpdateClick,
-			selectAllText: ['Markera alla', 'Avmarkera alla']
+			selectAllText: ['Markera alla', 'Avmarkera alla'],
+			placeholder: 'Välj kommun(er)…'
 		});
+
+		$('.alarm-widget .zselect ul').append('<button class="btn alarm-widget-update">Uppdatera</button>');
+
+		$(document).on('click', '.alarm-widget-update', function (e) {
+			e.preventDefault();
+			onUpdateClick();
+		})
 
 		jQuery(document).on('click', '.modalLinkAlarm', function(event) {
 			event.preventDefault();
@@ -64,6 +72,9 @@ jQuery(document).ready(function() {
 				'Helsingborg', true);
 		}
 
+		jQuery('.alarm-list').empty();
+		jQuery('.alarm-list').append('<li><div class="hbg-loading">Läser in alarm…</div></li>');
+
 		jQuery.ajax({
 			type: 'GET',
 			url: ajaxalarm.url,
@@ -85,10 +96,10 @@ jQuery(document).ready(function() {
 		jQuery('.alarm-list').empty();
 		jQuery.each(items, function(i, item) {
 			var alarm = '<li>';
+			alarm += '<a href="#" class="modalLinkAlarm" id="' + item.ID +'" data-reveal="alarmModal">'
 			alarm += '<span class="date">' + item.SentTime + '</span>';
-			alarm += '<a href="#" class="modalLinkAlarm" id="' + item.ID +
-				'" data-reveal-id="alarmModal">' + item.HtText + '</a>';
-			alarm += '</li>';
+			alarm += '<span>' + item.HtText + '</span>';
+			alarm += '</a></li>';
 			jQuery(alarm).appendTo(jQuery('.alarm-list'));
 			return i < (_amount - 1);
 		});

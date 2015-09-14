@@ -57,12 +57,13 @@ if (!class_exists('HelsingborgPostInheritWidget')) {
          */
         public function widget($args, $instance) {
             extract($args);
+
             $post = get_post($instance['post_id']);
             setup_postdata($post);
 
             $view = 'widget-content.php';
-            if (locate_template('templates/plugins/hbg-inherit-widget/' . $view)) {
-                locate_template('templates/plugins/hbg-inherit-widget/' . $view, true);
+            if ($templatePath = locate_template('templates/plugins/hbg-inherit-widget/' . $view)) {
+                require($templatePath);
             } else {
                 require($this->_viewsPath . $view);
             }

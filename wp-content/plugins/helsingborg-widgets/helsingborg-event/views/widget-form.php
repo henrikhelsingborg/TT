@@ -33,3 +33,24 @@
     <label for="<?php echo $this->get_field_id('administration_units'); ?>"><?php _e('Förvaltningsenheter:'); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id('administration_units'); ?>" name="<?php echo $this->get_field_name('administration_units'); ?>" type="text" value="<?php echo esc_attr($administration_units); ?>" />
 </p>
+
+<div style="background:#f9f9f9;border:1px solid #ddd;padding: 0 15px;margin-bottom: 15px;">
+<p class="hbg-event-widget-search-post-id" <?php if (!isset($instance['post_id'])) : ?>style="display:none;"<?php endif; ?>>
+    <label for="<?php echo $this->get_field_id('post_id'); ?>">Välj sida att lyfta fram som "utvald":</label><br>
+    <select name="<?php echo $this->get_field_name('post_id'); ?>" id="<?php echo $this->get_field_id('post_id'); ?>" class="widefat">
+        <?php if (isset($instance['post_id'])) : ?>
+        <option value="<?php echo $instance['post_id']; ?>"><?php echo $instance['post_title']; ?></option>
+        <?php endif; ?>
+    </select>
+    <input type="hidden" name="<?php echo $this->get_field_name('post_title'); ?>" value="" class="hbg-event-widget-search-post-title">
+</p>
+<p>
+    <label for="<?php echo $this->get_field_id('search'); ?>"><b><?php echo __("Sök efter sida att använda som \"utvald\": "); ?></b></label><br>
+    <input style="width: 70%;" id="<?php echo $this->get_field_id('search'); ?>" type="text" class="input-text hbg-event-widget-search-string" />
+    <button type="button" class="button-secondary hbg-event-widget-search"><?php echo __("Sök"); ?></button>
+</p>
+<p>
+    <label for="<?php echo $this->get_field_id('link-text'); ?>"><?php _e('"Läs mer" länktext:'); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id('link-text'); ?>" name="<?php echo $this->get_field_name('link-text'); ?>" type="text" value="<?php echo esc_attr($instance['link-text']); ?>" />
+</p>
+</div>
