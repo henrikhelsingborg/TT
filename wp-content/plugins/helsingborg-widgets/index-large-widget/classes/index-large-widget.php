@@ -26,7 +26,7 @@ if (!class_exists('Index_Large_Widget_Box')) {
          * Constructor
          */
         function Index_Large_Widget_Box() {
-            parent::WP_Widget(false, '* Nyhetslista', array('description' => 'Lägg till de nyheter som du vill visa.'));
+            parent::WP_Widget(false, '* Nyhetslista', array('description' => 'Nyhetspuffar med rubrik på bakgrundsplatta.'));
             $this->_viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
         }
 

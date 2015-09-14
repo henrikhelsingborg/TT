@@ -28,8 +28,13 @@ if (!class_exists('EventListWidget')) {
          * Constructor
          */
         function EventListWidget() {
-            parent::WP_Widget(false, '* Evenemangskalender', array('description' => 'Listar de senaste evenemangen.'));
+            parent::WP_Widget(false, '* Evenemangskalender', array('description' => 'Listar kommande evenemang.'));
             $this->_viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
+            add_action('admin_enqueue_scripts', array($this, 'enqueueFiles'));
+        }
+
+        public function enqueueFiles($hook) {
+            wp_enqueue_script('helsingborg-event-widget-js', plugins_url('helsingborg-widgets/helsingborg-event/assets/helsingborg-event-widget.js'), array('jquery'), false, true);
         }
 
         /**
@@ -77,6 +82,12 @@ if (!class_exists('EventListWidget')) {
             $instance['link_text']            = strip_tags($new_instance['link_text']);
             $instance['amount']               = $new_instance['amount'];
             $instance['administration_units'] = strip_tags($new_instance['administration_units']);
+
+            if ($new_instance['post_id'] != 0) {
+                $instance['post_id'] = $new_instance['post_id'];
+                $instance['post_title'] = $new_instance['post_title'];
+                $instance['link-text'] = $new_instance['link-text'];
+            }
 
             return $instance;
         }

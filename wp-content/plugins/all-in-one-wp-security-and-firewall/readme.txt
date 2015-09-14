@@ -179,6 +179,12 @@ https://www.tipsandtricks-hq.com/wordpress-security-and-firewall-plugin
 None
 
 == Changelog ==
+= 3.9.6 =
+- Added Rename Login page feature from the "Brute Force" menu to multisite sub-sites.
+- Removed invalid "length" attribute from input element in captcha code.
+- Fixed reset password feature whereby the URL which is sent out in the email for cases when rename login feature is enabled was not decoded properly.
+- Corrected the check for boolean false if returned from wpdb query result.
+- Added media button for wp editor in maintenance settings page.
 
 = 3.9.7 =
 - Added new feature which allows custom .htaccess rules. (See "Custom Rules" tab in Firewall menu). You can now use this to add custom rules to block access to various resources on your site.

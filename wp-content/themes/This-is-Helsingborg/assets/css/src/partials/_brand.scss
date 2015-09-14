@@ -1,0 +1,33 @@
+// Logotype
+//
+// Markup:
+// <a class="logotype" href="#"><img src="logo.svg" alt="Helsingborg Stad"></a>
+
+.logotype {
+    display: block;
+    float: left;
+    width: 240px;
+    height: 68px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+// A color stripe band based on the color palette that covers the height of the container
+// Set the containers position to relative to get it to work.
+//
+// Markup:
+// <div class="stripe"></div>
+
+.stripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+    background-image: url('../../images/palette-red.svg');
+    background-size: cover;
+}

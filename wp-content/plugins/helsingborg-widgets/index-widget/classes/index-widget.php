@@ -27,7 +27,7 @@ if (!class_exists('Index_Widget_Box')) {
          * Constructor
          */
         function Index_Widget_Box() {
-            parent::WP_Widget(false, '* Index', array('description' => 'Lägg till de index som du vill visa.'));
+            parent::WP_Widget(false, '* Index', array('description' => 'Indexrutor för att länka vidare till fördjupad information inom ett visst område.'));
             $this->_viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
         }
 

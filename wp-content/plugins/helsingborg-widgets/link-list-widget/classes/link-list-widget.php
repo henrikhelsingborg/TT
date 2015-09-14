@@ -26,7 +26,7 @@ if (!class_exists('SimpleLinkListWidget')) {
          * Constructor
          */
         function SimpleLinkListWidget() {
-            parent::WP_Widget(false, '* Listor', array('description' => 'Lägg till de länkar som du vill visa.'));
+            parent::WP_Widget(false, '* Listor', array('description' => 'Lista med länkar.'));
             $this->_viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
         }
 
@@ -43,7 +43,6 @@ if (!class_exists('SimpleLinkListWidget')) {
             $title = apply_filters('widget_title', empty($instance['title']) ? __('List') : $instance['title']);
             $rss_link = empty($instance['rss_link']) ? '' : $instance['rss_link'];
             $show_rss = !empty($rss_link);
-            $show_placement = empty($instance['show_placement']) ? 'show_in_sidebar' : $instance['show_placement'];
             $show_dates = isset($instance['show_dates']) ? $instance['show_dates'] : false;
             $amount = empty($instance['amount']) ? 1 : $instance['amount'];
 
@@ -61,12 +60,7 @@ if (!class_exists('SimpleLinkListWidget')) {
             $widget_class = ($show_rss == 'rss_yes') ? 'news-widget ' : 'quick-links-widget ';
             $before_widget = str_replace('widget', $widget_class . 'widget', $before_widget);
 
-            $view = 'widget-default.php';
-            switch ($show_placement) {
-                case 'show_in_sidebar':
-                    $view = 'widget-sidebar.php';
-                    break;
-            }
+            $view = 'widget.php';
 
             if ($templatePath = locate_template('templates/plugins/hbg-link-list-widget/' . $view)) {
                 require($templatePath);
