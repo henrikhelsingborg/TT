@@ -7,7 +7,7 @@ class WidgetAreas {
     {
         add_action('widgets_init', '\Helsingborg\Theme\WidgetAreas::registerWidgetAreas');
         add_filter('dynamic_sidebar_params', '\Helsingborg\Theme\WidgetAreas::filterContentAreaClassNames');
-        add_filter('sidebars_widgets', '\Helsingborg\Theme\WidgetAreas::shuffleFactsWidgets');
+        //add_filter('sidebars_widgets', '\Helsingborg\Theme\WidgetAreas::shuffleFactsWidgets');
     }
 
     /**
