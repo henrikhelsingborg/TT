@@ -19,9 +19,9 @@
 
                 $class = '';
                 if ($item_warnings[$num]) {
-                    $class = ' alert-msg warning';
+                    $class = 'alert-warning';
                 } else if ($item_infos[$num]) {
-                    $class = ' alert-msg info';
+                    $class = 'alert-info';
                 }
 
                 $title = $item;
@@ -36,7 +36,7 @@
                     $datetime = '';
                 }
             ?>
-                <li>
+                <li class="<?php echo $class; ?>">
                     <a href="<?php echo $link; ?>" <?php echo $target; ?>>
                         <span class="link-item"><?php echo $title; ?></span>
                         <?php

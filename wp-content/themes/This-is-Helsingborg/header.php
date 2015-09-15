@@ -36,7 +36,7 @@
         <div data-prompt-wrapper="alert"></div>
 
         <header class="site-header">
-            <div class="stripe"></div>
+            <?php if (is_front_page()) : ?><div class="stripe"></div><?php endif; ?>
 
             <div class="container">
                 <div class="row">
