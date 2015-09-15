@@ -19,6 +19,7 @@
         }
 
         a {
+            display: block;
             color: $navbar-main-color;
             text-decoration: none;
 
@@ -31,6 +32,14 @@
             &:focus {
                 color: $focus-color;
             }
+        }
+
+        .current_page_item a,
+        .current-page-ancestor a {
+            background-color: $palette-red-4;
+            color: #fff !important;
+            padding: 8px 10px;
+            text-align: center;
         }
 
         /*
@@ -198,7 +207,7 @@ body.nav-fixed .site-header .hero {
 
 .navbar-mainmenu {
     display: none; // Hides the navbar-mainmenu on small devices/screens
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     margin-top: 15px;
 
     .nav {
@@ -218,6 +227,10 @@ body.nav-fixed .site-header .hero {
             }
         }
     }
+}
+
+.is-front-page .navbar-mainmenu {
+    padding-bottom: 15px;
 }
 
 .nav-topmenu {
