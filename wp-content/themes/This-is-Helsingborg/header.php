@@ -55,7 +55,7 @@
 
                             echo '<br>';
 
-                            if (!is_front_page()) get_search_form();
+                            get_search_form();
                         ?>
                         </nav>
 

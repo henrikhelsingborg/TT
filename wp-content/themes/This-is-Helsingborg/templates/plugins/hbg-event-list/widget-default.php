@@ -47,7 +47,7 @@
                     }
                 });
 
-                jQuery(document).on('click', '.event-item', function(event) {
+                jQuery(document).on('click', '.event-item:not(.featured)', function(event) {
                     event.preventDefault();
 
                     var image = $('.modal-image');
