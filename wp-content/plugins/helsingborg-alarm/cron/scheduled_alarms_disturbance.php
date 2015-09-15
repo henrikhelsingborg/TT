@@ -277,13 +277,21 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
          */
         public function removeTurnedOffAlarms() {
             if (isset($_GET['dist']) && $_GET['dist'] == 'debug') echo "<strong>INAKTUELLA ALARM</strong><br>";
+            $didRemove = false;
             foreach ($this->existingDisturbances as $key => $disturbance) {
                 if (!in_array($key, $this->modifiedDisturbances)) {
                     wp_delete_post($disturbance->ID);
                     if (isset($_GET['dist']) && $_GET['dist'] == 'debug') echo "- Tog bort: " . $disturbance->post_title . "<br>";
+                    $didRemove = true;
                 }
             }
             if (isset($_GET['dist']) && $_GET['dist'] == 'debug') echo "<strong>INAKTUELLA ALARM SLUT</strong><br>";
+
+            // PURGE FRONT PAGE FROM CACHE
+            if ($didRemove && function_exists('w3tc_pgcache_flush_post')){
+                $startpage = get_page_by_title('startsida');
+                w3tc_pgcache_flush_post($startpage->ID);
+            }
         }
 
         /**
