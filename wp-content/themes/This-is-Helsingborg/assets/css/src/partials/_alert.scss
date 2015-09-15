@@ -44,6 +44,15 @@
         }
     }
 
+    .link-item {
+        color: $text-default;
+
+        &::before {
+            @include hbg-icon("\f05a");
+            color: darken($alert-info, 60%);
+        }
+    }
+
     .btn-danger {
         background-color: $palette-red-4;
     }
@@ -69,6 +78,15 @@
             transform: translateY(-50%);
             left: 20px;
             font-size: 18pt;
+            color: #ff0000;
+        }
+    }
+
+    .link-item {
+        color: $text-default;
+
+        &::before {
+            @include hbg-icon("\f071");
             color: #ff0000;
         }
     }
