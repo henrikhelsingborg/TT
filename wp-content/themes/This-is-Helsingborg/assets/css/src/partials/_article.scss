@@ -100,13 +100,10 @@
         color: $text-gray-dark !important;
         text-decoration: none;
 
-        &:hover {
+        &:hover,
+        &:focus {
             text-decoration: none !important;
             color: $palette-red-2 !important;
-        }
-
-        &:focus {
-            color: $focus-color !important;
         }
     }
 }
