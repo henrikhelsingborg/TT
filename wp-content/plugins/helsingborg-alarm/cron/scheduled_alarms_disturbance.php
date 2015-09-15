@@ -115,7 +115,7 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
 
                     // Set the pages parameters
                     $page = array(
-                        'post_content'   => $this->formatPageContent($disturbance->MoreInfo),
+                        'post_content'   => $this->formatPageContent($disturbance),
                         'post_name'      => sanitize_title('alarm-' . $disturbance->HtText),
                         'post_title'     => $disturbance->HtText,
                         'post_status'    => 'publish',
@@ -237,7 +237,7 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
 
                     // If no page exists since earlier create one (storstörning)
                     $page = array(
-                        'post_content'   => $this->formatPageContent($disturbance->MoreInfo, $disturbance->Comment),
+                        'post_content'   => $this->formatPageContent($disturbance),
                         'post_title'     => $disturbance->HtText,
                         'post_status'    => 'publish',
                         'post_type'      => 'page',
@@ -287,9 +287,51 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
          * @param  string $comment  Comment content
          * @return string           Formatted content
          */
-        public function formatPageContent($moreInfo = null) {
-            $content = '';
-            if (strlen($moreInfo)) $content .= '<p>' . nl2br($moreInfo) . '</p>';
+        public function formatPageContent($data = null) {
+            $content = '<p>';
+
+            if (isset($data->SentTime) && strlen($data->SentTime) > 0) {
+                $content .= '<strong>Tidpunkt:</strong> ' . $data->SentTime . '<br>';
+            }
+
+            if (isset($data->Station) && strlen($data->Station) > 0) {
+                $content .= '<strong>Station:</strong> ' . $data->Station . '<br>';
+            }
+
+            if (isset($data->PresGrp) && strlen($data->PresGrp) > 0) {
+                $content .= '<strong>Larmnivå:</strong> ' . $data->PresGrp . '<br>';
+            }
+
+            if (isset($data->Place) && strlen($data->Place) > 0) {
+                $content .= '<strong>Plats:</strong> ' . $data->Place . '<br>';
+            }
+
+            if (isset($data->Zone) && strlen($data->Zone) > 0) {
+                $content .= '<strong>Kommuner:</strong> ' . $data->Zone . '<br>';
+            }
+
+            if (isset($data->HtText) && strlen($data->HtText) > 0) {
+                $content .= '<strong>Händelse:</strong> ' . $data->HtText . '<br>';
+            }
+
+            if (isset($data->IDnr) && strlen($data->IDnr) > 0) {
+                $content .= '<strong>Ärendeid:</strong> ' . $data->IDnr . '<br>';
+            }
+
+            if (isset($data->Address) && strlen($data->Address) > 0) {
+                $content .= '<strong>Adress:</strong> ' . $data->Address . '<br>';
+            }
+
+            if (isset($data->Zone) && strlen($data->Zone) > 0) {
+                $content .= '<strong>Insatsområde:</strong> ' . $data->Zone . '<br>';
+            }
+
+            $content .= '</p>';
+
+            if (isset($data->MoreInfo) && strlen($data->MoreInfo) > 0) {
+                $content .= '<p><strong>Kompletterande information:</strong><br>' . $data->MoreInfo . '</p>';
+            }
+
             return $content;
         }
 
