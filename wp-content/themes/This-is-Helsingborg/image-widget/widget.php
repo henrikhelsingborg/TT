@@ -1,24 +1,18 @@
-<?php
+<?php echo $before_widget; ?>
+    <?php if (!empty($instance['link'])) : ?>
+    <a href="<?php echo $instance['link']; ?>" target="<?php echo $instance['linktarget']; ?>">
+    <?php endif; ?>
+    <img src="<?php echo $instance['imageurl']; ?>" alt="<?php echo $instance['alt']; ?>" class="responsive">
 
-switch ($args['id']) {
-    case 'slider-area':
-        include('widget-slider-area.php');
-        break;
+    <h3 class="box-title"><?php echo $title; ?></h3>
 
-    case 'content-area':
-        if (is_front_page()) {
-            include('widget-content-area-front.php');
-        } else {
-            include('widget-content-area.php');
-        }
+    <?php if (!empty($description)) : ?>
+    <div class="box-content padding-x1-5">
+        <?php echo wpautop($description); ?>
+    </div>
+    <?php endif; ?>
 
-        break;
-
-    case 'content-area-bottom':
-        include('widget-content-area.php');
-        break;
-
-    default:
-        include('widget-default.php');
-        break;
-}
+    <?php if (!empty($instance['link'])) : ?>
+    </a>
+    <?php endif; ?>
+<?php echo $after_widget; ?>
