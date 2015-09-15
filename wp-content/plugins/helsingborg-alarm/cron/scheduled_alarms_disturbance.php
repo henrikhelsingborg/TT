@@ -203,6 +203,11 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                         $pageWidgets[$linksWidgetID] = $linkListWidgetNew;
 
                         update_option($pageWidgetIdentifier, $pageWidgets);
+
+                        // PURGE FRONT PAGE FROM CACHE
+                        if (function_exists('w3tc_pgcache_flush_post')){
+                            w3tc_pgcache_flush_post($startpage->ID);
+                        }
                     }
                 }
             } else {
