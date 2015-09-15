@@ -28,10 +28,6 @@
                 text-decoration: underline;
                 color: $palette-red-4;
             }
-
-            &:focus {
-                color: $focus-color;
-            }
         }
 
         .current_page_item a,
@@ -96,11 +92,6 @@ body.nav-fixed .site-header .hero {
         &:hover {
             color: $palette-red-4;
         }
-
-        &:focus {
-            background-color: $focus-color;
-            color: #fff;
-        }
     }
 
     .sub-menu {
@@ -113,10 +104,6 @@ body.nav-fixed .site-header .hero {
     .has-childs:not(.current-node):not(.current-ancestor):not(.current) {
         > a {
             padding-right: 30px;
-
-            &:focus::after {
-                color: #fff;
-            }
         }
 
         > a::after {
@@ -133,10 +120,6 @@ body.nav-fixed .site-header .hero {
         > a {
             position: relative;
             padding-right: 30px;
-
-            &:focus::after {
-                color: #fff;
-            }
         }
 
         > ::after {
@@ -175,10 +158,6 @@ body.nav-fixed .site-header .hero {
         > a {
             position: relative;
             color: $palette-red-4;
-
-            &:focus {
-                color: #fff;
-            }
         }
     }
 
@@ -286,15 +265,6 @@ body.nav-fixed .site-header .hero {
             &:focus {
                 text-decoration: underline;
             }
-
-            &:focus {
-                background-color: $focus-color;
-                color: #fff;
-            }
-
-            &:active {
-                box-shadow: inset 0 0 3px darken($focus-color, 5%);
-            }
         }
 
         & + li {
@@ -306,10 +276,6 @@ body.nav-fixed .site-header .hero {
         &.highlight-red {
             a {
                 color: $palette-red-4;
-
-                &:focus {
-                    color: #fff;
-                }
             }
         }
     }

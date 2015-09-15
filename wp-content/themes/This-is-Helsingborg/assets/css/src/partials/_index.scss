@@ -27,12 +27,9 @@
         margin-bottom: $column-gutter;
     }
 
-    &:hover {
-        background-color: $creamy;
-    }
-
+    &:hover,
     &:focus {
-        border-color: $focus-color;
+        background-color: $creamy;
     }
 
     img + .index-container {
