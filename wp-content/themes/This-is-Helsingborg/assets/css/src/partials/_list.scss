@@ -107,6 +107,11 @@
     }
 }
 
+[class^="sidebar-"] .widget_simplelinklistquick-links-widget .box-content {
+    padding: 10px;
+    padding-top: 0;
+}
+
 .section-featured .list .featured {
     background-color: $creamy-darker;
     color: $text-default;
