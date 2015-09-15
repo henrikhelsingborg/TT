@@ -35,6 +35,24 @@
     }
 }
 
+.is-front-page .nav-topmenu .search {
+    display: none;
+
+    @media screen and (max-width: 850px) {
+        display: block;
+    }
+
+    .hbg-loading,
+    .search-web-archive {
+        display: none;
+    }
+
+    .input-group {
+        width: 248px;
+        margin: 0 auto;
+    }
+}
+
 .nav-topmenu .search {
     float: right;
     margin-left: 15px;
