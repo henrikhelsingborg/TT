@@ -8,7 +8,7 @@
 
 <!-- Instagram feed -->
 <?php echo $before_widget; ?>
-    <h3 class="box-title"><i class="fa fa-instagram"></i> <?php echo $instance['title']; ?></h3>
+    <h3 class="box-title"><i class="fa fa-instagram"></i> <?php echo (isset($instance['title']) && strlen($instance['title']) > 0) ? $instance['title'] : 'Instagram'; ?></h3>
     <div class="box-content hbg-social-feed hbg-social-feed-instagram">
         <?php if ($feed && count($feed) > 0) : ?>
         <div class="box-content-padding">
