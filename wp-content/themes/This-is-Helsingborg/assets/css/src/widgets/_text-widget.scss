@@ -8,8 +8,8 @@
     }
 
     .textwidget {
-        @extend .padding-x2;
-        padding-top: 0;
+        @extend .padding-x1-5;
+        padding-top: 0 !important;
         color: #fff;
     }
 }
