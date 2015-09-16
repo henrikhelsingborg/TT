@@ -113,12 +113,26 @@
 }
 
 .section-featured .list .featured {
-    background-color: $creamy-darker;
+    background-color: lighten($creamy-darker, 7%);
+    border: 1px solid $creamy-darker;
+    border-bottom: 0;
     color: $text-default;
     padding: 15px !important;
 
     .link-item {
         color: $palette-red-4;
+    }
+
+    h3 {
+        margin-bottom: 5px;
+        margin-top: -3px;
+        color: $palette-red-4;
+    }
+
+    .lead {
+        font-weight: normal;
+        font-size: 11pt;
+        margin-bottom: 10px;
     }
 }
 

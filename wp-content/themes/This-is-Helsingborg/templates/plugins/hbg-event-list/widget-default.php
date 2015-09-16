@@ -2,7 +2,13 @@
     <h3 class="box-title"><?php echo $title; ?></h3>
     <div class="box-content" id="widget-<?php echo $args['widget_id']; ?>">
         <ul class="event-list list list-events">
-            <?php if ($featured) : ?>
+
+            <?php
+                if ($featured) :
+                    $the_content = get_extended($featured->post_content);
+                    $main = $the_content['main'];
+                    $content = $the_content['extended'];
+            ?>
             <li class="event-item-featured">
                 <a href="<?php echo get_permalink($featured->ID); ?>" class="event-item featured">
                     <?php if ($featuredImage) : ?>
@@ -11,13 +17,15 @@
                     </div>
                     <?php endif; ?>
                     <div class="columns <?php if ($featuredImage) : ?>large-8 medium-8 small-12<?php else : ?>large-12 medium-12 small-12<?php endif; ?>">
-                        <?php echo $featured->post_title; ?>
-                        <span class="link-item link-item-light"><?php echo $instance['link-text']; ?></span>
+                        <h3><?php echo $featured->post_title; ?></h3>
+                        <p class="lead"><?php echo $main; ?></p>
+                        <span class="link-item"><?php echo $instance['link-text']; ?></span>
                     </div>
                     <div class="clearfix"></div>
                 </a>
             </li>
             <?php endif; ?>
+
             <li class="event-loading"><i class="hbg-loading">Läser in evenemang</i></li>
             <li><a href="<?php echo $reference; ?>" class="list-more"><?php echo $link_text; ?></a></li>
         </ul>
