@@ -327,9 +327,15 @@ function disable_autosave() {
 
 add_shortcode( 'display_hbg_guide', 'hbg_guide_func' );
 function hbg_guide_func( $atts ) {
+    ob_start();
+    $viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
+
     wp_enqueue_script('steps-js', dirname(plugin_dir_url(__FILE__)) . '/js/steps.js');
 
     if (isset($atts['id'])) {
+
+        $renderedContent = false;
+
         $post_id = sanitize_text_field( $atts['id'] );
         $post_type= sanitize_text_field( $atts['type'] );
         $post = get_post( $post_id );
@@ -337,48 +343,15 @@ function hbg_guide_func( $atts ) {
         $thumb_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium');
         $article_steps_meta = get_post_meta($post_id, 'meta-guide-step', true);
 
-        $guide = '<section class="guide-section">';
-        $guide .= '<h2 class="section-title">' . $post->post_title . '</h2>';
-
-        $guide .= '<div class="row"><div class="columns large-12"><ul class="guide-list">';
-
-        if (count($article_steps_meta["guide_step"])) {
-            for ($i = 0; $i < count($article_steps_meta["guide_step"]); $i++){
-
-                if ($i == 0) {
-                    $guide .= '<li class="box current">';
-                } else {
-                    $guide .= '<li class="box">';
-                }
-
-                if (isset($article_steps_meta["guide_step_image"][$i])){
-                    $kk=wp_get_attachment_image_src( $article_steps_meta["guide_step_image"][$i], 'full', true );
-                    $guide .= '<img src="'.$kk[0].'" alt="" >';
-                }
-
-                $guide .= '<h3 class="title">' . $article_steps_meta["guide_step"][$i] . ' </h3>';
-                $guide .= '<div class="box-content box-content-padding-x2 description">' . wpautop($article_steps_meta["guide_step_title"][$i], true) . '';
-                if (strlen($article_steps_meta["guide_note"][$i]) > 0) {
-                  $guide .= '<p class="notes">' . $article_steps_meta["guide_note"][$i] . '</p>';
-                }
-                $guide .= '</div></li>';
-            }
+        $view = 'guide.php';
+        if ($templatePath = locate_template('templates/plugins/hbg-guides/' . $view)) {
+           require($templatePath);
+           $renderedContent = ob_get_clean();
+        } else {
+            require($viewsPath . $view);
+            $renderedContent = ob_get_clean();
         }
-
-        $guide .= '</ul></div></div>'; //<!-- /.guide-list -->
-
-        $guide .= '<div class="row"><div class="columns large-12"><ul class="pagination" arial-label="pagination" role="menubar">';
-        $guide .= '<li><a href="#" class="button radius prev-step">&laquo; ' . __(Föregående) . '</a></li>';
-
-        for($i=0;$i<count($article_steps_meta["guide_step"]);$i++){
-            $guide .= '<li' . ($i==0?' class="current-pager"':'') . '><a href="#">' . ($i+1) . '</a></li>';
-        }
-
-        $guide .= '<li><a href="#" class="button radius next-step">' . __ (Nästa) . ' &raquo;</a></li>';
-        $guide .= '</ul></div></div>';
-        $guide .= '</section>';
-
-        return $guide;
+        return $renderedContent;
     }
 }
 
