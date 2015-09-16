@@ -6,7 +6,7 @@ class Enqueue {
     public function __construct()
     {
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::dequeueStyles');
-        add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::enqueueStyles');
+        add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::enqueueStyles', 999);
 
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::dequeueScripts');
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::enqueueScripts');
