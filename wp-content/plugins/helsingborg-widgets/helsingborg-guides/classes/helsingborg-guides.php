@@ -124,7 +124,7 @@ function guide_steps_meta_box($post, $args) {
 
   <div style="clear:both;"></div>
   <div style="padding-bottom:5px;text-align:right;color:#fff;"><a href="javascript:void(0);" onClick="addmorediv()">+ Lägg till steg</a></div>
-  <input type="hidden" name="guide_step_count" id="guide_step_count" value="<?php echo count($guide_steps_meta['guide_step']); ?>">
+  <input type="hidden" name="guide_step_count" id="guide_step_count" value="<?php echo (isset($guide_steps_meta['guide_step'])) ? count($guide_steps_meta['guide_step']) : 0; ?>">
 
   <?php if(isset($guide_steps_meta['guide_step']) && count($guide_steps_meta['guide_step'])>0) { ?>
   <div style="background: -moz-linear-gradient(center top , #F5F5F5, #FCFCFC) repeat scroll 0 0 rgba(0, 0, 0, 0);">
@@ -135,7 +135,7 @@ function guide_steps_meta_box($post, $args) {
 <?php } ?>
   <script>
     jQuery(document).ready(function() {
-      var num = <?php echo count($guide_steps_meta['guide_step']); ?>;
+      var num = <?php echo (isset($guide_steps_meta['guide_step'])) ? count($guide_steps_meta['guide_step']) : 0; ?>;
       for (i = 1; i <= num; i++) {
         jQuery('#guide_step_title'+i).wp_editor();
       }
