@@ -1,39 +1,41 @@
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="search"],
-input[type="range"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
-input[type="text"],
-select {
-    &.form-control {
-        padding: 8px;
-        background-color: #fff;
-        border: 1px solid $creamy-darker;
-        font-weight: 300;
-        width: 100%;
 
-        .creamy & {
-            border-color: darken($creamy-darker, 5%);
-        }
+/**
+ * Form style mixins
+ */
+
+$form-control-border-color: darken($creamy-darker, 10%);
+$form-control-box-shadow: 0 0 10px rgba($focus-color, .5);
+
+@mixin input-style() {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid $form-control-border-color;
+    font-family: $base-font-family;
+    font-size: 12pt;
+    font-weight: 300;
+    color: $text-default;
+    text-indent: 0;
+
+    &:focus {
+        box-shadow: $form-control-box-shadow;
+        border-color: $focus-color;
     }
 }
 
-input[type="checkbox"] {
-    &.form-control {
-        display: inline-block;
-        vertical-align: middle;
-        margin-top: -4px;
-        margin-right: 5px;
-    }
+@mixin input-help-style() {
+    font-size: 11pt;
+    font-weight: 400;
+    color: rgba(0,0,0,.7);
+    padding: 0;
+    margin-top: 5px;
 }
+
+/**
+ * Default form styles
+ */
+
 
 // Form label
 //
@@ -42,8 +44,158 @@ input[type="checkbox"] {
 
 .form-label {
     display: block;
-    font-size: 11pt;
+    font-size: $base-font-size;
     font-weight: 500;
+}
+
+// Form control
+// 
+// Markup:
+// <input type="text" class="form-control">
+
+.form-control {
+    &input[type="color"],
+    &input[type="date"],
+    &input[type="datetime"],
+    &input[type="datetime-local"],
+    &input[type="email"],
+    &input[type="month"],
+    &input[type="number"],
+    &input[type="search"],
+    &input[type="range"],
+    &input[type="tel"],
+    &input[type="time"],
+    &input[type="url"],
+    &input[type="week"],
+    &input[type="password"],
+    &input[type="text"],
+    &select,
+    &textarea {
+        @include input-style;
+    }
+
+    &input[type="checkbox"] {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: -4px;
+        margin-right: 5px;
+    }
+}
+
+/**
+ * Gravity forms
+ */
+
+.gform_wrapper {
+    @extend .creamy;
+    padding: 20px !important;
+    
+    .top_label {
+        .gfield_label {
+            @extend .form-label;
+        }
+    }
+}
+
+.gform_wrapper input[type="email"],
+.gform_wrapper input[type="number"],
+.gform_wrapper input[type="password"],
+.gform_wrapper input[type="tel"],
+.gform_wrapper input[type="text"],
+.gform_wrapper input[type="url"],
+.gform_wrapper textarea,
+.gform-wrapper select,
+.gform_wrapper.gf_browser_gecko select {
+    @include input-style;
+    padding: 8px;
+}
+
+.gform_wrapper .gfield_checkbox li, .gform_wrapper .gfield_radio li {
+    margin-bottom: 0;
+}
+
+.gform_wrapper.gf_browser_gecko .gfield_checkbox li input[type="checkbox"],
+.gform_wrapper.gf_browser_gecko .gfield_radio li input[type="radio"] {
+    margin-top: 6px;
+}
+
+.gform_wrapper .chosen-container-multi .chosen-choices {
+    padding: 8px;
+}
+
+.gform_wrapper .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+    @include input-style;
+    border: none;
+    padding: 0;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.gform_wrapper .chosen-container-multi .chosen-choices {
+    border-color: $form-control-border-color;
+    background: #fff;
+}
+
+.gform_wrapper .chosen-container-multi.chosen-container-active .chosen-choices {
+    box-shadow: $form-control-box-shadow;
+    border-color: $focus-color;
+}
+
+.gform_wrapper .chosen-container .chosen-results li.active-result.highlighted {
+    background: $focus-color;
+}
+
+.gform_wrapper ul.gfield_checkbox li, .gform_wrapper ul.gfield_radio li {
+    overflow: visible;
+}
+
+.gform_wrapper .gfield_checkbox li label, .gform_wrapper .gfield_radio li label {
+    font-size: 12pt;
+}
+
+.gform_wrapper .top_label .gfield_description {
+    @include input-help-style;
+}
+
+.gform_footer input[type="submit"] {
+    @extend .btn;
+    @extend .btn-submit;
+}
+
+#extensions_message {
+    display: block;
+    @include input-help-style;
+}
+
+.ui-datepicker-header {
+    background-color: #fff;
+    border: none;
+}
+
+.ui-datepicker-title {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 5px;
+}
+
+.ui-datepicker-prev {
+    background-position: center -24px;
+}
+
+.ui-datepicker-next {
+    background-position: center 6px;
+}
+
+.ui-datepicker-title select {
+    @include input-style;
+    padding: 4px;
+    font-size: 9pt;
+    width: 60px !important;
+
+    & + select {
+        margin-left: 5px;
+    }
 }
 
 // Input group
