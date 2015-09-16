@@ -56,7 +56,6 @@
 
         input[type="search"] {
             padding: 15px;
-            width: 400px;
             height: 100%;
             border: none;
             font-size: 15pt;
@@ -65,10 +64,13 @@
             z-index: 5;
         }
 
+        .form-element:nth-child(2) {
+            width: 80px;
+        }
+
         .btn-submit {
             padding: 14px 20px;
             border: none;
-            width: 80px;
             position: relative;
             z-index: 5;
         }
@@ -114,4 +116,20 @@
 
         @include input-placeholder(#858585, 1, 100);
     }
+}
+
+.browser-firefox .hero .search input[type="search"] {
+    width: 400px;
+}
+
+.browser-chrome .hero .search .form-element,
+.browser-safari .hero .search .form-element,
+.browser-explorer .hero .search .form-element {
+    vertical-align: middle;
+}
+
+.browser-chrome .hero .search .btn-submit,
+.browser-safari .hero .search .btn-submit,
+.browser-explorer .hero .search .btn-submit {
+    padding: 14.7px 20px;
 }
