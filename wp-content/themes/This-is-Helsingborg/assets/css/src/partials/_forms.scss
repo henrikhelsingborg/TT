@@ -89,6 +89,8 @@ $form-control-box-shadow: 0 0 10px rgba($focus-color, .5);
 .gform_wrapper {
     @extend .creamy;
     padding: 20px !important;
+    width: 100%;
+    max-width: 100% !important;
     
     .top_label {
         .gfield_label {
