@@ -36,7 +36,7 @@
         <div data-prompt-wrapper="alert"></div>
 
         <header class="site-header">
-            <?php if (is_front_page()) : ?><div class="stripe"></div><?php endif; ?>
+            <?php if (is_front_page()) { get_template_part('templates/partials/stripe'); } ?>
 
             <div class="container">
                 <div class="row">
@@ -95,8 +95,8 @@
         </header>
 
         <div class="mobile-menu-wrapper">
-            <div class="stripe"></div>
             <?php
+                get_template_part('templates/partials/stripe');
                 get_template_part('templates/partials/mobile', 'search');
                 get_template_part('templates/partials/mobile', 'navigation');
             ?>
