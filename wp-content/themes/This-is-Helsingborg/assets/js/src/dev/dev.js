@@ -60,4 +60,34 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    // Gallery open
+    $('.hbg-gallery-item').on('click', function (e) {
+        e.preventDefault();
+        var $modal = $('#' + $(this).data('reveal'));
+
+        if ($(this).data('image')) {
+            $modal.find('.modal-media').html('<img class="reponsive" src="' + $(this).data('image') + '">');
+        }
+
+        if ($(this).data('youtube')) {
+            var youtube_url = $(this).data('youtube');
+            var pattern = /^(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?(?=.*v=((\w|-){11}))(?:\S+)?$/;
+            var youtube_id = (youtube_url.match(pattern)) ? RegExp.$1 : false;
+
+            if (youtube_id) {
+                $modal.find('.modal-media').html('\
+                    <div class="flex-video widescreen">\
+                        <iframe src="https://www.youtube.com/embed/' + youtube_id + '?autoplay=1" frameborder="0" allowfullscreen></iframe>\
+                    </div>\
+                ');
+            }
+        }
+
+        $modal.find('.modal-text').html('<h3>' + $(this).data('title') + '</h3>' + $(this).data('description'));
+    });
+
+    $('[id^="gallery-modal-"] .modal-close').on('click', function (e) {
+        $(this).closest('[id^="gallery-modal-"]').find('.modal-media').html('');
+    });
+
 });

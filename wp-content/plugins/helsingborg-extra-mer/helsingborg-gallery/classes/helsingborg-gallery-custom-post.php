@@ -165,7 +165,14 @@ if (!class_exists('HelsingborgGalleryCustomPost')) {
             if (is_string(get_post_status($galleryId))) {
                 $galleryItems = get_post_meta($galleryId, 'gallery-items')[0];
                 ob_start();
-                require($this->_viewsPath . 'gallery-template.php');
+
+                $view = 'gallery-template.php';
+                if ($templatePath = locate_template('templates/plugins/hbg-gallery/' . $view)) {
+                    require($templatePath);
+                } else {
+                    require($this->_viewsPath . $view);
+                }
+                
                 return ob_get_clean();
             } else {
                 return "Det finns inget galleri med det angivna ID-numret!";

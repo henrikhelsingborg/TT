@@ -62,7 +62,7 @@
         }
     }
 
-    ul {
+    ul:not([class*="block-grid-"]) {
         list-style-type: none;
 
         li {
