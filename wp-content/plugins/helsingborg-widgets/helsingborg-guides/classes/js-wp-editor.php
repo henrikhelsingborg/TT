@@ -30,39 +30,41 @@
  *          $('textarea').wp_editor( options );
  */
 
-function js_wp_editor( $settings = array() ) {
-    global $typenow;
-    if ( ! class_exists( '_WP_Editors' ) )
-        require( ABSPATH . WPINC . '/class-wp-editor.php' );
-    $set = _WP_Editors::parse_settings( 'apid', $settings );
+if (!function_exists('js_wp_editor')) {
+    function js_wp_editor( $settings = array() ) {
+        global $typenow;
+        if ( ! class_exists( '_WP_Editors' ) )
+            require( ABSPATH . WPINC . '/class-wp-editor.php' );
+        $set = _WP_Editors::parse_settings( 'apid', $settings );
 
-    if ( !current_user_can( 'upload_files' ) )
-        $set['media_buttons'] = false;
+        if ( !current_user_can( 'upload_files' ) )
+            $set['media_buttons'] = false;
 
-    if ( $set['media_buttons'] ) {
-        wp_enqueue_script( 'thickbox' );
-        wp_enqueue_style( 'thickbox' );
-        wp_enqueue_script('media-upload');
+        if ( $set['media_buttons'] ) {
+            wp_enqueue_script( 'thickbox' );
+            wp_enqueue_style( 'thickbox' );
+            wp_enqueue_script('media-upload');
 
-        $post = get_post();
-        if ( ! $post && ! empty( $GLOBALS['post_ID'] ) )
-            $post = $GLOBALS['post_ID'];
+            $post = get_post();
+            if ( ! $post && ! empty( $GLOBALS['post_ID'] ) )
+                $post = $GLOBALS['post_ID'];
 
-        wp_enqueue_media( array(
-            'post' => $post
-        ) );
-    }
+            wp_enqueue_media( array(
+                'post' => $post
+            ) );
+        }
 
-    _WP_Editors::editor_settings( 'apid', $set );
+        _WP_Editors::editor_settings( 'apid', $set );
 
-    $ap_vars = array(
-        'url' => get_home_url(),
-        'includes_url' => includes_url()
-    );
+        $ap_vars = array(
+            'url' => get_home_url(),
+            'includes_url' => includes_url()
+        );
 
-    if ($typenow == 'hbg_guide') {
-        wp_register_script( 'ap_wpeditor_init', get_template_directory_uri() . '/js/helsingborg/js-wp-editor.js', array('foundation'), '1.1', true );
-        wp_localize_script( 'ap_wpeditor_init', 'ap_vars', $ap_vars );
-        wp_enqueue_script( 'ap_wpeditor_init' );
+        if ($typenow == 'hbg_guide') {
+            wp_register_script( 'ap_wpeditor_init', get_template_directory_uri() . '/js/helsingborg/js-wp-editor.js', array('foundation'), '1.1', true );
+            wp_localize_script( 'ap_wpeditor_init', 'ap_vars', $ap_vars );
+            wp_enqueue_script( 'ap_wpeditor_init' );
+        }
     }
 }
