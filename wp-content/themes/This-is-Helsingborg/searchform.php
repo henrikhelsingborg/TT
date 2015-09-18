@@ -14,6 +14,8 @@
             </div>
         </div>
 
+        <?php if (is_front_page()) : ?>
         <div class="search-web-archive"><a href="http://helsingborg.arkivbyran.se/"><i class="fa fa-archive"></i>Du kan också söka i webbarkivet</a></div>
+        <?php endif; ?>
     </div>
 </form>
