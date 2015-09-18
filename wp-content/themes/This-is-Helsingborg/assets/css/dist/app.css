@@ -4706,6 +4706,11 @@ p {
     bottom: 3px;
     left: 5px; }
 
+img[data-lazyload] {
+  max-width: none;
+  width: 100%;
+  height: 150px; }
+
 .zselect {
   color: #252525;
   border: none; }

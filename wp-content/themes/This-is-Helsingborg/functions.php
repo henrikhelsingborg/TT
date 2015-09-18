@@ -3,6 +3,14 @@
     define('HELSINGBORG_PATH', get_template_directory());
     define('HELSINGBORG_URL', get_template_directory_uri());
 
+    /**
+     * THEME SETTINGS
+     */
+    $lazyloadImages = false;
+
+    /**
+     * THEME SETUP
+     */
     require_once HELSINGBORG_PATH . '/lib/Vendor/Psr4ClassLoader.php';
     require_once HELSINGBORG_PATH . '/lib/Public.php';
 

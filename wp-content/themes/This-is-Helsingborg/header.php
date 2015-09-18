@@ -25,6 +25,7 @@
     <script>
         var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
         <?php if (is_front_page()) : ?>var is_front_page = true;<?php endif; ?>
+        <?php if ($lazyloadImages === true) : ?>var lazyloadImages = true;<?php endif; ?>
     </script>
 
     <?php wp_head(); ?>
