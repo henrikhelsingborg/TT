@@ -13,6 +13,9 @@ class Enqueue {
 
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::enqueuePageStyles');
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::enqueuePageScripts');
+
+        // Remove Tablepress css
+        add_filter( 'tablepress_use_default_css', '__return_false' );
     }
 
     /**
