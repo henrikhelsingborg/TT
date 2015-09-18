@@ -53,29 +53,30 @@ $form-control-box-shadow: 0 0 10px rgba($focus-color, .5);
 // Markup:
 // <input type="text" class="form-control">
 
-.form-control,
-.form-element {
-    &input[type="color"],
-    &input[type="date"],
-    &input[type="datetime"],
-    &input[type="datetime-local"],
-    &input[type="email"],
-    &input[type="month"],
-    &input[type="number"],
-    &input[type="search"],
-    &input[type="range"],
-    &input[type="tel"],
-    &input[type="time"],
-    &input[type="url"],
-    &input[type="week"],
-    &input[type="password"],
-    &input[type="text"],
-    &select,
-    &textarea {
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="search"],
+input[type="range"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[type="password"],
+input[type="text"],
+select,
+textarea {
+    &.form-control {
         @include input-style;
     }
+}
 
-    &input[type="checkbox"] {
+input[type="checkbox"] {
+    &.form-control {
         display: inline-block;
         vertical-align: middle;
         margin-top: -4px;

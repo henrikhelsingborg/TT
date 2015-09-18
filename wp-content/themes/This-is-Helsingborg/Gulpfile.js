@@ -23,14 +23,24 @@ var bower_components = 'bower_components/';
 /**
  * Compiles jQuery and jQuery UI
  */
-gulp.task('jquery', function () {
+
+gulp.task('jquery-core', function () {
     return gulp.src([
-                bower_components + 'jquery/dist/jquery.min.js',
-                bower_components + 'jquery-ui/jquery-ui.min.js'
+                bower_components + 'jquery/dist/jquery.min.js'
             ])
-            .pipe(concat('packaged.jquery.min.js'))
+            .pipe(concat('jquery.min.js'))
             .pipe(gulp.dest('assets/js/dist'))
 });
+
+gulp.task('jquery-ui', function () {
+    return gulp.src([
+                bower_components + 'jquery-ui/jquery-ui.min.js'
+            ])
+            .pipe(concat('jquery-ui.min.js'))
+            .pipe(gulp.dest('assets/js/dist'))
+});
+
+gulp.task('jquery', ['jquery-core', 'jquery-ui']);
 
 /**
  * Compiles the SASS for distribution
@@ -51,6 +61,7 @@ gulp.task('sass-dist', function () {
                 'ie 9',
                 'opera 12.1'
             ))
+            .pipe(gulp.dest('assets/css/dist/'))
             .pipe(rename({
                 suffix: '.min'
             }))
