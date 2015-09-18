@@ -491,6 +491,8 @@ $('#start-jr').on('click', function() {
   $(document).foundation('joyride','start');
 });
 /* HBG dev JS - To merged into app.js, minified with grunt */
+var gallery_image_per_row = 3;
+
 jQuery(document).foundation({
     orbit: {
         slide_number_text: ' av '

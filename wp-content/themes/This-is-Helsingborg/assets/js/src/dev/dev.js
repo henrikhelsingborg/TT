@@ -1,5 +1,9 @@
 var Helsingborg;
 
+// Gallery settings
+var gallery_image_per_row = 2;
+var gallery_use_masonry = false;
+
 jQuery(document).ready(function ($) {
 
     /**
@@ -61,6 +65,7 @@ jQuery(document).ready(function ($) {
     }
 
     // Gallery open
+    /*
     $('.hbg-gallery-item').on('click', function (e) {
         e.preventDefault();
         var $modal = $('#' + $(this).data('reveal'));
@@ -89,5 +94,6 @@ jQuery(document).ready(function ($) {
     $('[id^="gallery-modal-"] .modal-close').on('click', function (e) {
         $(this).closest('[id^="gallery-modal-"]').find('.modal-media').html('');
     });
+    */
 
 });
