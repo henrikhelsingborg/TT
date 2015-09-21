@@ -789,16 +789,16 @@ msgstr ""
 msgid "Restore"
 msgstr ""
 
-#: entry_detail.php:498 entry_list.php:1308 form_detail.php:2368
+#: entry_detail.php:477 entry_list.php:1290 form_detail.php:2368
 msgid "Move to Trash"
 msgstr ""
 
-#: entry_detail.php:504
+#: entry_detail.php:483
 msgid "Mark as Spam"
 msgstr ""
 
-#: entry_detail.php:514 form_list.php:449 form_settings.php:1806
-#: gravityforms.php:2631 includes/addon/class-gf-feed-addon.php:841
+#: entry_detail.php:493 form_list.php:449 form_settings.php:1806
+#: gravityforms.php:2628 includes/addon/class-gf-feed-addon.php:834
 #: notification.php:1243
 msgid "Edit"
 msgstr ""
@@ -1588,6 +1588,7 @@ msgstr ""
 
 #: form_detail.php:438 form_detail.php:662 form_detail.php:700
 #: form_settings.php:497 gravityforms.php:1644
+
 msgid "Image"
 msgstr ""
 
@@ -3829,11 +3830,11 @@ msgstr ""
 msgid "<em>This page does not exist.</em>"
 msgstr ""
 
-#: forms_model.php:490
+#: forms_model.php:489
 msgid "User Notification"
 msgstr ""
 
-#: forms_model.php:590 forms_model.php:610
+#: forms_model.php:589 forms_model.php:609
 msgid "Notification not found"
 msgstr ""
 

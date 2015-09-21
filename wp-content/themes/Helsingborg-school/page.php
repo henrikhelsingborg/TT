@@ -38,6 +38,8 @@
                 if (comments_open()) {
                     comments_template();
                 }
+
+                get_template_part('templates/partials/share');
             ?>
         </div>
 

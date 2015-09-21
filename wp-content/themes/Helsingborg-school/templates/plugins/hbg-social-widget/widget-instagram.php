@@ -8,7 +8,7 @@
 
 <!-- Instagram feed -->
 <div class="widget-content-holder">
-    <h2><i class="fa fa-instagram"></i> Instagram</h2>
+    <h2><i class="fa fa-instagram"></i> <?php echo (isset($instance['title']) && strlen($instance['title']) > 0) ? $instance['title'] : 'Instagram'; ?></h2>
     <div class="textwidget hbg-social-feed hbg-social-feed-instagram">
         <?php if ($feed && count($feed) > 0) : ?>
         <ul>

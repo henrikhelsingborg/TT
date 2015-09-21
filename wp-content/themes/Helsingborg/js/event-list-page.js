@@ -58,24 +58,25 @@ jQuery(document).ready(function() {
         }
 
         var dates_data = { action: 'load_event_dates', id: this.id, location: result.Location };
-        jQuery.post(ajaxurl, dates_data, function(response) {
-            html = "";
-            var dates = JSON.parse(response);
 
-            for (var i=0;i<dates.length;i++) {
-                html += '<li>';
-                html += '<span>' + dates[i].Date + '</span>';
-                html += '<span>' + dates[i].Time + '</span>';
-                html += '<span>' + dates_data.location + '</span>';
-                html += '</li>';
-            }
+            jQuery.post(ajaxurl, dates_data, function(response) {
+                html = "";
+                var dates = JSON.parse(response);
 
-            jQuery(time_list).html(html);
+                for (var i=0;i<dates.length;i++) {
+                    html += '<li>';
+                    html += '<span>' + dates[i].Date + '</span>';
+                    html += '<span>' + dates[i].Time + '</span>';
+                    html += '<span>' + dates_data.location + '</span>';
+                    html += '</li>';
+                }
 
-            if (dates.length > 0) {
+                jQuery('#time-modal').html(html);
+
+                if (dates.length > 0) {
                 document.getElementById('event-times').style.display = 'block';
-            }
-        });
+                }
+            });
 
         var organizers_data = { action: 'load_event_organizers', id: this.id };
         jQuery.post(ajaxurl, organizers_data, function(response) {
@@ -104,7 +105,7 @@ jQuery(document).ready(function() {
         }
 
         jQuery(date).html(result.Date);
-        jQuery(description).html(result.Description);
+        jQuery(description).html(nl2br(result.Description));
     });
 
     var data = { action: 'load_events', ids: adminIDs };
@@ -178,3 +179,8 @@ function updateEvents(checkbox) {
         });
     }
 }
+
+function nl2br (str, is_xhtml) {
+        var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+        return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+    }

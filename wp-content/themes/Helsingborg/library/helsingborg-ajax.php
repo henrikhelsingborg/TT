@@ -4,24 +4,31 @@
 /******************/
 
 /* Manually start fetch of alarms */
+/*
 add_action('wp_ajax_start_manual_alarms', 'start_manual_alarms_callback');
 function start_manual_alarms_callback() {
     alarms_event();
 }
+*/
 
 /* Manually start fetch of XCap */
+/*
 add_action('wp_ajax_start_manual_xcap', 'start_manual_xcap_callback');
 function start_manual_xcap_callback() {
     xcap_event();
 }
+*/
 
 /* Manually start fetch of CBIS */
+/*
 add_action('wp_ajax_start_manual_cbis', 'start_manual_cbis_callback');
 function start_manual_cbis_callback() {
     cbis_event();
 }
+*/
 
 /* Loads the list of event, to be presented inside a widget */
+/*
 add_action('wp_ajax_nopriv_update_event_calendar', 'update_event_calendar_callback');
 add_action('wp_ajax_update_event_calendar', 'update_event_calendar_callback');
 function update_event_calendar_callback() {
@@ -53,9 +60,11 @@ function update_event_calendar_callback() {
 
     die();
 }
+*/
 
 /* Loads the big notifications i.e. warning/information and prints the alert messages */
 /* The IDs being fetched are set from Helsingborg settings */
+/*
 add_action('wp_ajax_nopriv_big_notification', 'big_notification_callback');
 add_action('wp_ajax_big_notification', 'big_notification_callback');
 function big_notification_callback() {
@@ -104,6 +113,7 @@ function big_notification_callback() {
     // Return
     die();
 }
+*/
 
 /* Uses Google Custom Search to get JSON with search results */
 /* Show these search results instead of WP original */
@@ -196,6 +206,7 @@ function update_url_and_value($obj, $new_value) {
 }
 
 /* Loads pages where post_title has keyword $title */
+/*
 add_action('wp_ajax_load_page_with_id', 'load_page_with_id_callback');
 function load_page_with_id_callback() {
     global $wpdb;
@@ -210,8 +221,10 @@ function load_page_with_id_callback() {
 
     die();
 }
+*/
 
 /* Loads pages where post_title has keyword $title */
+/*
 add_action('wp_ajax_load_pages_with_update', 'load_pages_with_update_callback');
 function load_pages_with_update_callback() {
     global $wpdb;
@@ -249,8 +262,10 @@ function load_pages_with_update_callback() {
     echo $list;
     die();
 }
+*/
 
 /* Loads pages where post_title has keyword $title */
+/*
 add_action('wp_ajax_load_pages', 'load_pages_callback');
 function load_pages_callback() {
     global $wpdb;
@@ -274,8 +289,10 @@ function load_pages_callback() {
     echo $list;
     die();
 }
+*/
 
 /* Loads pages where post_title has keyword $title */
+/*
 add_action('wp_ajax_load_pages_rss', 'load_pages_rss_callback');
 function load_pages_rss_callback() {
     global $wpdb;
@@ -300,9 +317,11 @@ function load_pages_rss_callback() {
     echo $list;
     die();
 }
+*/
 
 
 /* Load all organizers with event ID */
+/*
 add_action('wp_ajax_nopriv_load_event_organizers', 'load_event_organizers_callback');
 add_action('wp_ajax_load_event_organizers', 'load_event_organizers_callback');
 function load_event_organizers_callback() {
@@ -311,8 +330,10 @@ function load_event_organizers_callback() {
     echo json_encode($result);
     die();
 }
+*/
 
 /* Load all event times for a certain event ID */
+/*
 add_action( 'wp_ajax_nopriv_load_event_dates', 'load_event_dates_callback');
 add_action( 'wp_ajax_load_event_dates', 'load_event_dates_callback' );
 function load_event_dates_callback() {
@@ -321,8 +342,10 @@ function load_event_dates_callback() {
     echo json_encode($result);
     die();
 }
+*/
 
 /* Load event types */
+/*
 add_action('wp_ajax_nopriv_load_event_types', 'load_event_types_callback');
 add_action('wp_ajax_load_event_types', 'load_event_types_callback' );
 function load_event_types_callback() {
@@ -330,8 +353,10 @@ function load_event_types_callback() {
     echo json_encode($result);
     die();
 }
+*/
 
 /* Load events */
+/*
 add_action('wp_ajax_nopriv_load_events', 'load_events_callback');
 add_action('wp_ajax_load_events', 'load_events_callback' );
 function load_events_callback() {
@@ -340,10 +365,12 @@ function load_events_callback() {
     echo json_encode($result);
     die();
 }
+*/
 
 /* Add AJAX functions for admin. So Event may be changed by users
 Note: wp_ajax_nopriv_X is not used, since events cannot be changed by other than logged in users */
 /* Function for approving events, returns true if success. */
+/*
 add_action('wp_ajax_approve_event', 'approve_event_callback');
 function approve_event_callback() {
     global $wpdb;
@@ -351,8 +378,10 @@ function approve_event_callback() {
     $result = HelsingborgEventModel::approve_event($id);
     die();
 }
+*/
 
 /* Function for denying events, returns true if success. */
+/*
 add_action('wp_ajax_deny_event', 'deny_event_callback');
 function deny_event_callback() {
     global $wpdb;
@@ -361,8 +390,10 @@ function deny_event_callback() {
 
     die();
 }
+*/
 
 /* Function for saving events, returns true if success. */
+/*
 add_action('wp_ajax_save_event',    'save_event_callback');
 function save_event_callback() {
     global $wpdb;
@@ -450,9 +481,10 @@ function save_event_callback() {
 
     die();
 }
-
+*/
 
 /* Load all alarms */
+/*
 add_action('wp_ajax_nopriv_load_alarms', 'load_alarms_callback');
 add_action('wp_ajax_load_alarms', 'load_alarms_callback');
 function load_alarms_callback() {
@@ -460,4 +492,5 @@ function load_alarms_callback() {
     echo json_encode($result);
     die();
 }
+*/
 ?>

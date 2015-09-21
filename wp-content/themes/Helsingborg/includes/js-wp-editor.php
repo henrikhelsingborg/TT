@@ -29,7 +29,7 @@
  *		client side(jQuery):
  *			$('textarea').wp_editor( options );
  */
-
+if (!function_exists('js_wp_editor')) {
 function js_wp_editor( $settings = array() ) {
 	global $typenow;
 	if ( ! class_exists( '_WP_Editors' ) )
@@ -65,4 +65,5 @@ function js_wp_editor( $settings = array() ) {
 		wp_localize_script( 'ap_wpeditor_init', 'ap_vars', $ap_vars );
 		wp_enqueue_script( 'ap_wpeditor_init' );
 	}
+}
 }

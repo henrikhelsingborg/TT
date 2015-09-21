@@ -1,5 +1,6 @@
 <?php
     global $has_welcome_text;
+
     $the_content = get_extended($post->post_content);
     $main = $the_content['main'];
     $extended = $the_content['extended'];

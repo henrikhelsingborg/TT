@@ -124,7 +124,7 @@ function guide_steps_meta_box($post, $args) {
 
   <div style="clear:both;"></div>
   <div style="padding-bottom:5px;text-align:right;color:#fff;"><a href="javascript:void(0);" onClick="addmorediv()">+ Lägg till steg</a></div>
-  <input type="hidden" name="guide_step_count" id="guide_step_count" value="<?php echo count($guide_steps_meta['guide_step']); ?>">
+  <input type="hidden" name="guide_step_count" id="guide_step_count" value="<?php echo (isset($guide_steps_meta['guide_step'])) ? count($guide_steps_meta['guide_step']) : 0; ?>">
 
   <?php if(isset($guide_steps_meta['guide_step']) && count($guide_steps_meta['guide_step'])>0) { ?>
   <div style="background: -moz-linear-gradient(center top , #F5F5F5, #FCFCFC) repeat scroll 0 0 rgba(0, 0, 0, 0);">
@@ -135,7 +135,7 @@ function guide_steps_meta_box($post, $args) {
 <?php } ?>
   <script>
     jQuery(document).ready(function() {
-      var num = <?php echo count($guide_steps_meta['guide_step']); ?>;
+      var num = <?php echo (isset($guide_steps_meta['guide_step'])) ? count($guide_steps_meta['guide_step']) : 0; ?>;
       for (i = 1; i <= num; i++) {
         jQuery('#guide_step_title'+i).wp_editor();
       }
@@ -327,9 +327,15 @@ function disable_autosave() {
 
 add_shortcode( 'display_hbg_guide', 'hbg_guide_func' );
 function hbg_guide_func( $atts ) {
+    ob_start();
+    $viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
+
     wp_enqueue_script('steps-js', dirname(plugin_dir_url(__FILE__)) . '/js/steps.js');
 
     if (isset($atts['id'])) {
+
+        $renderedContent = false;
+
         $post_id = sanitize_text_field( $atts['id'] );
         $post_type= sanitize_text_field( $atts['type'] );
         $post = get_post( $post_id );
@@ -337,51 +343,15 @@ function hbg_guide_func( $atts ) {
         $thumb_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium');
         $article_steps_meta = get_post_meta($post_id, 'meta-guide-step', true);
 
-        $guide = '<section class="guide-section">';
-        $guide .= '<h2 class="section-title">' . $post->post_title . '</h2>';
-
-        $guide .= '<div class="divider fade">';
-        $guide .= '<div class="upper-divider"></div>';
-        $guide .= '<div class="lower-divider"></div>';
-        $guide .= '</div>';
-
-        $guide .= '<ul class="guide-list">';
-
-        if (count($article_steps_meta["guide_step"])) {
-            for ($i = 0; $i < count($article_steps_meta["guide_step"]); $i++){
-
-                if ($i == 0) {
-                    $guide .= '<li class="current">';
-                } else {
-                    $guide .= '<li>';
-                }
-
-                if (isset($article_steps_meta["guide_step_image"][$i])){
-                    $kk=wp_get_attachment_image_src( $article_steps_meta["guide_step_image"][$i], 'full', true );
-                    $guide .= '<img src="'.$kk[0].'" alt="" >';
-                }
-
-                $guide .= '<span class="title">' . $article_steps_meta["guide_step"][$i] . ' </span>';
-                $guide .= '<div class="description">' . wpautop($article_steps_meta["guide_step_title"][$i], true) . '</div>';
-                $guide .= '<p class="notes">' . $article_steps_meta["guide_note"][$i] . '</p>';
-                $guide .= '</li>';
-            }
+        $view = 'guide.php';
+        if ($templatePath = locate_template('templates/plugins/hbg-guides/' . $view)) {
+           require($templatePath);
+           $renderedContent = ob_get_clean();
+        } else {
+            require($viewsPath . $view);
+            $renderedContent = ob_get_clean();
         }
-
-        $guide .= '</ul>'; //<!-- /.guide-list -->
-
-        $guide .= '<ul class="pagination" role="menubar" aria-label="Pagination">';
-        $guide .= '<li><a href="#" class="button radius prev-step">' . __(Föregående) . '</a></li>';
-
-        for($i=0;$i<count($article_steps_meta["guide_step"]);$i++){
-            $guide .= '<li' . ($i==0?' class="current-pager"':'') . '><a href="#">' . ($i+1) . '</a></li>';
-        }
-
-        $guide .= '<li><a href="#" class="button radius next-step">' . __ (Nästa) . '</a></li>';
-        $guide .= '</ul>';
-        $guide .= '</section>';
-
-        return $guide;
+        return $renderedContent;
     }
 }
 

@@ -1,0 +1,17 @@
+[class^="sidebar-"] .widget_eventlistwidget {
+    .event-item {
+        display: table;
+        width: 100%;
+
+        > span {
+            display: table-cell;
+            border: none;
+        }
+
+        .date {
+            font-size: 12pt !important;
+            width: 50px;
+            text-indent: -13px;
+        }
+    }
+}

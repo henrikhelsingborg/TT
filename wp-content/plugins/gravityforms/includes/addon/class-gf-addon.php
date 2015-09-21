@@ -4270,7 +4270,6 @@ abstract class GFAddOn {
 	 * @return string
 	 */
 	protected function get_full_address( $entry, $field_id ) {
-
 		return GF_Fields::get( 'address' )->get_value_export( $entry, $field_id );
 	}
 
@@ -4283,7 +4282,6 @@ abstract class GFAddOn {
 	 * @return string
 	 */
 	protected function get_full_name( $entry, $field_id ) {
-
 		return GF_Fields::get( 'name' )->get_value_export( $entry, $field_id );
 	}
 
@@ -4297,7 +4295,6 @@ abstract class GFAddOn {
 	 * @return string
 	 */
 	protected function get_list_field_value( $entry, $field_id, $field ) {
-
 		return $field->get_value_export( $entry, $field_id );
 	}
 	
