@@ -302,6 +302,8 @@ jQuery(document).ready(function ($) {
         $(this).closest('[id^="gallery-modal-"]').find('.modal-media').html('');
     });
     */
+   
+   $('.mobile-menu-wrapper').find('input, button').attr('tabindex', '-1');
 
 });
 Helsingborg = Helsingborg || {};

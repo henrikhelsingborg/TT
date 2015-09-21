@@ -42,6 +42,13 @@
             <div class="container">
                 <div class="row">
                     <div class="columns large-12">
+                        <a href="/" class="logotype" data-tooltip="focus">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad">
+                            <span class="tooltip" style="width:131px;">
+                                Gå till startsidan
+                            </span>
+                        </a>
+
                         <nav class="nav-topmenu">
                         <?php
                             /**
@@ -60,7 +67,6 @@
                         ?>
                         </nav>
 
-                        <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad"></a>
                         <button class="btn btn-mobile-menu" data-action="toggle-mobile-menu"><i class="hbg-hamburger"></i><span>Meny</span></button>
                         <div class="clearfix"></div>
                     </div>

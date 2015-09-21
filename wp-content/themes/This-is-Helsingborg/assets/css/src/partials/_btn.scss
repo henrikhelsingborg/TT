@@ -59,6 +59,7 @@
 .btn-offcanvas {
     position: absolute;
     left: -100%;
+    z-index: $level-top;
 
     &:focus {
         left: 0;
