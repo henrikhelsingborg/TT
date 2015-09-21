@@ -2684,6 +2684,18 @@ img.responsive {
     width: 100%;
     height: auto; }
 
+.logotype-mobile {
+  display: block; }
+  @media screen and (min-width: 851px) {
+    .logotype-mobile {
+      display: none; } }
+
+.logotype:not(.logotype-mobile) {
+  display: none; }
+  @media screen and (min-width: 851px) {
+    .logotype:not(.logotype-mobile) {
+      display: block; } }
+
 .stripe-svg {
   position: absolute;
   top: 0;

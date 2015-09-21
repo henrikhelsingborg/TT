@@ -16,6 +16,22 @@
     }
 }
 
+.logotype-mobile {
+    display: block;
+
+    @media screen and (min-width: 851px) {
+        display: none;
+    }
+}
+
+.logotype:not(.logotype-mobile) {
+    display: none;
+
+    @media screen and (min-width: 851px) {
+        display: block;
+    }
+}
+
 // A color stripe band based on the color palette that covers the height of the container
 // Set the containers position to relative to get it to work.
 //
