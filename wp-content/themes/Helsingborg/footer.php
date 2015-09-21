@@ -13,7 +13,10 @@
     $(document).ready( function() {
         var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
         jQuery.post(ajaxurl, { action: 'big_notification' }, function(response) {
-        	jQuery('.alert').append(response);
+            response = JSON.parse(response);
+            $.each(response, function (index, item) {
+                jQuery('.alert').append('<div class="small-12 columns"><div class="alert-msg ' + item.class + '"><a href="' + item.link + '" class="alert-link" title="link-title">' + item.title + ' </a></div></div>');
+            });
         });
     });
 </script>
