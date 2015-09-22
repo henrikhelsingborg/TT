@@ -13,14 +13,14 @@ wp_nav_menu(array(
 */
 
 require_once(get_template_directory() . '/lib/Walker/helsingborg-walker-mobile.php');
-    $walker_page = new Helsingborg_Walker_Mobile();
+$walker_page = new Helsingborg_Walker_Mobile();
 ?>
 
 <nav class="navbar-aside nav-mobilemenu">
     <ul class="nav nav-list">
         <?php
             $menu = wp_cache_get('menu_mobile_' . $post->ID);
-            if ( false === $menu ) {
+            if (!$menu) {
                 $menu = wp_list_pages(array(
                     'title_li' => '',
                     'echo'     => 0,

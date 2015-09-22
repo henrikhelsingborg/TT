@@ -4,7 +4,7 @@
     $walker_page = new Helsingborg_Walker();
 
     $menu = wp_cache_get('menu_' . $post->ID);
-    if ( false === $menu ) {
+    if (!$menu) {
         $menu = wp_list_pages(array(
             'title_li' => '',
             'echo'     => 0,
