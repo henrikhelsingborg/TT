@@ -1,0 +1,50 @@
+.widget_hbghelpwidget .box-filled {
+    display: table;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: $palette-red-3;
+    color: #fff;
+
+    .question {
+        display: table-row;
+        vertical-align: middle;
+
+        strong {
+            display: block;
+            letter-spacing: .75px;
+        }
+
+        span {
+            display: block;
+            font-size: 80%;
+            letter-spacing: .5px;
+        }
+    }
+
+    .answers {
+        display: table-row;
+        vertical-align: middle;
+
+        .btn:not(input) {
+            width: 70px;
+            font-weight: bold;
+            margin: 3px;
+            margin-top: 10px;
+        }
+    }
+
+    @media #{$medium-up} {
+        .question {
+            display: table-cell;
+        }
+
+        .answers {
+            display: table-cell;
+            text-align: right;
+
+            .btn:not(input) {
+                margin-top: 3px;
+            }
+        }
+    }
+}

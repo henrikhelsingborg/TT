@@ -65,3 +65,48 @@
         left: 0;
     }
 }
+
+[class*="btn-transparent-dark-"] {
+    background-color: rgba(#000, .5);
+
+    &.btn-transparent-dark-x1 {
+        background-color: rgba(#000, .1);
+
+        &:hover {
+            background-color: rgba(#000, .3);
+        }
+    }
+
+    &.btn-transparent-dark-x2 {
+        background-color: rgba(#000, .2);
+
+        &:hover {
+            background-color: rgba(#000, .4);
+        }
+    }
+
+    &.btn-transparent-dark-x3 {
+        background-color: rgba(#000, .3);
+
+        &:hover {
+            background-color: rgba(#000, .5);
+        }
+    }
+
+    &.btn-transparent-dark-x4 {
+        background-color: rgba(#000, .4);
+
+        &:hover {
+            background-color: rgba(#000, .6);
+        }
+    }
+
+    &.btn-transparent-dark-x5 {
+        background-color: rgba(#000, .5);
+
+        &:hover {
+            background-color: rgba(#000, .7);
+        }
+    }
+}
+

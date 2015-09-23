@@ -49,7 +49,7 @@ class WidgetAreas {
             'id' => 'content-area',
             'name' => __('Innehållsarea', 'Helsingborg'),
             'description' => __('Visas strax under en artikels brödtext', 'Helsingborg'),
-            'before_widget' => '<div class="box box-outlined %2$s">',
+            'before_widget' => '<div class="box box-outlined widget %2$s">',
             'after_widget' => '</div>'
         ));
 
@@ -138,44 +138,45 @@ class WidgetAreas {
         /**
          * Set column width to 6 on frontpage "featured" section
          */
+        if (is_front_page()) {
+            preg_match('/(widget_)\w+/', $params[0]['before_widget'], $widgetClass);
+            $widgetClass = $widgetClass[0];
 
-        preg_match('/(widget_)\w+/', $params[0]['before_widget'], $widgetClass);
-        $widgetClass = $widgetClass[0];
-
-        if ($params[0]['id'] == 'slider-area' && is_front_page()) {
-            $params[0]['before_widget'] = '<div class="large-6 medium-6 small-12 columns ' . $widgetClass . '"><div class="box widget">';
-        }
-
-        if ($params[0]['id'] == 'content-area' && is_front_page()) {
-            $myWidgetNum++;
-
-            $class = 'class="' . $widgetClass . ' columns ';
-
-            /**
-             * Add classnames to widget
-             */
-            switch ($myWidgetNum) {
-                case 1:
-                    $class .= 'large-12 ';
-                    break;
-
-                default:
-                    $class .= 'large-6 medium-6 small-12 ';
-                    break;
+            if ($params[0]['id'] == 'slider-area' && is_front_page()) {
+                $params[0]['before_widget'] = '<div class="large-6 medium-6 small-12 columns ' . $widgetClass . '"><div class="box widget">';
             }
 
-            $params[0]['before_widget'] = str_replace('class="', $class, $params[0]['before_widget']);
+            if ($params[0]['id'] == 'content-area' && is_front_page()) {
+                $myWidgetNum++;
 
-            if ($myWidgetNum == 1) {
-                $params[0]['before_widget'] = '<div class="row">' . $params[0]['before_widget'];
-                $params[0]['after_widget'] .= '</div>';
-            } else if ($myWidgetNum % 2 == 0) {
-                $params[0]['before_widget'] = '<div class="row">' . $params[0]['before_widget'];
-            } else if ($myWidgetNum % 2 == 1) {
-                $params[0]['after_widget'] .= '</div>';
+                $class = 'class="' . $widgetClass . ' columns ';
+
+                /**
+                 * Add classnames to widget
+                 */
+                switch ($myWidgetNum) {
+                    case 1:
+                        $class .= 'large-12 ';
+                        break;
+
+                    default:
+                        $class .= 'large-6 medium-6 small-12 ';
+                        break;
+                }
+
+                $params[0]['before_widget'] = str_replace('class="', $class, $params[0]['before_widget']);
+
+                if ($myWidgetNum == 1) {
+                    $params[0]['before_widget'] = '<div class="row">' . $params[0]['before_widget'];
+                    $params[0]['after_widget'] .= '</div>';
+                } else if ($myWidgetNum % 2 == 0) {
+                    $params[0]['before_widget'] = '<div class="row">' . $params[0]['before_widget'];
+                } else if ($myWidgetNum % 2 == 1) {
+                    $params[0]['after_widget'] .= '</div>';
+                }
+
+                return $params;
             }
-
-            return $params;
         }
 
         return $params;

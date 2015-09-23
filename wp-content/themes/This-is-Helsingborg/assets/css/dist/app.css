@@ -3495,6 +3495,29 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   .btn-offcanvas:focus {
     left: 0; }
 
+[class*="btn-transparent-dark-"] {
+  background-color: rgba(0, 0, 0, 0.5); }
+  [class*="btn-transparent-dark-"].btn-transparent-dark-x1 {
+    background-color: rgba(0, 0, 0, 0.1); }
+    [class*="btn-transparent-dark-"].btn-transparent-dark-x1:hover {
+      background-color: rgba(0, 0, 0, 0.3); }
+  [class*="btn-transparent-dark-"].btn-transparent-dark-x2 {
+    background-color: rgba(0, 0, 0, 0.2); }
+    [class*="btn-transparent-dark-"].btn-transparent-dark-x2:hover {
+      background-color: rgba(0, 0, 0, 0.4); }
+  [class*="btn-transparent-dark-"].btn-transparent-dark-x3 {
+    background-color: rgba(0, 0, 0, 0.3); }
+    [class*="btn-transparent-dark-"].btn-transparent-dark-x3:hover {
+      background-color: rgba(0, 0, 0, 0.5); }
+  [class*="btn-transparent-dark-"].btn-transparent-dark-x4 {
+    background-color: rgba(0, 0, 0, 0.4); }
+    [class*="btn-transparent-dark-"].btn-transparent-dark-x4:hover {
+      background-color: rgba(0, 0, 0, 0.6); }
+  [class*="btn-transparent-dark-"].btn-transparent-dark-x5 {
+    background-color: rgba(0, 0, 0, 0.5); }
+    [class*="btn-transparent-dark-"].btn-transparent-dark-x5:hover {
+      background-color: rgba(0, 0, 0, 0.7); }
+
 .box-title, [class^="sidebar-"] .widget_text h2 {
   padding: 10px 15px;
   margin: 0;
@@ -4523,6 +4546,9 @@ p {
 .hidden {
   display: none; }
 
+.relative {
+  position: relative; }
+
 .padding-x1, [class*="sidebar-"] .widget_alarmlistwidget .box-content, [class*="sidebar-"] .widget_alarmlistwidget .section-featured .widget_text .textwidget, .section-featured .widget_text [class*="sidebar-"] .widget_alarmlistwidget .textwidget,
 [class*="sidebar-"] .widget_alarmlistwidget .article-header .widget_text .textwidget, .article-header .widget_text [class*="sidebar-"] .widget_alarmlistwidget .textwidget {
   padding: 10px !important; }
@@ -4801,18 +4827,14 @@ img[data-lazyload] {
 
 [data-tooltip] {
   position: relative; }
+  [data-tooltip] .tooltip {
+    display: none; }
 
 [data-tooltip-absolute] {
   position: absolute; }
 
-[data-tooltip*="focus"] .tooltip {
-  display: none; }
-
 [data-tooltip*="focus"]:focus .tooltip {
   display: block; }
-
-[data-tooltip*="hover"] .tooltip {
-  display: none; }
 
 [data-tooltip*="hover"]:hover .tooltip {
   display: block; }
@@ -4820,7 +4842,7 @@ img[data-lazyload] {
 .tooltip {
   display: block;
   position: absolute;
-  bottom: -20px;
+  top: 20px;
   left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
@@ -4843,6 +4865,23 @@ img[data-lazyload] {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-bottom: 5px solid #252525; }
+
+.tooltip-creamy-large {
+  padding: 15px;
+  width: 300px;
+  background-color: #f6f5f2;
+  border: 1px solid #e0ded8;
+  color: #252525;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
+  .tooltip-creamy-large::before {
+    border-bottom: 5px solid #e7e5e1; }
+
+.tooltip-form form {
+  margin-top: -5px; }
+
+.tooltip-form label {
+  margin-bottom: 5px; }
 
 .dataTables_wrapper {
   background-color: #f6f5f2;
@@ -5412,6 +5451,39 @@ img[data-lazyload] {
 [class^="sidebar-"] .widget_helsingborgpostinheritwidget img {
   width: 100%;
   height: auto; }
+
+.widget_hbghelpwidget .box-filled {
+  display: table;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #f27c00;
+  color: #fff; }
+  .widget_hbghelpwidget .box-filled .question {
+    display: table-row;
+    vertical-align: middle; }
+    .widget_hbghelpwidget .box-filled .question strong {
+      display: block;
+      letter-spacing: .75px; }
+    .widget_hbghelpwidget .box-filled .question span {
+      display: block;
+      font-size: 80%;
+      letter-spacing: .5px; }
+  .widget_hbghelpwidget .box-filled .answers {
+    display: table-row;
+    vertical-align: middle; }
+    .widget_hbghelpwidget .box-filled .answers .btn:not(input), .widget_hbghelpwidget .box-filled .answers .gform_footer input[type="submit"]:not(input), .gform_footer .widget_hbghelpwidget .box-filled .answers input[type="submit"]:not(input) {
+      width: 70px;
+      font-weight: bold;
+      margin: 3px;
+      margin-top: 10px; }
+  @media only screen and (min-width: 40.0625em) {
+    .widget_hbghelpwidget .box-filled .question {
+      display: table-cell; }
+    .widget_hbghelpwidget .box-filled .answers {
+      display: table-cell;
+      text-align: right; }
+      .widget_hbghelpwidget .box-filled .answers .btn:not(input), .widget_hbghelpwidget .box-filled .answers .gform_footer input[type="submit"]:not(input), .gform_footer .widget_hbghelpwidget .box-filled .answers input[type="submit"]:not(input) {
+        margin-top: 3px; } }
 
 /**
  * ## Sections
