@@ -3158,8 +3158,14 @@ body.nav-fixed .site-header .hero {
       opacity: 1;
       font-weight: 100; }
 
-.browser-firefox .hero .search input[type="search"] {
+.browser-firefox .hero .search input[type="search"],
+.browser-trident .hero .search input[type="search"],
+.browser-explorer .hero .search input[type="search"] {
   width: 400px; }
+
+.browser-trident .hero .form-container,
+.browser-explorer .hero .form-container {
+  width: 480px; }
 
 .browser-chrome .hero .search .form-element,
 .browser-safari .hero .search .form-element,
