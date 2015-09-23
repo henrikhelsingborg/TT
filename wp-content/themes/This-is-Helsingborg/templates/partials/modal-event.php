@@ -14,6 +14,7 @@
             </div>
             <div class="columns large-8">
                 <h1 class="modal-title"></h1>
+                <span class="modal-ics"><a href="#" class="link-item">Lägg till i din kalender</a></span>
                 <article>
                     <p class="modal-description"></p>
                     <p class="modal-link"></p>

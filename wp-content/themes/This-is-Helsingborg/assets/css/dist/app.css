@@ -4138,6 +4138,14 @@ p {
     width: auto;
     margin: 0; } }
 
+#eventModal .modal-title {
+  margin-bottom: 0; }
+
+#eventModal .modal-ics {
+  display: block;
+  margin-top: -5px;
+  margin-bottom: 25px; }
+
 .breadcrumbs {
   margin: 0;
   margin-top: 20px;

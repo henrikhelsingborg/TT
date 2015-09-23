@@ -122,6 +122,8 @@ $(document).ready(function($) {
         var time_list = $('#time-modal');
         var organizer_list = $('#organizer-modal');
 
+        var isc = $('.modal-ics a');
+
         document.getElementById('event-times').style.display = 'block';
         $('.event-times-loading').show();
         $('.event-times-item').remove();
@@ -187,6 +189,7 @@ $(document).ready(function($) {
 
         $(date).html(result.Date);
         $(description).html(nl2br(result.Description));
+        $(isc).attr('href', '?ics=' + result.EventID);
     });
 });
 

@@ -30,11 +30,23 @@ if (!class_exists('EventListWidget')) {
         function EventListWidget() {
             parent::WP_Widget(false, '* Evenemangskalender', array('description' => 'Listar kommande evenemang.'));
             $this->_viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
+
             add_action('admin_enqueue_scripts', array($this, 'enqueueFiles'));
+            add_action('init', array($this, 'checkIfDownload'));
         }
 
         public function enqueueFiles($hook) {
             wp_enqueue_script('helsingborg-event-widget-js', plugins_url('helsingborg-widgets/helsingborg-event/assets/helsingborg-event-widget.js'), array('jquery'), false, true);
+        }
+
+        public function checkIfDownload()
+        {
+            require_once('helsingborg-event-isc.php');
+            $downloadEvent = new EventListWidgetIcs;
+
+            if (isset($_GET['ics']) && $_GET['ics'] > 0) {
+                $downloadEvent->download($_GET['ics']);
+            }
         }
 
         /**
