@@ -18,7 +18,9 @@ class HbgHelpReport {
     {
         $this->_viewsPath = HBGHELP_PATH . 'views/';
 
-        add_action('add_meta_boxes', array($this, 'addReportingMetabox'));
+        if ($this->_showResponsesInAdmin) {
+            add_action('add_meta_boxes', array($this, 'addReportingMetabox'));
+        }
     }
 
     public function addReportingMetabox()
