@@ -32,5 +32,11 @@
         &:focus {
             text-decoration: underline;
         }
+
+        @media print {
+            &:after {
+                display: none;
+            }
+        }
     }
 }

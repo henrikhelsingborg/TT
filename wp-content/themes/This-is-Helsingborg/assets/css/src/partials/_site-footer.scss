@@ -7,6 +7,10 @@
     position: relative;
     padding-top: 40px;
 
+    @media print {
+        border-top: 1px solid $creamy-darker;
+    }
+
     a {
         color: #fff;
         text-decoration: underline;
@@ -32,6 +36,10 @@
     background-image: url('../../images/skyline.jpg');
     background-position: bottom right;
     background-repeat: no-repeat;
+
+    @media print {
+        display: none;
+    }
 }
 
 .site-footer-content {
@@ -64,6 +72,10 @@
     padding: 8px 10px;
     background-color: darken($palette-red-4, 10%);
 
+    @media print {
+        display: none;
+    }
+
     select {
         color: $text-default;
         background-color: #fff;
@@ -77,5 +89,11 @@
 
     .goog-logo-link {
         color: lighten($palette-red-4, 50%);
+    }
+}
+
+@media print {
+    .service-area {
+        display: none;
     }
 }

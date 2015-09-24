@@ -1,3 +1,9 @@
+.sidebar-left {
+    @media print {
+        display: none;
+    }
+}
+
 .sidebar-right {
     padding-top: 0;
 

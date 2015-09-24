@@ -1,7 +1,7 @@
         </main>
 
         <?php if (is_active_sidebar('service-area')) : ?>
-        <section class="creamy">
+        <section class="creamy service-area">
             <div class="container">
                 <div class="row">
                 <?php dynamic_sidebar('service-area'); ?>
@@ -36,7 +36,7 @@
                             ?>
                             </div>
                         </div>
-                        <div class="columns large-3 medium-4 right">
+                        <div class="columns large-3 medium-4 right footer-help">
                             <?php
                                 /**
                                  * Displays the main menu navigation

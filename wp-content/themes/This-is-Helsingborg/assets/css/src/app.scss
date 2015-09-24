@@ -94,3 +94,11 @@
 @import 'sections/search';
 @import 'sections/news';
 @import 'sections/article';
+
+/**
+ * ## Print media
+ * CSS only for print
+ */
+@import 'print/global';
+@import 'print/grid';
+@import 'print/hide';

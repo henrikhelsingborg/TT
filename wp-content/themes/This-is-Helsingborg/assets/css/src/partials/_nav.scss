@@ -221,6 +221,10 @@ body.nav-fixed .site-header .hero {
     margin-right: -$column-gutter/2;
     margin-bottom: $column-gutter;
 
+    @media print {
+        display: none;
+    }
+
     @media screen and (max-width: 555px) {
         text-align: center;
 

@@ -40,12 +40,26 @@
         width: 100%;
         height: auto;
     }
+
+    @media print {
+        border: 0;
+        margin-bottom: 20px;
+        
+        &:after {
+            display: none;
+        }
+    }
 }
 
 .index-container {
     display: block;
     position: relative;
     padding: $widget-padding;
+
+    @media print {
+        border: 1px solid $creamy-darker !important;
+        border-top: 0 !important;
+    }
 }
 
 .index-description {
@@ -60,6 +74,14 @@
     display: block;
     line-height: 130%;
     color: $palette-red-4;
+
+    @media print {
+        &.link-item {
+            &::before {
+                color: rgba(#000, .8);
+            }
+        }
+    }
 }
 
 .index-item-filled {

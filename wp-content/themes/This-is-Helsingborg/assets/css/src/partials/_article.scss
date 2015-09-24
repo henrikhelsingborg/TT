@@ -90,6 +90,10 @@
 }
 
 .article-accessibility {
+    @media print {
+        display: none !important;
+    }
+
     li + li {
         margin-left: 20px;
     }

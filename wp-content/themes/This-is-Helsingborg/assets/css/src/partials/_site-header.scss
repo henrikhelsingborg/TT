@@ -18,6 +18,10 @@
     color: $palette-red-4;
     font-size: 20pt;
 
+    @media print {
+        display: none;
+    }
+
     span {
         display: inline-block;
         vertical-align: middle;

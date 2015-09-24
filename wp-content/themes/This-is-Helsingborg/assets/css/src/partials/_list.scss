@@ -116,6 +116,7 @@
     background-color: lighten($creamy-darker, 7%);
     border: 1px solid $creamy-darker;
     border-bottom: 0;
+    border-top: 0;
     color: $text-default;
     padding: 15px !important;
 
@@ -168,6 +169,11 @@
         padding: 0;
         position: relative;
         padding-right: 90px;
+
+        a[href]:after {
+            font-size: 9pt;
+            line-height: 110%;
+        }
     }
 
     .date {
@@ -191,6 +197,10 @@
         a {
             margin: 0;
             padding: 0;
+
+            &:after {
+                display: none;
+            }
         }
     }
 
@@ -394,6 +404,10 @@
 
     &:hover {
         text-decoration: underline;
+    }
+
+    &:after {
+        display: none;
     }
 }
 
