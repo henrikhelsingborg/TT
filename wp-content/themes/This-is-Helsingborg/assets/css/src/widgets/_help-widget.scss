@@ -21,7 +21,8 @@
         }
     }
 
-    .answers {
+    .answers,
+    .thanks {
         display: table-row;
         vertical-align: middle;
 
@@ -33,18 +34,28 @@
         }
     }
 
+    .thanks {
+        display: none;
+        font-weight: bold;
+    }
+
     @media #{$medium-up} {
         .question {
             display: table-cell;
         }
 
-        .answers {
+        .answers,
+        .thanks {
             display: table-cell;
             text-align: right;
 
             .btn:not(input) {
                 margin-top: 3px;
             }
+        }
+
+        .thanks {
+            display: none;
         }
     }
 }

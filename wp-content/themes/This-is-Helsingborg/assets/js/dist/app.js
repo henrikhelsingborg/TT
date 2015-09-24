@@ -308,7 +308,7 @@ jQuery(document).ready(function ($) {
     $('[data-tooltip*="click"]').on('click', function (e) {
         if ($(e.target).is('[data-tooltip-toggle]')) {
             e.preventDefault();
-            $(this).find('.tooltip').toggle();
+            $(this).find('.tooltip').toggle().find('textarea:first').focus();
         }
     });
 

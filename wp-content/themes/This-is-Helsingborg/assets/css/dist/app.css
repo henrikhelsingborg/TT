@@ -5468,22 +5468,33 @@ img[data-lazyload] {
       display: block;
       font-size: 80%;
       letter-spacing: .5px; }
-  .widget_hbghelpwidget .box-filled .answers {
+  .widget_hbghelpwidget .box-filled .answers,
+  .widget_hbghelpwidget .box-filled .thanks {
     display: table-row;
     vertical-align: middle; }
-    .widget_hbghelpwidget .box-filled .answers .btn:not(input), .widget_hbghelpwidget .box-filled .answers .gform_footer input[type="submit"]:not(input), .gform_footer .widget_hbghelpwidget .box-filled .answers input[type="submit"]:not(input) {
+    .widget_hbghelpwidget .box-filled .answers .btn:not(input),
+    .widget_hbghelpwidget .box-filled .answers .gform_footer input[type="submit"]:not(input),
+    .gform_footer .widget_hbghelpwidget .box-filled .answers input[type="submit"]:not(input), .widget_hbghelpwidget .box-filled .thanks .btn:not(input), .widget_hbghelpwidget .box-filled .thanks .gform_footer input[type="submit"]:not(input), .gform_footer .widget_hbghelpwidget .box-filled .thanks input[type="submit"]:not(input) {
       width: 70px;
       font-weight: bold;
       margin: 3px;
       margin-top: 10px; }
+  .widget_hbghelpwidget .box-filled .thanks {
+    display: none;
+    font-weight: bold; }
   @media only screen and (min-width: 40.0625em) {
     .widget_hbghelpwidget .box-filled .question {
       display: table-cell; }
-    .widget_hbghelpwidget .box-filled .answers {
+    .widget_hbghelpwidget .box-filled .answers,
+    .widget_hbghelpwidget .box-filled .thanks {
       display: table-cell;
       text-align: right; }
-      .widget_hbghelpwidget .box-filled .answers .btn:not(input), .widget_hbghelpwidget .box-filled .answers .gform_footer input[type="submit"]:not(input), .gform_footer .widget_hbghelpwidget .box-filled .answers input[type="submit"]:not(input) {
-        margin-top: 3px; } }
+      .widget_hbghelpwidget .box-filled .answers .btn:not(input),
+      .widget_hbghelpwidget .box-filled .answers .gform_footer input[type="submit"]:not(input),
+      .gform_footer .widget_hbghelpwidget .box-filled .answers input[type="submit"]:not(input), .widget_hbghelpwidget .box-filled .thanks .btn:not(input), .widget_hbghelpwidget .box-filled .thanks .gform_footer input[type="submit"]:not(input), .gform_footer .widget_hbghelpwidget .box-filled .thanks input[type="submit"]:not(input) {
+        margin-top: 3px; }
+    .widget_hbghelpwidget .box-filled .thanks {
+      display: none; } }
 
 /**
  * ## Sections
