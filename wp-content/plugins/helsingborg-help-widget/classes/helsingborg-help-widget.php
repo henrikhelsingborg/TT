@@ -14,6 +14,7 @@ class HbgHelpWidget extends WP_Widget {
      * @var string
      */
     public $_defaultQuestion = 'Hittade du den information du sökte?';
+    public $_defaultQuestionFeedback = 'Hur kan vi förbättra vår information?';
 
     /**
      * Constructor
@@ -50,6 +51,11 @@ class HbgHelpWidget extends WP_Widget {
         if (!isset($instance['question']) || (isset($instance['question']) && strlen($instance['question']) == 0)) {
             $instance['question'] = $this->_defaultQuestion;
         }
+
+        if (!isset($instance['question_feedback']) || (isset($instance['question_feedback']) && strlen($instance['question_feedback']) == 0)) {
+            $instance['question_feedback'] = $this->_defaultQuestionFeedback;
+        }
+
         require($this->_viewsPath . 'widget-form.php');
     }
 
@@ -65,6 +71,11 @@ class HbgHelpWidget extends WP_Widget {
         if (!isset($instance['question']) || (isset($instance['question']) && strlen($instance['question']) == 0)) {
             $instance['question'] = $this->_defaultQuestion;
         }
+
+        if (!isset($instance['question_feedback']) || (isset($instance['question_feedback']) && strlen($instance['question_feedback']) == 0)) {
+            $instance['question_feedback'] = $this->_defaultQuestionFeedback;
+        }
+        
         return $instance;
     }
 

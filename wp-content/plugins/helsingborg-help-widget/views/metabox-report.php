@@ -59,13 +59,13 @@
 <div class="help-report-wrapper">
     <div class="answers answers-yes">
         Ja
-        <span><?php echo $answers['yes']; ?></span>
+        <span><?php echo (isset($answers['yes'])) ? $answers['yes'] : 0; ?></span>
         <?php echo round(($answers['yes']/($answers['yes'] + $answers['no']))*100, 2); ?>%
     </div>
 
     <div class="answers answers-no">
         Nej
-        <span><?php echo $answers['no']; ?></span>
+        <span><?php echo (isset($answers['no'])) ? $answers['no'] : 0; ?></span>
         <?php echo round(($answers['no']/($answers['yes'] + $answers['no']))*100, 2); ?>%
     </div>
 
