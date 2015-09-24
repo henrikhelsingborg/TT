@@ -3,7 +3,16 @@
 if (!class_exists('HbgHelpWidget')) {
 class HbgHelpWidget extends WP_Widget {
 
+    /**
+     * The path to templates
+     * @var string
+     */
     protected $_viewsPath;
+
+    /**
+     * The default question text
+     * @var string
+     */
     public $_defaultQuestion = 'Hittade du den information du sökte?';
 
     /**
@@ -79,6 +88,10 @@ class HbgHelpWidget extends WP_Widget {
         }
     }
 
+    /**
+     * Saves the "Yes" or "No" response as counters in metadata
+     * @return void
+     */
     public function submitResponse()
     {
         $postID = (isset($_POST['postid']) && is_numeric($_POST['postid'])) ? $_POST['postid'] : null;

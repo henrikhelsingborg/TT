@@ -13,6 +13,7 @@ define('HBGHELP_URL', plugins_url('', __FILE__));
  * Import required plugin files
  */
 require_once(HBGHELP_PATH . 'classes/helsingborg-help-widget.php');
+require_once(HBGHELP_PATH . 'classes/helsingborg-help-report.php');
 
 /**
  * Initialize
@@ -22,3 +23,4 @@ function hbgHelpWidgetRegister() {
     register_widget('HbgHelpWidget');
 }
 
+new HbgHelpReport();
