@@ -21,6 +21,10 @@
 
     <?php wp_head(); ?>
 
+    <script>
+        var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+    </script>
+
     <?php if (strlen(get_option('helsingborg_color_code')) > 0) : $colorCode = get_option('helsingborg_color_code'); ?>
     <style>
         .nav-bar,

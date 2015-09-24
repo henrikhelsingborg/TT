@@ -75,6 +75,7 @@
 </div>
 
 <ul id="help-report-comments">
+    <?php if (is_array($comments) && count($comments) > 0) : ?>
     <?php foreach ($comments as $comment) : ?>
     <li>
         <span class="rsswidget"><?php echo $comment['date']; ?></span>
@@ -82,4 +83,7 @@
         <div class="rssSummary"><?php echo $comment['comment']; ?></div>
     </li>
     <?php endforeach; ?>
+    <?php else : ?>
+        <li>Inga kommentarer att visa…</li>
+    <?php endif; ?>
 </ul>
