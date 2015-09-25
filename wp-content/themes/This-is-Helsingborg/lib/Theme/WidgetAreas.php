@@ -143,7 +143,7 @@ class WidgetAreas {
             $widgetClass = $widgetClass[0];
 
             if ($params[0]['id'] == 'slider-area' && is_front_page()) {
-                $params[0]['before_widget'] = '<div class="large-6 medium-6 small-12 columns ' . $widgetClass . '"><div class="box widget">';
+                $params[0]['before_widget'] = '<div class="large-6 medium-6 small-12 print-6 columns ' . $widgetClass . '"><div class="box widget">';
             }
 
             if ($params[0]['id'] == 'content-area' && is_front_page()) {
@@ -160,7 +160,7 @@ class WidgetAreas {
                         break;
 
                     default:
-                        $class .= 'large-6 medium-6 small-12 ';
+                        $class .= 'large-6 medium-6 small-12 print-6 ';
                         break;
                 }
 
