@@ -59,3 +59,17 @@
         }
     }
 }
+
+.sidebar-right .widget_hbghelpwidget .box-filled {
+    @media #{$medium-up} {
+        .question,
+        .answers {
+            display: table-row;
+            text-align: left;
+        }
+
+        .question span {
+            margin-bottom: 5px;
+        }
+    }
+}

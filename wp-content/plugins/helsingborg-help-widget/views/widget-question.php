@@ -2,7 +2,7 @@
 <div class="box box-filled help-container">
     <div class="question">
         <strong><?php echo $instance['question']; ?></strong>
-        <span>Hjälp oss att göra Helsingborg.se bättre.</span>
+        <?php if (isset($instance['sub-question'])) : ?><span><?php echo $instance['sub-question']; ?></span><?php else : ?><span>Hjälp oss att göra Helsingborg.se bättre.</span><?php endif; ?>
     </div>
     <div class="answers">
         <div class="inline-block relative">

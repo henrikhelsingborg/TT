@@ -5573,6 +5573,14 @@ img[data-lazyload] {
     .widget_hbghelpwidget .box-filled .thanks {
       display: none; } }
 
+@media only screen and (min-width: 40.0625em) {
+  .sidebar-right .widget_hbghelpwidget .box-filled .question,
+  .sidebar-right .widget_hbghelpwidget .box-filled .answers {
+    display: table-row;
+    text-align: left; }
+  .sidebar-right .widget_hbghelpwidget .box-filled .question span {
+    margin-bottom: 5px; } }
+
 /**
  * ## Sections
  * Sections is also partials, really. But to separete them from the partials partials
