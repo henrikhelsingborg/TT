@@ -2695,6 +2695,9 @@ img.responsive {
       margin: 30px 0; }
       .logotype:after {
         display: none; } }
+  .logotype .tooltip {
+    top: auto;
+    bottom: -20px; }
 
 .logotype-mobile {
   display: block; }

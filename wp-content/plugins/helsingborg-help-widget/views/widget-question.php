@@ -16,7 +16,6 @@
                     <textarea name="comment" id="input-comment" class="form-control"></textarea>
                     <input type="hidden" id="input-post-id" value="<?php echo get_the_ID(); ?>">
                     <button style="margin-top:5px;" type="submit" class="btn btn-submit">Skicka</button>
-                    <button style="margin-top:5px;" type="submit" class="btn btn-submit">Chatta</button>
                 </form>
             </div>
         </div>
