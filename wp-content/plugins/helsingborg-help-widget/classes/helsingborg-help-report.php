@@ -39,8 +39,13 @@ class HbgHelpReport {
 
     public function reportingMetaboxContent($post)
     {
-        $answers = get_post_meta($post->ID, 'hbg-help-answers', true);
-        $comments = get_post_meta($post->ID, 'hbg-help-comments', true);
+        global $hbgHelpDb;
+
+        $answers = array(
+            'yes' => $hbgHelpDb->countAnswers($post->ID, 'yes'),
+            'no'  => $hbgHelpDb->countAnswers($post->ID, 'no')
+        );
+        $comments = $hbgHelpDb->getComments($post->ID);
 
         $view = 'metabox-report.php';
         if ($templatePath = locate_template('templates/plugins/hbg-help-widget/' . $view)) {

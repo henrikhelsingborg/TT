@@ -2,11 +2,15 @@ jQuery(document).ready(function ($) {
     $('.hbg-help-form').on('submit', function (e) {
         e.preventDefault();
 
+        var commentType = 'comment';
+
         // Set up post data
         var data = {
             action: 'submit_comment',
             postid: $('#input-post-id').val(),
-            comment: $('#input-comment').val()
+            comment: $('#input-comment').val(),
+            answerid: $('#input-answer-id').val(),
+            commenttype: commentType
         }
 
         $form = $(this);
@@ -37,10 +41,18 @@ jQuery(document).ready(function ($) {
         }
 
         $.post(ajaxurl, data, function (response) {
-            if (data.answer == 'yes' && response == 'true') {
+            if (data.answer == 'yes' && isNumeric(response)) {
                 $container.find('.answers').hide();
                 $container.find('.thanks').show();
+            }
+
+            if (data.answer == 'no' && isNumeric(response)) {
+                $container.find('form').append('<input type="hidden" id="input-answer-id" name="answer-id" value="' + response + '">')
             }
         })
     });
 });
+
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}

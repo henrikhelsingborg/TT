@@ -101,22 +101,22 @@ class HbgHelpWidget extends WP_Widget {
 
     /**
      * Saves the "Yes" or "No" response as counters in metadata
-     * @return void
+     * @return integer The last inserted id from db
      */
     public function submitResponse()
     {
+        global $hbgHelpDb;
+
+        $insertedID = false;
         $postID = (isset($_POST['postid']) && is_numeric($_POST['postid'])) ? $_POST['postid'] : null;
         $answer = (isset($_POST['answer']) && strlen($_POST['answer']) > 0) ? $_POST['answer'] : null;
 
         if ($postID && $answer) {
-            
-            $currentAnswers = get_post_meta($postID, 'hbg-help-answers', true);
-            $currentAnswers[$answer]++;
-            update_post_meta($postID, 'hbg-help-answers', $currentAnswers);
+            $insertedID = $hbgHelpDb->saveAnswer($_SERVER['remote_addr'], $postID, $answer);
         }
 
-        echo 'true';
-        die();
+        echo $insertedID;
+        wp_die();
     }
 
     /**
@@ -125,22 +125,19 @@ class HbgHelpWidget extends WP_Widget {
      */
     public function submitComment()
     {
+        global $hbgHelpDb;
+
+        $answerID = (isset($_POST['answerid']) && is_numeric($_POST['answerid'])) ? $_POST['answerid'] : null;
         $postID = (isset($_POST['postid']) && is_numeric($_POST['postid'])) ? $_POST['postid'] : null;
         $comment = (isset($_POST['comment']) && strlen($_POST['comment']) > 0) ? $_POST['comment'] : null;
+        $commentType = (isset($_POST['commenttype']) && strlen($_POST['commenttype']) > 0) ? $_POST['commenttype'] : null;
 
-        if ($postID) {
-            $currentComments = get_post_meta($postID, 'hbg-help-comments', true);
-            $currentComments[] = array(
-                'date' => date('Y-m-d H:i:s'),
-                'comment' => $comment,
-                'ip' => $_SERVER['remote_addr']
-            );
-
-            update_post_meta($postID, 'hbg-help-comments', $currentComments);
+        if ($answerID && $postID) {
+            $hbgHelpDb->addCommentToAnswer($answerID, $comment, $commentType);
         }
         
         echo 'true';
-        die();
+        wp_die();
     }
 
 }

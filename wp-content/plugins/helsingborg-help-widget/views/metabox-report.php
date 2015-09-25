@@ -78,9 +78,9 @@
     <?php if (is_array($comments) && count($comments) > 0) : ?>
     <?php foreach ($comments as $comment) : ?>
     <li>
-        <span class="rsswidget"><?php echo $comment['date']; ?></span>
-        <span class="rss-date"><?php echo $comment['ip'] ?></span>
-        <div class="rssSummary"><?php echo $comment['comment']; ?></div>
+        <span class="rsswidget"><?php echo $comment->created_at; ?></span>
+        <span class="rss-date"><?php echo $comment->ip ?></span>
+        <div class="rssSummary"><?php echo $comment->comment; ?></div>
     </li>
     <?php endforeach; ?>
     <?php else : ?>
