@@ -12,7 +12,7 @@ class HbgHelpReport {
      * Weather to show response stats in administration or not
      * @var boolean
      */
-    protected $_showResponsesInAdmin = true;
+    protected $_showResponsesInAdmin = false;
 
     public function __construct()
     {
