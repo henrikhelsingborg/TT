@@ -12,18 +12,22 @@ class App
     {
         global $lazyLoadImage;
 
+        // Helpers
         new Helper\Wp;
         new Helper\Ajax;
         new Helper\Rss;
 
+        // Theme
         new Theme\Support;
         new Theme\Enqueue;
         new Theme\Navigation;
         new Theme\WidgetAreas;
         if (isset($lazyloadImages)) new Theme\LazyLoad;
 
+        // Admin
         new Admin\Enqueue;
 
+        // Metaboxes (loaded from the metabox init class)
         new Metabox\Init;
     }
 }
