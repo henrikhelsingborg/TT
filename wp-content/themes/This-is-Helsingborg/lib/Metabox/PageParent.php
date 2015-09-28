@@ -1,13 +1,13 @@
 <?php
 
-namespace Helsingborg\Admin;
+namespace Helsingborg\Metabox;
 
-class MetaBoxes
+class PageParent
 {
     public function __construct()
     {
-        add_action('admin_menu', '\Helsingborg\Admin\MetaBoxes::removeMetaBoxes');
-        add_action('add_meta_boxes', '\Helsingborg\Admin\MetaBoxes::addCustomPageParentDivMetaBox');
+        add_action('admin_menu', '\Helsingborg\Metabox\PageParent::removeMetaBoxes');
+        add_action('add_meta_boxes', '\Helsingborg\Metabox\PageParent::addCustomPageParentDivMetaBox');
     }
 
     /**
@@ -24,7 +24,7 @@ class MetaBoxes
      */
     public static function addCustomPageParentDivMetaBox()
     {
-        add_meta_box('pageparentdiv', __('Page Attributes') , '\Helsingborg\Admin\MetaBoxes::customPageParentDivMetaBox', 'page', 'side');
+        add_meta_box('pageparentdiv', __('Page Attributes') , '\Helsingborg\Metabox\PageParent::customPageParentDivMetaBox', 'page', 'side');
     }
 
     /**

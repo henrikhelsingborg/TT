@@ -24,9 +24,6 @@ class App
 
         new Admin\Enqueue;
 
-        // Denna måste flyttas till \Metaboxes\xxxx
-        new Admin\MetaBoxes;
-
         new Metabox\Init;
     }
 }
