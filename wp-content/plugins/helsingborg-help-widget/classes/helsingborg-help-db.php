@@ -4,11 +4,6 @@ class HbgHelpDb {
 
     public $tableAnswers = "help_widget_answers";
 
-    public function __construct()
-    {
-        global $wpdb;
-    }
-
     /**
      * Handles the plugin activation to create database tables
      * @param  boolean $networkwide Is this a network wide activation or not
