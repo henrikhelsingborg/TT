@@ -23,6 +23,10 @@ class App
         if (isset($lazyloadImages)) new Theme\LazyLoad;
 
         new Admin\Enqueue;
+
+        // Denna måste flyttas till \Metaboxes\xxxx
         new Admin\MetaBoxes;
+
+        new Metabox\Init;
     }
 }
