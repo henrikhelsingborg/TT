@@ -84,12 +84,21 @@
 .box-filled {
     .box-title {
         background-color: transparent;
+
+        @media print {
+            border-bottom: 0;
+        }
     }
 
     .box-content {
         background-color: transparent;
         border: none;
         color: #fff;
+
+        @media print {
+            border: 1px solid $creamy-darker;
+            border-top: 0;
+        }
     }
 
     .box-title + [class*="padding-x"] {

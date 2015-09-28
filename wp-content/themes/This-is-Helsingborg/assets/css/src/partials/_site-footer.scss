@@ -52,6 +52,10 @@
     font-size: 11pt;
     font-weight: 300;
 
+    @media print {
+        padding-top: 0;
+    }
+
     .row + .row {
         margin-top: 20px;
     }

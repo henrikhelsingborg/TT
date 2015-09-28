@@ -9,8 +9,8 @@
                     $force_width  = (!empty($item_force_widths[$num])) ? 'width:100%;' : '';
                     $force_margin = (!empty($item_force_margins[$num]) && !empty($item_force_margin_values[$num])) ? ' margin-top:-' . $item_force_margin_values[$num] . 'px;' : '';
             ?>
-            <li style="background-image:url('<?php echo $item_imageurl[$num]; ?>');">
-                <img src="<?php echo $item_imageurl[$num]; ?>" class="print-only">
+            <li>
+                <img src="<?php echo $item_imageurl[$num]; ?>">
                 <?php if (!empty($item_texts[$num]) && !empty($item_links[$num])) : ?>
                 <div class="caption">
                     <div class="caption-content">

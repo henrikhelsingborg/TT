@@ -13,7 +13,7 @@
         <div class="row">
             <?php get_template_part('templates/partials/sidebar', 'left'); ?>
 
-            <div class="columns large-6 medium-6 small-12 print-9 left">
+            <div class="columns large-6 medium-6 small-12 print-12 left">
                 <?php get_template_part('templates/partials/article'); ?>
 
                 <?php if (is_active_sidebar('content-area')) : ?>

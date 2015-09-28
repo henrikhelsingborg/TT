@@ -58,7 +58,12 @@
 
     @media print {
         border: 1px solid $creamy-darker !important;
-        border-top: 0 !important;
+    }
+}
+
+@media print {
+    img + .index-container {
+        border-top: 0;
     }
 }
 

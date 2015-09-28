@@ -10,7 +10,7 @@
         </section>
         <?php endif; ?>
 
-        <footer class="site-footer">
+        <footer class="site-footer print-hidden">
             <div class="container">
                 <div class="row">
                     <div class="columns large-12">

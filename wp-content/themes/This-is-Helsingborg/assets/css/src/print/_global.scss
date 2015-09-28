@@ -1,7 +1,7 @@
 @media print {
 
     @page {
-        margin: 2cm 1cm;
+        margin: 1cm 1cm 1cm 1cm;
     }
 
     a[href]:after {
@@ -24,7 +24,7 @@
     display: none;
 }
 
-.hide-for-print {
+.print-hidden {
     @media print {
         display: none !important;
     }

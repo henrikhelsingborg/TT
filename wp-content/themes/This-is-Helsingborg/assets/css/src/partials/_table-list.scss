@@ -5,6 +5,7 @@ $headline-color: #333;
     width: 100%;
     letter-spacing: .5px;
     margin-top: 20px;
+    margin-bottom: 30px;
 
     /**
      * Table head
@@ -12,6 +13,11 @@ $headline-color: #333;
     thead {
         background: $palette-red-2;
         border: 1px solid $palette-red-2;
+
+        @media print {
+            border-color: $creamy-darker;
+            display: none;
+        }
 
         th:first-child {
             display: none;
@@ -58,8 +64,8 @@ $headline-color: #333;
             //background-color: scale-color($gray-3, $lightness: 70%);
         }
 
-        & + tbody tr:first-child td {
-            border-top: 1px solid $creamy-darker;
+        .table-item td {
+            border-bottom: 1px solid $creamy-darker;
         }
 
         tbody tr th {
@@ -71,6 +77,10 @@ $headline-color: #333;
      * List item
      */
     .table-item {
+        @media print {
+            display: none;
+        }
+
         td:first-child {
             font-weight: bold;
         }
@@ -92,6 +102,10 @@ $headline-color: #333;
                 @include hbg-icon($icon-plus-square);
                 color: $palette-red-2;
                 font-size: 13pt;
+
+                @media print {
+                    display: none;
+                }
             }
         }
 
@@ -124,6 +138,10 @@ $headline-color: #333;
             padding: 15px 20px;
             border-top: 1px solid $creamy-darker;
             box-shadow: inset 0 5px 6px $creamy-darker;
+
+            .article-body {
+                margin-bottom: 0;
+            }
 
             @media print {
                 display: table-cell;

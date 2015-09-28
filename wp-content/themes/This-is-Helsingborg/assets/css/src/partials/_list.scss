@@ -170,9 +170,17 @@
         position: relative;
         padding-right: 90px;
 
-        a[href]:after {
-            font-size: 9pt;
-            line-height: 110%;
+        @media print {
+            a {
+                font-size: 11pt;
+                font-weight: normal;
+                padding: 6px !important;
+            }
+
+            a[href]:after {
+                font-size: 9pt;
+                line-height: 110%;
+            }
         }
     }
 

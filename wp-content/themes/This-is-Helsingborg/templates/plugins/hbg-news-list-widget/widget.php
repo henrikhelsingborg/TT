@@ -23,12 +23,12 @@
                         $image = wp_get_attachment_image_src( $image_id, 'single-post-thumbnail' );
                         $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
                 ?>
-                    <div class="large-4 medium-4 small-12 columns news-image">
+                    <div class="large-4 medium-4 small-12 print-4 columns news-image">
                         <img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>">
                     </div>
                 <?php endif; ?>
 
-                <div class="large-8 medium-8 small-12 columns news-content">
+                <div class="large-8 medium-8 small-12 print-8 columns news-content">
                     <h2 class="news-title"><?php echo $page->post_title; ?></h2>
                     <span class="news-date"><?php echo date('Y-m-d \k\l\. H:i', strtotime($page->post_modified)); ?></span>
                     <p><?php echo wpautop($main, true); ?></p>
