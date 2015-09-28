@@ -7,7 +7,6 @@
     $menu = get_transient('menu_' . $post->ID);
 
     if (!$menu) {
-        var_dump("CREATE MENU");
         $menu = wp_list_pages(array(
             'title_li' => '',
             'echo'     => 0,
