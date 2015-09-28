@@ -5,6 +5,8 @@ namespace Helsingborg\Theme;
 class Enqueue {
     public function __construct()
     {
+        add_action('after_setup_theme', '\Helsingborg\Theme\Enqueue::moveScriptsToFooter');
+
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::dequeueStyles');
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::enqueueStyles', 999);
 
@@ -16,6 +18,16 @@ class Enqueue {
 
         // Remove Tablepress css
         add_filter( 'tablepress_use_default_css', '__return_false' );
+    }
+
+    public static function moveScriptsToFooter()
+    {
+        remove_action('wp_head', 'wp_print_scripts');
+        remove_action('wp_head', 'wp_print_head_scripts', 9);
+        remove_action('wp_head', 'wp_enqueue_scripts', 1);
+        add_action('wp_footer', 'wp_print_scripts', 5);
+        add_action('wp_footer', 'wp_enqueue_scripts', 5);
+        add_action('wp_footer', 'wp_print_head_scripts', 5);
     }
 
     /**
