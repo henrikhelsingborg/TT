@@ -12,7 +12,7 @@ class HbgHelpReport {
      * Weather to show response stats in administration or not
      * @var boolean
      */
-    protected $_showResponsesInAdmin = true;
+    protected $_showResponsesInAdmin = false;
 
     /**
      * Registers the metabox if set to do
