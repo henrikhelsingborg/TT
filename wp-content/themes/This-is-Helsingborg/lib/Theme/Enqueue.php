@@ -5,8 +5,6 @@ namespace Helsingborg\Theme;
 class Enqueue {
     public function __construct()
     {
-        add_action('after_setup_theme', '\Helsingborg\Theme\Enqueue::moveScriptsToFooter');
-
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::dequeueStyles');
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::enqueueStyles', 999);
 
@@ -18,16 +16,6 @@ class Enqueue {
 
         // Remove Tablepress css
         add_filter( 'tablepress_use_default_css', '__return_false' );
-    }
-
-    public static function moveScriptsToFooter()
-    {
-        remove_action('wp_head', 'wp_print_scripts');
-        remove_action('wp_head', 'wp_print_head_scripts', 9);
-        remove_action('wp_head', 'wp_enqueue_scripts', 1);
-        add_action('wp_footer', 'wp_print_scripts', 5);
-        add_action('wp_footer', 'wp_enqueue_scripts', 5);
-        add_action('wp_footer', 'wp_print_head_scripts', 5);
     }
 
     /**
@@ -67,13 +55,13 @@ class Enqueue {
     {
         // Packaged jQuery
         // See the Gulpfile for scripts refereces
-        wp_register_script('jquery', get_template_directory_uri() . '/assets/js/dist/jquery.min.js', array(), '1.0.0', false);
+        wp_register_script('jquery', get_template_directory_uri() . '/assets/js/dist/jquery.min.js', array(), '1.0.0', true);
         wp_enqueue_script('jquery');
 
-        wp_register_script('jquery-ui', get_template_directory_uri() . '/assets/js/dist/jquery-ui.min.js', array(), '1.0.0', false);
+        wp_register_script('jquery-ui', get_template_directory_uri() . '/assets/js/dist/jquery-ui.min.js', array(), '1.0.0', true);
 
         // Readspeaker
-        wp_register_script('readspeaker', 'http://f1.eu.readspeaker.com/script/5507/ReadSpeaker.js?pids=embhl', array(), '1.0.0', false);
+        wp_register_script('readspeaker', 'http://f1.eu.readspeaker.com/script/5507/ReadSpeaker.js?pids=embhl', array(), '1.0.0', true);
         wp_enqueue_script('readspeaker');
 
         // App
@@ -96,7 +84,7 @@ class Enqueue {
      */
     public static function enqueuePageScripts()
     {
-        wp_register_script('knockout', get_template_directory_uri() . '/assets/js/dist/knockout.js', array(), '3.3.0', false);
+        wp_register_script('knockout', get_template_directory_uri() . '/assets/js/dist/knockout.js', array(), '3.3.0', true);
 
         // Search and 404
         if (is_search() || is_404()) {
@@ -107,7 +95,7 @@ class Enqueue {
         // Event search
         if (is_page_template('templates/event-search.php')) {
             wp_enqueue_script('knockout');
-            wp_register_script('event-list-model', get_template_directory_uri() . '/assets/js/dist/event.min.js', array(), '1.0.0', false);
+            wp_register_script('event-list-model', get_template_directory_uri() . '/assets/js/dist/event.min.js', array(), '1.0.0', true);
             wp_enqueue_script('event-list-model');
         }
 
@@ -115,7 +103,7 @@ class Enqueue {
         if (is_page_template('templates/alarm-search.php')) {
             wp_enqueue_script('knockout');
 
-            wp_register_script('alarm-list-page', get_template_directory_uri() . '/assets/js/dist/alarm.js', array(), '1.0.0', false);
+            wp_register_script('alarm-list-page', get_template_directory_uri() . '/assets/js/dist/alarm.js', array(), '1.0.0', true);
             wp_enqueue_script('alarm-list-page');
         }
 
