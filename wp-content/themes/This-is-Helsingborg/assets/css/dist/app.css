@@ -4124,8 +4124,6 @@ p {
     .site-footer a:hover {
       color: #fff;
       text-decoration: underline; }
-      .site-footer a:hover::before {
-        color: #fff; }
 
 .site-footer-fun-facts {
   width: 100%;
@@ -4481,7 +4479,7 @@ p {
   .sidebar-left .textwidget a:hover,
   .sidebar-right p > a:hover,
   .sidebar-right .textwidget a:hover {
-    color: rgba(255, 255, 255, 0.8); }
+    color: #fff; }
 
 .sidebar-left-widgets {
   margin-bottom: 20px !important; }
