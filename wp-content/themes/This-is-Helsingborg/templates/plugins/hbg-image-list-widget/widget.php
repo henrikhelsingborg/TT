@@ -1,8 +1,8 @@
 <?php echo $before_widget; ?>
     <?php if (isset($instance['title']) && strlen($instance['title']) > 0) : ?>
     <h3 class="box-title"><?php echo (($instance['title']) ? $instance['title'] : 'Bildspel'); ?></h3>
-    <div class="box-content">
     <?php endif; ?>
+    <div class="box-content">
         <ul class="orbit-slider" <?php if (count($items) > 1) : ?>data-orbit<?php endif; ?>>
             <?php
                 foreach ($items as $num => $item) :
@@ -33,7 +33,5 @@
             </li>
             <?php endforeach; ?>
         </ul>
-    <?php if (isset($instance['title']) && strlen($instance['title']) > 0) : ?>
     </div>
-    <?php endif; ?>
 <?php echo $after_widget; ?>
