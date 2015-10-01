@@ -102,3 +102,11 @@
 @import 'print/global';
 @import 'print/grid';
 @import 'print/hide';
+
+/**
+ * ## Color themes
+ * The different color themes available
+ */
+@import "color-themes/purple";
+@import "color-themes/blue";
+@import "color-themes/green";

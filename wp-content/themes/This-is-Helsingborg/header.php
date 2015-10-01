@@ -30,7 +30,7 @@
 
     <?php wp_head(); ?>
 </head>
-<body <?php echo (is_404()) ? 'id="page-not-found"' : ''; ?> class="<?php echo (is_front_page()) ? 'is-front-page' : ''; ?>">
+<body <?php echo (is_404()) ? 'id="page-not-found"' : ''; ?> class="<?php echo (is_front_page()) ? 'is-front-page' : ''; ?>" data-theme="<?php echo get_option('helsingborg_color_theme'); ?>">
     <div class="site-wrapper">
         <a href="#main" class="btn btn-default btn-offcanvas" tabindex="1">Hoppa till innehållet</a>
 

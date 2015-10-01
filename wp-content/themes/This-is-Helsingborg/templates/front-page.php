@@ -21,7 +21,7 @@
 
         <div class="row">
             <div class="columns large-12">
-                <h2 class="text-magenta no-margin-padding"><i class="fa fa-newspaper-o"></i> <?php echo (get_field('content_title')) ? get_field('content_title') : 'Aktuellt i Helsingborg'; ?></h2>
+                <h2 class="text-highlight no-margin-padding"><i class="fa fa-newspaper-o"></i> <?php echo (get_field('content_title')) ? get_field('content_title') : 'Aktuellt i Helsingborg'; ?></h2>
             </div>
         </div>
 
