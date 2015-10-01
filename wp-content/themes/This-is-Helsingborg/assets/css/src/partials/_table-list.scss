@@ -98,7 +98,7 @@ $headline-color: #333;
             &::after {
                 position: absolute;
                 right: 10px;
-                top: 14px;
+                top: 12px;
                 @include hbg-icon($icon-plus-square);
                 color: $palette-red-2;
                 font-size: 13pt;

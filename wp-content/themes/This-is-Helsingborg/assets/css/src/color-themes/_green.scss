@@ -34,6 +34,10 @@ body[data-theme="green"] {
         color: $palette-green-2;
     }
 
+    .navbar-aside .sub-menu .current > a::before {
+        background-color: $palette-green-2;
+    }
+
     // Article
     .section-article {
         border-color: $palette-green-2;
@@ -154,6 +158,20 @@ body[data-theme="green"] {
     // Breadcrumb
     .breadcrumbs a {
         color: $palette-green-2;
+    }
+
+    // Table list
+    .table-list thead {
+        background-color: $palette-green-2;
+        border-color: $palette-green-2;
+    }
+
+    .table-list .table-item td:last-child::after {
+        color: $palette-green-1;
+    }
+
+    .table-list .table-item.active {
+        background-color: lighten($palette-blue-2, 60%);
     }
 
     // Widget colors
