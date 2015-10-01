@@ -5281,6 +5281,11 @@ img[data-lazyload] {
   border-right: 1px solid #e7e5e1;
   padding: 20px; }
 
+.orbit-slider {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
 .orbit-container {
   width: auto;
   margin: -1px; }
