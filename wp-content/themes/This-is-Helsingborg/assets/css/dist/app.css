@@ -4124,11 +4124,9 @@ p {
       text-decoration: underline; }
 
 .site-footer-fun-facts {
-  width: 100%;
-  height: 125px;
-  background-image: url("../../images/skyline.jpg");
-  background-position: bottom right;
-  background-repeat: no-repeat; }
+  position: relative;
+  height: 150px;
+  width: 100%; }
   @media print {
     .site-footer-fun-facts {
       display: none; } }
@@ -4149,6 +4147,17 @@ p {
     margin-top: 20px; }
   .site-footer-content strong {
     font-weight: 500; }
+
+.footer-emblem {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 150px;
+  width: auto; }
+  .footer-emblem .st0 {
+    fill: #be1e00; }
+  .footer-emblem .st1 {
+    fill: #fff; }
 
 @media screen and (max-width: 1350px) {
   .site-footer-content {
@@ -5930,6 +5939,16 @@ body[data-theme="purple"] .box-share .share-icons li a:focus, body[data-theme="p
 
 body[data-theme="purple"] .breadcrumbs a {
   color: #712082; }
+
+body[data-theme="purple"] .table-list thead {
+  background-color: #712082;
+  border-color: #712082; }
+
+body[data-theme="purple"] .table-list .table-item td:last-child::after {
+  color: #d35098; }
+
+body[data-theme="purple"] .table-list .table-item.active {
+  background-color: #f2ddf7; }
 
 body[data-theme="purple"] .sidebar-right .widget:nth-child(1n) .box-filled,
 body[data-theme="purple"] .sidebar-left .widget:nth-child(1n) .box-filled {
