@@ -84,7 +84,7 @@ class Enqueue {
      */
     public static function enqueuePageScripts()
     {
-        wp_register_script('knockout', get_template_directory_uri() . '/assets/js/dist/knockout.js', array(), '3.3.0', true);
+        wp_register_script('knockout', get_template_directory_uri() . '/assets/js/dist/knockout.js', array(), '3.3.0', false);
 
         // Search and 404
         if (is_search() || is_404()) {
