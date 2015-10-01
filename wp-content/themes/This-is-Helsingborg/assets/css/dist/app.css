@@ -5321,6 +5321,7 @@ img[data-lazyload] {
           text-decoration: underline; }
   .orbit-container .orbit-bullets {
     margin: 0 auto 10px;
+    padding: 0;
     top: 4px; }
     .orbit-container .orbit-bullets li {
       width: 10px;
@@ -5608,15 +5609,12 @@ img[data-lazyload] {
 .sidebar-left .widget_image_list_widget .orbit-container {
   margin: 0; }
 
-.sidebar-right .widget_image_list_widget .orbit-bullets,
-.sidebar-left .widget_image_list_widget .orbit-bullets {
-  left: -18px; }
-  .sidebar-right .widget_image_list_widget .orbit-bullets li,
-  .sidebar-left .widget_image_list_widget .orbit-bullets li {
-    background-color: rgba(255, 255, 255, 0.5); }
-    .sidebar-right .widget_image_list_widget .orbit-bullets li.active,
-    .sidebar-left .widget_image_list_widget .orbit-bullets li.active {
-      background-color: #fff; }
+.sidebar-right .widget_image_list_widget .orbit-bullets li,
+.sidebar-left .widget_image_list_widget .orbit-bullets li {
+  background-color: rgba(255, 255, 255, 0.5); }
+  .sidebar-right .widget_image_list_widget .orbit-bullets li.active,
+  .sidebar-left .widget_image_list_widget .orbit-bullets li.active {
+    background-color: #fff; }
 
 /**
  * Widget structure
