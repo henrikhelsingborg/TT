@@ -3761,20 +3761,20 @@ p {
   font-weight: normal; }
   [class^="sidebar-"] .list li {
     margin: 0;
-    padding: 0; }
+    padding: 6px; }
     [class^="sidebar-"] .list li + li {
-      margin-top: 3px;
       border-top: none; }
+    [class^="sidebar-"] .list li:first-child {
+      padding-top: 0; }
   [class^="sidebar-"] .list a:not(.list-more) {
     display: block;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 8px 12px;
     color: #fff;
     letter-spacing: .8px;
     font-weight: 300;
-    text-decoration: none; }
+    text-decoration: underline;
+    padding: 0; }
     [class^="sidebar-"] .list a:not(.list-more):hover {
-      background: rgba(0, 0, 0, 0.2); }
+      color: rgba(255, 255, 255, 0.8); }
     [class^="sidebar-"] .list a:not(.list-more) .date {
       float: none;
       font-size: 9pt;
@@ -3784,10 +3784,6 @@ p {
     display: block;
     padding: 0;
     margin: 0; }
-  [class^="sidebar-"] .list .link-item {
-    left: 0; }
-    [class^="sidebar-"] .list .link-item::before {
-      display: none; }
 
 [class^="sidebar-"] .widget_simplelinklistquick-links-widget .box-content, [class^="sidebar-"] .widget_simplelinklistquick-links-widget .section-featured .widget_text .textwidget, .section-featured .widget_text [class^="sidebar-"] .widget_simplelinklistquick-links-widget .textwidget,
 [class^="sidebar-"] .widget_simplelinklistquick-links-widget .article-header .widget_text .textwidget, .article-header .widget_text [class^="sidebar-"] .widget_simplelinklistquick-links-widget .textwidget {
@@ -4457,24 +4453,24 @@ p {
   .sidebar-right .widget + .widget {
     margin-top: 20px; }
 
-.sidebar-right .widget:nth-child(1n) .box-filled,
-.sidebar-left .widget:nth-child(1n) .box-filled {
+.sidebar-right .widget:nth-child(1n+1) .box-filled,
+.sidebar-left .widget:nth-child(1n+1) .box-filled {
   background: #fab400; }
 
-.sidebar-right .widget:nth-child(2n) .box-filled,
-.sidebar-left .widget:nth-child(2n) .box-filled {
+.sidebar-right .widget:nth-child(2n+2) .box-filled,
+.sidebar-left .widget:nth-child(2n+2) .box-filled {
   background: #d72362; }
 
-.sidebar-right .widget:nth-child(3n) .box-filled,
-.sidebar-left .widget:nth-child(3n) .box-filled {
+.sidebar-right .widget:nth-child(3n+3) .box-filled,
+.sidebar-left .widget:nth-child(3n+3) .box-filled {
   background: #f27c00; }
 
-.sidebar-right .widget:nth-child(4n) .box-filled,
-.sidebar-left .widget:nth-child(4n) .box-filled {
+.sidebar-right .widget:nth-child(4n+4) .box-filled,
+.sidebar-left .widget:nth-child(4n+4) .box-filled {
   background: #be1e00; }
 
-.sidebar-right .widget:nth-child(5n) .box-filled,
-.sidebar-left .widget:nth-child(5n) .box-filled {
+.sidebar-right .widget:nth-child(5n+5) .box-filled,
+.sidebar-left .widget:nth-child(5n+5) .box-filled {
   background: #eb220f; }
 
 .sidebar-left p > a,

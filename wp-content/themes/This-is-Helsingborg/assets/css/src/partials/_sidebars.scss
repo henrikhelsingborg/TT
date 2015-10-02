@@ -15,31 +15,31 @@
 .sidebar-right,
 .sidebar-left {
     .widget {
-        &:nth-child(1n) {
+        &:nth-child(1n+1) {
             .box-filled {
                 background: $palette-red-1;
             }
         }
 
-        &:nth-child(2n) {
+        &:nth-child(2n+2) {
             .box-filled {
                 background: $palette-red-2;
             }
         }
 
-        &:nth-child(3n) {
+        &:nth-child(3n+3) {
             .box-filled {
                 background: $palette-red-3;
             }
         }
 
-        &:nth-child(4n) {
+        &:nth-child(4n+4) {
             .box-filled {
                 background: $palette-red-4;
             }
         }
 
-        &:nth-child(5n) {
+        &:nth-child(5n+5) {
             .box-filled {
                 background: $palette-red-5;
             }

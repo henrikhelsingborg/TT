@@ -38,7 +38,7 @@
             ?>
                 <li class="<?php echo $class; ?>">
                     <a href="<?php echo $link; ?>" <?php echo $target; ?>>
-                        <span class="link-item"><?php echo $title; ?></span>
+                        <span class="link-item link-item-light"><?php echo $title; ?></span>
                         <?php
                             if ($show_dates && !empty($datetime)) :
                             $date = date_i18n('d M Y', $datetime );
