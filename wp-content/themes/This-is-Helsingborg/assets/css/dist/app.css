@@ -2806,20 +2806,31 @@ img.responsive {
     padding-right: 20px;
     text-align: left; }
   .navbar .nav a {
+    position: relative;
     display: block;
-    color: #252525;
+    color: #fff;
     text-decoration: none;
-    padding: 8px 0; }
+    padding: 16px 0; }
     .navbar .nav a:hover,
     .navbar .nav a:focus {
-      text-decoration: underline;
-      color: #be1e00; }
+      text-decoration: underline; }
   .navbar .nav .current_page_item a,
   .navbar .nav .current-page-ancestor a {
-    background-color: #be1e00;
-    color: #fff !important;
-    padding: 8px 10px;
-    text-align: center; }
+    text-decoration: underline; }
+    .navbar .nav .current_page_item a::after,
+    .navbar .nav .current-page-ancestor a::after {
+      bottom: 0;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #ffffff;
+      border-width: 10px;
+      margin-left: -10px; }
   .navbar .nav li:first-child {
     text-align: left; }
 
@@ -2934,12 +2945,15 @@ body.nav-fixed .site-header .hero {
     .navbar-aside li > ul .current:not(.has-childs) > a::after {
       left: -8px; }
 
+.nav-mainmenu-container {
+  background-color: #be1e00;
+  margin-top: 15px; }
+
 .navbar-mainmenu {
   display: none;
-  margin-bottom: 0px;
-  margin-top: 15px; }
+  margin-bottom: 0px; }
   .navbar-mainmenu .nav {
-    margin-bottom: 0; }
+    margin: 0; }
   @media only screen and (min-width: 40.0625em) {
     .navbar-mainmenu {
       display: block; } }
@@ -2948,9 +2962,6 @@ body.nav-fixed .site-header .hero {
       font-size: 12pt; }
       .navbar-mainmenu .nav li:last-child {
         padding-right: 0; } }
-
-.is-front-page .navbar-mainmenu {
-  padding-bottom: 15px; }
 
 .nav-topmenu {
   background-color: #f6f5f2;
@@ -5731,7 +5742,6 @@ img[data-lazyload] {
     margin-top: 20px; } }
 
 .section-article {
-  border-top: 4px solid #be1e00;
   padding-bottom: 60px; }
   @media print {
     .section-article {
