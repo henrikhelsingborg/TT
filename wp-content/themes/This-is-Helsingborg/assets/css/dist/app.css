@@ -3782,7 +3782,6 @@ p {
       color: rgba(255, 255, 255, 0.8); }
   [class^="sidebar-"] .list span {
     display: block;
-    padding: 0;
     margin: 0; }
 
 [class^="sidebar-"] .widget_simplelinklistquick-links-widget .box-content, [class^="sidebar-"] .widget_simplelinklistquick-links-widget .section-featured .widget_text .textwidget, .section-featured .widget_text [class^="sidebar-"] .widget_simplelinklistquick-links-widget .textwidget,
