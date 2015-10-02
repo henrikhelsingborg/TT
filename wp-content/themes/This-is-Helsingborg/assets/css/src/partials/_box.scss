@@ -59,6 +59,10 @@
     border-right: 1px solid $creamy-darker;
 }
 
+.box-content-no-title-margin {
+    margin-top: 35px;
+}
+
 .box-title + .box-content {
     border-top: none;
 }

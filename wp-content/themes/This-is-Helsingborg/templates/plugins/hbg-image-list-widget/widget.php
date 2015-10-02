@@ -2,7 +2,7 @@
     <?php if (isset($instance['title']) && strlen($instance['title']) > 0) : ?>
     <h3 class="box-title"><?php echo (($instance['title']) ? $instance['title'] : 'Bildspel'); ?></h3>
     <?php endif; ?>
-    <div class="box-content">
+    <div class="box-content <?php if ((!isset($instance['title']) || strlen($instance['title']) == 0) && $args['id'] == 'content-area') : ?>box-content-no-title-margin<?php endif; ?>">
         <ul class="orbit-slider" <?php if (count($items) > 1) : ?>data-orbit<?php endif; ?>>
             <?php
                 foreach ($items as $num => $item) :

@@ -3568,6 +3568,9 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   border-left: 1px solid #e7e5e1;
   border-right: 1px solid #e7e5e1; }
 
+.box-content-no-title-margin {
+  margin-top: 35px; }
+
 .box-title + .box-content, [class^="sidebar-"] .widget_text h2 + .box-content, .section-featured .widget_text .box-title + .textwidget,
 [class^="sidebar-"] .section-featured .widget_text h2 + .textwidget, .section-featured [class^="sidebar-"] .widget_text h2 + .textwidget,
 .article-header .widget_text .box-title + .textwidget, [class^="sidebar-"] .article-header .widget_text h2 + .textwidget, .article-header [class^="sidebar-"] .widget_text h2 + .textwidget {
