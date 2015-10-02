@@ -37,8 +37,6 @@
         <div data-prompt-wrapper="alert"></div>
 
         <header class="site-header">
-            <?php if (is_front_page()) { get_template_part('templates/partials/stripe'); } ?>
-
             <div class="container">
                 <div class="row">
                     <div class="columns large-12">
