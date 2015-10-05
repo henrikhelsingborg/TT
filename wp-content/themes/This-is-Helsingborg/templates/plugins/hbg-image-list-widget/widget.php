@@ -11,7 +11,7 @@
                     $force_margin = (!empty($item_force_margins[$num]) && !empty($item_force_margin_values[$num])) ? ' margin-top:-' . $item_force_margin_values[$num] . 'px;' : '';
             ?>
             <li>
-                <img src="<?php echo $item_imageurl[$num]; ?>">
+                <img src="<?php echo $item_imageurl[$num]; ?>" alt="<?php echo (isset($item_alts[$num]) && strlen($item_alts[$num]) > 0) ? $item_alts[$num] : 'Bildspel'; ?>">
                 <?php if (!empty($item_texts[$num]) && !empty($item_links[$num])) : ?>
                 <div class="caption">
                     <div class="caption-content">

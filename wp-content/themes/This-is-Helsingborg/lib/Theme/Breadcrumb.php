@@ -34,12 +34,12 @@ class Breadcrumb
 
                     foreach ($anc as $ancestor) {
                         if (get_post_status($ancestor) != 'private') {
-                            $output = '<li><a href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li></li>' . $output;
+                            $output = '<li><a href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li>' . $output;
                         }
                     }
 
                     echo $output;
-                    echo '<span class="breadcrumbs-current" title="' . $title . '">' . $title . '</span>';
+                    echo '<li><span class="breadcrumbs-current" title="' . $title . '">' . $title . '</span></li>';
                 } else {
                     echo '<li><span class="breadcrumbs-current">' . get_the_title() . '</span></li>';
                 }

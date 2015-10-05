@@ -1,4 +1,4 @@
-<form class="search" method="get" role="search" action="/">
+<form class="search" method="get" action="/">
     <div class="form-container">
         <label class="search-label search-label-alt">Sök på Helsingborg.se</label>
         <div class="input-group">

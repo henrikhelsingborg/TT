@@ -2,7 +2,7 @@
     get_header();
 ?>
 
-<section class="section-article">
+<div class="section-article">
     <div class="container">
         <div class="row">
             <div class="columns large-12">
@@ -38,6 +38,6 @@
         </div>
         <?php endif; ?>
     </div>
-</section>
+</div>
 
 <?php get_footer(); ?>
