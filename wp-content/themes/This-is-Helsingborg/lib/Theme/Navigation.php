@@ -37,7 +37,10 @@ class Navigation
             $this->purgeTreeMenuTransientForAncestors($postBefore->post_parent);
         }
         
-        $this->purgeTreeMenuTransientForAncestors($postId);
+        // Compare post_title, if changed we need to empty menu cahce on the parent node
+        if ($postBefore->post_title != $postAfter->post_title) {
+            $this->purgeTreeMenuTransientForAncestors($postId);
+        }
         
     }
 
