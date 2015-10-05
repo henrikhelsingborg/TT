@@ -86,6 +86,9 @@
 // Box Filled
 
 .box-filled {
+    position: relative;
+    padding-left: $box-filled-stripe-width;
+
     .box-title {
         background-color: transparent;
 

@@ -90,3 +90,7 @@
 .stripe {
     @include stripe;
 }
+
+[class^="sidebar-"] .stripe {
+    width: $box-filled-stripe-width;
+}

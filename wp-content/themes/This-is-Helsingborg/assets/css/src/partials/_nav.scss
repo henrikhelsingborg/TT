@@ -295,6 +295,40 @@ body.nav-fixed .site-header .hero {
     }
 }
 
+.navbar-topmenu-help {
+    display: block;
+
+    @media screen and (max-width: 555px) {
+        display: inline-block;
+    }  
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    margin-top: -3px;
+    margin-bottom: 5px;
+
+    li {
+        display: inline-block;
+        text-align: left;
+
+        & + li {
+            margin-left: 20px;
+        }
+
+        a {
+            font-size: 11pt;
+            color: $text-default;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
 // Navigation list
 //
 // .nav-horizontal      - Makes the nav horizontal

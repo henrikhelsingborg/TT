@@ -20,7 +20,8 @@ class Navigation
         register_nav_menus(array(
             'main-menu' => 'Huvudmeny',
             'top-menu' => 'Toppmeny',
-            'footer-menu' => 'Hjälpmeny'
+            'top-menu-help' => 'Toppmeny Hjälp',
+            'footer-menu' => 'Footer meny'
         ));
     }
 
