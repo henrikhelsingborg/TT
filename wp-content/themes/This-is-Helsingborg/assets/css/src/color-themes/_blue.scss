@@ -11,21 +11,13 @@ body[data-theme="blue"] {
         @include stripe($palette-blue-1, $palette-blue-2, $palette-blue-3, $palette-blue-4, $palette-blue-5);
     }
 
+    .nav-mainmenu-container {
+        background-color: $palette-blue-4;
+    }
+
     // Top segmented controller for switching to sub site/self service
     .navbar-topmenu li.highlight-red a {
         color: $palette-blue-5;
-    }
-
-    // Main menu link
-    .navbar .nav a {
-        &:hover {
-            color: $palette-blue-5;
-        }
-    }
-
-    .navbar .nav .current-page-ancestor a,
-    .navbar .nav .current_page_item a {
-        background-color: $palette-blue-2;
     }
 
     // Sidebar nav
