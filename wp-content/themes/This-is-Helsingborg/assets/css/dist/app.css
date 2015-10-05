@@ -4507,6 +4507,10 @@ p {
 .sidebar-left .widget:nth-child(5n+5) .box-filled {
   background: #fab400; }
 
+.sidebar-right iframe[src*="facebook"],
+.sidebar-left iframe[src*="facebook"] {
+  width: 100% !important; }
+
 .sidebar-left p > a,
 .sidebar-left .textwidget a,
 .sidebar-right p > a,
@@ -4905,7 +4909,7 @@ p {
   .hbgic-easy-to-read::after {
     content: 'L';
     position: absolute;
-    bottom: 3px;
+    bottom: 5px;
     left: 5px; }
 
 li.icon-easy-to-read a {
