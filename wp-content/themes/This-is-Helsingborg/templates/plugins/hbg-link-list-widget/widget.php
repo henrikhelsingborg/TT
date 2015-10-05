@@ -1,5 +1,7 @@
 <?php $today = date('Y-m-d'); ?>
 <?php echo $before_widget; ?>
+    <?php if (in_array($args['id'], array('left-sidebar', 'left-sidebar-bottom', 'right-sidebar'))) get_template_part('templates/partials/stripe'); ?>
+
     <h3 class="box-title">
         <?php echo $title; ?>
         <?php if ($show_rss == 'rss_yes') { echo('<a href="'.$rss_link.'" class="rss-link"><span class="icon"></span></a>'); } ?>

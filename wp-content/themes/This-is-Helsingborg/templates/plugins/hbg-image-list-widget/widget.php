@@ -1,4 +1,5 @@
 <?php echo $before_widget; ?>
+    <?php if (in_array($args['id'], array('left-sidebar', 'left-sidebar-bottom', 'right-sidebar'))) get_template_part('templates/partials/stripe'); ?>
     <?php if (isset($instance['title']) && strlen($instance['title']) > 0) : ?>
     <h3 class="box-title"><?php echo (($instance['title']) ? $instance['title'] : 'Bildspel'); ?></h3>
     <?php endif; ?>

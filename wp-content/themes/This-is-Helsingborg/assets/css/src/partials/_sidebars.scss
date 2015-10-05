@@ -17,31 +17,31 @@
     .widget {
         &:nth-child(1n+1) {
             .box-filled {
-                background: $palette-red-1;
+                background: $palette-red-2;
             }
         }
 
         &:nth-child(2n+2) {
             .box-filled {
-                background: $palette-red-2;
+                background: $palette-red-3;
             }
         }
 
         &:nth-child(3n+3) {
             .box-filled {
-                background: $palette-red-3;
+                background: $palette-red-4;
             }
         }
 
         &:nth-child(4n+4) {
             .box-filled {
-                background: $palette-red-4;
+                background: $palette-red-5;
             }
         }
 
         &:nth-child(5n+5) {
             .box-filled {
-                background: $palette-red-5;
+                background: $palette-red-1;
             }
         }
     }

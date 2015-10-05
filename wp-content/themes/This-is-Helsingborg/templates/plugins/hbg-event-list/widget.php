@@ -10,6 +10,8 @@
 ?>
 
 <?php echo $before_widget; ?>
+    <?php if (in_array($args['id'], array('left-sidebar', 'left-sidebar-bottom', 'right-sidebar'))) get_template_part('templates/partials/stripe'); ?>
+    
     <h3 class="box-title"><?php echo $title; ?></h3>
     <div class="box-content" id="widget-<?php echo $args['widget_id']; ?>" data-event-list="{'defaultImagePath':'<?php echo get_template_directory_uri(); ?>/assets/images/event-placeholder.jpg', 'administrationIds': '<?php echo $administration_ids; ?>', 'ammount': '<?php echo $amount; ?>'}">
         <ul class="event-list list list-events">
