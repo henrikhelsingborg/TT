@@ -1,4 +1,6 @@
 .hbg-social-feed {
+    @extend .padding-x1;
+
     ul, li {
         list-style: none;
         padding: 0;
@@ -170,6 +172,9 @@
     }
 
     .hbg-social-feed-actions {
+        margin: -10px;
+        margin-top: 10px;
+
         a {
             border-top: 1px solid $creamy-darker;
         }

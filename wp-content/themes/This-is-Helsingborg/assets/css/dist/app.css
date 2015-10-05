@@ -4699,7 +4699,7 @@ p {
   position: relative; }
 
 .padding-x1, [class*="sidebar-"] .widget_alarmlistalarm-widget .box-content, [class*="sidebar-"] .widget_alarmlistalarm-widget .section-featured .widget_text .textwidget, .section-featured .widget_text [class*="sidebar-"] .widget_alarmlistalarm-widget .textwidget,
-[class*="sidebar-"] .widget_alarmlistalarm-widget .article-header .widget_text .textwidget, .article-header .widget_text [class*="sidebar-"] .widget_alarmlistalarm-widget .textwidget {
+[class*="sidebar-"] .widget_alarmlistalarm-widget .article-header .widget_text .textwidget, .article-header .widget_text [class*="sidebar-"] .widget_alarmlistalarm-widget .textwidget, .hbg-social-feed {
   padding: 10px !important; }
 
 .padding-x1-5, [class^="sidebar-"] .widget_text .textwidget {
@@ -5654,8 +5654,11 @@ img[data-lazyload] {
 .hbg-social-feed.hbg-social-feed-twitter .hbg-social-feed-post-content {
   margin-left: 0; }
 
-.hbg-social-feed .hbg-social-feed-actions a {
-  border-top: 1px solid #e7e5e1; }
+.hbg-social-feed .hbg-social-feed-actions {
+  margin: -10px;
+  margin-top: 10px; }
+  .hbg-social-feed .hbg-social-feed-actions a {
+    border-top: 1px solid #e7e5e1; }
 
 .widget.hbg-social-feed-facebook,
 .widget.hbg-social-feed-twitter {
