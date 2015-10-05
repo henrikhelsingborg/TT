@@ -45,6 +45,10 @@
             }
         }
     }
+
+    iframe[src*="facebook"] {
+        width: 100% !important;
+    }
 }
 
 .sidebar-left p > a,
