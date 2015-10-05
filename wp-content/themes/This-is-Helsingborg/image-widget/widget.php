@@ -1,4 +1,5 @@
 <?php echo $before_widget; ?>
+    <?php if (in_array($args['id'], array('left-sidebar', 'left-sidebar-bottom', 'right-sidebar'))) get_template_part('templates/partials/stripe'); ?>
     <?php if (!empty($instance['link'])) : ?>
     <a href="<?php echo $instance['link']; ?>" target="<?php echo $instance['linktarget']; ?>">
     <?php endif; ?>

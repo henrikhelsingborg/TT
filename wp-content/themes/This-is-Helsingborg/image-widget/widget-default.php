@@ -3,6 +3,8 @@
 
     echo $before_widget;
 
+    if (in_array($args['id'], array('left-sidebar', 'left-sidebar-bottom', 'right-sidebar'))) get_template_part('templates/partials/stripe');
+
     preg_match_all('#<a([^>])+>(.*?)</a>#i', $instance['description'], $matches);
     $description = $instance['description'];
 
