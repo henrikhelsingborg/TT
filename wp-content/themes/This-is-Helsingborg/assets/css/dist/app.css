@@ -2484,6 +2484,7 @@ img.responsive {
 .article-body {
   margin-bottom: 30px; }
   .article-body iframe {
+    border: none;
     width: 100%; }
   .article-body a {
     color: #005c86;
