@@ -3187,7 +3187,7 @@ body.nav-fixed .site-header .hero {
     .hero .search .hbg-loading {
       display: none;
       position: absolute;
-      top: 54px;
+      top: 24px;
       right: 70px;
       z-index: 10; }
     .hero .search ::-webkit-input-placeholder {
