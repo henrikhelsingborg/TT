@@ -5354,13 +5354,13 @@ img[data-lazyload] {
   list-style-type: none;
   padding: 0;
   margin: 0; }
+  .orbit-slider img {
+    max-width: none;
+    width: 100%; }
 
 .orbit-container {
   width: auto;
   margin: -1px; }
-  .orbit-container .orbit-slides-container img {
-    max-width: none;
-    width: 100%; }
   .orbit-container .orbit-slides-container .caption {
     position: absolute;
     bottom: 0;
