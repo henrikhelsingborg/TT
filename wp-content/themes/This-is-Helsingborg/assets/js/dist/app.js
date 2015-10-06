@@ -432,7 +432,7 @@ Helsingborg.Event.List = (function ($) {
             $('.modal-title').html(clickedEvent.Name);
             $('.modal-date').html(clickedEvent.Date);
             $('.modal-description').html(this.nl2br(clickedEvent.Description));
-            $('.modal-ics').attr('href', '?ics=' + clickedEvent.EventID);
+            $('.modal-ics a').attr('href', '?ics=' + clickedEvent.EventID);
 
         }.bind(this));
     }
