@@ -162,6 +162,22 @@ $headline-color: #333;
     }
 }
 
+@media #{$medium-down} {
+    .table-list {
+        .table-item, thead {
+            td,
+            th {
+                display: none;
+            }
+
+            td:first-child,
+            th:nth-child(2) {
+                display: block;
+            }
+        }
+    }
+}
+
 .filter-search {
     @include input-placeholder(#999);
 

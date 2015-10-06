@@ -14,11 +14,133 @@
  */
 /**
  * ## Global
- * SASS that does not output any actual css itself.
- * Example: Mixins, functions and variables
  */
 @import "http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic";
 @import "http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+meta.foundation-version {
+  font-family: "/5.5.2/"; }
+
+meta.foundation-mq-small {
+  font-family: "/only screen/";
+  width: 0; }
+
+meta.foundation-mq-small-only {
+  font-family: "/only screen and (max-width: 40em)/";
+  width: 0; }
+
+meta.foundation-mq-medium {
+  font-family: "/only screen and (min-width:40.0625em)/";
+  width: 40.0625em; }
+
+meta.foundation-mq-medium-only {
+  font-family: "/only screen and (min-width:40.0625em) and (max-width:64em)/";
+  width: 40.0625em; }
+
+meta.foundation-mq-large {
+  font-family: "/only screen and (min-width:64.0625em)/";
+  width: 64.0625em; }
+
+meta.foundation-mq-large-only {
+  font-family: "/only screen and (min-width:64.0625em) and (max-width:90em)/";
+  width: 64.0625em; }
+
+meta.foundation-mq-xlarge {
+  font-family: "/only screen and (min-width:90.0625em)/";
+  width: 90.0625em; }
+
+meta.foundation-mq-xlarge-only {
+  font-family: "/only screen and (min-width:90.0625em) and (max-width:120em)/";
+  width: 90.0625em; }
+
+meta.foundation-mq-xxlarge {
+  font-family: "/only screen and (min-width:120.0625em)/";
+  width: 120.0625em; }
+
+meta.foundation-data-attribute-namespace {
+  font-family: false; }
+
+html, body {
+  height: 100%; }
+
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+html,
+body {
+  font-size: 100%; }
+
+body {
+  background: #fff;
+  color: #222;
+  cursor: auto;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+
+a:hover {
+  cursor: pointer; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+img {
+  -ms-interpolation-mode: bicubic; }
+
+#map_canvas img,
+#map_canvas embed,
+#map_canvas object,
+.map_canvas img,
+.map_canvas embed,
+.map_canvas object,
+.mqa-display img,
+.mqa-display embed,
+.mqa-display object {
+  max-width: none !important; }
+
+.left {
+  float: left !important; }
+
+.right {
+  float: right !important; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.hide {
+  display: none; }
+
+.invisible {
+  visibility: hidden; }
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+img {
+  display: inline-block;
+  vertical-align: middle; }
+
+textarea {
+  height: auto;
+  min-height: 50px; }
+
+select {
+  width: 100%; }
+
 #page-not-found .message {
   text-align: center; }
   #page-not-found .message h1 {
@@ -70,8 +192,8 @@
       background: #f0eee9; }
 
 /**
- * ## Dependencies
- * These are required dependencies that we use as a base
+ * ## Foundation dependencies
+ * These are required dependencies from Foundation that we use
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -426,130 +548,6 @@ table {
 td,
 th {
   padding: 0; }
-
-meta.foundation-version {
-  font-family: "/5.5.2/"; }
-
-meta.foundation-mq-small {
-  font-family: "/only screen/";
-  width: 0; }
-
-meta.foundation-mq-small-only {
-  font-family: "/only screen and (max-width: 40em)/";
-  width: 0; }
-
-meta.foundation-mq-medium {
-  font-family: "/only screen and (min-width:40.0625em)/";
-  width: 40.0625em; }
-
-meta.foundation-mq-medium-only {
-  font-family: "/only screen and (min-width:40.0625em) and (max-width:64em)/";
-  width: 40.0625em; }
-
-meta.foundation-mq-large {
-  font-family: "/only screen and (min-width:64.0625em)/";
-  width: 64.0625em; }
-
-meta.foundation-mq-large-only {
-  font-family: "/only screen and (min-width:64.0625em) and (max-width:90em)/";
-  width: 64.0625em; }
-
-meta.foundation-mq-xlarge {
-  font-family: "/only screen and (min-width:90.0625em)/";
-  width: 90.0625em; }
-
-meta.foundation-mq-xlarge-only {
-  font-family: "/only screen and (min-width:90.0625em) and (max-width:120em)/";
-  width: 90.0625em; }
-
-meta.foundation-mq-xxlarge {
-  font-family: "/only screen and (min-width:120.0625em)/";
-  width: 120.0625em; }
-
-meta.foundation-data-attribute-namespace {
-  font-family: false; }
-
-html, body {
-  height: 100%; }
-
-html {
-  box-sizing: border-box; }
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit; }
-
-html,
-body {
-  font-size: 13pt; }
-
-body {
-  background: #fff;
-  color: #222;
-  cursor: auto;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
-  position: relative; }
-
-a:hover {
-  cursor: pointer; }
-
-img {
-  max-width: 100%;
-  height: auto; }
-
-img {
-  -ms-interpolation-mode: bicubic; }
-
-#map_canvas img,
-#map_canvas embed,
-#map_canvas object,
-.map_canvas img,
-.map_canvas embed,
-.map_canvas object,
-.mqa-display img,
-.mqa-display embed,
-.mqa-display object {
-  max-width: none !important; }
-
-.left {
-  float: left !important; }
-
-.right {
-  float: right !important; }
-
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: table; }
-
-.clearfix:after {
-  clear: both; }
-
-.hide {
-  display: none; }
-
-.invisible {
-  visibility: hidden; }
-
-.antialiased {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-img {
-  display: inline-block;
-  vertical-align: middle; }
-
-textarea {
-  height: auto;
-  min-height: 50px; }
-
-select {
-  width: 100%; }
 
 .row {
   margin: 0 auto;
@@ -4665,6 +4663,16 @@ p {
       margin: 0; }
       .table-list .table-content p + p {
         margin-top: 15px; }
+
+@media only screen and (max-width: 64em) {
+  .table-list .table-item td,
+  .table-list .table-item th, .table-list thead td,
+  .table-list thead th {
+    display: none; }
+  .table-list .table-item td:first-child,
+  .table-list .table-item th:nth-child(2), .table-list thead td:first-child,
+  .table-list thead th:nth-child(2) {
+    display: block; } }
 
 .filter-search ::-webkit-input-placeholder {
   /* WebKit browsers */

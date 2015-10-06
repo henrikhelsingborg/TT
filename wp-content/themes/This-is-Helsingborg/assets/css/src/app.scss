@@ -15,9 +15,8 @@
 
 /**
  * ## Global
- * SASS that does not output any actual css itself.
- * Example: Mixins, functions and variables
  */
+@import '../../../bower_components/foundation/scss/foundation/components/global'; // Foundation globals
 @import 'global/config';
 @import 'global/colors';
 @import 'global/fonts';
@@ -25,8 +24,8 @@
 @import 'global/404';
 
 /**
- * ## Dependencies
- * These are required dependencies that we use as a base
+ * ## Foundation dependencies
+ * These are required dependencies from Foundation that we use
  */
 @import '../../../bower_components/foundation/scss/normalize.scss'; // Foundation normalize
 @import '../../../bower_components/foundation/scss/foundation/components/grid'; // Foundation grid system
