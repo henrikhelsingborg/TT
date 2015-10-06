@@ -381,11 +381,13 @@ img[data-lazyload] {
 // Alignment
 
 img {
-    &.alignleft {
-        float: left;
-    }
+    @media #{$medium-up} {
+        &.alignleft {
+            float: left;
+        }
 
-    &.alignright {
-        float: right;
+        &.alignright {
+            float: right;
+        }
     }
 }
