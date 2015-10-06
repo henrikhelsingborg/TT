@@ -2738,7 +2738,7 @@ img.responsive {
     background-color: #eb220f; }
 
 [class^="sidebar-"] .stripe {
-  width: 10px !important; }
+  width: 0 !important; }
 
 .site-header {
   position: relative;
@@ -3620,7 +3620,7 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
 
 .box-filled {
   position: relative;
-  padding-left: 10px; }
+  padding-left: 0; }
   .box-filled .box-title, .box-filled [class^="sidebar-"] .widget_text h2, [class^="sidebar-"] .widget_text .box-filled h2 {
     background-color: transparent; }
     @media print {
@@ -4939,6 +4939,12 @@ img[data-lazyload] {
   max-width: none;
   width: 100%;
   height: 150px; }
+
+img.alignleft {
+  float: left; }
+
+img.alignright {
+  float: right; }
 
 .zselect {
   color: #252525;
