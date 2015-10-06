@@ -50,6 +50,7 @@
                         <nav class="nav-topmenu">
                         <?php
 
+                            /*
                             echo '<ul class="navbar-topmenu-help">';
                             wp_nav_menu(array(
                                 'theme_location'  => 'top-menu-help',
@@ -58,6 +59,7 @@
                                 'items_wrap'      => '%3$s'
                             ));
                             echo '</ul><br>';
+                            */
 
                             /**
                              * Displays the top menu navigation
