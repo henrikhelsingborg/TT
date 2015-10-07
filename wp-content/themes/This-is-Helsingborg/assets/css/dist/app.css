@@ -2345,7 +2345,8 @@ img.responsive {
     display: inline-block;
     margin-right: 6px;
     color: rgba(0, 0, 0, 0.4);
-    margin-left: -20px; }
+    margin-left: -20px;
+    text-decoration: none; }
 
 .link-item[href*="//"]:not([href*="helsingborg.se"])::before {
   font-family: FontAwesome;
