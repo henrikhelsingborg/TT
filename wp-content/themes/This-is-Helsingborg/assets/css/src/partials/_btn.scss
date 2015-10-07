@@ -11,7 +11,8 @@
 // <button class="btn {{modifier_class}}">Button</button>
 // <a href="#" class="btn {{modifier_class}}">Button</a>
 
-.btn {
+.btn,
+a.btn {
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -22,7 +23,8 @@
     text-decoration: none;
 }
 
-.btn-submit {
+.btn-submit,
+a.btn-submit {
     background-color: $palette-red-3;
     color: #fff;
     font-weight: 500;
@@ -30,6 +32,18 @@
 
     &:hover {
         background: darken($palette-red-3, 5%);
+    }
+}
+
+.btn-warning,
+a.btn-warning {
+    background-color: $palette-red-5;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    &:hover {
+        background: darken($palette-red-5, 5%);
     }
 }
 

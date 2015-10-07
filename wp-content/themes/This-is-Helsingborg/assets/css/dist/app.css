@@ -3503,7 +3503,9 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   .zselect .deselectall {
     cursor: pointer; }
 
-.btn, .gform_footer input[type="submit"] {
+.btn,
+.gform_footer input[type="submit"],
+a.btn {
   display: inline-block;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -3513,13 +3515,27 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   color: #fff;
   text-decoration: none; }
 
-.btn-submit, .gform_footer input[type="submit"] {
+.btn-submit,
+.gform_footer input[type="submit"],
+a.btn-submit {
   background-color: #f27c00;
   color: #fff;
   font-weight: 500;
   letter-spacing: 1px; }
-  .btn-submit:hover, .gform_footer input[type="submit"]:hover {
+  .btn-submit:hover,
+  .gform_footer input[type="submit"]:hover,
+  a.btn-submit:hover {
     background: #d86f00; }
+
+.btn-warning,
+a.btn-warning {
+  background-color: #eb220f;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px; }
+  .btn-warning:hover,
+  a.btn-warning:hover {
+    background: #d31f0d; }
 
 .btn-plain,
 .btn-alert-close {
@@ -4402,7 +4418,7 @@ p {
 
 .section-featured .search {
   margin: 0; }
-  .section-featured .search input {
+  .section-featured .search input[type="search"] {
     padding: 20px;
     font-size: 16pt;
     border: 1px solid #d0ccc5;

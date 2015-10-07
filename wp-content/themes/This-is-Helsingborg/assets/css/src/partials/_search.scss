@@ -115,7 +115,7 @@
 .section-featured .search {
     margin: 0;
 
-    input {
+    input[type="search"] {
         padding: 20px;
         font-size: 16pt;
         border: 1px solid $form-control-border-color;
