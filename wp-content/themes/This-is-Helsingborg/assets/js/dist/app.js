@@ -15,10 +15,10 @@ Helsingborg.Prompt.Alert = (function ($) {
             // Show cookies alert if not accepted
             if (window.localStorage.getItem('accept-cookies') != 'true') {
                 this.show('info',
-                    'Helsingborg.se använder cookies för att förbättra din upplevelse på siten. Genom att surfa vidare accepterar du dessa cookies.<br><a href="http://www.helsingborg.se/startsida/toppmeny/om-webbplatsen/om-cookies-pa-webbplatsen/">Läs mer om cookies här »</a>',
+                    'På helsingborg.se använder vi cookies (kakor) för att webbplatsen ska fungera på ett bra sätt för dig. Genom att klicka vidare godkänner du att vi använder cookies. <a href="http://www.helsingborg.se/startsida/toppmeny/om-webbplatsen/om-cookies-pa-webbplatsen/">Vad är cookies?</a>',
                     [
                         {
-                            label: 'Ok, jag förstår',
+                            label: 'Jag godkänner',
                             class: 'btn-submit',
                             action: 'accept-cookies'
                         }
