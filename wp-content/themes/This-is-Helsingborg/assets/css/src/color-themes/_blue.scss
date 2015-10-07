@@ -166,6 +166,14 @@ body[data-theme="blue"] {
         background-color: lighten($palette-blue-2, 60%);
     }
 
+    .btn-submit {
+        background-color: $palette-blue-2;
+
+        &:hover {
+            background-color: darken($palette-blue-2, 5%);
+        }
+    }
+
     // Widget colors
     .sidebar-right,
     .sidebar-left {
