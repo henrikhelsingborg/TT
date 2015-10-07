@@ -3541,7 +3541,7 @@ a.btn-warning {
 .btn-plain,
 .btn-alert-close {
   background-color: transparent;
-  color: #be1e00;
+  color: #be1e00 !important;
   padding: 0; }
   .btn-plain:hover,
   .btn-alert-close:hover {
