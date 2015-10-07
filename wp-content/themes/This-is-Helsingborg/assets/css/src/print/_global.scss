@@ -5,6 +5,7 @@
     }
 
     a[href]:after {
+        display: none;
         content: " (" attr(href) ")";
         font-size: 10pt;
         font-weight: normal;
