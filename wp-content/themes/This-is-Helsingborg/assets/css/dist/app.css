@@ -4729,7 +4729,8 @@ p {
   position: relative; }
 
 .padding-x1, [class*="sidebar-"] .widget_alarmlistalarm-widget .box-content, [class*="sidebar-"] .widget_alarmlistalarm-widget .section-featured .widget_text .textwidget, .section-featured .widget_text [class*="sidebar-"] .widget_alarmlistalarm-widget .textwidget,
-[class*="sidebar-"] .widget_alarmlistalarm-widget .article-header .widget_text .textwidget, .article-header .widget_text [class*="sidebar-"] .widget_alarmlistalarm-widget .textwidget, .hbg-social-feed {
+[class*="sidebar-"] .widget_alarmlistalarm-widget .article-header .widget_text .textwidget, .article-header .widget_text [class*="sidebar-"] .widget_alarmlistalarm-widget .textwidget, [class^="sidebar-"] .widget_eventlistwidget .box-content, [class^="sidebar-"] .widget_eventlistwidget .section-featured .widget_text .textwidget, .section-featured .widget_text [class^="sidebar-"] .widget_eventlistwidget .textwidget,
+[class^="sidebar-"] .widget_eventlistwidget .article-header .widget_text .textwidget, .article-header .widget_text [class^="sidebar-"] .widget_eventlistwidget .textwidget, .hbg-social-feed {
   padding: 10px !important; }
 
 .padding-x1-5, [class^="sidebar-"] .widget_text .textwidget {
@@ -5331,16 +5332,33 @@ img[data-lazyload] {
   margin-bottom: 0;
   margin-top: 10px; }
 
+[class^="sidebar-"] .widget_eventlistwidget .box-content, [class^="sidebar-"] .widget_eventlistwidget .section-featured .widget_text .textwidget, .section-featured .widget_text [class^="sidebar-"] .widget_eventlistwidget .textwidget,
+[class^="sidebar-"] .widget_eventlistwidget .article-header .widget_text .textwidget, .article-header .widget_text [class^="sidebar-"] .widget_eventlistwidget .textwidget {
+  margin-top: -10px !important; }
+
 [class^="sidebar-"] .widget_eventlistwidget .event-item {
-  display: table;
-  width: 100%; }
+  display: block;
+  width: 100%;
+  text-decoration: none !important;
+  padding: 0 10px !important; }
   [class^="sidebar-"] .widget_eventlistwidget .event-item > span {
-    display: table-cell;
-    border: none; }
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0; }
   [class^="sidebar-"] .widget_eventlistwidget .event-item .date {
-    font-size: 12pt !important;
-    width: 50px;
-    text-indent: -13px; }
+    font-size: 10pt !important;
+    text-align: left;
+    width: auto; }
+    [class^="sidebar-"] .widget_eventlistwidget .event-item .date span {
+      display: inline; }
+      [class^="sidebar-"] .widget_eventlistwidget .event-item .date span + span {
+        margin-left: 5px; }
+
+[class^="sidebar-"] .widget_eventlistwidget .list-more {
+  margin: -16px;
+  margin-top: 0;
+  margin-top: 15px; }
 
 [class^="sidebar-"] .widget_text h2 {
   background-color: transparent;

@@ -77,7 +77,7 @@
                         if ($today == $event->Date) {
                             $list .= '<span class="date-day"><strong>Idag</strong></span><span class="date-time">' . $event->Time . '</span>';
                         } else {
-                            $list .= '<span class="date-day">' . date('d', strtotime($event->Date)) . '</span><span class="date-time">' . date('M', strtotime($event->Date)) . '</span>';
+                            $list .= '<span class="date-day">' . date('d', strtotime($event->Date)) . '</span><span class="date-time">' . strtolower(strftime('%b', strtotime($event->Date))) . '</span>';
                         }
                     $list .= '</span>';
                     $list .= '<span class="title"><span class="link-item">' . $event->Name . '</span></span>';

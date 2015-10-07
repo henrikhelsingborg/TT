@@ -415,12 +415,11 @@ Helsingborg.Event.List = (function ($) {
                 }
             });
 
-            // Output information
-            
-            if (clickedEvent.ImagePath) {
+            // Output information            
+            if (clickedEvent.ImagePath != "") {
                 $('.modal-image').attr('src', clickedEvent.ImagePath);
             } else {
-                $('.modal-image').attr('src', this.defaultImagePath);
+                $('.modal-image').attr('src', '/wp-content/themes/This-is-Helsingborg/assets/images/event-placeholder.jpg');
             }
 
             if (clickedEvent.Link) {
