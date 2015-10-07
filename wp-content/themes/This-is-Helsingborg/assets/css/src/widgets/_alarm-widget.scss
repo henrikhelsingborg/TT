@@ -21,9 +21,27 @@
     }
 }
 
-[class*="sidebar-"] .widget_alarmlistwidget .box-content {
+[class*="sidebar-"] .widget_alarmlistalarm-widget .box-content {
     @extend .padding-x1;
-    padding-top: 0;
+    padding-top: 0 !important;
+
+    .list-more {
+        margin: -10px;
+        margin-top: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .link-item {
+        text-decoration: underline;
+    }
+
+    .date {
+        margin-left: 20px;
+        text-decoration: none;
+    }
 }
 
 .section-featured .widget_alarmlistwidget,

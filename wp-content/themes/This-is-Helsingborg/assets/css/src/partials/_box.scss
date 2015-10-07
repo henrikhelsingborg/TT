@@ -40,6 +40,10 @@
             margin-right: 0;
         }
     }
+
+    @media print {
+        border: 1px solid $creamy-darker;
+    }
 }
 
 // Box content
@@ -55,6 +59,10 @@
     border-right: 1px solid $creamy-darker;
 }
 
+.box-content-no-title-margin {
+    margin-top: 35px;
+}
+
 .box-title + .box-content {
     border-top: none;
 }
@@ -68,20 +76,36 @@
         border-bottom: 4px solid $palette-red-2;
         background-color: transparent;
         color: $palette-red-2;
+
+        @media print {
+            padding: 10px 15px;
+        }
     }
 }
 
 // Box Filled
 
 .box-filled {
+    position: relative;
+    padding-left: $box-filled-stripe-width;
+
     .box-title {
         background-color: transparent;
+
+        @media print {
+            border-bottom: 0;
+        }
     }
 
     .box-content {
         background-color: transparent;
         border: none;
         color: #fff;
+
+        @media print {
+            border: 1px solid $creamy-darker;
+            border-top: 0;
+        }
     }
 
     .box-title + [class*="padding-x"] {
@@ -117,6 +141,10 @@
     margin-top: 30px;
     line-height: 100%;
     display: table;
+
+    @media print {
+        display: none;
+    }
 
     .box-title {
         font-size: 13pt;

@@ -377,7 +377,7 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                 FROM
                     alarm_alarms a
                 WHERE
-                    a.SmallDisturbance = 'true'
+                    LOWER(a.SmallDisturbance) = 'true'
                 ORDER BY a.SentTime DESC
             ", OBJECT);
         }
@@ -411,7 +411,7 @@ if (!class_exists('HbgScheduledAlarmsDisturbance')) {
                 FROM
                     alarm_alarms a
                 WHERE
-                    a.BigDisturbance = 'true'
+                    LOWER(a.BigDisturbance) = 'true'
                 ORDER BY a.SentTime DESC
             ", OBJECT);
         }

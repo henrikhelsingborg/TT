@@ -77,3 +77,15 @@
         margin: 0;
     }
 }
+
+#eventModal {
+    .modal-title {
+        margin-bottom: 0;
+    }
+
+    .modal-ics {
+        display: block;
+        margin-top: -5px;
+        margin-bottom: 25px;
+    }
+}

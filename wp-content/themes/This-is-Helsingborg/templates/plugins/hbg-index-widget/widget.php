@@ -25,15 +25,15 @@
                     $title = $instance['headline' . ($num+1)];
                 }
         ?>
-        <div class="columns <?php if (is_front_page() && $args['id'] == 'content-area') : ?>large-4 medium-4<?php elseif ($args['id'] == 'content-area-bottom') : ?>large-3 medium-4 small-12<?php elseif (!is_page_template('templates/index-page.php')) : ?>large-6 medium-6<?php else : ?>large-4 medium-6<?php endif; ?> end">
+        <div class="columns <?php if (is_front_page() && $args['id'] == 'content-area') : ?>large-4 medium-4<?php elseif ($args['id'] == 'content-area-bottom') : ?>large-3 medium-4 small-12<?php elseif (!is_page_template('templates/index-page.php')) : ?>large-6 medium-6 print-6<?php else : ?>large-4 medium-6 print-6<?php endif; ?> end">
             <a href="<?php echo $link; ?>" class="index-item" data-equalizer-watch>
                 <?php if (isset($image[0])) : ?>
-                <img src="<?php echo $image[0]; ?>">
+                <img src="<?php echo $image[0]; ?>" alt="<?php echo $title; ?>">
                 <?php endif; ?>
-                <span class="index-container">
-                    <span class="index-caption link-item"><?php echo $title; ?></span>
-                    <span class="index-description"><?php echo wpautop($main, true); ?></span>
-                </span>
+                <div class="index-container">
+                    <div class="index-caption link-item"><?php echo $title; ?></div>
+                    <div class="index-description"><?php echo wpautop($main, true); ?></div>
+                </div>
             </a>
         </div>
         <?php endforeach; ?>

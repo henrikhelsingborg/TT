@@ -57,20 +57,35 @@
         $today = date('Y-m-d');
         $list = '';
 
-        foreach( $events as $event ) {
-            $list .= '<li>';
-                $list .= '<a href="#" id="'.$event->EventID.'" class="event-item" data-reveal="eventModal"><span class="date">';
-                    if ($today == $event->Date) {
-                        $list .= '<span class="date-day"><strong>Idag</strong></span><span class="date-time">' . $event->Time . '</span>';
-                    } else {
-                        $list .= '<span class="date-day">' . date('d', strtotime($event->Date)) . '</span><span class="date-time">' . date('M', strtotime($event->Date)) . '</span>';
-                    }
-                $list .= '</span>';
-                $list .= '<span class="title"><span class="link-item">' . $event->Name . '</span></span>';
-                $list .= '</a>';
-            $list .= '</li>';
+        $theme = wp_get_theme();
+        if ($theme->get('Name') == "Helsingborg Stad") {
+            foreach( $events as $event ) {
+                $list .= '<li>';
+                // Present 'Idag HH:ii' och 'YYYY-mm-dd'
+                if ($today == $event->Date) {
+                    $list .= '<span class="date">Idag ' . $event->Time . '</span>';
+                } else {
+                    $list .= '<span class="date">' . $event->Date . '</span>';
+                }
+                $list .= '<a href="#" class="modalLink" id="'.$event->EventID.'" data-reveal-id="eventModal">'.$event->Name.'</a>';
+                $list .= '</li>';
+            }
+        } else {
+            foreach( $events as $event ) {
+                $list .= '<li>';
+                    $list .= '<a href="#" id="'.$event->EventID.'" class="event-item" data-reveal="eventModal"><span class="date">';
+                        if ($today == $event->Date) {
+                            $list .= '<span class="date-day"><strong>Idag</strong></span><span class="date-time">' . $event->Time . '</span>';
+                        } else {
+                            $list .= '<span class="date-day">' . date('d', strtotime($event->Date)) . '</span><span class="date-time">' . date('M', strtotime($event->Date)) . '</span>';
+                        }
+                    $list .= '</span>';
+                    $list .= '<span class="title"><span class="link-item">' . $event->Name . '</span></span>';
+                    $list .= '</a>';
+                $list .= '</li>';
 
-            //$list .= '<a href="#" class="modalLink" id="'.$event->EventID.'" data-reveal-id="eventModal">'.$event->Name.'</a>';
+                //$list .= '<a href="#" class="modalLink" id="'.$event->EventID.'" data-reveal-id="eventModal">'.$event->Name.'</a>';
+            }
         }
 
         $result = array('events' => $events, 'list' => $list);

@@ -1,5 +1,6 @@
 <!-- Twitter feed -->
 <?php echo $before_widget; ?>
+    <?php if (in_array($args['id'], array('left-sidebar', 'left-sidebar-bottom', 'right-sidebar'))) get_template_part('templates/partials/stripe'); ?>
     <h3 class="box-title"><i class="fa fa-twitter"></i> <?php echo (isset($instance['title']) && strlen($instance['title']) > 0) ? $instance['title'] : 'Twitter'; ?></h3>
 
     <div class="box-content hbg-social-feed hbg-social-feed-twitter">

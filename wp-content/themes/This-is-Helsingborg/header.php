@@ -25,20 +25,18 @@
     <script>
         var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
         <?php if (is_front_page()) : ?>var is_front_page = true;<?php endif; ?>
-        <?php if ($lazyloadImages === true) : ?>var lazyloadImages = true;<?php endif; ?>
+        <?php if (isset($lazyloadImages) && $lazyloadImages === true) : ?>var lazyloadImages = true;<?php endif; ?>
     </script>
 
     <?php wp_head(); ?>
 </head>
-<body <?php echo (is_404()) ? 'id="page-not-found"' : ''; ?> class="<?php echo (is_front_page()) ? 'is-front-page' : ''; ?>">
+<body <?php echo (is_404()) ? 'id="page-not-found"' : ''; ?> class="<?php echo (is_front_page()) ? 'is-front-page' : ''; ?>" data-theme="<?php echo get_option('helsingborg_color_theme'); ?>">
     <div class="site-wrapper">
         <a href="#main" class="btn btn-default btn-offcanvas" tabindex="1">Hoppa till innehållet</a>
 
         <div data-prompt-wrapper="alert"></div>
 
         <header class="site-header">
-            <?php if (is_front_page()) { get_template_part('templates/partials/stripe'); } ?>
-
             <div class="container">
                 <div class="row">
                     <div class="columns large-12">
@@ -51,6 +49,18 @@
 
                         <nav class="nav-topmenu">
                         <?php
+
+                            /*
+                            echo '<ul class="navbar-topmenu-help">';
+                            wp_nav_menu(array(
+                                'theme_location'  => 'top-menu-help',
+                                'container'       => '',
+                                'container_class' => '',
+                                'items_wrap'      => '%3$s'
+                            ));
+                            echo '</ul><br>';
+                            */
+
                             /**
                              * Displays the top menu navigation
                              */

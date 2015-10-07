@@ -44,6 +44,7 @@
     margin-bottom: 30px;
 
     iframe {
+        border: none;
         width: 100%;
     }
 
@@ -90,6 +91,10 @@
 }
 
 .article-accessibility {
+    @media print {
+        display: none !important;
+    }
+
     li + li {
         margin-left: 20px;
     }

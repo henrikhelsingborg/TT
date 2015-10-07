@@ -20,6 +20,7 @@
             <h2 class="modal-title"></h2>
             <p class="modal-description"></p>
             <p class="modal-link"></p>
+            <p class="modal-isc"><a href="?isc=0" target="_blank">Lägg till i din kalender</a></p>
             <!--<p class="modal-date"></p>-->
         </div>
     </div>
@@ -76,6 +77,7 @@
             var description = $('.modal-description');
             var time_list = $('#time-modal');
             var organizer_list = $('#organizer-modal');
+            var isc = $('.modal-ics');
 
             document.getElementById('event-times').style.display = 'none';
             document.getElementById('event-times').className = 'large-6 columns';
@@ -129,6 +131,7 @@
 
             jQuery(image).attr("src", result.ImagePath);
             jQuery(title).html(result.Name);
+            jQuery(isc).attr('href', '?ics=' + result.id);
 
             if (result.Link) {
                 jQuery(link).html('<a href="' + result.Link + '" target="blank">' + result.Link + '</a>').show();

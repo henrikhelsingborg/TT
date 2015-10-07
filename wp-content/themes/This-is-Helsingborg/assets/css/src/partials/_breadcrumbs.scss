@@ -13,6 +13,10 @@
     font-size: 11pt;
     list-style-type: none;
 
+    @media print {
+        margin-top: 0;
+    }
+
     li {
         display: inline-block;
 
@@ -31,6 +35,12 @@
         &:hover,
         &:focus {
             text-decoration: underline;
+        }
+
+        @media print {
+            &:after {
+                display: none;
+            }
         }
     }
 }

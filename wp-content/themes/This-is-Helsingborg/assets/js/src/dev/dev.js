@@ -96,6 +96,17 @@ jQuery(document).ready(function ($) {
     });
     */
    
-   $('.mobile-menu-wrapper').find('input, button').attr('tabindex', '-1');
+    $('.mobile-menu-wrapper').find('input, button').attr('tabindex', '-1');
+
+    $('[data-tooltip*="click"]').on('click', function (e) {
+        if ($(e.target).is('[data-tooltip-toggle]')) {
+            e.preventDefault();
+            $(this).find('.tooltip').toggle().find('textarea:first').focus();
+        }
+    });
+
+
+
+    $('[class^="sidebar"] .widget_text').append('<div class="stripe"><div></div><div></div><div></div><div></div><div></div></div>');
 
 });

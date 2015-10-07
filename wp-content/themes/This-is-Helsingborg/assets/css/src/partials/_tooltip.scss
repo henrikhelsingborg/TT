@@ -1,5 +1,8 @@
 [data-tooltip] {
     position: relative;
+    .tooltip {
+        display: none;
+    }
 }
 
 [data-tooltip-absolute] {
@@ -7,10 +10,6 @@
 }
 
 [data-tooltip*="focus"] {
-    .tooltip {
-        display: none;
-    }
-
     &:focus {
         .tooltip {
             display: block;
@@ -19,10 +18,6 @@
 }
 
 [data-tooltip*="hover"] {
-    .tooltip {
-        display: none;
-    }
-
     &:hover {
         .tooltip {
             display: block;
@@ -33,7 +28,7 @@
 .tooltip {
     display: block;
     position: absolute;
-    bottom: -20px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -57,5 +52,29 @@
         border-right: 5px solid transparent;
         
         border-bottom: 5px solid $text-default;
+    }
+}
+
+.tooltip-creamy-large {
+    padding: 15px;
+    width: 300px;
+    background-color: $creamy;
+    border: 1px solid darken($creamy-darker, 3%);
+    color: $text-default;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(#000, .2);
+
+    &::before {
+        border-bottom: 5px solid $creamy-darker;
+    }
+}
+
+.tooltip-form {
+    form {
+        margin-top: -5px;
+    }
+
+    label {
+        margin-bottom: 5px;
     }
 }

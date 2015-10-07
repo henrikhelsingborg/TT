@@ -10,6 +10,10 @@
     background-size: cover;
     background-position: center center;
 
+    @media print {
+        display: none;
+    }
+
     @media #{$small-only} {
         display: none;
     }
@@ -109,7 +113,7 @@
         .hbg-loading {
             display: none;
             position: absolute;
-            top: 54px;
+            top: 24px;
             right: 70px;
             z-index: 10;
         }
@@ -118,8 +122,16 @@
     }
 }
 
-.browser-firefox .hero .search input[type="search"] {
+.browser-firefox .hero .search input[type="search"],
+.browser-trident .hero .search input[type="search"],
+.browser-explorer .hero .search input[type="search"]
+ {
     width: 400px;
+}
+
+.browser-trident .hero .form-container,
+.browser-explorer .hero .form-container {
+    width: 480px;
 }
 
 .browser-chrome .hero .search .form-element,
