@@ -20,6 +20,10 @@
         font-size: $base-font-size;
         line-height: 120%;
         margin-right: 3px;
+
+        &::before {
+            display: none;
+        }
     }
 
     a {

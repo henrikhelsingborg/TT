@@ -4555,6 +4555,8 @@ p {
     font-size: 13pt;
     line-height: 120%;
     margin-right: 3px; }
+    .pagination li::before {
+      display: none; }
   .pagination a {
     display: block;
     padding: 3px 9px;
@@ -5004,6 +5006,8 @@ img[data-lazyload] {
     display: none; }
     .guide-list li.current {
       display: block; }
+    .guide-list li::before {
+      display: none; }
 
 .mobile-menu-wrapper .search input {
   padding: 10px 12px;
