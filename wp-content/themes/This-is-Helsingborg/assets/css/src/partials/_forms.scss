@@ -17,6 +17,7 @@ $form-control-box-shadow: 0 0 10px rgba($focus-color, .5);
     font-weight: 300;
     color: $text-default;
     text-indent: 0;
+    appearance: none;
 
     &:focus {
         box-shadow: $form-control-box-shadow;

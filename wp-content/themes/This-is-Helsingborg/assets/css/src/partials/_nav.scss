@@ -265,6 +265,10 @@ body.nav-fixed .site-header .hero {
     box-shadow: 0 2px 2px $creamy;
     background-color: #fff;
 
+    @media screen and (max-width: 555px) {
+        margin-bottom: 5px;
+    }
+
     li {
         display: inline-block;
 

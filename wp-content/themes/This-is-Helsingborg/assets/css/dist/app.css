@@ -2994,6 +2994,9 @@ body.nav-fixed .site-header .hero {
   font-size: 0px;
   box-shadow: 0 2px 2px #f6f5f2;
   background-color: #fff; }
+  @media screen and (max-width: 555px) {
+    .navbar-topmenu {
+      margin-bottom: 5px; } }
   .navbar-topmenu li {
     display: inline-block; }
     .navbar-topmenu li a {
@@ -3284,7 +3287,10 @@ textarea.form-control {
   font-size: 12pt;
   font-weight: 300;
   color: #252525;
-  text-indent: 0; }
+  text-indent: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
   input[type="color"].form-control:focus,
   .zselect .zmsfilter input[type="color"]:focus,
   input[type="date"].form-control:focus,
@@ -3353,6 +3359,9 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   font-weight: 300;
   color: #252525;
   text-indent: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: 8px; }
   .gform_wrapper input[type="email"]:focus,
   .gform_wrapper input[type="number"]:focus,
@@ -3387,6 +3396,9 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   font-weight: 300;
   color: #252525;
   text-indent: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   padding: 0; }
   .gform_wrapper .chosen-container-multi .chosen-choices li.search-field input[type="text"]:focus {
@@ -3452,6 +3464,9 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   font-weight: 300;
   color: #252525;
   text-indent: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: 4px;
   font-size: 9pt;
   width: 60px !important; }
@@ -5113,6 +5128,9 @@ img[data-lazyload] {
       font-weight: 300;
       color: #252525;
       text-indent: 0;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
       width: 80px;
       padding: 4px;
       margin-right: 5px;
@@ -5135,6 +5153,9 @@ img[data-lazyload] {
       font-weight: 300;
       color: #252525;
       text-indent: 0;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
       margin-left: 8px;
       padding: 5px;
       width: 200px; }
