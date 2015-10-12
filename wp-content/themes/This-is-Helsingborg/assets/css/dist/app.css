@@ -4625,6 +4625,40 @@ p {
     .table-list thead .header {
       cursor: pointer;
       padding-right: 25px; }
+      .table-list thead .header::before {
+        font-family: FontAwesome;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        content: "";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin-right: 5px; }
+      .table-list thead .header.sorting-asc::before {
+        font-family: FontAwesome;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        content: "";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+      .table-list thead .header.sorting-desc::before {
+        font-family: FontAwesome;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        content: "";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
       .table-list thead .header:last-child {
         background-position: 95% center; }
   .table-list tbody {
@@ -4667,7 +4701,7 @@ p {
   .table-list .table-item:hover {
     cursor: pointer; }
   .table-list .table-item.active {
-    background-color: #ffc1d9; }
+    background-color: #ffeff5; }
     .table-list .table-item.active td:last-child::after {
       font-family: FontAwesome;
       speak: none;

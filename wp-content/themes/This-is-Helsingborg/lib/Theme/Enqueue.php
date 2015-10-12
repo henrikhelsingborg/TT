@@ -110,11 +110,6 @@ class Enqueue {
             wp_register_script('alarm-list-page', get_template_directory_uri() . '/assets/js/dist/alarm.js', array(), '1.0.0', true);
             wp_enqueue_script('alarm-list-page');
         }
-
-        // List page
-        if (is_page_template('templates/list-page.php')) {
-            wp_enqueue_script('knockout');
-        }
     }
 
     public function removeScriptVersion($src){

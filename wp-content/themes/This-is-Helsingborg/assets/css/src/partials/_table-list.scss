@@ -35,16 +35,24 @@ $headline-color: #333;
 
         // Sorting arrows
         .header {
-            //background: url(#{$wp-root-url}/assets/images/tablesorter-icons/bg.gif) 95% center no-repeat;
             cursor: pointer;
             padding-right: 25px;
 
-            &.headerSortDown {
-                //background: url(#{$wp-root-url}/assets/images/tablesorter-icons/asc.gif) 95% center no-repeat;
+            &::before {
+                @include hbg-icon($icon-sort);
+                margin-right: 5px;
             }
 
-            &.headerSortUp {
-                //background: url(#{$wp-root-url}/assets/images/tablesorter-icons/desc.gif) 95% center no-repeat;
+            &.sorting-asc {
+                &::before {
+                    @include hbg-icon($icon-sort-asc);
+                }
+            }
+
+            &.sorting-desc {
+                &::before {
+                    @include hbg-icon($icon-sort-desc);
+                }
             }
 
             &:last-child {
@@ -117,7 +125,7 @@ $headline-color: #333;
 
         // Active state
         &.active {
-            background-color: lighten($palette-red-2, 48%);
+            background-color: lighten($palette-red-2, 57%);
 
             td:last-child {
                 &::after {
