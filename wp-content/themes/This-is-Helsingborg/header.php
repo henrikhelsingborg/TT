@@ -118,7 +118,6 @@
         <div class="mobile-menu-wrapper">
             <?php
                 get_template_part('templates/partials/stripe');
-                get_template_part('templates/partials/mobile', 'search');
                 get_template_part('templates/partials/mobile', 'navigation');
             ?>
         </div>
