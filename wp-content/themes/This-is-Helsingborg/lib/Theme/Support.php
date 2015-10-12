@@ -10,6 +10,8 @@ class Support
         self::addActions();
         self::addFilters();
         self::removeTheGenerator();
+
+        add_filter('srm_max_redirects', array($this, 'dbx_srm_max_redirects'));
     }
 
     /**
@@ -92,5 +94,13 @@ class Support
     public static function removeTheGenerator()
     {
         add_filter('the_generator', create_function('', 'return "";'));
+    }
+
+    /**
+     * Update the default maximum number of redirects to 400
+     * @return void
+     */
+    public function dbx_srm_max_redirects() {
+        return 400;
     }
 }
