@@ -15,7 +15,7 @@
         ));
 
         //wp_cache_set('menu_' . $post->ID , $menu);
-        set_transient('menu_' . $post->ID, $menu, 60*60*24);
+        set_transient('menu_' . $post->ID, $menu, 60*60*168);
     }
 
     if ($menu) :

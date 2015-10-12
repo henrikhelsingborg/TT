@@ -19,7 +19,7 @@ $walker_page = new Helsingborg_Walker_Mobile();
                     'include'  => get_included_pages($post)
                 ));
 
-                set_transient('menu_mobile_' . $post->ID, $menu, 60*60*24);
+                set_transient('menu_mobile_' . $post->ID, $menu, 60*60*168);
             }
 
             echo $menu;
