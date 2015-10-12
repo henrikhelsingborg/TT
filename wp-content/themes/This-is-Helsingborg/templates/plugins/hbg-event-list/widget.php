@@ -26,7 +26,7 @@
                 <a href="<?php echo get_permalink($featured->ID); ?>" class="event-item featured">
                     <?php if ($featuredImage) : ?>
                     <div class="columns large-4 medium-4 small-12 featured-image">
-                        <img src="<?php echo $featuredImage[0]; ?>" class="responsive" alt="<?php echo $featured->post_title; ?>">
+                        <img src="<?php echo $featuredImage[0]; ?>" class="responsive" alt="<?php echo $featured->post_title; ?>" width="<?php echo $featuredImage[1]; ?>" height="<?php echo $featuredImage[2]; ?>">
                     </div>
                     <?php endif; ?>
                     <div class="columns <?php if ($featuredImage) : ?>large-8 medium-8 small-12<?php else : ?>large-12 medium-12 small-12<?php endif; ?>">

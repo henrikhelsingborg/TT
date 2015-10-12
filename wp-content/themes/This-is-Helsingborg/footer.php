@@ -23,7 +23,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="columns large-3">
-                            <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg-neg.svg" alt="Helsingborg Stad"></a>
+                            <a href="/" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg-neg.svg" alt="Helsingborg Stad" width="239" height="68"></a>
                         </div>
                     </div>
                     <div class="row">

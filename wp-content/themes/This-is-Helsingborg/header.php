@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="columns large-12">
                         <a href="/" class="logotype" data-tooltip="focus">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad" width="239" height="68">
                             <span class="tooltip" style="width:131px;">
                                 Gå till startsidan
                             </span>
