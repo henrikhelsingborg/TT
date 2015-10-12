@@ -8,7 +8,7 @@
     </a>
     <?php endif; ?>
 
-    <h3 class="box-title"><?php echo $title; ?></h3>
+    <?php if (strlen($title) > 0) : ?><h3 class="box-title"><?php echo $title; ?></h3><?php endif; ?>
 
     <?php if (!empty($description)) : ?>
     <div class="box-content padding-x1-5">
