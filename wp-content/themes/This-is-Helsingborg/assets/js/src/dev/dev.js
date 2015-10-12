@@ -15,8 +15,16 @@ jQuery(document).ready(function ($) {
             equalize_on_stack: true
         },
         orbit: {
-            slide_number_text: 'av'
+            slide_number_text: 'av',
+            navigation_arrows: false
         }
+    });
+
+    /**
+     * Append navigation buttons to orbit
+     */
+    $(document).on("ready.fndtn.orbit", function(e) {
+        $('.orbit-container').append('<div class="orbit-navigation"><button class="orbit-prev" aria-label="Visa föregående bild"><i class="fa fa-chevron-circle-left"></i> Föregående</button><button class="orbit-next" aria-label="Visa nästa bild">Nästa <i class="fa fa-chevron-circle-right"></i></button></div>');
     });
 
     /**
