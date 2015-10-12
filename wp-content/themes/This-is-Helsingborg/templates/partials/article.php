@@ -3,7 +3,7 @@
     $main = $the_content['main'];
     $content = $the_content['extended'];
 ?>
-<article class="article">
+<article class="article" id="article">
     <header class="article-header">
         <?php if (is_active_sidebar('slider-area')) : ?>
         <div class="row">
