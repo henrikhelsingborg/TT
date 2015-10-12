@@ -5019,9 +5019,15 @@ img[data-lazyload] {
 
 @media only screen and (min-width: 40.0625em) {
   img.alignleft {
-    float: left; }
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px; }
   img.alignright {
-    float: right; } }
+    float: right;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px; } }
 
 .zselect {
   color: #252525;
