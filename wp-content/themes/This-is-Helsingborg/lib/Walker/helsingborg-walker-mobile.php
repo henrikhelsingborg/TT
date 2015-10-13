@@ -229,7 +229,7 @@ class Helsingborg_Walker_Mobile extends Walker {
          * Build the item markup
          */
         $output .= sprintf(
-            '<li %s><a href="%s" tabindex="-1">%s</a>',
+            '<li %s><a href="%s">%s</a>',
             $css_classes,
             get_permalink($page->ID),
             apply_filters('the_title', $page->post_title, $page->ID)

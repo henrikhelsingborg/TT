@@ -3068,6 +3068,9 @@ body.nav-fixed .site-header .hero {
   overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out; }
+  @media only screen and (min-width: 40.0625em) {
+    .mobile-menu-wrapper {
+      display: none; } }
   .mobile-menu-wrapper .stripe {
     width: 5px; }
   .mobile-menu-wrapper .container {
