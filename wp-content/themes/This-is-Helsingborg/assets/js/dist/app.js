@@ -700,7 +700,6 @@ Helsingborg.Prompt.Modal = (function ($) {
         $('body').off('keydown.foceModalFocus');
         this.enableBodyScroll();
         $(this.openingElement).closest('a').focus();
-        console.log(this.openingElement);
     }
 
     /**
