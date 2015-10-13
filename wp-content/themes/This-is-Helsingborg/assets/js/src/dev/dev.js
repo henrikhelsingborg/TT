@@ -6,6 +6,8 @@ var gallery_use_masonry = false;
 
 jQuery(document).ready(function ($) {
 
+    $('html').removeClass('no-js');
+
     $('.nav-mobilemenu, .navbar-mainmenu').find('a:hidden').attr('disabled', 'disabled').addClass('auto-disabled');
     $(window).on('resize', function (e) {
         $('.nav-mobilemenu, .navbar-mainmenu').find('a.auto-disabled').removeAttr('disabled').removeClass('auto-disabled');
