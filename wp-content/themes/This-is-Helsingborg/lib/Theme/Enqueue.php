@@ -114,6 +114,10 @@ class Enqueue {
 
     public function removeScriptVersion($src){
         $parts = explode('?', $src);
-        return $parts[0];
+        if (strpos($parts[0], 'helsingborg') > -1 || strpos($parts[0], 'localhost') > -1) {
+            return $parts[0];
+        } else {
+            return $src;
+        }
     }
 }
