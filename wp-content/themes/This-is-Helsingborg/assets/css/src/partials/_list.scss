@@ -213,6 +213,7 @@
 .list-events {
     .event-item {
         display: table;
+        width: 100%;
 
         &:hover {
             text-decoration: none;

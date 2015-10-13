@@ -433,7 +433,7 @@ Helsingborg.Event.List = (function ($) {
             if (clickedEvent.Link) {
                 $('.modal-link').html('<a class="link-item" href="' + clickedEvent.Link + '" target="blank">' + clickedEvent.Link + '</a>').show();
             } else {
-                jQuery('.modal-link').hide();
+                jQuery('.modal-link').empty();
             }
 
             $('.modal-title').html(clickedEvent.Name);
@@ -644,6 +644,7 @@ Helsingborg.Prompt = Helsingborg.Prompt || {};
 Helsingborg.Prompt.Modal = (function ($) {
 
     var fadeSpeed = 300;
+    var openingElement = null;
 
     function Modal() {
         $(function(){
@@ -659,9 +660,33 @@ Helsingborg.Prompt.Modal = (function ($) {
      * @return {void}
      */
     Modal.prototype.open = function(element) {
+        this.openingElement = element;
         var targetElement = $(element).closest('[data-reveal]').data('reveal');
         $('#' + targetElement).fadeIn(fadeSpeed);
+        this.forceModalFocus(targetElement);
         this.disableBodyScroll();
+    }
+
+    /**
+     * Handle first tab if modal window is open
+     * @param  {string} e The element
+     * @return {void}
+     */
+    Modal.prototype.forceModalFocus = function (targetElement) {
+        $('body').on('keydown.foceModalFocus', function (e) {
+            if (e.keyCode == 9) {
+                e.preventDefault();
+                $('.modal-close').focus();
+                $('body').off('keydown.foceModalFocus');
+            }
+        });
+
+        $('#' + targetElement).find('a').last().on('keydown.forceModalFocus2', function (e) {
+            if (e.keyCode == 9) {
+                e.preventDefault();
+                $('.modal-close').focus();
+            }
+        });
     }
 
     /**
@@ -671,7 +696,11 @@ Helsingborg.Prompt.Modal = (function ($) {
      */
     Modal.prototype.close = function(element) {
         $(element).closest('.modal').fadeOut(fadeSpeed);
+        $(element).closest('.modal').find('a').last().off('keydown.forceModalFocus2');
+        $('body').off('keydown.foceModalFocus');
         this.enableBodyScroll();
+        $(this.openingElement).closest('a').focus();
+        console.log(this.openingElement);
     }
 
     /**

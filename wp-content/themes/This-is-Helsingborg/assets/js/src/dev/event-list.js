@@ -106,7 +106,7 @@ Helsingborg.Event.List = (function ($) {
             if (clickedEvent.Link) {
                 $('.modal-link').html('<a class="link-item" href="' + clickedEvent.Link + '" target="blank">' + clickedEvent.Link + '</a>').show();
             } else {
-                jQuery('.modal-link').hide();
+                jQuery('.modal-link').empty();
             }
 
             $('.modal-title').html(clickedEvent.Name);

@@ -3925,7 +3925,8 @@ p {
     line-height: 100%; }
 
 .list-events .event-item {
-  display: table; }
+  display: table;
+  width: 100%; }
   .list-events .event-item:hover {
     text-decoration: none; }
     .list-events .event-item:hover .title {
