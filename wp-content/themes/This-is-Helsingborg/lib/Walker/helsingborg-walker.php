@@ -48,6 +48,7 @@ class Helsingborg_Walker extends Walker {
          */
         foreach ((array)$elements as $e) {
             $parent_id = $e->$parent_field;
+            if (get_post_status($parent_id) == 'private') continue;
 
             if (isset($parent_id)) {
                 /**
