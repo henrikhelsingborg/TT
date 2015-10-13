@@ -24,7 +24,7 @@ $administration_unit_ids = (isset($_GET['q']) && strlen($_GET['q']) > 0) ? $_GET
                         <!-- ko if: (Type == 'select') -->
                         <div class="form-group columns medium-6 left">
                             <div>
-                                <label class="form-label" data-bind="text: Name"></label>
+                                <label class="form-label" data-bind="text: Name" for="municipality_multiselect"></label>
                                 <select class="form-control" id="municipality_multiselect" data-bind="options: Options, optionsText: 'Name', optionsValue: 'ID', value='CurrentOption'"></select>
                             </div>
                         </div>
@@ -32,15 +32,15 @@ $administration_unit_ids = (isset($_GET['q']) && strlen($_GET['q']) > 0) ? $_GET
 
                         <!-- ko if: (Type == 'text') -->
                         <div class="form-group columns medium-6 left">
-                            <label class="form-label" data-bind="text: Name"></label>
-                            <input class="form-control" type="text" data-bind="value: Value, valueUpdate: 'afterkeydown'">
+                            <label class="form-label" data-bind="text: Name, attr: { for: Name + 'input' }"></label>
+                            <input class="form-control" type="text" data-bind="value: Value, valueUpdate: 'afterkeydown', attr: { id: Name + 'input' }">
                         </div>
                         <!-- /ko -->
 
                         <!-- ko if: (Type == 'calendar') -->
                         <div class="form-group columns medium-6 left">
                             <div class="input-column input-column-half">
-                                <label class="form-label" data-bind="text: Name"></label>
+                                <label class="form-label" data-bind="text: Name, attr: { for: CalendarID }"></label>
                                 <input class="form-control" type="text" data-bind="value: Value, valueUpdate: 'afterkeydown', attr: {id: CalendarID}">
                             </div>
                         </div>

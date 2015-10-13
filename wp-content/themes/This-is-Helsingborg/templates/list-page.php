@@ -71,6 +71,8 @@ Template Name: Lista
                     <?php dynamic_sidebar("content-area"); ?>
                 </div>
                 <?php endif; ?>
+
+                <?php get_template_part('templates/partials/article', 'share'); ?>
             </div>
 
             <?php
