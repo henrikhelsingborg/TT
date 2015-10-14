@@ -38,8 +38,9 @@
 <p class="hbg-event-widget-search-post-id" <?php if (!isset($instance['post_id'])) : ?>style="display:none;"<?php endif; ?>>
     <label for="<?php echo $this->get_field_id('post_id'); ?>">Välj sida att lyfta fram som "utvald":</label><br>
     <select name="<?php echo $this->get_field_name('post_id'); ?>" id="<?php echo $this->get_field_id('post_id'); ?>" class="widefat">
+        <option value="">Visa inget</option>
         <?php if (isset($instance['post_id'])) : ?>
-        <option value="<?php echo $instance['post_id']; ?>"><?php echo $instance['post_title']; ?></option>
+        <option value="<?php echo $instance['post_id']; ?>"><?php echo get_the_title($instance['post_id']); ?></option>
         <?php endif; ?>
     </select>
     <input type="hidden" name="<?php echo $this->get_field_name('post_title'); ?>" value="" class="hbg-event-widget-search-post-title">
