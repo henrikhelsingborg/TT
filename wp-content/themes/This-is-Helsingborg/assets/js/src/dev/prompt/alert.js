@@ -70,8 +70,12 @@ Helsingborg.Prompt.Alert = (function ($) {
      * @return {string} Success message
      */
     Alert.prototype.acceptCookies = function() {
-        window.localStorage.setItem('accept-cookies', true);
-        return 'Use of cookies was accepted.';
+        try {
+            window.localStorage.setItem('accept-cookies', true);
+            return true;
+        } catch(e) {
+            return false;
+        }
     }
 
     /**
@@ -80,8 +84,12 @@ Helsingborg.Prompt.Alert = (function ($) {
      * @return {string} Success message
      */
     Alert.prototype.clearAcceptCookies = function() {
-        window.localStorage.removeItem('accept-cookies');
-        return 'Cleard the "accept cookies" setting.';
+        try {
+            window.localStorage.removeItem('accept-cookies');
+            return true;
+        } catch(e) {
+            return false;
+        }
     }
 
     /**
