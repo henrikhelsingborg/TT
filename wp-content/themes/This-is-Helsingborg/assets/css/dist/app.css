@@ -3826,10 +3826,10 @@ p {
     line-height: 100%; }
   .list .featured {
     display: block !important;
-    margin-left: -1px;
-    margin-right: -1px;
     background-color: #cb0050;
-    color: #fff; }
+    color: #fff;
+    border-right: 0 !important;
+    border-left: 0 !important; }
 
 [class^="sidebar-"] .list {
   font-weight: normal; }

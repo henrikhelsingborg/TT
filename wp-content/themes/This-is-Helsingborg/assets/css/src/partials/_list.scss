@@ -49,10 +49,10 @@
 
     .featured {
         display: block !important;
-        margin-left: -1px;
-        margin-right: -1px;
         background-color: $palette-red-2;
         color: #fff;
+        border-right: 0 !important;
+        border-left: 0 !important;
     }
 }
 
