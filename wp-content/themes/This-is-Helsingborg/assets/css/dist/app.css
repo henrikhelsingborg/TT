@@ -5576,8 +5576,9 @@ img[data-lazyload] {
 
 .widget_sp_image a {
   display: block;
-  text-decoration: none;
   color: #fff; }
+  .widget_sp_image a:hover {
+    color: rgba(255, 255, 255, 0.7) !important; }
 
 .hbg-social-feed ul, .hbg-social-feed li {
   list-style: none;
