@@ -117,6 +117,8 @@ class Helsingborg_Walker extends Walker {
      */
     public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0) {
 
+        if (get_post_status($page->post_parent) == 'private' && get_the_title($page->post_parent) == 'Privat: Skicka meddelande') return;
+
         /**
          * Element indentation
          * @var string
