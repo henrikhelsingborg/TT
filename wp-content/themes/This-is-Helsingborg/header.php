@@ -108,18 +108,18 @@
                 </div>
             </div>
 
+            <div class="mobile-menu-wrapper">
+                <?php
+                    get_template_part('templates/partials/stripe');
+                    get_template_part('templates/partials/mobile', 'navigation');
+                ?>
+            </div>
+
             <?php
                 if (is_front_page()) {
                     get_template_part('templates/partials/hero');
                 }
             ?>
         </header>
-
-        <div class="mobile-menu-wrapper">
-            <?php
-                get_template_part('templates/partials/stripe');
-                get_template_part('templates/partials/mobile', 'navigation');
-            ?>
-        </div>
 
         <main id="main">

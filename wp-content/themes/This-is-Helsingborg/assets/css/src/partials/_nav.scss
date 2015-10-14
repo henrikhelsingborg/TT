@@ -207,11 +207,11 @@ body.nav-fixed .site-header .hero {
         margin: 0;
     }
 
-    @media #{$medium-up} {
+    @media #{$bp-mobile-menu-up} {
         display: block; // Show the navbar-mainmenu on medium up devices/screens
     }
 
-    @media #{$medium-only} {
+    @media #{$bp-mobile-menu-down} {
         .nav li {
             font-size: 12pt;
 
@@ -399,7 +399,7 @@ body.nav-fixed .site-header .hero {
     overflow: hidden;
     transition: all .3s ease-in-out;
 
-    @media #{$medium-up} {
+    @media #{$bp-mobile-menu-up} {
         display: none;
     }
 

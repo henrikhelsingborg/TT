@@ -2755,6 +2755,9 @@ img.responsive {
   padding: 0;
   color: #ae0b05;
   font-size: 20pt; }
+  @media only screen and (min-width: 801px) {
+    .btn.btn-mobile-menu, .gform_footer input.btn-mobile-menu[type="submit"] {
+      display: none; } }
   @media print {
     .btn.btn-mobile-menu, .gform_footer input.btn-mobile-menu[type="submit"] {
       display: none; } }
@@ -2768,9 +2771,7 @@ img.responsive {
   .site-header {
     padding-top: 20px; }
     .site-header .stripe {
-      display: block; }
-  .btn.btn-mobile-menu, .gform_footer input.btn-mobile-menu[type="submit"] {
-    display: none; } }
+      display: block; } }
 
 @media screen and (max-width: 850px) {
   .site-header {
@@ -2951,10 +2952,10 @@ body.nav-fixed .site-header .hero {
   margin-bottom: 0px; }
   .navbar-mainmenu .nav {
     margin: 0; }
-  @media only screen and (min-width: 40.0625em) {
+  @media only screen and (min-width: 801px) {
     .navbar-mainmenu {
       display: block; } }
-  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  @media only screen and (max-width: 800px) {
     .navbar-mainmenu .nav li {
       font-size: 12pt; }
       .navbar-mainmenu .nav li:last-child {
@@ -3068,7 +3069,7 @@ body.nav-fixed .site-header .hero {
   overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out; }
-  @media only screen and (min-width: 40.0625em) {
+  @media only screen and (min-width: 801px) {
     .mobile-menu-wrapper {
       display: none; } }
   .mobile-menu-wrapper .stripe {
@@ -3168,7 +3169,8 @@ body.nav-fixed .site-header .hero {
       padding: 14px 20px;
       border: none;
       position: relative;
-      z-index: 5; }
+      z-index: 5;
+      min-width: 70px; }
     .hero .search .search-backdrop {
       position: absolute;
       top: 0;
@@ -4522,6 +4524,9 @@ p {
 
 .sidebar-right {
   padding-top: 0; }
+  @media only screen and (max-width: 64em) {
+    .sidebar-right {
+      margin-top: 20px; } }
   .sidebar-right .widget + .widget {
     margin-top: 20px; }
 

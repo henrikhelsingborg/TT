@@ -1,4 +1,4 @@
-<aside class="sidebar-left columns large-3 medium-3 hide-for-small-only">
+<aside class="sidebar-left columns large-3 medium-4 hide-for-small-only">
     <?php if (is_active_sidebar('left-sidebar')) : ?>
     <div class="row sidebar-left-widgets">
         <?php dynamic_sidebar('left-sidebar'); ?>
