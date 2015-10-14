@@ -44,7 +44,7 @@ Helsingborg.Mobile.Menu = (function ($) {
      */
     Menu.prototype.toggle = function(element) {
         element = $(element);
-        element.toggleClass('open');
+        element.closest('button').toggleClass('open');
         $('body').toggleClass('mobile-menu-in');
 
         if ($('body').hasClass('mobile-menu-in')) {
