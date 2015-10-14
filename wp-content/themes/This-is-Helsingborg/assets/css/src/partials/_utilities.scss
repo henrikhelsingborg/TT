@@ -13,6 +13,18 @@
     display: none;
 }
 
+.hide-for-mobile-menu-only {
+    @media #{$bp-mobile-menu-down} {
+        display: none !important;
+    }
+}
+
+.mobile-menu-12 {
+    @media #{$bp-mobile-menu-down} {
+        width: 100%;
+    }
+}
+
 .relative {
     position: relative;
 }

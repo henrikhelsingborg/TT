@@ -4788,6 +4788,14 @@ p {
 .hidden {
   display: none; }
 
+@media only screen and (max-width: 800px) {
+  .hide-for-mobile-menu-only {
+    display: none !important; } }
+
+@media only screen and (max-width: 800px) {
+  .mobile-menu-12 {
+    width: 100%; } }
+
 .relative {
   position: relative; }
 
