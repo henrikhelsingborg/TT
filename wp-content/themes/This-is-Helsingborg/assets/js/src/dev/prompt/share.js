@@ -1,7 +1,7 @@
 Helsingborg = Helsingborg || {};
-Helsingborg.Share = Helsingborg.Share || {};
+Helsingborg.Prompt = Helsingborg.Prompt || {};
 
-Helsingborg.Share.Button = (function ($) {
+Helsingborg.Prompt.Button = (function ($) {
 
     function Button() {
         $(function(){

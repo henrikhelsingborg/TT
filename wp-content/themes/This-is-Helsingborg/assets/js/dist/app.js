@@ -1,210 +1,3 @@
-Helsingborg = Helsingborg || {};
-Helsingborg.Prompt = Helsingborg.Prompt || {};
-
-Helsingborg.Prompt.Alert = (function ($) {
-
-    var _animationSpeed = 300;
-    var _wrapperSelector = '[data-prompt-wrapper="alert"]';
-    var _message = 'Alert';
-
-    function Alert() {
-        $(function(){
-
-            this.handleEvents();
-
-            // Show cookies alert if not accepted
-            if (window.localStorage.getItem('accept-cookies') != 'true') {
-                this.show('info',
-                    'På helsingborg.se använder vi cookies (kakor) för att webbplatsen ska fungera på ett bra sätt för dig. Genom att klicka vidare godkänner du att vi använder cookies. <a href="http://www.helsingborg.se/startsida/toppmeny/om-webbplatsen/om-cookies-pa-webbplatsen/">Vad är cookies?</a>',
-                    [
-                        {
-                            label: 'Jag godkänner',
-                            class: 'btn-submit',
-                            action: 'accept-cookies'
-                        }
-                    ]
-                );
-            }
-
-        }.bind(this));
-    }
-
-    /**
-     * Displays an alert
-     * @param  {string} type    The class name of the alert
-     * @param  {string} text    The text of the alert
-     * @param  {object} buttons Buttons to place in the alert
-     * @return {void}
-     */
-    Alert.prototype.show = function(type, text, buttons) {
-        buttons = typeof buttons !== 'undefined' ? buttons : null;
-
-        // Append alert container
-        $('<div class="alert"><div class="container"><div class="row"></div></div></div>').prependTo(_wrapperSelector);
-
-        // If we have a type set, append the class to the alert container
-        if (type != null) {
-            $(_wrapperSelector).find('.alert:first-child').addClass('alert-' + type);
-        }
-
-        // Add alert text
-        $(_wrapperSelector).find('.alert:first-child .row').append('<div class="columns large-9 medium-9">' + text + '</div>');
-
-        // Add alert button contaioner
-        $(_wrapperSelector).find('.alert:first-child .row').append('<div class="buttons columns large-3 medium-3"></div>');
-
-        // Add close button or add defined buttons
-        if (buttons == null) {
-            $(_wrapperSelector).find('.alert:first-child .columns:last-child').append('<button class="btn btn-alert-close" data-action="alert-close"><i class="fa fa-times"></i></button>');
-        } else {
-            $.each(buttons, function (index, item) {
-                $(_wrapperSelector).find('.alert:first-child .columns:last-child').append('<button class="btn ' + item.class +'" data-action="' + item.action + '">' + item.label + '</button>')
-            });
-        }
-
-        $(_wrapperSelector).find('.alert:first-child').slideDown(_animationSpeed);
-    }
-
-    /**
-     * Accept use of cookies (store answer in html5localstorage)
-     * @return {string} Success message
-     */
-    Alert.prototype.acceptCookies = function() {
-        window.localStorage.setItem('accept-cookies', true);
-        return 'Use of cookies was accepted.';
-    }
-
-    /**
-     * Clear the saved "acceptCookies" value from html5localstorage
-     * To clear from JS Console: Helsingborg.Prompt.Alert.clearAcceptCookies();
-     * @return {string} Success message
-     */
-    Alert.prototype.clearAcceptCookies = function() {
-        window.localStorage.removeItem('accept-cookies');
-        return 'Cleard the "accept cookies" setting.';
-    }
-
-    /**
-     * Hides and removes a specific alert
-     * @param  {object} element The element to hide/remove
-     * @return {void}
-     */
-    Alert.prototype.hide = function(element) {
-        $(element).closest('.alert').slideUp(_animationSpeed,   function() {
-            $(this).remove();
-        });
-    }
-
-    /**
-     * Keeps track of events
-     * @return {void}
-     */
-    Alert.prototype.handleEvents = function() {
-
-        $(document).on('click', '[data-action="alert-close"]', function (e) {
-            this.hide(e.target);
-        }.bind(this));
-
-        $(document).on('click', '[data-action="accept-cookies"]', function (e) {
-            this.acceptCookies();
-            this.hide(e.target);
-        }.bind(this));
-
-    }
-
-    return new Alert();
-
-})(jQuery);
-Helsingborg = Helsingborg || {};
-Helsingborg.Client = Helsingborg.Client || {};
-
-Helsingborg.Client.Browser = (function ($) {
-
-    var browser = null;
-
-    var userAgent = navigator.userAgent;
-
-    function Browser() {
-        $(function(){
-
-            this.detect();
-            this.addBodyClass();
-
-        }.bind(this));
-    }
-
-    Browser.prototype.detect = function () {
-        $.each(_browserData, function (index, item) {
-            if (userAgent.indexOf(item.string) > -1) {
-                browser = item.identity;
-                return false;
-            }
-        }.bind(this))
-    }
-
-    Browser.prototype.addBodyClass = function () {
-        $('body').addClass('browser-' + browser);
-    }
-
-    var _browserData = [
-        {string: 'Edge', identity: 'ms-edge'},
-        {string: 'Chrome', identity: 'chrome'},
-        {string: 'MSIE', identity: 'explorer'},
-        {string: 'Trident', identity: 'trident'},
-        {string: 'Firefox', identity: 'firefox'},
-        {string: 'Safari', identity: 'safari'},
-        {string: 'Opera', identity: 'opera'}
-    ];
-
-    return new Browser();
-
-})(jQuery);
-
-/*
-var BrowserDetect = {
-        init: function () {
-            this.browser = this.searchString(this.dataBrowser) || "Other";
-            this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
-        },
-        searchString: function (data) {
-            for (var i = 0; i < data.length; i++) {
-                var dataString = data[i].string;
-                this.versionSearchString = data[i].subString;
-
-                if (dataString.indexOf(data[i].subString) !== -1) {
-                    return data[i].identity;
-                }
-            }
-        },
-        searchVersion: function (dataString) {
-            var index = dataString.indexOf(this.versionSearchString);
-            if (index === -1) {
-                return;
-            }
-
-            var rv = dataString.indexOf("rv:");
-            if (this.versionSearchString === "Trident" && rv !== -1) {
-                return parseFloat(dataString.substring(rv + 3));
-            } else {
-                return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
-            }
-        },
-
-        dataBrowser: [
-            {string: navigator.userAgent, subString: "Edge", identity: "MS Edge"},
-            {string: navigator.userAgent, subString: "Chrome", identity: "Chrome"},
-            {string: navigator.userAgent, subString: "MSIE", identity: "Explorer"},
-            {string: navigator.userAgent, subString: "Trident", identity: "Explorer"},
-            {string: navigator.userAgent, subString: "Firefox", identity: "Firefox"},
-            {string: navigator.userAgent, subString: "Safari", identity: "Safari"},
-            {string: navigator.userAgent, subString: "Opera", identity: "Opera"}
-        ]
-
-    };
-    
-    BrowserDetect.init();
-    document.write("You are using <b>" + BrowserDetect.browser + "</b> with version <b>" + BrowserDetect.version + "</b>");
-    */
 var Helsingborg;
 
 // Gallery settings
@@ -301,6 +94,12 @@ jQuery(document).ready(function ($) {
     $('[class^="sidebar"] .widget_text').append('<div class="stripe"><div></div><div></div><div></div><div></div><div></div></div>');
 
 });
+(function (server, psID) {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = server + '/' + psID + '/ps.js';
+    document.getElementsByTagName('head')[0].appendChild(s);
+}('https://account.psplugin.com', '331F5271-4B0B-4625-BF08-4157F101DBFF'));
 Helsingborg = Helsingborg || {};
 Helsingborg.Event = Helsingborg.Event || {};
 
@@ -470,9 +269,99 @@ Helsingborg.Event.List = (function ($) {
 
 })(jQuery);
 Helsingborg = Helsingborg || {};
-Helsingborg.Images = Helsingborg.Images || {};
+Helsingborg.Client = Helsingborg.Client || {};
 
-Helsingborg.Images.Lazyload = (function ($) {
+Helsingborg.Client.Browser = (function ($) {
+
+    var browser = null;
+
+    var userAgent = navigator.userAgent;
+
+    function Browser() {
+        $(function(){
+
+            this.detect();
+            this.addBodyClass();
+
+        }.bind(this));
+    }
+
+    Browser.prototype.detect = function () {
+        $.each(_browserData, function (index, item) {
+            if (userAgent.indexOf(item.string) > -1) {
+                browser = item.identity;
+                return false;
+            }
+        }.bind(this))
+    }
+
+    Browser.prototype.addBodyClass = function () {
+        $('body').addClass('browser-' + browser);
+    }
+
+    var _browserData = [
+        {string: 'Edge', identity: 'ms-edge'},
+        {string: 'Chrome', identity: 'chrome'},
+        {string: 'MSIE', identity: 'explorer'},
+        {string: 'Trident', identity: 'trident'},
+        {string: 'Firefox', identity: 'firefox'},
+        {string: 'Safari', identity: 'safari'},
+        {string: 'Opera', identity: 'opera'}
+    ];
+
+    return new Browser();
+
+})(jQuery);
+
+/*
+var BrowserDetect = {
+        init: function () {
+            this.browser = this.searchString(this.dataBrowser) || "Other";
+            this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
+        },
+        searchString: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                var dataString = data[i].string;
+                this.versionSearchString = data[i].subString;
+
+                if (dataString.indexOf(data[i].subString) !== -1) {
+                    return data[i].identity;
+                }
+            }
+        },
+        searchVersion: function (dataString) {
+            var index = dataString.indexOf(this.versionSearchString);
+            if (index === -1) {
+                return;
+            }
+
+            var rv = dataString.indexOf("rv:");
+            if (this.versionSearchString === "Trident" && rv !== -1) {
+                return parseFloat(dataString.substring(rv + 3));
+            } else {
+                return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+            }
+        },
+
+        dataBrowser: [
+            {string: navigator.userAgent, subString: "Edge", identity: "MS Edge"},
+            {string: navigator.userAgent, subString: "Chrome", identity: "Chrome"},
+            {string: navigator.userAgent, subString: "MSIE", identity: "Explorer"},
+            {string: navigator.userAgent, subString: "Trident", identity: "Explorer"},
+            {string: navigator.userAgent, subString: "Firefox", identity: "Firefox"},
+            {string: navigator.userAgent, subString: "Safari", identity: "Safari"},
+            {string: navigator.userAgent, subString: "Opera", identity: "Opera"}
+        ]
+
+    };
+    
+    BrowserDetect.init();
+    document.write("You are using <b>" + BrowserDetect.browser + "</b> with version <b>" + BrowserDetect.version + "</b>");
+    */
+Helsingborg = Helsingborg || {};
+Helsingborg.Client = Helsingborg.Client || {};
+
+Helsingborg.Client.Lazyload = (function ($) {
 
     function Lazyload() {
         $(function(){
@@ -612,109 +501,6 @@ Helsingborg.Mobile.Menu = (function ($) {
     }
 
     return new Menu();
-
-})(jQuery);
-Helsingborg = Helsingborg || {};
-Helsingborg.Prompt = Helsingborg.Prompt || {};
-
-Helsingborg.Prompt.Modal = (function ($) {
-
-    var fadeSpeed = 300;
-    var openingElement = null;
-
-    function Modal() {
-        $(function(){
-
-            this.handleEvents();
-
-        }.bind(this));
-    }
-
-    /**
-     * Opens a modal window
-     * @param  {object} element Link item clicked
-     * @return {void}
-     */
-    Modal.prototype.open = function(element) {
-        this.openingElement = element;
-        var targetElement = $(element).closest('[data-reveal]').data('reveal');
-        $('#' + targetElement).fadeIn(fadeSpeed);
-        this.forceModalFocus(targetElement);
-        this.disableBodyScroll();
-    }
-
-    /**
-     * Handle first tab if modal window is open
-     * @param  {string} e The element
-     * @return {void}
-     */
-    Modal.prototype.forceModalFocus = function (targetElement) {
-        $('body').on('keydown.foceModalFocus', function (e) {
-            if (e.keyCode == 9) {
-                e.preventDefault();
-                $('.modal-close').focus();
-                $('body').off('keydown.foceModalFocus');
-            }
-        });
-
-        $('#' + targetElement).find('a').last().on('keydown.forceModalFocus2', function (e) {
-            if (e.keyCode == 9) {
-                e.preventDefault();
-                $('.modal-close').focus();
-            }
-        });
-    }
-
-    /**
-     * Closes a modal window
-     * @param  {object} element Link item clicked
-     * @return {void}
-     */
-    Modal.prototype.close = function(element) {
-        $(element).closest('.modal').fadeOut(fadeSpeed);
-        $(element).closest('.modal').find('a').last().off('keydown.forceModalFocus2');
-        $('body').off('keydown.foceModalFocus');
-        this.enableBodyScroll();
-        $(this.openingElement).closest('a').focus();
-    }
-
-    /**
-     * Disables scroll on body
-     * @return {void}
-     */
-    Modal.prototype.disableBodyScroll = function() {
-        $('body').addClass('no-scroll');
-    }
-
-    /**
-     * Enables scroll on body
-     * @return {void}
-     */
-    Modal.prototype.enableBodyScroll = function() {
-        $('body').removeClass('no-scroll');
-    }
-
-    /**
-     * Keeps track of events
-     * @return {void}
-     */
-    Modal.prototype.handleEvents = function() {
-
-        // Open modal
-        $(document).on('click', '[data-reveal]', function (e) {
-            e.preventDefault();
-            this.open(e.target);
-        }.bind(this));
-
-        // Close modal
-        $(document).on('click', '[data-action="modal-close"]', function (e) {
-            e.preventDefault();
-            this.close(e.target);
-        }.bind(this));
-
-    }
-
-    return new Modal();
 
 })(jQuery);
 Helsingborg = Helsingborg || {};
@@ -934,9 +720,229 @@ Helsingborg.Search.Button = (function ($) {
 
 })(jQuery);
 Helsingborg = Helsingborg || {};
-Helsingborg.Share = Helsingborg.Share || {};
+Helsingborg.Prompt = Helsingborg.Prompt || {};
 
-Helsingborg.Share.Button = (function ($) {
+Helsingborg.Prompt.Alert = (function ($) {
+
+    var _animationSpeed = 300;
+    var _wrapperSelector = '[data-prompt-wrapper="alert"]';
+    var _message = 'Alert';
+
+    function Alert() {
+        $(function(){
+
+            this.handleEvents();
+
+            // Show cookies alert if not accepted
+            if (window.localStorage.getItem('accept-cookies') != 'true') {
+                this.show('info',
+                    'På helsingborg.se använder vi cookies (kakor) för att webbplatsen ska fungera på ett bra sätt för dig. Genom att klicka vidare godkänner du att vi använder cookies. <a href="http://www.helsingborg.se/startsida/toppmeny/om-webbplatsen/om-cookies-pa-webbplatsen/">Vad är cookies?</a>',
+                    [
+                        {
+                            label: 'Jag godkänner',
+                            class: 'btn-submit',
+                            action: 'accept-cookies'
+                        }
+                    ]
+                );
+            }
+
+        }.bind(this));
+    }
+
+    /**
+     * Displays an alert
+     * @param  {string} type    The class name of the alert
+     * @param  {string} text    The text of the alert
+     * @param  {object} buttons Buttons to place in the alert
+     * @return {void}
+     */
+    Alert.prototype.show = function(type, text, buttons) {
+        buttons = typeof buttons !== 'undefined' ? buttons : null;
+
+        // Append alert container
+        $('<div class="alert"><div class="container"><div class="row"></div></div></div>').prependTo(_wrapperSelector);
+
+        // If we have a type set, append the class to the alert container
+        if (type != null) {
+            $(_wrapperSelector).find('.alert:first-child').addClass('alert-' + type);
+        }
+
+        // Add alert text
+        $(_wrapperSelector).find('.alert:first-child .row').append('<div class="columns large-9 medium-9">' + text + '</div>');
+
+        // Add alert button contaioner
+        $(_wrapperSelector).find('.alert:first-child .row').append('<div class="buttons columns large-3 medium-3"></div>');
+
+        // Add close button or add defined buttons
+        if (buttons == null) {
+            $(_wrapperSelector).find('.alert:first-child .columns:last-child').append('<button class="btn btn-alert-close" data-action="alert-close"><i class="fa fa-times"></i></button>');
+        } else {
+            $.each(buttons, function (index, item) {
+                $(_wrapperSelector).find('.alert:first-child .columns:last-child').append('<button class="btn ' + item.class +'" data-action="' + item.action + '">' + item.label + '</button>')
+            });
+        }
+
+        $(_wrapperSelector).find('.alert:first-child').slideDown(_animationSpeed);
+    }
+
+    /**
+     * Accept use of cookies (store answer in html5localstorage)
+     * @return {string} Success message
+     */
+    Alert.prototype.acceptCookies = function() {
+        window.localStorage.setItem('accept-cookies', true);
+        return 'Use of cookies was accepted.';
+    }
+
+    /**
+     * Clear the saved "acceptCookies" value from html5localstorage
+     * To clear from JS Console: Helsingborg.Prompt.Alert.clearAcceptCookies();
+     * @return {string} Success message
+     */
+    Alert.prototype.clearAcceptCookies = function() {
+        window.localStorage.removeItem('accept-cookies');
+        return 'Cleard the "accept cookies" setting.';
+    }
+
+    /**
+     * Hides and removes a specific alert
+     * @param  {object} element The element to hide/remove
+     * @return {void}
+     */
+    Alert.prototype.hide = function(element) {
+        $(element).closest('.alert').slideUp(_animationSpeed,   function() {
+            $(this).remove();
+        });
+    }
+
+    /**
+     * Keeps track of events
+     * @return {void}
+     */
+    Alert.prototype.handleEvents = function() {
+
+        $(document).on('click', '[data-action="alert-close"]', function (e) {
+            this.hide(e.target);
+        }.bind(this));
+
+        $(document).on('click', '[data-action="accept-cookies"]', function (e) {
+            this.acceptCookies();
+            this.hide(e.target);
+        }.bind(this));
+
+    }
+
+    return new Alert();
+
+})(jQuery);
+Helsingborg = Helsingborg || {};
+Helsingborg.Prompt = Helsingborg.Prompt || {};
+
+Helsingborg.Prompt.Modal = (function ($) {
+
+    var fadeSpeed = 300;
+    var openingElement = null;
+
+    function Modal() {
+        $(function(){
+
+            this.handleEvents();
+
+        }.bind(this));
+    }
+
+    /**
+     * Opens a modal window
+     * @param  {object} element Link item clicked
+     * @return {void}
+     */
+    Modal.prototype.open = function(element) {
+        this.openingElement = element;
+        var targetElement = $(element).closest('[data-reveal]').data('reveal');
+        $('#' + targetElement).fadeIn(fadeSpeed);
+        this.forceModalFocus(targetElement);
+        this.disableBodyScroll();
+    }
+
+    /**
+     * Handle first tab if modal window is open
+     * @param  {string} e The element
+     * @return {void}
+     */
+    Modal.prototype.forceModalFocus = function (targetElement) {
+        $('body').on('keydown.foceModalFocus', function (e) {
+            if (e.keyCode == 9) {
+                e.preventDefault();
+                $('.modal-close').focus();
+                $('body').off('keydown.foceModalFocus');
+            }
+        });
+
+        $('#' + targetElement).find('a').last().on('keydown.forceModalFocus2', function (e) {
+            if (e.keyCode == 9) {
+                e.preventDefault();
+                $('.modal-close').focus();
+            }
+        });
+    }
+
+    /**
+     * Closes a modal window
+     * @param  {object} element Link item clicked
+     * @return {void}
+     */
+    Modal.prototype.close = function(element) {
+        $(element).closest('.modal').fadeOut(fadeSpeed);
+        $(element).closest('.modal').find('a').last().off('keydown.forceModalFocus2');
+        $('body').off('keydown.foceModalFocus');
+        this.enableBodyScroll();
+        $(this.openingElement).closest('a').focus();
+    }
+
+    /**
+     * Disables scroll on body
+     * @return {void}
+     */
+    Modal.prototype.disableBodyScroll = function() {
+        $('body').addClass('no-scroll');
+    }
+
+    /**
+     * Enables scroll on body
+     * @return {void}
+     */
+    Modal.prototype.enableBodyScroll = function() {
+        $('body').removeClass('no-scroll');
+    }
+
+    /**
+     * Keeps track of events
+     * @return {void}
+     */
+    Modal.prototype.handleEvents = function() {
+
+        // Open modal
+        $(document).on('click', '[data-reveal]', function (e) {
+            e.preventDefault();
+            this.open(e.target);
+        }.bind(this));
+
+        // Close modal
+        $(document).on('click', '[data-action="modal-close"]', function (e) {
+            e.preventDefault();
+            this.close(e.target);
+        }.bind(this));
+
+    }
+
+    return new Modal();
+
+})(jQuery);
+Helsingborg = Helsingborg || {};
+Helsingborg.Prompt = Helsingborg.Prompt || {};
+
+Helsingborg.Prompt.Button = (function ($) {
 
     function Button() {
         $(function(){
@@ -981,6 +987,64 @@ Helsingborg.Share.Button = (function ($) {
     return new Button();
 
 })(jQuery);
+Helsingborg = Helsingborg || {};
+Helsingborg.TableList = Helsingborg.TableList || {};
+
+Helsingborg.TableList.Search = (function ($) {
+
+    function Search() {
+        $(function(){
+
+            this.init();
+
+        }.bind(this));
+    }
+
+    /**
+     * Initializes table filtering
+     * @return {void}
+     */
+    Search.prototype.init = function () {
+        $('[data-filter-table]').each(function (index, element) {
+            var input = $(element).find('input[data-filter-table-input]');
+            var table = $(element).data('filter-table');
+            var tableItem = $(element).data('filter-table-selector');
+
+            input.on('keyup.filter-table', function (e) {
+                var value = $(e.target).val();
+                this.filterTable(value, table, tableItem);
+            }.bind(this));
+        }.bind(this));
+    }
+
+    /**
+     * Do the actual filtering with :contains
+     * @param  {string} query     The search "query"
+     * @param  {string} table     The table selector
+     * @param  {string} tableItem The table item selector
+     * @return {void}
+     */
+    Search.prototype.filterTable = function (query, table, tableItem) {
+        if (query.length > 0) {
+            $(table).find(tableItem).hide();
+            $(table).find(tableItem + ':contains(' + query + ')').show();
+        } else {
+            $(table).find(tableItem).show();
+        }
+    }
+
+    return new Search();
+
+})(jQuery);
+
+/**
+ * Make :contains insensitive
+ */
+jQuery.expr[":"].contains = $.expr.createPseudo(function(arg) {
+    return function( elem ) {
+        return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+    };
+});
 Helsingborg = Helsingborg || {};
 Helsingborg.TableList = Helsingborg.TableList || {};
 
@@ -1080,12 +1144,6 @@ Helsingborg.TableList.Sorting = (function ($) {
     return new Sorting();
 
 })(jQuery);
-(function (server, psID) {
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.src = server + '/' + psID + '/ps.js';
-    document.getElementsByTagName('head')[0].appendChild(s);
-}('https://account.psplugin.com', '331F5271-4B0B-4625-BF08-4157F101DBFF'));
 /*
  * Foundation Responsive Library
  * http://foundation.zurb.com

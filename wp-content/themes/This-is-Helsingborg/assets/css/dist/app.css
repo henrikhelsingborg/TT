@@ -4600,6 +4600,11 @@ p {
     border-color: #cb0050;
     color: #fff; }
 
+.table-list-filter {
+  background-color: #f6f5f2;
+  border: 1px solid #e7e5e1;
+  padding: 10px 15px 15px 15px; }
+
 .table-list {
   width: 100%;
   letter-spacing: .5px;

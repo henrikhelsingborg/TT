@@ -1,6 +1,12 @@
 $gray-3: #ddd;
 $headline-color: #333;
 
+.table-list-filter {
+    background-color: $creamy;
+    border: 1px solid $creamy-darker;
+    padding: 10px 15px 15px 15px;
+}
+
 .table-list {
     width: 100%;
     letter-spacing: .5px;

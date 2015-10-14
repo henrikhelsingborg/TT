@@ -35,7 +35,15 @@ Template Name: Lista
             <div class="columns <?php echo $centerClasses; ?>">
                 <?php get_template_part('templates/partials/article'); ?>
 
-                <table class="table-list">
+                <div class="table-list-filter" data-filter-table="#table-list-table" data-filter-table-selector="tbody">
+                    <div class="row">
+                        <div class="columns large-11">
+                            <label class="form-label" for="table-list-filter-input">Sök i listan:</label>
+                            <input type="search" data-filter-table-input class="form-control" id="table-list-filter-input">
+                        </div>
+                    </div>
+                </div>
+                <table class="table-list" id="table-list-table">
                     <thead>
                         <tr>
                             <th></th>
