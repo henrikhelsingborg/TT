@@ -26,11 +26,11 @@
 
 <?php if (get_the_modified_time() != get_the_time()) : ?>
     <ul class="timestamps">
-        <li><strong>Publicerad:</strong> <?php the_time('j F Y'); ?> kl <?php the_time('H:i'); ?></li>
-        <li><strong>Senast ändrad:</strong> <?php the_modified_time('j F Y'); ?> kl <?php the_modified_time('H:i'); ?></li>
+        <li><strong>Publicerad:</strong> <time datetime="<?php echo the_time('Y-m-d H:i'); ?>"><?php the_time('j F Y'); ?> kl. <?php the_time('H:i'); ?></time></li>
+        <li><strong>Senast ändrad:</strong> <time datetime="<?php echo the_modified_time('Y-m-d H:i'); ?>"><?php the_modified_time('j F Y'); ?> kl. <?php the_modified_time('H:i'); ?></time></li>
     </ul>
 <?php else: ?>
     <ul class="timestamps">
-        <li><p class= "timestamp"><strong>Publicerad:</strong> <?php the_time('j F Y'); ?> kl <?php the_time('H:i'); ?></p></li>
+        <li><strong>Publicerad:</strong> <time datetime="<?php echo the_time('Y-m-d H:i'); ?>"><?php the_time('j F Y'); ?> kl <?php the_time('H:i'); ?></time></li>
     </ul>
 <?php endif; ?>

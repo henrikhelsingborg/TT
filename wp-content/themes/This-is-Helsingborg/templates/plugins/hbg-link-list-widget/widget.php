@@ -43,12 +43,12 @@
                         <span class="link-item <?php if (strpos($args['id'], 'sidebar') > -1) : ?>link-item-light<?php endif; ?>"><?php echo $title; ?></span>
                         <?php
                             if ($show_dates && !empty($datetime)) :
-                            $date = date_i18n('d M Y', $datetime );
+                            $date = date_i18n('d M Y', $datetime);
                             if ($today == $date) :
                         ?>
-                            <span class="date">Idag <?php echo $time; ?></span>
+                            <span class="date"><time datetime="<?php echo date('Y-m-d H:i', $datetime); ?>">Idag <?php echo $time; ?></time></span>
                         <?php else : ?>
-                            <span class="date"><?php echo $date; ?></span>
+                            <span class="date"><time datetime="<?php echo date('Y-m-d H:i', $datetime); ?>"><?php echo $date; ?></time></span>
                         <?php
                             endif;
                             endif;
