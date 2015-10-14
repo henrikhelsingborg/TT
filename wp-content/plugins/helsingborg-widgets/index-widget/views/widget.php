@@ -26,7 +26,7 @@ $title = $instance['headline' . ($num+1)];
 ?>
 <li>
 <a href="<?php echo $link ?>" desc="link-desc">
-<?php if($image) : ?>
+<?php if($image && $instance['hide_image' . ($num+1)] != 1) : ?>
 <img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>">
 <?php endif; ?>
 <div class="list-content-container">
