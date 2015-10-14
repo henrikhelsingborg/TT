@@ -250,4 +250,19 @@ body[data-theme="purple"] {
         }
     }
 
+    // Pagination
+    .pagination {
+        .current a,
+        .current-pager a {
+            background-color: $palette-purple-2;
+            border-color: $palette-purple-2;
+            color: #fff;
+        }
+    }
+
+    // Search result item
+    .search-result-item a {
+        color: $palette-purple-4;
+    }
+
 }

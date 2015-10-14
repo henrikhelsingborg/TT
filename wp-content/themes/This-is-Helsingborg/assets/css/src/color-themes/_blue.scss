@@ -249,4 +249,20 @@ body[data-theme="blue"] {
         }
     }
 
+    // Pagination
+    
+    .pagination {
+        .current a,
+        .current-pager a {
+            background-color: $palette-blue-2;
+            border-color: $palette-blue-2;
+            color: #fff;
+        }
+    }
+
+    // Search result item
+    .search-result-item a {
+        color: $palette-blue-4;
+    }
+
 }
