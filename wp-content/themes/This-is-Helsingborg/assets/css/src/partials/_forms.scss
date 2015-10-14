@@ -102,6 +102,14 @@ input[type="checkbox"] {
     }
 }
 
+.gform_fields {
+    li {
+        &::before {
+            display: none;
+        }
+    }
+}
+
 .gform_wrapper input[type="email"],
 .gform_wrapper input[type="number"],
 .gform_wrapper input[type="password"],

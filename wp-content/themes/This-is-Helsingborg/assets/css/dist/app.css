@@ -3343,6 +3343,9 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   width: 100%;
   max-width: 100% !important; }
 
+.gform_fields li::before {
+  display: none; }
+
 .gform_wrapper input[type="email"],
 .gform_wrapper input[type="number"],
 .gform_wrapper input[type="password"],
