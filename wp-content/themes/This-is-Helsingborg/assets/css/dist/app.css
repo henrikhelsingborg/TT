@@ -2720,8 +2720,8 @@ img.responsive {
   position: absolute;
   top: 0;
   left: 0;
-  width: 25px;
-  height: 100%; }
+  height: 100%;
+  width: 25px; }
   .stripe div {
     width: 100%;
     height: 20%; }
@@ -5955,7 +5955,6 @@ body[data-theme="purple"] .stripe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 25px;
   height: 100%; }
   body[data-theme="purple"] .stripe div {
     width: 100%;
@@ -5982,6 +5981,33 @@ body[data-theme="purple"] .navbar-aside .current > a {
   color: #712082; }
 
 body[data-theme="purple"] .navbar-aside .sub-menu .current > a::before {
+  background-color: #712082; }
+
+body[data-theme="purple"] .mobile-menu-wrapper {
+  background-color: #712082; }
+  body[data-theme="purple"] .mobile-menu-wrapper ul:not(.sub-menu) > .current > a {
+    background-color: #7b075e;
+    color: #fff; }
+
+body[data-theme="purple"] .nav-mobilemenu > ul > li > a:hover {
+  background-color: #4d1659;
+  color: #fff; }
+
+body[data-theme="purple"] .nav-mobilemenu .current-ancestor:not(.current-node) > a {
+  color: #712082; }
+
+body[data-theme="purple"] .nav-mobilemenu .current-node > a {
+  background-color: #a61380; }
+
+body[data-theme="purple"] .nav-mobilemenu .sub-menu {
+  background-color: #fff; }
+  body[data-theme="purple"] .nav-mobilemenu .sub-menu a:hover {
+    background-color: #eccdf3; }
+
+body[data-theme="purple"] .btn.btn-mobile-menu, body[data-theme="purple"] .gform_footer input.btn-mobile-menu[type="submit"], .gform_footer body[data-theme="purple"] input.btn-mobile-menu[type="submit"] {
+  color: #712082; }
+
+body[data-theme="purple"] .hbg-hamburger::after, body[data-theme="purple"] .hbg-hamburger::before, body[data-theme="purple"] .hbg-hamburger {
   background-color: #712082; }
 
 body[data-theme="purple"] .section-article {
@@ -6113,7 +6139,6 @@ body[data-theme="blue"] .stripe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 25px;
   height: 100%; }
   body[data-theme="blue"] .stripe div {
     width: 100%;
@@ -6140,6 +6165,33 @@ body[data-theme="blue"] .navbar-aside .current > a {
   color: #0069b4; }
 
 body[data-theme="blue"] .navbar-aside .sub-menu .current > a::before {
+  background-color: #0069b4; }
+
+body[data-theme="blue"] .mobile-menu-wrapper {
+  background-color: #0069b4; }
+  body[data-theme="blue"] .mobile-menu-wrapper ul:not(.sub-menu) > .current > a {
+    background-color: #005c86;
+    color: #fff; }
+
+body[data-theme="blue"] .nav-mobilemenu > ul > li > a:hover {
+  background-color: #004b81;
+  color: #fff; }
+
+body[data-theme="blue"] .nav-mobilemenu .current-ancestor:not(.current-node) > a {
+  color: #0069b4; }
+
+body[data-theme="blue"] .nav-mobilemenu .current-node > a {
+  background-color: #0095db; }
+
+body[data-theme="blue"] .nav-mobilemenu .sub-menu {
+  background-color: #fff; }
+  body[data-theme="blue"] .nav-mobilemenu .sub-menu a:hover {
+    background-color: #d3ecff; }
+
+body[data-theme="blue"] .btn.btn-mobile-menu, body[data-theme="blue"] .gform_footer input.btn-mobile-menu[type="submit"], .gform_footer body[data-theme="blue"] input.btn-mobile-menu[type="submit"] {
+  color: #0069b4; }
+
+body[data-theme="blue"] .hbg-hamburger::after, body[data-theme="blue"] .hbg-hamburger::before, body[data-theme="blue"] .hbg-hamburger {
   background-color: #0069b4; }
 
 body[data-theme="blue"] .section-article {
@@ -6271,7 +6323,6 @@ body[data-theme="green"] .stripe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 25px;
   height: 100%; }
   body[data-theme="green"] .stripe div {
     width: 100%;
@@ -6298,6 +6349,33 @@ body[data-theme="green"] .navbar-aside .current > a {
   color: #11a636; }
 
 body[data-theme="green"] .navbar-aside .sub-menu .current > a::before {
+  background-color: #11a636; }
+
+body[data-theme="green"] .mobile-menu-wrapper {
+  background-color: #11a636; }
+  body[data-theme="green"] .mobile-menu-wrapper ul:not(.sub-menu) > .current > a {
+    background-color: #50811b;
+    color: #fff; }
+
+body[data-theme="green"] .nav-mobilemenu > ul > li > a:hover {
+  background-color: #0c7827;
+  color: #fff; }
+
+body[data-theme="green"] .nav-mobilemenu .current-ancestor:not(.current-node) > a {
+  color: #11a636; }
+
+body[data-theme="green"] .nav-mobilemenu .current-node > a {
+  background-color: #76b828; }
+
+body[data-theme="green"] .nav-mobilemenu .sub-menu {
+  background-color: #fff; }
+  body[data-theme="green"] .nav-mobilemenu .sub-menu a:hover {
+    background-color: #d9fbe2; }
+
+body[data-theme="green"] .btn.btn-mobile-menu, body[data-theme="green"] .gform_footer input.btn-mobile-menu[type="submit"], .gform_footer body[data-theme="green"] input.btn-mobile-menu[type="submit"] {
+  color: #11a636; }
+
+body[data-theme="green"] .hbg-hamburger::after, body[data-theme="green"] .hbg-hamburger::before, body[data-theme="green"] .hbg-hamburger {
   background-color: #11a636; }
 
 body[data-theme="green"] .section-article {

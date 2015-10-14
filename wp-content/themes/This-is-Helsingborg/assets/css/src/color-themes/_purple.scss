@@ -31,6 +31,45 @@ body[data-theme="purple"] {
         background-color: $palette-purple-2;
     }
 
+    // Mobile nav
+    .mobile-menu-wrapper {
+        background-color: $palette-purple-2;
+
+        ul:not(.sub-menu) > .current > a {
+            background-color: $palette-purple-4;
+            color: #fff;
+        }
+    }
+
+    .nav-mobilemenu > ul > li > a:hover {
+        background-color: darken($palette-purple-2, 10%);
+        color: #fff;
+    }
+
+    .nav-mobilemenu .current-ancestor:not(.current-node) > a {
+        color: $palette-purple-2;
+    }
+
+    .nav-mobilemenu .current-node > a {
+        background-color: $palette-purple-5;
+    }
+
+    .nav-mobilemenu .sub-menu {
+        background-color: #fff;
+
+        a:hover {
+            background-color: lighten($palette-purple-2, 56%);
+        }
+    }
+
+    .btn.btn-mobile-menu {
+        color: $palette-purple-2;
+    }
+
+    .hbg-hamburger::after, .hbg-hamburger::before, .hbg-hamburger {
+        background-color: $palette-purple-2;
+    }
+
     // Article
     .section-article {
         border-color: $palette-purple-2;

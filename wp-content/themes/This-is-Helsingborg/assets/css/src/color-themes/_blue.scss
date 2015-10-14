@@ -30,6 +30,45 @@ body[data-theme="blue"] {
         background-color: $palette-blue-2;
     }
 
+    // Mobile nav
+    .mobile-menu-wrapper {
+        background-color: $palette-blue-2;
+
+        ul:not(.sub-menu) > .current > a {
+            background-color: $palette-blue-4;
+            color: #fff;
+        }
+    }
+
+    .nav-mobilemenu > ul > li > a:hover {
+        background-color: darken($palette-blue-2, 10%);
+        color: #fff;
+    }
+
+    .nav-mobilemenu .current-ancestor:not(.current-node) > a {
+        color: $palette-blue-2;
+    }
+
+    .nav-mobilemenu .current-node > a {
+        background-color: $palette-blue-5;
+    }
+
+    .nav-mobilemenu .sub-menu {
+        background-color: #fff;
+
+        a:hover {
+            background-color: lighten($palette-blue-2, 56%);
+        }
+    }
+
+    .btn.btn-mobile-menu {
+        color: $palette-blue-2;
+    }
+
+    .hbg-hamburger::after, .hbg-hamburger::before, .hbg-hamburger {
+        background-color: $palette-blue-2;
+    }
+
     // Article
     .section-article {
         border-color: $palette-blue-2;
