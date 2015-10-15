@@ -146,7 +146,7 @@ class HelsingborgWalker extends Walker
             $page_on_front = null;
 
             if (array_reverse(get_post_ancestors($post->ID))[1]) {
-                $page_on_front = array_reverse(get_post_ancestors($post->ID))[1]
+                $page_on_front = array_reverse(get_post_ancestors($post->ID))[1];
             } else {
                 $page_on_front = $post->ID;
             }

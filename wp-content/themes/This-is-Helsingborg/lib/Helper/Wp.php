@@ -107,7 +107,8 @@ class Wp
      * @param  string $content The post content
      * @return string          Post content without empty <p>-tags
      */
-    public static function removeEmptyP($content) {
+    public static function removeEmptyP($content)
+    {
         // clean up p tags around block elements
         $content = preg_replace(array(
             '#<p>\s*<(div|aside|section|article|header|footer)#',
