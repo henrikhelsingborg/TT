@@ -44,7 +44,7 @@ Helsingborg.Search.Search = (function ($) {
             response = $.parseJSON(response);
             this.handleResponse(response);
         }.bind(this));
-    }
+    };
 
     /**
      * Handles the request response
@@ -81,7 +81,7 @@ Helsingborg.Search.Search = (function ($) {
                 $('.section-search-result').hide();
             }
         }
-    }
+    };
 
     Search.prototype.emptyResult = function() {
         if ($(_resultContainer).find('li').length > 0) {
@@ -89,7 +89,7 @@ Helsingborg.Search.Search = (function ($) {
         } else {
             $(_resultContainer).append('Din sökning gav inga resultat.');
         }
-    }
+    };
 
     Search.prototype.setupInfiniteScroll = function() {
         // Scrollevent
@@ -121,7 +121,7 @@ Helsingborg.Search.Search = (function ($) {
             $('.infinite-scroll-load-more').hide();
             this.request(_nextData);
         }.bind(this));
-    }
+    };
 
     /**
      * Show/hide and setup data for pagination
@@ -153,14 +153,14 @@ Helsingborg.Search.Search = (function ($) {
                 } else {
                     $('.pagination li:last-child').before('<li><a href="#" data-paginate-index="' + i + '">' + i + '</a></li>');
                 }
-            };
+            }
 
             _paginationInitialized = true;
             this.setPaginationCurrent();
         }
 
         $('.pagination').show();
-    }
+    };
 
     /**
      * Outputs search results information
@@ -168,9 +168,9 @@ Helsingborg.Search.Search = (function ($) {
      * @return {void}
      */
     Search.prototype.searchInfo = function(response) {
-        var searchHitsInfo = '<span class="search-hits">' + response.searchInformation.formattedTotalResults + '</span> träffar på <span class="search-query">' + response.queries.request[0].searchTerms + '</span> inom Helsingborg.se';
+        var searchHitsInfo = '<span class="search-hits">' + response.searchInformation.formattedTotalResults + '</span> träffar på <span class="search-query">' + unescape(response.queries.request[0].searchTerms).replace(/\\"/g, '"') + '</span> inom Helsingborg.se';
         $('.search-hits-info').html(searchHitsInfo);
-    }
+    };
 
     /**
      * Output the result markup
@@ -182,7 +182,7 @@ Helsingborg.Search.Search = (function ($) {
         $.each(response.items, function (index, item) {
             var meta = 0;
             if (item.pagemap) {
-                var meta = item.pagemap.metatags[0];
+                meta = item.pagemap.metatags[0];
             }
             var $item = $('<li class="search-result-item"><div class="search-result-item-content"></div></li>');
 
@@ -210,7 +210,7 @@ Helsingborg.Search.Search = (function ($) {
             $(_resultContainer).append($item);
         }.bind(this));
 
-    }
+    };
 
     /**
      * Get last modified date for result
@@ -220,7 +220,7 @@ Helsingborg.Search.Search = (function ($) {
     Search.prototype.getDateModified = function(item) {
         var meta = 0;
         if (item.pagemap) {
-            var meta = item.pagemap.metatags[0];
+            meta = item.pagemap.metatags[0];
         }
 
         var dateMod = null;
@@ -234,7 +234,7 @@ Helsingborg.Search.Search = (function ($) {
         }
 
         return dateMod;
-    }
+    };
 
     /**
      * Convert google date to readable date
@@ -242,10 +242,11 @@ Helsingborg.Search.Search = (function ($) {
      * @return {string}       Readable date
      */
     Search.prototype.convertDate = function(value) {
+        var year, month, day;
         if (value.length > 20) {
-            var year = value.substring(2,6);
-            var month = value.substring(6,8);
-            var day = value.substring(8,10);
+            year = value.substring(2,6);
+            month = value.substring(6,8);
+            day = value.substring(8,10);
             month = this.convertDateToMonth(month);
             return day + ' ' + month + ' ' + year;
         } else if (value.length == 11) {
@@ -253,15 +254,15 @@ Helsingborg.Search.Search = (function ($) {
             value = value.replace('Oct', 'Okt');
             return value;
         } else if (value.length == 8) {
-            var year = value.substring(0,4);
-            var month = value.substring(4,6);
-            var day = value.substring(6,value.length);
+            year = value.substring(0,4);
+            month = value.substring(4,6);
+            day = value.substring(6,value.length);
             month = this.convertDateToMonth(month);
             return day + ' ' + month + ' ' + year;
         } else {
             return '';
         }
-    }
+    };
 
     /**
      * Convert month number to month name
@@ -295,7 +296,7 @@ Helsingborg.Search.Search = (function ($) {
             case '12':
                 return "Dec";
         }
-    }
+    };
 
     Search.prototype.browse = function(browseTo) {
         if (browseTo == 'next') {
@@ -319,7 +320,7 @@ Helsingborg.Search.Search = (function ($) {
         }
 
         this.setPaginationCurrent();
-    }
+    };
 
     Search.prototype.setPaginationCurrent = function() {
         $(_pagination).find('li.current').removeClass('current');
@@ -337,7 +338,7 @@ Helsingborg.Search.Search = (function ($) {
             $(_pagination).find('li:gt(5)').hide();
             $(_pagination).find('li:last-child').show();
         }
-    }
+    };
 
     /**
      * Keeps track of events
@@ -379,7 +380,7 @@ Helsingborg.Search.Search = (function ($) {
             this.browse($(e.target).data('paginate-index'));
         }.bind(this));
 
-    }
+    };
 
     return new Search();
 
