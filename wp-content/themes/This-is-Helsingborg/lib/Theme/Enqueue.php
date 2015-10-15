@@ -2,7 +2,8 @@
 
 namespace Helsingborg\Theme;
 
-class Enqueue {
+class Enqueue
+{
     public function __construct()
     {
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::dequeueStyles');
@@ -23,26 +24,25 @@ class Enqueue {
     }
 
     /**
-     * Dequeues styles
-     * @return void
+     * Dequeues styles.
      */
     public static function dequeueStyles()
     {
-
     }
 
     /**
-     * Enqueue styles
-     * @return void
+     * Enqueue styles.
      */
     public static function enqueueStyles()
     {
-        wp_enqueue_style('style-app', get_template_directory_uri() . '/assets/css/dist/app.min.css');
+        wp_enqueue_style(
+            'style-app',
+            get_template_directory_uri().'/assets/css/dist/app.min.css'
+        );
     }
 
     /**
-     * Dequeues scripts
-     * @return void
+     * Dequeues scripts.
      */
     public static function dequeueScripts()
     {
@@ -52,54 +52,93 @@ class Enqueue {
     }
 
     /**
-     * Enqueue scripts
-     * @return void
+     * Enqueue scripts.
      */
     public static function enqueueScripts()
     {
         // Packaged jQuery
         // See the Gulpfile for scripts refereces
-        wp_register_script('jquery', get_template_directory_uri() . '/assets/js/dist/jquery.min.js', array(), '1.0.0', false);
+        wp_register_script(
+            'jquery',
+            get_template_directory_uri().'/assets/js/dist/jquery.min.js',
+            array(),
+            '1.0.0',
+            false
+        );
         wp_enqueue_script('jquery');
 
-        wp_register_script('jquery-ui', get_template_directory_uri() . '/assets/js/dist/jquery-ui.min.js', array(), '1.0.0', true);
+        // jQuery UI
+        wp_register_script(
+            'jquery-ui',
+            get_template_directory_uri().'/assets/js/dist/jquery-ui.min.js',
+            array(),
+            '1.0.0',
+            true
+        );
 
         // Readspeaker
-        wp_register_script('readspeaker', 'http://f1.eu.readspeaker.com/script/5507/ReadSpeaker.js?pids=embhl', array(), '1.0.0', true);
+        wp_register_script(
+            'readspeaker',
+            'http://f1.eu.readspeaker.com/script/5507/ReadSpeaker.js?pids=embhl',
+            array(),
+            '1.0.0',
+            true
+        );
         wp_enqueue_script('readspeaker');
 
         // App
-        wp_register_script('app', get_template_directory_uri() . '/assets/js/dist/app.min.js', array('jquery'), '1.0.0', true);
+        wp_register_script(
+            'app',
+            get_template_directory_uri().'/assets/js/dist/app.min.js',
+            array('jquery'),
+            '1.0.0',
+            true
+        );
         wp_enqueue_script('app');
     }
 
     /**
-     * Enqueue page specific styles
-     * @return void
+     * Enqueue page specific styles.
      */
     public static function enqueuePageStyles()
     {
-
     }
 
     /**
-     * Enqueue page specific scripts
-     * @return void
+     * Enqueue page specific scripts.
      */
     public static function enqueuePageScripts()
     {
-        wp_register_script('knockout', get_template_directory_uri() . '/assets/js/dist/knockout.js', array(), '3.3.0', false);
+        wp_register_script(
+            'knockout',
+            get_template_directory_uri().'/assets/js/dist/knockout.js',
+            array(),
+            '3.3.0',
+            false
+        );
 
         // Search and 404
         if (is_search() || is_404()) {
-            wp_register_script('app-search', get_template_directory_uri() . '/assets/js/dist/search.min.js', array(), '1.0.0', true);
+            wp_register_script(
+                'app-search',
+                get_template_directory_uri().'/assets/js/dist/search.min.js',
+                array(),
+                '1.0.0',
+                true
+            );
             wp_enqueue_script('app-search');
         }
 
         // Event search
         if (is_page_template('templates/event-search.php')) {
             wp_enqueue_script('knockout');
-            wp_register_script('event-list-model', get_template_directory_uri() . '/assets/js/dist/event.min.js', array(), '1.0.0', true);
+            wp_register_script(
+                'event-list-model',
+                get_template_directory_uri() . '/assets/js/dist/event.min.js',
+                array(),
+                '1.0.0',
+                true
+            );
             wp_enqueue_script('event-list-model');
         }
 
@@ -107,12 +146,24 @@ class Enqueue {
         if (is_page_template('templates/alarm-search.php')) {
             wp_enqueue_script('knockout');
 
-            wp_register_script('alarm-list-page', get_template_directory_uri() . '/assets/js/dist/alarm.js', array(), '1.0.0', true);
+            wp_register_script(
+                'alarm-list-page',
+                get_template_directory_uri() . '/assets/js/dist/alarm.js',
+                array(),
+                '1.0.0',
+                true
+            );
             wp_enqueue_script('alarm-list-page');
         }
     }
 
-    public function removeScriptVersion($src){
+    /**
+     * Removes querystring from any scripts/styles loaded from "helsingborg" or "localhost"
+     * @param  string $src The soruce path
+     * @return string      The source path without any querystring
+     */
+    public function removeScriptVersion($src)
+    {
         $parts = explode('?', $src);
         if (strpos($parts[0], 'helsingborg') > -1 || strpos($parts[0], 'localhost') > -1) {
             return $parts[0];
