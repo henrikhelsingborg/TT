@@ -3073,6 +3073,7 @@ body.nav-fixed .site-header .hero {
     .mobile-menu-wrapper {
       display: none; } }
   .mobile-menu-wrapper .stripe {
+    display: block;
     width: 5px; }
   .mobile-menu-wrapper .container {
     padding: 10px 15px 10px 20px; }
