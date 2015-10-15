@@ -88,4 +88,13 @@
         margin-top: -5px;
         margin-bottom: 25px;
     }
+
+    .modal-link {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        .link-item::before {
+            display: inline;
+        }
+    }
 }

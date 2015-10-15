@@ -4332,6 +4332,12 @@ p {
   margin-top: -5px;
   margin-bottom: 25px; }
 
+#eventModal .modal-link {
+  overflow-wrap: break-word;
+  word-wrap: break-word; }
+  #eventModal .modal-link .link-item::before {
+    display: inline; }
+
 .breadcrumbs {
   margin: 0;
   margin-top: 20px;
