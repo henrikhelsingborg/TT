@@ -5924,7 +5924,9 @@ img[data-lazyload] {
   a[href="#"]:after {
     display: none; }
   .print-only {
-    display: block; } }
+    display: block; }
+  .vngage-banner {
+    display: none; } }
 
 .print-only {
   display: none; }
