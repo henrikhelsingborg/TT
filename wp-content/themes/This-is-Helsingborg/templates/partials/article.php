@@ -27,13 +27,13 @@
 
     <?php if (!empty($content)) : ?>
     <div class="article-body">
-    <?php
+        <?php
         if (!empty($content)) {
             echo apply_filters('the_content', $content);
         } else {
             echo apply_filters('the_content', $main);
         }
-    ?>
+        ?>
     </div>
     <?php endif; ?>
 </article>

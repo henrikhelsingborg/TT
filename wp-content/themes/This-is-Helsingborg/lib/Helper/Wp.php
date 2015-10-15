@@ -2,7 +2,8 @@
 
 namespace Helsingborg\Helper;
 
-class Wp {
+class Wp
+{
 
     public function __construct()
     {
@@ -36,7 +37,11 @@ class Wp {
         }
 
         if ($error) {
-            trigger_error('Helsingborg: Template '.$slug.'helsingborg'.$prefix.'.php'.' not found in any of the paths: '.var_export($paths, true), E_USER_WARNING);
+            trigger_error(
+                'Helsingborg: Template ' . $slug . 'helsingborg' . $prefix . '.php' .
+                ' not found in any of the paths: ' . var_export($paths, true),
+                E_USER_WARNING
+            );
         }
     }
 
@@ -69,7 +74,7 @@ class Wp {
         );
 
         $base_pages = get_children($args);
-        foreach($base_pages as $page) {
+        foreach ($base_pages as $page) {
             array_push($includes, $page->ID);
         }
 
@@ -84,7 +89,7 @@ class Wp {
                     'post_parent' => $ancestor,
                 );
 
-                $childs = get_children( $args );
+                $childs = get_children($args);
 
                 foreach ($childs as $child) {
                     array_push($includes, $child->ID);
@@ -104,7 +109,7 @@ class Wp {
      */
     public static function removeEmptyP($content) {
         // clean up p tags around block elements
-        $content = preg_replace( array(
+        $content = preg_replace(array(
             '#<p>\s*<(div|aside|section|article|header|footer)#',
             '#</(div|aside|section|article|header|footer)>\s*</p>#',
             '#</(div|aside|section|article|header|footer)>\s*<br ?/?>#',
@@ -117,12 +122,13 @@ class Wp {
             '</$1>',
             '<$1$2>',
             '</$1',
-        ), $content );
+        ), $content);
 
         return preg_replace('#<p>(\s|&nbsp;)*+(<br\s*/*>)*(\s|&nbsp;)*</p>#i', '', $content);
     }
 
-    public static function getExcerptById($postId = 0) {
+    public static function getExcerptById($postId = 0)
+    {
         global $post;
 
         $save_post = $post;
@@ -141,7 +147,8 @@ class Wp {
      * @param  string $content The content before
      * @return string          The content after
      */
-    public static function wrapYoutube($content) {
+    public static function wrapYoutube($content)
+    {
         $pattern = '~<iframe.*?</iframe>~';
         $content = preg_replace_callback($pattern, function ($matches) {
             if (stripos($matches[0], 'youtube') !== false) {
@@ -153,5 +160,4 @@ class Wp {
 
         return $content;
     }
-
 }

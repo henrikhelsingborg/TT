@@ -62,7 +62,7 @@
         foreach ($headerKeys as $key) {
             $data = null;
 
-            $child_meta = get_post_meta($page->ID,'_helsingborg_meta',TRUE);
+            $child_meta = get_post_meta($page->ID, '_helsingborg_meta', true);
 
             if (is_array($child_meta)) {
                 $data = $child_meta['article_options_' . $key];
