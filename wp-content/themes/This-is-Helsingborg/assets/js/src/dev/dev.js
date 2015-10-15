@@ -89,8 +89,6 @@ jQuery(document).ready(function ($) {
         }
     });
 
-
-
     $('[class^="sidebar"] .widget_text').append('<div class="stripe"><div></div><div></div><div></div><div></div><div></div></div>');
 
 });
