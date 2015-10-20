@@ -7,6 +7,10 @@
 .sidebar-right {
     padding-top: 0;
 
+    @media #{$medium-down} {
+        margin-top: 20px;
+    }
+
     .widget + .widget {
         margin-top: 20px;
     }

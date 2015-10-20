@@ -10,6 +10,9 @@ class Support
         self::addActions();
         self::addFilters();
         self::removeTheGenerator();
+
+        add_filter('srm_max_redirects', array($this, 'dbx_srm_max_redirects'));
+        add_action('template_redirect', array($this, 'blockAuthorPages'), 5);
     }
 
     /**
@@ -92,5 +95,36 @@ class Support
     public static function removeTheGenerator()
     {
         add_filter('the_generator', create_function('', 'return "";'));
+    }
+
+    /**
+     * Blocks request to the author pages (?author=<ID>)
+     * @return [type] [description]
+     */
+    public function blockAuthorPages() {
+        global $wp_query;
+    
+        if (is_author() || is_attachment()) {
+            $wp_query->set_404();
+        }
+    
+        if (is_feed()) {
+            $author     = get_query_var('author_name');
+            $attachment = get_query_var('attachment');
+            $attachment = (empty($attachment)) ? get_query_var('attachment_id') : $attachment;
+    
+            if (!empty($author) || !empty($attachment)) {
+                $wp_query->set_404();
+                $wp_query->is_feed = false;
+            }
+        }
+    }
+
+    /**
+     * Update the default maximum number of redirects to 400
+     * @return void
+     */
+    public function dbx_srm_max_redirects() {
+        return 400;
     }
 }

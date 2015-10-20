@@ -1,120 +1,103 @@
-Helsingborg = Helsingborg || {};
-Helsingborg.Prompt = Helsingborg.Prompt || {};
+var Helsingborg;
 
-Helsingborg.Prompt.Alert = (function ($) {
+// Gallery settings
+var gallery_image_per_row = 2;
+var gallery_use_masonry = false;
 
-    var _animationSpeed = 300;
-    var _wrapperSelector = '[data-prompt-wrapper="alert"]';
-    var _message = 'Alert';
+jQuery(document).ready(function ($) {
 
-    function Alert() {
-        $(function(){
+    $('html').removeClass('no-js');
 
-            this.handleEvents();
-
-            // Show cookies alert if not accepted
-            if (window.localStorage.getItem('accept-cookies') != 'true') {
-                this.show('info',
-                    'Helsingborg.se använder cookies för att förbättra din upplevelse på siten. Genom att surfa vidare accepterar du dessa cookies.<br><a href="http://www.helsingborg.se/startsida/toppmeny/om-webbplatsen/om-cookies-pa-webbplatsen/">Läs mer om cookies här »</a>',
-                    [
-                        {
-                            label: 'Ok, jag förstår',
-                            class: 'btn-submit',
-                            action: 'accept-cookies'
-                        }
-                    ]
-                );
-            }
-
-        }.bind(this));
-    }
+    $('.nav-mobilemenu, .navbar-mainmenu').find('a:hidden').attr('disabled', 'disabled').addClass('auto-disabled');
+    $(window).on('resize', function (e) {
+        $('.nav-mobilemenu, .navbar-mainmenu').find('a.auto-disabled').removeAttr('disabled').removeClass('auto-disabled');
+        $('.nav-mobilemenu, .navbar-mainmenu').find('a:hidden').attr('disabled', 'disabled').addClass('auto-disabled');
+    });
 
     /**
-     * Displays an alert
-     * @param  {string} type    The class name of the alert
-     * @param  {string} text    The text of the alert
-     * @param  {object} buttons Buttons to place in the alert
-     * @return {void}
+     * Initializes Foundation JS with necessary plugins:
+     * Equalizer
      */
-    Alert.prototype.show = function(type, text, buttons) {
-        buttons = typeof buttons !== 'undefined' ? buttons : null;
-
-        // Append alert container
-        $('<div class="alert"><div class="container"><div class="row"></div></div></div>').prependTo(_wrapperSelector);
-
-        // If we have a type set, append the class to the alert container
-        if (type != null) {
-            $(_wrapperSelector).find('.alert:first-child').addClass('alert-' + type);
+    $(document).foundation({
+        equalizer: {
+            equalize_on_stack: true
+        },
+        orbit: {
+            slide_number_text: 'av',
+            navigation_arrows: false
         }
+    });
 
-        // Add alert text
-        $(_wrapperSelector).find('.alert:first-child .row').append('<div class="columns large-9 medium-9">' + text + '</div>');
+    /**
+     * Append navigation buttons to orbit
+     */
+    $(document).on("ready.fndtn.orbit", function(e) {
+        $('.orbit-container').append('<div class="orbit-navigation"><button class="orbit-prev" aria-label="Visa föregående bild"><i class="fa fa-chevron-circle-left"></i> Föregående</button><button class="orbit-next" aria-label="Visa nästa bild">Nästa <i class="fa fa-chevron-circle-right"></i></button></div>');
+    });
 
-        // Add alert button contaioner
-        $(_wrapperSelector).find('.alert:first-child .row').append('<div class="buttons columns large-3 medium-3"></div>');
-
-        // Add close button or add defined buttons
-        if (buttons == null) {
-            $(_wrapperSelector).find('.alert:first-child .columns:last-child').append('<button class="btn btn-alert-close" data-action="alert-close"><i class="fa fa-times"></i></button>');
-        } else {
-            $.each(buttons, function (index, item) {
-                $(_wrapperSelector).find('.alert:first-child .columns:last-child').append('<button class="btn ' + item.class +'" data-action="' + item.action + '">' + item.label + '</button>')
+    /**
+     * Get disturbances
+     */
+    jQuery.post(ajaxurl, { action: 'big_notification' }, function(response) {
+        if (response) {
+            response = JSON.parse(response);
+            $.each(response, function (index, item) {
+                var message = '<a href="' + item.link + '">' + item.title + '</a>';
+                Helsingborg.Prompt.Alert.show(item.class, message);
             });
         }
-
-        $(_wrapperSelector).find('.alert:first-child').slideDown(_animationSpeed);
-    }
+    });
 
     /**
-     * Accept use of cookies (store answer in html5localstorage)
-     * @return {string} Success message
+     * Table list
      */
-    Alert.prototype.acceptCookies = function() {
-        window.localStorage.setItem('accept-cookies', true);
-        return 'Use of cookies was accepted.';
-    }
-
-    /**
-     * Clear the saved "acceptCookies" value from html5localstorage
-     * To clear from JS Console: Helsingborg.Prompt.Alert.clearAcceptCookies();
-     * @return {string} Success message
-     */
-    Alert.prototype.clearAcceptCookies = function() {
-        window.localStorage.removeItem('accept-cookies');
-        return 'Cleard the "accept cookies" setting.';
-    }
-
-    /**
-     * Hides and removes a specific alert
-     * @param  {object} element The element to hide/remove
-     * @return {void}
-     */
-    Alert.prototype.hide = function(element) {
-        $(element).closest('.alert').slideUp(_animationSpeed,   function() {
-            $(this).remove();
+    if ($('.table-list').length > 0) {
+        $('.table-list').delegate('tbody tr.table-item','click', function(){
+            if(!$(this).is('.active')) {
+                $('.table-item').removeClass('active');
+                $('.table-content').removeClass('open');
+                $(this).addClass('active');
+                $(this).next('.table-content').addClass('open');
+            } else if($(this).hasClass('active')) {
+                $(this).toggleClass('active');
+                $(this).next('.table-content').removeClass('open');
+            }
         });
     }
 
-    /**
-     * Keeps track of events
-     * @return {void}
-     */
-    Alert.prototype.handleEvents = function() {
+    if (typeof is_front_page !== 'undefined') {
+        var mobile_menu_offset = $('.nav-mainmenu-container').offset().top;
+        if ($('body').find('#wpadminbar').length) mobile_menu_offset = mobile_menu_offset - 32;
 
-        $(document).on('click', '[data-action="alert-close"]', function (e) {
-            this.hide(e.target);
-        }.bind(this));
-
-        $(document).on('click', '[data-action="accept-cookies"]', function (e) {
-            this.acceptCookies();
-            this.hide(e.target);
-        }.bind(this));
-
+        $(window).on('scroll', function (e) {
+            if ($(window).scrollTop() >= mobile_menu_offset) {
+                $('.nav-mainmenu-container, body').addClass('nav-fixed');
+                if ($('body').find('#wpadminbar').length) $('.nav-mainmenu-container.nav-fixed').css('top', '32px');
+            } else {
+                if ($('body').find('#wpadminbar').length) $('.nav-mainmenu-container.nav-fixed').css('top', '0');
+                $('.nav-mainmenu-container, body').removeClass('nav-fixed');
+            }
+        });
     }
+   
+    $('.mobile-menu-wrapper').find('input, button').attr('tabindex', '-1');
 
-    return new Alert();
+    $('[data-tooltip*="click"]').on('click', function (e) {
+        if ($(e.target).is('[data-tooltip-toggle]')) {
+            e.preventDefault();
+            $(this).find('.tooltip').toggle().find('textarea:first').focus();
+        }
+    });
 
-})(jQuery);
+    $('[class^="sidebar"] .widget_text').append('<div class="stripe"><div></div><div></div><div></div><div></div><div></div></div>');
+
+});
+(function (server, psID) {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = server + '/' + psID + '/ps.js';
+    document.getElementsByTagName('head')[0].appendChild(s);
+}('https://account.psplugin.com', '331F5271-4B0B-4625-BF08-4157F101DBFF'));
 Helsingborg = Helsingborg || {};
 Helsingborg.Client = Helsingborg.Client || {};
 
@@ -205,118 +188,53 @@ var BrowserDetect = {
     BrowserDetect.init();
     document.write("You are using <b>" + BrowserDetect.browser + "</b> with version <b>" + BrowserDetect.version + "</b>");
     */
-var Helsingborg;
+Helsingborg = Helsingborg || {};
+Helsingborg.Client = Helsingborg.Client || {};
 
-// Gallery settings
-var gallery_image_per_row = 2;
-var gallery_use_masonry = false;
+Helsingborg.Client.Lazyload = (function ($) {
 
-jQuery(document).ready(function ($) {
+    function Lazyload() {
+        $(function(){
 
-    /**
-     * Initializes Foundation JS with necessary plugins:
-     * Equalizer
-     */
-    $(document).foundation({
-        equalizer: {
-            equalize_on_stack: true
-        },
-        orbit: {
-            slide_number_text: 'av'
-        }
-    });
+            if (typeof lazyloadImages != 'undefined') this.handleEvents();
 
-    /**
-     * Get disturbances
-     */
-    jQuery.post(ajaxurl, { action: 'big_notification' }, function(response) {
-        if (response) {
-            response = JSON.parse(response);
-            $.each(response, function (index, item) {
-                var message = '<a href="' + item.link + '">' + item.title + '</a>';
-                Helsingborg.Prompt.Alert.show(item.class, message);
-            });
-        }
-    });
-
-    /**
-     * Table list
-     */
-    if ($('.table-list').length > 0) {
-        $('.table-list').delegate('tbody tr.table-item','click', function(){
-            if(!$(this).is('.active')) {
-                $('.table-item').removeClass('active');
-                $('.table-content').removeClass('open');
-                $(this).addClass('active');
-                $(this).next('.table-content').addClass('open');
-            } else if($(this).hasClass('active')) {
-                $(this).toggleClass('active');
-                $(this).next('.table-content').removeClass('open');
-            }
-        });
+        }.bind(this));
     }
 
-    if (typeof is_front_page !== 'undefined') {
-        var mobile_menu_offset = $('.nav-mainmenu-container').offset().top;
-        if ($('body').find('#wpadminbar').length) mobile_menu_offset = mobile_menu_offset - 32;
-
-        $(window).on('scroll', function (e) {
-            if ($(window).scrollTop() >= mobile_menu_offset) {
-                $('.nav-mainmenu-container, body').addClass('nav-fixed');
-                if ($('body').find('#wpadminbar').length) $('.nav-mainmenu-container.nav-fixed').css('top', '32px');
-            } else {
-                if ($('body').find('#wpadminbar').length) $('.nav-mainmenu-container.nav-fixed').css('top', '0');
-                $('.nav-mainmenu-container, body').removeClass('nav-fixed');
-            }
-        });
+    Lazyload.prototype.loadImage = function (el) {
+        var imageToLoad = $(el).data('lazyload');
+        $(el).attr('src', imageToLoad).removeAttr('data-lazyload');
     }
 
-    // Gallery open
-    /*
-    $('.hbg-gallery-item').on('click', function (e) {
-        e.preventDefault();
-        var $modal = $('#' + $(this).data('reveal'));
+    Lazyload.prototype.isInViewport = function (el) {
 
-        if ($(this).data('image')) {
-            $modal.find('.modal-media').html('<img class="reponsive" src="' + $(this).data('image') + '">');
-        }
+        el = $(el)[0];
 
-        if ($(this).data('youtube')) {
-            var youtube_url = $(this).data('youtube');
-            var pattern = /^(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?(?=.*v=((\w|-){11}))(?:\S+)?$/;
-            var youtube_id = (youtube_url.match(pattern)) ? RegExp.$1 : false;
+        var rect = el.getBoundingClientRect();
 
-            if (youtube_id) {
-                $modal.find('.modal-media').html('\
-                    <div class="flex-video widescreen">\
-                        <iframe src="https://www.youtube.com/embed/' + youtube_id + '?autoplay=1" frameborder="0" allowfullscreen></iframe>\
-                    </div>\
-                ');
-            }
-        }
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+        );
+    }
 
-        $modal.find('.modal-text').html('<h3>' + $(this).data('title') + '</h3>' + $(this).data('description'));
-    });
+    Lazyload.prototype.handleEvents = function () {
+        
+        $(window).on('scroll, load', function (e) {
 
-    $('[id^="gallery-modal-"] .modal-close').on('click', function (e) {
-        $(this).closest('[id^="gallery-modal-"]').find('.modal-media').html('');
-    });
-    */
-   
-    $('.mobile-menu-wrapper').find('input, button').attr('tabindex', '-1');
+            $('[data-lazyload]').each(function (index, element) {
+                this.loadImage(element);
+            }.bind(this));
 
-    $('[data-tooltip*="click"]').on('click', function (e) {
-        if ($(e.target).is('[data-tooltip-toggle]')) {
-            e.preventDefault();
-            $(this).find('.tooltip').toggle().find('textarea:first').focus();
-        }
-    });
+        }.bind(this));
 
+    }
 
+    return new Lazyload();
 
-    $('[class^="sidebar"] .widget_text').append('<div class="stripe"><div></div><div></div><div></div><div></div><div></div></div>');
-
-});
+})(jQuery);
 Helsingborg = Helsingborg || {};
 Helsingborg.Event = Helsingborg.Event || {};
 
@@ -415,18 +333,17 @@ Helsingborg.Event.List = (function ($) {
                 }
             });
 
-            // Output information
-            
-            if (clickedEvent.ImagePath) {
+            // Output information            
+            if (clickedEvent.ImagePath != "") {
                 $('.modal-image').attr('src', clickedEvent.ImagePath);
             } else {
-                $('.modal-image').attr('src', this.defaultImagePath);
+                $('.modal-image').attr('src', '/wp-content/themes/This-is-Helsingborg/assets/images/event-placeholder.jpg');
             }
 
             if (clickedEvent.Link) {
                 $('.modal-link').html('<a class="link-item" href="' + clickedEvent.Link + '" target="blank">' + clickedEvent.Link + '</a>').show();
             } else {
-                jQuery('.modal-link').hide();
+                jQuery('.modal-link').empty();
             }
 
             $('.modal-title').html(clickedEvent.Name);
@@ -487,53 +404,6 @@ Helsingborg.Event.List = (function ($) {
 
 })(jQuery);
 Helsingborg = Helsingborg || {};
-Helsingborg.Images = Helsingborg.Images || {};
-
-Helsingborg.Images.Lazyload = (function ($) {
-
-    function Lazyload() {
-        $(function(){
-
-            if (typeof lazyloadImages != 'undefined') this.handleEvents();
-
-        }.bind(this));
-    }
-
-    Lazyload.prototype.loadImage = function (el) {
-        var imageToLoad = $(el).data('lazyload');
-        $(el).attr('src', imageToLoad).removeAttr('data-lazyload');
-    }
-
-    Lazyload.prototype.isInViewport = function (el) {
-
-        el = $(el)[0];
-
-        var rect = el.getBoundingClientRect();
-
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
-        );
-    }
-
-    Lazyload.prototype.handleEvents = function () {
-        
-        $(window).on('scroll, load', function (e) {
-
-            $('[data-lazyload]').each(function (index, element) {
-                this.loadImage(element);
-            }.bind(this));
-
-        }.bind(this));
-
-    }
-
-    return new Lazyload();
-
-})(jQuery);
-Helsingborg = Helsingborg || {};
 Helsingborg.Mobile = Helsingborg.Mobile || {};
 
 Helsingborg.Mobile.Menu = (function ($) {
@@ -579,7 +449,7 @@ Helsingborg.Mobile.Menu = (function ($) {
      */
     Menu.prototype.toggle = function(element) {
         element = $(element);
-        element.toggleClass('open');
+        element.closest('button').toggleClass('open');
         $('body').toggleClass('mobile-menu-in');
 
         if ($('body').hasClass('mobile-menu-in')) {
@@ -634,9 +504,135 @@ Helsingborg.Mobile.Menu = (function ($) {
 Helsingborg = Helsingborg || {};
 Helsingborg.Prompt = Helsingborg.Prompt || {};
 
+Helsingborg.Prompt.Alert = (function ($) {
+
+    var _animationSpeed = 300;
+    var _wrapperSelector = '[data-prompt-wrapper="alert"]';
+    var _message = 'Alert';
+
+    function Alert() {
+        $(function(){
+
+            this.handleEvents();
+
+            // Show cookies alert if not accepted
+            if (window.localStorage.getItem('accept-cookies') != 'true') {
+                this.show('info',
+                    'På helsingborg.se använder vi cookies (kakor) för att webbplatsen ska fungera på ett bra sätt för dig. Genom att klicka vidare godkänner du att vi använder cookies. <a href="http://www.helsingborg.se/startsida/toppmeny/om-webbplatsen/om-cookies-pa-webbplatsen/">Vad är cookies?</a>',
+                    [
+                        {
+                            label: 'Jag godkänner',
+                            class: 'btn-submit',
+                            action: 'accept-cookies'
+                        }
+                    ]
+                );
+            }
+
+        }.bind(this));
+    }
+
+    /**
+     * Displays an alert
+     * @param  {string} type    The class name of the alert
+     * @param  {string} text    The text of the alert
+     * @param  {object} buttons Buttons to place in the alert
+     * @return {void}
+     */
+    Alert.prototype.show = function(type, text, buttons) {
+        buttons = typeof buttons !== 'undefined' ? buttons : null;
+
+        // Append alert container
+        $('<div class="alert"><div class="container"><div class="row"></div></div></div>').prependTo(_wrapperSelector);
+
+        // If we have a type set, append the class to the alert container
+        if (type != null) {
+            $(_wrapperSelector).find('.alert:first-child').addClass('alert-' + type);
+        }
+
+        // Add alert text
+        $(_wrapperSelector).find('.alert:first-child .row').append('<div class="columns large-9 medium-9">' + text + '</div>');
+
+        // Add alert button contaioner
+        $(_wrapperSelector).find('.alert:first-child .row').append('<div class="buttons columns large-3 medium-3"></div>');
+
+        // Add close button or add defined buttons
+        if (buttons == null) {
+            $(_wrapperSelector).find('.alert:first-child .columns:last-child').append('<button class="btn btn-alert-close" data-action="alert-close"><i class="fa fa-times"></i></button>');
+        } else {
+            $.each(buttons, function (index, item) {
+                $(_wrapperSelector).find('.alert:first-child .columns:last-child').append('<button class="btn ' + item.class +'" data-action="' + item.action + '">' + item.label + '</button>')
+            });
+        }
+
+        $(_wrapperSelector).find('.alert:first-child').slideDown(_animationSpeed);
+    }
+
+    /**
+     * Accept use of cookies (store answer in html5localstorage)
+     * @return {string} Success message
+     */
+    Alert.prototype.acceptCookies = function() {
+        try {
+            window.localStorage.setItem('accept-cookies', true);
+            return true;
+        } catch(e) {
+            return false;
+        }
+    }
+
+    /**
+     * Clear the saved "acceptCookies" value from html5localstorage
+     * To clear from JS Console: Helsingborg.Prompt.Alert.clearAcceptCookies();
+     * @return {string} Success message
+     */
+    Alert.prototype.clearAcceptCookies = function() {
+        try {
+            window.localStorage.removeItem('accept-cookies');
+            return true;
+        } catch(e) {
+            return false;
+        }
+    }
+
+    /**
+     * Hides and removes a specific alert
+     * @param  {object} element The element to hide/remove
+     * @return {void}
+     */
+    Alert.prototype.hide = function(element) {
+        $(element).closest('.alert').slideUp(_animationSpeed,   function() {
+            $(this).remove();
+        });
+    }
+
+    /**
+     * Keeps track of events
+     * @return {void}
+     */
+    Alert.prototype.handleEvents = function() {
+
+        $(document).on('click', '[data-action="alert-close"]', function (e) {
+            this.hide(e.target);
+        }.bind(this));
+
+        $(document).on('click', '[data-action="accept-cookies"]', function (e) {
+            this.acceptCookies();
+            this.hide(e.target);
+        }.bind(this));
+
+    }
+
+    return new Alert();
+
+})(jQuery);
+Helsingborg = Helsingborg || {};
+Helsingborg.Prompt = Helsingborg.Prompt || {};
+
 Helsingborg.Prompt.Modal = (function ($) {
 
     var fadeSpeed = 300;
+    var openingElement = null;
 
     function Modal() {
         $(function(){
@@ -652,9 +648,33 @@ Helsingborg.Prompt.Modal = (function ($) {
      * @return {void}
      */
     Modal.prototype.open = function(element) {
+        this.openingElement = element;
         var targetElement = $(element).closest('[data-reveal]').data('reveal');
         $('#' + targetElement).fadeIn(fadeSpeed);
+        this.forceModalFocus(targetElement);
         this.disableBodyScroll();
+    }
+
+    /**
+     * Handle first tab if modal window is open
+     * @param  {string} e The element
+     * @return {void}
+     */
+    Modal.prototype.forceModalFocus = function (targetElement) {
+        $('body').on('keydown.foceModalFocus', function (e) {
+            if (e.keyCode == 9) {
+                e.preventDefault();
+                $('.modal-close').focus();
+                $('body').off('keydown.foceModalFocus');
+            }
+        });
+
+        $('#' + targetElement).find('a').last().on('keydown.forceModalFocus2', function (e) {
+            if (e.keyCode == 9) {
+                e.preventDefault();
+                $('.modal-close').focus();
+            }
+        });
     }
 
     /**
@@ -664,7 +684,10 @@ Helsingborg.Prompt.Modal = (function ($) {
      */
     Modal.prototype.close = function(element) {
         $(element).closest('.modal').fadeOut(fadeSpeed);
+        $(element).closest('.modal').find('a').last().off('keydown.forceModalFocus2');
+        $('body').off('keydown.foceModalFocus');
         this.enableBodyScroll();
+        $(this.openingElement).closest('a').focus();
     }
 
     /**
@@ -704,6 +727,54 @@ Helsingborg.Prompt.Modal = (function ($) {
     }
 
     return new Modal();
+
+})(jQuery);
+Helsingborg = Helsingborg || {};
+Helsingborg.Prompt = Helsingborg.Prompt || {};
+
+Helsingborg.Prompt.Button = (function ($) {
+
+    function Button() {
+        $(function(){
+
+            this.handleEvents();
+
+        }.bind(this));
+    }
+
+    Button.prototype.openPopup = function(element) {
+        // Width and height of the popup
+        var width = 626;
+        var height = 305;
+
+        // Gets the href from the button/link
+        var url = $(element).closest('a').attr('href');
+
+        // Calculate popup position
+        var leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
+        var topPosition = (window.screen.height / 2) - ((height / 2) + 50);
+
+        // Popup window features
+        var windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=no,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
+
+        // Open popup
+        window.open(url, 'Share', windowFeatures);
+    }
+
+    /**
+     * Keeps track of events
+     * @return {void}
+     */
+    Button.prototype.handleEvents = function() {
+
+        $(document).on('click', '[data-action="share-popup"]', function (e) {
+            e.preventDefault();
+            this.openPopup(e.target);
+        }.bind(this));
+
+    }
+
+    return new Button();
 
 })(jQuery);
 Helsingborg = Helsingborg || {};
@@ -923,11 +994,71 @@ Helsingborg.Search.Button = (function ($) {
 
 })(jQuery);
 Helsingborg = Helsingborg || {};
-Helsingborg.Share = Helsingborg.Share || {};
+Helsingborg.TableList = Helsingborg.TableList || {};
 
-Helsingborg.Share.Button = (function ($) {
+Helsingborg.TableList.Search = (function ($) {
 
-    function Button() {
+    function Search() {
+        $(function(){
+
+            this.init();
+
+        }.bind(this));
+    }
+
+    /**
+     * Initializes table filtering
+     * @return {void}
+     */
+    Search.prototype.init = function () {
+        $('[data-filter-table]').each(function (index, element) {
+            var input = $(element).find('input[data-filter-table-input]');
+            var table = $(element).data('filter-table');
+            var tableItem = $(element).data('filter-table-selector');
+
+            input.on('keyup.filter-table', function (e) {
+                var value = $(e.target).val();
+                this.filterTable(value, table, tableItem);
+            }.bind(this));
+        }.bind(this));
+    }
+
+    /**
+     * Do the actual filtering with :contains
+     * @param  {string} query     The search "query"
+     * @param  {string} table     The table selector
+     * @param  {string} tableItem The table item selector
+     * @return {void}
+     */
+    Search.prototype.filterTable = function (query, table, tableItem) {
+        if (query.length > 0) {
+            $(table).find(tableItem).hide();
+            $(table).find(tableItem + ':contains(' + query + ')').show();
+        } else {
+            $(table).find(tableItem).show();
+        }
+    }
+
+    return new Search();
+
+})(jQuery);
+
+/**
+ * Make :contains insensitive
+ */
+jQuery.expr[":"].contains = $.expr.createPseudo(function(arg) {
+    return function( elem ) {
+        return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+    };
+});
+Helsingborg = Helsingborg || {};
+Helsingborg.TableList = Helsingborg.TableList || {};
+
+Helsingborg.TableList.Sorting = (function ($) {
+
+    var items = null;
+
+    function Sorting() {
         $(function(){
 
             this.handleEvents();
@@ -935,47 +1066,90 @@ Helsingborg.Share.Button = (function ($) {
         }.bind(this));
     }
 
-    Button.prototype.openPopup = function(element) {
-        // Width and height of the popup
-        var width = 626;
-        var height = 305;
-
-        // Gets the href from the button/link
-        var url = $(element).closest('a').attr('href');
-
-        // Calculate popup position
-        var leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
-        var topPosition = (window.screen.height / 2) - ((height / 2) + 50);
-
-        // Popup window features
-        var windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=no,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
-
-        // Open popup
-        window.open(url, 'Share', windowFeatures);
+    /**
+     * Get the items in the table
+     * @param  {object} e The event
+     * @return {array}    Array with all items
+     */
+    Sorting.prototype.getItems = function (e) {
+        var items = $(e.target).parents('.table-list').find('tbody');
+        return items;
     }
 
     /**
-     * Keeps track of events
+     * Sort the table
+     * @param  {object} e The event
      * @return {void}
      */
-    Button.prototype.handleEvents = function() {
+    Sorting.prototype.sortTable = function (e) {
+        var element = $(e.target);
+        var items = this.getItems(e);
+        var columnIndex = element.index();
 
-        $(document).on('click', '[data-action="share-popup"]', function (e) {
-            e.preventDefault();
-            this.openPopup(e.target);
-        }.bind(this));
+        var order = (element.hasClass('sorting-asc')) ? 'desc' : 'asc';
 
+        element.parents('.table-list').find('thead th').removeClass('sorting-asc sorting-desc');
+
+        if (order == 'asc') {
+            items.sort(function (a, b) {
+                var a = $(a).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
+                var b = $(b).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
+
+                if (a < b) {
+                    return -1;
+                }
+                else if (a > b) {
+                    return 1;
+                }
+                else {
+                    return 0;
+                }
+            });
+
+            element.removeClass('sorting-desc').addClass('sorting-asc');
+        } else if (order == 'desc') {
+            items.sort(function (a, b) {
+                var a = $(a).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
+                var b = $(b).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
+
+                if (a > b) {
+                    return -1;
+                }
+                else if (a < b) {
+                    return 1;
+                }
+                else {
+                    return 0;
+                }
+            });
+
+            element.removeClass('sorting-asc').addClass('sorting-desc');
+        }
+
+        this.outputItems(e, items);
     }
 
-    return new Button();
+    /**
+     * Outputs the table items in its new order
+     * @param  {object} e     Event
+     * @param  {array} items  The items
+     * @return {void}
+     */
+    Sorting.prototype.outputItems = function(e, items) {
+        var $table = $(e.target).parents('.table-list');
+        $table.find('tbody').remove();
+        $table.append(items);
+    }
+
+    Sorting.prototype.handleEvents = function() {
+        $('.table-list thead th').on('click', function (e) {
+            this.sortTable(e);
+        }.bind(this));
+    }
+
+    return new Sorting();
 
 })(jQuery);
-(function (server, psID) {
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.src = server + '/' + psID + '/ps.js';
-    document.getElementsByTagName('head')[0].appendChild(s);
-}('https://account.psplugin.com', '331F5271-4B0B-4625-BF08-4157F101DBFF'));
 /*
  * Foundation Responsive Library
  * http://foundation.zurb.com

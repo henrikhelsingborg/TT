@@ -14,8 +14,12 @@ class Enqueue {
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::enqueuePageStyles');
         add_action('wp_enqueue_scripts', '\Helsingborg\Theme\Enqueue::enqueuePageScripts');
 
+        // Do not print script version when importing scripts and style
+        add_filter('script_loader_src', array($this, 'removeScriptVersion'), 15, 1);
+        add_filter('style_loader_src', array($this, 'removeScriptVersion'), 15, 1);
+
         // Remove Tablepress css
-        add_filter( 'tablepress_use_default_css', '__return_false' );
+        add_filter('tablepress_use_default_css', '__return_false');
     }
 
     /**
@@ -106,10 +110,14 @@ class Enqueue {
             wp_register_script('alarm-list-page', get_template_directory_uri() . '/assets/js/dist/alarm.js', array(), '1.0.0', true);
             wp_enqueue_script('alarm-list-page');
         }
+    }
 
-        // List page
-        if (is_page_template('templates/list-page.php')) {
-            wp_enqueue_script('knockout');
+    public function removeScriptVersion($src){
+        $parts = explode('?', $src);
+        if (strpos($parts[0], 'helsingborg') > -1 || strpos($parts[0], 'localhost') > -1) {
+            return $parts[0];
+        } else {
+            return $src;
         }
     }
 }

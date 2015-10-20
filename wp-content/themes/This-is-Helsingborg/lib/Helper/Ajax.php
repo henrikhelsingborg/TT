@@ -156,7 +156,7 @@ class Ajax {
         $id        = $_POST['id'];
         $name      = $_POST['name'];
 
-        $pages = $wpdb->get_results("SELECT ID, post_title FROM $wpdb->posts WHERE post_type = 'page' AND post_title LIKE '%" . $title . "%'");
+        $pages = $wpdb->get_results("SELECT ID, post_title FROM $wpdb->posts WHERE post_type = 'page' AND post_title LIKE '%" . $title . "%' ORDER BY post_title ASC");
 
         $list = '<select id="' . $id . '" name="' . $name . '">';
 
@@ -183,7 +183,7 @@ class Ajax {
         $pages = $wpdb->get_results("SELECT ID, post_title
                              FROM $wpdb->posts
                              WHERE post_type = 'page'
-                             AND post_title LIKE '%" . $title . "%'");
+                             AND post_title LIKE '%" . $title . "%' ORDER BY post_title ASC");
 
         $list = '<select onchange="updateValues();" id="rss_select" name="rss_select">';
         $list .= '<option value="-1">' . __(" -- Välj sida i listan -- ") . '</option>';

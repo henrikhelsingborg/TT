@@ -21,7 +21,7 @@
         <div class="columns <?php if (is_front_page()) : ?>large-4 print-4<?php else : ?>large-6 print-6<?php endif; ?> medium-6 end">
             <a href="<?php echo $link; ?>" class="index-item index-item-filled" data-equalizer-watch>
                 <?php if (isset($image[0])) : ?>
-                <img src="<?php echo $image[0]; ?>" alt="<?php echo $title; ?>">
+                <img src="<?php echo $image[0]; ?>" alt="<?php echo $page->post_title; ?>" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>">
                 <?php endif; ?>
                 <div class="index-container">
                     <div class="index-caption link-item link-item-light"><?php echo $page->post_title ?></div>

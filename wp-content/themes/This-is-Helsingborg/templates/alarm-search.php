@@ -48,48 +48,59 @@ get_header(); ?>
 <section class="section-search-result">
     <div class="container">
         <div class="row">
-            <div class="columns large-12">
-                <!-- ko if: pager.maxPageIndex() > 0 -->
-                <ul class="pagination" role="menubar" arial-label="pagination" style="display:block;">
-                    <li><a href="#" data-bind="click: pager.movePrevious, enable: pager.currentPageIndex() > 0">&laquo; Föregående</a></li>
+            <div class="columns large-6 medium-6 small-12 print-12">
+                <div class="row">
+                    <div class="columns large-12">
+                        <!-- ko if: pager.maxPageIndex() > 0 -->
+                        <ul class="pagination" role="menubar" arial-label="pagination" style="display:block;">
+                            <li><a href="#" data-bind="click: pager.movePrevious, enable: pager.currentPageIndex() > 0">&laquo; Föregående</a></li>
 
-                    <!-- ko foreach: pager.pagerPages() -->
-                    <li data-bind="css: $parent.pager.currentStatus($data-1), visible: $parent.pager.isHidden($index())">
-                        <a href="#" data-bind="text: ($data), click: function(data, event) { $parent.pager.changePageIndex($data-1) }"></a>
-                    </li>
-                    <!-- /ko -->
+                            <!-- ko foreach: pager.pagerPages() -->
+                            <li data-bind="css: $parent.pager.currentStatus($data-1), visible: $parent.pager.isHidden($index())">
+                                <a href="#" data-bind="text: ($data), click: function(data, event) { $parent.pager.changePageIndex($data-1) }"></a>
+                            </li>
+                            <!-- /ko -->
 
-                    <li><a href="#" data-bind="click: pager.moveNext, enable: pager.currentPageIndex() < pager.maxPageIndex()">Nästa &raquo;</a></li>
-                </ul>
-                <!-- /ko -->
-            </div>
-        </div>
+                            <li><a href="#" data-bind="click: pager.moveNext, enable: pager.currentPageIndex() < pager.maxPageIndex()">Nästa &raquo;</a></li>
+                        </ul>
+                        <!-- /ko -->
+                    </div>
+                </div>
 
-        <div class="row">
-            <div class="columns large-12">
-                <ul class="search-result" data-bind="template: {name:'alarmTemplate', foreach: pager.currentPageEvents}"></ul>
-                <div id="events-loading-indicator">
-                    <i class="hbg-loading">Läser in alarm…</i>
+                <div class="row">
+                    <div class="columns large-12">
+                        <ul class="search-result" data-bind="template: {name:'alarmTemplate', foreach: pager.currentPageEvents}"></ul>
+                        <div id="events-loading-indicator">
+                            <i class="hbg-loading">Läser in alarm…</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="columns large-12">
+                        <!-- ko if: pager.maxPageIndex() > 0 -->
+                        <ul class="pagination" role="menubar" arial-label="pagination" style="display:block;">
+                            <li><a href="#" data-bind="click: pager.movePrevious, enable: pager.currentPageIndex() > 0">&laquo; Föregående</a></li>
+
+                            <!-- ko foreach: pager.pagerPages() -->
+                            <li data-bind="css: $parent.pager.currentStatus($data-1), visible: $parent.pager.isHidden($index())">
+                                <a href="#" data-bind="text: ($data), click: function(data, event) { $parent.pager.changePageIndex($data-1) }"></a>
+                            </li>
+                            <!-- /ko -->
+
+                            <li><a href="#" data-bind="click: pager.moveNext, enable: pager.currentPageIndex() < pager.maxPageIndex()">Nästa &raquo;</a></li>
+                        </ul>
+                        <!-- /ko -->
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="columns large-12">
-                <!-- ko if: pager.maxPageIndex() > 0 -->
-                <ul class="pagination" role="menubar" arial-label="pagination" style="display:block;">
-                    <li><a href="#" data-bind="click: pager.movePrevious, enable: pager.currentPageIndex() > 0">&laquo; Föregående</a></li>
+            <?php
+                if (is_active_sidebar('right-sidebar')) {
+                    get_template_part('templates/partials/sidebar', 'right');
+                }
+            ?>
 
-                    <!-- ko foreach: pager.pagerPages() -->
-                    <li data-bind="css: $parent.pager.currentStatus($data-1), visible: $parent.pager.isHidden($index())">
-                        <a href="#" data-bind="text: ($data), click: function(data, event) { $parent.pager.changePageIndex($data-1) }"></a>
-                    </li>
-                    <!-- /ko -->
-
-                    <li><a href="#" data-bind="click: pager.moveNext, enable: pager.currentPageIndex() < pager.maxPageIndex()">Nästa &raquo;</a></li>
-                </ul>
-                <!-- /ko -->
-            </div>
         </div>
     </div>
 </section>

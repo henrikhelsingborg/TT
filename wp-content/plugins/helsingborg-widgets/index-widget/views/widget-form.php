@@ -28,6 +28,11 @@
             <input id="input_<?php echo $this->get_field_id('item_headline'.$num); ?>" type="text" class="input-text" name="<?php echo $this->get_field_name('headline'.$num); ?>" value="<?php echo $instance['headline'.$num]; ?>" />
         </p>
         <p>
+            <label>
+                <input type="checkbox" name="<?php echo $this->get_field_name('hide_image'.$num); ?>" value="1" <?php echo checked($instance['hide_image'.$num], '1', false); ?>> Dölj bilden
+            </label>
+        </p>
+        <p>
             <label for="<?php echo $this->get_field_id('item_id'.$num); ?>"><?php echo __("Sida att söka efter: "); ?></label><br>
             <input id="input_<?php echo $this->get_field_id('item_id'.$num); ?>" type="text" class="input-text" />
             <button id="button_<?php echo $this->get_field_id('item_id'.$num); ?>" name="<?php echo $this->get_field_name('item_id'.$num); ?>" type="button" class="button-secondary" onclick="load_page_containing(this.id, this.name)"><?php echo __("SÖK"); ?></button>

@@ -3,12 +3,12 @@
     <?php if (!empty($instance['link'])) : ?>
     <a href="<?php echo $instance['link']; ?>" target="<?php echo $instance['linktarget']; ?>">
     <?php endif; ?>
-    <img src="<?php echo $instance['imageurl']; ?>" alt="<?php echo $instance['alt']; ?>" class="responsive">
+    <img src="<?php echo $instance['imageurl']; ?>" alt="<?php echo $instance['alt']; ?>" class="responsive" width="<?php echo $instance['width']; ?>" height="<?php echo $instance['height']; ?>">
     <?php if (!empty($instance['link'])) : ?>
     </a>
     <?php endif; ?>
 
-    <h3 class="box-title"><?php echo $title; ?></h3>
+    <?php if (strlen($title) > 0) : ?><h3 class="box-title"><?php echo $title; ?></h3><?php endif; ?>
 
     <?php if (!empty($description)) : ?>
     <div class="box-content padding-x1-5">

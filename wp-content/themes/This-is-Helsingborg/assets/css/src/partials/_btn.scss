@@ -50,7 +50,7 @@ a.btn-warning {
 .btn-plain,
 .btn-alert-close {
     background-color: transparent;
-    color: $palette-red-4;
+    color: $palette-red-4 !important;
     padding: 0;
 
     &:hover {

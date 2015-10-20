@@ -104,6 +104,7 @@ if (!class_exists('Index_Widget_Box')) {
                     $instance['item'.($i+1)] = empty($new_instance['item'.$item_num]) ? '' : strip_tags($new_instance['item'.$item_num]);
                     $instance['item_id'.($i+1)] = empty($new_instance['item_id'.$item_num]) ? '' : strip_tags($new_instance['item_id'.$item_num]);
                     $instance['headline'.($i+1)] = empty($new_instance['headline'.$item_num]) ? '' : strip_tags($new_instance['headline'.$item_num]);
+                    $instance['hide_image'.($i+1)] = empty($new_instance['hide_image'.$item_num]) ? '' : strip_tags($new_instance['hide_image'.$item_num]);
                 }
             }
 

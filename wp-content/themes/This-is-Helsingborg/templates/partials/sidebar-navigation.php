@@ -6,7 +6,7 @@
     //$menu = wp_cache_get('menu_' . $post->ID);
     $menu = get_transient('menu_' . $post->ID);
 
-    if (!$menu) {
+    if (!$menu || (isset($_GET['menu_cache']) && $_GET['menu_cache'] == 'false')) {
         $menu = wp_list_pages(array(
             'title_li' => '',
             'echo'     => 0,
@@ -15,7 +15,7 @@
         ));
 
         //wp_cache_set('menu_' . $post->ID , $menu);
-        set_transient('menu_' . $post->ID, $menu, 60*60*24);
+        set_transient('menu_' . $post->ID, $menu, 60*60*168);
     }
 
     if ($menu) :

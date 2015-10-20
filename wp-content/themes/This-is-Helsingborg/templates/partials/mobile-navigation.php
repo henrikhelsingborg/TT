@@ -11,7 +11,7 @@ $walker_page = new Helsingborg_Walker_Mobile();
     <ul class="nav nav-list">
         <?php
             $menu = get_transient('menu_mobile_' . $post->ID);
-            if (!$menu) {
+            if (!$menu || (isset($_GET['menu_cache']) && $_GET['menu_cache'] == 'false')) {
                 $menu = wp_list_pages(array(
                     'title_li' => '',
                     'echo'     => 0,
@@ -19,7 +19,7 @@ $walker_page = new Helsingborg_Walker_Mobile();
                     'include'  => get_included_pages($post)
                 ));
 
-                set_transient('menu_mobile_' . $post->ID, $menu, 60*60*24);
+                set_transient('menu_mobile_' . $post->ID, $menu, 60*60*168);
             }
 
             echo $menu;

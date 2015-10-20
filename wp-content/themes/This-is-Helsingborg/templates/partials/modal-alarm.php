@@ -1,6 +1,6 @@
 <div id="alarmModal" class="modal">
     <div class="modal-content">
-        <button class="modal-close" data-action="modal-close"><i class="fa fa-times-circle"></i></button>
+        <button class="modal-close" data-action="modal-close" aria-label="Stäng fönstret"><i class="fa fa-times-circle"></i></button>
         <div class="row">
             <div class="columns large-12">
                 <h1 class="modal-title main-title">Alarm</h1>

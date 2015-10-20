@@ -39,7 +39,7 @@
     }
 }
 
-.logotype:not(.logotype-mobile) {
+.site-header .logotype:not(.logotype-mobile) {
     display: none;
 
     @media screen and (min-width: 851px) {
@@ -58,7 +58,6 @@
     top: 0;
     left: 0;
 
-    width: 25px;
     height: 100%;
 
     div {
@@ -89,6 +88,7 @@
 
 .stripe {
     @include stripe;
+    width: 25px;
 }
 
 [class^="sidebar-"] .stripe {

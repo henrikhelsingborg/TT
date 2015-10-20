@@ -49,10 +49,10 @@
 
     .featured {
         display: block !important;
-        margin-left: -1px;
-        margin-right: -1px;
         background-color: $palette-red-2;
         color: #fff;
+        border-right: 0 !important;
+        border-left: 0 !important;
     }
 }
 
@@ -213,6 +213,7 @@
 .list-events {
     .event-item {
         display: table;
+        width: 100%;
 
         &:hover {
             text-decoration: none;
@@ -256,7 +257,7 @@
         vertical-align: middle;
         width: 60px;
         height: 100%;
-        padding: 7px;
+        padding: 6.2px;
         border-right: 1px solid $creamy-darker;
         font-weight: 300;
         font-size: 10pt;

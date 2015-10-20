@@ -30,6 +30,45 @@ body[data-theme="green"] {
         background-color: $palette-green-2;
     }
 
+    // Mobile nav
+    .mobile-menu-wrapper {
+        background-color: $palette-green-2;
+
+        ul:not(.sub-menu) > .current > a {
+            background-color: $palette-green-4;
+            color: #fff;
+        }
+    }
+
+    .nav-mobilemenu > ul > li > a:hover {
+        background-color: darken($palette-green-2, 10%);
+        color: #fff;
+    }
+
+    .nav-mobilemenu .current-ancestor:not(.current-node) > a {
+        color: $palette-green-2;
+    }
+
+    .nav-mobilemenu .current-node > a {
+        background-color: $palette-green-5;
+    }
+
+    .nav-mobilemenu .sub-menu {
+        background-color: #fff;
+
+        a:hover {
+            background-color: lighten($palette-green-2, 56%);
+        }
+    }
+
+    .btn.btn-mobile-menu {
+        color: $palette-green-2;
+    }
+
+    .hbg-hamburger::after, .hbg-hamburger::before, .hbg-hamburger {
+        background-color: $palette-green-2;
+    }
+
     // Article
     .section-article {
         border-color: $palette-green-2;
@@ -163,7 +202,15 @@ body[data-theme="green"] {
     }
 
     .table-list .table-item.active {
-        background-color: lighten($palette-blue-2, 60%);
+        background-color: lighten($palette-green-2, 60%);
+    }
+
+    .btn-submit {
+        background-color: $palette-green-2;
+
+        &:hover {
+            background-color: darken($palette-green-2, 5%);
+        }
     }
 
     // Widget colors
@@ -200,6 +247,21 @@ body[data-theme="green"] {
                 }
             }
         }
+    }
+
+    // Pagination
+    .pagination {
+        .current a,
+        .current-pager a {
+            background-color: $palette-green-2;
+            border-color: $palette-green-2;
+            color: #fff;
+        }
+    }
+
+    // Search result item
+    .search-result-item a {
+        color: $palette-green-4;
     }
 
 }

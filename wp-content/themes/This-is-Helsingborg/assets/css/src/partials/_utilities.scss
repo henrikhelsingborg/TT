@@ -13,6 +13,18 @@
     display: none;
 }
 
+.hide-for-mobile-menu-only {
+    @media #{$bp-mobile-menu-down} {
+        display: none !important;
+    }
+}
+
+.mobile-menu-12 {
+    @media #{$bp-mobile-menu-down} {
+        width: 100%;
+    }
+}
+
 .relative {
     position: relative;
 }
@@ -384,10 +396,16 @@ img {
     @media #{$medium-up} {
         &.alignleft {
             float: left;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-top: 10px;
         }
 
         &.alignright {
             float: right;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 10px;
         }
     }
 }

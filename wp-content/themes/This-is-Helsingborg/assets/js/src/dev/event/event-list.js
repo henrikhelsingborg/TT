@@ -96,18 +96,17 @@ Helsingborg.Event.List = (function ($) {
                 }
             });
 
-            // Output information
-            
-            if (clickedEvent.ImagePath) {
+            // Output information            
+            if (clickedEvent.ImagePath != "") {
                 $('.modal-image').attr('src', clickedEvent.ImagePath);
             } else {
-                $('.modal-image').attr('src', this.defaultImagePath);
+                $('.modal-image').attr('src', '/wp-content/themes/This-is-Helsingborg/assets/images/event-placeholder.jpg');
             }
 
             if (clickedEvent.Link) {
                 $('.modal-link').html('<a class="link-item" href="' + clickedEvent.Link + '" target="blank">' + clickedEvent.Link + '</a>').show();
             } else {
-                jQuery('.modal-link').hide();
+                jQuery('.modal-link').empty();
             }
 
             $('.modal-title').html(clickedEvent.Name);

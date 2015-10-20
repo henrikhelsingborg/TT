@@ -1,5 +1,23 @@
 var _eventPageModel = null;
 
+/**
+ * Handles tab from end date filed to open the "event types" dropdown
+ */
+$(document).on('keydown.tabcontroller', '#datetimepickerend', function (e) {
+    if (e.keyCode == 9) {
+        $('.zselect').trigger('click');
+    }
+});
+
+/**
+ * When tabbing in the last checkbo in "event type" dropdown, close the dropdown
+ */
+$(document).on('keydown.tabcontroller-item', '.zselect ul li:nth-last-child(2) input', function (e) {
+    if (e.keyCode == 9) {
+        $('.zselect ul').hide();
+    }
+});
+
 $(document).ready(function($) {
     var events = {};
     var eventTypes = {};

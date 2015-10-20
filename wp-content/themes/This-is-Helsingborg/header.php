@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="columns large-12">
                         <a href="/" class="logotype" data-tooltip="focus">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/helsingborg.svg" alt="Helsingborg Stad" width="239" height="68">
                             <span class="tooltip" style="width:131px;">
                                 Gå till startsidan
                             </span>
@@ -108,19 +108,18 @@
                 </div>
             </div>
 
+            <div class="mobile-menu-wrapper">
+                <?php
+                    get_template_part('templates/partials/stripe');
+                    get_template_part('templates/partials/mobile', 'navigation');
+                ?>
+            </div>
+
             <?php
                 if (is_front_page()) {
                     get_template_part('templates/partials/hero');
                 }
             ?>
         </header>
-
-        <div class="mobile-menu-wrapper">
-            <?php
-                get_template_part('templates/partials/stripe');
-                get_template_part('templates/partials/mobile', 'search');
-                get_template_part('templates/partials/mobile', 'navigation');
-            ?>
-        </div>
 
         <main id="main">

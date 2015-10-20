@@ -1,7 +1,7 @@
 Helsingborg = Helsingborg || {};
-Helsingborg.Images = Helsingborg.Images || {};
+Helsingborg.Client = Helsingborg.Client || {};
 
-Helsingborg.Images.Lazyload = (function ($) {
+Helsingborg.Client.Lazyload = (function ($) {
 
     function Lazyload() {
         $(function(){

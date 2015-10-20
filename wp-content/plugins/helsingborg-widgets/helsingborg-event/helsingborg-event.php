@@ -1,6 +1,7 @@
 <?php
 
     include_once('classes/helsingborg-event-list-widget.php');
+    require_once('happy-event.php');
     require_once('models/event_model.php');
 
     $EventList = new EventList();
@@ -77,7 +78,7 @@
                         if ($today == $event->Date) {
                             $list .= '<span class="date-day"><strong>Idag</strong></span><span class="date-time">' . $event->Time . '</span>';
                         } else {
-                            $list .= '<span class="date-day">' . date('d', strtotime($event->Date)) . '</span><span class="date-time">' . date('M', strtotime($event->Date)) . '</span>';
+                            $list .= '<span class="date-day">' . date('d', strtotime($event->Date)) . '</span><span class="date-time">' . strtolower(strftime('%b', strtotime($event->Date))) . '</span>';
                         }
                     $list .= '</span>';
                     $list .= '<span class="title"><span class="link-item">' . $event->Name . '</span></span>';

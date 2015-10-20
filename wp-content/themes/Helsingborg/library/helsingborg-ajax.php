@@ -265,7 +265,6 @@ function load_pages_with_update_callback() {
 */
 
 /* Loads pages where post_title has keyword $title */
-/*
 add_action('wp_ajax_load_pages', 'load_pages_callback');
 function load_pages_callback() {
     global $wpdb;
@@ -289,10 +288,8 @@ function load_pages_callback() {
     echo $list;
     die();
 }
-*/
 
 /* Loads pages where post_title has keyword $title */
-/*
 add_action('wp_ajax_load_pages_rss', 'load_pages_rss_callback');
 function load_pages_rss_callback() {
     global $wpdb;
@@ -317,7 +314,6 @@ function load_pages_rss_callback() {
     echo $list;
     die();
 }
-*/
 
 
 /* Load all organizers with event ID */

@@ -26,5 +26,9 @@
         &.current {
             display: block;
         }
+
+        &::before {
+            display: none;
+        }
     }
 }
