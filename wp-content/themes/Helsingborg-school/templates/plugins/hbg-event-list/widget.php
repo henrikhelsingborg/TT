@@ -1,18 +1,33 @@
-<?php echo $before_widget; ?>
+<?php 
+$calendarListID = ($calendarListID) ? $calendarListID++ : 1;
+echo $before_widget;
+?>
 <div class="widget-content-holder">
 <h2 class="widget-title"><?php echo $title; ?></h2>
 
-<ul class="calendar-list" style="min-height: 30px;">
+<ul class="calendar-list" id="calendar-list-<?php echo $calendarListID; ?>" style="min-height: 30px;">
     <div class="event-list-loader" id="loading-event" style="margin-top: -5px;"></div>
 </ul><!-- .calendar-list -->
 
+<script>
+    jQuery(document).ajaxComplete(function(event, xhr, settings) {
+        $('.calendar-list [data-reveal]').each(function (index, element) {
+            $(this).attr('data-reveal-id', 'eventModal-<?php echo $calendarListID; ?>').removeAttr('data-reveal');
+        });
+    });
+</script>
+
 <a href="<?php echo $reference; ?>" class="read-more"><?php echo $link_text; ?></a>
 
-<div id="eventModal" class="reveal-modal" data-reveal>
-    <img class="modal-image"/>
+<div id="eventModal-<?php echo $calendarListID; ?>" class="reveal-modal" data-reveal>
+    <div class="row">
+        <div>
+            <img class="modal-image">
+        </div>
+    </div>
 
     <div class="row">
-        <div class="modal-event-info large-12 columns">
+        <div class="modal-event-info">
             <h2 class="modal-title"></h2>
             <p class="modal-description"></p>
             <p class="modal-link"></p>
@@ -22,18 +37,12 @@
 
     <!-- IF arrangör exist -->
     <div class="row">
-        <div class="large-6 columns" id="event-times">
+        <div id="event-times">
             <h2 class="section-title">Datum, tid och plats</h2>
-
-            <div class="divider fade">
-                <div class="upper-divider"></div>
-                <div class="lower-divider"></div>
-            </div>
-
             <ul class="modal-list" id="time-modal"></ul>
         </div>
 
-        <div class="large-6 columns" id="event-organizers">
+        <div id="event-organizers">
             <h2 class="section-title">Arrangör</h2>
 
             <div class="divider fade">
@@ -50,8 +59,6 @@
 </div>
 
 <script type="text/javascript">
-    var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
-
     var events = {};
     jQuery(document).ready(function() {
         var data = { action: 'update_event_calendar', amount: '<?php echo $amount; ?>', ids: '<?php echo $administration_ids; ?>' };
@@ -59,22 +66,21 @@
         jQuery.post(ajaxurl, data, function(response) {
             var obj = JSON.parse(response);
             events = obj.events;
-            jQuery('.calendar-list').html(obj.list);
+            jQuery('#calendar-list-<?php echo $calendarListID; ?>').html(obj.list);
         });
 
-        jQuery(document).on('click', '.modalLink', function(event) {
+        jQuery(document).on('click', '#calendar-list-<?php echo $calendarListID; ?> .event-item', function(event) {
             event.preventDefault();
-            var image = $('.modal-image');
-            var title = $('.modal-title');
-            var link = $('.modal-link');
-            var date = $('.modal-date');
-            var description = $('.modal-description');
-            var time_list = $('#time-modal');
-            var organizer_list = $('#organizer-modal');
+            var image = $('#eventModal-<?php echo $calendarListID; ?> .modal-image');
+            var title = $('#eventModal-<?php echo $calendarListID; ?> .modal-title');
+            var link = $('#eventModal-<?php echo $calendarListID; ?> .modal-link');
+            var date = $('#eventModal-<?php echo $calendarListID; ?> .modal-date');
+            var description = $('#eventModal-<?php echo $calendarListID; ?> .modal-description');
+            var time_list = $('#eventModal-<?php echo $calendarListID; ?> #time-modal');
+            var organizer_list = $('#eventModal-<?php echo $calendarListID; ?> #organizer-modal');
 
-            document.getElementById('event-times').style.display = 'none';
-            document.getElementById('event-times').className = 'large-6 columns';
-            document.getElementById('event-organizers').style.display = 'none';
+            jQuery('#eventModal-<?php echo $calendarListID; ?> #event-times').hide();
+            jQuery('#eventModal-<?php echo $calendarListID; ?> #event-organizers').hide();
 
             var result;
             for (var i = 0; i < events.length; i++) {
@@ -98,10 +104,10 @@
                     html += '</li>';
                 }
 
-                jQuery('#time-modal').html(html);
+                jQuery('#eventModal-<?php echo $calendarListID; ?> #time-modal').html(html);
 
                 if (dates.length > 0) {
-                document.getElementById('event-times').style.display = 'block';
+                    jQuery('#eventModal-<?php echo $calendarListID; ?> #event-times').show();
                 }
             });
 
@@ -114,15 +120,18 @@
                     html += '<li><span>' + organizers[i].Name + '</span></li>';
                 }
 
-                jQuery('#organizer-modal').html(html);
+                jQuery('#eventModal-<?php echo $calendarListID; ?> #organizer-modal').html(html);
                 if (organizers.length > 0) {
-                    document.getElementById('event-organizers').style.display = 'block';
-                } else {
-                    document.getElementById('event-times').className = 'large-12 columns';
+                    jQuery('#eventModal-<?php echo $calendarListID; ?> #event-organizers').show();
                 }
             });
 
-            jQuery(image).attr("src", result.ImagePath);
+            if (result.ImagePath.length > 0) {
+                jQuery(image).attr("src", result.ImagePath).show();
+            } else {
+                jQuery(image).hide();
+            }
+
             jQuery(title).html(result.Name);
 
             if (result.Link) {
