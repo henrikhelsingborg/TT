@@ -4099,8 +4099,7 @@ p {
   @media only screen {
     .index-item {
       margin-bottom: 1.875rem; } }
-  .index-item:hover,
-  .index-item:focus {
+  .index-item:hover {
     background-color: #f6f5f2; }
   .index-item img + .index-container {
     border-top: 0; }
