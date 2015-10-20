@@ -248,7 +248,7 @@ Helsingborg.Event.List = (function ($) {
 
             // Find and loop all event-lists on the page
             $('[data-event-list]').each(function (index, element) {
-                this.init(element)
+                this.init(element);
             }.bind(this));
 
         }.bind(this));
@@ -263,7 +263,7 @@ Helsingborg.Event.List = (function ($) {
         this.options = this.getOptions(element);
         this.getEvents(element);
         this.handleClickEvent(element);
-    }
+    };
 
     List.prototype.handleClickEvent = function(element) {
         $(document).on('click', '.event-item:not(.featured)', function(e) {
@@ -307,7 +307,7 @@ Helsingborg.Event.List = (function ($) {
                 $('#time-modal').prepend(html);
                 $('.event-times-loading').hide();
 
-                if (dates.length == 0) {
+                if (dates.length === 0) {
                     $('#event-times').hide();
                 }
             });
@@ -334,7 +334,7 @@ Helsingborg.Event.List = (function ($) {
             });
 
             // Output information            
-            if (clickedEvent.ImagePath != "") {
+            if (clickedEvent.ImagePath !== "") {
                 $('.modal-image').attr('src', clickedEvent.ImagePath);
             } else {
                 $('.modal-image').attr('src', '/wp-content/themes/This-is-Helsingborg/assets/images/event-placeholder.jpg');
@@ -352,11 +352,11 @@ Helsingborg.Event.List = (function ($) {
             $('.modal-ics a').attr('href', '?ics=' + clickedEvent.EventID);
 
         }.bind(this));
-    }
+    };
 
     List.prototype.nl2br = function(str) {
         return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2');
-    }
+    };
 
     /**
      * Get and append calendar events
@@ -372,8 +372,12 @@ Helsingborg.Event.List = (function ($) {
 
         $.post(ajaxurl, data, function(response) {
             var $element = $(element);
-
             var obj = JSON.parse(response);
+
+            if (obj.events.length === 0) {
+                $(element).closest('.widget').remove();
+            }
+
             this.events = obj.events;
 
             // Remove loading icon
@@ -387,7 +391,7 @@ Helsingborg.Event.List = (function ($) {
             }
 
         }.bind(this));
-    }
+    };
 
     /**
      * Get the options set in hte data-event-list html attribute
@@ -398,7 +402,7 @@ Helsingborg.Event.List = (function ($) {
         var options = $(element).data('event-list');
         options = options.replace(/'/g, "\"");
         return JSON.parse(options);
-    }
+    };
 
     return new List();
 
