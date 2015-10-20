@@ -18,6 +18,9 @@
             $force_width        = checked($item_force_widths[$num],  'on', false);
             $force_margin       = checked($item_force_margins[$num], 'on', false);
             $checked            = checked($item_targets[$num],       'on', false);
+            $item_force_position_checked = checked($item_force_position[$num], 'on', false);
+            $item_position_vertical = esc_attr($item_position_vertical[$num]);
+            $item_position_horizontal = esc_attr($item_position_horizontal[$num]);
             $button_click       = "helsingborgMediaSelector.create('" . $this->get_field_id($num) . "', '" . $this->get_field_id('') . "', '" . $num . "' ); return false;";
     ?>
             <div id="<?php echo $this->get_field_id($num); ?>" class="list-item">
@@ -57,6 +60,26 @@
                     <ul class="hbgllw-instructions">
                         <li><?php echo __("<b>Bildinställningar</b>"); ?></li>
                     </ul>
+
+                    <input type="checkbox" name="<?php echo $this->get_field_name('item_force_position'.$num); ?>" id="<?php echo $this->get_field_id('item_force_position'.$num); ?>" value="on" <?php echo $item_force_position_checked; ?> />
+
+                    <label for="<?php echo $this->get_field_id('item_force_position'.$num); ?>">
+                        <?php echo __("Fäst bilden vertikalt mot:"); ?>
+                        <select name="<?php echo $this->get_field_name('item_position-vertical'.$num); ?>">
+                            <option value="top" <?php echo selected($item_position_vertical, 'top', false); ?>>Top</option>
+                            <option value="center" <?php echo selected($item_position_vertical, 'center', false); ?>>Center</option>
+                            <option value="bottom" <?php echo selected($item_position_vertical, 'bottom', false); ?>>Bottom</option>
+                        </select>
+
+                        <?php echo __("och horisontellt mot:"); ?>
+                        <select name="<?php echo $this->get_field_name('item_position-horizontal'.$num); ?>">
+                            <option value="left" <?php echo selected($item_position_horizontal, 'left', false); ?>>Left</option>
+                            <option value="center" <?php echo selected($item_position_horizontal, 'center', false); ?>>Center</option>
+                            <option value="right" <?php echo selected($item_position_horizontal, 'right', false); ?>>Right</option>
+                        </select>
+
+                    </label>
+                    <br>
 
                     <input type="checkbox" name="<?php echo $this->get_field_name('item_force_width'.$num); ?>" id="<?php echo $this->get_field_id('item_force_width'.$num); ?>" value="on" data-clear="false" <?php echo $force_width; ?> />
                     <label for="<?php echo $this->get_field_id('item_force_width'.$num); ?>"><?php echo __("Tvinga bilden att anpassa i bredd (endast bildspel)"); ?></label>

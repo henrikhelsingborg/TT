@@ -8,7 +8,7 @@
                     $force_width  = (!empty($item_force_widths[$num])) ? 'width:100%;' : '';
                     $force_margin = (!empty($item_force_margins[$num]) && !empty($item_force_margin_values[$num])) ? ' margin-top:-' . $item_force_margin_values[$num] . 'px;' : '';
             ?>
-            <li style="background-image:url('<?php echo $item_imageurl[$num]; ?>');">
+            <li style="background-image:url('<?php echo $item_imageurl[$num]; ?>');<?php if ($item_force_position[$num] == 'on') : ?>background-position: <?php echo $item_position_horizontal[$num] . ' ' . $item_position_vertical[$num]; endif;?>">
                 <?php if (!empty($item_texts[$num]) && !empty($item_links[$num])) : ?>
                 <div class="caption">
                     <div class="caption-content">
