@@ -2510,6 +2510,10 @@ img.responsive {
         background-color: #ec6701; }
   .article-body .flex-video {
     margin-top: 20px; }
+  .article-body table {
+    margin-top: 15px; }
+    .article-body table:last-child {
+      margin-bottom: 15px; }
 
 @media print {
   .article-accessibility {
