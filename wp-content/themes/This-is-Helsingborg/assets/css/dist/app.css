@@ -4338,7 +4338,13 @@ p {
 
 #eventModal .modal-link {
   overflow-wrap: break-word;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none; }
   #eventModal .modal-link .link-item::before {
     display: inline; }
 
@@ -5708,6 +5714,16 @@ img[data-lazyload] {
   margin-left: 60px;
   font-size: 10pt;
   line-height: 140%; }
+  .hbg-social-feed.hbg-social-feed-facebook .hbg-social-feed-post-content article,
+  .hbg-social-feed.hbg-social-feed-twitter .hbg-social-feed-post-content article {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: none; }
 
 .hbg-social-feed.hbg-social-feed-facebook .hbg-social-feed-post-attachment,
 .hbg-social-feed.hbg-social-feed-twitter .hbg-social-feed-post-attachment {
@@ -5722,18 +5738,26 @@ img[data-lazyload] {
     display: inline-block;
     vertical-align: middle; }
 
+.hbg-social-feed.hbg-social-feed-facebook .read-more,
+.hbg-social-feed.hbg-social-feed-twitter .read-more {
+  color: #fff; }
+
 .hbg-social-feed.hbg-social-feed-facebook .hbg-social-feed-post-attachment,
 .hbg-social-feed.hbg-social-feed-twitter .hbg-social-feed-post-attachment {
-  border: 1px solid #f1f1f1;
-  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
   padding: 5px 8px;
   font-size: 8pt;
   line-height: 140%;
   margin-top: 8px;
-  color: #555; }
+  color: #fff;
+  text-decoration: none; }
+  .hbg-social-feed.hbg-social-feed-facebook .hbg-social-feed-post-attachment:hover,
+  .hbg-social-feed.hbg-social-feed-twitter .hbg-social-feed-post-attachment:hover {
+    border-color: #fff; }
   .hbg-social-feed.hbg-social-feed-facebook .hbg-social-feed-post-attachment .hbg-social-feed-post-attachment-title,
   .hbg-social-feed.hbg-social-feed-twitter .hbg-social-feed-post-attachment .hbg-social-feed-post-attachment-title {
-    color: #555;
+    color: #fff;
     font-weight: bold;
     display: block; }
   .hbg-social-feed.hbg-social-feed-facebook .hbg-social-feed-post-attachment .hbg-social-feed-post-attachment-description,
@@ -5742,7 +5766,7 @@ img[data-lazyload] {
   .hbg-social-feed.hbg-social-feed-facebook .hbg-social-feed-post-attachment .hbg-social-feed-post-attachment-caption,
   .hbg-social-feed.hbg-social-feed-twitter .hbg-social-feed-post-attachment .hbg-social-feed-post-attachment-caption {
     font-size: 7pt;
-    color: #999; }
+    color: rgba(255, 255, 255, 0.8); }
 
 .hbg-social-feed.hbg-social-feed-twitter .hbg-social-feed-post-content {
   margin-left: 0; }

@@ -90,8 +90,7 @@
     }
 
     .modal-link {
-        overflow-wrap: break-word;
-        word-wrap: break-word;
+        @include word-wrap();
 
         .link-item::before {
             display: inline;
