@@ -11,7 +11,7 @@ class Support
         self::addFilters();
         self::removeTheGenerator();
 
-        add_filter('srm_max_redirects', array($this, 'dbx_srm_max_redirects'));
+        add_filter('srm_max_redirects', array($this, 'srmMaxRedirects'));
         add_action('template_redirect', array($this, 'blockAuthorPages'), 5);
         add_action('init', array($this, 'removePostPostType'), 11);
     }
@@ -39,8 +39,7 @@ class Support
     }
 
     /**
-     * Removes unwanted actions
-     * @return void
+     * Removes unwanted actions.
      */
     private static function removeActions()
     {
@@ -51,7 +50,7 @@ class Support
     }
 
     /**
-     * Add actions
+     * Add actions.
      */
     private static function addActions()
     {
@@ -59,7 +58,7 @@ class Support
     }
 
     /**
-     * Add filters
+     * Add filters.
      */
     private static function addFilters()
     {
@@ -68,8 +67,7 @@ class Support
     }
 
     /**
-     * Add theme support
-     * @return void
+     * Add theme support.
      */
     public static function themeSupport()
     {
@@ -92,18 +90,19 @@ class Support
     }
 
     /**
-     * Remove medium thumbnail size for all uploaded images
-     * @param  array $sizes Default sizes
-     * @return array        New sizes
+     * Remove medium thumbnail size for all uploaded images.
+     * @param array $sizes Default sizes
+     * @return array New sizes
      */
     public static function filterThumbnailSizes($sizes)
     {
         unset($sizes['medium']);
+
         return $sizes;
     }
 
     /**
-     * Change "Default template" to "Article"
+     * Change "Default template" to "Article".
      */
     public static function changeDefaultTemplateName($translation, $text, $domain)
     {
@@ -115,8 +114,7 @@ class Support
     }
 
     /**
-     * Removes the generator meta tag from <head>
-     * @return void
+     * Removes the generator meta tag from <head>.
      */
     public static function removeTheGenerator()
     {
@@ -124,22 +122,22 @@ class Support
     }
 
     /**
-     * Blocks request to the author pages (?author=<ID>)
-     * @return [type] [description]
+     * Blocks request to the author pages (?author=<ID>).
+     * @return void
      */
     public function blockAuthorPages()
     {
         global $wp_query;
-    
+
         if (is_author() || is_attachment()) {
             $wp_query->set_404();
         }
-    
+
         if (is_feed()) {
-            $author     = get_query_var('author_name');
+            $author = get_query_var('author_name');
             $attachment = get_query_var('attachment');
             $attachment = (empty($attachment)) ? get_query_var('attachment_id') : $attachment;
-    
+
             if (!empty($author) || !empty($attachment)) {
                 $wp_query->set_404();
                 $wp_query->is_feed = false;
@@ -148,10 +146,10 @@ class Support
     }
 
     /**
-     * Update the default maximum number of redirects to 400
-     * @return void
+     * Update the default maximum number of redirects to 400.
      */
-    public function dbx_srm_max_redirects() {
+    public function srmMaxRedirects()
+    {
         return 400;
     }
 }

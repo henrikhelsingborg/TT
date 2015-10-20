@@ -32,8 +32,8 @@ Template Name: RSS
         <link>http://www.helsingborg.se/</link>
         <description><![CDATA[<?php echo $seoMeta; ?>]]></description>
         <language>sv-se</language>
-        <lastBuildDate><?php echo \Helsingborg\Helper\Rss::helsingborg_rss_date($pages[$lastPage]->post_modified_gmt); ?></lastBuildDate>
-        <pubDate><?php echo \Helsingborg\Helper\Rss::helsingborg_rss_date($pages[$lastPage]->post_modified_gmt); ?></pubDate>
+        <lastBuildDate><?php echo \Helsingborg\Helper\Rss::helsingborgRssDate($pages[$lastPage]->post_modified_gmt); ?></lastBuildDate>
+        <pubDate><?php echo \Helsingborg\Helper\Rss::helsingborgRssDate($pages[$lastPage]->post_modified_gmt); ?></pubDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <image>
             <url><?php echo get_template_directory_uri(); ?>/assets/img/images/hbg-logo-rss.jpg</url>
@@ -48,7 +48,7 @@ Template Name: RSS
             <link><?php echo get_the_permalink($post->ID); ?></link>
             <guid isPermaLink="true"><?php echo get_the_permalink($post->ID); ?></guid>
             <title><![CDATA[<?php echo get_the_title($post->ID); ?>]]></title>
-            <pubDate><?php echo \Helsingborg\Helper\Rss::helsingborg_rss_date($post->post_modified_gmt); ?></pubDate>
+            <pubDate><?php echo \Helsingborg\Helper\Rss::helsingborgRssDate($post->post_modified_gmt); ?></pubDate>
             <description><![CDATA[<?php echo $post->post_content; ?>]]></description>
         </item>
         <?php endforeach; ?>

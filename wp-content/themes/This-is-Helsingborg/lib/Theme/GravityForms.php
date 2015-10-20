@@ -4,12 +4,12 @@ namespace Helsingborg\Theme;
 
 class GravityForms
 {
-    
     /**
-     * Add filter to add referer to gforms email notification
+     * GravityForms adjustments and hooks
      */
     public function __construct()
     {
+        // Add filter to add referer to gforms email notification
         add_filter('gform_pre_submission_filter', array($this, 'addRefererToNotification'));
     }
 
@@ -30,5 +30,4 @@ class GravityForms
         // Return the data
         return $data;
     }
-
 }

@@ -24,7 +24,13 @@ class PageParent
      */
     public static function addCustomPageParentDivMetaBox()
     {
-        add_meta_box('pageparentdiv', __('Page Attributes') , '\Helsingborg\Metabox\PageParent::customPageParentDivMetaBox', 'page', 'side');
+        add_meta_box(
+            'pageparentdiv',
+            __('Page Attributes'),
+            '\Helsingborg\Metabox\PageParent::customPageParentDivMetaBox',
+            'page',
+            'side'
+        );
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
-class Helsingborg_Walker extends Walker {
+class HelsingborgWalker extends Walker
+{
 
     public $tree_type = 'page';
     public $db_fields = array(
@@ -8,7 +9,8 @@ class Helsingborg_Walker extends Walker {
         'id'     => 'ID'
     );
 
-    public function walk($elements, $max_depth) {
+    public function walk($elements, $max_depth)
+    {
         global $post;
 
         $args = array_slice(func_get_args(), 2);
@@ -41,7 +43,13 @@ class Helsingborg_Walker extends Walker {
         $top_level_elements = array();
         $children_elements  = array();
         $parent_field       = $this->db_fields['parent'];
-        $child_of           = (array_reverse(get_post_ancestors($post->ID))[1]) ? array_reverse(get_post_ancestors($post->ID))[1] : $post->ID;
+        $child_of           = null;
+
+        if (array_reverse(get_post_ancestors($post->ID))[1]) {
+            $child_of = array_reverse(get_post_ancestors($post->ID))[1];
+        } else {
+            $child_if = $post->ID;
+        }
 
         /**
          * Loop elements
@@ -53,7 +61,7 @@ class Helsingborg_Walker extends Walker {
                 /**
                  * Do not show childs of a list page
                  */
-                if (get_post_meta($parent_id,'_wp_page_template',TRUE) == 'templates/list-page.php') {
+                if (get_post_meta($parent_id, '_wp_page_template', true) == 'templates/list-page.php') {
                     continue;
                 }
 
@@ -62,10 +70,9 @@ class Helsingborg_Walker extends Walker {
                  */
                 if ($child_of === $parent_id) {
                     $top_level_elements[] = $e;
-                } else if (
-                    (isset($post->ID) && $parent_id == $post->ID) ||
-                    (isset($post->post_parent) && $parent_id == $post->post_parent) ||
-                    (isset($post->ancestors) && in_array( $parent_id, (array) $post->ancestors))
+                } elseif ((isset($post->ID) && $parent_id == $post->ID) ||
+                         (isset($post->post_parent) && $parent_id == $post->post_parent) ||
+                         (isset($post->ancestors) && in_array($parent_id, (array) $post->ancestors))
                 ) {
                     $children_elements[$e->$parent_field][] = $e;
                 }
@@ -89,7 +96,8 @@ class Helsingborg_Walker extends Walker {
      * @param  array   $args    [description]
      * @return void
      */
-    public function start_lvl(&$output, $depth = 0, $args = array()) {
+    public function start_lvl(&$output, $depth = 0, $args = array())
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class='sub-menu'>\n";
     }
@@ -101,7 +109,8 @@ class Helsingborg_Walker extends Walker {
      * @param  array   $args    [description]
      * @return void
      */
-    public function end_lvl(&$output, $depth = 0, $args = array()) {
+    public function end_lvl(&$output, $depth = 0, $args = array())
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
     }
@@ -115,9 +124,13 @@ class Helsingborg_Walker extends Walker {
      * @param  integer $current_page
      * @return void
      */
-    public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0) {
+    public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0)
+    {
 
-        if (get_post_status($page->post_parent) == 'private' && get_the_title($page->post_parent) == 'Privat: Skicka meddelande') return;
+        if (get_post_status($page->post_parent) == 'private'
+            && get_the_title($page->post_parent) == 'Privat: Skicka meddelande') {
+            return;
+        }
 
         /**
          * Element indentation
@@ -130,7 +143,13 @@ class Helsingborg_Walker extends Walker {
 
         if (!empty($current_page)) {
 
-            $page_on_front = (array_reverse(get_post_ancestors($post->ID))[1]) ? array_reverse(get_post_ancestors($post->ID))[1] : $post->ID;
+            $page_on_front = null;
+
+            if (array_reverse(get_post_ancestors($post->ID))[1]) {
+                $page_on_front = array_reverse(get_post_ancestors($post->ID))[1];
+            } else {
+                $page_on_front = $post->ID;
+            }
 
             /**
              * Get current page object
@@ -207,7 +226,7 @@ class Helsingborg_Walker extends Walker {
              * Check if page got childrens or not, if it does, add has-child class
              * - Exclude list page childrens
              */
-            if ($has_children && get_post_meta($page->ID,'_wp_page_template',TRUE) != 'templates/list-page.php') {
+            if ($has_children && get_post_meta($page->ID, '_wp_page_template', true) != 'templates/list-page.php') {
                 array_push($css_class_list, 'has-childs');
             }
 
@@ -226,9 +245,11 @@ class Helsingborg_Walker extends Walker {
              *     25    5220         5776            5781          5785
              *  (root)  (node)  (set to current)   (private)   (actual current)
              *
-             * http://localhost/startsida/omsorg-och-stod/frivilligt-arbete-och-foreningar/info/las-mer-om-socialt-arbete-med-ersattning/
+             * http://localhost/startsida/omsorg-och-stod/
+             * frivilligt-arbete-och-foreningar/info/las-mer-om-socialt-arbete-med-ersattning/
              */
-            if (get_post_status($_current_page->post_parent) == 'private' && in_array($page->ID, $_current_page->ancestors)) {
+            if (get_post_status($_current_page->post_parent) == 'private'
+                && in_array($page->ID, $_current_page->ancestors)) {
                 $_current_page_ansectors = $_current_page->ancestors;
                 $last_element = count($_current_page_ansectors) - 1; // We want last index
 
@@ -270,7 +291,8 @@ class Helsingborg_Walker extends Walker {
      * @param  integer $current_page
      * @return void
      */
-    public function end_el(&$output, $page, $depth = 0, $args = array()) {
+    public function end_el(&$output, $page, $depth = 0, $args = array())
+    {
         $output .= '</li>';
     }
 

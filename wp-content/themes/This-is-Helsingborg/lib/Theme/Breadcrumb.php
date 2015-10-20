@@ -28,13 +28,15 @@ class Breadcrumb
                     echo '</li>';
                 }
             } elseif (is_page()) {
-                if($post->post_parent) {
+                if ($post->post_parent) {
                     $anc = get_post_ancestors($post->ID);
                     $title = get_the_title();
 
                     foreach ($anc as $ancestor) {
                         if (get_post_status($ancestor) != 'private') {
-                            $output = '<li><a href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li>' . $output;
+                            $output = '<li><a href="' . get_permalink($ancestor) .
+                                      '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) .
+                                      '</a></li>' . $output;
                         }
                     }
 

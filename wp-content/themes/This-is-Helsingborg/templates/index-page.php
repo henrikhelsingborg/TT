@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: Fullbredd med meny
+*/
     get_header();
 ?>
 
@@ -18,7 +21,7 @@
 
                 <?php if (is_active_sidebar('content-area')) : ?>
                 <div class="widget-area" id="widget-content-area">
-                    <?php dynamic_sidebar("content-area"); ?>
+                    <?php dynamic_sidebar('content-area'); ?>
                 </div>
                 <?php endif; ?>
 
