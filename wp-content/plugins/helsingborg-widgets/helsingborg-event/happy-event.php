@@ -5,7 +5,7 @@
  * @param  integer $user User
  * @return void
  */
-if (function_exists('helsingborg_happy_user_id_field')) {
+if (!function_exists('helsingborg_happy_user_id_field')) {
     function helsingborg_happy_user_id_field($user) { ?>
       <h3><?php _e("Evenemangshantering", "blank"); ?></h3>
       <table class="form-table">
@@ -29,7 +29,7 @@ if (function_exists('helsingborg_happy_user_id_field')) {
  * @param  integer $user_id User ud
  * @return boolean
  */
-if (function_exists('helsingborg_save_happy_user_id_field')) {
+if (!function_exists('helsingborg_save_happy_user_id_field')) {
     function helsingborg_save_happy_user_id_field($user_id) {
         $saved = false;
 
@@ -49,9 +49,8 @@ if (function_exists('helsingborg_save_happy_user_id_field')) {
  * Adds the event to the database, then deletes the entry
  * @return void
  */
-if (function_exists('event_add_entry_to_db')) {
+if (!function_exists('event_add_entry_to_db')) {
     function event_add_entry_to_db($entry, $form) {
-
         // Make sure to only hijack the event form -> set in settings
         if (strcmp($entry['form_id'], get_option('helsingborg_event_form_id')) === 0) {
             // Event
@@ -145,7 +144,7 @@ if (function_exists('event_add_entry_to_db')) {
  * @param  integer $author Author id
  * @return array
  */
-if (function_exists('handle_gf_image')) {
+if (!function_exists('handle_gf_image')) {
     function handle_gf_image($path, $author) {
         $image_path   = $path;
         $file_name    = basename($image_path);
@@ -171,7 +170,7 @@ if (function_exists('handle_gf_image')) {
  * @param  array $entry
  * @return void
  */
-if (function_exists('delete_form_entry')) {
+if (!function_exists('delete_form_entry')) {
     function delete_form_entry($entry) {
         $delete = GFAPI::delete_entry($entry['id']);
         $result = ( $delete ) ? "entry {$entry['id']} successfully deleted." : $delete;
