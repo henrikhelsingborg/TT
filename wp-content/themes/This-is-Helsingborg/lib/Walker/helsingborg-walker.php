@@ -48,7 +48,7 @@ class HelsingborgWalker extends Walker
         if (array_reverse(get_post_ancestors($post->ID))[1]) {
             $child_of = array_reverse(get_post_ancestors($post->ID))[1];
         } else {
-            $child_if = $post->ID;
+            $child_of = $post->ID;
         }
 
         /**
