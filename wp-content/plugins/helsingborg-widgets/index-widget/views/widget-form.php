@@ -28,8 +28,9 @@
             <input id="input_<?php echo $this->get_field_id('item_headline'.$num); ?>" type="text" class="input-text" name="<?php echo $this->get_field_name('headline'.$num); ?>" value="<?php echo $instance['headline'.$num]; ?>" />
         </p>
         <p>
-            <label>
-                <input type="checkbox" name="<?php echo $this->get_field_name('hide_image'.$num); ?>" value="1" <?php echo checked($instance['hide_image'.$num], '1', false); ?>> Dölj bilden
+            <input type="checkbox" id="input_<?php echo $this->get_field_id('hide_image'.$num); ?>" name="<?php echo $this->get_field_name('hide_image'.$num); ?>" value="1" <?php echo checked($instance['hide_image'.$num], '1', false); ?>>
+            <label for="input_<?php echo $this->get_field_id('hide_image'.$num); ?>">
+                 Dölj bilden
             </label>
         </p>
         <p>
