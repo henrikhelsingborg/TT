@@ -1,41 +1,3 @@
-.widget-control-actions .spinner {
-    visibility: visible;
-    .widget-control-actions .spinner {
-        visibility: visible;
-        display: none;
-    }
-    div.widget-liquid-right {
-        width: 58% !important;
-    }
-    /**
- * Style the major publishing action section in create post
- */
-    #major-publishing-actions {
-        display: table;
-        width: 100%;
-        padding: 0;
-        border-top: 0;
-    }
-    #major-publishing-actions #publishing-action {
-        display: table-header-group;
-        float: none;
-    }
-    #major-publishing-actions #publishing-action #publish {
-        float: none;
-        width: 100%;
-        border-radius: 0;
-        font-size: 15px;
-        font-weight: bold;
-        padding: 8px 0;
-        height: auto;
-    }
-    #major-publishing-actions #delete-action {
-        display: block;
-        float: none;
-        text-align: center;
-        padding: 10px 0;
-    }
-  
 
     /* Select2 searchable dropdown menu CSS */
     .select2-container {
@@ -52,7 +14,7 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box
     }
-    .select2-container .select2-choice {
+    .select2-container .select2-choice { 
         display: block;
         height: 26px;
         padding: 0 0 0 8px;
@@ -573,8 +535,7 @@
             background-position: 100% -21px!important
         }
     }
-    display: none;
-}
+
 
 div.widget-liquid-right {
     width: 58% !important;

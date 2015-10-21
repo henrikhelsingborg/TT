@@ -1,4 +1,3 @@
-@import 'admin/admin';
 @import 'admin/multiple-select';
 
 /* Partials - global */ 
@@ -9,7 +8,10 @@
 @import 'admin/partials/meta-publish';
 @import 'admin/partials/meta-page-attributes';
 
-/* Partials - Plugins */ 
+/* Partials - Plugins */  
 @import 'admin/partials/meta-post-expire';
 @import 'admin/partials/meta-page-widgets';
+
+/* Partials - Js plugins */
+@import 'admin/partials/js-plugin-select2';
 
