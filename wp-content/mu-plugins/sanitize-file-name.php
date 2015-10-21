@@ -1,7 +1,7 @@
 <?php
 	
 	/*
-	Plugin Name: Helsingborg santitize file names (Must use plugin)
+	Plugin Name: Helsingborg santitize file names
 	Description: Remove special carachers from uploaded files. 
 	Version:     1.0 
 	Author:      Sebastian Thulin @ Helsingborgs Stad 
