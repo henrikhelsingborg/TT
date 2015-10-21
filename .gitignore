@@ -8,6 +8,7 @@
 
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
+# and "mu-plugins"
 wp-content/*
 !wp-content/plugins/
 !wp-content/mu-plugins/
