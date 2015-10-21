@@ -35,34 +35,8 @@
         text-align: center;
         padding: 10px 0;
     }
-    /**
- * Style the "My sites" dropdown
- */
-    #wpadminbar #wp-admin-bar-my-sites .ab-sub-wrapper {
-        background: transparent;
-        box-shadow: none;
-        width: 600px;
-        max-height: 500px;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-    #wp-admin-bar-my-sites-super-admin {
-        background: #32373c !important;
-    }
-    #wp-admin-bar-network-admin-default {
-        background: #32373c !important;
-    }
-    #wpadminbar #wp-admin-bar-my-sites .ab-sub-wrapper > ul {
-        width: 200px;
-    }
-    /*
-#wp-admin-bar-my-sites-list .ab-sub-wrapper {
-    position: absolute !important;
-    top: 0;
-    left: 100%;
-    z-index: 10;
-}
-*/
+  
+
     /* Select2 searchable dropdown menu CSS */
     .select2-container {
         margin: 0;
@@ -607,74 +581,6 @@ div.widget-liquid-right {
 }
 
 
-/**
- * Style the major publishing action section in create post
- */
-
-#major-publishing-actions {
-    display: table;
-    width: 100%;
-    padding: 0;
-    border-top: 0;
-}
-
-#major-publishing-actions #publishing-action {
-    display: table-header-group;
-    float: none;
-}
-
-#major-publishing-actions #publishing-action #publish {
-    float: none;
-    width: 100%;
-    border-radius: 0;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 8px 0;
-    height: auto;
-}
-
-#major-publishing-actions #delete-action {
-    display: block;
-    float: none;
-    text-align: center;
-    padding: 10px 0;
-}
-
-
-/**
- * Style the "My sites" dropdown
- */
-
-#wpadminbar #wp-admin-bar-my-sites .ab-sub-wrapper {
-    background: transparent;
-    box-shadow: none;
-    width: 600px;
-    max-height: 500px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-#wp-admin-bar-my-sites-super-admin {
-    background: #32373c !important;
-}
-
-#wp-admin-bar-network-admin-default {
-    background: #32373c !important;
-}
-
-#wpadminbar #wp-admin-bar-my-sites .ab-sub-wrapper > ul {
-    width: 200px;
-}
-
-
-/*
-#wp-admin-bar-my-sites-list .ab-sub-wrapper {
-    position: absolute !important;
-    top: 0;
-    left: 100%;
-    z-index: 10;
-}
-*/
 
 
 /* Select2 searchable dropdown menu CSS */
