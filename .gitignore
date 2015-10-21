@@ -40,6 +40,7 @@ wp-content/plugins/*
 !wp-content/plugins/helsingborg-kultur
 !wp-content/plugins/helsingborg-help-widget
 !wp-content/plugins/shortcodes-ultimate
+!wp-content/plugins/disable-comments
 
 # Ignore everything in the "themes" directory, except the Helsingborg theme
 wp-content/themes/*
