@@ -22,7 +22,7 @@
         <div class="row">
             <div class="columns large-12">
                 <h2 class="text-highlight no-margin-padding">
-                    <?php echo (get_field('content_title')) ? get_field('content_title') : 'Aktuellt i Helsingborg'; ?>
+                    Aktuellt i Helsingborgs stad
                 </h2>
             </div>
         </div>
