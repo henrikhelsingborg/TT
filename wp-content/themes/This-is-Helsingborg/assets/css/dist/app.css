@@ -2584,12 +2584,12 @@ img.responsive {
   box-shadow: 0 0 20px #000;
   width: 100%; }
   .autocomplete li {
-    font-size: 9pt; }
+    font-size: 0.75rem; }
     .autocomplete li.heading {
       background: #ddd;
       padding: 3px 12px; }
     .autocomplete li strong {
-      font-size: 11pt;
+      font-size: 0.85rem;
       color: #ae0b05; }
     .autocomplete li > a {
       display: block;
