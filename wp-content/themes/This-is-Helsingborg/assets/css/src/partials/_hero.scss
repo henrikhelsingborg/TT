@@ -44,7 +44,7 @@
 
             &.search-label-alt {
                 background: $palette-red-4;
-                font-size: $hero-search-label-font-size;
+                font-size: $search-hero-label-font-size;
                 text-shadow: none;
                 float: left;
                 padding: 5px 10px;
@@ -62,7 +62,7 @@
             padding: 15px;
             height: 100%;
             border: none;
-            font-size: $hero-search-input-font-size;
+            font-size: $search-hero-input-font-size;
             letter-spacing: 1px;
             position: relative;
             z-index: 5;
@@ -98,7 +98,7 @@
                 margin-top: 10px;
                 background: rgba(0,0,0,.8);
                 text-decoration: none;
-                font-size: $hero-search-web-archive-font-size;
+                font-size: $search-hero-web-archive-font-size;
                 color: #fff;
 
                 .fa {
@@ -125,8 +125,7 @@
 
 .browser-firefox .hero .search input[type="search"],
 .browser-trident .hero .search input[type="search"],
-.browser-explorer .hero .search input[type="search"]
- {
+.browser-explorer .hero .search input[type="search"] {
     width: 400px;
 }
 
