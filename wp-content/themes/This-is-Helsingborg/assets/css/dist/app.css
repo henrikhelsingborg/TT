@@ -3073,7 +3073,7 @@ body.nav-fixed .site-header .hero {
       margin-bottom: 10px; }
       .hero .search .search-label.search-label-alt {
         background: #ae0b05;
-        font-size: 13pt;
+        font-size: 1rem;
         text-shadow: none;
         float: left;
         padding: 5px 10px;
@@ -3086,7 +3086,7 @@ body.nav-fixed .site-header .hero {
       padding: 15px;
       height: 100%;
       border: none;
-      font-size: 15pt;
+      font-size: 1.2rem;
       letter-spacing: 1px;
       position: relative;
       z-index: 5; }
@@ -3113,7 +3113,7 @@ body.nav-fixed .site-header .hero {
         margin-top: 10px;
         background: rgba(0, 0, 0, 0.8);
         text-decoration: none;
-        font-size: 11pt;
+        font-size: 0.85rem;
         color: #fff; }
         .hero .search .search-web-archive a .fa {
           margin-right: 5px; }
@@ -4059,7 +4059,7 @@ p {
   display: block;
   margin-top: 5px;
   font-weight: 300;
-  font-size: 11pt;
+  font-size: 0.85rem;
   white-space: break-word; }
 
 .index-caption {
@@ -4090,7 +4090,7 @@ p {
   height: 100%; }
 
 .index-horizontal .index-item .index-description {
-  font-size: 10pt; }
+  font-size: 0.75rem; }
 
 .teaser {
   color: #464646;
@@ -4185,7 +4185,7 @@ p {
     display: none; } }
 
 .fun-fact-title {
-  font-size: 25pt;
+  font-size: 1.9rem;
   font-weight: 900;
   line-height: 120%;
   color: #ae0b05; }
@@ -4193,7 +4193,7 @@ p {
     color: #7f7f7f; }
 
 .fun-fact-caption {
-  font-size: 11pt;
+  font-size: 0.9rem;
   line-height: 140%;
   color: #7f7f7f; }
 
