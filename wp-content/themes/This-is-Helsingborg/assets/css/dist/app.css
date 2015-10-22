@@ -3216,7 +3216,7 @@ textarea.form-control {
   background-color: #fff;
   border: 1px solid #d0ccc5;
   font-family: "Roboto", "Helvetica", "Arial";
-  font-size: 12pt;
+  font-size: 0.95rem;
   font-weight: 300;
   color: #252525;
   text-indent: 0;
@@ -3290,7 +3290,7 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   background-color: #fff;
   border: 1px solid #d0ccc5;
   font-family: "Roboto", "Helvetica", "Arial";
-  font-size: 12pt;
+  font-size: 0.95rem;
   font-weight: 300;
   color: #252525;
   text-indent: 0;
@@ -3327,7 +3327,7 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   background-color: #fff;
   border: 1px solid #d0ccc5;
   font-family: "Roboto", "Helvetica", "Arial";
-  font-size: 12pt;
+  font-size: 0.95rem;
   font-weight: 300;
   color: #252525;
   text-indent: 0;
@@ -3341,6 +3341,9 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
     border-color: #0095db; }
   .gform_wrapper .chosen-container-multi .chosen-choices li.search-field input[type="text"]:focus {
     box-shadow: none; }
+
+.gform_wrapper .ginput_complex.ginput_container {
+  overflow: visible; }
 
 .gform_wrapper .chosen-container-multi .chosen-choices {
   border-color: #d0ccc5;
@@ -3357,10 +3360,10 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   overflow: visible; }
 
 .gform_wrapper .gfield_checkbox li label, .gform_wrapper .gfield_radio li label {
-  font-size: 12pt; }
+  font-size: 0.95rem; }
 
 .gform_wrapper .top_label .gfield_description {
-  font-size: 11pt;
+  font-size: 0.8rem;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.7);
   padding: 0;
@@ -3368,7 +3371,7 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
 
 #extensions_message {
   display: block;
-  font-size: 11pt;
+  font-size: 0.8rem;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.7);
   padding: 0;
@@ -3395,7 +3398,7 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
   background-color: #fff;
   border: 1px solid #d0ccc5;
   font-family: "Roboto", "Helvetica", "Arial";
-  font-size: 12pt;
+  font-size: 0.95rem;
   font-weight: 300;
   color: #252525;
   text-indent: 0;
@@ -3403,7 +3406,7 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
      -moz-appearance: none;
           appearance: none;
   padding: 4px;
-  font-size: 9pt;
+  font-size: 0.7rem;
   width: 60px !important; }
   .ui-datepicker-title select:focus {
     box-shadow: 0 0 10px rgba(0, 149, 219, 0.5);
@@ -3445,7 +3448,7 @@ input[type="checkbox"].form-control, .zselect .zmsfilter input[type="checkbox"] 
     content: "";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 10pt;
+    font-size: 0.7rem;
     color: #7f7f7f;
     cursor: default; }
   .zselect ul {
@@ -5128,7 +5131,7 @@ img[data-lazyload] {
       background-color: #fff;
       border: 1px solid #d0ccc5;
       font-family: "Roboto", "Helvetica", "Arial";
-      font-size: 12pt;
+      font-size: 0.95rem;
       font-weight: 300;
       color: #252525;
       text-indent: 0;
@@ -5153,7 +5156,7 @@ img[data-lazyload] {
       background-color: #fff;
       border: 1px solid #d0ccc5;
       font-family: "Roboto", "Helvetica", "Arial";
-      font-size: 12pt;
+      font-size: 0.95rem;
       font-weight: 300;
       color: #252525;
       text-indent: 0;
