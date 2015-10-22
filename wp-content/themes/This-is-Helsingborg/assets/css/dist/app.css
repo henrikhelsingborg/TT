@@ -2399,7 +2399,7 @@ img.responsive {
 .article-ingress {
   margin-top: 0px;
   margin-bottom: 20px;
-  font-size: 14pt;
+  font-size: 1.15rem;
   font-weight: 500;
   line-height: 150%; }
 
@@ -2447,7 +2447,7 @@ img.responsive {
 
 .article-accessibility a {
   font-weight: 300;
-  font-size: 12pt;
+  font-size: 0.95rem;
   color: #464646 !important;
   text-decoration: none; }
   .article-accessibility a:hover,

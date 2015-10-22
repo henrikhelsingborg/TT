@@ -35,7 +35,7 @@
 .article-ingress {
     margin-top: 0px;
     margin-bottom: 20px;
-    font-size: 14pt;
+    font-size: $article-ingress-font-size;
     font-weight: 500;
     line-height: 150%;
 }
@@ -109,7 +109,7 @@
 
     a {
         font-weight: 300;
-        font-size: 12pt;
+        font-size: $article-accessibility-font-size;
         color: $text-gray-dark !important;
         text-decoration: none;
 
