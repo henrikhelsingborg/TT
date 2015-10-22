@@ -10,7 +10,7 @@
     margin-top: 20px;
     padding: 0;
     color: $text-gray-dark;
-    font-size: 11pt;
+    font-size: $breadcrumbs-font-size;
     list-style-type: none;
 
     @media print {

@@ -43,7 +43,7 @@
     background-color: $palette-red-4;
     color: #fff;
     letter-spacing: .8px;
-    font-size: 11pt;
+    font-size: $footer-base-font-size;
     font-weight: 300;
 
     @media print {

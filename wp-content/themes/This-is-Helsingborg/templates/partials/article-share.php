@@ -14,7 +14,7 @@ if (has_post_thumbnail($page->ID)) {
         <div class="share-image" style="background-image:url('<?php echo $image[0]; ?>');"></div>
         <?php endif; ?>
         <div class="share-content">
-            <h5><span>Dela sidan:</span> <?php the_title(); ?></h5>
+            <h5 class="box-title"><span>Dela sidan:</span> <?php the_title(); ?></h5>
             <ul class="share-icons">
                 <li>
                     <a data-action="share-popup" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_the_permalink()); ?>" title="Dela på Facebook">
