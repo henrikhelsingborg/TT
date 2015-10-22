@@ -3750,7 +3750,7 @@ p {
   .list label {
     display: block;
     font-family: "Roboto", "Helvetica", "Arial";
-    font-size: 11pt;
+    font-size: 0.85rem;
     font-weight: 300;
     letter-spacing: .5px; }
   .list .text-lg {
@@ -3782,7 +3782,7 @@ p {
       color: rgba(255, 255, 255, 0.8); }
     [class^="sidebar-"] .list a:not(.list-more) .date {
       float: none;
-      font-size: 9pt;
+      font-size: 0.7rem;
       position: static;
       color: rgba(255, 255, 255, 0.8); }
   [class^="sidebar-"] .list span {
@@ -3811,7 +3811,7 @@ p {
     color: #ae0b05; }
   .section-featured .list .featured .lead {
     font-weight: normal;
-    font-size: 11pt;
+    font-size: 0.85rem;
     margin-bottom: 10px; }
 
 .list-plain {
@@ -3835,22 +3835,22 @@ p {
     padding-right: 90px; }
     @media print {
       .list-links li a {
-        font-size: 11pt;
+        font-size: 0.85rem;
         font-weight: normal;
         padding: 6px !important; }
       .list-links li a[href]:after {
-        font-size: 9pt;
+        font-size: 0.7rem;
         line-height: 110%; } }
   .list-links .date {
     position: absolute;
     right: 15px;
     top: 13px;
     color: #7f7f7f;
-    font-size: 9pt;
+    font-size: 0.7rem;
     margin-top: 2px; }
 
 .list-icons {
-  font-size: 40pt;
+  font-size: 53px;
   line-height: 100%; }
   .list-icons li {
     margin: 0;
@@ -3882,7 +3882,7 @@ p {
   .list-events .featured .link-item {
     display: block;
     font-weight: 400;
-    font-size: 11pt;
+    font-size: 0.85rem;
     letter-spacing: .25px;
     color: #ff98c1; }
   .list-events .featured:hover .link-item {
@@ -3896,7 +3896,7 @@ p {
   padding: 6.2px;
   border-right: 1px solid #e7e5e1;
   font-weight: 300;
-  font-size: 10pt;
+  font-size: 0.8rem;
   line-height: 140%;
   text-align: center;
   color: #252525; }
@@ -3931,7 +3931,7 @@ p {
   height: 100%;
   padding: 0px;
   font-weight: 100;
-  font-size: 11pt;
+  font-size: 0.85rem;
   line-height: 140%;
   letter-spacing: .5px;
   text-align: center;
@@ -3958,7 +3958,7 @@ p {
 
 .list-news {
   font-weight: normal;
-  font-size: 11pt; }
+  font-size: 0.85rem; }
   .list-news a {
     padding: 0;
     color: #252525; }
@@ -3966,21 +3966,21 @@ p {
     .list-news a:hover .read-more {
       text-decoration: underline; }
   .list-news .news-title {
-    font-size: 16pt;
+    font-size: 1.25rem;
     line-height: 120%;
     margin: 0;
     color: #ae0b05; }
   .list-news .read-more {
     color: #ae0b05; }
   .list-news .news-date {
-    font-size: 10pt; }
+    font-size: 0.8rem; }
 
 .list-more {
   display: block;
   background: #f6f5f2;
   color: #7d7d7b !important;
   font-weight: normal;
-  font-size: 12pt;
+  font-size: 0.95rem;
   padding: 10px 15px !important;
   text-decoration: none; }
   .list-more::before {
@@ -3998,7 +3998,7 @@ p {
     -moz-osx-font-smoothing: grayscale;
     display: inline-block;
     margin-right: 5px;
-    font-size: 10pt; }
+    font-size: 0.85rem; }
   .list-more:hover {
     text-decoration: underline; }
   .list-more:after {
