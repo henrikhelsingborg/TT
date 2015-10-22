@@ -2719,7 +2719,7 @@ img.responsive {
 .navbar .nav {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 14pt;
+  font-size: 1.1rem;
   /*
         li.current-page-ancestor,
         li.current-menu-item {
@@ -2783,7 +2783,7 @@ body.nav-fixed .site-header .hero {
   .navbar-aside a {
     display: block;
     padding: 6px 10px;
-    font-size: 12pt;
+    font-size: 0.95rem;
     color: #252525;
     text-decoration: none; }
     .navbar-aside a:hover {
@@ -2809,7 +2809,7 @@ body.nav-fixed .site-header .hero {
     content: "";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 10pt;
+    font-size: 0.9em;
     color: #7f7f7f; }
   .navbar-aside .has-childs.current > a {
     position: relative;
@@ -2828,7 +2828,7 @@ body.nav-fixed .site-header .hero {
     content: "";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 10pt;
+    font-size: 0.9em;
     color: #7f7f7f; }
   .navbar-aside .current-ancestor:not(.current-node) > a,
   .navbar-aside .current-ancestor.has-childs > a {
@@ -2848,7 +2848,7 @@ body.nav-fixed .site-header .hero {
     content: "";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 10pt;
+    font-size: 0.9em;
     color: #7f7f7f; }
   .navbar-aside .current-ancestor-last {
     background-color: #f6f5f2; }
@@ -2883,7 +2883,7 @@ body.nav-fixed .site-header .hero {
       display: block; } }
   @media only screen and (max-width: 800px) {
     .navbar-mainmenu .nav li {
-      font-size: 12pt; }
+      font-size: 0.9rem; }
       .navbar-mainmenu .nav li:last-child {
         padding-right: 0; } }
 
@@ -2931,7 +2931,7 @@ body.nav-fixed .site-header .hero {
       padding: 3px 10px;
       color: #252525;
       text-decoration: none;
-      font-size: 11pt; }
+      font-size: 0.85rem; }
       .navbar-topmenu li a:hover,
       .navbar-topmenu li a:focus {
         text-decoration: underline; }
@@ -2957,7 +2957,7 @@ body.nav-fixed .site-header .hero {
     .navbar-topmenu-help li + li {
       margin-left: 20px; }
     .navbar-topmenu-help li a {
-      font-size: 11pt;
+      font-size: 0.85rem;
       color: #252525;
       text-decoration: none; }
       .navbar-topmenu-help li a:hover {
@@ -5054,7 +5054,7 @@ img[data-lazyload] {
   text-align: left; }
   .mobile-menu-wrapper .search .search-web-archive a {
     text-decoration: underline;
-    font-size: 11pt;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.8); }
     .mobile-menu-wrapper .search .search-web-archive a .fa {
       margin-right: 5px; }
