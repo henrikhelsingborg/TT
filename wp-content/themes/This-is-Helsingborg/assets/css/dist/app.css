@@ -3653,7 +3653,7 @@ a.btn-warning {
   .box-share .share-url {
     position: relative;
     top: -2px;
-    font-size: 9pt;
+    font-size: 0.75rem;
     color: #464646; }
   .box-share .share-icons {
     position: relative;
@@ -3661,7 +3661,7 @@ a.btn-warning {
     margin: 0;
     margin-top: 5px;
     padding: 0;
-    font-size: 15pt; }
+    font-size: 20px; }
     .box-share .share-icons::before {
       content: '';
       display: block;
@@ -4276,7 +4276,7 @@ p {
   margin-top: 20px;
   padding: 0;
   color: #464646;
-  font-size: 11pt;
+  font-size: 0.85rem;
   list-style-type: none; }
   @media print {
     .breadcrumbs {
