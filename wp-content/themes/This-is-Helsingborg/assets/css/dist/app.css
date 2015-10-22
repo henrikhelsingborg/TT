@@ -2680,7 +2680,7 @@ img.responsive {
   background-color: transparent;
   padding: 0;
   color: #ae0b05;
-  font-size: 20pt; }
+  font-size: 1.55rem; }
   @media only screen and (min-width: 801px) {
     .btn.btn-mobile-menu, .gform_footer input.btn-mobile-menu[type="submit"] {
       display: none; } }
@@ -2690,7 +2690,7 @@ img.responsive {
   .btn.btn-mobile-menu span, .gform_footer input.btn-mobile-menu[type="submit"] span {
     display: inline-block;
     vertical-align: middle;
-    font-size: 13pt;
+    font-size: 17px;
     margin-left: 8px; }
 
 @media only screen and (min-width: 40.0625em) {
@@ -4105,7 +4105,7 @@ p {
     color: #606060;
     margin-bottom: 10px; }
   .teaser .fa {
-    font-size: 40pt;
+    font-size: 53px;
     margin-bottom: 10px; }
 
 .site-footer {
@@ -4138,7 +4138,7 @@ p {
   background-color: #ae0b05;
   color: #fff;
   letter-spacing: .8px;
-  font-size: 11pt;
+  font-size: 0.85rem;
   font-weight: 300; }
   @media print {
     .site-footer-content {
@@ -4577,7 +4577,7 @@ p {
       color: #fff;
       font-weight: bold;
       letter-spacing: .5px;
-      font-size: 11pt;
+      font-size: 0.85rem;
       line-height: 100%;
       padding: 10px 15px;
       text-align: left; }
@@ -4621,7 +4621,7 @@ p {
       .table-list thead .header:last-child {
         background-position: 95% center; }
   .table-list tbody {
-    font-size: 11pt;
+    font-size: 0.85rem;
     border: 1px solid #e7e5e1; }
     .table-list tbody .table-item td {
       border-bottom: 1px solid #e7e5e1; }
@@ -4653,7 +4653,7 @@ p {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       color: #cb0050;
-      font-size: 13pt; }
+      font-size: 1rem; }
       @media print {
         .table-list .table-item td:last-child::after {
           display: none; } }
@@ -4787,7 +4787,7 @@ p {
   border: 1px solid #e7e5e1; }
 
 .text-lg {
-  font-size: 28pt; }
+  font-size: 2.2rem; }
 
 .text-highlight {
   color: #cb0050; }
@@ -4812,7 +4812,7 @@ p {
   background-repeat: no-repeat;
   background-position: top center;
   text-align: center;
-  font-size: 10pt;
+  font-size: 0.8rem;
   font-weight: normal;
   font-style: normal;
   color: #7f7f7f; }
@@ -5085,7 +5085,7 @@ img[data-lazyload] {
   background-color: #252525;
   color: #fff;
   border-radius: 3px;
-  font-size: 12pt; }
+  font-size: 0.9rem; }
   .tooltip::before {
     content: "";
     position: absolute;
@@ -5122,7 +5122,7 @@ img[data-lazyload] {
   border: 1px solid #e7e5e1; }
   .dataTables_wrapper .dataTables_length {
     float: left;
-    font-size: 11pt;
+    font-size: 0.85rem;
     padding: 15px; }
     .dataTables_wrapper .dataTables_length select {
       width: 100%;
@@ -5147,7 +5147,7 @@ img[data-lazyload] {
         border-color: #0095db; }
   .dataTables_wrapper .dataTables_filter {
     float: right;
-    font-size: 11pt;
+    font-size: 0.85rem;
     padding: 15px; }
     .dataTables_wrapper .dataTables_filter input {
       width: 100%;
@@ -5171,7 +5171,7 @@ img[data-lazyload] {
         border-color: #0095db; }
   .dataTables_wrapper .dataTables_info,
   .dataTables_wrapper .dataTables_paginate {
-    font-size: 11pt;
+    font-size: 0.85rem;
     padding: 15px; }
   .dataTables_wrapper .dataTables_paginate {
     text-align: right;
@@ -5187,7 +5187,7 @@ img[data-lazyload] {
       display: block;
       background-color: #e7e5e1;
       color: #252525;
-      font-size: 11pt;
+      font-size: 0.85rem;
       padding: 5px 10px;
       text-decoration: none;
       text-align: center; }
@@ -5215,7 +5215,7 @@ img[data-lazyload] {
         color: #fff;
         font-weight: bold;
         letter-spacing: .5px;
-        font-size: 11pt;
+        font-size: 0.85rem;
         line-height: 100%;
         padding: 10px;
         text-align: left; }
@@ -5268,7 +5268,7 @@ img[data-lazyload] {
           right: 5px;
           top: 10px; }
     .dataTables_wrapper table.dataTable tbody {
-      font-size: 11pt;
+      font-size: 0.85rem;
       background-color: #fff;
       border-bottom: 1px solid #e7e5e1; }
       .dataTables_wrapper table.dataTable tbody tr + tr {
@@ -5379,7 +5379,7 @@ img[data-lazyload] {
     margin: 0;
     padding: 0; }
   [class^="sidebar-"] .widget_eventlistwidget .event-item .date {
-    font-size: 10pt !important;
+    font-size: 0.8rem !important;
     text-align: left;
     width: auto; }
     [class^="sidebar-"] .widget_eventlistwidget .event-item .date span {
