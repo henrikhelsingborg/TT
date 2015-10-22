@@ -9,7 +9,7 @@
 .alert {
     display: none;
     padding: 15px 0;
-    font-size: 11pt;
+    font-size: $alert-font-size;
     color: $text-default;
 
     .buttons {
@@ -39,7 +39,7 @@
             top: 50%;
             transform: translateY(-50%);
             left: 20px;
-            font-size: 18pt;
+            font-size: $alert-icon-font-size;
             color: darken($alert-info, 60%);
         }
     }
@@ -65,10 +65,9 @@
 .alert-warning {
     background-color: $alert-warning;
     color: $text-default;
-    font-size: 15pt;
 
     .columns:first-child {
-        padding-left: 60px;
+        padding-left: $alert-icon-font-size*2.5;
         position: relative;
 
         &::before {
@@ -77,7 +76,7 @@
             top: 50%;
             transform: translateY(-50%);
             left: 20px;
-            font-size: 18pt;
+            font-size: $alert-icon-font-size;
             color: #ff0000;
         }
     }

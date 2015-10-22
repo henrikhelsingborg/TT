@@ -2216,13 +2216,15 @@ th.hide-for-touch {
  * This is where the most part of our sass/css lives.
  * This is all the different style for all elements on our site.
  */
+html {
+  font-family: "Roboto", "Helvetica", "Arial";
+  font-size: 17px; }
+
 body {
   position: static !important;
   background-color: #fff;
   margin: 0;
-  padding: 0;
-  font-family: "Roboto", "Helvetica", "Arial";
-  font-size: 13pt; }
+  padding: 0; }
 
 .site-wrapper {
   background-color: #fff; }
@@ -2465,7 +2467,7 @@ img.responsive {
 .alert {
   display: none;
   padding: 15px 0;
-  font-size: 11pt;
+  font-size: 1.1rem;
   color: #252525; }
   .alert .buttons {
     text-align: right; }
@@ -2497,7 +2499,7 @@ img.responsive {
           -ms-transform: translateY(-50%);
               transform: translateY(-50%);
       left: 20px;
-      font-size: 18pt;
+      font-size: 1.3rem;
       color: #006e7e; }
   .alert-info .link-item {
     color: #252525; }
@@ -2520,10 +2522,9 @@ img.responsive {
 
 .alert-warning {
   background-color: yellow;
-  color: #252525;
-  font-size: 15pt; }
+  color: #252525; }
   .alert-warning .columns:first-child {
-    padding-left: 60px;
+    padding-left: 3.25rem;
     position: relative; }
     .alert-warning .columns:first-child::before {
       font-family: FontAwesome;
@@ -2542,7 +2543,7 @@ img.responsive {
           -ms-transform: translateY(-50%);
               transform: translateY(-50%);
       left: 20px;
-      font-size: 18pt;
+      font-size: 1.3rem;
       color: #ff0000; }
   .alert-warning .link-item {
     color: #252525; }
@@ -3174,7 +3175,7 @@ body.nav-fixed .site-header .hero {
  */
 .form-label, .gform_wrapper .top_label .gfield_label {
   display: block;
-  font-size: 13pt;
+  font-size: 17px;
   font-weight: 500; }
 
 input[type="color"].form-control,
@@ -4516,7 +4517,7 @@ p {
   font-weight: normal; }
   .pagination li {
     display: inline-block;
-    font-size: 13pt;
+    font-size: 17px;
     line-height: 120%;
     margin-right: 3px; }
     .pagination li::before {
@@ -5014,7 +5015,7 @@ img[data-lazyload] {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size: 13pt;
+  font-size: 17px;
   line-height: 150%;
   font-weight: normal; }
   .guide-list .box img {

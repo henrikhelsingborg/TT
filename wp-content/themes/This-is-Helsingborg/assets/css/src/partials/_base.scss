@@ -1,12 +1,14 @@
+html {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+}
+
 body {
     position: static !important;
 
     background-color: #fff;
     margin: 0;
     padding: 0;
-
-    font-family: $base-font-family;
-    font-size: $base-font-size;
 }
 
 // Site wrapper that should wrap the main site elements
