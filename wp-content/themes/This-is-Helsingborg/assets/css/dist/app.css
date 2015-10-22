@@ -3628,7 +3628,8 @@ a.btn-warning {
     .box-share {
       display: none; } }
   .box-share .box-title, .box-share [class^="sidebar-"] .widget_text h2, [class^="sidebar-"] .widget_text .box-share h2 {
-    font-size: 13pt;
+    display: block;
+    font-size: 1rem;
     padding: 0;
     padding-bottom: 4px; }
   .box-share .share-image {
