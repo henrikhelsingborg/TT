@@ -108,7 +108,16 @@ class GoogleSearch
             $dateMod = $meta->{last-modified};
         }
 
+        if (substr($dateMod, 0, 1) == 'D') {
+            $dateMod = $this->convertDate($dateMod);
+        }
+
         return $dateMod;
+    }
+
+    public function convertDate($date)
+    {
+        return date('d M Y', strtotime(substr($date, 2, -7)));
     }
 
     /**
