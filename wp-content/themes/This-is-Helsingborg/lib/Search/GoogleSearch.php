@@ -108,16 +108,20 @@ class GoogleSearch
             $dateMod = $meta->{last-modified};
         }
 
-        if (substr($dateMod, 0, 1) == 'D') {
-            $dateMod = $this->convertDate($dateMod);
-        }
+        $dateMod = $this->convertDate($dateMod);
 
         return $dateMod;
     }
 
     public function convertDate($date)
     {
-        return date('d M Y', strtotime(substr($date, 2, -7)));
+        if (substr($date, 0, 1) == 'D') {
+            $date = date('d M Y', strtotime(substr($date, 2, -7)));
+        } elseif (strlen($date) > 20) {
+            $date = date('d M Y', strtotime($date));
+        }
+
+        return $date;
     }
 
     /**
