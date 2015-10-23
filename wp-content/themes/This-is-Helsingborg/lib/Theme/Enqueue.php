@@ -118,7 +118,7 @@ class Enqueue
         );
 
         // Search and 404
-        if (is_search() || is_404()) {
+        if (is_404()) {
             wp_register_script(
                 'app-search',
                 get_template_directory_uri().'/assets/js/dist/search.min.js',
