@@ -28,7 +28,7 @@
         <?php if (strlen($query) > 0) : ?>
         <div class="row">
             <div class="columns large-12">
-                <?php $search->pagination(true); ?>
+                <?php echo $search->pagination(); ?>
             </div>
         </div>
 
@@ -61,10 +61,7 @@
 
         <div class="row">
             <div class="columns large-12">
-                <ul class="pagination" role="menubar" arial-label="pagination">
-                    <li><a href="#" data-action="prev-page">&laquo; Föregående</a></li>
-                    <li><a href="#" data-action="next-page">Nästa &raquo;</a></li>
-                </ul>
+                <?php echo $search->pagination(); ?>
             </div>
         </div>
         <?php else : ?>

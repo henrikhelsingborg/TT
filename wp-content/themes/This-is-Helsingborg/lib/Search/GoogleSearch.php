@@ -86,6 +86,11 @@ class GoogleSearch
         }
     }
 
+    /**
+     * Gets the modified date for an item
+     * @param  object $item The item
+     * @return string       The modified date
+     */
     public function getModifiedDate($item)
     {
         if (!isset($item->pagemap)) {
@@ -104,11 +109,13 @@ class GoogleSearch
         }
 
         return $dateMod;
-
-
-
     }
 
+    /**
+     * Reders the pagination for the current search
+     * @param  boolean $echo Wheater to echo the pagination or return as string
+     * @return string        The pagination html markup
+     */
     public function pagination($echo = false)
     {
         $markup = array();
@@ -124,7 +131,7 @@ class GoogleSearch
         $currentPage = 1;
         if (isset($_GET['index']) && $_GET['index'] > 1) {
             $this->currentIndex = $_GET['index'];
-            $this->currentPage = $_GET['index'] / $this->resultsPerPage;
+            $this->currentPage = (($_GET['index']-1) / $this->resultsPerPage)+1;
         }
 
         $markup[] = '<ul class="pagination" role="menubar" arial-label="pagination">';
@@ -139,13 +146,25 @@ class GoogleSearch
                         '">&laquo; Föregående</a></li>';
         }
 
+        // How many pages to show in the pager (excluding the current page)
+        $numPagesToShow = 10;
+
         // Get pages
         if ($this->resultsPerPage < $this->results->searchInformation->totalResults) {
             // Calculate number of pages
             $numPages = $this->results->searchInformation->totalResults / $this->resultsPerPage;
 
+            // Calculate range of pages to show in pager
+            $startingPage = $this->currentPage - ($numPagesToShow/2);
+            $endingPage = $this->currentPage + ($numPagesToShow/2) + 1;
+
+            if ($startingPage < 1) {
+                $startingPage = 1;
+                $endingPage = $numPagesToShow+2;
+            }
+
             // Output pages
-            for ($i = 1; $i < $numPages; $i++) {
+            for ($i = $startingPage; $i < $endingPage; $i++) {
                 $thisIndex = ($this->resultsPerPage * ($i-1)) + 1;
 
                 $current = null;
