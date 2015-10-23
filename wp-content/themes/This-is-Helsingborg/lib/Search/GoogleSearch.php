@@ -134,7 +134,7 @@ class GoogleSearch
         $query = $results->queries;
 
         // Get results per page count
-        $this->resultsPerPage = $query->request[0]->count;
+        $this->resultsPerPage = 10;
 
         // Get current page
         $currentPage = 1;
@@ -161,7 +161,7 @@ class GoogleSearch
         // Get pages
         if ($this->resultsPerPage < $this->results->searchInformation->totalResults) {
             // Calculate number of pages
-            $numPages = $this->results->searchInformation->totalResults / $this->resultsPerPage;
+            $numPages = ceil($this->results->searchInformation->totalResults / $this->resultsPerPage);
 
             // Calculate range of pages to show in pager
             $startingPage = $this->currentPage - ($numPagesToShow/2);
@@ -170,6 +170,14 @@ class GoogleSearch
             if ($startingPage < 1) {
                 $startingPage = 1;
                 $endingPage = $numPagesToShow+2;
+            }
+
+            if ($endingPage >= $numPages) {
+                $endingPage = $numPages;
+            }
+
+            if ($this->currentPage == $endingPage) {
+                $endingPage = $numPages+1;
             }
 
             // Output pages
