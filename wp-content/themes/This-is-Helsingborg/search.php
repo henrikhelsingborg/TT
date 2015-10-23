@@ -16,7 +16,7 @@
             <div class="columns large-12">
                 <?php get_search_form(); ?>
                 <div class="search-hits-info">
-                    <span class="search-hits"><?php echo $searchResult->searchInformation->formattedTotalResults; ?></span> träffar på <span class="search-query"><?php echo stripslashes($searchResult->queries->request[0]->searchTerms); ?></span> inom Helsingborg.se
+                    <span class="search-hits"><?php echo $searchResult->searchInformation->formattedTotalResults; ?></span> träffar på <span class="search-query"><?php echo urldecode(stripslashes($searchResult->queries->request[0]->searchTerms)); ?></span> inom Helsingborg.se
                 </div>
             </div>
         </div>
