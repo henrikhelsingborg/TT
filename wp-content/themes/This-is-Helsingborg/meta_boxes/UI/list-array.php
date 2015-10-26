@@ -10,7 +10,13 @@
 			global $wpdb;
 			
 			try {
-			    $listResult = $wpdb->get_results("SELECT title FROM list_categories ORDER BY id ASC", OBJECT);
+				
+				if ( $wpdb->get_results("SHOW TABLES LIKE 'list_categories'") ) {
+					$listResult = $wpdb->get_results("SELECT title FROM list_categories ORDER BY id ASC", OBJECT);
+				} else {
+					$listResult = false; 
+				}
+
 			} catch (Exception $e) {
 				$listResult = false; 
 			}
