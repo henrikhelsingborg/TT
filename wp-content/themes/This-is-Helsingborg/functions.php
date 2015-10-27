@@ -58,7 +58,7 @@
         exit;
     }
     */
-    
+
     /* Use bundled ACF, or not? */ 
     if ( !defined( "THEME_USE_BUNDLE_ACF" ) || ( defined( "THEME_USE_BUNDLE_ACF" ) && THEME_USE_BUNDLE_ACF === false ) ) {
 	    require_once(__DIR__."/acf/acf.php"); 

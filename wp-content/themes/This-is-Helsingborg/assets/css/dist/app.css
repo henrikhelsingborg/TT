@@ -5275,6 +5275,20 @@ img[data-lazyload] {
       .dataTables_wrapper table.dataTable tbody td + td {
         border-left: 1px solid #e7e5e1; }
 
+article + .table {
+  margin-top: 15px; }
+
+.table + article {
+  margin-top: 15px; }
+
+.table-opening-hours {
+  width: 100%; }
+  .table-opening-hours td {
+    padding: 0;
+    margin: 0; }
+  .table-opening-hours tr td:last-child {
+    text-align: right; }
+
 /**
  * ## Widgets
  * Style of WordPress widgets
