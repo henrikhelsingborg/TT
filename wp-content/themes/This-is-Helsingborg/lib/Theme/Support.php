@@ -14,72 +14,7 @@ class Support
         add_filter('srm_max_redirects', array($this, 'srmMaxRedirects'));
         add_action('template_redirect', array($this, 'blockAuthorPages'), 5);
         add_action('init', array($this, 'removePostPostType'), 11);
-        
-        //Theme functions 
-        if ((defined("WP_ENABLE_THEME_SETTINGS") && WP_ENABLE_THEME_SETTINGS === true)) {
-	        add_action('init', array($this, 'themeFunctionsAdminPanel'), 11);
-	        
-	        add_action('init', array($this, 'themeSettingsAdminPanel'), 11);
-	    }
-	    
-    }
-    
-    /* Manage avabile functions in site - What modules should we use? */ 
-    public function themeFunctionsAdminPanel () {
 	   
-	    if( function_exists('acf_add_options_page') ) {
-			
-			acf_add_options_page(array(
-				'page_title' 	=> __("Theme Functions",'helsingborg'),
-				'menu_title' 	=> __("Theme Functions",'helsingborg'),
-				'menu_slug' 	=> __("Theme Functions",'helsingborg'),
-				'capability' 	=> 'read',
-				'redirect' 		=> false
-			));
-			
-			if ( !class_exists('Disable_Comments') ) {
-				
-				if ( is_super_admin() ) { //Todo: Only show if told to inacive comments. 
-				
-					add_action( 'admin_notices', function(){
-						echo '<div class="updated"><p>'; 
-							_e( 'Some functions in this theme requires: "Disable Comments Plugin".', 'helsingborg' );
-						echo '</p></div>'; 
-					});
-				
-				}
-									
-			} 
-		
-		} else {
-			
-			if ( is_super_admin() ) { 
-			
-				add_action( 'admin_notices', function(){
-					echo '<div class="updated"><p>'; 
-						_e( 'Some functions in this theme requires: "Advanced Custom Fields PRO".', 'helsingborg' );
-					echo '</p></div>'; 
-				});
-			
-			}
-			
-		}
-		
-    }
-    
-    /* Use data from module above - Create settings menu */ 
-    public function themeSettingsAdminPanel() {
-	    
-	    //Generellt 
-	    //Blogg
-	    //Kommentarer 
-	    //Färger
-	    //Nyhetsflöde 
-	    //Sidhuvud - Ändra logotype och välja om meny ska visas. Välja om hero ska synas (denna bör ändras på start). 
-	    //Sökfunktion 
-	    //Sidfot - Dynamiskt innehåll i form av repeterande fält (med listfunktion text och annat)
-	    //Inbyggd seo 
-	    //Arvsinnehåll? Om detta ligger i temat. 
     }
 
     /**
