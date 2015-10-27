@@ -5,6 +5,7 @@ namespace Helsingborg;
 use Helsingborg\Theme;
 use Helsingborg\Admin;
 use Helsingborg\Helper;
+use Helsingborg\Options;
 
 class App
 {
@@ -23,10 +24,16 @@ class App
         new Theme\Navigation;
         new Theme\WidgetAreas;
         new Theme\GravityForms;
-        if (isset($lazyloadImages)) new Theme\LazyLoad;
+
+        if (isset($lazyloadImages)) {
+            new Theme\LazyLoad;
+        }
 
         // Admin
         new Admin\Enqueue;
+
+        // Options (admin)
+        new Options\Theme;
 
         // Metaboxes (loaded from the metabox init class)
         new Metabox\Init;
