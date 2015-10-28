@@ -17,7 +17,25 @@
 	 * Licensed under GNU General Public License v2
 	 */
 	 
+	//Polyfill
+	if(!function_exists( 'getallheaders' )) {
 	
+		function getallheaders() {
+	      
+	        if (!is_array($_SERVER)) {
+	            return array();
+	        }
+	
+	        $headers = array();
+	        foreach ($_SERVER as $name => $value) {
+	            if (substr($name, 0, 5) == 'HTTP_') {
+	                $headers[str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', substr($name, 5)))))] = $value;
+	            }
+	        }
+	        return $headers;
+	        
+	    }
+	}
 	 
 	//Constants  
 	define('CACHE_BASE_DIR', __DIR__ . "/cache/");
@@ -218,13 +236,18 @@
 	        }
 	    }
 	    
-	    public function clean_cache() {
+	    public function clean_cache( $only_empty = false ) {
 		    $files = glob(CACHE_DIR."*");
-		    
 		    if ( !empty( $files ) && is_array( $files ) ) {
 			    foreach($files as $file) {
 			    	if(is_file($file)) {
-				    	unlink($file); 
+				    	if ( !$only_empty )  {
+					    	unlink($file); 
+				    	} else {
+					    	if (empty(filesize($file))) {
+						    	unlink($file); 
+					    	}
+				    	}
 			    	}
 			    }
 		    }
@@ -309,13 +332,6 @@
 			
 		}
 		
-		public function refresh ( $url ) {
-			//Remove file (without /)
-			unlink(CACHE_DIR.$this->start_cache_file(rtrim($url,"/"))); 
-			//Remove file (with /)
-			unlink(CACHE_DIR.$this->start_cache_file($url)); 
-		}
-		
 		public function do_warmup () {
 			
 			//Ignore user abort
@@ -360,6 +376,7 @@
 			foreach($urls as $count => $url) {
 				$curl_array[$count] = curl_init("http://".$_SERVER['SERVER_NAME'].$url);
 				curl_setopt($curl_array[$count], CURLOPT_RETURNTRANSFER, 1);
+				curl_setopt($curl_array[$count], CURLOPT_HTTPHEADER, array('NO-CACHE-REDO: do-not-create'));
 				curl_multi_add_handle($ch, $curl_array[$count]);
 			}
 			
@@ -388,16 +405,18 @@
 			return;
 			
 		$wp_really_simple_cache = new RSCache();
-		
-		//if ( get_post_type( $post_id ) == "page" ) {
-		//	$wp_really_simple_cache->refresh ( get_permalink( $post_id ) ); 
-		//} else {
-			$wp_really_simple_cache->clean_cache(); 
-			$wp_really_simple_cache->do_warmup(); 
-		//}
+		$wp_really_simple_cache->clean_cache(); 
+		$wp_really_simple_cache->do_warmup(); 
 		
 	}, 999 );
 
+	//Safety pin for themes who are missing the stop() function. 
+	add_action('shutdown', function(){
+		if (!array_key_exists("NO-CACHE-REDO",getallheaders())) {
+			global $wp_really_simple_cache; 
+			$wp_really_simple_cache->clean_cache(true); 
+		}
+	}); 
 
 
 	/**********************************
