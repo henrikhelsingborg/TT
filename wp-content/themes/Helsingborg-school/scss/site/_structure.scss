@@ -68,3 +68,21 @@
 .main-content {
     margin-bottom: 20px;
 }
+
+img {
+    @media #{$medium-up} {
+        &.alignleft {
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        &.alignright {
+            float: right;
+            margin-top: 30px;
+            margin-left: 15px;
+            margin-bottom: 15px;
+        }
+    }
+}
