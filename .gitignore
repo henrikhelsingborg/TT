@@ -56,3 +56,7 @@ wp-content/themes/This-is-Helsingborg/.DS_Store
 
 # Ignore log file
 wp-content/plugins/all-in-one-wp-security-and-firewall/logs/wp-security-log.txt
+wp-content/plugins/all-in-one-wp-security-and-firewall/logs/wp-security-log-cron.txt
+
+# Ignore cache file
+wp-content/mu-plugins/cache/*

@@ -83,3 +83,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 </body>
 </html>
+<?php 
+	
+	if(defined('RSCACHE_RUNNING')) {
+	
+		if ( really_simple_cache_blocked_urls() && !check_if_logged_in() ) { 
+		  
+		  	global $wp_really_simple_cache; 
+		  	if ($wp_really_simple_cache->has_cache()) {
+		  		$wp_really_simple_cache->stop($_SERVER['REQUEST_URI']);
+	  		}
+	  		
+	  	}
+  	
+  	}
