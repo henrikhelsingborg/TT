@@ -26,11 +26,14 @@ class App
      */
     public function addParentOptionsPage()
     {
-        acf_add_options_page(array(
-            'page_title' => 'Arvsinnehåll',
-            'menu_slug'  => 'hbg-inherit',
-            'capability' => 'edit_posts',
-            'icon_url' => 'dashicons-controls-repeat'
-        ));
+        if (function_exists('acf_add_options_page')) {
+            acf_add_options_page(array(
+                'page_title' => 'Arvsinnehåll',
+                'menu_slug'  => 'hbg-inherit',
+                'capability' => 'edit_posts',
+                'icon_url' => 'dashicons-controls-repeat',
+                'position' => '30.2'
+            ));
+        }
     }
 }
