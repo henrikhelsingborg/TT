@@ -75,12 +75,13 @@
         <table class="table table-opening-hours" cellpadding="0" cellspacing="0">
             <tbody>
                 <?php foreach (get_field('abnormal-opening-hours', $instance['post_id']) as $date) : ?>
-                <tr>
-                    <td><?php echo $date['date']; ?></td>
-                    <td itemprop="openingHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification">
+                <tr itemprop="openingHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification">
+                    <td>
+                        <span itemprop="validFrom" content="<?php echo $date['date']; ?>"><?php echo $this->checkHoliday($date['date']); ?></span>
+                        <span itemprop="validThrough" content="<?php echo $date['date']; ?>"></span>
+                    </td>
+                    <td>
                         <?php if ($date['open'] != '') : ?>
-                            <span itemprop="validFrom" content="<?php echo $date['date']; ?>"></span>
-                            <span itemprop="validThrough" content="<?php echo $date['date']; ?>"></span>
                             <time itemprop="opens" content="<?php echo $date['open']; ?>"><?php echo $date['open']; ?></time>
                             -
                             <time itemprop="closes" content="<?php echo $date['close']; ?>"><?php echo $date['close']; ?></time>

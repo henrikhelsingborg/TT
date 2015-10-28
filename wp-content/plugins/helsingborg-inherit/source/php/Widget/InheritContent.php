@@ -106,4 +106,33 @@ class InheritContent extends WP_Widget
         echo $list;
         die();
     }
+
+    /**
+     * Checks if a day is a holiday, if it is return the "day name"
+     * @param  string $date The date
+     * @return string       The day name if holiday else date
+     */
+    public function checkHoliday($date)
+    {
+        $url = 'http://api.dryg.net/dagar/v2.1/' . date('Y', strtotime($date)) . '/' . date('m', strtotime($date)) . '/' . date('d', strtotime($date));
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+        curl_setopt($ch, CURLOPT_REFERER, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        $result = json_decode($result);
+
+        if (isset($result->dagar[0]->helgdag)) {
+            return $result->dagar[0]->helgdag . ' <span class="date">(' . $date . ')</span>';
+        } else {
+            return $date;
+        }
+    }
 }
