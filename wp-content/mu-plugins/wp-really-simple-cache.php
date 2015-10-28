@@ -17,12 +17,15 @@
 	 * Licensed under GNU General Public License v2
 	 */
 	 
+	
+	 
+	//Constants  
 	define('CACHE_BASE_DIR', __DIR__ . "/cache/");
 	define('CACHE_DIR', CACHE_BASE_DIR . $_SERVER['SERVER_NAME'] . "/" ); // cache directory
 	define('CACHE_TIME', 60 * 60 * 60 * 24 * 7 );
 	define('PURGE_USE', FALSE); // automatic purge of cache?
 	define('PURGE_FACTOR', 100); // probability of cache purge, low number means higher probability
-	define('GZIP_COMPRESSION', TRUE); // want gzip-compression or not?
+	define('GZIP_COMPRESSION', FALSE); // want gzip-compression or not?
 	define('GZIP_LEVEL', 9); // define compression level (1-9, where 9 is highest)
 	
 	class RSCache {
@@ -148,7 +151,7 @@
 	    private function write_file_content() {
 	      
 	        $page = ob_get_contents();
-	        
+
 	        if ( !empty( $page ) ) { 
 	        
 		        if (GZIP_COMPRESSION == TRUE) {
@@ -160,7 +163,7 @@
 		        }
 
 	        } else {
-		        
+		        unlink($this->fp); 
 	        }
 	        
 			return $page;
@@ -305,6 +308,67 @@
 			return false; 
 			
 		}
+		
+		public function refresh ( $url ) {
+			//Remove file (without /)
+			unlink(CACHE_DIR.$this->start_cache_file(rtrim($url,"/"))); 
+			//Remove file (with /)
+			unlink(CACHE_DIR.$this->start_cache_file($url)); 
+		}
+		
+		public function do_warmup () {
+			
+			//Ignore user abort
+			ignore_user_abort(true);
+			set_time_limit(60*5);
+
+			//URL array to get
+			$urls = array (
+				
+						//Startpage 
+						'',
+						
+						//Top menus 
+						'/startsida/arbete/',
+						'/startsida/arbete/',
+						'/startsida/forskola-och-utbildning/',
+						'/startsida/kommun-och-politik/',
+						'/startsida/omsorg-och-stod/',
+						'/startsida/trafik-och-stadsplanering/',
+						'/startsida/uppleva-och-gora/',
+						
+						//Most visited 
+						'/startsida/forskola-och-utbildning/',
+						'/startsida/arbete/arbeta-inom-helsingborgs-stad/lediga-jobb-i-helsingborgs-stad/',
+						'/startsida/forskola-och-utbildning/vuxenutbildning/',
+						'/startsida/trafik-och-stadsplanering/trafik-och-byggprojekt/olympia/',
+						'/startsida/uppleva-och-gora/',
+						'/startsida/bo-bygga-och-miljo/',
+						'/startsida/forskola-och-utbildning/vuxenutbildning/ansokan-till-vuxenutbildning/',
+						'/startsida/kommun-och-politik/vid-olyckor-och-kris/larm/',
+						
+					);
+			
+			//Count number if arrays 
+			$url_count = count($urls);
+			
+			//Define 
+			$curl_array = array();
+			$ch = curl_multi_init();
+
+			//Fetch url 
+			foreach($urls as $count => $url) {
+				$curl_array[$count] = curl_init("http://".$_SERVER['SERVER_NAME'].$url);
+				curl_setopt($curl_array[$count], CURLOPT_RETURNTRANSFER, 1);
+				curl_multi_add_handle($ch, $curl_array[$count]);
+			}
+			
+			//Wait for it all to end 
+			do {
+				curl_multi_exec($ch, $exec);
+			} while($exec > 0);
+			
+		}
 	
 	}
 	
@@ -318,10 +382,21 @@
 	}
 	
 	//Purge all on save_post 
-	add_action('save_post', function(){
+	add_action('save_post', function( $post_id ){
+		
+		if ( wp_is_post_revision( $post_id ) )
+			return;
+			
 		$wp_really_simple_cache = new RSCache();
-		$wp_really_simple_cache->clean_cache(); 
-	});
+		
+		//if ( get_post_type( $post_id ) == "page" ) {
+		//	$wp_really_simple_cache->refresh ( get_permalink( $post_id ) ); 
+		//} else {
+			$wp_really_simple_cache->clean_cache(); 
+			$wp_really_simple_cache->do_warmup(); 
+		//}
+		
+	}, 999 );
 
 
 
