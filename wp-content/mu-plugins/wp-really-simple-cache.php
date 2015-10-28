@@ -1,7 +1,14 @@
 <?php
 	
+	/*
+	Plugin Name: RSCache
+	Plugin URI:  http://wordpress.org/extend/plugins/health-check
+	Description: Takes load of WordPress frontend by only generating a page once. Purging on save_post hook. 
+	Author:      Sebastian Thulin
+	*/
+		
 	/**
-	 * RSCache is a filecache class for PHP
+	 * JBCache is a filecache class for PHP
 	 * Written by Jonas Björk <jonas.bjork@aller.se>
 	 * 
 	 * Contributing Developer: David V. Wallin <david@dwall.in>
@@ -9,12 +16,14 @@
 	 * (C)2011 Aller Digitala Affärer, Aller media AB
 	 * Licensed under GNU General Public License v2
 	 */
-	define('CACHE_DIR', __DIR__ . "/cache/"); // cache directory
-	define('CACHE_TIME', 1 * 60); // cache time in seconds
-	define('PURGE_USE', TRUE); // automatic purge of cache?
+	 
+	define('CACHE_BASE_DIR', __DIR__ . "/cache/");
+	define('CACHE_DIR', CACHE_BASE_DIR . $_SERVER['SERVER_NAME'] . "/" ); // cache directory
+	define('CACHE_TIME', 60 * 60 * 60 * 24 * 7 );
+	define('PURGE_USE', FALSE); // automatic purge of cache?
 	define('PURGE_FACTOR', 100); // probability of cache purge, low number means higher probability
 	define('GZIP_COMPRESSION', TRUE); // want gzip-compression or not?
-	define('GZIP_LEVEL', 3); // define compression level (1-9, where 9 is highest)
+	define('GZIP_LEVEL', 9); // define compression level (1-9, where 9 is highest)
 	
 	class RSCache {
 	
@@ -90,7 +99,10 @@
 	     * @return boolean Successful or not?
 	     */
 	    public function start($identifier = NULL) {
-	        if (PURGE_USE) {
+
+			$this->create_cache_dir(); 
+
+	       	if (PURGE_USE) {
 	            $this->purge_probe();
 	        }
 	
@@ -111,6 +123,20 @@
 	            return true;
 	        }
 	    }
+	    
+	    public function create_cache_dir () {
+		    
+		    //Make shure that /cache/ dir exists 
+		    if ( !is_dir( CACHE_BASE_DIR ) ) {
+			    mkdir( CACHE_BASE_DIR, 0775, true);
+		    }
+		    
+		    //Make shure that /cache/domain/ exists 
+		    if ( !is_dir( CACHE_DIR ) ) {
+			    mkdir( CACHE_DIR, 0775, true);
+		    }
+		    
+	    }
 	
 	    /**
 	     * Writes the file-content to the cached file. Either compressed or not.
@@ -120,15 +146,25 @@
 	     * @author David V. Wallin <david@dwall.in>
 	     */
 	    private function write_file_content() {
+	      
 	        $page = ob_get_contents();
-	        if (GZIP_COMPRESSION == TRUE) {
-	            fwrite($this->fp, gzencode($page, GZIP_LEVEL));
-	        } elseif (GZIP_COMPRESSION == FALSE) {
-	            fwrite($this->fp, $page);
+	        
+	        if ( !empty( $page ) ) { 
+	        
+		        if (GZIP_COMPRESSION == TRUE) {
+		            fwrite($this->fp, gzencode($page, GZIP_LEVEL));
+		        } elseif (GZIP_COMPRESSION == FALSE) {
+		            fwrite($this->fp, $page);
+		        } else {
+		            return false;
+		        }
+
 	        } else {
-	            return false;
+		        
 	        }
-		return $page;
+	        
+			return $page;
+			
 	    }
 	
 	    /**
@@ -145,8 +181,7 @@
 	            $m_time = $m_time[0] + $m_time[1];
 	            $endtime = $m_time;
 	            $totaltime = ($endtime - $this->starttime);
-	            printf("<!-- Generated from RSCache ( http://github.com/jonasbjork/RSCache ) - %s -->\n", date("Y-m-d H:i:s"));
-	            printf("<!-- Page loading took: %s seconds. -->\n", round($totaltime, $rounder));
+	            printf("<!-- This page was delivered from cache. - %s -->\n", date("Y-m-d H:i:s"));
 	
 	            $this->write_file_content();
 	            fclose($this->fp);
@@ -179,6 +214,18 @@
 	            closedir($handle);
 	        }
 	    }
+	    
+	    public function clean_cache() {
+		    $files = glob(CACHE_DIR."*");
+		    
+		    if ( !empty( $files ) && is_array( $files ) ) {
+			    foreach($files as $file) {
+			    	if(is_file($file)) {
+				    	unlink($file); 
+			    	}
+			    }
+		    }
+	    }
 	
 	    /**
 	     * Probe if we should purge cache or not.
@@ -200,39 +247,91 @@
 	        }
 	    }
 	
-	}
 	
-	function really_simple_cache_blocked_urls () {
-		
-		$page_url = $_SERVER['REQUEST_URI']; 
-		
-		if ( preg_match("/wp-admin/i", $page_url ) ) {
-			return false; 
+		public function blocked_url () {
+			
+			$mathing_urls = array("wp-admin","wp-login","secure","admin-ajax"); 
+			
+			if ( is_array( $mathing_urls ) && !empty( $mathing_urls ) ) {  
+			
+				foreach ( $mathing_urls as $matching_url) {
+					if ( preg_match("/".$matching_url."/i", !empty( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '' ) ) {
+						return false; 
+					} 
+				} 
+	
+			}
+			
+			return true; 
+			
 		} 
 		
-		return true; 
+		public function is_post_request () {
+			if( isset( $_POST ) && !empty( $_POST ) ) {
+				return true; 
+			} else {
+				return false; 
+			}
+		}
+		
+		public function has_get_variable () {
+			if( isset( $_GET ) && !empty( $_GET ) ) {
+				return true; 
+			} else {
+				return false; 
+			}
+		}
+		
+		public function is_cachable () {
+			if ( $this->blocked_url() && !$this->is_logged_in () && !$this->is_post_request() && !$this->has_get_variable () ) { 
+				return true; 
+			} else {
+				return false; 
+			}
+		}
+		
+		public function is_logged_in () {
+	
+			if ( count( $_COOKIE ) ) {
+				
+				foreach($_COOKIE as $key => $value ){
+	
+				    if( preg_match("/wordpress_logged_in/i", $key ) && !empty( $value ) ){
+				        return true; 
+				    }
+				}
+	
+			}
+			return false; 
+			
+		}
+	
 	}
 	
-	function check_if_logged_in () {
+	//Create class 
+	global $wp_really_simple_cache; 
+	$wp_really_simple_cache = new RSCache();
 
-		if ( count( $_COOKIE ) ) {
-			
-			foreach($_COOKIE as $key => $value ){
-
-			    if( preg_match("/wordpress_logged_in/i", $key ) ){
-			        return true; 
-			    }
-			}
-
-		}
-		return false; 
-	}
-
-	if ( really_simple_cache_blocked_urls() && !check_if_logged_in() ) { 
-		define('RSCACHE_RUNNING', true); 
-		global $wp_really_simple_cache; 
-		$wp_really_simple_cache = new RSCache();
+	//Run cache if valid page 
+	if ( $wp_really_simple_cache->is_cachable () ) { 
 		$wp_really_simple_cache->start($_SERVER['REQUEST_URI']);
-	  
 	}
+	
+	//Purge all on save_post 
+	add_action('save_post', function(){
+		$wp_really_simple_cache = new RSCache();
+		$wp_really_simple_cache->clean_cache(); 
+	});
 
+
+
+	/**********************************
+	Add this to footer in your theme!  
+	
+		//Cache end 
+		global $wp_really_simple_cache; 
+		if ( $wp_really_simple_cache->is_cachable () ) { 
+			$wp_really_simple_cache->stop($_SERVER['REQUEST_URI']);
+	  	}
+	  	
+  	*/ 
