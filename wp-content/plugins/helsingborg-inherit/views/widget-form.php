@@ -7,6 +7,7 @@
     <select data-inherit-posttype name="<?php echo $this->get_field_name('post_type'); ?>" id="<?php echo $this->get_field_id('post_type'); ?>" class="widefat">
         <option value="hbgInheristPosts" <?php selected($instance['post_type'], 'hbgInheristPosts'); ?>>Textinnehåll</option>
         <option value="hbgInheritHours" <?php selected($instance['post_type'], 'hbgInheritHours'); ?>>Öppettider</option>
+        <option value="hbgInheritContact" <?php selected($instance['post_type'], 'hbgInheritContact'); ?>>Kontaktuppgifter</option>
     </select>
 </p>
 <p>
