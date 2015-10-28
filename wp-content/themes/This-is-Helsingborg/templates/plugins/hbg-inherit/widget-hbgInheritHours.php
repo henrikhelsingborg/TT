@@ -1,4 +1,7 @@
-<?php echo $before_widget; ?>
+<?php
+$data = get_fields($instance['post_id']);
+echo $before_widget;
+?>
     <?php if (in_array($args['id'], array('left-sidebar', 'left-sidebar-bottom', 'right-sidebar'))) get_template_part('templates/partials/stripe'); ?>
     <h3 class="box-title"><?php echo (isset($instance['title']) && strlen($instance['title']) > 0) ? $instance['title'] : $post->title; ?></h3>
 
@@ -8,57 +11,85 @@
                 <tr>
                     <td>Måndag</td>
                     <td>
-                        <time itemprop="openingHours" datetime="Mo <?php the_field('monday-open', $instance['post_id']); ?>-<?php the_field('monday-close', $instance['post_id']); ?>">
-                            <?php the_field('monday-open', $instance['post_id']); ?> - <?php the_field('monday-close', $instance['post_id']); ?>
+                        <?php if ($data['monday-open'] != '') : ?>
+                        <time itemprop="openingHours" datetime="Mo <?php echo $data['monday-open']; ?> - <?php echo $data['monday-close']; ?>">
+                            <?php echo $data['monday-open']; ?> - <?php echo $data['monday-close']; ?>
                         </time>
+                        <?php else : ?>
+                            Stängt
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
                     <td>Tisdag</td>
                     <td>
-                        <time itemprop="openingHours" datetime="Mo <?php the_field('tuesday-open', $instance['post_id']); ?>-<?php the_field('tuesday-close', $instance['post_id']); ?>">
-                            <?php the_field('tuesday-open', $instance['post_id']); ?> - <?php the_field('tuesday-close', $instance['post_id']); ?>
+                        <?php if ($data['tuesday-open'] != '') : ?>
+                        <time itemprop="openingHours" datetime="Mo <?php echo $data['tuesday-open']; ?> - <?php echo $data['tuesday-close']; ?>">
+                            <?php echo $data['tuesday-open']; ?> - <?php echo $data['tuesday-close']; ?>
                         </time>
+                        <?php else : ?>
+                            Stängt
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
                     <td>Onsdag</td>
                     <td>
-                        <time itemprop="openingHours" datetime="Mo <?php the_field('wednesday-open', $instance['post_id']); ?>-<?php the_field('wednesday-close', $instance['post_id']); ?>">
-                            <?php the_field('wednesday-open', $instance['post_id']); ?> - <?php the_field('wednesday-close', $instance['post_id']); ?>
+                        <?php if ($data['wednesday-open'] != '') : ?>
+                        <time itemprop="openingHours" datetime="Mo <?php echo $data['wednesday-open']; ?> - <?php echo $data['wednesday-close']; ?>">
+                            <?php echo $data['wednesday-open']; ?> - <?php echo $data['wednesday-close']; ?>
                         </time>
+                        <?php else : ?>
+                            Stängt
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
                     <td>Torsdag</td>
                     <td>
-                        <time itemprop="openingHours" datetime="Mo <?php the_field('thursday-open', $instance['post_id']); ?>-<?php the_field('thursday-close', $instance['post_id']); ?>">
-                            <?php the_field('thursday-open', $instance['post_id']); ?> - <?php the_field('thursday-close', $instance['post_id']); ?>
+                        <?php if ($data['thursday-open'] != '') : ?>
+                        <time itemprop="openingHours" datetime="Mo <?php echo $data['thursday-open']; ?> - <?php echo $data['thursday-close']; ?>">
+                           <?php echo $data['thursday-open']; ?> - <?php echo $data['thursday-close']; ?>
                         </time>
+                        <?php else : ?>
+                            Stängt
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
                     <td>Fredag</td>
                     <td>
-                        <time itemprop="openingHours" datetime="Mo <?php the_field('friday-open', $instance['post_id']); ?>-<?php the_field('friday-close', $instance['post_id']); ?>">
-                            <?php the_field('friday-open', $instance['post_id']); ?> - <?php the_field('friday-close', $instance['post_id']); ?>
+                        <?php if ($data['friday-open'] != '') : ?>
+                        <time itemprop="openingHours" datetime="Mo <?php echo $data['friday-open']; ?> - <?php echo $data['friday-close']; ?>">
+                            <?php echo $data['friday-open']; ?> - <?php echo $data['friday-close']; ?>
                         </time>
+                        <?php else : ?>
+                            Stängt
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
                     <td>Lördag</td>
                     <td>
-                        <time itemprop="openingHours" datetime="Mo <?php the_field('saturday-open', $instance['post_id']); ?>-<?php the_field('saturday-close', $instance['post_id']); ?>">
-                            <?php the_field('saturday-open', $instance['post_id']); ?> - <?php the_field('saturday-close', $instance['post_id']); ?>
+                        <?php if ($data['saturday-open'] != '') : ?>
+                        <time itemprop="openingHours" datetime="Mo <?php echo $data['saturday-open']; ?> - <?php echo $data['saturday-close']; ?>">
+                            <?php echo $data['saturday-open']; ?> - <?php echo $data['saturday-close']; ?>
                         </time>
+                        <?php else : ?>
+                            Stängt
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
                     <td>Söndag</td>
                     <td>
-                        <time itemprop="openingHours" datetime="Mo <?php the_field('sunday-open', $instance['post_id']); ?>-<?php the_field('sunday-close', $instance['post_id']); ?>">
-                            <?php the_field('sunday-open', $instance['post_id']); ?> - <?php the_field('sunday-close', $instance['post_id']); ?>
+                        <?php if ($data['sunday-open'] != '') : ?>
+                        <time itemprop="openingHours" datetime="Mo <?php echo $data['sunday-open']; ?> - <?php echo $data['sunday-close']; ?>">
+                            <?php echo $data['sunday-open']; ?> - <?php echo $data['sunday-close']; ?>
                         </time>
+                        <?php else : ?>
+                            Stängt
+                        <?php endif; ?>
                     </td>
                 </tr>
             </tbody>
@@ -74,7 +105,7 @@
         <h3 style="margin-top:15px;">Avvikande öppettider</h3>
         <table class="table table-opening-hours" cellpadding="0" cellspacing="0">
             <tbody>
-                <?php foreach (get_field('abnormal-opening-hours', $instance['post_id']) as $date) : ?>
+                <?php foreach ($data['abnormal-opening-hours'] as $date) : ?>
                 <tr itemprop="openingHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification">
                     <td>
                         <span itemprop="validFrom" content="<?php echo $date['date']; ?>"><?php echo $this->checkHoliday($date['date']); ?></span>
