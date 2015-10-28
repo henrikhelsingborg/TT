@@ -18,7 +18,8 @@ require_once HBG_INHERIT_PATH . 'source/php/Vendor/Psr4ClassLoader.php';
 require_once HBG_INHERIT_PATH . 'public.php';
 
 // Include the ACF fields
-require_once HBG_INHERIT_PATH . 'source/acf/fields.php';
+require_once HBG_INHERIT_PATH . 'source/acf/OpeningHoursFields.php';
+require_once HBG_INHERIT_PATH . 'source/acf/ContactFields.php';
 
 // Instantiate and register the autoloader
 $loader = new HbgInherit\Vendor\Psr4ClassLoader();

@@ -7,9 +7,10 @@ class App
     public function __construct()
     {
         add_action('init', array($this, 'addParentOptionsPage'));
-        
+
         new CustomPostType\Text;
         new CustomPostType\OpeningHours;
+        new CustomPostType\Contact;
 
         // Widget
         add_action('widgets_init', function () {
