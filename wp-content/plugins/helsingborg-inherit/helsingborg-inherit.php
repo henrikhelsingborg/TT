@@ -1,9 +1,13 @@
 <?php
 /*
-  Plugin Name: Helsingborg Inherit
-  Description:
-  Version: 1.0
-  Author: Kristoffer Svanmark
+ * Plugin Name: Helsingborg Arvsinnehåll
+ * Plugin URI: -
+ * Description: Skapa innehåll till en widget som kan visas på flera sidor
+ * Version: 1.0
+ * Author: Kristoffer Svanmark
+ * Author URI: -
+ *
+ * Copyright (C) 2015 Helsingborg stad
  */
 
 define('HBG_INHERIT_TEMPLATE_FOLDER', 'hbg-inherit');
