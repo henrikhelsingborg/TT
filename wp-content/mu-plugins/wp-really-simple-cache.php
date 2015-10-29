@@ -75,12 +75,12 @@ Class WpSimpleCache {
 		    mkdir( self::base_dir().self::$cache_folder.self::$domain_name."/" , 0775, true);
 	    }
     }
-    
+
     private static function base_dir() {
 	    if ( defined('WP_SIMPLE_CACHE_BASE_DIR') ) {
-		    return rtrim( WP_SIMPLE_CACHE_BASE_DIR, "/"); 
+		    return rtrim( WP_SIMPLE_CACHE_BASE_DIR, "/");
 	    } else {
-		    return __DIR__; 
+		    return __DIR__;
 	    }
     }
 
@@ -277,6 +277,6 @@ $wp_simple_cache = new WpSimpleCache();
 $wp_simple_cache->init();
 
 //Add timestamp to footer
-add_action('shutdown', function(){
+add_action('wp_footer', function(){
 	echo "\n" . "<!-- Page cache by Really Simple Cache on ".date("Y-m-d H:i:s")."-->" . "\n";
 });
