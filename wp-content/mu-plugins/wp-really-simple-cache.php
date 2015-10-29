@@ -1,6 +1,5 @@
 <?php
-	
-	
+
 	namespace WpSimpleCachePlugin\Cache;
 
 	/*
@@ -34,9 +33,9 @@
 		private static $blocked_urls; 
 		
 		public function __construct() {
-			
+
 			//Setup variables 
-			self::$file_hash 		= md5($_SERVER['REQUEST_URI']); 
+			self::$file_hash 		= md5(rtrim(trim($_SERVER['REQUEST_URI']),"/"));
 			self::$domain_name 		= md5($_SERVER['SERVER_NAME']); 
 			self::$cache_time 		= 60 * 60 * 60 * 24; //In seconds  
 			self::$cache_folder		= "/cache/";
@@ -51,7 +50,7 @@
 		
 		public function init() {
 			//Cache logic 
-			if (!self::blocked_url()) {
+			if (self::is_cachable()) {
 				self::start(); 
 			}
 		}
@@ -60,7 +59,7 @@
 			return self::get_cache_dir().self::$file_hash.".html.gz"; 
 		}
 		
-		private static function get_cache_dir() {
+		public static function get_cache_dir() {
 			return __DIR__.self::$cache_folder.self::$domain_name."/"; 
 		}
 		
@@ -123,7 +122,7 @@
 		
 		//BLOCK SOME URLS FROM CACHE 
 		
-		public static function blocked_url () {
+		public static function is_blocked_url () {
 			
 			if ( is_array( self::$blocked_urls ) && !empty( self::$blocked_urls ) ) {  
 			
@@ -154,15 +153,7 @@
 				return false; 
 			}
 		}
-		
-		private static function is_cachable () {
-			if ( self::blocked_url() && !self::is_logged_in () && !self::is_post_request() && !self::has_get_variable () ) { 
-				return true; 
-			} else {
-				return false; 
-			}
-		}
-		
+
 		private static function is_logged_in () {
 	
 			if ( count( $_COOKIE ) ) {
@@ -179,13 +170,21 @@
 			
 		}
 		
+		private static function is_cachable () {
+			if ( !self::is_blocked_url() && !self::is_logged_in () && !self::is_post_request() && !self::has_get_variable () ) { 
+				return true; 
+			} else {
+				return false; 
+			}
+		}
+		
 		public static function do_warmup () {
 			
 			//Ignore user abort
 			ignore_user_abort(true);
 			set_time_limit(60*5);
 
-			//URL array to get
+			//URL array to get TODO: Make this dynamic somehow. 
 			$urls = array (
 				
 						//Startpage 
@@ -246,8 +245,17 @@
 			return;
 			
 		global $wp_simple_cache; 
-		$wp_simple_cache::clean_cache(); 
-		$wp_simple_cache::do_warmup(); 
+		
+		//Purge only this page, or purge all? 
+		if ( in_array(get_post_type( $post_id ), array("page","post") ) ) {
+			$file_name = $wp_simple_cache::get_cache_dir().md5(parse_url(rtrim(trim(get_permalink( $post_id )),"/"), PHP_URL_PATH )).".html.gz"; 
+			if ( file_exists( $file_name ) ) {
+				unlink($file_name); 
+			} 
+		} else {
+			$wp_simple_cache::clean_cache(); 
+			$wp_simple_cache::do_warmup(); 
+		}
 		
 	}, 999 );
 	
