@@ -60,7 +60,7 @@ Class WpSimpleCache {
 	}
 
 	public static function get_cache_dir() {
-		return __DIR__.self::$cache_folder.self::$domain_name."/";
+		return self::base_dir().self::$cache_folder.self::$domain_name."/";
 	}
 
 	private static function get_cache() {
@@ -68,11 +68,19 @@ Class WpSimpleCache {
     }
 
     public static function setup_folders () {
-	    if ( !is_dir( __DIR__.self::$cache_folder  ) ) {
-		    mkdir( __DIR__.self::$cache_folder , 0775, true);
+	    if ( !is_dir( self::base_dir().self::$cache_folder  ) ) {
+		    mkdir( self::base_dir().self::$cache_folder , 0775, true);
 	    }
-	    if ( !is_dir( __DIR__.self::$cache_folder.self::$domain_name."/" ) ) {
-		    mkdir( __DIR__.self::$cache_folder.self::$domain_name."/" , 0775, true);
+	    if ( !is_dir( self::base_dir().self::$cache_folder.self::$domain_name."/" ) ) {
+		    mkdir( self::base_dir().self::$cache_folder.self::$domain_name."/" , 0775, true);
+	    }
+    }
+    
+    private static function base_dir() {
+	    if ( defined('WP_SIMPLE_CACHE_BASE_DIR') ) {
+		    return rtrim( WP_SIMPLE_CACHE_BASE_DIR, "/"); 
+	    } else {
+		    return __DIR__; 
 	    }
     }
 
