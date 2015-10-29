@@ -83,10 +83,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 </body>
 </html>
-<?php
-	
-	global $wp_really_simple_cache; 
-	if ( $wp_really_simple_cache->is_cachable () ) { 
-		$wp_really_simple_cache->stop($_SERVER['REQUEST_URI']);
-  	}
-  	
