@@ -277,6 +277,6 @@ $wp_simple_cache = new WpSimpleCache();
 $wp_simple_cache->init();
 
 //Add timestamp to footer
-add_action('shutdown', function(){
+add_action('wp_footer', function(){
 	echo "\n" . "<!-- Page cache by Really Simple Cache on ".date("Y-m-d H:i:s")."-->" . "\n";
 });
