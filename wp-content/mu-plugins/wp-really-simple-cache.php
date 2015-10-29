@@ -75,12 +75,12 @@ Class WpSimpleCache {
 		    mkdir( self::base_dir().self::$cache_folder.self::$domain_name."/" , 0775, true);
 	    }
     }
-    
+
     private static function base_dir() {
 	    if ( defined('WP_SIMPLE_CACHE_BASE_DIR') ) {
-		    return rtrim( WP_SIMPLE_CACHE_BASE_DIR, "/"); 
+		    return rtrim( WP_SIMPLE_CACHE_BASE_DIR, "/");
 	    } else {
-		    return __DIR__; 
+		    return __DIR__;
 	    }
     }
 
