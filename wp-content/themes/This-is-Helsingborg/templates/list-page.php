@@ -11,10 +11,10 @@ $listPage = new Theme\ListPage;
 $listPage->setPageId($post->ID);
 $listItems = $listPage->getList();
 
-$centerClasses = 'large-6 medium-6 small-12';
+$centerClasses = 'large-6 medium-8 mobile-menu-12 small-12 print-12';
 
 if (!is_active_sidebar('right-sidebar')) {
-    $centerClasses = 'large-9 medium-9 small-12';
+    $centerClasses = 'large-9 medium-8 mobile-menu-12 small-12 print-12';
 }
 
 //var_dump($listPage->headers);
@@ -39,7 +39,7 @@ get_header();
 
                 <div class="table-list-filter" data-filter-table="#table-list-table" data-filter-table-selector="tbody">
                     <div class="row">
-                        <div class="columns large-11">
+                        <div class="columns small-11">
                             <label class="form-label" for="table-list-filter-input">Sök i listan:</label>
                             <input type="search" data-filter-table-input class="form-control" id="table-list-filter-input">
                         </div>
