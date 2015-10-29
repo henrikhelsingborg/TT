@@ -37,7 +37,7 @@ Class WpSimpleCache {
 		//Setup variables
 		self::$file_hash 		= md5(rtrim(trim($_SERVER['REQUEST_URI']),"/"));
 		self::$domain_name 		= md5($_SERVER['SERVER_NAME']);
-		self::$cache_time 		= 60 * 60 * 60 * 24; //In seconds
+		self::$cache_time 		= 60 * 60 * 60 * 24 * 7; //In seconds
 		self::$cache_folder		= "/cache/";
 
 		//What urls should not be cached?
@@ -108,6 +108,9 @@ Class WpSimpleCache {
 
 			//Write new cache
 			fwrite($file_handle, gzencode($callback_data, 9));
+			
+			//Set correct user rights
+			chmod(self::get_filename(), 0775);
 
 		}
 
@@ -257,7 +260,7 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 			}
 		} else {
 			$wp_simple_cache::clean_cache();
-			$wp_simple_cache::do_warmup();
+			//$wp_simple_cache::do_warmup();
 		}
 	}
 
