@@ -36,6 +36,9 @@
             <div class="columns large-12">
                 <ul class="search-result">
 
+                    <?php if (!isset($searchResult->items) || count($searchResult->items) === 0) : ?>
+                        <li>Din sökning gav tyvärr inga träffar.</li>
+                    <?php else : ?>
                     <?php foreach ($searchResult->items as $item) : ?>
                     <li class="search-result-item">
                         <div class="search-result-item-content">
@@ -48,6 +51,7 @@
                         </div>
                     </li>
                     <?php endforeach; ?>
+                    <?php endif; ?>
 
                 </ul>
             </div>
