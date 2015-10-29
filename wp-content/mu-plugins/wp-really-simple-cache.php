@@ -4,10 +4,10 @@
 	namespace WpSimpleCachePlugin\Cache;
 
 	/*
-	Plugin Name: RSCache
-	Plugin URI:  http://wordpress.org/extend/plugins/health-check
-	Description: Takes load of WordPress frontend by only generating a page once. Purging on save_post hook. 
-	Author:      Sebastian Thulin
+	Plugin Name: Simple File Cache for WordPress
+	Plugin URI:  http://sebastianthulin.se/simple-cache/
+	Description: A Really Simple and effective file-cache for wordpress. 
+	Author:      Sebastian Thulin @ Helsingborg Stad 
 	*/
 	
 	/* Store callback */ //TODO: FIX THIS 
