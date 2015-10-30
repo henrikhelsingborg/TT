@@ -189,59 +189,6 @@ Class WpSimpleCache {
 		}
 	}
 
-	public static function do_warmup () {
-
-		//Ignore user abort
-		ignore_user_abort(true);
-		set_time_limit(60*5);
-
-		//URL array to get TODO: Make this dynamic somehow.
-		$urls = array (
-
-					//Startpage
-					'',
-
-					//Top menus
-					'/startsida/arbete/',
-					'/startsida/arbete/',
-					'/startsida/forskola-och-utbildning/',
-					'/startsida/kommun-och-politik/',
-					'/startsida/omsorg-och-stod/',
-					'/startsida/trafik-och-stadsplanering/',
-					'/startsida/uppleva-och-gora/',
-
-					//Most visited
-					'/startsida/forskola-och-utbildning/',
-					'/startsida/arbete/arbeta-inom-helsingborgs-stad/lediga-jobb-i-helsingborgs-stad/',
-					'/startsida/forskola-och-utbildning/vuxenutbildning/',
-					'/startsida/trafik-och-stadsplanering/trafik-och-byggprojekt/olympia/',
-					'/startsida/uppleva-och-gora/',
-					'/startsida/bo-bygga-och-miljo/',
-					'/startsida/forskola-och-utbildning/vuxenutbildning/ansokan-till-vuxenutbildning/',
-					'/startsida/kommun-och-politik/vid-olyckor-och-kris/larm/',
-
-				);
-
-		//Count number if arrays
-		$url_count = count($urls);
-
-		//Define
-		$curl_array = array();
-		$ch = curl_multi_init();
-
-		//Fetch url
-		foreach($urls as $count => $url) {
-			$curl_array[$count] = curl_init("http://".$_SERVER['SERVER_NAME'].$url);
-			curl_setopt($curl_array[$count], CURLOPT_RETURNTRANSFER, 1);
-			curl_multi_add_handle($ch, $curl_array[$count]);
-		}
-
-		//Wait for it all to end
-		do {
-			curl_multi_exec($ch, $exec);
-		} while($exec > 0);
-
-	}
 }
 
 // Function to pruge a page by wordpress post_id
@@ -260,7 +207,6 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 			}
 		} else {
 			$wp_simple_cache::clean_cache();
-			//$wp_simple_cache::do_warmup();
 		}
 	}
 
