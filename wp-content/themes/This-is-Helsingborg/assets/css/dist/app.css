@@ -5891,7 +5891,7 @@ article + .table {
   .print-only {
     display: block; }
   .vngage-banner {
-    display: none; } }
+    display: none !important; } }
 
 .print-only {
   display: none; }
