@@ -5,7 +5,7 @@ namespace WpSimpleCachePlugin\Cache;
 /*
 Plugin Name: Simple File Cache for WordPress
 Plugin URI:  http://sebastianthulin.se/simple-cache/
-Description: A Really Simple and effective file-cache for wordpress.
+Description: A Simple and Effective File-cache for WordPress.
 Author:      Sebastian Thulin @ Helsingborg Stad
 */
 
@@ -199,7 +199,7 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 
 // Function to pruge a page by wordpress post_id
 if (!function_exists('WpSimpleCache_purge_post_by_id')) {
-	function WpSimpleCache_purge_post_by_id($post_id) {
+	function WpSimpleCache_purge_post_by_id($post_id, $purge_parent_page = true ) {
 		if ( wp_is_post_revision( $post_id ) )
 			return;
 
@@ -207,10 +207,24 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 
 		//Purge only this page, or purge all?
 		if ( in_array(get_post_type( $post_id ), array("page","post") ) ) {
+			
+			//Purge this post 
 			$file_name = $wp_simple_cache::get_cache_dir().md5(parse_url(rtrim(trim(get_permalink( $post_id )),"/"), PHP_URL_PATH )).".html.gz";
 			if ( file_exists( $file_name ) ) {
 				unlink($file_name);
 			}
+			
+			//Purge post parent 
+			if ( $purge_parent_page === true  ) {
+				$post_parent_id = wp_get_post_parent_id( $post_id );  
+				if ( $post_parent_id !== 0 ) {
+					$file_name = $wp_simple_cache::get_cache_dir().md5(parse_url(rtrim(trim(get_permalink( $post_parent_id )),"/"), PHP_URL_PATH )).".html.gz";
+					if ( file_exists( $file_name ) ) {
+						unlink($file_name);
+					}				
+				}
+			}
+			
 		} else {
 			$wp_simple_cache::clean_cache();
 		}
