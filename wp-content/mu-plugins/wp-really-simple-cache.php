@@ -33,6 +33,9 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 		private static $domain_name;
 		private static $cache_time;
 		private static $cache_folder;
+		
+		private static $file_chmod; 
+		private static $dir_chmod; 
 	
 		private static $blocked_urls;
 	
@@ -43,13 +46,17 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 			self::$domain_name 		= md5($_SERVER['SERVER_NAME']);
 			self::$cache_time 		= 60 * 60 * 60 * 24 * 7; //In seconds
 			self::$cache_folder		= "/cache/";
+			
+			//What user mode? 
+			self::$file_chmod 		= 0775; 
+			self::$dir_chmod		= 0775; 
 	
 			//What urls should not be cached?
 			self::$blocked_urls		= array("wp-admin","wp-login","secure");
 	
 			//Setup
 			self::setup_folders();
-	
+			
 		}
 	
 		public function init() {
@@ -77,9 +84,30 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 	
 	    public static function setup_folders () {
 		    if ( !is_dir( self::base_dir().self::$cache_folder.self::$domain_name."/" ) ) {
-			    mkdir( self::base_dir().self::$cache_folder.self::$domain_name."/" , 0775, true);
+			    mkdir( self::base_dir().self::$cache_folder.self::$domain_name."/" , self::$dir_chmod, true);
+			    self::chmod_r(self::base_dir()); //Set user rights 
 		    }
 	    }
+		
+		private static function chmod_r($path, $include_files = false) {
+		   $master_dir = opendir($path);
+		   while($file = readdir($master_dir)) {
+		      if($file != "." AND $file != "..") {
+		         if(is_dir($file)){
+		            chmod($file, self::$dir_chmod);
+		         }else{
+			        if ( $include_files ) {
+				        chmod($path."/".$file, self::$file_chmod);
+			        } 
+		            if(is_dir($path."/".$file)) {
+		            	self::chmod_r($path."/".$file, true );
+		            }
+		         }
+		      }
+		   }
+		   closedir($master_dir);
+		}
+
 	
 	    private static function base_dir() {
 		    if ( defined('WP_SIMPLE_CACHE_BASE_DIR') ) {
@@ -115,7 +143,7 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 				fwrite($file_handle, gzencode($callback_data, 9));
 				
 				//Set correct user rights
-				chmod(self::get_filename(), 0775);
+				chmod(self::get_filename(), self::$file_chmod);
 	
 			}
 	
@@ -135,9 +163,7 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 			    }
 		    }
 	    }
-	
-		//BLOCK SOME URLS FROM CACHE
-	
+
 		public static function is_blocked_url () {
 	
 			if ( is_array( self::$blocked_urls ) && !empty( self::$blocked_urls ) ) {
@@ -193,7 +219,7 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 				return false;
 			}
 		}
-	
+		
 	}
 
 }
