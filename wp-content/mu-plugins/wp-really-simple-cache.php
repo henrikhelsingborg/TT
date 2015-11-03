@@ -28,7 +28,7 @@ global $wp_simple_cache;
 if ( !class_exists( 'WpSimpleCache' ) ) { 
 
 	Class WpSimpleCache {
-	
+		
 		private static $file_hash;
 		private static $domain_name;
 		private static $cache_time;
@@ -76,9 +76,6 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 	    }
 	
 	    public static function setup_folders () {
-		    if ( !is_dir( self::base_dir().self::$cache_folder  ) ) {
-			    mkdir( self::base_dir().self::$cache_folder , 0775, true);
-		    }
 		    if ( !is_dir( self::base_dir().self::$cache_folder.self::$domain_name."/" ) ) {
 			    mkdir( self::base_dir().self::$cache_folder.self::$domain_name."/" , 0775, true);
 		    }
@@ -201,36 +198,47 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 
 }
 
+//Start cache
+if ( class_exists('WpSimpleCachePlugin\Cache\WpSimpleCache') ) { 
+	$wp_simple_cache = new WpSimpleCache();
+	$wp_simple_cache->init();
+}
+
 // Function to pruge a page by wordpress post_id
 if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 	function WpSimpleCache_purge_post_by_id($post_id, $purge_parent_page = true ) {
+		
 		if ( wp_is_post_revision( $post_id ) )
 			return;
 
 		global $wp_simple_cache;
-
-		//Purge only this page, or purge all?
-		if ( in_array(get_post_type( $post_id ), array("page","post") ) ) {
-			
-			//Purge this post 
-			$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink(  $post_id ));
-			if ( file_exists( $file_name ) ) {
-				unlink($file_name);
-			}
-			
-			//Purge post parent 
-			if ( $purge_parent_page === true  ) {
-				$post_parent_id = wp_get_post_parent_id( $post_id );  
-				if ( $post_parent_id !== 0 && is_numeric( $post_parent_id ) ) {
-					$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink( $post_parent_id ));
-					if ( file_exists( $file_name ) ) {
-						unlink($file_name);
-					}				
+		
+		//Determine if init 
+		if ( is_a( $wp_simple_cache, 'WpSimpleCache' ) ) {  
+	
+			//Purge only this page, or purge all?
+			if ( in_array(get_post_type( $post_id ), array("page","post") ) ) {
+				
+				//Purge this post 
+				$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink(  $post_id ));
+				if ( file_exists( $file_name ) ) {
+					unlink($file_name);
 				}
+				
+				//Purge post parent 
+				if ( $purge_parent_page === true  ) {
+					$post_parent_id = wp_get_post_parent_id( $post_id );  
+					if ( $post_parent_id !== 0 && is_numeric( $post_parent_id ) ) {
+						$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink( $post_parent_id ));
+						if ( file_exists( $file_name ) ) {
+							unlink($file_name);
+						}				
+					}
+				}
+				
+			} else {
+				$wp_simple_cache::clean_cache();
 			}
-			
-		} else {
-			$wp_simple_cache::clean_cache();
 		}
 	}
 
@@ -244,10 +252,6 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 		}
 	});
 }
-
-//Start cache here (not in a hook)
-$wp_simple_cache = new WpSimpleCache();
-$wp_simple_cache->init();
 
 //Add timestamp to footer
 add_action('wp_footer', function(){
