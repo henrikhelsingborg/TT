@@ -42,7 +42,7 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 		public function __construct() {
 	
 			//Setup variables
-			self::$file_hash 		= md5(rtrim(trim($_SERVER['REQUEST_URI']),"/"));
+			self::$file_hash 		= md5(rtrim(trim(strtolower($_SERVER['REQUEST_URI'])),"/"));
 			self::$domain_name 		= md5($_SERVER['SERVER_NAME']);
 			self::$cache_time 		= 60 * 60 * 60 * 24 * 7; //In seconds
 			self::$cache_folder		= "/cache/";
