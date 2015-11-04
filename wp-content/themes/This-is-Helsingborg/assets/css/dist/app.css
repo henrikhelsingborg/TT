@@ -4216,8 +4216,13 @@ p {
   width: 100%;
   background: #fff;
   color: #252525; }
+  .modal-content .box-content, .modal-content .section-featured .widget_text .textwidget, .section-featured .widget_text .modal-content .textwidget,
+  .modal-content .article-header .widget_text .textwidget, .article-header .widget_text .modal-content .textwidget {
+    color: #252525 !important;
+    padding: 10px !important;
+    border: 1px solid #e7e5e1; }
   .modal-content a {
-    color: #cb0050;
+    color: #cb0050 !important;
     text-decoration: none; }
     .modal-content a:hover {
       text-decoration: underline; }
@@ -4744,8 +4749,8 @@ p {
   position: relative; }
 
 .padding-x1, [class*="sidebar-"] .widget_alarmlistalarm-widget .box-content, [class*="sidebar-"] .widget_alarmlistalarm-widget .section-featured .widget_text .textwidget, .section-featured .widget_text [class*="sidebar-"] .widget_alarmlistalarm-widget .textwidget,
-[class*="sidebar-"] .widget_alarmlistalarm-widget .article-header .widget_text .textwidget, .article-header .widget_text [class*="sidebar-"] .widget_alarmlistalarm-widget .textwidget, [class^="sidebar-"] .widget_eventlistwidget .box-content, [class^="sidebar-"] .widget_eventlistwidget .section-featured .widget_text .textwidget, .section-featured .widget_text [class^="sidebar-"] .widget_eventlistwidget .textwidget,
-[class^="sidebar-"] .widget_eventlistwidget .article-header .widget_text .textwidget, .article-header .widget_text [class^="sidebar-"] .widget_eventlistwidget .textwidget, .hbg-social-feed {
+[class*="sidebar-"] .widget_alarmlistalarm-widget .article-header .widget_text .textwidget, .article-header .widget_text [class*="sidebar-"] .widget_alarmlistalarm-widget .textwidget, [class^="sidebar-"] .widget_eventlistwidget > .box-content, [class^="sidebar-"] .section-featured .widget_text .widget_eventlistwidget > .textwidget, .section-featured .widget_text [class^="sidebar-"] .widget_eventlistwidget > .textwidget,
+[class^="sidebar-"] .article-header .widget_text .widget_eventlistwidget > .textwidget, .article-header .widget_text [class^="sidebar-"] .widget_eventlistwidget > .textwidget, .hbg-social-feed {
   padding: 10px !important; }
 
 .padding-x1-5, [class^="sidebar-"] .widget_text .textwidget {
@@ -5375,8 +5380,8 @@ article + .table {
   margin-bottom: 0;
   margin-top: 10px; }
 
-[class^="sidebar-"] .widget_eventlistwidget .box-content, [class^="sidebar-"] .widget_eventlistwidget .section-featured .widget_text .textwidget, .section-featured .widget_text [class^="sidebar-"] .widget_eventlistwidget .textwidget,
-[class^="sidebar-"] .widget_eventlistwidget .article-header .widget_text .textwidget, .article-header .widget_text [class^="sidebar-"] .widget_eventlistwidget .textwidget {
+[class^="sidebar-"] .widget_eventlistwidget > .box-content, [class^="sidebar-"] .section-featured .widget_text .widget_eventlistwidget > .textwidget, .section-featured .widget_text [class^="sidebar-"] .widget_eventlistwidget > .textwidget,
+[class^="sidebar-"] .article-header .widget_text .widget_eventlistwidget > .textwidget, .article-header .widget_text [class^="sidebar-"] .widget_eventlistwidget > .textwidget {
   margin-top: -10px !important; }
 
 [class^="sidebar-"] .widget_eventlistwidget .event-item {
@@ -5771,8 +5776,8 @@ article + .table {
 .widget-content-holder {
   padding: 15px; }
 
-[class^="sidebar-"] .box-content, [class^="sidebar-"] .section-featured .widget_text .textwidget, .section-featured .widget_text [class^="sidebar-"] .textwidget,
-[class^="sidebar-"] .article-header .widget_text .textwidget, .article-header .widget_text [class^="sidebar-"] .textwidget {
+[class^="sidebar-"] .widget > .box-content, [class^="sidebar-"] .section-featured .widget_text .widget > .textwidget, .section-featured .widget_text [class^="sidebar-"] .widget > .textwidget,
+[class^="sidebar-"] .article-header .widget_text .widget > .textwidget, .article-header .widget_text [class^="sidebar-"] .widget > .textwidget {
   padding-top: 0 !important; }
 
 [class^="sidebar-"] .widget_helsingborgpostinheritwidget img {

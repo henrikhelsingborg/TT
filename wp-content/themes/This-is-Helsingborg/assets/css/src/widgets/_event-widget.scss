@@ -1,5 +1,6 @@
 [class^="sidebar-"] .widget_eventlistwidget {
-    .box-content {
+
+    > .box-content {
         @extend .padding-x1;
         margin-top: -10px !important;
     }

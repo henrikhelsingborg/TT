@@ -27,8 +27,14 @@
     background: #fff;
     color: $text-default;
 
+    .box-content {
+        color: $text-default !important;
+        padding: 10px !important;
+        border: 1px solid $creamy-darker;
+    }
+
     a {
-        color: $palette-red-2;
+        color: $palette-red-2 !important;
         text-decoration: none;
 
         &:hover {
