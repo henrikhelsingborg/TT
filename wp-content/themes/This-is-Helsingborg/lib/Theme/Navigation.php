@@ -72,6 +72,11 @@ class Navigation
             foreach ($children as $child) {
                 delete_transient('menu_mobile_'.$child->ID);
                 delete_transient('menu_'.$child->ID);
+
+                // Empty W3 Total Cache
+                if (function_exists('\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id')) {
+                    \WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id($postId);
+                }
             }
         }
     }
