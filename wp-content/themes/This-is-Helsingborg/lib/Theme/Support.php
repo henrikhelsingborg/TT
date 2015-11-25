@@ -14,7 +14,7 @@ class Support
         add_filter('srm_max_redirects', array($this, 'srmMaxRedirects'));
         add_action('template_redirect', array($this, 'blockAuthorPages'), 5);
         add_action('init', array($this, 'removePostPostType'), 11);
-	   
+
     }
 
     /**
@@ -27,7 +27,6 @@ class Support
 
         if (isset($wp_post_types['post'])) {
             if (!defined("WP_ENABLE_POSTS") || (defined("WP_ENABLE_POSTS") && WP_ENABLE_POSTS !== true)) {
-                unset($wp_post_types['post']);
                 add_action('admin_menu', function () {
                     remove_menu_page('edit.php');
                 });
