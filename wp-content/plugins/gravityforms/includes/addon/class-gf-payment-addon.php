@@ -59,7 +59,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 
 		add_filter( 'gform_confirmation', array( $this, 'confirmation' ), 20, 4 );
 
-		add_filter( 'gform_validation', array( $this, 'validation' ), 20 );
+		add_filter( 'gform_validation', array( $this, 'maybe_validate' ), 20 );
 		add_filter( 'gform_entry_post_save', array( $this, 'entry_post_save' ), 10, 2 );
 
 	}
@@ -80,16 +80,6 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 			add_action( 'gform_payment_details', array( $this, 'entry_info' ), 10, 2 );
 			add_filter( 'gform_enable_entry_info_payment_details', array( $this, 'disable_entry_info_payment' ), 10, 2 );
 		}
-	}
-	
-	public function init_frontend() {
-		
-		parent::init_frontend();
-		
-		add_filter( 'gform_register_init_scripts', array( $this, 'register_creditcard_token_script' ), 10, 3 );
-		add_filter( 'gform_field_content', array( $this, 'add_creditcard_token_input' ), 10, 5 );
-		add_filter( 'gform_form_args', array( $this, 'force_ajax_for_creditcard_tokens' ), 10, 1 );
-		
 	}
 
 	public function init_frontend() {
@@ -203,9 +193,34 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 
 	}
 
+	/**
+	 * Check if the rest of the form has passed validation, is the last page, and that the honeypot field has not been completed.
+	 *
+	 * @param array $validation_result Contains the validation result, the form object, and the failed validation page number.
+	 *
+	 * @return array $validation_result
+	 */
+	public function maybe_validate( $validation_result ) {
+
+		$form            = $validation_result['form'];
+		$is_last_page    = GFFormDisplay::is_last_page( $form );
+		$failed_honeypot = false;
+
+		if ( $is_last_page && rgar( $form, 'enableHoneypot' ) ) {
+			$honeypot_id     = GFFormDisplay::get_max_field_id( $form ) + 1;
+			$failed_honeypot = ! rgempty( "input_{$honeypot_id}" );
+		}
+
+		if ( ! $validation_result['is_valid'] || ! $is_last_page || $failed_honeypot ) {
+			return $validation_result;
+		}
+
+		return $this->validation( $validation_result );
+	}
+
 	public function validation( $validation_result ) {
 
-		if ( ! $validation_result['is_valid'] || ! GFFormDisplay::is_last_page( $validation_result['form'] ) ) {
+		if ( ! $validation_result['is_valid'] ) {
 			return $validation_result;
 		}
 
@@ -508,7 +523,14 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 		$txn_id = $wpdb->insert_id;
 
 		/**
+		 * Fires after a payment transaction is created in Gravity Forms
 		 *
+		 * @param int $txn_id The overall Transaction ID
+		 * @param int $entry_id The new Entry ID
+		 * @param string $transaction_type The Type of transaction that was made
+		 * @param int $transaction_id The transaction ID
+		 * @param string $amount The amount payed in the transaction
+		 * @param bool $is_recurring True or false if this is an ongoing payment
 		 */
 		do_action( 'gform_post_payment_transaction', $txn_id, $entry_id, $transaction_type, $transaction_id, $amount, $is_recurring );
 		if ( has_filter( 'gform_post_payment_transaction' ) ) {
@@ -622,7 +644,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 		foreach ( $products['products'] as $field_id => $product ) {
 
 			$quantity      = $product['quantity'] ? $product['quantity'] : 1;
-			$product_price = GFCommon::to_number( $product['price'] );
+			$product_price = GFCommon::to_number( $product['price'], $entry['currency'] );
 
 			$options = array();
 			if ( is_array( rgar( $product, 'options' ) ) ) {
@@ -668,7 +690,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 					'name'        => $product['name'],
 					'description' => $description,
 					'quantity'    => $quantity,
-					'unit_price'  => GFCommon::to_number( $product_price ),
+					'unit_price'  => GFCommon::to_number( $product_price, $entry['currency'] ),
 					'options'     => rgar( $product, 'options' )
 				);
 			} else {
@@ -677,14 +699,14 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 					'name'        => $product['name'],
 					'description' => $description,
 					'quantity'    => $quantity,
-					'unit_price'  => GFCommon::to_number( $product_price ),
+					'unit_price'  => GFCommon::to_number( $product_price, $entry['currency'] ),
 					'options'     => rgar( $product, 'options' )
 				);
 			}
 		}
 
 		if ( $trial_field == 'enter_amount' ) {
-			$trial_amount = rgar( $feed['meta'], 'trial_amount' ) ? GFCommon::to_number( rgar( $feed['meta'], 'trial_amount' ) ) : 0;
+			$trial_amount = rgar( $feed['meta'], 'trial_amount' ) ? GFCommon::to_number( rgar( $feed['meta'], 'trial_amount' ), $entry['currency'] ) : 0;
 		}
 
 		if ( ! empty( $products['shipping']['name'] ) && ! is_numeric( $payment_field ) ) {
@@ -693,7 +715,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 				'name'        => $products['shipping']['name'],
 				'description' => '',
 				'quantity'    => 1,
-				'unit_price'  => GFCommon::to_number( $products['shipping']['price'] ),
+				'unit_price'  => GFCommon::to_number( $products['shipping']['price'], $entry['currency'] ),
 				'is_shipping' => 1
 			);
 			$amount += $products['shipping']['price'];
@@ -975,7 +997,6 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 		$entry['payment_amount']   = rgar( $action, 'amount' );
 		$entry['payment_date']     = $action['payment_date'];
 		$entry['payment_method']   = rgar( $action, 'payment_method' );
-		$entry['currency']         = GFCommon::get_currency();
 
 		if ( ! rgar( $action, 'note' ) ) {
 			$amount_formatted = GFCommon::to_money( $action['amount'], $entry['currency'] );
@@ -1138,6 +1159,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 
 			$result = GFAPI::update_entry( $entry );
 			$this->add_note( $entry['id'], sprintf( esc_html__( 'Subscription has been created. Subscription Id: %s.', 'gravityforms' ), $subscription['subscription_id'] ), 'success' );
+
 
 			/**
 			 * Fires when someone starts a subscription
@@ -1436,7 +1458,6 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 
 	public function requires_credit_card_message() {
 		$url = add_query_arg( array( 'view' => null, 'subview' => null ) );
-
 
 		return sprintf( esc_html__( "You must add a Credit Card field to your form before creating a feed. Let's go %sadd one%s!", 'gravityforms' ), "<a href='" . esc_url( $url ) . "'>", '</a>' );
 	}
@@ -2374,134 +2395,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 
 		return array_merge( parent::scripts(), $scripts );
 	}
-	
-		
-	//----- Javascript Credit Card Tokens ----
-	/**
-	 * Override to support creating credit card tokens via Javascript.
-	 * 
-	 * @access public
-	 * @param mixed $form
-	 * @return array
-	 */
-	public function creditcard_token_info( $form ) {
-		
-		return array();
-		
-	}
-	
-	/**
-	 * Add input field for credit card token response.
-	 * 
-	 * @access public
-	 * @param string $content
-	 * @param array $field
-	 * @param string $value
-	 * @param string $entry_id
-	 * @param string $form_id
-	 * @return string
-	 */
-	public function add_creditcard_token_input( $content, $field, $value, $entry_id, $form_id ) {
-		
-		if ( ! $this->has_feed( $form_id ) || GFFormsModel::get_input_type( $field ) != 'creditcard' ) {
-			return $content;
-		}
-		
-		$form = GFAPI::get_form( $form_id );
-		if ( ! $this->creditcard_token_info( $form ) ) {
-			return $content;
-		}
-		
-		$slug     = str_replace( 'gravityforms', '', $this->_slug );
-		$content .= '<input type=\'hidden\' name=\'' . $slug . '_response\' id=\'gf_' . $slug . '_response\' value=\'' . rgpost( $slug . '_response' ) . '\' />';
-		
-		return $content;
-		
-	} 
 
-	/**
-	 * Enables AJAX for forms that create credit card tokens via Javascript.
-	 * 
-	 * @access public
-	 * @param array $args
-	 * @return array
-	 */
-	public function force_ajax_for_creditcard_tokens( $args ) {
-		
-		$form = GFAPI::get_form( rgar( $args, 'form_id' ) );
-		
-		$args['ajax'] = $this->enqueue_creditcard_token_script( $form ) ? true : $args['ajax'];
-		
-		return $args;
-		
-	}
-	
-	/**
-	 * Determines if GFToken script should be enqueued.
-	 * 
-	 * @access public
-	 * @param array $form
-	 * @return bool
-	 */
-	public function enqueue_creditcard_token_script( $form ) {
-		
-		return $form && $this->has_feed( $form['id'] ) && $this->creditcard_token_info( $form );
-		
-	}
-	
-	/**
-	 * Prepare Javascript for creating credit card tokens.
-	 * 
-	 * @access public
-	 * @param array $form
-	 * @param array $field_values
-	 * @param bool $is_ajax
-	 * @return void
-	 */
-	public function register_creditcard_token_script( $form, $field_values, $is_ajax ) {
-		
-		if ( ! $this->enqueue_creditcard_token_script( $form ) ) {
-			return;
-		}
-		
-		/* Prepare GFToken object. */
-		$gftoken = array(
-			'callback'      => 'GF_' . str_replace( ' ', '', $this->_short_title ),
-			'feeds'         => $this->creditcard_token_info( $form ),
-			'formId'        => rgar( $form, 'id' ),
-			'hasPages'      => GFCommon::has_pages( $form ),
-			'pageCount'     => GFFormDisplay::get_max_page_number( $form ),
-			'responseField' => '#gf_' . str_replace( 'gravityforms', '', $this->_slug ) . '_response'
-		);
-		
-		/* Get needed fields. */
-		$gftoken['fields'] = $this->get_creditcard_token_entry_fields( $gftoken['feeds'] );
-		
-		$script = 'new GFToken( ' . json_encode( $gftoken ) . ' );';
-		GFFormDisplay::add_init_script( $form['id'], 'GFToken', GFFormDisplay::ON_PAGE_RENDER, $script );
-
-	}
-	
-	/**
-	 * Get needed fields for creating credit card tokens.
-	 * 
-	 * @access public
-	 * @param array $feeds
-	 * @return array $fields
-	 */
-	public function get_creditcard_token_entry_fields( $feeds ) {
-		
-		$fields = array();
-		
-		foreach ( $feeds as $feed ) {
-			foreach ( $feed['billing_fields'] as $billing_field ) {
-				$fields[] = $billing_field;
-			}
-		}
-		 
-		return array_unique( $fields );
-		
-	}
 
 	//----- Javascript Credit Card Tokens ----
 	/**
