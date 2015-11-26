@@ -9,6 +9,8 @@ Description: A Simple and Effective File-cache for WordPress.
 Author:      Sebastian Thulin @ Helsingborg Stad
 */
 
+if ( $_SERVER['REMOTE_ADDR'] == "217.115.39.28" ) { 
+
 /* Store callback */ //TODO: FIX THIS
 if ( !function_exists( 'wp_simple_cache_plugin_end' ) ) { 
 	function wp_simple_cache_plugin_end ( $data ) {
@@ -283,3 +285,4 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 add_action('wp_footer', function(){
 	echo "\n" . "<!-- Page cache by Really Simple Cache on ".date("Y-m-d H:i:s")."-->" . "\n";
 });
+}
