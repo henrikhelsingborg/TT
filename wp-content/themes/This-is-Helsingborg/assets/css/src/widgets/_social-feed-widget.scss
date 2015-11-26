@@ -123,6 +123,10 @@
             margin-left: 60px;
             font-size: 10pt;
             line-height: 140%;
+
+            article {
+                @include word-wrap();
+            }
         }
 
         .hbg-social-feed-post-attachment {
@@ -139,17 +143,26 @@
             }
         }
 
+        .read-more {
+            color: #fff;
+        }
+
         .hbg-social-feed-post-attachment {
-            border: 1px solid #f1f1f1;
-            border-radius: 5px;
+            border: 1px solid rgba(#fff, .5);
+            border-radius: 3px;
             padding: 5px 8px;
             font-size: 8pt;
             line-height: 140%;
             margin-top: 8px;
-            color: #555;
+            color: #fff;
+            text-decoration: none;
+
+            &:hover {
+                border-color: #fff;
+            }
 
             .hbg-social-feed-post-attachment-title {
-                color: #555;
+                color: #fff;
                 font-weight: bold;
                 display: block;
             }
@@ -160,7 +173,7 @@
 
             .hbg-social-feed-post-attachment-caption {
                 font-size: 7pt;
-                color: #999;
+                color: rgba(#fff, .8);
             }
         }
     }

@@ -8,13 +8,16 @@
 
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
+# and "mu-plugins"
 wp-content/*
 !wp-content/plugins/
+!wp-content/mu-plugins/
 !wp-content/themes/
 
 # Ignore everything in the "plugins" directory, except the plugins listed below
 wp-content/plugins/*
 !wp-content/plugins/advanced-custom-fields
+!wp-content/plugins/advanced-custom-fields-pro
 !wp-content/plugins/all-in-one-seo-pack
 !wp-content/plugins/all-in-one-wp-security-and-firewall
 !wp-content/plugins/bulk-user-management
@@ -32,11 +35,13 @@ wp-content/plugins/*
 !wp-content/plugins/tablepress
 !wp-content/plugins/w3-total-cache
 !wp-content/plugins/wp-page-widget
-!wp-content/plugins/helsingborg-post-inherit-widget
 !wp-content/plugins/helsingborg-extra-mer
 !wp-content/plugins/helsingborg-kultur
 !wp-content/plugins/helsingborg-help-widget
 !wp-content/plugins/shortcodes-ultimate
+!wp-content/plugins/disable-comments
+!wp-content/plugins/helsingborg-news
+!wp-content/plugins/helsingborg-inherit
 
 # Ignore everything in the "themes" directory, except the Helsingborg theme
 wp-content/themes/*
@@ -44,6 +49,11 @@ wp-content/themes/*
 !wp-content/themes/Helsingborg-school/
 !wp-content/themes/Helsingborg-culture/
 !wp-content/themes/This-is-Helsingborg/
+wp-content/themes/This-is-Helsingborg/.DS_Store
 
 # Ignore log file
 wp-content/plugins/all-in-one-wp-security-and-firewall/logs/wp-security-log.txt
+wp-content/plugins/all-in-one-wp-security-and-firewall/logs/wp-security-log-cron.txt
+
+# Ignore cache file
+wp-content/mu-plugins/cache/*

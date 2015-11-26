@@ -2,13 +2,15 @@
 
 namespace Helsingborg\Helper;
 
-class Rss {
+class Rss
+{
     /**
      * Formats timestamp to RSS format
      * @param  String $timestamp Unformatted timestamp
      * @return String            Formatted timestamp
      */
-    public static function helsingborg_rss_date($timestamp = null) {
+    public static function helsingborgRssDate($timestamp = null)
+    {
         $timestamp = ($timestamp == null) ? time() : strtotime($timestamp);
         return date(DATE_RSS, $timestamp);
     }
@@ -20,10 +22,15 @@ class Rss {
      * @param  string $replacer  Suffix
      * @return string            The limited string
      */
-    public static function helsingborg_rss_text_limit($string, $length, $replacer = '...') {
+    public static function helsingborgRssTextLimit($string, $length, $replacer = '...')
+    {
         $string = strip_tags($string);
-        if(strlen($string) > $length) {
-            return (preg_match('/^(.*)\W.*$/', substr($string, 0, $length+1), $matches) ? $matches[1] : substr($string, 0, $length)) . $replacer;
+        if (strlen($string) > $length) {
+            if (preg_match('/^(.*)\W.*$/', substr($string, 0, $length+1), $matches)) {
+                return  $matches[1];
+            } else {
+                return substr($string, 0, $length) . $replacer;
+            }
         } else {
             return $string;
         }

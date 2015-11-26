@@ -37,7 +37,7 @@
     background-color: $text-default;
     color: #fff;
     border-radius: 3px;
-    font-size: 12pt;
+    font-size: $tooltip-font-size;
 
     &::before {
         content: "";

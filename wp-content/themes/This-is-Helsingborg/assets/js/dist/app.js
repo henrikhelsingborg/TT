@@ -248,7 +248,7 @@ Helsingborg.Event.List = (function ($) {
 
             // Find and loop all event-lists on the page
             $('[data-event-list]').each(function (index, element) {
-                this.init(element)
+                this.init(element);
             }.bind(this));
 
         }.bind(this));
@@ -263,7 +263,7 @@ Helsingborg.Event.List = (function ($) {
         this.options = this.getOptions(element);
         this.getEvents(element);
         this.handleClickEvent(element);
-    }
+    };
 
     List.prototype.handleClickEvent = function(element) {
         $(document).on('click', '.event-item:not(.featured)', function(e) {
@@ -307,7 +307,7 @@ Helsingborg.Event.List = (function ($) {
                 $('#time-modal').prepend(html);
                 $('.event-times-loading').hide();
 
-                if (dates.length == 0) {
+                if (dates.length === 0) {
                     $('#event-times').hide();
                 }
             });
@@ -334,7 +334,7 @@ Helsingborg.Event.List = (function ($) {
             });
 
             // Output information            
-            if (clickedEvent.ImagePath != "") {
+            if (clickedEvent.ImagePath !== "") {
                 $('.modal-image').attr('src', clickedEvent.ImagePath);
             } else {
                 $('.modal-image').attr('src', '/wp-content/themes/This-is-Helsingborg/assets/images/event-placeholder.jpg');
@@ -352,11 +352,11 @@ Helsingborg.Event.List = (function ($) {
             $('.modal-ics a').attr('href', '?ics=' + clickedEvent.EventID);
 
         }.bind(this));
-    }
+    };
 
     List.prototype.nl2br = function(str) {
         return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2');
-    }
+    };
 
     /**
      * Get and append calendar events
@@ -372,8 +372,12 @@ Helsingborg.Event.List = (function ($) {
 
         $.post(ajaxurl, data, function(response) {
             var $element = $(element);
-
             var obj = JSON.parse(response);
+
+            if (obj.events.length === 0) {
+                $(element).closest('.widget').remove();
+            }
+
             this.events = obj.events;
 
             // Remove loading icon
@@ -387,7 +391,7 @@ Helsingborg.Event.List = (function ($) {
             }
 
         }.bind(this));
-    }
+    };
 
     /**
      * Get the options set in hte data-event-list html attribute
@@ -398,7 +402,7 @@ Helsingborg.Event.List = (function ($) {
         var options = $(element).data('event-list');
         options = options.replace(/'/g, "\"");
         return JSON.parse(options);
-    }
+    };
 
     return new List();
 
@@ -1153,7 +1157,7 @@ Helsingborg.TableList.Sorting = (function ($) {
 /*
  * Foundation Responsive Library
  * http://foundation.zurb.com
- * Copyright 2014, ZURB
+ * Copyright 2015, ZURB
  * Free to use under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
 */
@@ -1162,14 +1166,12 @@ Helsingborg.TableList.Sorting = (function ($) {
   'use strict';
 
   var header_helpers = function (class_array) {
-    var i = class_array.length;
     var head = $('head');
-
-    while (i--) {
-      if (head.has('.' + class_array[i]).length === 0) {
-        head.append('<meta class="' + class_array[i] + '" />');
+    head.prepend($.map(class_array, function (class_name) {
+      if (head.has('.' + class_name).length === 0) {
+        return '<meta class="' + class_name + '" />';
       }
-    }
+    }));
   };
 
   header_helpers([
@@ -1442,21 +1444,30 @@ Helsingborg.TableList.Sorting = (function ($) {
     return string;
   }
 
+  function MediaQuery(selector) {
+    this.selector = selector;
+    this.query = '';
+  }
+
+  MediaQuery.prototype.toString = function () {
+    return this.query || (this.query = S(this.selector).css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''));
+  };
+
   window.Foundation = {
     name : 'Foundation',
 
-    version : '5.5.2',
+    version : '5.5.3',
 
     media_queries : {
-      'small'       : S('.foundation-mq-small').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'small-only'  : S('.foundation-mq-small-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'medium'      : S('.foundation-mq-medium').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'medium-only' : S('.foundation-mq-medium-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'large'       : S('.foundation-mq-large').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'large-only'  : S('.foundation-mq-large-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'xlarge'      : S('.foundation-mq-xlarge').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'xlarge-only' : S('.foundation-mq-xlarge-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'xxlarge'     : S('.foundation-mq-xxlarge').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, '')
+      'small'       : new MediaQuery('.foundation-mq-small'),
+      'small-only'  : new MediaQuery('.foundation-mq-small-only'),
+      'medium'      : new MediaQuery('.foundation-mq-medium'),
+      'medium-only' : new MediaQuery('.foundation-mq-medium-only'),
+      'large'       : new MediaQuery('.foundation-mq-large'),
+      'large-only'  : new MediaQuery('.foundation-mq-large-only'),
+      'xlarge'      : new MediaQuery('.foundation-mq-xlarge'),
+      'xlarge-only' : new MediaQuery('.foundation-mq-xlarge-only'),
+      'xxlarge'     : new MediaQuery('.foundation-mq-xxlarge')
     },
 
     stylesheet : $('<style></style>').appendTo('head')[0].sheet,
@@ -1882,7 +1893,7 @@ Helsingborg.TableList.Sorting = (function ($) {
   Foundation.libs.equalizer = {
     name : 'equalizer',
 
-    version : '5.5.2',
+    version : '5.5.3',
 
     settings : {
       use_tallest : true,
@@ -2390,7 +2401,7 @@ Helsingborg.TableList.Sorting = (function ($) {
   Foundation.libs.orbit = {
     name : 'orbit',
 
-    version : '5.5.2',
+    version : '5.5.3',
 
     settings : {
       animation : 'slide',
@@ -2871,7 +2882,7 @@ $.fn.zmultiselect = function(methodOrOptions) {
 })( jQuery );
 
 /**
- * @preserve jQuery DateTimePicker plugin v2.4.3
+ * @preserve jQuery DateTimePicker plugin v2.4.5
  * @homepage http://xdsoft.net/jqplugins/datetimepicker/
  * (c) 2014, Chupurnov Valeriy.
  */
@@ -2902,6 +2913,14 @@ $.fn.zmultiselect = function(methodOrOptions) {
 				],
 				dayOfWeek: [
 					"Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"
+				]
+			},
+			is: { // Icelandic
+				months: [
+					"Janúar", "Febrúar", "Mars", "Apríl", "Maí", "Júní", "Júlí", "Ágúst", "September", "Október", "Nóvember", "Desember"
+				],
+				dayOfWeek: [
+					"Sun", "Mán", "Þrið", "Mið", "Fim", "Fös", "Lau"
 				]
 			},
 			bg: { // Bulgarian
@@ -3332,6 +3351,8 @@ $.fn.zmultiselect = function(methodOrOptions) {
 		maxDate: false,
 		minTime: false,
 		maxTime: false,
+		disabledMinTime: false,
+		disabledMaxTime: false,
 
 		allowTimes: [],
 		opened: false,
@@ -3383,6 +3404,7 @@ $.fn.zmultiselect = function(methodOrOptions) {
 		highlightedDates: [],
 		highlightedPeriods: [],
 		disabledDates : [],
+		disabledWeekDays: [],
 		yearOffset: 0,
 		beforeShowDay: null,
 
@@ -3390,6 +3412,24 @@ $.fn.zmultiselect = function(methodOrOptions) {
         showApplyButton: false
 	};
 	// fix for ie8
+	if (!window.getComputedStyle) {
+		window.getComputedStyle = function (el, pseudo) {
+			this.el = el;
+			this.getPropertyValue = function (prop) {
+				var re = /(\-([a-z]){1})/g;
+				if (prop === 'float') {
+					prop = 'styleFloat';
+				}
+				if (re.test(prop)) {
+					prop = prop.replace(re, function (a, b, c) {
+						return c.toUpperCase();
+					});
+				}
+				return el.currentStyle[prop] || null;
+			};
+			return this;
+		};
+	}
 	if (!Array.prototype.indexOf) {
 		Array.prototype.indexOf = function (obj, start) {
 			var i, j;
@@ -3607,7 +3647,7 @@ $.fn.zmultiselect = function(methodOrOptions) {
 			};
 
 		createDateTimePicker = function (input) {
-			var datetimepicker = $('<div ' + (options.id ? 'id="' + options.id + '"' : '') + ' ' + (options.style ? 'style="' + options.style + '"' : '') + ' class="xdsoft_datetimepicker xdsoft_' + options.theme + ' xdsoft_noselect ' + (options.weeks ? ' xdsoft_showweeks' : '') + options.className + '"></div>'),
+			var datetimepicker = $('<div class="xdsoft_datetimepicker xdsoft_noselect"></div>'),
 				xdsoft_copyright = $('<div class="xdsoft_copyright"><a target="_blank" href="http://xdsoft.net/jqplugins/datetimepicker/">xdsoft.net</a></div>'),
 				datepicker = $('<div class="xdsoft_datepicker active"></div>'),
 				mounth_picker = $('<div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev"></button><button type="button" class="xdsoft_today_button"></button>' +
@@ -3618,7 +3658,7 @@ $.fn.zmultiselect = function(methodOrOptions) {
 				timepicker = $('<div class="xdsoft_timepicker active"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box"></div><button type="button" class="xdsoft_next"></button></div>'),
 				timeboxparent = timepicker.find('.xdsoft_time_box').eq(0),
 				timebox = $('<div class="xdsoft_time_variant"></div>'),
-                applyButton = $('<button class="xdsoft_save_selected blue-gradient-button">Save Selected</button>'),
+                applyButton = $('<button type="button" class="xdsoft_save_selected blue-gradient-button">Save Selected</button>'),
 				/*scrollbar = $('<div class="xdsoft_scrollbar"></div>'),
 				scroller = $('<div class="xdsoft_scroller"></div>'),*/
 				monthselect = $('<div class="xdsoft_select xdsoft_monthselect"><div></div></div>'),
@@ -3633,6 +3673,19 @@ $.fn.zmultiselect = function(methodOrOptions) {
 				timer = 0,
 				timer1 = 0,
 				_xdsoft_datetime;
+
+			if (options.id) {
+				datetimepicker.attr('id', options.id);
+			}
+			if (options.style) {
+				datetimepicker.attr('style', options.style);
+			}
+			if (options.weeks) {
+				datetimepicker.addClass('xdsoft_showweeks');
+			}
+
+			datetimepicker.addClass('xdsoft_' + options.theme);
+			datetimepicker.addClass(options.className);
 
 			mounth_picker
 				.find('.xdsoft_month span')
@@ -3806,6 +3859,10 @@ $.fn.zmultiselect = function(methodOrOptions) {
 
 				if (_options.disabledDates && $.isArray(_options.disabledDates) && _options.disabledDates.length) {
 					options.disabledDates = $.extend(true, [], _options.disabledDates);
+				}
+
+				if (_options.disabledWeekDays && $.isArray(_options.disabledWeekDays) && _options.disabledWeekDays.length) {
+				    options.disabledWeekDays = $.extend(true, [], _options.disabledWeekDays);
 				}
 
 				if ((options.open || options.opened) && (!options.inline)) {
@@ -4197,6 +4254,18 @@ $.fn.zmultiselect = function(methodOrOptions) {
 					_xdsoft_datetime.setCurrentTime(0);
 					datetimepicker.trigger('afterOpen.xdsoft');
 				}).on('dblclick.xdsoft', function () {
+					var currentDate = _xdsoft_datetime.getCurrentTime(), minDate, maxDate;
+					currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+					minDate = _xdsoft_datetime.strToDate(options.minDate);
+					minDate = new Date(minDate.getFullYear(), minDate.getMonth(), minDate.getDate());
+					if (currentDate < minDate) {
+						return;
+					}
+					maxDate = _xdsoft_datetime.strToDate(options.maxDate);
+					maxDate = new Date(maxDate.getFullYear(), maxDate.getMonth(), maxDate.getDate());
+					if (currentDate > maxDate) {
+						return;
+					}
 					input.val(_xdsoft_datetime.str());
 					datetimepicker.trigger('close.xdsoft');
 				});
@@ -4276,6 +4345,7 @@ $.fn.zmultiselect = function(methodOrOptions) {
 							maxDate = false,
 							minDate = false,
 							hDate,
+							day,
 							d,
 							y,
 							m,
@@ -4319,6 +4389,7 @@ $.fn.zmultiselect = function(methodOrOptions) {
 							classes = [];
 							i += 1;
 
+							day = start.getDay();
 							d = start.getDate();
 							y = start.getFullYear();
 							m = start.getMonth();
@@ -4337,6 +4408,8 @@ $.fn.zmultiselect = function(methodOrOptions) {
 								classes.push('xdsoft_disabled');
 							} else if (options.disabledDates.indexOf(start.dateFormat(options.formatDate)) !== -1) {
 								classes.push('xdsoft_disabled');
+							} else if (options.disabledWeekDays.indexOf(day) !== -1) {
+							    classes.push('xdsoft_disabled');
 							}
 
 							if (customDateSettings && customDateSettings[1] !== "") {
@@ -4410,6 +4483,9 @@ $.fn.zmultiselect = function(methodOrOptions) {
 							optionDateTime.setMinutes(m);
 							classes = [];
 							if ((options.minDateTime !== false && options.minDateTime > optionDateTime) || (options.maxTime !== false && _xdsoft_datetime.strtotime(options.maxTime).getTime() < now.getTime()) || (options.minTime !== false && _xdsoft_datetime.strtotime(options.minTime).getTime() > now.getTime())) {
+								classes.push('xdsoft_disabled');
+							}
+							if ((options.minDateTime !== false && options.minDateTime > optionDateTime) || ((options.disabledMinTime !== false && now.getTime() > _xdsoft_datetime.strtotime(options.disabledMinTime).getTime()) && (options.disabledMaxTime !== false && now.getTime() < _xdsoft_datetime.strtotime(options.disabledMaxTime).getTime()))) {
 								classes.push('xdsoft_disabled');
 							}
 
@@ -4513,7 +4589,7 @@ $.fn.zmultiselect = function(methodOrOptions) {
 					datetimepicker.trigger('select.xdsoft', [currentTime]);
 
 					input.val(_xdsoft_datetime.str());
-					if ((timerclick > 1 || (options.closeOnDateSelect === true || (options.closeOnDateSelect === 0 && !options.timepicker))) && !options.inline) {
+					if ((timerclick > 1 || (options.closeOnDateSelect === true || (options.closeOnDateSelect === false && !options.timepicker))) && !options.inline) {
 						datetimepicker.trigger('close.xdsoft');
 					}
 
@@ -4625,7 +4701,7 @@ $.fn.zmultiselect = function(methodOrOptions) {
 			current_time_index = 0;
 
 			setPos = function () {
-				var offset = datetimepicker.data('input').offset(), top = offset.top + datetimepicker.data('input')[0].offsetHeight - 1, left = offset.left, position = "absolute";
+				var offset = datetimepicker.data('input').offset(), top = offset.top + datetimepicker.data('input')[0].offsetHeight - 1, left = offset.left, position = "absolute", node;
 				if (options.fixed) {
 					top -= $(window).scrollTop();
 					left -= $(window).scrollLeft();
@@ -4641,6 +4717,15 @@ $.fn.zmultiselect = function(methodOrOptions) {
 						left = $(window).width() - datetimepicker[0].offsetWidth;
 					}
 				}
+
+				node = datetimepicker[0];
+				do {
+					node = node.parentNode;
+					if (window.getComputedStyle(node).getPropertyValue('position') === 'relative' && $(window).width() >= node.offsetWidth) {
+						left = left - (($(window).width() - node.offsetWidth) / 2);
+						break;
+					}
+				} while (node.nodeName !== 'HTML');
 				datetimepicker.css({
 					left: left,
 					top: top,

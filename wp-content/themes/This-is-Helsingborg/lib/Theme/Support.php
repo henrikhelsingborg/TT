@@ -11,15 +11,37 @@ class Support
         self::addFilters();
         self::removeTheGenerator();
 
-        add_filter('srm_max_redirects', array($this, 'dbx_srm_max_redirects'));
+        add_filter('srm_max_redirects', array($this, 'srmMaxRedirects'));
         add_action('template_redirect', array($this, 'blockAuthorPages'), 5);
+        add_action('init', array($this, 'removePostPostType'), 11);
+
     }
 
     /**
-     * Removes unwanted actions
-     * @return void
+     * Removes the post type "post"
+     * @return boolean
      */
-    static private function removeActions()
+    public function removePostPostType()
+    {
+        global $wp_post_types;
+
+        if (isset($wp_post_types['post'])) {
+            if (!defined("WP_ENABLE_POSTS") || (defined("WP_ENABLE_POSTS") && WP_ENABLE_POSTS !== true)) {
+                add_action('admin_menu', function () {
+                    remove_menu_page('edit.php');
+                });
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Removes unwanted actions.
+     */
+    private static function removeActions()
     {
         remove_action('wp_head', 'print_emoji_detection_script', 7);
         remove_action('wp_print_styles', 'print_emoji_styles');
@@ -28,56 +50,59 @@ class Support
     }
 
     /**
-     * Add actions
+     * Add actions.
      */
-    static private function addActions()
+    private static function addActions()
     {
         add_action('after_setup_theme', '\Helsingborg\Theme\Support::themeSupport');
     }
 
     /**
-     * Add filters
+     * Add filters.
      */
-    static private function addFilters()
+    private static function addFilters()
     {
         add_filter('intermediate_image_sizes_advanced', '\Helsingborg\Theme\Support::filterThumbnailSizes');
         add_filter('gettext', '\Helsingborg\Theme\Support::changeDefaultTemplateName', 10, 3);
     }
 
     /**
-     * Add theme support
-     * @return void
+     * Add theme support.
      */
     public static function themeSupport()
     {
         add_theme_support('menus');
         add_theme_support('post-thumbnails');
-        add_theme_support('post-formats', array(
-            'aside',
-            'gallery',
-            'link',
-            'image',
-            'quote',
-            'status',
-            'video',
-            'audio',
-            'chat')
+        add_theme_support(
+            'post-formats',
+            array(
+                'aside',
+                'gallery',
+                'link',
+                'image',
+                'quote',
+                'status',
+                'video',
+                'audio',
+                'chat'
+            )
         );
     }
 
     /**
-     * Remove medium thumbnail size for all uploaded images
-     * @param  array $sizes Default sizes
-     * @return array        New sizes
+     * Remove medium thumbnail size for all uploaded images.
+     * @param array $sizes Default sizes
+     * @return array New sizes
      */
     public static function filterThumbnailSizes($sizes)
     {
         unset($sizes['medium']);
+
         return $sizes;
     }
 
     /**
-     * Change "Default template" to "Article"
+     * Change "Default template" to "Article".
      */
     public static function changeDefaultTemplateName($translation, $text, $domain)
     {
@@ -89,8 +114,7 @@ class Support
     }
 
     /**
-     * Removes the generator meta tag from <head>
-     * @return void
+     * Removes the generator meta tag from <head>.
      */
     public static function removeTheGenerator()
     {
@@ -98,21 +122,22 @@ class Support
     }
 
     /**
-     * Blocks request to the author pages (?author=<ID>)
-     * @return [type] [description]
+     * Blocks request to the author pages (?author=<ID>).
+     * @return void
      */
-    public function blockAuthorPages() {
+    public function blockAuthorPages()
+    {
         global $wp_query;
-    
+
         if (is_author() || is_attachment()) {
             $wp_query->set_404();
         }
-    
+
         if (is_feed()) {
-            $author     = get_query_var('author_name');
+            $author = get_query_var('author_name');
             $attachment = get_query_var('attachment');
             $attachment = (empty($attachment)) ? get_query_var('attachment_id') : $attachment;
-    
+
             if (!empty($author) || !empty($attachment)) {
                 $wp_query->set_404();
                 $wp_query->is_feed = false;
@@ -121,10 +146,10 @@ class Support
     }
 
     /**
-     * Update the default maximum number of redirects to 400
-     * @return void
+     * Update the default maximum number of redirects to 400.
      */
-    public function dbx_srm_max_redirects() {
+    public function srmMaxRedirects()
+    {
         return 400;
     }
 }

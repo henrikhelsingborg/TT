@@ -63,6 +63,10 @@ if (!class_exists('Image_List_Widget')) {
                 $item_force_widths[$i-1]        = $instance['item_force_width'.$i];
                 $item_force_margins[$i-1]       = $instance['item_force_margin'.$i];
                 $item_force_margin_values[$i-1] = $instance['item_force_margin_value'.$i];
+
+                $item_force_position[$i-1] = $instance['item_force_position'.$i];
+                $item_position_vertical[$i-1] = $instance['item_position-vertical'.$i];
+                $item_position_horizontal[$i-1] = $instance['item_position-horizontal'.$i];
             }
 
             $view = 'widget.php';
@@ -134,6 +138,10 @@ if (!class_exists('Image_List_Widget')) {
                     $instance['item_force_width'.($i+1)]         = empty($new_instance['item_force_width'.$item_num])        ? '' : strip_tags($new_instance['item_force_width'.$item_num]);
                     $instance['item_force_margin'.($i+1)]        = empty($new_instance['item_force_margin'.$item_num])       ? '' : strip_tags($new_instance['item_force_margin'.$item_num]);
                     $instance['item_force_margin_value'.($i+1)]  = empty($new_instance['item_force_margin_value'.$item_num]) ? '' : strip_tags($new_instance['item_force_margin_value'.$item_num]);
+
+                    $instance['item_force_position'.($i+1)]  = empty($new_instance['item_force_position'.$item_num]) ? '' : strip_tags($new_instance['item_force_position'.$item_num]);
+                    $instance['item_position-vertical'.($i+1)]  = empty($new_instance['item_position-vertical'.$item_num]) ? '' : strip_tags($new_instance['item_position-vertical'.$item_num]);
+                    $instance['item_position-horizontal'.($i+1)]  = empty($new_instance['item_position-horizontal'.$item_num]) ? '' : strip_tags($new_instance['item_position-horizontal'.$item_num]);
                 }
             }
 
@@ -168,6 +176,10 @@ if (!class_exists('Image_List_Widget')) {
                 $item_force_widths[$i]        = empty($instance['item_force_width'.$i])        ? '' : $instance['item_force_width'.$i];
                 $item_force_margins[$i]       = empty($instance['item_force_margin'.$i])       ? '' : $instance['item_force_margin'.$i];
                 $item_force_margin_values[$i] = empty($instance['item_force_margin_value'.$i]) ? '' : $instance['item_force_margin_value'.$i];
+
+                $item_force_position[$i]      = empty($instance['item_force_position'.$i])     ? '' : $instance['item_force_position'.$i];
+                $item_position_vertical[$i]   = empty($instance['item_position-vertical'.$i])  ? '' : $instance['item_position-vertical'.$i];
+                $item_position_horizontal[$i] = empty($instance['item_position-horizontal'.$i]) ? '' : $instance['item_position-horizontal'.$i];
             }
 
             require($this->_viewsPath . 'widget-form.php');

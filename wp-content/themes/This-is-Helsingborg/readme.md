@@ -13,6 +13,9 @@ $ npm install
 $ bower install
 ```
 
+## Coding standards
+For PHP, use PSR-2 and PSR-4 where applicable.
+
 ## Dependencies and components
 We manage our dependencies and components with npm and bower. Please check the `package.json` file to see Node dependencies and check the `bower.json`to see the Bower components.
 
@@ -24,7 +27,6 @@ To compile both js and sass and start the "watch" mode in one command, run the f
 ```
 $ gulp
 ```
-
 
 #### Available Gulp tasks
 

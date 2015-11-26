@@ -3,21 +3,23 @@
 Template Name: Lista
 */
 
-    global $post;
+global $post;
 
-    use Helsingborg\Theme;
-    $listPage = new Theme\ListPage;
-    $listPage->setPageId($post->ID);
-    $listItems = $listPage->getList();
+use Helsingborg\Theme;
 
-    $centerClasses = 'large-6 medium-6 small-12';
-    if (!is_active_sidebar('right-sidebar')) {
-        $centerClasses = 'large-9 medium-9 small-12';
-    }
+$listPage = new Theme\ListPage;
+$listPage->setPageId($post->ID);
+$listItems = $listPage->getList();
 
-    //var_dump($listPage->headers);
+$centerClasses = 'large-6 medium-8 mobile-menu-12 small-12 print-12';
 
-    get_header();
+if (!is_active_sidebar('right-sidebar')) {
+    $centerClasses = 'large-9 medium-8 mobile-menu-12 small-12 print-12';
+}
+
+//var_dump($listPage->headers);
+
+get_header();
 
 ?>
 
@@ -37,7 +39,7 @@ Template Name: Lista
 
                 <div class="table-list-filter" data-filter-table="#table-list-table" data-filter-table-selector="tbody">
                     <div class="row">
-                        <div class="columns large-11">
+                        <div class="columns small-11">
                             <label class="form-label" for="table-list-filter-input">Sök i listan:</label>
                             <input type="search" data-filter-table-input class="form-control" id="table-list-filter-input">
                         </div>
@@ -48,12 +50,12 @@ Template Name: Lista
                         <tr>
                             <th></th>
                             <?php
-                                $int = 0;
+                            $int = 0;
 
-                                foreach ($listPage->headers as $header) {
-                                    $int++;
-                                    echo('<th class="header">' . $header . '</th>');
-                                }
+                            foreach ($listPage->headers as $header) {
+                                $int++;
+                                echo('<th class="header">' . $header . '</th>');
+                            }
                             ?>
                         </tr>
                     </thead>
@@ -62,9 +64,9 @@ Template Name: Lista
                     <tbody>
                         <tr class="table-item test-<?php echo $cc; ?>">
                             <?php
-                                foreach ($listPage->headerKeys as $key => $value) {
-                                    echo('<td>' . $item['item' . $key] . '</td>');
-                                }
+                            foreach ($listPage->headerKeys as $key => $value) {
+                                echo('<td>' . $item['item' . $key] . '</td>');
+                            }
                             ?>
                         </tr>
                         <tr class="table-content">
@@ -84,9 +86,9 @@ Template Name: Lista
             </div>
 
             <?php
-                if (is_active_sidebar('right-sidebar')) {
-                    get_template_part('templates/partials/sidebar', 'right');
-                }
+            if (is_active_sidebar('right-sidebar')) {
+                get_template_part('templates/partials/sidebar', 'right');
+            }
             ?>
         </div>
     </div>

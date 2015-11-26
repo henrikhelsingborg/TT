@@ -19,7 +19,7 @@
 @import '../../../bower_components/foundation/scss/foundation/components/global'; // Foundation globals
 @import 'global/config';
 @import 'global/colors';
-@import 'global/fonts';
+@import 'global/typography';
 @import 'global/mixins';
 @import 'global/404';
 
@@ -69,6 +69,7 @@
 @import 'partials/mobile-search';
 @import 'partials/tooltip';
 @import 'partials/table-datatables';
+@import 'partials/table';
 
 /**
  * ## Widgets

@@ -16,7 +16,7 @@
     background-color: transparent;
     padding: 0;
     color: $palette-red-4;
-    font-size: 20pt;
+    font-size: $mobile-menu-button-font-size;
 
     @media #{$bp-mobile-menu-up} {
         display: none;
@@ -29,7 +29,7 @@
     span {
         display: inline-block;
         vertical-align: middle;
-        font-size: 13pt;
+        font-size: $base-font-size;
         margin-left: 8px;
     }
 }

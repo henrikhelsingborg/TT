@@ -1,6 +1,7 @@
 <?php
 
-class Helsingborg_Walker_Mobile extends Walker {
+class HelsingborgWalkerMobile extends Walker
+{
 
     public $tree_type = 'page';
     public $db_fields = array(
@@ -8,7 +9,8 @@ class Helsingborg_Walker_Mobile extends Walker {
         'id'     => 'ID'
     );
 
-    public function walk($elements, $max_depth) {
+    public function walk($elements, $max_depth)
+    {
         global $post;
 
         $args = array_slice(func_get_args(), 2);
@@ -53,7 +55,7 @@ class Helsingborg_Walker_Mobile extends Walker {
                 /**
                  * Do not show childs of a list page
                  */
-                if (get_post_meta($parent_id,'_wp_page_template',TRUE) == 'templates/list-page.php') {
+                if (get_post_meta($parent_id, '_wp_page_template', true) == 'templates/list-page.php') {
                     continue;
                 }
 
@@ -62,10 +64,9 @@ class Helsingborg_Walker_Mobile extends Walker {
                  */
                 if ($child_of === $parent_id) {
                     $top_level_elements[] = $e;
-                } else if (
-                    (isset($post->ID) && $parent_id == $post->ID) ||
-                    (isset($post->post_parent) && $parent_id == $post->post_parent) ||
-                    (isset($post->ancestors) && in_array( $parent_id, (array) $post->ancestors))
+                } elseif ((isset($post->ID) && $parent_id == $post->ID) ||
+                          (isset($post->post_parent) && $parent_id == $post->post_parent) ||
+                          (isset($post->ancestors) && in_array($parent_id, (array) $post->ancestors))
                 ) {
                     $children_elements[$e->$parent_field][] = $e;
                 }
@@ -101,7 +102,8 @@ class Helsingborg_Walker_Mobile extends Walker {
      * @param  array   $args    [description]
      * @return void
      */
-    public function end_lvl(&$output, $depth = 0, $args = array()) {
+    public function end_lvl(&$output, $depth = 0, $args = array())
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
     }
@@ -115,8 +117,8 @@ class Helsingborg_Walker_Mobile extends Walker {
      * @param  integer $current_page
      * @return void
      */
-    public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0) {
-
+    public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0)
+    {
         /**
          * Element indentation
          * @var string
@@ -127,7 +129,6 @@ class Helsingborg_Walker_Mobile extends Walker {
         }
 
         if (!empty($current_page)) {
-
             /**
              * Get current page object
              * @var object
@@ -182,14 +183,17 @@ class Helsingborg_Walker_Mobile extends Walker {
              * Check if page got childrens or not, if it does, add has-child class
              * - Exclude list page childrens
              */
-            if (!in_array( $page->ID, $_current_page->ancestors ) && $has_children && ($page->post_parent != get_option('page_on_front')) && get_post_meta($page->ID,'_wp_page_template',TRUE) != 'templates/list-page.php') {
+            if (!in_array($page->ID, $_current_page->ancestors) && $has_children
+                && ($page->post_parent != get_option('page_on_front'))
+                && get_post_meta($page->ID, '_wp_page_template', trye) != 'templates/list-page.php') {
                 array_push($css_class_list, 'has-childs');
             }
 
             /**
              * If article page parent is list page, then mark the parent as current -> since childs are hidden
              */
-            if (in_array($page->ID, $_current_page->ancestors) && get_post_meta($page->ID,'_wp_page_template',TRUE) == 'templates/list-page.php') {
+            if (in_array($page->ID, $_current_page->ancestors)
+                && get_post_meta($page->ID, '_wp_page_template', true) == 'templates/list-page.php') {
                 array_push($css_class_list, 'current');
             }
 
@@ -201,9 +205,11 @@ class Helsingborg_Walker_Mobile extends Walker {
              *     25    5220         5776            5781          5785
              *  (root)  (node)  (set to current)   (private)   (actual current)
              *
-             * http://localhost/startsida/omsorg-och-stod/frivilligt-arbete-och-foreningar/info/las-mer-om-socialt-arbete-med-ersattning/
+             * http://localhost/startsida/omsorg-och-stod/frivilligt-arbete-och-foreningar
+             *     info/las-mer-om-socialt-arbete-med-ersattning/
              */
-            if (get_post_status($_current_page->post_parent) == 'private' && in_array($page->ID, $_current_page->ancestors)) {
+            if (get_post_status($_current_page->post_parent) == 'private'
+                && in_array($page->ID, $_current_page->ancestors)) {
                 $_current_page_ansectors = $_current_page->ancestors;
                 $last_element = count($_current_page_ansectors) - 1; // We want last index
 
@@ -245,8 +251,8 @@ class Helsingborg_Walker_Mobile extends Walker {
      * @param  integer $current_page
      * @return void
      */
-    public function end_el(&$output, $page, $depth = 0, $args = array()) {
+    public function end_el(&$output, $page, $depth = 0, $args = array())
+    {
         $output .= '</li>';
     }
-
 }

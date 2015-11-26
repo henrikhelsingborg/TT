@@ -19,7 +19,7 @@
     width: 100%;
 
     li {
-        font-size: 9pt;
+        font-size: $autocomplete-font-size;
 
         &.heading {
             background: #ddd;
@@ -27,7 +27,7 @@
         }
 
         strong {
-            font-size: 11pt;
+            font-size: $autocomplete-title-font-size;
             color: $palette-red-4;
         }
 

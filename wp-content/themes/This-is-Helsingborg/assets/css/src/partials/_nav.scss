@@ -11,7 +11,7 @@
         @extend .nav-horizontal;
         margin-top: 20px;
         margin-bottom: 20px;
-        font-size: 14pt;
+        font-size: $navbar-nav-font-size;
 
         li {
             padding-right: 20px;
@@ -95,7 +95,7 @@ body.nav-fixed .site-header .hero {
     a {
         display: block;
         padding: 6px 10px;
-        font-size: 12pt;
+        font-size: $navbar-aside-font-size;
         color: $text-default;
         text-decoration: none;
 
@@ -121,7 +121,7 @@ body.nav-fixed .site-header .hero {
             right: 10px;
             top: 11px;
             @include hbg-icon($icon-plus-square);
-            font-size: 10pt;
+            font-size: $navbar-aside-icon-font-size;
             color: $text-gray-light;
         }
     }
@@ -137,7 +137,7 @@ body.nav-fixed .site-header .hero {
             right: 12px;
             top: 11px;
             @include hbg-icon($icon-caret-down);
-            font-size: 10pt;
+            font-size: $navbar-aside-icon-font-size;
             color: $text-gray-light;
         }
     }
@@ -155,7 +155,7 @@ body.nav-fixed .site-header .hero {
             right: 12px;
             top: 11px;
             @include hbg-icon($icon-caret-down);
-            font-size: 10pt;
+            font-size: $navbar-aside-icon-font-size;
             color: $text-gray-light;
         }
     }
@@ -213,7 +213,7 @@ body.nav-fixed .site-header .hero {
 
     @media #{$bp-mobile-menu-down} {
         .nav li {
-            font-size: 12pt;
+            font-size: $navbar-mainmenu-mobile-font-size;
 
             &:last-child {
                 padding-right: 0;
@@ -277,7 +277,7 @@ body.nav-fixed .site-header .hero {
             padding: 3px 10px;
             color: $text-default;
             text-decoration: none;
-            font-size: 11pt;
+            font-size: $navbar-topmenu-font-size;
 
             &:hover,
             &:focus {
@@ -322,7 +322,7 @@ body.nav-fixed .site-header .hero {
         }
 
         a {
-            font-size: 11pt;
+            font-size: $navbar-topmenu-help-font-size;
             color: $text-default;
             text-decoration: none;
 
@@ -361,8 +361,7 @@ body.nav-fixed .site-header .hero {
         display: table-cell;
 
         &:last-child {
-            text-align: right;
-            padding-right: 0;
+            padding-right: 0; 
         }
     }
 }

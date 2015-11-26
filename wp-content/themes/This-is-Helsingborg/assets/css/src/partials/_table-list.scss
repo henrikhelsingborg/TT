@@ -33,7 +33,7 @@ $headline-color: #333;
             color: #fff;
             font-weight: bold;
             letter-spacing: .5px;
-            font-size: 11pt;
+            font-size: $table-thead-font-size;
             line-height: 100%;
             padding: 10px 15px;
             text-align: left;
@@ -71,7 +71,7 @@ $headline-color: #333;
      * Table body
      */
     tbody {
-        font-size: 11pt;
+        font-size: $table-tbody-font-size;
         border: 1px solid $creamy-darker;
 
         &:nth-child(odd) {
@@ -115,7 +115,7 @@ $headline-color: #333;
                 top: 12px;
                 @include hbg-icon($icon-plus-square);
                 color: $palette-red-2;
-                font-size: 13pt;
+                font-size: 1rem;
 
                 @media print {
                     display: none;

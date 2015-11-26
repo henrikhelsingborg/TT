@@ -1,14 +1,18 @@
 <div id="eventModal" class="modal">
     <div class="modal-content">
-        <button class="modal-close" data-action="modal-close" aria-label="Stäng fönstret"><i class="fa fa-times-circle"></i></button>
+        <button class="modal-close" data-action="modal-close" aria-label="Stäng fönstret">
+            <i class="fa fa-times-circle"></i>
+        </button>
         <div class="row">
             <div class="columns large-4">
-                <img class="modal-image responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/event-placeholder.jpg" alt="event">
+                <img class="modal-image responsive"
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/event-placeholder.jpg" alt="event">
+                    
                 <div id="event-times" class="box">
                     <div class="box-content">
-                    <ul class="list list-event-times" id="time-modal">
-                        <li class="event-times-loading"><i class="hbg-loading">Läser in datum &amp; tider</i></li>
-                    </ul>
+                        <ul class="list list-event-times" id="time-modal">
+                            <li class="event-times-loading"><i class="hbg-loading">Läser in datum &amp; tider</i></li>
+                        </ul>
                     </div>
                 </div>
             </div>

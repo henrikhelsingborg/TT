@@ -1,19 +1,18 @@
 <?php
+/*
+Template Name: Alarm RSS
+*/
 
-    /*
-    Template Name: Alarm RSS
-    */
+/**
+ * Output header
+ */
+header('Content-Type: application/rss+xml; charset=utf-8;');
 
-   /**
-     * Output header
-     */
-    header('Content-Type: application/rss+xml; charset=utf-8;');
-
-    /**
-     * Get the alarms from the alamrservice
-     */
-    $json = file_get_contents('http://alarmservice.helsingborg.se/AlarmServices.svc/GetLatestAlarms');
-    $alarms = json_decode($json)->GetLatestAlarmsResult;
+/**
+ * Get the alarms from the alamrservice
+ */
+$json = file_get_contents('http://alarmservice.helsingborg.se/AlarmServices.svc/GetLatestAlarms');
+$alarms = json_decode($json)->GetLatestAlarmsResult;
 ?>
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -22,8 +21,8 @@
         <link><?php echo the_permalink(); ?></link>
         <description><![CDATA[<?php echo $seoMeta; ?>]]></description>
         <language>sv-se</language>
-        <lastBuildDate><?php echo \Helsingborg\Helper\Rss::helsingborg_rss_date($pages[$lastPage]->post_modified_gmt); ?></lastBuildDate>
-        <pubDate><?php echo \Helsingborg\Helper\Rss::helsingborg_rss_date($pages[$lastPage]->post_modified_gmt); ?></pubDate>
+        <lastBuildDate><?php echo \Helsingborg\Helper\Rss::helsingborgRssDate($pages[$lastPage]->post_modified_gmt); ?></lastBuildDate>
+        <pubDate><?php echo \Helsingborg\Helper\Rss::helsingborgRssDate($pages[$lastPage]->post_modified_gmt); ?></pubDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <image>
             <url><?php echo get_template_directory_uri(); ?>/assets/img/images/hbg-logo-rss.jpg</url>

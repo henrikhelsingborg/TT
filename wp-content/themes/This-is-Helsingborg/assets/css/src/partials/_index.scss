@@ -27,8 +27,7 @@
         margin-bottom: $column-gutter;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
         background-color: $creamy;
     }
 
@@ -71,7 +70,7 @@
     display: block;
     margin-top: 5px;
     font-weight: 300;
-    font-size: 11pt;
+    font-size: $index-description-font-size;
     white-space: break-word;
 }
 
@@ -119,7 +118,7 @@
         }
 
         .index-description {
-            font-size: 10pt;
+            font-size: $index-horizontal-description-font-size;
         }
     }
 }

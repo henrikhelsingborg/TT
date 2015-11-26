@@ -42,3 +42,14 @@
     background: -moz-linear-gradient(top,  $from, $to);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
 }
+
+@mixin word-wrap($hypens: none) {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: $hypens;
+    -moz-hyphens: $hypens;
+    -webkit-hyphens: $hypens;
+    hyphens: $hypens;
+}

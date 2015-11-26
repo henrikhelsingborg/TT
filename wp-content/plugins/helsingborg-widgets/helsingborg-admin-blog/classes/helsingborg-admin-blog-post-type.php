@@ -73,7 +73,7 @@ if (!class_exists('HelsingborgAdminBlogCustomPostType')) {
              */
             $labels = array(
                 'name'               => _x('Internblogg', 'post type name'),
-                'singular_name'      => _x('Intenblogg', 'post type singular name'),
+                'singular_name'      => _x('Internblogg', 'post type singular name'),
                 'menu_name'          => __('Internblogg'),
                 'add_new'            => __('Skapa nytt'),
                 'add_new_item'       => __('Skapa inlägg'),
@@ -82,8 +82,8 @@ if (!class_exists('HelsingborgAdminBlogCustomPostType')) {
                 'all_items'          => __('Alla inlägg'),
                 'view_item'          => __('Visa inlägg'),
                 'search_items'       => __('Sök inlägg'),
-                'not_found'          => __('Ingea inlägg att visa'),
-                'not_found_in_trash' => __('Ingea inlägg i soptunnan'),
+                'not_found'          => __('Inga inlägg att visa'),
+                'not_found_in_trash' => __('Inga inlägg i papperskorgen'),
             );
 
             /**
