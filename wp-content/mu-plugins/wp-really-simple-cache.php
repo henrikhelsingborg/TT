@@ -73,7 +73,14 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 		}
 		
 		public static function get_filename_from_url($url) {
-			return md5(parse_url(rtrim(trim($url,"/"), PHP_URL_PATH ))).".html.gz"; 
+			
+			$parsed_url = parse_url(rtrim(trim($url,"/"), PHP_URL_PATH )); 
+			
+			if ( is_array( $parsed_url ) && isset ( $parsed_url['path'] ) ) {
+				return md5($parsed_url['path']).".html.gz"; 
+			} 
+			
+			return false;
 		}
 	
 		public static function get_cache_dir() {
@@ -222,6 +229,14 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 			}
 		}
 		
+		private function get_current_page_url() {
+		 	$page_url = 'http';
+		 	if ($_SERVER["HTTPS"] == "on") {$page_url .= "s";}
+		 	$page_url .= "://";
+		 	$page_url .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+		 	return $page_url;
+		}
+		
 	}
 
 }
@@ -240,15 +255,16 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 			return;
 
 		global $wp_simple_cache;
-		
+
 		//Determine if init 
-		if ( is_a( $wp_simple_cache, 'WpSimpleCache' ) ) {  
+		if ( is_a( $wp_simple_cache, 'WpSimpleCachePlugin\Cache\WpSimpleCache' ) ) {  
 	
 			//Purge only this page, or purge all?
-			if ( in_array(get_post_type( $post_id ), array("page","post") ) ) {
+			if ( in_array(get_post_type( $post_id ), array("page","post") ) && !is_front_page($post_id) ) {
 				
 				//Purge this post 
-				$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink(  $post_id ));
+				$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink( $post_id ));
+				
 				if ( file_exists( $file_name ) ) {
 					unlink($file_name);
 				}
@@ -285,4 +301,5 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 add_action('wp_footer', function(){
 	echo "\n" . "<!-- Page cache by Really Simple Cache on ".date("Y-m-d H:i:s")."-->" . "\n";
 });
+
 }
