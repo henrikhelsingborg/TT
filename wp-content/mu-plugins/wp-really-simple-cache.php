@@ -1,6 +1,6 @@
 <?php
 
-//namespace WpSimpleCachePlugin\Cache;
+namespace WpSimpleCachePlugin\Cache;
 
 /*
 Plugin Name: Simple File Cache for WordPress
@@ -10,7 +10,7 @@ Author:      Sebastian Thulin @ Helsingborg Stad
 */
 
 /* Store callback */ //TODO: FIX THIS
-/*if ( !function_exists( 'wp_simple_cache_plugin_end' ) ) { 
+if ( !function_exists( 'wp_simple_cache_plugin_end' ) ) { 
 	function wp_simple_cache_plugin_end ( $data ) {
 	
 		//Cache data
@@ -283,4 +283,3 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 add_action('wp_footer', function(){
 	echo "\n" . "<!-- Page cache by Really Simple Cache on ".date("Y-m-d H:i:s")."-->" . "\n";
 });
-*/ 
