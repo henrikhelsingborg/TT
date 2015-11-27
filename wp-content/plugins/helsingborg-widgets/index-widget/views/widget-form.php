@@ -2,6 +2,16 @@
     <li><?php echo __("Lägg till de sidor som ni vill ska visas i listan."); ?></li>
 </ul>
 
+<?php if (wp_get_theme()->stylesheet == 'Helsingborg-school') : ?>
+<p>
+    <label>Antal kolumner:</label>
+    <label style="margin-left: 20px;"><input type="radio" value="2" name="<?php echo $this->get_field_name('columns'); ?>" <?php checked($instance['columns'], '2', true); ?>> 2</label>
+    <label style="margin-left: 20px;"><input type="radio" value="3" name="<?php echo $this->get_field_name('columns'); ?>" <?php checked($instance['columns'], '3', true); ?>> 3</label>
+</p>
+<?php else : ?>
+<input type="hidden" name="<?php echo $this->get_field_name('columns'); ?>" value="2">
+<?php endif; ?>
+
 <div class="helsingborg-link-list">
 <?php
     foreach ($items as $num => $item) :

@@ -1,5 +1,5 @@
 <?php echo $before_widget; ?>
-<div class="collection collection-test-colors">
+<div class="collection collection-test-colors" data-equalizer>
     <div class="row">
         <?php
             foreach ($items as $num => $item) :
@@ -24,8 +24,23 @@
                 if (isset($instance['headline' . ($num+1)]) && strlen($instance['headline' . ($num+1)]) > 0) {
                     $title = $instance['headline' . ($num+1)];
                 }
+
+                $columns = 6;
+                switch ($instance['columns']) {
+                    case 2:
+                        $columns = 6;
+                        break;
+
+                    case 3:
+                        $columns = 4;
+                        break;
+
+                    default:
+                        $columns = 6;
+                        break;
+                }
         ?>
-        <a href="<?php echo $link ?>" class="collection-item columns large-6 medium-6 small-12 left">
+        <a data-equalizer-watch href="<?php echo $link ?>" class="collection-item columns large-<?php echo $columns; ?> medium-<?php echo $columns; ?> small-12 left" data-columns="<?php echo $columns; ?>">
             <div class="collection-item-content">
                 <div class="collection-item-image" style="background-image:url('<?php echo $image[0]; ?>');"></div>
                 <div class="collection-item-headline">

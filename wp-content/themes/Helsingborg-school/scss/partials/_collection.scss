@@ -22,6 +22,12 @@
             }
         }
 
+        &[data-columns="4"] {
+            .collection-item-headline {
+                font-size: 11pt;
+            }
+        }
+
     }
 
     /**
