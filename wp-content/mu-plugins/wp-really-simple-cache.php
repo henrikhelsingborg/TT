@@ -7,6 +7,7 @@ Plugin Name: Simple File Cache for WordPress
 Plugin URI:  http://sebastianthulin.se/simple-cache/
 Description: A Simple and Effective File-cache for WordPress.
 Author:      Sebastian Thulin & Kristoffer Svanmark @ Helsingborg Stad
+Disable:	 To disable this plugin add define("WP_SIMPLE_CACHE_DISABLED", true); to configuration. 
 */
 
 /* Store callback */ //TODO: FIX THIS
@@ -271,6 +272,7 @@ if ( class_exists('WpSimpleCachePlugin\Cache\WpSimpleCache') ) {
 
 // Function to pruge a page by wordpress post_id
 if (!function_exists('WpSimpleCache_purge_post_by_id')) {
+	
 	function WpSimpleCache_purge_post_by_id($post_id, $purge_parent_page = true ) {
 		
 		if ( wp_is_post_revision( $post_id ) )
@@ -324,13 +326,83 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 	//Purge page on post id 
 	add_action('save_post', '\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id', 999 );
 	
-	//Purge all on menu save 
-	add_action('wp_update_nav_menu', function() {
-		global $wp_simple_cache;
-		$wp_simple_cache::clean_cache();
-	}, 999 ); 
+	/* Purge page on querystring */ 
+	add_action('init', function() {
+		if ( isset($_GET['cache_empty_id']) && is_numeric( $_GET['cache_empty_id'] ) && is_user_logged_in()) {
+			\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id($_GET['cache_empty_id']);
+		} 
+	});
 	
 }
+
+//Purge all on menu save 
+add_action('wp_update_nav_menu', function() {
+	global $wp_simple_cache;
+	$wp_simple_cache::clean_cache();
+}, 999 );  
+
+//Purge all on request 
+add_action('init', function() {
+	if ( isset($_GET['cache_empty_all']) && is_user_logged_in()) {
+		global $wp_simple_cache;
+		$wp_simple_cache::clean_cache();
+	}
+}, 999 );  
+
+/* Visual stuff */
+
+//Admin bar action buttons (Purge all)
+add_action('admin_bar_menu', function($wp_admin_bar) {
+
+	//Static settings 
+	$settings = array(
+					'id' => 'wp-simple-cache-clear-all',
+					'title' => __('Töm hela cahcen','wp-simple-cache'),
+					'meta' => array(
+						'class' => 'wp-simple-cache-button'
+					)
+				); 
+
+	//Create link 
+	if ( is_admin() ) {
+		$settings['href'] = admin_url( 'post.php?post=' . get_the_id() ) . '&action=edit&cache_empty_all'; 
+	} else {
+		$settings['href'] = get_permalink(get_the_id())."?cache_empty_all"; 
+	}
+	
+	$wp_admin_bar->add_node($settings);
+	
+}, 1050);
+
+//Admin bar action buttons (Purge this)
+add_action('admin_bar_menu', function($wp_admin_bar) {
+	
+	//Static settings 
+	$settings = array(
+					'id' => 'wp-simple-cache-clear-this',
+					'title' => __('Töm cahce för denna sida','wp-simple-cache'),
+					'meta' => array(
+						'class' => 'wp-simple-cache-button'
+					)
+				);
+
+	//Create link 
+	if ( is_admin() ) {
+		$settings['href'] = admin_url( 'post.php?post=' . get_the_id() ) . '&action=edit&cache_empty_id='.get_the_id(); 
+	} else {
+		$settings['href'] = get_permalink(get_the_id())."?cache_empty_id=".get_the_id(); 
+	}
+	
+	$wp_admin_bar->add_node($settings);
+	
+}, 1050);
+
+//Admin bar styling
+add_action('wp_head', function(){
+	if(is_user_logged_in()) {
+		echo '<style>.wp-simple-cache-button { background: rgba(255,255,255,.1) !important; margin-left: 20px !important; }</style>'; 
+	}
+}); 
 
 //Add timestamp to footer
 add_action('wp_footer', function(){
