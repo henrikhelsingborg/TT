@@ -50,7 +50,7 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 			
 			//Cache time 
 			if ( defined('DOING_AJAX') && DOING_AJAX === true ) {
-				self::$cache_time 				= 600; 									//Cachetime in seconds for ajax calls (default 10 minutes)
+				self::$cache_time 				= 300; 									//Cachetime in seconds for ajax calls (default 10 minutes)
 				self::$post_request_checksum 	= "ajax_".md5(serialize($_POST));		//Filename for POST REQUEST
 			} else {
 				self::$cache_time 				= 60*60*24*30; 							//Global cachetime in seconds (default one month)
