@@ -302,14 +302,17 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 					}
 				}
 				
+				//Purge archive page 
+				$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_post_type_archive_link(get_post_type( $post_id ) ) ); 
+				if ( file_exists( $file_name ) ) {
+					unlink($file_name);
+				}	
+				
 			} else {
 				$wp_simple_cache::clean_cache();
 			}
 		}
 	}
-
-	//Purge all on save_post
-	add_action('save_post', '\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id', 999 );
 
 	//Purge page on widget save
 	add_filter('hbg_page_widget_save', function ($args) {
@@ -317,6 +320,16 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 			\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id($args['post_id']);
 		}
 	});
+	
+	//Purge page on post id 
+	add_action('save_post', '\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id', 999 );
+	
+	//Purge all on menu save 
+	add_action('wp_update_nav_menu', function() {
+		global $wp_simple_cache;
+		$wp_simple_cache::clean_cache();
+	}, 999 ); 
+	
 }
 
 //Add timestamp to footer
