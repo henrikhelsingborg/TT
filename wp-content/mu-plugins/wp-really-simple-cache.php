@@ -357,7 +357,7 @@ add_action('admin_bar_menu', function($wp_admin_bar) {
 	//Static settings 
 	$settings = array(
 					'id' => 'wp-simple-cache-clear-all',
-					'title' => __('Töm hela cachen','wp-simple-cache'),
+					'title' => __('Töm cache','wp-simple-cache'),
 					'meta' => array(
 						'class' => 'wp-simple-cache-button'
 					)
@@ -380,7 +380,7 @@ add_action('admin_bar_menu', function($wp_admin_bar) {
 	//Static settings 
 	$settings = array(
 					'id' => 'wp-simple-cache-clear-this',
-					'title' => __('Töm cache för denna sida','wp-simple-cache'),
+					'title' => __('Töm cache för sida','wp-simple-cache'),
 					'meta' => array(
 						'class' => 'wp-simple-cache-button'
 					)
