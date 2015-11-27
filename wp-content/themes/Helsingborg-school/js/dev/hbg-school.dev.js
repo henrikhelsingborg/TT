@@ -1,6 +1,10 @@
 jQuery(document).ready(function ($) {
 
-    $(document).foundation();
+    $(document).foundation({
+        equalizer: {
+            equalize_on_stack: true
+        }
+    });
 
     $('#start-jr').on('click', function() {
       $(document).foundation('joyride','start');

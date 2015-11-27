@@ -110,6 +110,7 @@ if (!class_exists('Index_Widget_Box')) {
 
             $instance['amount'] = $amount;
             $instance['page_list'] = empty($new_instance['page_list']) ? '' : strip_tags($new_instance['page_list']);
+            $instance['columns'] = (isset($new_instance['columns']) && $new_instance['columns'] > 0 && !empty($new_instance['columns'])) ? $new_instance['columns'] : 2;
 
             return $instance;
         }
@@ -122,6 +123,8 @@ if (!class_exists('Index_Widget_Box')) {
         public function form ($instance) {
             $amount = empty($instance['amount']) ? 1 : $instance['amount'];
             $page_list = empty($instance['page_list']) ? '' : $instance['page_list'];
+
+            $intance['columns'] = (isset($intance['columns']) && $intance['columns'] > 0 && !empty($intance['columns'])) ? $instance['columns'] : 2;
 
             for ($i = 1; $i <= $amount; $i++) {
                 $items[$i] = empty($instance['item'.$i]) ? '' : $instance['item'.$i];
