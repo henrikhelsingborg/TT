@@ -6,7 +6,7 @@ namespace WpSimpleCachePlugin\Cache;
 Plugin Name: Simple File Cache for WordPress
 Plugin URI:  http://sebastianthulin.se/simple-cache/
 Description: A Simple and Effective File-cache for WordPress.
-Author:      Sebastian Thulin @ Helsingborg Stad
+Author:      Sebastian Thulin & Kristoffer Svanmark @ Helsingborg Stad
 */
 
 /* Store callback */ //TODO: FIX THIS
@@ -38,14 +38,24 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 		private static $dir_chmod; 
 	
 		private static $blocked_urls;
+		
+		private static $post_request_checksum; 
 	
 		public function __construct() {
 	
 			//Setup variables
 			self::$file_hash 		= md5(rtrim(trim(strtolower($_SERVER['REQUEST_URI'])),"/"));
 			self::$domain_name 		= md5($_SERVER['SERVER_NAME']);
-			self::$cache_time 		= 60 * 60 * 60 * 24 * 7; //In seconds
 			self::$cache_folder		= "/cache/";
+			
+			//Cache time 
+			if ( defined('DOING_AJAX') && DOING_AJAX === true ) {
+				self::$cache_time 				= 600; 									//Cachetime in seconds for ajax calls (default 10 minutes)
+				self::$post_request_checksum 	= "ajax_".md5(serialize($_POST));		//Filename for POST REQUEST
+			} else {
+				self::$cache_time 				= 60*60*24*30; 							//Global cachetime in seconds (default one month)
+				self::$post_request_checksum 	= false; 								//Turn of post requests cache 
+			}
 			
 			//What user mode? 
 			self::$file_chmod 		= 0775; 
@@ -67,7 +77,11 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 		}
 	
 		private static function get_filename () {
-			return self::get_cache_dir().self::$file_hash.".html.gz";
+			if ( defined('DOING_AJAX') && DOING_AJAX === true && $post_request_checksum !== false ) {
+				return self::get_cache_dir().self::$post_request_checksum.".html.gz";
+			} else {
+				return self::get_cache_dir().self::$file_hash.".html.gz";
+			}
 		}
 		
 		public static function get_filename_from_url($url) {
@@ -220,19 +234,29 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 		}
 	
 		private static function is_cachable () {
-			if ( !self::is_blocked_url() && !self::is_logged_in () && !self::is_post_request() && !self::has_get_variable () ) {
+			
+			//Is turned of
+			if(defined('WP_SIMPLE_CACHE_DISABLED') && WP_SIMPLE_CACHE_DISABLED === true ) {
+				return false; 
+			}
+			
+			//Do not cache cronjobs 
+			if(defined('DOING_CRON') && DOING_CRON === true ) {
+				return false; 
+			}
+			
+			//Cache ajax requests 
+			if ((defined('DOING_AJAX') && DOING_AJAX === true) && !self::is_logged_in ()) {
+				return true; 	
+			}
+			
+			//Normal behaviour 
+			if (!self::is_blocked_url() && !self::is_logged_in () && !self::is_post_request() && !self::has_get_variable ()) {
 				return true;
 			} else {
 				return false;
 			}
-		}
-		
-		private function get_current_page_url() {
-		 	$page_url = 'http';
-		 	if ($_SERVER["HTTPS"] == "on") {$page_url .= "s";}
-		 	$page_url .= "://";
-		 	$page_url .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-		 	return $page_url;
+			
 		}
 		
 	}
@@ -298,4 +322,4 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 //Add timestamp to footer
 add_action('wp_footer', function(){
 	echo "\n" . "<!-- Page cache by Really Simple Cache on ".date("Y-m-d H:i:s")."-->" . "\n";
-});
+}, 999 );
