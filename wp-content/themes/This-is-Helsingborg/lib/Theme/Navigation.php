@@ -30,14 +30,14 @@ class Navigation
      */
     public function purgeTreeMenuTransient($postId, $postAfter, $postBefore)
     {
-        // Compare post_parent, if changed we need to empty menu cahce on both the old and the new parent
-        if ($postBefore->post_parent != $postAfter->post_parent) {
-            $this->purgeTreeMenuTransientForAncestors($postBefore->post_parent);
-        }
+        $pb = $postBefore;
+        $pa = $postAfter;
 
-        // Compare post_title, if changed we need to empty menu cahce on the parent node
-        if ($postBefore->post_title != $postAfter->post_title) {
-            $this->purgeTreeMenuTransientForAncestors($postId);
+        unset($pb->post_modified, $pb->post_modified_gmt, $pa->post_modified, $pa->post_modified_gmt);
+
+        // Compare post_parent, if changed we need to empty menu cahce on both the old and the new parent
+        if ($pb != $pa) {
+            $this->purgeTreeMenuTransientForAncestors($postBefore->post_parent);
         }
     }
 

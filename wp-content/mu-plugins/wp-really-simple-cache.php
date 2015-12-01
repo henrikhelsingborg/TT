@@ -1,16 +1,17 @@
 <?php
 
-//namespace WpSimpleCachePlugin\Cache;
+namespace WpSimpleCachePlugin\Cache;
 
 /*
 Plugin Name: Simple File Cache for WordPress
 Plugin URI:  http://sebastianthulin.se/simple-cache/
 Description: A Simple and Effective File-cache for WordPress.
-Author:      Sebastian Thulin @ Helsingborg Stad
+Author:      Sebastian Thulin & Kristoffer Svanmark @ Helsingborg Stad
+Disable:	 To disable this plugin add define("WP_SIMPLE_CACHE_DISABLED", true); to configuration. 
 */
 
 /* Store callback */ //TODO: FIX THIS
-/*if ( !function_exists( 'wp_simple_cache_plugin_end' ) ) { 
+if ( !function_exists( 'wp_simple_cache_plugin_end' ) ) { 
 	function wp_simple_cache_plugin_end ( $data ) {
 	
 		//Cache data
@@ -38,14 +39,24 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 		private static $dir_chmod; 
 	
 		private static $blocked_urls;
+		
+		private static $post_request_checksum; 
 	
 		public function __construct() {
 	
 			//Setup variables
 			self::$file_hash 		= md5(rtrim(trim(strtolower($_SERVER['REQUEST_URI'])),"/"));
 			self::$domain_name 		= md5($_SERVER['SERVER_NAME']);
-			self::$cache_time 		= 60 * 60 * 60 * 24 * 7; //In seconds
 			self::$cache_folder		= "/cache/";
+			
+			//Cache time 
+			if ( defined('DOING_AJAX') && DOING_AJAX === true ) {
+				self::$cache_time 				= 300; 									//Cachetime in seconds for ajax calls (default 10 minutes)
+				self::$post_request_checksum 	= "ajax_".md5(serialize($_POST));		//Filename for POST REQUEST
+			} else {
+				self::$cache_time 				= 60*60*24*30; 							//Global cachetime in seconds (default one month)
+				self::$post_request_checksum 	= false; 								//Turn of post requests cache 
+			}
 			
 			//What user mode? 
 			self::$file_chmod 		= 0775; 
@@ -67,11 +78,22 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 		}
 	
 		private static function get_filename () {
-			return self::get_cache_dir().self::$file_hash.".html.gz";
+			if ( defined('DOING_AJAX') && DOING_AJAX === true && $post_request_checksum !== false ) {
+				return self::get_cache_dir().self::$post_request_checksum.".html.gz";
+			} else {
+				return self::get_cache_dir().self::$file_hash.".html.gz";
+			}
 		}
 		
 		public static function get_filename_from_url($url) {
-			return md5(parse_url(rtrim(trim($url,"/"), PHP_URL_PATH ))).".html.gz"; 
+			
+			$parsed_url = parse_url(rtrim(trim($url,"/"), PHP_URL_PATH )); 
+			
+			if ( is_array( $parsed_url ) && isset ( $parsed_url['path'] ) ) {
+				return md5($parsed_url['path']).".html.gz"; 
+			} 
+			
+			return false;
 		}
 	
 		public static function get_cache_dir() {
@@ -213,11 +235,29 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 		}
 	
 		private static function is_cachable () {
-			if ( !self::is_blocked_url() && !self::is_logged_in () && !self::is_post_request() && !self::has_get_variable () ) {
+			
+			//Is turned of
+			if(defined('WP_SIMPLE_CACHE_DISABLED') && WP_SIMPLE_CACHE_DISABLED === true ) {
+				return false; 
+			}
+			
+			//Do not cache cronjobs 
+			if(defined('DOING_CRON') && DOING_CRON === true ) {
+				return false; 
+			}
+			
+			//Cache ajax requests 
+			if ((defined('DOING_AJAX') && DOING_AJAX === true) && !self::is_logged_in ()) {
+				return true; 	
+			}
+			
+			//Normal behaviour 
+			if (!self::is_blocked_url() && !self::is_logged_in () && !self::is_post_request() && !self::has_get_variable ()) {
 				return true;
 			} else {
 				return false;
 			}
+			
 		}
 		
 	}
@@ -232,21 +272,23 @@ if ( class_exists('WpSimpleCachePlugin\Cache\WpSimpleCache') ) {
 
 // Function to pruge a page by wordpress post_id
 if (!function_exists('WpSimpleCache_purge_post_by_id')) {
+	
 	function WpSimpleCache_purge_post_by_id($post_id, $purge_parent_page = true ) {
 		
 		if ( wp_is_post_revision( $post_id ) )
 			return;
 
 		global $wp_simple_cache;
-		
+
 		//Determine if init 
-		if ( is_a( $wp_simple_cache, 'WpSimpleCache' ) ) {  
-	
+		if ( is_a( $wp_simple_cache, 'WpSimpleCachePlugin\Cache\WpSimpleCache' ) ) {  
+
 			//Purge only this page, or purge all?
-			if ( in_array(get_post_type( $post_id ), array("page","post") ) ) {
+			if ( in_array(get_post_type( $post_id ), array("page","post") ) && ( $post_id != get_option('page_on_front') ) ) {
 				
 				//Purge this post 
-				$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink(  $post_id ));
+				$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink( $post_id ));
+				
 				if ( file_exists( $file_name ) ) {
 					unlink($file_name);
 				}
@@ -262,14 +304,17 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 					}
 				}
 				
+				//Purge archive page 
+				$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_post_type_archive_link(get_post_type( $post_id ) ) ); 
+				if ( file_exists( $file_name ) ) {
+					unlink($file_name);
+				}	
+				
 			} else {
 				$wp_simple_cache::clean_cache();
 			}
 		}
 	}
-
-	//Purge all on save_post
-	add_action('save_post', '\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id', 999 );
 
 	//Purge page on widget save
 	add_filter('hbg_page_widget_save', function ($args) {
@@ -277,10 +322,89 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 			\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id($args['post_id']);
 		}
 	});
+	
+	//Purge page on post id 
+	add_action('save_post', '\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id', 999 );
+	
+	/* Purge page on querystring */ 
+	add_action('init', function() {
+		if ( isset($_GET['cache_empty_id']) && is_numeric( $_GET['cache_empty_id'] ) && is_user_logged_in()) {
+			\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id($_GET['cache_empty_id']);
+		} 
+	});
+	
 }
+
+//Purge all on menu save 
+add_action('wp_update_nav_menu', function() {
+	global $wp_simple_cache;
+	$wp_simple_cache::clean_cache();
+}, 999 );  
+
+//Purge all on request 
+add_action('init', function() {
+	if ( isset($_GET['cache_empty_all']) && is_user_logged_in()) {
+		global $wp_simple_cache;
+		$wp_simple_cache::clean_cache();
+	}
+}, 999 );  
+
+/* Visual stuff */
+
+//Admin bar action buttons (Purge all)
+add_action('admin_bar_menu', function($wp_admin_bar) {
+
+	//Static settings 
+	$settings = array(
+					'id' => 'wp-simple-cache-clear-all',
+					'title' => __('Töm cache','wp-simple-cache'),
+					'meta' => array(
+						'class' => 'wp-simple-cache-button'
+					)
+				); 
+
+	//Create link 
+	if ( is_admin() ) {
+		$settings['href'] = admin_url( 'post.php?post=' . get_the_id() ) . '&action=edit&cache_empty_all'; 
+	} else {
+		$settings['href'] = get_permalink(get_the_id())."?cache_empty_all"; 
+	}
+	
+	$wp_admin_bar->add_node($settings);
+	
+}, 1050);
+
+//Admin bar action buttons (Purge this)
+add_action('admin_bar_menu', function($wp_admin_bar) {
+	
+	//Static settings 
+	$settings = array(
+					'id' => 'wp-simple-cache-clear-this',
+					'title' => __('Töm cache för sida','wp-simple-cache'),
+					'meta' => array(
+						'class' => 'wp-simple-cache-button'
+					)
+				);
+
+	//Create link 
+	if ( is_admin() ) {
+		$settings['href'] = admin_url( 'post.php?post=' . get_the_id() ) . '&action=edit&cache_empty_id='.get_the_id(); 
+	} else {
+		$settings['href'] = get_permalink(get_the_id())."?cache_empty_id=".get_the_id(); 
+	}
+	
+	$wp_admin_bar->add_node($settings);
+	
+}, 1050);
+
+//Admin bar styling
+add_action('wp_head', function(){
+	if(is_user_logged_in()) {
+		echo '<style>.wp-simple-cache-button { background: rgba(255,255,255,.1) !important; margin-left: 20px !important; }</style>'; 
+	}
+}); 
 
 //Add timestamp to footer
 add_action('wp_footer', function(){
 	echo "\n" . "<!-- Page cache by Really Simple Cache on ".date("Y-m-d H:i:s")."-->" . "\n";
-});
-*/ 
+}, 999 );

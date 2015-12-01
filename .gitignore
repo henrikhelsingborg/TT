@@ -33,7 +33,6 @@ wp-content/plugins/*
 !wp-content/plugins/post-expirator
 !wp-content/plugins/safe-redirect-manager
 !wp-content/plugins/tablepress
-!wp-content/plugins/w3-total-cache
 !wp-content/plugins/wp-page-widget
 !wp-content/plugins/helsingborg-extra-mer
 !wp-content/plugins/helsingborg-kultur
