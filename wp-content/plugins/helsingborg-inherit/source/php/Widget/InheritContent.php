@@ -74,6 +74,7 @@ class InheritContent extends WP_Widget
         setup_postdata($post);
 
         if (!isset($instance['post_type'])) $instance['post_type'] = $post->post_type;
+        if (!isset($instance['title'])) $instance['title'] = $post->post_title;
 
         require \HbgInherit\Helper\Wp::getTemplate('widget-' . $instance['post_type']);
     }
