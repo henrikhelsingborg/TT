@@ -3,7 +3,7 @@
  * Plugin Name: Helsingborg Arvsinnehåll
  * Plugin URI: -
  * Description: Skapa innehåll till en widget som kan visas på flera sidor
- * Version: 1.0
+ * Version: 2.0
  * Author: Kristoffer Svanmark
  * Author URI: -
  *
