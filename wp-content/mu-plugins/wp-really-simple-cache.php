@@ -116,10 +116,10 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 		   while($file = readdir($master_dir)) {
 		      if($file != "." AND $file != "..") {
 		         if(is_dir($file)){
-		            chmod($file, self::$dir_chmod);
+		            @chmod($file, self::$dir_chmod);
 		         }else{
 			        if ( $include_files ) {
-				        chmod($path."/".$file, self::$file_chmod);
+				        @chmod($path."/".$file, self::$file_chmod);
 			        } 
 		            if(is_dir($path."/".$file)) {
 		            	self::chmod_r($path."/".$file, true );
@@ -165,7 +165,7 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 				fwrite($file_handle, gzencode($callback_data, 9));
 				
 				//Set correct user rights
-				chmod(self::get_filename(), self::$file_chmod);
+				@chmod(self::get_filename(), self::$file_chmod);
 	
 			}
 	
