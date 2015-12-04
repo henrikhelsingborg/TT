@@ -41,6 +41,7 @@ wp-content/plugins/*
 !wp-content/plugins/disable-comments
 !wp-content/plugins/helsingborg-news
 !wp-content/plugins/helsingborg-inherit
+!wp-content/plugins/wp-nested-pages
 
 # Ignore everything in the "themes" directory, except the Helsingborg theme
 wp-content/themes/*
