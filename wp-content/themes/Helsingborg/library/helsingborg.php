@@ -270,16 +270,18 @@ add_filter('gettext', 'change_default_template_to_artikel', 10, 3);
  * Filter the days so only those in $days_array is returned
  * @return array
  */
-function filter_date_array_by_days($dates_array, $days_array) {
-    $return_array=array();
+if (!function_exists('filter_date_array_by_days')) {
+    function filter_date_array_by_days($dates_array, $days_array) {
+        $return_array=array();
 
-    foreach($dates_array as $date_string) {
-        if (in_array(date('N', strtotime($date_string)), $days_array)) {
-            array_push($return_array, $date_string);
+        foreach($dates_array as $date_string) {
+            if (in_array(date('N', strtotime($date_string)), $days_array)) {
+                array_push($return_array, $date_string);
+            }
         }
-    }
 
-    return $return_array;
+        return $return_array;
+    }
 }
 
 /**
@@ -288,22 +290,24 @@ function filter_date_array_by_days($dates_array, $days_array) {
  * @param  string $strDateTo   Date to
  * @return array               Date range
  */
-function create_date_range_array($strDateFrom, $strDateTo)
-{
-    $aryRange=array();
-    $iDateFrom = mktime(1,0,0, substr($strDateFrom,5,2), substr($strDateFrom,8,2), substr($strDateFrom,0,4));
-    $iDateTo = mktime(1,0,0, substr($strDateTo,5,2), substr($strDateTo,8,2), substr($strDateTo,0,4));
+if (!function_exists('create_date_range_array')) {
+    function create_date_range_array($strDateFrom, $strDateTo)
+    {
+        $aryRange=array();
+        $iDateFrom = mktime(1,0,0, substr($strDateFrom,5,2), substr($strDateFrom,8,2), substr($strDateFrom,0,4));
+        $iDateTo = mktime(1,0,0, substr($strDateTo,5,2), substr($strDateTo,8,2), substr($strDateTo,0,4));
 
-    if ($iDateTo>=$iDateFrom) {
-        array_push($aryRange, date('Y-m-d', $iDateFrom)); // first entry
-        while ($iDateFrom<$iDateTo)
-        {
-            $iDateFrom += 86400; // add 24 hours
-            array_push($aryRange, date('Y-m-d', $iDateFrom));
+        if ($iDateTo>=$iDateFrom) {
+            array_push($aryRange, date('Y-m-d', $iDateFrom)); // first entry
+            while ($iDateFrom<$iDateTo)
+            {
+                $iDateFrom += 86400; // add 24 hours
+                array_push($aryRange, date('Y-m-d', $iDateFrom));
+            }
         }
-    }
 
-    return $aryRange;
+        return $aryRange;
+    }
 }
 
 /**
