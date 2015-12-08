@@ -1,4 +1,4 @@
-<?php 
+<?php
 $calendarListID = ($calendarListID) ? $calendarListID++ : 1;
 echo $before_widget;
 ?>
@@ -66,7 +66,12 @@ echo $before_widget;
         jQuery.post(ajaxurl, data, function(response) {
             var obj = JSON.parse(response);
             events = obj.events;
-            jQuery('#calendar-list-<?php echo $calendarListID; ?>').html(obj.list);
+
+            if (obj.events.length === 0) {
+                jQuery('#calendar-list-<?php echo $calendarListID; ?>').closest('.widget').remove();
+            } else {
+                jQuery('#calendar-list-<?php echo $calendarListID; ?>').html(obj.list);
+            }
         });
 
         jQuery(document).on('click', '#calendar-list-<?php echo $calendarListID; ?> .event-item', function(event) {
