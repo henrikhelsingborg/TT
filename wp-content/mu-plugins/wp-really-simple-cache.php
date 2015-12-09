@@ -1,5 +1,5 @@
 <?php
-
+	
 namespace WpSimpleCachePlugin\Cache;
 
 /*
@@ -13,7 +13,7 @@ Disable:	 To disable this plugin add define("WP_SIMPLE_CACHE_DISABLED", true); t
 /* Store callback */ //TODO: FIX THIS
 if ( !function_exists( 'wp_simple_cache_plugin_end' ) ) { 
 	function wp_simple_cache_plugin_end ( $data ) {
-	
+		
 		//Cache data
 		$cache_instance = new WpSimpleCache();
 		$cache_instance::store_cache($data);
@@ -151,7 +151,12 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 	    }
 	
 		public static function store_cache($callback_data) {
-	
+			
+			//Do not store 404 
+			if ( defined('ABSPATH') && is_404() ) {
+				return $callback_data; 
+			}
+
 			//Go back to current dir (applys to some apache servers)
 			chdir(dirname($_SERVER['SCRIPT_FILENAME']));
 	
@@ -246,18 +251,38 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 				return false; 
 			}
 			
-			//Cache ajax requests 
+			//Cache ajax requests (true to override below)
 			if ((defined('DOING_AJAX') && DOING_AJAX === true) && !self::is_logged_in ()) {
 				return true; 	
 			}
 			
-			//Normal behaviour 
+			//Normal behaviour (true to override below)
 			if (!self::is_blocked_url() && !self::is_logged_in () && !self::is_post_request() && !self::has_get_variable ()) {
 				return true;
-			} else {
-				return false;
 			}
 			
+			return false;		
+				
+		}
+		
+		public static function purge_events ($global_purge = false) {
+			if ($global_purge === false) {
+				return array(
+					'save_post',
+					'deleted_post',
+					'trashed_post',
+					'edit_post',
+					'delete_attachment'
+				);
+			} else {
+				return array(
+					'switch_theme',
+					'activated_plugin',
+					'deactivated_plugin',
+					'wp_update_nav_menu'
+				);
+			}
+			return false; 
 		}
 		
 	}
@@ -324,9 +349,26 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 	});
 	
 	//Purge page on post id 
-	add_action('save_post', '\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id', 999 );
-	add_action('delete_post', '\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id', 999 );
+	$purge_hooks_id = $wp_simple_cache::purge_events(); 
+	if (is_array($purge_hooks_global) && !empty($purge_hooks_global)) {
+		foreach ($purge_hooks_global as $event) {
+			add_action($event,'\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id',999); 
+		} 
+	} 
 	
+	//Purge globally on this events 
+	$purge_hooks_global = $wp_simple_cache::purge_events(true); 
+	if (is_array($purge_hooks_global) && !empty($purge_hooks_global)) {
+		foreach ($purge_hooks_global as $event) {
+			add_action($event,function(){
+				global $wp_simple_cache;
+				if ( is_a( $wp_simple_cache, 'WpSimpleCachePlugin\Cache\WpSimpleCache' ) ) {  
+					$wp_simple_cache::clean_cache();
+				}
+			},999); 
+		} 
+	} 
+
 	/* Purge page on querystring */ 
 	add_action('init', function() {
 		if ( isset($_GET['cache_empty_id']) && is_numeric( $_GET['cache_empty_id'] ) && is_user_logged_in()) {
@@ -335,12 +377,6 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 	});
 	
 }
-
-//Purge all on menu save 
-add_action('wp_update_nav_menu', function() {
-	global $wp_simple_cache;
-	$wp_simple_cache::clean_cache();
-}, 999 );  
 
 //Purge all on request 
 add_action('init', function() {
@@ -397,13 +433,6 @@ add_action('admin_bar_menu', function($wp_admin_bar) {
 	$wp_admin_bar->add_node($settings);
 	
 }, 1050);
-
-//Admin bar styling
-add_action('wp_head', function(){
-	if(is_user_logged_in()) {
-		echo '<style>.wp-simple-cache-button { background: rgba(255,255,255,.1) !important; margin-left: 20px !important; }</style>'; 
-	}
-}); 
 
 //Add timestamp to footer
 add_action('wp_footer', function(){
