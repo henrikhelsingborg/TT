@@ -125,7 +125,9 @@
             line-height: 140%;
 
             article {
-                @include word-wrap();
+                word-wrap: break-word;
+                hyphens: none;
+                //@include word-wrap();
             }
         }
 

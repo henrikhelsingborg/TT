@@ -231,4 +231,16 @@ body[data-theme="blue"] {
         color: $band-blue-4;
     }
 
+    .table-list {
+        border-color: $band-blue-4;
+
+        thead {
+            background: $band-blue-4;
+        }
+
+        .table-item.active {
+            background: rgba($band-blue-4, .3);
+        }
+    }
+
 }

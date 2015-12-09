@@ -232,4 +232,16 @@ body[data-theme="green"] {
         color: $band-green-4;
     }
 
+    .table-list {
+        border-color: $band-green-4;
+
+        thead {
+            background: $band-green-4;
+        }
+
+        .table-item.active {
+            background: rgba($band-green-4, .3);
+        }
+    }
+
 }

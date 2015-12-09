@@ -5658,14 +5658,11 @@ article + .table {
   line-height: 140%; }
   .hbg-social-feed.hbg-social-feed-facebook .hbg-social-feed-post-content article,
   .hbg-social-feed.hbg-social-feed-twitter .hbg-social-feed-post-content article {
-    overflow-wrap: break-word;
     word-wrap: break-word;
-    -ms-word-break: break-all;
-    word-break: break-word;
-    -ms-hyphens: none;
-    -moz-hyphens: none;
     -webkit-hyphens: none;
-    hyphens: none; }
+       -moz-hyphens: none;
+        -ms-hyphens: none;
+            hyphens: none; }
 
 .hbg-social-feed.hbg-social-feed-facebook .hbg-social-feed-post-attachment,
 .hbg-social-feed.hbg-social-feed-twitter .hbg-social-feed-post-attachment {
