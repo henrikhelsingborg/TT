@@ -22,7 +22,8 @@
                     <span class="modal-ics"><a href="#" class="link-item">Lägg till i din kalender</a></span>
                     
                     <p class="modal-description"></p>
-                    <p class="modal-link"></p>
+                    <p class="modal-link"><a href="javascript:void(0);" onclick="openOrFocus('#', 'window1')"></a></p>
+
                 </article>
                 <div id="event-organizers">
                     <ul class="list" id="organizer-modal"></ul>
@@ -31,3 +32,14 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+
+    window.openOrFocus = function(url, name) {
+        if (!window.popups)
+            window.popups = {};
+        if (window.popups[name])
+            window.popups[name].close();
+        window.popups[name] = window.open(url, name);
+    }
+</script>
