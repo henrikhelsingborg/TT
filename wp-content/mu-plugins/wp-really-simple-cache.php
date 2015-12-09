@@ -284,7 +284,7 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 		if ( is_a( $wp_simple_cache, 'WpSimpleCachePlugin\Cache\WpSimpleCache' ) ) {  
 
 			//Purge only this page, or purge all?
-			if ( in_array(get_post_type( $post_id ), array("page","post") ) && ( $post_id != get_option('page_on_front') ) ) {
+			if ( in_array(get_post_type( $post_id ), array("page","post") ) ) {
 				
 				//Purge this post 
 				$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink( $post_id ));
@@ -325,6 +325,7 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 	
 	//Purge page on post id 
 	add_action('save_post', '\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id', 999 );
+	add_action('delete_post', '\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id', 999 );
 	
 	/* Purge page on querystring */ 
 	add_action('init', function() {
