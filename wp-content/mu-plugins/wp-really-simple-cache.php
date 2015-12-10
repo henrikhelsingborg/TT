@@ -350,8 +350,8 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 	
 	//Purge page on post id 
 	$purge_hooks_id = $wp_simple_cache::purge_events(); 
-	if (is_array($purge_hooks_global) && !empty($purge_hooks_global)) {
-		foreach ($purge_hooks_global as $event) {
+	if (is_array($purge_hooks_id) && !empty($purge_hooks_id)) {
+		foreach ($purge_hooks_id as $event) {
 			add_action($event,'\WpSimpleCachePlugin\Cache\WpSimpleCache_purge_post_by_id',999); 
 		} 
 	} 
