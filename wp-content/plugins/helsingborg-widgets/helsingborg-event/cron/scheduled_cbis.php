@@ -34,7 +34,7 @@ function cbis_event() {
         'categoryId' => $cbis_category_id,
         'templateId' => 0,
         'pageOffset' => 0,
-        'itemsPerPage' => 100,
+        'itemsPerPage' => 1000,
         'filter' => array(
             'GeoNodeIds' => array($cbis_hbg_id),
             'StartDate' => date('c'),
@@ -60,17 +60,22 @@ function cbis_event() {
     );
 
     /**
-     * Step 1: Delete all previous city break events
-     */
-    $delete_query = "DELETE FROM happy_external_event WHERE ImageID LIKE '%citybreak%' OR ImageId = ''";
-    $result = $wpdb->get_results($delete_query);
-
-    /**
-     * Step 2: Request data from CBIS SOAP API
+     * Step 1: Request data from CBIS SOAP API
      */
     $client = new SoapClient('http://api.cbis.citybreak.com/Products.asmx?WSDL');
     $response = $client->ListAll($requestParams);
+
     $products = $response->ListAllResult->Items->Product;
+
+    if (!count($products)) {
+        return;
+    }
+
+    /**
+     * Step 2: Delete all previous city break events
+     */
+    $delete_query = "DELETE FROM happy_external_event WHERE ImageID LIKE '%citybreak%' OR ImageId = ''";
+    $result = $wpdb->get_results($delete_query);
 
     /**
      * Step 3: Loop the loaded events, map the data and save to database
@@ -89,7 +94,7 @@ function cbis_event() {
         /**
          * Map attributes to correct variables
          */
-        $title        = $product->SystemName   ?: '';
+        $title        = isset($product->Name) && !empty($product->Name) ? $product->Name : $product->SystemName;
         $status       = $product->Status       ?: 'Övrigt';
         $imageid      = $product->Image->Url   ?: '';
         $introduction = $attributes[101]->Data ?: '';
@@ -107,6 +112,10 @@ function cbis_event() {
         $occations = $product->Occasions;
         if (isset($product->Occasions->OccasionObject) && count($product->Occasions->OccasionObject) > 0) {
             $occations = $product->Occasions->OccasionObject;
+        }
+
+        if (!is_array($occations)) {
+            $occations = array($occations);
         }
 
         /**
