@@ -1,0 +1,1174 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Stream"
+msgstr ""
+
+#. Short description.
+msgid "Stream is the easiest and safest way to track content changes happening to your WordPress site and then view them in beautifully organized detail."
+msgstr ""
+
+#. Screenshot description.
+msgid "Every logged-in user action is displayed in an activity stream and organized for easy filtering and searching."
+msgstr ""
+
+#. Screenshot description.
+msgid "Enable live updates in Screen Options to watch your site activity appear in near real-time."
+msgstr ""
+
+#. Screenshot description.
+msgid "Create rules for excluding certain kinds of records from appearing in Stream."
+msgstr ""
+
+#. Found in description list item.
+msgid "Advanced Custom Fields"
+msgstr ""
+
+#. Found in description list item.
+msgid "bbPress"
+msgstr ""
+
+#. Found in description list item.
+msgid "BuddyPress"
+msgstr ""
+
+#. Found in description list item.
+msgid "Easy Digital Downloads"
+msgstr ""
+
+#. Found in description list item.
+msgid "Gravity Forms"
+msgstr ""
+
+#. Found in description list item.
+msgid "Jetpack"
+msgstr ""
+
+#. Found in description list item.
+msgid "User Switching"
+msgstr ""
+
+#. Found in description list item.
+msgid "WooCommerce"
+msgstr ""
+
+#. Found in description list item.
+msgid "WordPress SEO by Yoast"
+msgstr ""
+
+#. Found in description list item.
+msgid "Posts"
+msgstr ""
+
+#. Found in description list item.
+msgid "Pages"
+msgstr ""
+
+#. Found in description list item.
+msgid "Custom Post Types"
+msgstr ""
+
+#. Found in description list item.
+msgid "Users"
+msgstr ""
+
+#. Found in description list item.
+msgid "Themes"
+msgstr ""
+
+#. Found in description list item.
+msgid "Plugins"
+msgstr ""
+
+#. Found in description list item.
+msgid "Tags"
+msgstr ""
+
+#. Found in description list item.
+msgid "Categories"
+msgstr ""
+
+#. Found in description list item.
+msgid "Custom Taxonomies"
+msgstr ""
+
+#. Found in description list item.
+msgid "Settings"
+msgstr ""
+
+#. Found in description list item.
+msgid "Custom Backgrounds"
+msgstr ""
+
+#. Found in description list item.
+msgid "Custom Headers"
+msgstr ""
+
+#. Found in description list item.
+msgid "Menus"
+msgstr ""
+
+#. Found in description list item.
+msgid "Media Library"
+msgstr ""
+
+#. Found in description list item.
+msgid "Widgets"
+msgstr ""
+
+#. Found in description list item.
+msgid "Comments"
+msgstr ""
+
+#. Found in description list item.
+msgid "Theme Editor"
+msgstr ""
+
+#. Found in description list item.
+msgid "WordPress Core Updates"
+msgstr ""
+
+#. Found in description list item.
+msgid "Multisite view of all activity records on a network"
+msgstr ""
+
+#. Found in description list item.
+msgid "Limit who can view user activity records by user role"
+msgstr ""
+
+#. Found in description list item.
+msgid "Set exclude rules to ignore certain kinds of user activity"
+msgstr ""
+
+#. Found in description list item.
+msgid "Live update of user activity records in the Stream"
+msgstr ""
+
+#. Found in description list item.
+msgid "Support for IPv6 addresses"
+msgstr ""
+
+#. Found in description list item.
+msgid "WP-CLI command for querying records"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Report Bugs:</strong> If you find a bug, error or other problem, please report it! You can do this by <a href=\"https://wordpress.org/support/plugin/stream\">creating a new topic</a> in the plugin forum. Once a developer can verify the bug by reproducing it, they will create an official bug report in GitHub where the bug will be worked on."
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Suggest New Features:</strong> Have an awesome idea? Please share it! Simply <a href=\"https://wordpress.org/support/plugin/stream\">create a new topic</a> in the plugin forum to express your thoughts on why the feature should be included and get a discussion going around your idea."
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Issue Pull Requests:</strong> If you're a developer, the easiest way to get involved is to help out on <a href=\"https://github.com/x-team/wp-stream/issues\">issues already reported</a> in GitHub. Be sure to check out the <a href=\"https://github.com/x-team/wp-stream/blob/master/contributing.md\">contributing guide</a> for developers."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Never be in the dark about WP Admin activity again."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Stream allows you to know exactly when changes to your site have been made, and more importantly, who did them."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Every logged-in user action is displayed in an activity stream and organized for easy filtering by User, Role, Context, Action and IP address."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Built-In Tracking Integrations For Popular Plugins:</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Built-In Tracking For Core Actions:</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Other Noteworthy Features:</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>See room for improvement?</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Great! There are several ways you can get involved to help make Stream better:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Thank you for wanting to make Stream better for everyone! We salute you."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Better descriptions when a post changes status (<a href=\"https://github.com/xwp/stream/commit/0eada108b443ed3b6f9bdae3f1e4c87c77128a0a\">0eada10</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Stream no longer crashes every time it tries to use a Jetpack (<a href=\"https://github.com/xwp/stream/pull/798\">#798</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: You may now actually choose an item from the filter dropdown menus, instead of having everything greyed out (<a href=\"https://github.com/xwp/stream/pull/800\">#800</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Logging in / out of a Multisite install is now possible (<a href=\"https://github.com/xwp/stream/pull/801\">#801</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: The Settings connector now works with WP CLI (<a href=\"https://github.com/xwp/stream/commit/78a56b2c6b33b4f41c7b4f1f256a4d03ad42b2cb\">78a56b2</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Better compatibility with upcoming WordPress 4.4 (<a href=\"https://github.com/xwp/stream/commit/2b2493ccb3ef6cba5aeb773433fdb5f0d414e8f3\">2b2493c</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Minor security improvements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: New and improved Gravity Forms connector, works much better (<a href=\"https://github.com/xwp/stream/pull/780\">#780</a>) (thanks <a href=\"https://github.com/rob\">Rob</a>!)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Stream no longer explodes on &lt; PHP 5.3, when trying to tell you that it explodes on &lt; PHP 5.3 (<a href=\"https://github.com/xwp/stream/pull/781\">#781</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Fixed a smal typo (<a href=\"https://github.com/xwp/stream/commit/62455c518b95ddaf5e6c6c0733e7d03e5aa1311c\">62455c5</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Multiple Multisite Mistakes Mended (<a href=\"https://github.com/xwp/stream/pull/788\">#788</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Internet Explorer 8 fix!! IE8!? Come on, people, it's 2015. (<a href=\"https://github.com/xwp/stream/pull/789\">#789</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: EDD connector bug (<a href=\"https://github.com/xwp/stream/pull/790\">#790</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Helper function for running Stream queries added (<a href=\"https://github.com/xwp/stream/pull/774\">#774</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Migration dialog removed (<a href=\"https://github.com/xwp/stream/commit/76e809f9abb3dd691b755cf943b50a76a3ffb488\">76e809f</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Better handling of draft saving and auto-saving (<a href=\"https://github.com/xwp/stream/pull/775\">#775</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Records page title size now matches other admin pages (<a href=\"https://github.com/xwp/stream/commit/afcced8b590e047e8adfe6ae79483a7436c849f4\">afcced8</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Database update dialog is now displayed correctly (<a href=\"https://github.com/xwp/stream/pull/773\">#773</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: The record's connector was being incorrectly stored as the connector name (<a href=\"https://github.com/xwp/stream/pull/773\">#773</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Record action links are back (<a href=\"https://github.com/xwp/stream/pull/773\">#773</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Jetpack is now able to connect without error while Stream is active (<a href=\"https://github.com/xwp/stream/pull/768\">#768</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Reset Filters text no longer wraps to a second line (<a href=\"https://github.com/xwp/stream/pull/765\">#765</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Stream and <a href=\"https://wordpress.org/plugins/user-switching/\">User Switching</a> are now besties (<a href=\"https://github.com/xwp/stream/pull/744\">#744</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: You can now choose to keep your records indefinitely (probably not a good idea) (<a href=\"https://github.com/xwp/stream/pull/748\">#748</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: We're now using local styles for our datepicker, instead of loading them externally (<a href=\"https://github.com/xwp/stream/pull/751\">#751</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Updating from version 1.4.9 no longer breaks your records (<a href=\"https://github.com/xwp/stream/pull/749\">#749</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Stream now works with custom wp-content folder locations (<a href=\"https://github.com/xwp/stream/pull/745\">#745</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Live updates work again (<a href=\"https://github.com/xwp/stream/pull/739\">#739</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Activity logs are now stored locally in WordPress. No data is sent externally and no registration required."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Migration process for Stream 2 users to move records out of the cloud, and into your local database."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Various measures and database schema changes to improve Stream's performance."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed: Notifications and Reports have been removed to be reworked for an upcoming release."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Compatibility with split terms introduced in WordPress 4.2 (<a href=\"https://github.com/wp-stream/stream/issues/702\">#702</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Add support for future and pending post transitions (<a href=\"https://github.com/wp-stream/stream/pull/716\">#716</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Match new default admin colors introduced in WordPress 4.2 (<a href=\"https://github.com/wp-stream/stream/pull/718\">#718</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Compatibility issues with WP-Cron Control plugin and system crons (<a href=\"https://github.com/wp-stream/stream/issues/715\">#715</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Broken date range filter on Reports screen (<a href=\"https://github.com/wp-stream/stream/pull/717\">#717</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Add reset button to reset search filters (<a href=\"https://github.com/wp-stream/stream/issues/144\">#144</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: WP-CLI command output improvements via <code>--format</code> option for table view, JSON and CSV (<a href=\"https://github.com/wp-stream/stream/pull/705\">#705</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Add link to https://wp-stream.com in README (<a href=\"https://github.com/wp-stream/stream/issues/709\">#709</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Better highlighting on multiple live update rows"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Limit custom range datepickers based on the Stream plan type"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Limit legacy record migrations based on the Stream plan type"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Allow properties with values of zero to be included in queries (<a href=\"https://github.com/wp-stream/stream/issues/698\">#698</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Properly return record success/failure in log and store methods (<a href=\"https://github.com/wp-stream/stream/issues/711\">#711</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: WP-CLI command now available for querying records via the command line (<a href=\"https://github.com/wp-stream/stream/issues/499\">#499</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Silently disable Stream during content import (<a href=\"https://github.com/wp-stream/stream/issues/672\">#672</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Search results now ordered by date instead of relevance (<a href=\"https://github.com/wp-stream/stream/issues/689\">#689</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Handle boolean values appropriately during wp_stream_log_data filter (<a href=\"https://github.com/wp-stream/stream/issues/680\">#680</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Hook into external class load methods on init rather than plugins_loaded (<a href=\"https://github.com/wp-stream/stream/issues/686\">#686</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: N/A user not working in exclude rules (<a href=\"https://github.com/wp-stream/stream/issues/688\">#688</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Prevent Notification Rule meta from being saved to all post types (<a href=\"https://github.com/wp-stream/stream/issues/693\">#693</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: PHP warning shown for some users when deleting plugins (<a href=\"https://github.com/wp-stream/stream/issues/695\">#695</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Full record backtrace now available to developers for debugging (<a href=\"https://github.com/wp-stream/stream/issues/467\">#467</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Unread count badge added to Stream menu, opt-out available in User Profile (<a href=\"https://github.com/wp-stream/stream/issues/588\">#588</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Stream connector to track Stream-specific contexts and actions (<a href=\"https://github.com/wp-stream/stream/issues/622\">#622</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Inherit role access from Stream Settings for Notifications and Reports (<a href=\"https://github.com/wp-stream/stream/issues/641\">#641</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Opt-in required for Akismet tracking (<a href=\"https://github.com/wp-stream/stream/issues/649\">#649</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Ignore comments deleted when deleting parent post (<a href=\"https://github.com/wp-stream/stream/issues/652\">#652</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Opt-in required for comment flood tracking (<a href=\"https://github.com/wp-stream/stream/issues/656\">#656</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Opt-in required for WP Cron tracking (<a href=\"https://github.com/wp-stream/stream/issues/673\">#673</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Post revision action link pointing to wrong revision ID (<a href=\"https://github.com/wp-stream/stream/issues/585\">#585</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: PHP warnings caused by Menu connector (<a href=\"https://github.com/wp-stream/stream/issues/663\">#663</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Non-static method called statically in WPSEO connector (<a href=\"https://github.com/wp-stream/stream/issues/668\">#668</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Prevent live updates from tampering with filtered results (<a href=\"https://github.com/wp-stream/stream/issues/675\">#675</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Improved localisation strings throughout the plugin (<a href=\"https://github.com/wp-stream/stream/pull/644\">#644</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Improved tooltip text explaining WP.com sign in"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: ACF Pro doesn't save custom field values when Stream enabled (<a href=\"https://github.com/wp-stream/stream/issues/642\">#642</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "All activity is now stored only in the cloud over SSL, local MySQL storage dependence is over!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Connector and Context have merged in the UI, now just called Contexts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "The Exclude Rules UI has been completely revamped"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Notifications and Reports are now conveniently built into Stream for Pro subscribers"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Connectors for tracking other popular plugins are now built into Stream, like BuddyPress, Jetpack, Gravity Forms, and more..."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "You create an account for Stream simply by signing in with your WordPress.com ID"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Revert delayed log mechanism for post transition (<a href=\"https://github.com/x-team/wp-stream/issues/585\">#585</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Revert usage of get_taxonomy() (<a href=\"https://github.com/x-team/wp-stream/pull/586\">#586</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Notices not firing on correct action (<a href=\"https://github.com/x-team/wp-stream/issues/589\">#589</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Greatly improved widget tracking, including changes performed in Customizer (<a href=\"https://github.com/x-team/wp-stream/pull/391\">#391</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Now tracking when Akismet automatically marks comments as spam (<a href=\"https://github.com/x-team/wp-stream/pull/587\">#587</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Log WP-CLI details to Stream author meta (<a href=\"https://github.com/x-team/wp-stream/issues/470\">#470</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Track changes to options more deeply (<a href=\"https://github.com/x-team/wp-stream/pull/573\">#573</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Labels not seen for CPT registered on init with default priority (<a href=\"https://github.com/x-team/wp-stream/issues/565\">#565</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Stream menu appearing in Network menu when not network activated (<a href=\"https://github.com/x-team/wp-stream/issues/582\">#582</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Post Revision ID associated to record is not the most recent one (<a href=\"https://github.com/x-team/wp-stream/issues/585\">#585</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Incorrect action label for comment throttling (<a href=\"https://github.com/x-team/wp-stream/issues/591\">#591</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Comment Type support added to the Comments connector (<a href=\"https://github.com/x-team/wp-stream/issues/558\">#558</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Datepicker opens again with each paged view (<a href=\"https://github.com/x-team/wp-stream/issues/568\">#568</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: PHP warning when deleting network users (<a href=\"https://github.com/x-team/wp-stream/issues/579\">#579</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Track user count setting changes (<a href=\"https://github.com/x-team/wp-stream/issues/583\">#583</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: .po and .pot files out-of-date for translators (<a href=\"https://github.com/x-team/wp-stream/issues/584\">#584</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Actions provided for trashed posts are irrelevant (<a href=\"https://github.com/x-team/wp-stream/issues/523\">#523</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Use core language pack translations where possible (<a href=\"https://github.com/x-team/wp-stream/issues/534\">#534</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Consolidate show filter and show column screen options (<a href=\"https://github.com/x-team/wp-stream/issues/542\">#542</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Stop tracking failed login attempts (<a href=\"https://github.com/x-team/wp-stream/issues/547\">#547</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Remove all uses of extract() from Stream (<a href=\"https://github.com/x-team/wp-stream/issues/556\">#556</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Excluding roles is not handled properly (<a href=\"https://github.com/x-team/wp-stream/issues/527\">#527</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Stream runs install routine twice (<a href=\"https://github.com/x-team/wp-stream/issues/528\">#528</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Widget records show sidebar slug instead of label (<a href=\"https://github.com/x-team/wp-stream/issues/531\">#531</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Fatal error when PHP version is less than 5.3 (<a href=\"https://github.com/x-team/wp-stream/issues/538\">#538</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Cannot exclude Custom Background context (<a href=\"https://github.com/x-team/wp-stream/issues/543\">#543</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Conflict with Jetpack body class in WP Admin (<a href=\"https://github.com/x-team/wp-stream/issues/545\">#545</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Stream settings exclude error for big wp_users table (<a href=\"https://github.com/x-team/wp-stream/issues/551\">#551</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Lightweight frontend indicator for sites using Stream (<a href=\"https://github.com/x-team/wp-stream/issues/507\">#507</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Add filterable method for excluded comment types (<a href=\"https://github.com/x-team/wp-stream/issues/487\">#487</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Rename \"ID\" column label to \"Record ID\" (<a href=\"https://github.com/x-team/wp-stream/issues/490\">#490</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: One admin notice for any missing DB tables (<a href=\"https://github.com/x-team/wp-stream/pull/506\">#506</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Custom authentication schemes not tracking user logins correctly (<a href=\"https://github.com/x-team/wp-stream/issues/434\">#434</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Taxonomy connector conflicts with Edit Flow plugin (<a href=\"https://github.com/x-team/wp-stream/issues/498\">#498</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Switching user is incorrectly tracked (<a href=\"https://github.com/x-team/wp-stream/issues/501\">#501</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Extension activation links broken when plugin folders are renamed (<a href=\"https://github.com/x-team/wp-stream/issues/502\">#502</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Author info showing up incorrectly (<a href=\"https://github.com/x-team/wp-stream/issues/505\">#505</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Incompatibility with multi-server environments (<a href=\"https://github.com/x-team/wp-stream/issues/517\">#517</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Warnings seen when Show Avatars is disabled (<a href=\"https://github.com/x-team/wp-stream/issues/518\">#518</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Notices for non-existent extension data after timeout (<a href=\"https://github.com/x-team/wp-stream/pull/529\">#529</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Admin pointers to highlight when new admin screens are introduced (<a href=\"https://github.com/x-team/wp-stream/issues/466\">#466</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Filter introduced to allow the Stream admin menu position to be changed (<a href=\"https://github.com/x-team/wp-stream/issues/99\">#99</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Provide option label for records that show when the Stream database has updated (<a href=\"https://github.com/x-team/wp-stream/pull/444\">#444</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Better handling of authors in the list table (<a href=\"https://github.com/x-team/wp-stream/pull/448\">#448</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Way for developers to set their Stream Extensions affiliate ID on links from the Extensions screen (<a href=\"https://github.com/x-team/wp-stream/issues/482\">#482</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Extensions screen CSS bug in Firefox (<a href=\"https://github.com/x-team/wp-stream/issues/464\">#464</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Error when installing extensions from the Network Admin (<a href=\"https://github.com/x-team/wp-stream/issues/491\">#491</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Undefined notice in admin.php (<a href=\"https://github.com/x-team/wp-stream/issues/468\">#468</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Introducing the Stream Extensions screen! (<a href=\"https://github.com/x-team/wp-stream/issues/396\">#396</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Update Database button redirecting to previous screen (<a href=\"https://github.com/x-team/wp-stream/issues/443\">#443</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Update routine hotfix that was causing records to disappear (<a href=\"https://github.com/x-team/wp-stream/issues/447\">#447</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Scripts and styles not using Stream version number (<a href=\"https://github.com/x-team/wp-stream/issues/440\">#440</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: WP-CLI incorrectly referenced in records (<a href=\"https://github.com/x-team/wp-stream/issues/441\">#441</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Multisite is now fully supported, activate Stream network-wide (<a href=\"https://github.com/x-team/wp-stream/issues/65\">#65</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Separate API for handling DB update routines (<a href=\"https://github.com/x-team/wp-stream/issues/379\">#379</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: WP-CLI compatibility, Stream now tracks changes made via WP-CLI (<a href=\"https://github.com/x-team/wp-stream/issues/423\">#423</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Deprecate functions and hooks in favor of consistent naming conventions (<a href=\"https://github.com/x-team/wp-stream/issues/267\">#267</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Use icon link instead of clicking the summary to filter by object ID (<a href=\"https://github.com/x-team/wp-stream/issues/380\">#380</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Save additional author meta for better records (<a href=\"https://github.com/x-team/wp-stream/issues/389\">#389</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: More compact search filters for smaller screens (<a href=\"https://github.com/x-team/wp-stream/issues/403\">#403</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Fix AJAX loading of authors in dropdown filters (<a href=\"https://github.com/x-team/wp-stream/issues/49\">#49</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Custom capability conflict with W3 Total Cache plugin (<a href=\"https://github.com/x-team/wp-stream/issues/296\">#296</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Live updates remove last item in activity table (<a href=\"https://github.com/x-team/wp-stream/issues/386\">#386</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Live updates screen option checkbox not persisting (<a href=\"https://github.com/x-team/wp-stream/issues/392\">#392</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: IP validator not respecting zero (<a href=\"https://github.com/x-team/wp-stream/issues/394\">#394</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Non-Administrator users seeing errors in Settings records (<a href=\"https://github.com/x-team/wp-stream/issues/406\">#406</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Uninstall confirmation message doesn't display (<a href=\"https://github.com/x-team/wp-stream/issues/411\">#411</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: TTL purge schedule is never setup (<a href=\"https://github.com/x-team/wp-stream/issues/412\">#412</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: NextGen compability issue (<a href=\"https://github.com/x-team/wp-stream/issues/416\">#416</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Stream Feeds Key not being automatically generated (<a href=\"https://github.com/x-team/wp-stream/issues/420\">#420</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Theme Editor connector for tracking changes made to theme files (<a href=\"https://github.com/x-team/wp-stream/issues/313\">#313</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Additional screen options to show/hide only the filters you care about (<a href=\"https://github.com/x-team/wp-stream/issues/329\">#329</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Visibility option in Exclude settings to hide past records from view (<a href=\"https://github.com/x-team/wp-stream/issues/355\">#355</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Stream Activity dashboard widget now supports live updates (<a href=\"https://github.com/x-team/wp-stream/issues/356\">#356</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Hover authors to reveal a tooltip with helpful user meta (<a href=\"https://github.com/x-team/wp-stream/issues/338\">#338</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Hover roles to reveal a tooltip with the number of authors assigned to that role (<a href=\"https://github.com/x-team/wp-stream/issues/377\">#377</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Future dates now disabled in Start date field datepicker (<a href=\"https://github.com/x-team/wp-stream/issues/334\">#334</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Now showing user Gravatars in Exclude Authors &amp; Roles settings field (<a href=\"https://github.com/x-team/wp-stream/issues/333\">#333</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: ID column is now hidden by default in Screen Options (<a href=\"https://github.com/x-team/wp-stream/issues/348\">#348</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Widget updated summary message improvement (<a href=\"https://github.com/x-team/wp-stream/commit/88189761d4a8836038e8d9ec348096a0aab3072d\">8818976</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Autocomplete not working correctly in Exclude IP Addressees settings field (<a href=\"https://github.com/x-team/wp-stream/issues/335\">#335</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Reset Stream Database link not clearing everything in all cases (<a href=\"https://github.com/x-team/wp-stream/issues/347\">#347</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: PHP 5.3.3 compatibility issue with filter constant (<a href=\"https://github.com/x-team/wp-stream/issues/351\">#351</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Predefined date range intervals not honoring the site timezone setting (<a href=\"https://github.com/x-team/wp-stream/issues/353\">#353</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: wpdb::prepare() notice appearing in WordPress 3.9 (<a href=\"https://github.com/x-team/wp-stream/issues/354\">#354</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Invalid argument warning thrown on fresh installations of WordPress (<a href=\"https://github.com/x-team/wp-stream/issues/358\">#358</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Record TTL purge not functioning correctly (<a href=\"https://github.com/x-team/wp-stream/issues/371\">#371</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Small CSS bug in jQuery UI datepicker skins (<a href=\"https://github.com/x-team/wp-stream/commit/04c80afa99486086612be9f6ad83148dfbbe533a\">04c80af</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Exclude tab in Settings to prevent specific types of activity from being tracked (<a href=\"https://github.com/x-team/wp-stream/issues/251\">#251</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Now logging Custom Background and Custom Header changes (<a href=\"https://github.com/x-team/wp-stream/issues/309\">#309</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Predefined date intervals now available when filtering records (<a href=\"https://github.com/x-team/wp-stream/issues/320\">#320</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Action links are now available for Stream Settings records (<a href=\"https://github.com/x-team/wp-stream/issues/305\">#305</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: User avatars now displayed in Authors dropdown filter (<a href=\"https://github.com/x-team/wp-stream/issues/311\">#311</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak: Live updates are enabled by default for new installs (<a href=\"https://github.com/x-team/wp-stream/issues/312\">#312</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Fallback to the term slug if a label does not exist in list-table (<a href=\"https://github.com/x-team/wp-stream/issues/214\">#214</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Widget sorting is now being tracked properly as well as Inactive widgets (<a href=\"https://github.com/x-team/wp-stream/issues/283\">#283</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Superfluous auto-draft posts are now prevented from being logged (<a href=\"https://github.com/x-team/wp-stream/issues/293\">#293</a>)"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/johnbillion\">@johnbillion</a>, <a href=\"https://github.com/rob\">@rob</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/szepeviktor\">@szepeviktor</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/westonruter\">@westonruter</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "<strong>NOTE:</strong> Multisite view of all activity records in the Network Admin has been removed in this release. If you require this feature, please do not update Stream until version 2.1.0 is released."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/chacha\">@chacha</a>, <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/bordoni\">@bordoni</a>, <a href=\"https://github.com/dero\">@dero</a>, <a href=\"https://github.com/jeffmatson\">@jeffmatson</a>, <a href=\"https://github.com/stipsan\">@stipsan</a>, <a href=\"https://github.com/c3mdigital\">@c3mdigital</a>, <a href=\"https://github.com/adamsilverstein\">@adamsilverstein</a>, <a href=\"https://github.com/westonruter\">@westonruter</a>, <a href=\"https://github.com/japh\">@japh</a>, <a href=\"https://github.com/solace\">@solace</a>, <a href=\"https://github.com/johnbillion\">@johnbillion</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/westonruter\">@westonruter</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/chacha\">@chacha</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/bordoni\">@bordoni</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/barryceelen\">@barryceelen</a>, <a href=\"https://github.com/japh\">@japh</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/japh\">@japh</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/westonruter\">@westonruter</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/japh\">@japh</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/bordoni\">@bordoni</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/c3mdigital\">@c3mdigital</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/westonruter\">@westonruter</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/westonruter\">@westonruter</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/c3mdigital\">@c3mdigital</a>, <a href=\"https://github.com/westonruter\">@westonruter</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/johnregan3\">@johnregan3</a>, <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/desaiuditd\">@desaiuditd</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/faishal\">@faishal</a>, <a href=\"https://github.com/desaiuditd\">@desaiuditd</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/johnregan3\">@johnregan3</a>, <a href=\"https://github.com/Powdered-Toast-Man\">@Powdered-Toast-Man</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Props <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/faishal\">@faishal</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/desaiuditd\">@desaiuditd</a>, <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Fixes bug that caused media uploads to fail on new posts. Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Use attachment type as context in Media connector. Bug fixes. Props <a href=\"https://github.com/lukecarbis\">@lukecarbis</a>, <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Pagination added to Stream Activity dashboard widget. Bug fixes. Props <a href=\"https://github.com/chacha\">@chacha</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Improved context names in Users connector. Props <a href=\"https://github.com/powelski\">@powelski</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Use sidebar area names as context in Widgets connector. Bug fixes. Props <a href=\"https://github.com/desaiuditd\">@desaiuditd</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/bordoni\">@bordoni</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Use post type names as context in Comments connector. German translation update. Bug fixes. Props <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/kucrut\">@kucrut</a>, <a href=\"https://github.com/pascal-klaeres\">@pascalklaeres</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Replacement function for filter_input family to avoid PHP bug. Filter added to main Stream query. Bug fixes. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Prevent records of disabled connectors from appearing in the Stream. Bug fixes. Props <a href=\"https://github.com/kucrut\">@kucrut</a>, <a href=\"https://github.com/johnregan3\">@johnregan3</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Translation updates. Langage packs for pt_BR and id_ID. Bug fixes. Props <a href=\"https://github.com/kucrut\">@kucrut</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/bordoni\">@bordoni</a>, <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/omniwired\">omniwired</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Awesome datepicker styles. Performance optimizations. Bug fixes. Props <a href=\"https://github.com/johnregan3\">@johnregan3</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Load authors filter using AJAX if there are more than 50. Props <a href=\"https://github.com/powelski\">@powelski</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Bug fixes. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Upgrade routine for IPv6 support. Persist tab selection after saving Stream Settings. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/dero\">dero</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Sortable columns bug fix on the records screen. Props <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Fixed a class scope bug <a href=\"https://wordpress.org/support/topic/temporary-fatal-error-after-upgrade-113\">reported in the support forum</a> that was causing a fatal error on some installs. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Highlight changed settings field feature. DB upgrade routine for proper utf-8 charset. Various bug fixes. Props <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/johnregan3\">@johnregan3</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Upgrade routine for IP column in DB. Serialized option parsing for Stream Settings records. Purge records immediately when TTL is set backwards in Stream Settings. Various bug fixes. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Bug fix for list table notice on new installations. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Disable terms in dropdown filters for which records do not exist. Props <a href=\"https://github.com/johnregan3\">@johnregan3</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Several important bug fixes. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Bug fix for sites using BuddyPress. Props <a href=\"https://github.com/johnregan3\">@johnregan3</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Code efficiency improvements when fetching admin area URLs. Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Query improvements, default connector interface, hook added for general settings fields. Bug fixes. Props <a href=\"https://github.com/dero\">dero</a>, <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Bug fix for live updates breaking columns when some are hidden via Screen Options. Props <a href=\"https://github.com/johnregan3\">@johnregan3</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Language pack for Polish. Bug fixes. Props <a href=\"https://github.com/powelski\">@powelski</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/johnregan3\">@johnregan3</a>, <a href=\"https://github.com/kucrut\">@kucrut</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Language pack for Spanish. Bug fixes. Props <a href=\"https://github.com/omniwired\">omniwired</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Ensure the dashboard widget repects the Role Access setting. Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Require nonce for generating a new user feed key. Props <a href=\"https://github.com/johnregan3\">@johnregan3</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Allow list table to be exensible. Hook added to prevent tables from being created, if desired. Props <a href=\"https://github.com/johnregan3\">@johnregan3</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Updated screenshot assets and descriptions. Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Support for live updates in the Stream. Bug fixes. Props <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/johnregan3\">@johnregan3</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Plugin version available as a constant. Bug fixes. Props <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Use menu name as context in Menus connector. Warning if required DB tables are missing. Bug fixes. Props <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/topher1kenobe\">@topher1kenobe</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "WordPress context added to Installer connector for core updates. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Replacing Chosen library with Select2. Bug fixes. Props <a href=\"https://github.com/kucrut\">@kucrut</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Added support for private feeds in JSON format. Flush rewrite rules automatically for feeds when enabled/disabled. Bug fixes. Props <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Specify which roles should have their activity logged. Delete all options on uninstall. Bug fixes. Props <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Added connector for Comments. Stream activity dashboard widget. UI enhancements. Bug fixes. Props <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/topher1kenobe\">@topher1kenobe</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Language packs for French and German. Option to uninstall database tables. Bug fixes. Props <a href=\"https://github.com/jonathanbardo\">@jonathanbardo</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/topher1kenobe\">@topher1kenobe</a>, <a href=\"https://github.com/pascal-klaeres\">@pascalklaeres</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Setting to enable/disable private feeds functionality. Additional record logged when a user's role is changed. Bug fixes. Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/kucrut\">@kucrut</a>, <a href=\"https://github.com/topher1kenobe\">@topher1kenobe</a>, <a href=\"https://github.com/justinsainton\">@justinsainton</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Ability to query Stream records in a private RSS feed. Bug fixes. Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Bug fix for Role Access option. Props <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Bug fixes for the Installer connector. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Hotfix to remove PHP 5.4-only syntax. Role Access option added to Settings. Props <a href=\"https://github.com/kucrut\">@kucrut</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Added connectors for Taxonomies and Settings. Bug fixes. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "UX improvements to manual DB purge. Cron event for user-defined TTL of records. Bug fixes. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Require PHP 5.3 to activate plugin. Provide action links for records when applicable. Bug fixes. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Improved support for pages and custom post types. Chosen for filter dropdowns. Pagination support in screen options. Bug fixes. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Improved actions for Users context. Action for edited images in Media context. Bug fixes in Menus context. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>, <a href=\"https://github.com/gedex\">@akeda</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Second iteration build using custom tables data model. First public release. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>, <a href=\"https://github.com/fjarrett\">@fjarrett</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Initial concept built using custom post type/taxonomies as the data model. Props <a href=\"https://github.com/shadyvb\">@shadyvb</a>"
+msgstr ""
