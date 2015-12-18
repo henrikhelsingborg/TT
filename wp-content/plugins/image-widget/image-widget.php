@@ -4,7 +4,7 @@ Plugin Name: Image Widget
 Plugin URI: http://wordpress.org/extend/plugins/image-widget/
 Description: A simple image widget that uses the native WordPress media manager to add image widgets to your site.
 Author: Modern Tribe, Inc.
-Version: 4.1.2
+Version: 4.2
 Author URI: http://m.tri.be/26
 */
 
@@ -12,6 +12,37 @@ Author URI: http://m.tri.be/26
 if ( !defined('ABSPATH') ) {
 	die('-1');
 }
+
+// Create a helper function for easy SDK access.
+function iw_fs() {
+    global $iw_fs;
+
+    if ( ! isset( $iw_fs ) ) {
+        // Include Freemius SDK.
+        require_once dirname(__FILE__) . '/freemius/start.php';
+
+        $iw_fs = fs_dynamic_init( array(
+            'id'                => '117',
+            'slug'              => 'image-widget',
+            'public_key'        => 'pk_355c4d1228571fd6f777fb989652e',
+            'is_premium'        => false,
+            'has_addons'        => false,
+            'has_paid_plans'    => false,
+            'menu'              => array(
+                'slug'       => 'image-widget',
+	            'first-path' => 'widgets.php',
+                'account'    => false,
+                'contact'    => false,
+                'support'    => false,
+            ),
+        ) );
+    }
+
+    return $iw_fs;
+}
+
+// Init Freemius.
+iw_fs();
 
 // Load the widget on widgets_init
 function tribe_load_image_widget() {
@@ -24,7 +55,7 @@ add_action('widgets_init', 'tribe_load_image_widget');
  **/
 class Tribe_Image_Widget extends WP_Widget {
 
-	const VERSION = '4.1.2';
+	const VERSION = '4.2';
 
 	const CUSTOM_IMAGE_SIZE_SLUG = 'tribe_image_widget_custom';
 
@@ -100,6 +131,7 @@ class Tribe_Image_Widget extends WP_Widget {
 			$instance['maxheight'] = apply_filters( 'image_widget_image_maxheight', esc_attr( $instance['maxheight'] ), $args, $instance );
 			$instance['align'] = apply_filters( 'image_widget_image_align', esc_attr( $instance['align'] ), $args, $instance );
 			$instance['alt'] = apply_filters( 'image_widget_image_alt', esc_attr( $instance['alt'] ), $args, $instance );
+			$instance['rel'] = apply_filters( 'image_widget_image_rel', esc_attr( $instance['rel'] ), $args, $instance );
 
 			if ( !defined( 'IMAGE_WIDGET_COMPATIBILITY_TEST' ) ) {
 				$instance['attachment_id'] = ( $instance['attachment_id'] > 0 ) ? $instance['attachment_id'] : $instance['image'];
@@ -142,6 +174,7 @@ class Tribe_Image_Widget extends WP_Widget {
 		}
 		$instance['align'] = $new_instance['align'];
 		$instance['alt'] = $new_instance['alt'];
+		$instance['rel'] = $new_instance['rel'];
 
 		// Reverse compatibility with $image, now called $attachement_id
 		if ( !defined( 'IMAGE_WIDGET_COMPATIBILITY_TEST' ) && $new_instance['attachment_id'] > 0 ) {
@@ -226,6 +259,7 @@ class Tribe_Image_Widget extends WP_Widget {
 			'imageurl' => '', // reverse compatible.
 			'align' => 'none',
 			'alt' => '',
+			'rel' => '',
 		);
 
 		if ( !defined( 'IMAGE_WIDGET_COMPATIBILITY_TEST' ) ) {
@@ -259,6 +293,7 @@ class Tribe_Image_Widget extends WP_Widget {
 				'target' => $instance['linktarget'],
 				'class' => 	$this->widget_options['classname'].'-image-link',
 				'title' => ( !empty( $instance['alt'] ) ) ? $instance['alt'] : $instance['title'],
+				'rel' => $instance['rel'],
 			);
 			$attr = apply_filters('image_widget_link_attributes', $attr, $instance );
 			$attr = array_map( 'esc_attr', $attr );
