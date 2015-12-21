@@ -2222,6 +2222,8 @@ html {
 
 body {
   position: static !important;
+  font-family: "Roboto", "Helvetica", "Arial";
+  font-size: 17px;
   background-color: #fff;
   margin: 0;
   padding: 0; }

@@ -1,6 +1,16 @@
 <?php
 
-// Get the EventID
+// Get the EventID  BEL ImagePath . $event_id
+
+/*<?php if (!$image)
+
+	else   {
+
+		$fileName = basename($image, ".php");
+		$newFileName = $fileName . getdate();
+	}
+ 		endif; ?> */
+
 $event_id = $_GET['id'];
 
 // Get Event with retrieved ID
@@ -148,13 +158,11 @@ $end_date   = $number_of_dates > 1 ? $times[$number_of_dates - 1] : null;
     <th width="25%">Upphovsrätt/Copyright</th>
   </tr>
   <tr>
-    <td>
-      <?php if (!$image) : ?>
-        Ingen bild vald<br>
-      <?php else : ?>
-        <img id="e_image" src="<?php echo $image->ImagePath; ?>"><br>
-      <?php endif; ?>
-      <input type="text" name="imageUrl" value="<?php echo $image->ImagePath; ?>">
+    <td
+
+       <img id="e_image" src="<?php echo $image-> $newFileName; ?>"><br> 
+      Ingen bild vald<br>
+      <input type="text" name="imageUrl" value="<?php echo $image->$newFileName; ?>">
     </td>
     <td><input id="e_autor" type="Text" value="<?php echo $image->Author; ?>" name="author"></td>
   </tr>
