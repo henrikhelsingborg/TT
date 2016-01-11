@@ -3,7 +3,7 @@ $data = get_fields($instance['post_id']);
 echo $before_widget;
 ?>
 <?php if (in_array($args['id'], array('left-sidebar', 'left-sidebar-bottom', 'right-sidebar'))) get_template_part('templates/partials/stripe'); ?>
-<h3 class="box-title"><?php echo (isset($instance['title']) && strlen($instance['title']) > 0) ? $instance['title'] : $post->title; ?></h3>
+<h2><?php echo (isset($instance['title']) && strlen($instance['title']) > 0) ? $instance['title'] : $post->title; ?></h2>
 
 <div class="box-content padding-x1-5">
     <p>

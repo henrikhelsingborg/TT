@@ -4312,7 +4312,8 @@ p {
   display: none; }
 
 .search .btn-submit .fa, .search .gform_footer input[type="submit"] .fa, .gform_footer .search input[type="submit"] .fa {
-  display: none; }
+  display: none;
+  color: #76b828; }
 
 .sidebar-left .search {
   margin-bottom: 20px; }
