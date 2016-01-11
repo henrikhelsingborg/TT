@@ -6,18 +6,25 @@
         $index = $_GET['index'];
     }
 
-    $searchKeyword = $_SERVER['REQUEST_URI'];
-    $searchKeyword = str_replace('/', ' ', $searchKeyword);
-    $searchKeyword = trim($searchKeyword);
+	$userAgentDetector = new Helsingborg\Helper\UserAgent(false);
+
+	if ( !$userAgentDetector->isBot() ) {
+		
+		$searchKeyword = $_SERVER['REQUEST_URI'];
+	    $searchKeyword = str_replace('/', ' ', $searchKeyword);
+	    $searchKeyword = trim($searchKeyword);
+	    
+	    if (!isset($_GET['index'])) {
+	        $_GET['s'] = $searchKeyword;
+	    }
+	
+	    $query = urldecode(stripslashes($_GET['s']));
+	
+	    $search = new Helsingborg\Search\GoogleSearch($query, $index);
+	    $searchResult = $search->results;
+
+	}
     
-    if (!isset($_GET['index'])) {
-        $_GET['s'] = $searchKeyword;
-    }
-
-    $query = urldecode(stripslashes($_GET['s']));
-
-    $search = new Helsingborg\Search\GoogleSearch($query, $index);
-    $searchResult = $search->results;
 ?>
 
 <section class="creamy message">

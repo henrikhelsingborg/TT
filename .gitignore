@@ -61,3 +61,4 @@ wp-content/plugins/all-in-one-wp-security-and-firewall/logs/wp-security-log-cron
 
 # Ignore cache file
 wp-content/mu-plugins/cache/*
+wp-content/themes/This-is-Helsingborg/lib/Helper/.DS_Store
