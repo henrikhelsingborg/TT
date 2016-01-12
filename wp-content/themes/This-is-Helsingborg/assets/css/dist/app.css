@@ -6070,6 +6070,11 @@ body[data-theme="purple"] .box-title, body[data-theme="purple"] [class^="sidebar
 body[data-theme="purple"] [class^="sidebar-"] .widget_text h2 {
   background-color: #7b075e; }
 
+body[data-theme="purple"] .share-content .box-title, body[data-theme="purple"] .share-content [class^="sidebar-"] .widget_text h2, [class^="sidebar-"] .widget_text body[data-theme="purple"] .share-content h2, body[data-theme="purple"] .share-content .widget .widget-title, .widget body[data-theme="purple"] .share-content .widget-title, body[data-theme="purple"] .share-content
+.widget h2,
+.widget body[data-theme="purple"] .share-content h2 {
+  background-color: transparent; }
+
 body[data-theme="purple"] .box-outlined .box-title, body[data-theme="purple"] .box-outlined [class^="sidebar-"] .widget_text h2, [class^="sidebar-"] .widget_text body[data-theme="purple"] .box-outlined h2, body[data-theme="purple"] .box-outlined .widget .widget-title, .widget body[data-theme="purple"] .box-outlined .widget-title, body[data-theme="purple"] .box-outlined
 .widget h2,
 .widget body[data-theme="purple"] .box-outlined h2,
@@ -6282,6 +6287,11 @@ body[data-theme="blue"] .box-title, body[data-theme="blue"] [class^="sidebar-"] 
 body[data-theme="blue"] [class^="sidebar-"] .widget_text h2 {
   background-color: #005c86; }
 
+body[data-theme="blue"] .share-content .box-title, body[data-theme="blue"] .share-content [class^="sidebar-"] .widget_text h2, [class^="sidebar-"] .widget_text body[data-theme="blue"] .share-content h2, body[data-theme="blue"] .share-content .widget .widget-title, .widget body[data-theme="blue"] .share-content .widget-title, body[data-theme="blue"] .share-content
+.widget h2,
+.widget body[data-theme="blue"] .share-content h2 {
+  background-color: transparent; }
+
 body[data-theme="blue"] .box-outlined .box-title, body[data-theme="blue"] .box-outlined [class^="sidebar-"] .widget_text h2, [class^="sidebar-"] .widget_text body[data-theme="blue"] .box-outlined h2, body[data-theme="blue"] .box-outlined .widget .widget-title, .widget body[data-theme="blue"] .box-outlined .widget-title, body[data-theme="blue"] .box-outlined
 .widget h2,
 .widget body[data-theme="blue"] .box-outlined h2,
@@ -6493,6 +6503,11 @@ body[data-theme="green"] .box-title, body[data-theme="green"] [class^="sidebar-"
 .widget body[data-theme="green"] h2,
 body[data-theme="green"] [class^="sidebar-"] .widget_text h2 {
   background-color: #50811b; }
+
+body[data-theme="green"] .share-content .box-title, body[data-theme="green"] .share-content [class^="sidebar-"] .widget_text h2, [class^="sidebar-"] .widget_text body[data-theme="green"] .share-content h2, body[data-theme="green"] .share-content .widget .widget-title, .widget body[data-theme="green"] .share-content .widget-title, body[data-theme="green"] .share-content
+.widget h2,
+.widget body[data-theme="green"] .share-content h2 {
+  background-color: transparent; }
 
 body[data-theme="green"] .box-outlined .box-title, body[data-theme="green"] .box-outlined [class^="sidebar-"] .widget_text h2, [class^="sidebar-"] .widget_text body[data-theme="green"] .box-outlined h2, body[data-theme="green"] .box-outlined .widget .widget-title, .widget body[data-theme="green"] .box-outlined .widget-title, body[data-theme="green"] .box-outlined
 .widget h2,

@@ -122,6 +122,10 @@ body[data-theme="green"] {
         background-color: $palette-green-4;
     }
 
+    .share-content .box-title {
+        background-color: transparent;
+    }
+
     // Box Outlined Title
     .box-outlined .box-title,
     .box-outlined [class^="sidebar-"] .widget_text h2,
