@@ -209,7 +209,8 @@ body[data-theme="blue"] {
         background-color: lighten($palette-blue-2, 60%);
     }
 
-    .btn-submit {
+    .btn-submit,
+    .alarm-widget-update {
         background-color: $palette-blue-2;
 
         &:hover {
