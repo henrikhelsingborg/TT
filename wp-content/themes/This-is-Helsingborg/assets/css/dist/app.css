@@ -3070,7 +3070,9 @@ body.nav-fixed .site-header .hero {
       font-size: 1.2rem;
       letter-spacing: 1px;
       position: relative;
-      z-index: 5; }
+      z-index: 5;
+      border-radius: 0;
+      apperance: none; }
     .hero .search .form-element:nth-child(2) {
       width: 80px; }
     .hero .search .btn-submit, .hero .search .gform_footer input[type="submit"], .gform_footer .hero .search input[type="submit"] {
