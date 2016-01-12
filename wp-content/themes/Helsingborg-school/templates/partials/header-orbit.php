@@ -1,6 +1,6 @@
 <div class="hero">
     <div class="columns large-12 no-margin">
-        <ul class="hero-orbit" data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;">
+        <ul class="hero-orbit" data-orbit data-options="animation:'fade'; timer_speed:4000; slide_number:false; bullets: true;">
             <li style="background-image:url('http://upload.wikimedia.org/wikipedia/commons/7/7e/Olympiaskolan_2.jpg');">
                 <div class="caption">
                     <div class="caption-content">
