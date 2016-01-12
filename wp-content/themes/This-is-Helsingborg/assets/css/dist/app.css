@@ -4600,6 +4600,14 @@ p {
   /**
      * Expandeble content style
      */ }
+  .table-list h3, .table-list [class^="sidebar-"] .widget_text h2, [class^="sidebar-"] .widget_text .table-list h2, .table-list .section-news .widget_text .widgettitle, .section-news .widget_text .table-list .widgettitle, .table-list
+  #widget-content-area .widget_text .widgettitle,
+  #widget-content-area .widget_text .table-list .widgettitle, .table-list
+  #widget-content-area-bottom .widget_text .widgettitle,
+  #widget-content-area-bottom .widget_text .table-list .widgettitle, .table-list .widget .widget-title, .widget .table-list .widget-title, .table-list
+  .widget h2,
+  .widget .table-list h2 {
+    font-weight: bold; }
   .table-list thead {
     background: #cb0050;
     border: 1px solid #cb0050; }
