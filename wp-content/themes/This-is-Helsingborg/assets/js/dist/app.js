@@ -408,6 +408,104 @@ Helsingborg.Event.List = (function ($) {
 
 })(jQuery);
 Helsingborg = Helsingborg || {};
+Helsingborg.Mobile = Helsingborg.Mobile || {};
+
+Helsingborg.Mobile.Menu = (function ($) {
+
+    var navHeight = 0;
+    var animationSpeed = 100;
+
+    function Menu() {
+        $(function(){
+
+            this.handleEvents();
+
+        }.bind(this));
+    }
+
+    /**
+     * Get the height of the navigation
+     * @param  {object} element The navigation
+     * @return {void}
+     */
+    Menu.prototype.getNavHeight = function(element) {
+        navHeight = $('.mobile-menu-wrapper').height();
+    }
+
+    /**
+     * Set default element style attributes
+     * @return {void}
+     */
+    Menu.prototype.initialize = function() {
+        $('.mobile-menu-wrapper').css({
+            maxHeight: 0,
+            position: 'relative',
+            zIndex: 1
+        });
+
+        $('.mobile-menu-wrapper .stripe').css('height', navHeight + 'px');
+    }
+
+    /**
+     * Toggles the mobile menu
+     * @param  {void} element The reference element clicked
+     * @return {void}
+     */
+    Menu.prototype.toggle = function(element) {
+        element = $(element);
+        element.closest('button').toggleClass('open');
+        $('body').toggleClass('mobile-menu-in');
+
+        if ($('body').hasClass('mobile-menu-in')) {
+            this.show();
+        } else {
+            this.hide();
+        }
+    }
+
+    /**
+     * Shows the mobile menu
+     * @return {void}
+     */
+    Menu.prototype.show = function() {
+        $('.mobile-menu-wrapper').css('visibility', 'visible').animate({
+            maxHeight: navHeight + 'px'
+        }, animationSpeed);
+    }
+
+    /**
+     * Hides the mobile menu
+     * @return {void}
+     */
+    Menu.prototype.hide = function () {
+        $('.mobile-menu-wrapper').css('visibility', 'visible').animate({
+            maxHeight: 0 + 'px'
+        }, animationSpeed);
+    }
+
+    /**
+     * Keeps track of events
+     * @return {void}
+     */
+    Menu.prototype.handleEvents = function() {
+
+        $(document).ready(function () {
+            $('.mobile-menu-wrapper').css('opacity', 1);
+            this.getNavHeight();
+            this.initialize();
+        }.bind(this));
+
+        $(document).on('click', '[data-action="toggle-mobile-menu"]', function (e) {
+            e.preventDefault();
+            this.toggle(e.target);
+        }.bind(this));
+
+    }
+
+    return new Menu();
+
+})(jQuery);
+Helsingborg = Helsingborg || {};
 Helsingborg.Prompt = Helsingborg.Prompt || {};
 
 Helsingborg.Prompt.Alert = (function ($) {
@@ -684,14 +782,71 @@ Helsingborg.Prompt.Button = (function ($) {
 
 })(jQuery);
 Helsingborg = Helsingborg || {};
-Helsingborg.Mobile = Helsingborg.Mobile || {};
+Helsingborg.TableList = Helsingborg.TableList || {};
 
-Helsingborg.Mobile.Menu = (function ($) {
+Helsingborg.TableList.Search = (function ($) {
 
-    var navHeight = 0;
-    var animationSpeed = 100;
+    function Search() {
+        $(function(){
 
-    function Menu() {
+            this.init();
+
+        }.bind(this));
+    }
+
+    /**
+     * Initializes table filtering
+     * @return {void}
+     */
+    Search.prototype.init = function () {
+        $('[data-filter-table]').each(function (index, element) {
+            var input = $(element).find('input[data-filter-table-input]');
+            var table = $(element).data('filter-table');
+            var tableItem = $(element).data('filter-table-selector');
+
+            input.on('keyup.filter-table', function (e) {
+                var value = $(e.target).val();
+                this.filterTable(value, table, tableItem);
+            }.bind(this));
+        }.bind(this));
+    }
+
+    /**
+     * Do the actual filtering with :contains
+     * @param  {string} query     The search "query"
+     * @param  {string} table     The table selector
+     * @param  {string} tableItem The table item selector
+     * @return {void}
+     */
+    Search.prototype.filterTable = function (query, table, tableItem) {
+        if (query.length > 0) {
+            $(table).find(tableItem).hide();
+            $(table).find(tableItem + ':contains(' + query + ')').show();
+        } else {
+            $(table).find(tableItem).show();
+        }
+    }
+
+    return new Search();
+
+})(jQuery);
+
+/**
+ * Make :contains insensitive
+ */
+jQuery.expr[":"].contains = $.expr.createPseudo(function(arg) {
+    return function( elem ) {
+        return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+    };
+});
+Helsingborg = Helsingborg || {};
+Helsingborg.TableList = Helsingborg.TableList || {};
+
+Helsingborg.TableList.Sorting = (function ($) {
+
+    var items = null;
+
+    function Sorting() {
         $(function(){
 
             this.handleEvents();
@@ -700,85 +855,87 @@ Helsingborg.Mobile.Menu = (function ($) {
     }
 
     /**
-     * Get the height of the navigation
-     * @param  {object} element The navigation
-     * @return {void}
+     * Get the items in the table
+     * @param  {object} e The event
+     * @return {array}    Array with all items
      */
-    Menu.prototype.getNavHeight = function(element) {
-        navHeight = $('.mobile-menu-wrapper').height();
+    Sorting.prototype.getItems = function (e) {
+        var items = $(e.target).parents('.table-list').find('tbody');
+        return items;
     }
 
     /**
-     * Set default element style attributes
+     * Sort the table
+     * @param  {object} e The event
      * @return {void}
      */
-    Menu.prototype.initialize = function() {
-        $('.mobile-menu-wrapper').css({
-            maxHeight: 0,
-            position: 'relative',
-            zIndex: 1
-        });
+    Sorting.prototype.sortTable = function (e) {
+        var element = $(e.target);
+        var items = this.getItems(e);
+        var columnIndex = element.index();
 
-        $('.mobile-menu-wrapper .stripe').css('height', navHeight + 'px');
-    }
+        var order = (element.hasClass('sorting-asc')) ? 'desc' : 'asc';
 
-    /**
-     * Toggles the mobile menu
-     * @param  {void} element The reference element clicked
-     * @return {void}
-     */
-    Menu.prototype.toggle = function(element) {
-        element = $(element);
-        element.closest('button').toggleClass('open');
-        $('body').toggleClass('mobile-menu-in');
+        element.parents('.table-list').find('thead th').removeClass('sorting-asc sorting-desc');
 
-        if ($('body').hasClass('mobile-menu-in')) {
-            this.show();
-        } else {
-            this.hide();
+        if (order == 'asc') {
+            items.sort(function (a, b) {
+                var a = $(a).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
+                var b = $(b).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
+
+                if (a < b) {
+                    return -1;
+                }
+                else if (a > b) {
+                    return 1;
+                }
+                else {
+                    return 0;
+                }
+            });
+
+            element.removeClass('sorting-desc').addClass('sorting-asc');
+        } else if (order == 'desc') {
+            items.sort(function (a, b) {
+                var a = $(a).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
+                var b = $(b).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
+
+                if (a > b) {
+                    return -1;
+                }
+                else if (a < b) {
+                    return 1;
+                }
+                else {
+                    return 0;
+                }
+            });
+
+            element.removeClass('sorting-asc').addClass('sorting-desc');
         }
+
+        this.outputItems(e, items);
     }
 
     /**
-     * Shows the mobile menu
+     * Outputs the table items in its new order
+     * @param  {object} e     Event
+     * @param  {array} items  The items
      * @return {void}
      */
-    Menu.prototype.show = function() {
-        $('.mobile-menu-wrapper').css('visibility', 'visible').animate({
-            maxHeight: navHeight + 'px'
-        }, animationSpeed);
+    Sorting.prototype.outputItems = function(e, items) {
+        var $table = $(e.target).parents('.table-list');
+        $table.find('tbody').remove();
+        $table.append(items);
     }
 
-    /**
-     * Hides the mobile menu
-     * @return {void}
-     */
-    Menu.prototype.hide = function () {
-        $('.mobile-menu-wrapper').css('visibility', 'visible').animate({
-            maxHeight: 0 + 'px'
-        }, animationSpeed);
-    }
-
-    /**
-     * Keeps track of events
-     * @return {void}
-     */
-    Menu.prototype.handleEvents = function() {
-
-        $(document).ready(function () {
-            $('.mobile-menu-wrapper').css('opacity', 1);
-            this.getNavHeight();
-            this.initialize();
+    Sorting.prototype.handleEvents = function() {
+        $('.table-list thead th').on('click', function (e) {
+            this.sortTable(e);
         }.bind(this));
-
-        $(document).on('click', '[data-action="toggle-mobile-menu"]', function (e) {
-            e.preventDefault();
-            this.toggle(e.target);
-        }.bind(this));
-
     }
 
-    return new Menu();
+    return new Sorting();
 
 })(jQuery);
 Helsingborg = Helsingborg || {};
@@ -995,163 +1152,6 @@ Helsingborg.Search.Button = (function ($) {
     }
 
     return new Button();
-
-})(jQuery);
-Helsingborg = Helsingborg || {};
-Helsingborg.TableList = Helsingborg.TableList || {};
-
-Helsingborg.TableList.Search = (function ($) {
-
-    function Search() {
-        $(function(){
-
-            this.init();
-
-        }.bind(this));
-    }
-
-    /**
-     * Initializes table filtering
-     * @return {void}
-     */
-    Search.prototype.init = function () {
-        $('[data-filter-table]').each(function (index, element) {
-            var input = $(element).find('input[data-filter-table-input]');
-            var table = $(element).data('filter-table');
-            var tableItem = $(element).data('filter-table-selector');
-
-            input.on('keyup.filter-table', function (e) {
-                var value = $(e.target).val();
-                this.filterTable(value, table, tableItem);
-            }.bind(this));
-        }.bind(this));
-    }
-
-    /**
-     * Do the actual filtering with :contains
-     * @param  {string} query     The search "query"
-     * @param  {string} table     The table selector
-     * @param  {string} tableItem The table item selector
-     * @return {void}
-     */
-    Search.prototype.filterTable = function (query, table, tableItem) {
-        if (query.length > 0) {
-            $(table).find(tableItem).hide();
-            $(table).find(tableItem + ':contains(' + query + ')').show();
-        } else {
-            $(table).find(tableItem).show();
-        }
-    }
-
-    return new Search();
-
-})(jQuery);
-
-/**
- * Make :contains insensitive
- */
-jQuery.expr[":"].contains = $.expr.createPseudo(function(arg) {
-    return function( elem ) {
-        return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-    };
-});
-Helsingborg = Helsingborg || {};
-Helsingborg.TableList = Helsingborg.TableList || {};
-
-Helsingborg.TableList.Sorting = (function ($) {
-
-    var items = null;
-
-    function Sorting() {
-        $(function(){
-
-            this.handleEvents();
-
-        }.bind(this));
-    }
-
-    /**
-     * Get the items in the table
-     * @param  {object} e The event
-     * @return {array}    Array with all items
-     */
-    Sorting.prototype.getItems = function (e) {
-        var items = $(e.target).parents('.table-list').find('tbody');
-        return items;
-    }
-
-    /**
-     * Sort the table
-     * @param  {object} e The event
-     * @return {void}
-     */
-    Sorting.prototype.sortTable = function (e) {
-        var element = $(e.target);
-        var items = this.getItems(e);
-        var columnIndex = element.index();
-
-        var order = (element.hasClass('sorting-asc')) ? 'desc' : 'asc';
-
-        element.parents('.table-list').find('thead th').removeClass('sorting-asc sorting-desc');
-
-        if (order == 'asc') {
-            items.sort(function (a, b) {
-                var a = $(a).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
-                var b = $(b).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
-
-                if (a < b) {
-                    return -1;
-                }
-                else if (a > b) {
-                    return 1;
-                }
-                else {
-                    return 0;
-                }
-            });
-
-            element.removeClass('sorting-desc').addClass('sorting-asc');
-        } else if (order == 'desc') {
-            items.sort(function (a, b) {
-                var a = $(a).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
-                var b = $(b).find('.table-item td:nth-child(' + columnIndex + ')').text().toLowerCase();
-
-                if (a > b) {
-                    return -1;
-                }
-                else if (a < b) {
-                    return 1;
-                }
-                else {
-                    return 0;
-                }
-            });
-
-            element.removeClass('sorting-asc').addClass('sorting-desc');
-        }
-
-        this.outputItems(e, items);
-    }
-
-    /**
-     * Outputs the table items in its new order
-     * @param  {object} e     Event
-     * @param  {array} items  The items
-     * @return {void}
-     */
-    Sorting.prototype.outputItems = function(e, items) {
-        var $table = $(e.target).parents('.table-list');
-        $table.find('tbody').remove();
-        $table.append(items);
-    }
-
-    Sorting.prototype.handleEvents = function() {
-        $('.table-list thead th').on('click', function (e) {
-            this.sortTable(e);
-        }.bind(this));
-    }
-
-    return new Sorting();
 
 })(jQuery);
 /*
