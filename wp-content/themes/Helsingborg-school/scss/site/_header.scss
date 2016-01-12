@@ -55,7 +55,7 @@
     }
 }
 
-.hero .slider-area {
+.hero .mobile-header-image + .slider-area {
     @media #{$small-only} {
         display: none;
     }
