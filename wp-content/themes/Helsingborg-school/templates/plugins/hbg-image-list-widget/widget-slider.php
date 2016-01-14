@@ -36,7 +36,7 @@
 </div>
 <?php else : ?>
 <?php echo $before_widget; ?>
-    <ul class="orbit-slider" data-orbit data-options="animation:fade; timer_speed:10000; slide_number:false;">
+    <ul class="orbit-slider" data-orbit data-options="animation:'fade'; timer_speed:4000; slide_number:false;">
 
         <?php
             foreach ($items as $num => $item) :
