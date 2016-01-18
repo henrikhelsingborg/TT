@@ -81,31 +81,6 @@
     }
 }
 
-#google-translate-element {
-    margin-top: 2px;
-    padding: 8px 10px;
-    background-color: darken($palette-red-4, 10%);
-
-    @media print {
-        display: none;
-    }
-
-    select {
-        color: $text-default;
-        background-color: #fff;
-        border: none;
-        padding: 5px;
-    }
-
-    .goog-te-gadget {
-        color: lighten($palette-red-4, 50%);
-    }
-
-    .goog-logo-link {
-        color: lighten($palette-red-4, 50%);
-    }
-}
-
 @media print {
     .service-area {
         display: none;

@@ -48,7 +48,6 @@
                                     'depth'           => 1
                                 ));
                             ?>
-                            <div id="google-translate-element"></div>
                         </div>
                     </div>
                 </div>
