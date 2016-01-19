@@ -22,7 +22,7 @@
         <div class="row">
             <div class="columns large-12">
                 <h2 class="text-highlight no-margin-padding">
-                    Aktuellt i Helsingborgs stad
+                    Aktuellt
                 </h2>
             </div>
         </div>

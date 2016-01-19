@@ -66,6 +66,8 @@
             letter-spacing: 1px;
             position: relative;
             z-index: 5;
+            border-radius: 0;
+            apperance: none;
         }
 
         .form-element:nth-child(2) {
@@ -90,7 +92,7 @@
         }
 
         .search-web-archive {
-	        display: none !important; 
+	        display: none !important;
             text-align: left;
 
             a {

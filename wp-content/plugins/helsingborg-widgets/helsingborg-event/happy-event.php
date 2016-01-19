@@ -149,8 +149,8 @@ if (!function_exists('handle_gf_image')) {
         $image_path   = $path;
         $file_name    = basename($image_path);
         $uploads      = wp_upload_dir();
-        $new_path     = $uploads['basedir'].'/eventimages/'.$file_name;
-        $save_path     = $uploads['baseurl'].'/eventimages/'.$file_name;
+        $new_path     = $uploads['basedir'].'/eventimages/'.date("Ymd").$file_name;
+        $save_path     = $uploads['baseurl'].'/eventimages/'.date("Ymd").$file_name;
 
         if (!file_exists($uploads['basedir'].'/eventimages/')) {
             mkdir($uploads['basedir'].'/eventimages/', 0777, true);

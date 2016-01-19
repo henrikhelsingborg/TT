@@ -6,6 +6,9 @@ html {
 body {
     position: static !important;
 
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+
     background-color: #fff;
     margin: 0;
     padding: 0;

@@ -122,6 +122,10 @@ body[data-theme="green"] {
         background-color: $palette-green-4;
     }
 
+    .share-content .box-title {
+        background-color: transparent;
+    }
+
     // Box Outlined Title
     .box-outlined .box-title,
     .box-outlined [class^="sidebar-"] .widget_text h2,
@@ -205,7 +209,8 @@ body[data-theme="green"] {
         background-color: lighten($palette-green-2, 60%);
     }
 
-    .btn-submit {
+    .btn-submit,
+    .alarm-widget-update {
         background-color: $palette-green-2;
 
         &:hover {

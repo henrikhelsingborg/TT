@@ -122,6 +122,10 @@ body[data-theme="blue"] {
         background-color: $palette-blue-4;
     }
 
+    .share-content .box-title {
+        background-color: transparent;
+    }
+
     // Box Outlined Title
     .box-outlined .box-title,
     .box-outlined [class^="sidebar-"] .widget_text h2,
@@ -205,7 +209,8 @@ body[data-theme="blue"] {
         background-color: lighten($palette-blue-2, 60%);
     }
 
-    .btn-submit {
+    .btn-submit,
+    .alarm-widget-update {
         background-color: $palette-blue-2;
 
         &:hover {
@@ -250,7 +255,7 @@ body[data-theme="blue"] {
     }
 
     // Pagination
-    
+
     .pagination {
         .current a,
         .current-pager a {

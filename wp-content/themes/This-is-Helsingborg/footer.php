@@ -19,7 +19,6 @@
                 </div>
             </div>
             <div class="site-footer-content">
-                <?php get_template_part('templates/partials/stripe'); ?>
                 <div class="container">
                     <div class="row">
                         <div class="columns large-3">

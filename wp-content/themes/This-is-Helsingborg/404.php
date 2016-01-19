@@ -6,18 +6,29 @@
         $index = $_GET['index'];
     }
 
-    $searchKeyword = $_SERVER['REQUEST_URI'];
-    $searchKeyword = str_replace('/', ' ', $searchKeyword);
-    $searchKeyword = trim($searchKeyword);
-    
-    if (!isset($_GET['index'])) {
-        $_GET['s'] = $searchKeyword;
+	$userAgentDetector = new Helsingborg\Helper\UserAgent(false);
+
+	if ( ( strpos($_SERVER['REQUEST_URI'], "wp-content/uploads") !== false ) && ( strpos($_SERVER['REQUEST_URI'], "wp-admin") !== false ) ) {
+
+		if ( !$userAgentDetector->isBot() ) {
+			
+			$searchKeyword = $_SERVER['REQUEST_URI'];
+		    $searchKeyword = str_replace('/', ' ', $searchKeyword);
+		    $searchKeyword = trim($searchKeyword);
+		    
+		    if (!isset($_GET['index'])) {
+		        $_GET['s'] = $searchKeyword;
+		    }
+		
+		    $query = urldecode(stripslashes($_GET['s']));
+		
+		    $search = new Helsingborg\Search\GoogleSearch($query, $index);
+		    $searchResult = $search->results;
+	
+		}
+	    
     }
-
-    $query = urldecode(stripslashes($_GET['s']));
-
-    $search = new Helsingborg\Search\GoogleSearch($query, $index);
-    $searchResult = $search->results;
+    
 ?>
 
 <section class="creamy message">

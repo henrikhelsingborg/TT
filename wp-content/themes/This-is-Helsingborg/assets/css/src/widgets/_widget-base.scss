@@ -1,21 +1,17 @@
 /**
  * Widget structure
  */
-.widget-content, {
+.widget {
     color: #fff;
     font-size: 12pt;
 
     .widget-title,
     h2 {
-        color: #fff;
-        margin: 0;
-        padding: 0;
-        margin-bottom: 10px;
+        @extend h3;
+        @extend .box-title;
+        background-color: transparent;
         font-size: 15pt;
-        font-weight: 500;
-        line-height: 120%;
-        //word-break: break-word;
-        //hyphens: auto;
+        margin: 0;
 
         .fa {
             margin-right: 5px;

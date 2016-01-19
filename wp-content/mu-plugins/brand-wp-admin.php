@@ -8,5 +8,5 @@
 	*/
 	
 	add_filter('admin_footer_text', function () {
-		echo __("Helsingborgs Stad") . ' | ' . '<a href="mailto:webbredaktionen@helsingborg.se">' . __("Maila supporten") . '</a>'; 
+		echo __("Helsingborgs stad") . ' | ' . '<a href="mailto:webbredaktionen@helsingborg.se">' . __("Mejla supporten") . '</a>'; 
 	});

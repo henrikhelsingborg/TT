@@ -41,7 +41,6 @@ wp-content/plugins/*
 !wp-content/plugins/disable-comments
 !wp-content/plugins/helsingborg-news
 !wp-content/plugins/helsingborg-inherit
-!wp-content/plugins/stream
 
 # Ignore everything in the "themes" directory, except the Helsingborg theme
 wp-content/themes/*
@@ -57,3 +56,5 @@ wp-content/plugins/all-in-one-wp-security-and-firewall/logs/wp-security-log-cron
 
 # Ignore cache file
 wp-content/mu-plugins/cache/*
+wp-content/themes/This-is-Helsingborg/lib/Helper/.DS_Store
+wp-content/themes/This-is-Helsingborg/npm-debug.log

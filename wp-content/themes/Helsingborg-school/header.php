@@ -85,6 +85,17 @@
                     <div class="hero widgets-test-color clearfix">
                         <div class="color-band"></div>
                         <?php
+                            $image = false;
+                            $currPageId = get_the_ID();
+
+                            if (has_post_thumbnail($currPageId)) {
+                                $image_id = get_post_thumbnail_id($currPageId);
+                                $image = wp_get_attachment_image_src($image_id, 'single-post-thumbnail');
+                                $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+
+                                echo '<img src="' . $image[0] . '" class="mobile-header-image" alt="' . $alt_text . '">';
+                            }
+
                             /**
                              * Include the slider area
                              */
@@ -93,18 +104,7 @@
                                 dynamic_sidebar('slider-area');
                                 echo '</div>';
                             }
-
-                            $image = false;
-                            $currPageId = get_the_ID();
-                            if (has_post_thumbnail($currPageId)) {
-                                $image_id = get_post_thumbnail_id($currPageId);
-                                $image = wp_get_attachment_image_src($image_id, 'single-post-thumbnail');
-                                $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-
-                                echo '<img src="' . $image[0] . '" class="mobile-header-image" alt="' . $alt_text . '">';
-                            }
                         ?>
-
                     </div>
 
                     <?php

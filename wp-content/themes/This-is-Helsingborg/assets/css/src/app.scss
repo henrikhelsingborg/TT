@@ -17,7 +17,7 @@
  * ## Global
  */
 @import '../../../bower_components/foundation/scss/foundation/components/global'; // Foundation globals
-@import 'global/config';
+@import './global/config';
 @import 'global/colors';
 @import 'global/typography';
 @import 'global/mixins';

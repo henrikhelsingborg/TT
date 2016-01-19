@@ -97,9 +97,10 @@ jQuery(document).ready(function() {
 		jQuery.each(items, function(i, item) {
 			var alarm = '<li>';
 			alarm += '<a href="#" class="modalLinkAlarm" id="' + item.ID +'" data-reveal="alarmModal">'
+			alarm += '<span class="link-item">' + item.HtText + '</span>';
 			alarm += '<span class="date">' + item.SentTime + '</span>';
-			alarm += '<span>' + item.HtText + '</span>';
 			alarm += '</a></li>';
+
 			jQuery(alarm).appendTo(jQuery('.alarm-list'));
 			return i < (_amount - 1);
 		});
@@ -121,6 +122,8 @@ jQuery(document).ready(function() {
 		var infoArray = [];
 		var counter = 0;
 		var options;
+
+
 
 		function setupMarkers() {
 			if (map) {

@@ -123,6 +123,10 @@ body[data-theme="purple"] {
         background-color: $palette-purple-4;
     }
 
+    .share-content .box-title {
+        background-color: transparent;
+    }
+
     // Box Outlined Title
     .box-outlined .box-title,
     .box-outlined [class^="sidebar-"] .widget_text h2,
@@ -206,7 +210,8 @@ body[data-theme="purple"] {
         background-color: lighten($palette-purple-2, 60%);
     }
 
-    .btn-submit {
+    .btn-submit,
+    .alarm-widget-update {
         background-color: $palette-purple-1;
 
         &:hover {
