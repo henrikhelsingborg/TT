@@ -2,7 +2,7 @@
     global $searchFormNode;
     $searchFormNode = ($searchFormNode) ? $searchFormNode+1 : 1;
 ?>
-<form class="search" method="get" action="/">
+<form class="search" method="get" action="">
     <div class="form-container">
         <label for="searchkeyword-<?php echo $searchFormNode; ?>" class="search-label search-label-alt">Sök på helsingborg.se</label>
         <div class="input-group">
