@@ -2880,7 +2880,7 @@ body.nav-fixed .site-header .hero {
   @media print {
     .nav-topmenu {
       display: none; } }
-  @media screen and (max-width: 663px) {
+  @media screen and (max-width: 555px) {
     .nav-topmenu {
       text-align: center; }
       .nav-topmenu br {
@@ -2900,10 +2900,11 @@ body.nav-fixed .site-header .hero {
   padding: 0;
   border: 1px solid #e7e5e1;
   border-radius: 3px;
+  overflow: hidden;
   font-size: 0px;
   box-shadow: 0 2px 2px #f6f5f2;
   background-color: #fff; }
-  @media screen and (max-width: 663px) {
+  @media screen and (max-width: 555px) {
     .navbar-topmenu {
       margin-bottom: 5px; } }
   .navbar-topmenu li {
@@ -2929,7 +2930,7 @@ body.nav-fixed .site-header .hero {
   text-align: right;
   margin-top: -3px;
   margin-bottom: 5px; }
-  @media screen and (max-width: 663px) {
+  @media screen and (max-width: 555px) {
     .navbar-topmenu-help {
       display: inline-block; } }
   .navbar-topmenu-help li {
@@ -3019,34 +3020,6 @@ body.nav-fixed .site-header .hero {
   .nav-mobilemenu .current:not(.has-childs) > a::after {
     left: -8px;
     width: 8px; }
-
-.navbar-accessability {
-  margin-right: 8px; }
-  .navbar-accessability li {
-    position: relative; }
-    .navbar-accessability li:hover .submenu {
-      display: block; }
-  .navbar-accessability .submenu {
-    display: none;
-    position: absolute;
-    z-index: 999;
-    bottom: 0;
-    right: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-    min-width: 200px;
-    border: 1px solid #e7e5e1;
-    background-color: #f6f5f2;
-    padding: 8px 10px; }
-
-#google-translate-element select {
-  color: #252525;
-  background-color: #fff;
-  border: 1px solid #e7e5e1;
-  padding: 5px; }
-
-#google-translate-element:target {
-  display: block !important; }
 
 .hero {
   position: relative;
@@ -4223,6 +4196,23 @@ p {
   .site-footer-content {
     padding-left: 35px; } }
 
+#google-translate-element {
+  margin-top: 2px;
+  padding: 8px 10px;
+  background-color: #7c0804; }
+  @media print {
+    #google-translate-element {
+      display: none; } }
+  #google-translate-element select {
+    color: #252525;
+    background-color: #fff;
+    border: none;
+    padding: 5px; }
+  #google-translate-element .goog-te-gadget {
+    color: #fdb8b5; }
+  #google-translate-element .goog-logo-link {
+    color: #fdb8b5; }
+
 @media print {
   .service-area {
     display: none; } }
@@ -4424,7 +4414,7 @@ p {
       display: none; }
     .nav-topmenu .search .search-web-archive a:hover {
       color: gray; }
-  @media screen and (max-width: 663px) {
+  @media screen and (max-width: 555px) {
     .nav-topmenu .search {
       float: none;
       display: inline-block;

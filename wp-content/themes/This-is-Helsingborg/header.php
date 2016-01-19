@@ -27,7 +27,7 @@
         <?php if (is_front_page()) : ?>var is_front_page = true;<?php endif; ?>
         <?php if (isset($lazyloadImages) && $lazyloadImages === true) : ?>var lazyloadImages = true;<?php endif; ?>
     </script>
-
+    
     <!--[if lt IE 9]>
 	<script type="text/javascript">
 		document.createElement('header');
@@ -61,39 +61,33 @@
                         </a>
 
                         <nav class="nav-topmenu">
-                            <ul class="navbar-topmenu navbar-accessability">
-                                <li>
-                                    <a href="#google-translate-element"><i class="fa fa-globe"></i> <?php _e('Translate'); ?></a>
-                                    <div id="google-translate-element" class="submenu"></div>
-                                </li>
-                            </ul>
-                            <?php
+                        <?php
 
-                                /*
-                                echo '<ul class="navbar-topmenu-help">';
-                                wp_nav_menu(array(
-                                    'theme_location'  => 'top-menu-help',
-                                    'container'       => '',
-                                    'container_class' => '',
-                                    'items_wrap'      => '%3$s'
-                                ));
-                                echo '</ul><br>';
-                                */
+                            /*
+                            echo '<ul class="navbar-topmenu-help">';
+                            wp_nav_menu(array(
+                                'theme_location'  => 'top-menu-help',
+                                'container'       => '',
+                                'container_class' => '',
+                                'items_wrap'      => '%3$s'
+                            ));
+                            echo '</ul><br>';
+                            */
 
-                                /**
-                                 * Displays the top menu navigation
-                                 */
-                                wp_nav_menu(array(
-                                    'theme_location'  => 'top-menu',
-                                    'container'       => '',
-                                    'container_class' => '',
-                                    'items_wrap'      => '<ul class="navbar-topmenu">%3$s</ul>'
-                                ));
+                            /**
+                             * Displays the top menu navigation
+                             */
+                            wp_nav_menu(array(
+                                'theme_location'  => 'top-menu',
+                                'container'       => '',
+                                'container_class' => '',
+                                'items_wrap'      => '<ul class="navbar-topmenu">%3$s</ul>'
+                            ));
 
-                                echo '<br>';
+                            echo '<br>';
 
-                                get_search_form();
-                            ?>
+                            get_search_form();
+                        ?>
                         </nav>
 
                         <a href="/" class="logotype logotype-mobile">
