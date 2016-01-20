@@ -105,7 +105,7 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 	    }
 	
 	    public static function setup_folders () {
-		    if ( !is_dir( self::base_dir().self::$cache_folder.self::$domain_name."/" ) ) {
+		    if ( !is_dir( self::base_dir().self::$cache_folder.self::$domain_name."/" ) && is_writable( self::base_dir().self::$cache_folder ) ) {
 			    mkdir( self::base_dir().self::$cache_folder.self::$domain_name."/" , self::$dir_chmod, true);
 			    self::chmod_r(self::base_dir()); //Set user rights 
 		    }
