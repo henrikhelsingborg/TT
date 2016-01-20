@@ -105,7 +105,7 @@ if ( !class_exists( 'WpSimpleCache' ) ) {
 	    }
 	
 	    public static function setup_folders () {
-		    if ( !is_dir( self::base_dir().self::$cache_folder.self::$domain_name."/" ) ) {
+		    if ( !is_dir( self::base_dir().self::$cache_folder.self::$domain_name."/" ) && is_writable( self::base_dir().self::$cache_folder ) ) {
 			    mkdir( self::base_dir().self::$cache_folder.self::$domain_name."/" , self::$dir_chmod, true);
 			    self::chmod_r(self::base_dir()); //Set user rights 
 		    }
@@ -314,7 +314,7 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 				//Purge this post 
 				$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink( $post_id ));
 				
-				if ( file_exists( $file_name ) ) {
+				if ( file_exists( $file_name ) && is_file( $file_name ) ) {
 					unlink($file_name);
 				}
 				
@@ -323,7 +323,7 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 					$post_parent_id = wp_get_post_parent_id( $post_id );  
 					if ( $post_parent_id !== 0 && is_numeric( $post_parent_id ) ) {
 						$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_permalink( $post_parent_id ));
-						if ( file_exists( $file_name ) ) {
+						if ( file_exists( $file_name ) && is_file( $file_name ) ) {
 							unlink($file_name);
 						}				
 					}
@@ -331,7 +331,7 @@ if (!function_exists('WpSimpleCache_purge_post_by_id')) {
 				
 				//Purge archive page 
 				$file_name = $wp_simple_cache::get_cache_dir().$wp_simple_cache::get_filename_from_url(get_post_type_archive_link(get_post_type( $post_id ) ) ); 
-				if ( file_exists( $file_name ) ) {
+				if ( file_exists( $file_name ) && is_file( $file_name ) ) {
 					unlink($file_name);
 				}	
 				
