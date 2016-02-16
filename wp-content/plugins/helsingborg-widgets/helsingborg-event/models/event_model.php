@@ -119,42 +119,20 @@ class HelsingborgEventModel {
 	public static function load_events_with_name($name, $onlyInternal = false, $userId = null) {
 		global $wpdb;
 
-        // Base query
-		$query = 'SELECT DISTINCT
-                        he.EventID,
-                        he.Name,
-                        MIN(het.Date) AS Date
-                    FROM
-                        happy_event he,
-                        happy_event_times het,
-                        happy_event_administration_unit hefe
-                    WHERE
-                        het.Date >= CURDATE()
-                        AND he.Approved = 1
-                        AND he.EventID = het.EventID
-                        AND hefe.EventID= he.EventID
-                        AND LOWER(he.Name) LIKE "%' . strtolower($name) . '%"
-                    ';
-
-        // If show only internal
-        if ($onlyInternal === true) $query .= ' AND he.ExternalEventId = ""';
-
-        // If user id only get the allowed administartion unit events
-        if ($userId !== null)
-        {
-            // Get allowed admin units
-            $administration_units = self::get_administration_units_by_id($userId);
-            if ($administration_units == 'all') {
-                $and_units = '';
-            } else {
-                $and_units = ' AND hefe.AdministrationUnitID IN (' . $administration_units . ')';
-            }
-
-            $query .= $and_units;
-        }
-
-        // Group and order
-        $query .= ' Group by he.EventID, he.Name ORDER BY Date, he.EventID';
+       $query = '
+            SELECT DISTINCT
+                e.EventID,
+                e.Name,
+                t.Date
+            FROM happy_event e
+            LEFT JOIN happy_event_times t ON t.EventID = e.EventID
+            WHERE
+                t.Date >= CURDATE()
+                AND e.Approved = 1
+                AND LOWER(e.Name) LIKE \'%' . strtolower($name) . '%\'
+                AND e.ExternalEventId IS NULL
+            ORDER BY t.Date, e.Name DESC
+       ';
 
         // Get query result
 		$events = $wpdb->get_results($query, ARRAY_A);
