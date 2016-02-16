@@ -160,9 +160,9 @@ $end_date   = $number_of_dates > 1 ? $times[$number_of_dates - 1] : null;
   <tr>
     <td
 
-       <img id="e_image" src="<?php echo $image-> $newFileName; ?>"><br> 
+       <img id="e_image" src="<?php echo (isset($image->ImagePath) || !empty($image->ImagePath)) ? $image->ImagePath : ''; ?>"><br>
       Ingen bild vald<br>
-      <input type="text" name="imageUrl" value="<?php echo $image->$newFileName; ?>">
+      <input type="text" name="imageUrl" value="<?php echo $image->ImagePath; ?>">
     </td>
     <td><input id="e_autor" type="Text" value="<?php echo $image->Author; ?>" name="author"></td>
   </tr>
