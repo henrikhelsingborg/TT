@@ -28,6 +28,7 @@ wp-content/plugins/*
 !wp-content/plugins/helsingborg-alarm
 !wp-content/plugins/helsingborg-widgets
 !wp-content/plugins/image-widget
+!wp-content/plugins/lix-calculator
 !wp-content/plugins/members
 !wp-content/plugins/p3-profiler
 !wp-content/plugins/post-expirator
