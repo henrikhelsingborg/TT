@@ -65,29 +65,6 @@ $(document).ready(function($) {
     });
 
     /**
-     * Load event types
-     */
-    var requestParams = {
-        action: 'load_event_types'
-    }
-
-    $.post(ajaxurl, requestParams, function(response) {
-        _eventPageModel.eventTypes(ExtractModels(_eventPageModel, JSON.parse(response), TypeModel));
-
-        $("select#municipality_multiselect").zmultiselect({
-            live: "#selectedTypes",
-            filter: true,
-            filterPlaceholder: 'Filtrera...',
-            filterResult: true,
-            filterResultText: "Visar",
-            selectedText: ['Valt','av'],
-            selectAll: true,
-            selectAllText: ['Markera alla','Avmarkera alla'],
-            placeholder: 'Välj evenemangstyp(er)…'
-        });
-    });
-
-    /**
      * Initialize datepickers
      */
     var currentDate = new Date();
