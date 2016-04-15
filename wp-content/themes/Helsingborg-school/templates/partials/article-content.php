@@ -8,7 +8,12 @@
 <article>
     <header>
         <?php get_template_part('templates/partials/accessability', 'menu'); ?>
-        <?php if (!$has_welcome_text) : ?><h1 class="article-title"><?php the_title(); ?></h1><?php endif; ?>
+
+        <?php if (is_front_page() && get_option('helsingborg_title_school_image_imageurl')) : ?>
+            <img src="<?php echo get_option('helsingborg_title_school_image_imageurl'); ?>" alt="<?php echo get_option('helsingborg_title_school_image_alt'); ?>" style="max-width: 500px;">
+        <?php endif; ?>
+
+        <?php if (!$has_welcome_text) : ?><h1 class="article-title" <?php if (is_front_page() && get_option('helsingborg_title_school_frontpage_hide') == 'on') : ?>style="display:none;"<?php endif; ?>><?php the_title(); ?></h1><?php endif; ?>
     </header>
 
     <main>
