@@ -54,6 +54,8 @@ jQuery(document).ready(function() {
 					var imageurl = attachment.url;
 					var alt = attachment.alt;
 
+					console.log("#" + widget_id_string + 'title' + num);
+
 					jQuery("#" + widget_id_string + 'preview' + num).html('<img src="' +
 						imageurl +
 						'" style="max-width: 80%;display: table;margin:auto;" />');

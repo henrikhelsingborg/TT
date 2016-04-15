@@ -7,12 +7,12 @@
      * THEME SETTINGS
      */
     $lazyloadImages = false;
-    
+
     /**
-    * MISC SETTINGS 
+    * MISC SETTINGS
     */
-    
-    //Hidden ACF by default 
+
+    //Hidden ACF by default
     if(!defined("ACF_LITE")){ define("ACF_LITE", true); }
 
     /**
@@ -59,7 +59,7 @@
     }
     */
 
-    /* Use bundled ACF, or not? */ 
+    /* Use bundled ACF, or not? */
     if ( !defined( "THEME_USE_BUNDLE_ACF" ) || ( defined( "THEME_USE_BUNDLE_ACF" ) && THEME_USE_BUNDLE_ACF === false ) ) {
-	    require_once(__DIR__."/acf/acf.php"); 
+	    require_once(__DIR__."/acf/acf.php");
     }
