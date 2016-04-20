@@ -3,7 +3,7 @@
 Plugin Name: Disable Comments
 Plugin URI: http://wordpress.org/extend/plugins/disable-comments/
 Description: Allows administrators to globally disable comments on their site. Comments can be disabled according to post type.
-Version: 1.3.2
+Version: 1.4.2
 Author: Samir Shah
 Author URI: http://rayofsolaris.net/
 License: GPL2
@@ -40,9 +40,6 @@ class Disable_Comments {
 			$this->options = get_option( 'disable_comments_options', array() );
 		}
 
-		// load language files
-		load_plugin_textdomain( 'disable-comments', false, dirname( plugin_basename( __FILE__ ) ) .  '/languages' );
-
 		// If it looks like first run, check compat
 		if( empty( $this->options ) ) {
 			$this->check_compatibility();
@@ -59,7 +56,7 @@ class Disable_Comments {
 			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 			deactivate_plugins( __FILE__ );
 			if ( isset( $_GET['action'] ) && ( $_GET['action'] == 'activate' || $_GET['action'] == 'error_scrape' ) ) {
-				exit( sprintf( __( 'Disable Comments requires WordPress version %s or greater.', 'disable-comments' ), '3.5' ) );
+				exit( sprintf( __( 'Disable Comments requires WordPress version %s or greater.', 'disable-comments' ), '3.6' ) );
 			}
 		}
 	}
@@ -135,7 +132,12 @@ class Disable_Comments {
 		}
 
 		// These can happen later
+		add_action( 'plugins_loaded', array( $this, 'register_text_domain' ) );
 		add_action( 'wp_loaded', array( $this, 'init_wploaded_filters' ) );
+	}
+
+	public function register_text_domain() {
+		load_plugin_textdomain( 'disable-comments', false, dirname( plugin_basename( __FILE__ ) ) .  '/languages' );
 	}
 
 	public function init_wploaded_filters(){

@@ -4,11 +4,11 @@
   Plugin URI: http://www.codeandmore.com/products/wordpress-plugins/wp-page-widget/
   Description: Allow users to customize Widgets per page.
   Author: CodeAndMore
-  Version: 2.7
+  Version: 2.9
   Author URI: http://www.codeandmore.com/
  */
 
-define('PAGE_WIDGET_VERSION', '2.7');
+define('PAGE_WIDGET_VERSION', '2.9');
 
 /* Hooks */
 add_action('plugins_loaded', 'pw_load_plugin_textdomain');
@@ -23,7 +23,7 @@ add_action('edit_term', "pw_save_term", 10, 2);
 add_action('wp_ajax_pw-widgets-order', 'pw_ajax_widgets_order');
 add_action('wp_ajax_pw-save-widget', 'pw_ajax_save_widget');
 add_action('wp_ajax_pw-toggle-customize', 'pw_ajax_toggle_customize');
-add_action('wp_ajax_pw-get-taxonomy-widget', 'pw_returnTaxonomyWidget');
+//add_action('wp_ajax_pw-get-taxonomy-widget', 'pw_returnTaxonomyWidget');
 add_action('wp_ajax_pw-remove-inactive-widget', 'pw_ajax_remove_inactive_widget');
 
 /* Filters */
@@ -83,6 +83,10 @@ function pw_print_scripts() {
 		// Simple Link List Widget plugin support
 		if (is_plugin_active('simple-link-list-widget/simple-link-list-widget.php')) {
 			wp_enqueue_script( 'sllw-sort-js', WP_PLUGIN_URL .'/simple-link-list-widget/js/sllw-sort.js');
+		}
+
+		if (is_plugin_active('easy-related-posts/easy_related_posts.php')) {
+			wp_enqueue_script( 'wp-color-picker');
 		}
 		
 		wp_enqueue_script('pw-widgets', plugin_dir_url(__FILE__) . 'assets/js/page-widgets.js', array('jquery', 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery-ui-droppable'), PAGE_WIDGET_VERSION, true);
@@ -723,8 +727,12 @@ function pw_showTaxonomyWidget($tag, $taxonomy) {
 	<?php
 }
 
-function pw_returnTaxonomyWidget() {
+/*function pw_returnTaxonomyWidget() {
 	$taxonomy = $_POST['taxonomy'];
+
+	//avoid XSS
+	$taxonomy = strip_tags($taxonomy);
+	$taxonomy = htmlentities($taxonomy, ENT_QUOTES);
 
 	global $wp_registered_sidebars, $sidebars_widgets, $wp_registered_widgets;
 
@@ -867,7 +875,7 @@ function pw_returnTaxonomyWidget() {
 	$content = ob_get_clean();
 	echo $content;
 	exit;
-}
+}*/
 
 function pw_ajax_remove_inactive_widget(){
 	check_ajax_referer('save-sidebar-widgets', 'savewidgets');
@@ -936,7 +944,7 @@ function pw_ajax_toggle_customize() {
 function pw_save_post($post_id, $post) {
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
 		return $post_id;
-//print_r($_POST);
+	//print_r($_POST);
 	if (isset($_POST['pw-customize-sidebars'])) {
 		$status = stripslashes($_POST['pw-customize-sidebars']);
 
@@ -950,7 +958,9 @@ function pw_save_post($post_id, $post) {
 			update_post_meta($post_id, '_customize_sidebars', $status);
 		}
 	}
-
+	if ( function_exists( 'w3tc_pgcache_flush' ) ) { 
+		w3tc_pgcache_flush(); 
+	}
 	return $post_id;
 }
 
@@ -1053,6 +1063,7 @@ function pw_ajax_save_widget() {
 	do_action('load-widgets.php');
 	do_action('widgets.php');
 	do_action('sidebar_admin_setup');
+	do_action('w3tc_pgcache_flush');
 
 	$id_base = $_POST['id_base'];
 	$widget_id = $_POST['widget-id'];
@@ -1144,19 +1155,10 @@ function pw_ajax_save_widget() {
 
 	if ($form = $wp_registered_widget_controls[$widget_id])
 		call_user_func_array($form['callback'], $form['params']);
-	// print 'Updated ajax save widget.';
-
-	/**
-	 * HELSINGBORG HACK
-	 * This hook is custom added by Helsingborg.
-	 */
-	$arguments = array(
-		'post_id' => $post_id,
-		'widget_id' => $widget_id,
-		'sidebar_id' => $sidebar_id
-	);
-	do_action('hbg_page_widget_save', $arguments);
-
+		print 'Updated ajax save widget.';
+		if ( function_exists( 'w3tc_pgcache_flush' ) ) { 
+			w3tc_pgcache_flush(); 
+		}
 	die();
 }
 
