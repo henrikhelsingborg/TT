@@ -34,7 +34,7 @@ function cbis_event() {
         'categoryId' => $cbis_category_id,
         'templateId' => 0,
         'pageOffset' => 0,
-        'itemsPerPage' => 1000,
+    	'itemsPerPage' => 1000,
         'filter' => array(
             'GeoNodeIds' => array($cbis_hbg_id),
             'StartDate' => date('c'),
@@ -74,8 +74,9 @@ function cbis_event() {
     /**
      * Step 2: Delete all previous city break events
      */
-    $delete_query = "DELETE FROM happy_external_event WHERE ImageID LIKE '%citybreak%' OR ImageId = ''";
+    $delete_query = "DELETE FROM happy_external_event WHERE ImageID LIKE '%citybreak%'";
     $result = $wpdb->get_results($delete_query);
+    
 
     /**
      * Step 3: Loop the loaded events, map the data and save to database

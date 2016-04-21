@@ -46,6 +46,19 @@ if (isset($_POST["update_settings"])) {
     $header_image_item_force_margin_value = esc_attr($_POST['header_image_item_force_margin_value']);
     update_option('helsingborg_header_image_item_force_margin_value', $header_image_item_force_margin_value);
 
+    // School title image
+    $title_school_image_title = esc_attr($_POST['title_school_image_title']);
+    update_option('helsingborg_title_school_image_title', $title_school_image_title);
+
+    $title_school_image_imageurl = esc_attr($_POST['title_school_image_imageurl']);
+    update_option('helsingborg_title_school_image_imageurl', $title_school_image_imageurl);
+
+    $title_school_image_alt = esc_attr($_POST['title_school_image_alt']);
+    update_option('helsingborg_title_school_image_alt', $title_school_image_alt);
+
+    $title_school_frontpage_hide = esc_attr($_POST['title_school_frontpage_hide']);
+    update_option('helsingborg_title_school_frontpage_hide', $title_school_frontpage_hide);
+
     $cbis_api_key = esc_attr($_POST['cbis_api_key']);
     update_option('helsingborg_cbis_api_key', $cbis_api_key);
 
@@ -85,8 +98,15 @@ $header_image_item_force_width        = get_option('helsingborg_header_image_ite
 $header_image_item_force_margin       = get_option('helsingborg_header_image_item_force_margin');
 $header_image_item_force_margin_value = get_option('helsingborg_header_image_item_force_margin_value');
 
+// School title image
+$title_school_image_title                   = get_option('helsingborg_title_school_image_title');
+$title_school_image_imageurl                = get_option('helsingborg_title_school_image_imageurl');
+$title_school_image_alt                     = get_option('helsingborg_title_school_image_alt');
+$title_school_frontpage_hide                = get_option('helsingborg_title_school_frontpage_hide');
+
 $fw = $header_image_item_force_width  == 'on' ? 'checked' : '';
 $fm = $header_image_item_force_margin == 'on' ? 'checked' : '';
+$fst = $title_school_frontpage_hide == 'on' ? 'checked' : '';
 
 // Values for CBIS
 $cbis_api_key     = get_option('helsingborg_cbis_api_key');
@@ -361,6 +381,41 @@ $alarm_location  = get_option('helsingborg_alarm_location');
             <input maxlength="4" size="4" id="header_image_item_force_margin_value" name="header_image_item_force_margin_value" type="text" value="<?php echo $header_image_item_force_margin_value; ?>" /> <label for="header_image_item_force_margin_value"><?php echo __(" pixlar."); ?></label>
             <br>
             <input type="button" class="small button" value="Rensa" onclick="clearHeader()" />
+          </div>
+        </td>
+      </tr>
+
+      <tr valign="top">
+        <th scope="row">
+          <label>
+            Logotyp i sidtitel på startsidan (skoltema):
+          </label>
+        </th>
+        <td>
+          <div class="hbgllw-edit-item" style="max-width: 50%;padding: 10px;display: block;border: 1px solid grey;">
+
+            <div class="uploader" style="display: table;margin: auto;">
+              <br>
+              <div id="title_school_image_preview" style="display: table;margin:auto;">
+                <img id="title_school_image_preview_img" src="<?php echo $title_school_image_imageurl; ?>" style="max-width: 500px; width: 400px; height: auto; display: table;margin:auto;" width="500"/>
+              </div>
+              <br>
+              <input type="submit" class="button" style="display: table; margin: auto;" name="title_school_image_uploader_button" id="title_school_image_uploader_button" value="Välj bild" onclick="helsingborgMediaSelector.create('title_school_image_', 'title_school_image_', '' ); return false;" />
+              <input type="hidden" id="title_school_image_title" name="title_school_image_title" value="<?php echo $title_school_image_imageurl; ?>" />
+              <input type="hidden" id="title_school_image_imageurl" name="title_school_image_imageurl" value="<?php echo $title_school_image_imageurl; ?>" />
+              <input type="hidden" id="title_school_image_alt" name="title_school_image_alt" value="<?php echo esc_attr(strip_tags($title_school_image_imageurl)); ?>" />
+
+            </div>
+
+            <br clear="all" />
+
+            <ul class="hbgllw-instructions">
+              <li><?php echo __("<b>Inställningar</b>"); ?></li>
+            </ul>
+
+            <input type="checkbox" <?php echo $fst; ?> name="title_school_frontpage_hide" id="title_school_frontpage_hide" /> <label for="title_school_frontpage_hide"><?php echo __("Dölj startsidans rubrik för besökare (behåll för sökmotorer)"); ?></label>
+            <br>
+
           </div>
         </td>
       </tr>

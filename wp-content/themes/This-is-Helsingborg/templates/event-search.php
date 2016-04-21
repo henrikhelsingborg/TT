@@ -24,8 +24,8 @@ $administration_unit_ids = (isset($_GET['q']) && strlen($_GET['q']) > 0) ? $_GET
                         <!-- ko if: (Type == 'select') -->
                         <div class="form-group columns medium-6 left">
                             <div>
-                                <label class="form-label" data-bind="text: Name" for="municipality_multiselect"></label>
-                                <select class="form-control" id="municipality_multiselect" data-bind="options: Options, optionsText: 'Name', optionsValue: 'ID', value='CurrentOption'"></select>
+                              <!-- <label class="form-label" data-bind="text: Name" for="municipality_multiselect"></label> -->
+                               <!-- <select class="form-control" id="municipality_multiselect" data-bind="options: Options, optionsText: 'Name', optionsValue: 'ID', value='CurrentOption'"></select> -->
                             </div>
                         </div>
                         <!-- /ko -->
@@ -49,13 +49,20 @@ $administration_unit_ids = (isset($_GET['q']) && strlen($_GET['q']) > 0) ? $_GET
                     </div>
 
                     <div class="form-group clearfix">
-                        <label>
+                      	<label>
                             <input class="form-control" type="checkbox" onclick="updateEvents(this)">
                             Visa alla Helsingborgs evenemang
                         </label>
+                        <div class="form-group comuns medium-6 right" align="right">
+                        <button class="form-control btn btn-submit" type= "submit" >
+                    		<i class="fa fa-search"></i>
+                    		Sök
+                    	</button>
+
+                    </div>
                     </div>
 
-                    <input type="text" id="selectedTypes" style="display: none;" data-bind="textInput: selectedEventTypes"/>
+                     <!--  <input type="text" id="selectedTypes" style="display: none;" data-bind="textInput: selectedEventTypes"/> -->
                 </form>
             </div>
         </div>
