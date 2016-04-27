@@ -59,7 +59,7 @@
                 <header class="header-main">
                     <div class="nav-bar">
                         <div class="row">
-                            <div class="large-3 medium-4 small-12 columns logotype">
+                            <div class="large-3 medium-6 small-12 columns logotype">
                                 <a href="<?php echo site_url(); ?>"><img class="logotype" src="<?php echo get_option('helsingborg_header_image_imageurl'); ?>" alt="<?php echo bloginfo('name'); ?>"></a>
                             </div>
 

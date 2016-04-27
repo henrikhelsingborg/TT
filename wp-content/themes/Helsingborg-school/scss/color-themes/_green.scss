@@ -30,14 +30,16 @@ body[data-theme="green"] {
                     background: darken($band-green-4, 5%);
 
                     li {
-                        a:hover {
+                        a:hover,
+                        a:focus {
                             background: darken($band-green-4, 8%);
                         }
                     }
                 }
 
                 // Display submenu on hover
-                &:hover {
+                &:hover,
+                &:focus {
                     background: darken($band-green-4, 5%);
                 }
             }

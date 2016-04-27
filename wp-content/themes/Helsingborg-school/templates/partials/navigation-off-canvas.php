@@ -1,4 +1,4 @@
-<aside class="right-off-canvas-menu">
+<aside class="right-off-canvas-menu" tabindex="-1">
     <?php
         $defaults = array(
             'theme_location'  => 'sidebar-menu',
