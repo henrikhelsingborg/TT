@@ -259,7 +259,7 @@ function saveEvent() {
 
   if (confirm('Är du säker på du vill spara?')){
     jQuery.post(ajaxurl, data, function(response) {
-      if (redirect !== undefined) window.location.replace("<?php echo site_url(); ?>/wp-admin/admin.php?page=helsingborg-eventhandling");
+      if (typeof redirect != 'undefined') window.location.replace("<?php echo site_url(); ?>/wp-admin/admin.php?page=helsingborg-eventhandling");
     });
   }
 }
