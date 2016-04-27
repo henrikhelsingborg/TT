@@ -10,6 +10,10 @@
         font-weight: 300;
     }
 
+    a:focus + .sub-menu {
+        display: block;
+    }
+
     > ul {
         list-style-type: none;
         margin: 0;
@@ -42,7 +46,8 @@
                         font-size: 13pt;
                         padding: 10px 15px;
 
-                        &:hover {
+                        &:hover,
+                        &:focus {
                             background: darken($band-color-4, 8%);
                         }
                     }
@@ -79,8 +84,10 @@
             }
 
             // Display submenu on hover
-            &:hover {
+            &:hover,
+            &:focus {
                 background: darken($band-color-4, 5%);
+
                 > ul {
                     display: block;
                 }
@@ -326,6 +333,10 @@
  */
 
 @media #{$small-only} {
+
+}
+
+@media #{$small-up} {
     .nav-mainmenu {
         display: none;
     }
@@ -334,15 +345,18 @@
     }
 }
 
-@media #{$small-up} {
-
-}
-
 @media #{$medium-up} {
 
 }
 
 @media #{$large-up} {
+    .nav-mainmenu {
+        display: block;
+    }
+    .mobile-nav {
+        display: none;
+    }
+
     .dropdown-search {
         width: 50%;
         left: auto;

@@ -415,7 +415,7 @@ $alarm_location  = get_option('helsingborg_alarm_location');
 
             <input type="checkbox" <?php echo $fst; ?> name="title_school_frontpage_hide" id="title_school_frontpage_hide" /> <label for="title_school_frontpage_hide"><?php echo __("Dölj startsidans rubrik för besökare (behåll för sökmotorer)"); ?></label>
             <br>
-
+            <input type="button" class="small button" value="Rensa" onclick="clearSchoolHeader()" />
           </div>
         </td>
       </tr>
@@ -527,6 +527,13 @@ function clearHeader() {
   document.getElementById('header_image_alt').value = '';
   document.getElementById('header_image_item_force_width').checked = false;
   document.getElementById('header_image_item_force_margin').checked = false;
+}
+
+function clearSchoolHeader() {
+  document.getElementById('title_school_image_preview_img').src = '';
+  document.getElementById('title_school_image_title').value = '';
+  document.getElementById('title_school_image_imageurl').value = '';
+  document.getElementById('title_school_image_alt').value = '';
 }
 
 function startManualCBIS() {
