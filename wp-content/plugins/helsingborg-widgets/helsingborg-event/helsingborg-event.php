@@ -4,6 +4,8 @@
     require_once('happy-event.php');
     require_once('models/event_model.php');
 
+    define('HELSINGBOR_EVENT_URL', plugins_url('', __FILE__));
+
     $EventList = new EventList();
 
 
