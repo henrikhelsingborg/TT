@@ -1,5 +1,37 @@
 <?php
 
+    function extractSvg($symbol, $classes = '')
+    {
+        $symbol = file_get_contents($symbol);
+
+        //Get by dom method
+        if (class_exists('DOMDocument')) {
+            $doc = new \DOMDocument();
+            if ($doc->loadXML($symbol) === true) {
+                try {
+                    $doc->getElementsByTagName('svg');
+
+                    $svg = $doc->getElementsByTagName('svg');
+                    if ($svg->item(0)->C14N() !== null) {
+                        $symbol = $svg->item(0)->C14N();
+                    }
+                } catch (exception $e) {
+                    error_log("Error loading SVG file to header or footer.");
+                }
+            }
+        }
+
+        //Filter tags & comments (if above not applicated)
+        $symbol = preg_replace('/<\?xml.*?\/>/im', '', $symbol); //Remove XML
+        $symbol = preg_replace('/<!--(.*)-->/Uis', '', $symbol); //Remove comments & javascript
+
+        if (strlen($classes) > 0) {
+            $symbol = str_replace('<svg', '<svg class="' . $classes . '"', $symbol);
+        }
+
+        return $symbol;
+    }
+
     /**
      * Checks if a given widget exists within a given sidebar
      * @param  string  $sidebarSlug  The slug of the sidebar to check in
@@ -107,7 +139,7 @@
       if($a_elem != "") {
         $output .= '</a>';
       }
-      
+
       if ($caption) {
         $output .= '<figcaption class="caption wp-caption-text">'.$caption.'</figcaption>';
       }

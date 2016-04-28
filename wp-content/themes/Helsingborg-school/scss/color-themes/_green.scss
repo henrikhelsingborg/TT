@@ -15,6 +15,10 @@ body[data-theme="green"] {
         background-image: url('../assets/images/color-band-green.svg');
     }
 
+    .stripe {
+        @include stripe($band-green-1, $band-green-2, $band-green-3, $band-green-4, $band-green-5);
+    }
+
     .nav-bar {
         background: $band-green-4;
     }

@@ -52,6 +52,7 @@
         .nav-bar {
             background: #fff !important;
             background-color: #fff !important;
+            border-bottom: 5px solid <?php echo $colorCode; ?>;
         }
 
         .nav-mainmenu > ul > li > a {
@@ -65,6 +66,19 @@
 
         .show-search > a {
             color: #fff !important;
+        }
+
+        .nav-bar .logotype * {
+            fill: #000;
+        }
+
+        .nav-bar .logotype > path {
+            fill: <?php echo $colorCode; ?>;
+        }
+
+        .hero .stripe {
+            top: -5px;
+            height: calc(100% + 5px);
         }
         <?php endif; ?>
     </style>
@@ -80,7 +94,9 @@
                     <div class="nav-bar">
                         <div class="row">
                             <div class="large-3 medium-6 small-12 columns logotype">
-                                <a href="<?php echo site_url(); ?>"><img class="logotype" src="<?php echo get_option('helsingborg_header_image_imageurl'); ?>" alt="<?php echo bloginfo('name'); ?>"></a>
+                                <a href="<?php echo site_url(); ?>">
+                                    <?php echo extractSvg(get_option('helsingborg_header_image_imageurl'), 'logotype'); ?>
+                                </a>
                             </div>
 
                             <nav class="nav-mainmenu large-9 medium-8 small-4 columns">
@@ -103,7 +119,13 @@
                     </div>
 
                     <div class="hero widgets-test-color clearfix">
-                        <div class="color-band"></div>
+                        <div class="stripe">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                         <?php
                             $image = false;
                             $currPageId = get_the_ID();

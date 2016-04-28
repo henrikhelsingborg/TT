@@ -2,3 +2,13 @@
     background: url('../assets/images/color-band-red.svg') repeat-x;
     background-size: cover;
 }
+
+.stripe {
+    @include stripe();
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+    z-index: 99;
+}

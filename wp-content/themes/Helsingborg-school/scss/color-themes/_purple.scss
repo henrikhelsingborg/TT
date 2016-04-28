@@ -15,6 +15,10 @@ body[data-theme="purple"] {
         background-image: url('../assets/images/color-band-purple.svg');
     }
 
+    .stripe {
+        @include stripe($band-purple-1, $band-purple-2, $band-purple-3, $band-purple-4, $band-purple-5);
+    }
+
     .nav-bar {
         background: $band-purple-4;
     }
