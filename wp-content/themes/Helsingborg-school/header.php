@@ -47,6 +47,26 @@
             background: <?=$colorCode?> !important;
             background-color: <?=$colorCode?> !important;
         }
+
+        <?php if (in_array($colorCode, array('#f7a600', '#ec6701', '#d35098', '#4db4e7', '#5ba1d8', '#0095db', '#afca05', '#11a636', '#a0c855', '#76b828'))) : ?>
+        .nav-bar {
+            background: #fff !important;
+            background-color: #fff !important;
+        }
+
+        .nav-mainmenu > ul > li > a {
+            color: #000;
+        }
+
+        .nav-mainmenu > ul > li > a:hover,
+        .nav-mainmenu > ul > li:hover > a {
+            color: #fff;
+        }
+
+        .show-search > a {
+            color: #fff !important;
+        }
+        <?php endif; ?>
     </style>
     <?php endif; ?>
 </head>
