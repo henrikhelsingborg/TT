@@ -131,7 +131,7 @@ echo $before_widget;
                 }
             });
 
-            if (result.ImagePath.length > 0) {
+            if (typeof result.ImagePath != 'undefined' && result.ImagePath !== null && result.ImagePath.length > 0) {
                 jQuery(image).attr("src", result.ImagePath).show();
             } else {
                 jQuery(image).hide();
