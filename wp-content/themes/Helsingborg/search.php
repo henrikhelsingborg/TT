@@ -1,6 +1,6 @@
 <?php
 	get_header();
-	$query = $_GET['s'];
+	$query = get_search_query();
 ?>
 
 <div class="article-page-layout row">
