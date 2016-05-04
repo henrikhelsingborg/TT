@@ -180,6 +180,7 @@ https://www.tipsandtricks-hq.com/wordpress-security-and-firewall-plugin
 == Upgrade Notice ==
 None
 
+
 == Changelog ==
 
 = 4.0.7 =
@@ -236,6 +237,14 @@ None
 - Fixed bug related to multi-site user_roles not being updated for child sites.
 - Fixed minor bug in rename login feature.
 - Updated the Italian language file. 
+
+= 3.9.9 =
+- Fixed an issue with the rename login page feature for WordPress 4.3
+- Added esc_attr() sanitization to some of the relevant parameters
+- Added the necessary changes to allow activation via wp-cli
+
+= 3.9.8 =
+- Added guard against possible XSS in the unlock request feature.
 
 = 3.9.9 =
 - Fixed an issue with the rename login page feature for WordPress 4.3

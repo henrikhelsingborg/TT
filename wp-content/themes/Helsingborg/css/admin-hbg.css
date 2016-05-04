@@ -33,12 +33,13 @@
         height: auto;
     }
 
-#major-publishing-actions #delete-action {
+#major-publishing-actions div:not(.clear) {
     display: block;
     float: none;
     text-align: center;
     padding: 10px 0;
 }
+
 
 /**
  * Style the "My sites" dropdown
