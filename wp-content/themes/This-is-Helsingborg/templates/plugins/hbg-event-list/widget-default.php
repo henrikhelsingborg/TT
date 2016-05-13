@@ -12,11 +12,11 @@
             <li class="event-item-featured">
                 <a href="<?php echo get_permalink($featured->ID); ?>" class="event-item featured">
                     <?php if ($featuredImage) : ?>
-                    <div class="columns large-4 medium-4 small-12 featured-image">
-                        <img src="<?php echo $featuredImage[0]; ?>" class="responsive">
+                    <div class="columns large-3 medium-4 small-12 featured-image">
+                        <img src="<?php echo $featuredImage[0]; ?>" class="responsive hidden-for-small">
                     </div>
                     <?php endif; ?>
-                    <div class="columns <?php if ($featuredImage) : ?>large-8 medium-8 small-12<?php else : ?>large-12 medium-12 small-12<?php endif; ?>">
+                    <div class="columns <?php if ($featuredImage) : ?>large-9 medium-8 small-12<?php else : ?>large-12 medium-12 small-12<?php endif; ?>">
                         <h3><?php echo $featured->post_title; ?></h3>
                         <p class="lead"><?php echo $main; ?></p>
                         <span class="link-item"><?php echo $instance['link-text']; ?></span>

@@ -11,7 +11,7 @@
 
 <?php echo $before_widget; ?>
     <?php if (in_array($args['id'], array('left-sidebar', 'left-sidebar-bottom', 'right-sidebar'))) get_template_part('templates/partials/stripe'); ?>
-    
+
     <h3 class="box-title"><?php echo $title; ?></h3>
     <div class="box-content" id="widget-<?php echo $args['widget_id']; ?>" data-event-list="{'defaultImagePath':'<?php echo get_template_directory_uri(); ?>/assets/images/event-placeholder.jpg', 'administrationIds': '<?php echo $administration_ids; ?>', 'ammount': '<?php echo $amount; ?>'}">
         <ul class="event-list list list-events">
@@ -25,11 +25,11 @@
             <li class="event-item-featured">
                 <a href="<?php echo get_permalink($featured->ID); ?>" class="event-item featured">
                     <?php if ($featuredImage) : ?>
-                    <div class="columns large-4 medium-4 small-12 featured-image">
-                        <img src="<?php echo $featuredImage[0]; ?>" class="responsive" alt="<?php echo $featured->post_title; ?>" width="<?php echo $featuredImage[1]; ?>" height="<?php echo $featuredImage[2]; ?>">
+                    <div class="columns large-3 medium-4 small-12 featured-image">
+                        <img src="<?php echo $featuredImage[0]; ?>" class="responsive hidden-for-small" alt="<?php echo $featured->post_title; ?>" width="<?php echo $featuredImage[1]; ?>" height="<?php echo $featuredImage[2]; ?>">
                     </div>
                     <?php endif; ?>
-                    <div class="columns <?php if ($featuredImage) : ?>large-8 medium-8 small-12<?php else : ?>large-12 medium-12 small-12<?php endif; ?>">
+                    <div class="columns <?php if ($featuredImage) : ?>large-9 medium-8 small-12<?php else : ?>large-12 medium-12 small-12<?php endif; ?>">
                         <h3><?php echo $featured->post_title; ?></h3>
                         <p class="lead"><?php echo $main; ?></p>
                         <span class="link-item"><?php echo $instance['link-text']; ?></span>
