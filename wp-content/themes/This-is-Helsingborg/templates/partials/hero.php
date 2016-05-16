@@ -6,4 +6,18 @@
 
     get_search_form();
     ?>
+
+    <!-- Google Search Form -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "<?php echo home_url(); ?>",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://www.helsingborg.se/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </div>
