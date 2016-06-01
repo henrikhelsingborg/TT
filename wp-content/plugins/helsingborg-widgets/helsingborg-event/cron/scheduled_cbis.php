@@ -6,8 +6,9 @@
 */
 
 /* Function to execute as event, from setup above */
-add_action( 'scheduled_cbis', 'cbis_event' );
-function cbis_event() {
+add_action('scheduled_cbis', 'cbis_event');
+function cbis_event()
+{
     global $wpdb;
 
     /**
@@ -34,7 +35,7 @@ function cbis_event() {
         'categoryId' => $cbis_category_id,
         'templateId' => 0,
         'pageOffset' => 0,
-    	'itemsPerPage' => 1000,
+        'itemsPerPage' => 1500,
         'filter' => array(
             'GeoNodeIds' => array($cbis_hbg_id),
             'StartDate' => date('c'),
@@ -76,12 +77,14 @@ function cbis_event() {
      */
     $delete_query = "DELETE FROM happy_external_event WHERE ImageID LIKE '%citybreak%'";
     $result = $wpdb->get_results($delete_query);
-    
+
 
     /**
      * Step 3: Loop the loaded events, map the data and save to database
      */
-    foreach($products as $product) {
+    foreach ($products as $product) {
+
+        //var_dump($product);
 
         /**
          * Loop attributes and populate new array where key is AttributeId
@@ -110,9 +113,15 @@ function cbis_event() {
             $type = $category->Name;
         }
 
-        $occations = $product->Occasions;
-        if (isset($product->Occasions->OccasionObject) && count($product->Occasions->OccasionObject) > 0) {
-            $occations = $product->Occasions->OccasionObject;
+        //check for both occations object and occations. CBIS might have changed the api.
+        if (isset($product->Occasions) && !empty(array_filter($product->Occasions))) {
+            if (isset($product->Occasions->OccasionObject) && count(array_filter($product->Occasions->OccasionObject)) > 0) {
+                $occations = $product->Occasions->OccasionObject;
+            }
+        } else {
+            if (isset($product->OccasionObject) && count(array_filter($product->OccasionObject)) > 0) {
+                $occations = $product->OccasionObject;
+            }
         }
 
         if (!is_array($occations)) {
@@ -123,6 +132,7 @@ function cbis_event() {
          * Loop occations
          */
         foreach ($occations as $occasion) {
+
 
             // Make sure the occasion has a startdate !
             if (isset($occasion->StartDate)) {
@@ -179,4 +189,7 @@ function cbis_event() {
     $mysqli    = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $procedure = "CALL spInsertIntoHappyEvent();";
     $mysqli->real_query($procedure);
+
 }
+
+cbis_event();
