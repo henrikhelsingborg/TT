@@ -40,7 +40,7 @@ function cbis_event()
         'categoryId' => $cbis_category_id,
         'templateId' => 0,
         'pageOffset' => 0,
-        'itemsPerPage' => 2,
+        'itemsPerPage' => 1500,
         'filter' => array(
             'GeoNodeIds' => array($cbis_hbg_id),
             'StartDate' => date('c'),
@@ -107,6 +107,22 @@ function cbis_event()
         $introduction = $attributes[101]->Data ?: '';
         $description  = $attributes[102]->Data ?: '';
         $link         = $attributes[125]->Data ?: '';
+
+
+        /**
+         * Filter titles
+         */
+        $title = str_replace("(copy)", "", $title);
+        $title = trim($title);
+
+        /**
+         * Filter links
+         */
+        if ($link != "" && $ret = parse_url($link)) {
+            if (!isset($ret["scheme"])) {
+                $link = "http://".$link;
+            }
+        }
 
         /**
          * Get the event category
