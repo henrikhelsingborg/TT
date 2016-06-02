@@ -9,6 +9,11 @@
 add_action('scheduled_cbis', 'cbis_event');
 function cbis_event()
 {
+
+    //Time limit to 30 minutes.
+    set_time_limit(60*30);
+
+    //Wpdb object
     global $wpdb;
 
     /**
@@ -189,7 +194,8 @@ function cbis_event()
     $mysqli    = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $procedure = "CALL spInsertIntoHappyEvent();";
     $mysqli->real_query($procedure);
-
 }
 
-cbis_event();
+if (isset($_GET['cron']) && $_GET['cron'] == "importcbis") {
+    cbis_event();
+}
