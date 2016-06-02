@@ -119,7 +119,7 @@ function cbis_event()
         }
 
         //check for both occations object and occations. CBIS might have changed the api.
-        if (isset($product->Occasions) && !empty(array_filter($product->Occasions))) {
+        if (isset($product->Occasions) && count(array_filter($product->Occasions)) > 0) {
             if (isset($product->Occasions->OccasionObject) && count(array_filter($product->Occasions->OccasionObject)) > 0) {
                 $occations = $product->Occasions->OccasionObject;
             }
