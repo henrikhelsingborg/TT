@@ -42,21 +42,25 @@ if (!class_exists('WpSimpleCache')) {
 
         private static $post_request_checksum;
 
+        private static $minimum_file_size;
+
         public function __construct()
         {
 
             //Setup variables
             self::$file_hash        = md5(rtrim(trim(strtolower($_SERVER['REQUEST_URI'])), "/"));
-            self::$domain_name        = md5($_SERVER['SERVER_NAME']);
-            self::$cache_folder        = "/cache/";
+            self::$domain_name      = md5($_SERVER['SERVER_NAME']);
+            self::$cache_folder     = "/cache/";
 
             //Cache time
             if (defined('DOING_AJAX') && DOING_AJAX === true && isset($_REQUEST) && !empty($_REQUEST)) {
-                self::$cache_time                = 300;                                    //Cachetime in seconds for ajax calls (default 10 minutes)
-                self::$post_request_checksum    = "ajax_".md5(serialize($_REQUEST));    //Filename for POST REQUEST
+                self::$cache_time                	= 300;                                  //Cachetime in seconds for ajax calls (default 10 minutes)
+                self::$post_request_checksum    	= "ajax_".md5(serialize($_REQUEST));    //Filename for POST REQUEST
+                self::$minimum_file_size 			= 10;
             } else {
-                self::$cache_time                = 60*60*24*30;                            //Global cachetime in seconds (default one month)
+                self::$cache_time               = 60*60*24*30;                            //Global cachetime in seconds (default one month)
                 self::$post_request_checksum    = false;                                //Turn of post requests cache
+                self::$minimum_file_size 		= 500;
             }
 
             //What user mode?
@@ -148,9 +152,8 @@ if (!class_exists('WpSimpleCache')) {
 
         public static function start()
         {
-
             //Check if cache exists
-            if (file_exists(self::get_filename()) && (time() - self::$cache_time < filemtime(self::get_filename())) && (mb_strlen(self::get_cache(), '8bit') > 500)) {
+            if (file_exists(self::get_filename()) && (time() - self::$cache_time < filemtime(self::get_filename())) && filesize(self::get_filename()) > self::$minimum_file_size) {
                 self::get_cache();
                 exit;
             } else {
@@ -160,7 +163,6 @@ if (!class_exists('WpSimpleCache')) {
 
         public static function store_cache($callback_data)
         {
-
             //Do not store 404
             if (defined('ABSPATH') && is_404()) {
                 return $callback_data;
@@ -170,7 +172,7 @@ if (!class_exists('WpSimpleCache')) {
             chdir(dirname($_SERVER['SCRIPT_FILENAME']));
 
             //Check if cache is valid, small responses shold not be cached.
-            if (!empty($callback_data) && mb_strlen($callback_data, '8bit') > 500) {
+            if (!empty($callback_data) && strlen($callback_data) > self::$minimum_file_size) {
 
                 //Create handle
                 $file_handle = fopen(self::get_filename(), "wa+");
