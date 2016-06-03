@@ -145,9 +145,9 @@ function cbis_event()
         /**
          * Loop occations, if not empty
          */
-        if (!empty(array_filter($occations))) {
-            foreach ($occations as $occasion) {
+        if (array_filter($occations)) {
 
+            foreach ($occations as $occasion) {
 
                 // Make sure the occasion has a startdate !
                 if (isset($occasion->StartDate)) {
