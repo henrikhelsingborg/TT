@@ -53,9 +53,9 @@ function cbis_event()
             'MinLongitude' => null,
             'SubCategoryId' => 0,
             'ProductType' => 'Product',
-            'WithOccasionsOnly' => false,
-            'ExcludeProductsWithoutOccasions' => false,
-            'ExcludeProductsNotInCurrentLanguage' => false,
+            'WithOccasionsOnly' => true,
+            'ExcludeProductsWithoutOccasions' => true,
+            'ExcludeProductsNotInCurrentLanguage' => true,
             'IncludeArchivedProducts' => false,
             'IncludeInactiveProducts' => false,
             'BookableProductsFirst' => false,
@@ -71,7 +71,8 @@ function cbis_event()
     $client = new SoapClient('http://api.cbis.citybreak.com/Products.asmx?WSDL');
     $response = $client->ListAll($requestParams);
 
-    $products = $response->ListAllResult->Items->Product;
+    //Format to array if single item.
+    $products = is_array($response->ListAllResult->Items->Product) ? $response->ListAllResult->Items->Product : array($response->ListAllResult->Items->Product);
 
     if (!count($products)) {
         return;
@@ -83,13 +84,10 @@ function cbis_event()
     $delete_query = "DELETE FROM happy_external_event WHERE ImageID LIKE '%citybreak%'";
     $result = $wpdb->get_results($delete_query);
 
-
     /**
      * Step 3: Loop the loaded events, map the data and save to database
      */
     foreach ($products as $product) {
-
-        //var_dump($product);
 
         /**
          * Loop attributes and populate new array where key is AttributeId
@@ -110,6 +108,22 @@ function cbis_event()
         $description  = $attributes[102]->Data ?: '';
         $link         = $attributes[125]->Data ?: '';
 
+
+        /**
+         * Filter titles
+         */
+        $title = str_replace("(copy)", "", $title);
+        $title = trim($title);
+
+        /**
+         * Filter links
+         */
+        if ($link != "" && $ret = parse_url($link)) {
+            if (!isset($ret["scheme"])) {
+                $link = "http://".$link;
+            }
+        }
+
         /**
          * Get the event category
          * Always uses the last category found
@@ -118,71 +132,68 @@ function cbis_event()
             $type = $category->Name;
         }
 
-        //check for both occations object and occations. CBIS might have changed the api.
-        if (isset($product->Occasions) && count(array_filter($product->Occasions)) > 0) {
-            if (isset($product->Occasions->OccasionObject) && count(array_filter($product->Occasions->OccasionObject)) > 0) {
-                $occations = $product->Occasions->OccasionObject;
-            }
-        } else {
-            if (isset($product->OccasionObject) && count(array_filter($product->OccasionObject)) > 0) {
-                $occations = $product->OccasionObject;
-            }
-        }
+        /**
+         * Create occations array
+         */
+
+        $occations = $product->Occasions->OccasionObject;
 
         if (!is_array($occations)) {
             $occations = array($occations);
         }
 
         /**
-         * Loop occations
+         * Loop occations, if not empty
          */
-        foreach ($occations as $occasion) {
+        if (array_filter($occations)) {
 
+            foreach ($occations as $occasion) {
 
-            // Make sure the occasion has a startdate !
-            if (isset($occasion->StartDate)) {
+                // Make sure the occasion has a startdate !
+                if (isset($occasion->StartDate)) {
 
-                /**
-                 * Map id and location to variables
-                 */
-                $id       = $occasion->Id;
-                $location = $occasion->ArenaName;
+                    /**
+                     * Map id and location to variables
+                     */
+                    $id       = $occasion->Id;
+                    $location = $occasion->ArenaName;
 
-                /**
-                 * Create proper DateTime obj. from string (yyyy-mm-ddThh:mm:ss)
-                 */
-                $date = DateTime::CreateFromFormat('Y-m-d\TH:i:s', $occasion->StartDate);
-                $time = DateTime::CreateFromFormat('Y-m-d\TH:i:s', $occasion->StartTime);
+                    /**
+                     * Create proper DateTime obj. from string (yyyy-mm-ddThh:mm:ss)
+                     */
+                    $date = DateTime::CreateFromFormat('Y-m-d\TH:i:s', $occasion->StartDate);
+                    $time = DateTime::CreateFromFormat('Y-m-d\TH:i:s', $occasion->StartTime);
 
-                /**
-                 * Save the event to the database
-                 */
-                $wpdb->insert('happy_external_event',
-                    array(
-                        'ID'          => $id,
-                        'Name'        => $title,
-                        'Status'      => $status,
-                        'Description' => $description,
-                        'EventType'   => $type,
-                        'Date'        => $date->format('Y-m-d'),
-                        'Time'        => $time->format('H:i'),
-                        'Location'    => $location,
-                        'ImageID'     => $imageid,
-                        'Link'        => $link
-                    ),
-                    array(
-                        '%d',
-                        '%s',
-                        '%s',
-                        '%s',
-                        '%s',
-                        '%s',
-                        '%s',
-                        '%s',
-                        '%s',
-                        '%s'
-                    )
-                );
+                    /**
+                     * Save the event to the database
+                     */
+                    $wpdb->insert('happy_external_event',
+                        array(
+                            'ID'          => $id,
+                            'Name'        => $title,
+                            'Status'      => $status,
+                            'Description' => $description,
+                            'EventType'   => $type,
+                            'Date'        => $date->format('Y-m-d'),
+                            'Time'        => $time->format('H:i'),
+                            'Location'    => $location,
+                            'ImageID'     => $imageid,
+                            'Link'        => $link
+                        ),
+                        array(
+                            '%d',
+                            '%s',
+                            '%s',
+                            '%s',
+                            '%s',
+                            '%s',
+                            '%s',
+                            '%s',
+                            '%s',
+                            '%s'
+                        )
+                    );
+                }
             }
         }
     }
