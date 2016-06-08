@@ -33,8 +33,9 @@
 
     <!-- ## INSTAGRAM ## -->
     <section class="hbg-social-widget-section-instagram <?php if ($instance['feedType'] == 'instagram') echo 'active'; ?>">
+        <p style="padding: 5px 7px; font-size: .9; background-color: #ff0000; color: #fff;">På grund av Instagrams nya sekretessinställningar måste du kunna logga in på det konto som du vill hämta ifrån. Klicka här för att skapa en <a href="http://instagram.pixelunion.net/" target="_blank" style="color: #fff;">klientnyckel</a>. </p>
         <p>
-            <label>Användare att hämta:</label>
+            <label>Client ID (<a href="http://instagram.pixelunion.net/" target="_blank">skapa en</a>):</label>
             <input type="text" id="<?php echo $this->get_field_id('instagram-user'); ?>" name="<?php echo $this->get_field_name('instagram-user'); ?>" class="widefat"  value="<?php if ($instance['feedType'] == 'instagram') : ?><?php echo $instance['username']; ?><?php endif; ?>">
         </p>
         <p>

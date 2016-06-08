@@ -1,14 +1,16 @@
 <?php
 
 if (!class_exists('HelsingborgSocialWidget')) {
-    class HelsingborgSocialWidget extends WP_Widget {
+    class HelsingborgSocialWidget extends WP_Widget
+    {
 
         protected $_viewsPath;
 
         /**
          * Constructor
          */
-        public function __construct() {
+        public function __construct()
+        {
             // Sets the views directory path
             $this->_viewsPath = plugin_dir_path(plugin_dir_path(__FILE__)) . 'views/';
 
@@ -31,7 +33,8 @@ if (!class_exists('HelsingborgSocialWidget')) {
         /**
          * Adds settings section to either the Helsingborg submenu (if exists) or to the core settings submenu
          */
-        public function addSettingsMenu() {
+        public function addSettingsMenu()
+        {
             if (!$this->menuExist('helsingborg')) {
                 add_options_page('Sociala flöden', 'Sociala flöden', 'activate_plugins', 'hbg-social-widget-menu', array($this, 'settingsPage'));
             } else {
@@ -49,7 +52,8 @@ if (!class_exists('HelsingborgSocialWidget')) {
         /**
          * Outputs the settings page
          */
-        public function settingsPage() {
+        public function settingsPage()
+        {
             /**
              * Handle options save
              */
@@ -79,7 +83,8 @@ if (!class_exists('HelsingborgSocialWidget')) {
         /**
          * Enqueue js
          */
-        public function addJs($hook = false) {
+        public function addJs($hook = false)
+        {
             wp_enqueue_script('helsingborg-social-widget-js', plugins_url('helsingborg-extra-mer/helsingborg-social-widget/assets/js/helsingborg-social-widget.js'), array('jquery'), false, true);
             wp_enqueue_style('helsingborg-social-widget-css', plugins_url('helsingborg-extra-mer/helsingborg-social-widget/assets/css/helsingborg-social-widget.css'), array(), '');
             wp_enqueue_style('helsingborg-social-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0');
@@ -90,7 +95,8 @@ if (!class_exists('HelsingborgSocialWidget')) {
          * @param  object $instance The current widget instance
          * @return void
          */
-        public function form($instance) {
+        public function form($instance)
+        {
             require($this->_viewsPath . 'widget-form.php');
         }
 
@@ -100,8 +106,8 @@ if (!class_exists('HelsingborgSocialWidget')) {
         * @param  array $oldInstance The old widget options
         * @return array              The merged instande of new and old to be saved
         */
-        public function update($newInstance, $oldInstance) {
-
+        public function update($newInstance, $oldInstance)
+        {
             $instance = array();
             $instance['feedType'] = $newInstance['feedType'];
             $instance['title'] = $newInstance['title'] ?: $oldInstance['title'];
@@ -144,14 +150,17 @@ if (!class_exists('HelsingborgSocialWidget')) {
          * @param  array $instance The widget instance
          * @return void            The widget markup
          */
-        public function widget($args, $instance) {
+        public function widget($args, $instance)
+        {
             extract($args);
 
             $this->addJs();
 
             $currentTheme = get_current_theme();
 
-            if ($currentTheme == 'Helsingborg Stad - Skola') echo $before_widget;
+            if ($currentTheme == 'Helsingborg Stad - Skola') {
+                echo $before_widget;
+            }
 
             $view = 'widget-none.php';
 
@@ -183,17 +192,42 @@ if (!class_exists('HelsingborgSocialWidget')) {
                 require($this->_viewsPath . $view);
             }
 
-            if ($currentTheme == 'Helsingborg Stad - Skola') echo $after_widget;
+            if ($currentTheme == 'Helsingborg Stad - Skola') {
+                echo $after_widget;
+            }
+        }
+
+
+        /**
+         * Gets a Instagram users feed
+         * @param  string $client_id Instagram App Clinet ID
+         * @param  integer $length  Length of the feed
+         * @return object           The instgram posts
+         */
+        public function getInstagramFeed($client_id, $length)
+        {
+            $recent = HbgCurl::request('GET',
+                'https://api.instagram.com/v1/users/self/media/recent/',
+                array(
+                    'access_token' => empty($client_id) ? get_option('hbgsf_instagram_client_id'): $client_id
+                )
+            );
+
+            $recent = json_decode($recent);
+
+            return $recent->data;
         }
 
         /**
+         * DEPRICATED
          * Gets a Instagram users feed (if public)
          * @param  string $key      Instagram App Clinet ID
          * @param  string $username The username to get
          * @param  integer $length  Length of the feed
          * @return object           The instgram posts
          */
-        public function getInstagramFeed($username, $length) {
+        public function depricated_getInstagramFeed($username, $length)
+        {
             /**
              * Get Instagram User ID from Username
              */
@@ -236,7 +270,8 @@ if (!class_exists('HelsingborgSocialWidget')) {
          * @param  integer $length  Max length (number of posts to show)
          * @return object           The loaded posts
          */
-        public function getFacebookFeed($username, $length) {
+        public function getFacebookFeed($username, $length)
+        {
             /**
              * Get appId and appSecret from options
              */
@@ -275,7 +310,8 @@ if (!class_exists('HelsingborgSocialWidget')) {
          * @param  integer $length   The max number of tweets to get
          * @return object            Object with the tweets
          */
-        public function getTwitterFeed($username, $length) {
+        public function getTwitterFeed($username, $length)
+        {
             /**
              * Get consumer key from options
              */
@@ -314,7 +350,7 @@ if (!class_exists('HelsingborgSocialWidget')) {
             );
 
             // Curl and format response
-            $response = HbgCurl::request('POST', $endpoint, $data, NULL, $headers);
+            $response = HbgCurl::request('POST', $endpoint, $data, null, $headers);
             $response = json_decode($response);
             $access_token = $response->access_token;
 
@@ -352,7 +388,8 @@ if (!class_exists('HelsingborgSocialWidget')) {
          * @param  integer $length  Number of Pins to display
          * @return object           An object with the pins
          */
-        function getPinterestFeed($username, $length) {
+        public function getPinterestFeed($username, $length)
+        {
             $endpoint = 'https://api.pinterest.com/v3/pidgets/users/' . $username . '/pins/';
             $response = HbgCurl::request('GET', $endpoint);
 
@@ -364,7 +401,8 @@ if (!class_exists('HelsingborgSocialWidget')) {
          * @param  string $url The url
          * @return string      The username
          */
-        public function getFbUserFromUrl($url) {
+        public function getFbUserFromUrl($url)
+        {
             $matches = null;
             preg_match_all('#https?\://(?:www\.)?facebook\.com/(\d+|[A-Za-z0-9\.]+)/?#', $url, $matches);
             $username = $matches[1][0];
@@ -377,26 +415,34 @@ if (!class_exists('HelsingborgSocialWidget')) {
          * @param  boolean $sub    Submenu
          * @return boolean
          */
-        public function menuExist($handle, $sub = false){
-            if (!is_admin() || (defined('DOING_AJAX') && DOING_AJAX)) return false;
+        public function menuExist($handle, $sub = false)
+        {
+            if (!is_admin() || (defined('DOING_AJAX') && DOING_AJAX)) {
+                return false;
+            }
 
             global $menu, $submenu;
             $check_menu = $sub ? $submenu : $menu;
 
-            if (empty($check_menu)) return false;
+            if (empty($check_menu)) {
+                return false;
+            }
 
-            foreach($check_menu as $k => $item){
+            foreach ($check_menu as $k => $item) {
                 if ($sub) {
-                    foreach( $item as $sm ){
-                        if ($handle == $sm[2]) return true;
+                    foreach ($item as $sm) {
+                        if ($handle == $sm[2]) {
+                            return true;
+                        }
                     }
                 } else {
-                    if ($handle == $item[2]) return true;
+                    if ($handle == $item[2]) {
+                        return true;
+                    }
                 }
             }
 
             return false;
         }
-
     }
 }
