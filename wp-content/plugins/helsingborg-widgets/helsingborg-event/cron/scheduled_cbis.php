@@ -88,7 +88,6 @@ function cbis_event()
      * Step 3: Loop the loaded events, map the data and save to database
      */
     foreach ($products as $product) {
-        print_r($product);
 
         /**
          * Loop attributes and populate new array where key is AttributeId
