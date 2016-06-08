@@ -165,8 +165,9 @@ if (!class_exists('HelsingborgSocialWidget')) {
             $view = 'widget-none.php';
 
             switch ($instance['feedType']) {
-                case 'instagram':
+                case 'instagram': //Username == client_id
                     $feed = $this->getInstagramFeed($instance['username'], $instance['show_count']);
+                    $instance['username'] = $this->getIstagramUserNameByClientID($instance['username']);
                     $view = 'widget-instagram.php';
                     break;
 
@@ -216,6 +217,19 @@ if (!class_exists('HelsingborgSocialWidget')) {
             $recent = json_decode($recent);
 
             return $recent->data;
+        }
+
+        public function getIstagramUserNameByClientID($client_id) {
+            $recent = HbgCurl::request('GET',
+                'https://api.instagram.com/v1/users/self/',
+                array(
+                    'access_token' => empty($client_id) ? get_option('hbgsf_instagram_client_id'): $client_id
+                )
+            );
+
+            $recent = json_decode($recent);
+
+            return $recent->data->username;
         }
 
         /**
