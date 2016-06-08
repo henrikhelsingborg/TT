@@ -219,52 +219,6 @@ if (!class_exists('HelsingborgSocialWidget')) {
         }
 
         /**
-         * DEPRICATED
-         * Gets a Instagram users feed (if public)
-         * @param  string $key      Instagram App Clinet ID
-         * @param  string $username The username to get
-         * @param  integer $length  Length of the feed
-         * @return object           The instgram posts
-         */
-        public function depricated_getInstagramFeed($username, $length)
-        {
-            /**
-             * Get Instagram User ID from Username
-             */
-            $key = get_option('hbgsf_instagram_client_id');
-            $endpoint = 'https://api.instagram.com/v1/users/search';
-            $data = array(
-                'q' => $username,
-                'client_id' => $key
-            );
-
-            $users = HbgCurl::request('GET', $endpoint, $data);
-            $users = json_decode($users);
-
-            $userId = null;
-
-            foreach ($users->data as $user) {
-                if ($user->username == $username) {
-                    $userId = $user->id;
-                    break;
-                }
-            }
-
-            /**
-             * Get the users feed
-             * @var string
-             */
-            $endpoint = 'https://api.instagram.com/v1/users/' . $userId . '/media/recent/';
-            $data = array(
-                'client_id' => $key
-            );
-            $recent = HbgCurl::request('GET', $endpoint, $data);
-            $recent = json_decode($recent);
-
-            return $recent->data;
-        }
-
-        /**
          * Gets Facebook posts of a specified user from the Facebook Graph API
          * @param  string $username The user to get posts from
          * @param  integer $length  Max length (number of posts to show)
