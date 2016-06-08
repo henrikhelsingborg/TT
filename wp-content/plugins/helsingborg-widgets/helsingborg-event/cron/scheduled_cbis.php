@@ -88,6 +88,7 @@ function cbis_event()
      * Step 3: Loop the loaded events, map the data and save to database
      */
     foreach ($products as $product) {
+        print_r($product);
 
         /**
          * Loop attributes and populate new array where key is AttributeId
@@ -108,6 +109,13 @@ function cbis_event()
         $description  = $attributes[102]->Data ?: '';
         $link         = $attributes[125]->Data ?: '';
 
+        /**
+         * Combine introduction with descriptions
+         */
+
+        if (!empty($introduction)) {
+            $description = "<strong>" .$introduction. "</strong>" . "\r\n" . $description;
+        }
 
         /**
          * Filter titles
@@ -146,7 +154,6 @@ function cbis_event()
          * Loop occations, if not empty
          */
         if (array_filter($occations)) {
-
             foreach ($occations as $occasion) {
 
                 // Make sure the occasion has a startdate !
