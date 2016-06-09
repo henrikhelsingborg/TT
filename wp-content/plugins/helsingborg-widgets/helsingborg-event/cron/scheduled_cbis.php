@@ -113,7 +113,7 @@ function cbis_event()
          */
 
         if (!empty($introduction)) {
-            $description = "<strong>" .$introduction. "</strong>" . "\r\n" . $description;
+            $description = $introduction . "\r\n" . "\r\n" . $description;
         }
 
         /**
