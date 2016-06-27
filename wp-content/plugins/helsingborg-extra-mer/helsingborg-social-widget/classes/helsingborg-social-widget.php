@@ -167,6 +167,13 @@ if (!class_exists('HelsingborgSocialWidget')) {
             switch ($instance['feedType']) {
                 case 'instagram':
                     $feed = $this->getInstagramFeed($instance['username'], $instance['show_count']);
+
+                    //Temporary fix for auth keys. OK to remove Oct 2016
+                    $auth_key = explode(".", $instance['username']);
+                    if (count($auth_key) == 3 && strlen($auth_key[0]) < strlen($auth_key[2])) {
+                        $instance['show_visit_button'] = "off";
+                    }
+
                     $view = 'widget-instagram.php';
                     break;
 
@@ -206,9 +213,18 @@ if (!class_exists('HelsingborgSocialWidget')) {
          */
         public function getInstagramFeed($username, $length)
         {
-            $recent = HbgCurl::request('GET', 'https://www.instagram.com/' . $username . '/media/', array());
-            $recent = json_decode($recent);
-            return $recent->items;
+            //Check if auth key (handle old method username) - 1406045013.3a81a9f.7c505432dfd3455ba8e16af5a892b4f7
+            $auth_key = explode(".", $username);
+
+            if (count($auth_key) == 3 && strlen($auth_key[0]) < strlen($auth_key[2])) {
+                $recent = HbgCurl::request('GET', 'https://api.instagram.com/v1/users/self/media/recent/', array('access_token' => $username));
+                $recent = json_decode($recent);
+                return $recent->data;
+            } else {
+                $recent = HbgCurl::request('GET', 'https://www.instagram.com/' . $username . '/media/', array());
+                $recent = json_decode($recent);
+                return $recent->items;
+            }
         }
 
 
