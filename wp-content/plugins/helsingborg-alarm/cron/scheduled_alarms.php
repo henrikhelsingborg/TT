@@ -4,17 +4,23 @@
  * This should occur each 3rd minutes.
  * This file is included from functions.php
  */
-
+ 
 /* Function to execute as event, from setup above */
-add_action('scheduled_alarms', 'alarms_event');
+if(function_exists('add_action')) {
+	add_action('scheduled_alarms', 'alarms_event');
+}
+
 function alarms_event()
 {
+	
+	set_time_limit(150); 
+	
     // Retrieve values
   $ftpUserName  = get_option('helsingborg_alarm_user_name');
     $ftpPassword  = get_option('helsingborg_alarm_password');
     $ftpLocation  = get_option('helsingborg_alarm_location');
     $ftpDirectory = "/alarm/in/";
-    $downloadTo   = "alarm/in/";
+    $downloadTo   = WP_CONTENT_DIR . "/uploads/alarm/";
 
   // Create download directory
   create_directory($downloadTo);
@@ -27,6 +33,8 @@ function alarms_event()
 
   // Remove the directory and all downloaded files
   remove_directory($downloadTo);
+
+  wp_die();
 }
 
 /**
@@ -60,7 +68,11 @@ function download_alarms_from_ftp($ftpLocation, $ftpUserName, $ftpPassword, $ftp
 
   // Make sure login was successful
   if ($login_result) {
-      // Retrieve complete list of files from location
+
+    //Enable passive mode
+    ftp_pasv($conn_id, true);
+
+    // Retrieve complete list of files from location
     $list = ftp_nlist($conn_id, $ftpDirectory);
 
     // Make sure data is recieved
@@ -88,12 +100,17 @@ function update_alarms_in_database($downloadTo)
 {
     global $wpdb;
   // Loop through each xml file
-  foreach (glob("$downloadTo"."*.{xml,XML}", GLOB_BRACE) as $filename) {
+  foreach (glob($downloadTo . "*.{xml,XML}", GLOB_BRACE) as $filename) {
+
       // Load the xml as local object to fetch stuff from
-    $MESSAGE = simplexml_load_file("$filename") or error_log("Could not read file: " . $filename, 0);
-      ;
-      $ALARM   = $MESSAGE->Alarm;
-      $HtText = $ALARM->HtText;
+    $MESSAGE = @simplexml_load_file("$filename");
+    if (!MESSAGE) {
+      error_log("Could not read file: " . $filename, 0);
+      continue;
+    }
+
+    $ALARM   = $MESSAGE->Alarm;
+    $HtText = $ALARM->HtText;
 
     // Make sure to not insert certain alarms
     if (strpos(strtolower($HtText), 'provlarm') !== false ||
@@ -117,7 +134,7 @@ function update_alarms_in_database($downloadTo)
       }
 
       // Fetch values
-      $CaseID             = $ALARM->CaseID;
+        $CaseID             = $ALARM->CaseID;
         $PresGrp            = $ALARM->PresGrp;
         $HtText             = $ALARM->HtText;
         $Address            = $ALARM->Address;
@@ -216,4 +233,9 @@ function remove_directory($directory)
             unlink("$file");
         }
     }
+}
+
+if(isset($_GET['alarmservice'])) {
+	echo 'Running alarm'; 
+	alarms_event(); 
 }

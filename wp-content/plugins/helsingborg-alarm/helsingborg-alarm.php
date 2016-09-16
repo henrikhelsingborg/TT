@@ -90,13 +90,22 @@ function big_notification_callback() {
     $disturbance_root_id = get_option('helsingborg_big_disturbance_root');
     $information_root_id = get_option('helsingborg_big_information_root');
 
-    // Get the child pages for these IDs
-    $wp_query     = new WP_Query();
-    $all_wp_pages = $wp_query->query(array('post_type' => 'page'));
-
     // Get the children
-    if ($disturbance_root_id != '') $disturbances = get_page_children($disturbance_root_id, $all_wp_pages);
-    if ($information_root_id != '') $informations = get_page_children($information_root_id, $all_wp_pages);
+    if ($disturbance_root_id != '') {
+      $disturbances = get_pages(array(
+        'post_type' => 'page',
+        'child_of' => $disturbance_root_id,
+        'post_status' => 'publish'
+      ));
+    }
+
+    if ($information_root_id != '') {
+      $informations = get_pages(array(
+        'post_type' => 'page',
+        'child_of' => $information_root_id,
+        'post_status' => 'publish'
+      ));
+    }
 
     // Merge the notifications and sort the new array by date
     $notifications = array_merge($disturbances, $informations);
