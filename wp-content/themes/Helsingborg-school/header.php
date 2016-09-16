@@ -19,18 +19,18 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/assets/img/icons/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/assets/img/icons/apple-touch-icon-precomposed.png">
 
-	<!--[if lt IE 9]>
-	<script type="text/javascript">
-		document.createElement('header');
-		document.createElement('nav');
-		document.createElement('section');
-		document.createElement('article');
-		document.createElement('aside');
-		document.createElement('footer');
-		document.createElement('hgroup');
-	</script>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<![endif]-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+    </script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
 
     <?php wp_head(); ?>
 
@@ -39,49 +39,72 @@
     </script>
 
     <?php if (strlen(get_option('helsingborg_color_code')) > 0) : $colorCode = get_option('helsingborg_color_code'); ?>
-    <style>
-        .nav-bar,
-        .main-footer,
-        .button-primary,
-        article .article-body ul li::before {
-            background: <?=$colorCode?> !important;
-            background-color: <?=$colorCode?> !important;
-        }
+
+        <style>
+            .nav-bar,
+            .main-footer,
+            .button-primary,
+            article .article-body ul li::before {
+                background: <?=$colorCode?> !important;
+                background-color: <?=$colorCode?> !important;
+            }
+        </style>
 
         <?php if (in_array($colorCode, array('#f7a600', '#ec6701', '#d35098', '#4db4e7', '#5ba1d8', '#0095db', '#afca05', '#11a636', '#a0c855', '#76b828'))) : ?>
-        .nav-bar {
-            background: #fff !important;
-            background-color: #fff !important;
-            border-bottom: 5px solid <?php echo $colorCode; ?>;
-        }
+            <style>
+                .nav-bar {
+                    background: #fff !important;
+                    background-color: #fff !important;
+                    border-bottom: 5px solid <?php echo $colorCode; ?>;
+                }
 
-        .nav-mainmenu > ul > li > a {
-            color: #000;
-        }
+                .nav-mainmenu > ul > li > a {
+                    color: #000;
+                }
 
-        .nav-mainmenu > ul > li > a:hover,
-        .nav-mainmenu > ul > li:hover > a {
-            color: #fff;
-        }
+                .nav-mainmenu > ul > li > a:hover,
+                .nav-mainmenu > ul > li:hover > a {
+                    color: #fff;
+                }
 
-        .show-search > a {
-            color: #fff !important;
-        }
+                .show-search > a {
+                    color: #fff !important;
+                }
 
-        .nav-bar .logotype * {
-            fill: #000;
-        }
+                .nav-bar .logotype * {
+                    fill: #000;
+                    transition: all 200ms;
+                }
 
-        .nav-bar .logotype > path {
-            fill: <?php echo $colorCode; ?>;
-        }
+                .nav-bar .logotype > path,
+                .nav-bar .logotype > g.colorcoded path {
+                    fill: <?php echo $colorCode; ?>;
+                }
 
-        .hero .stripe {
-            top: -5px;
-            height: calc(100% + 5px);
-        }
+                .hero .stripe {
+                    top: -5px;
+                    height: calc(100% + 5px);
+                }
+
+                .mobile-navigation a i:before {
+                    color: #000;
+                }
+            </style>
+            <script>
+            jQuery(function(){
+                var indexWithMostChilds = null;
+                if(!jQuery(".nav-bar .logotype > path").length) {
+                    jQuery('.nav-bar .logotype > g').each(function(index,object){
+                        if(indexWithMostChilds < jQuery('> path',object).length) {
+                            jQuery('.nav-bar .logotype > g').removeClass('colorcoded');
+                            jQuery(object).addClass('colorcoded');
+                        }
+                    });
+                }
+            });
+            </script>
         <?php endif; ?>
-    </style>
+
     <?php endif; ?>
 </head>
 <body data-theme="<?php echo get_option('helsingborg_color_theme'); ?>">
