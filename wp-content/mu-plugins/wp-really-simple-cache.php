@@ -68,7 +68,7 @@ if (!class_exists('WpSimpleCache')) {
             self::$dir_chmod        = 0775;
 
             //What urls should not be cached?
-            self::$blocked_urls        = array("wp-admin","wp-login","secure");
+            self::$blocked_urls        = array("wp-admin","wp-login","secure","rss");
 
             //Setup
             self::setup_folders();
