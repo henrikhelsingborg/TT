@@ -40,7 +40,17 @@
                                 </div>
                             </div>
                         </form>
-                    </div>';
+                    </div>
+                  </li>';
+
+
+
+
+        $wrap .= '<li class="item-translate"><a href="#translate"><i class="fa fa-globe"></i></a> </li>';
+
+
+
+
         $wrap .= '</ul>';
 
         return $wrap;

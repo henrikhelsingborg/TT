@@ -50,6 +50,7 @@ gulp.task('sass-dist', function () {
 gulp.task('scripts-dev', function () {
     return gulp.src([
                 'js/dev/hbg-school.dev.js',
+                'js/dev/translate.dev.js',
                 bower_components + 'modernizr/modernizr.js',
                 bower_components + 'foundation/js/foundation.min.js',
                 bower_components + 'foundation/js/foundation/foundation.orbit.js',
@@ -68,8 +69,8 @@ gulp.task('scripts-dev', function () {
  */
 gulp.task('scripts-jquery', function () {
     return gulp.src([
-                bower_components + 'jquery/dist/jquery.min.js',
-                bower_components + 'jquery/dist/jquery-ui.min.js'
+                'js/jquery/dist/jquery.min.js',
+                'js/jquery/dist/jquery-ui.min.js'
             ])
             .pipe(concat('jquery.app.js'))
             .pipe(gulp.dest('js'))
