@@ -49,16 +49,20 @@ body[data-theme="purple"] {
             }
 
             // Search
-            .item-search {
+            .item-search,
+            .item-translate {
                 &.show-search {
                     background: darken($band-purple-4, 5%);
                 }
 
-                .search-container {
+                .search-container,
+                .translate-container {
                     background: darken($band-purple-4, 5%);
 
-                    .button.search {
+                    .button.search,
+                    .btn.btn-primary {
                         background: $band-purple-1;
+                        color: #fff;
                     }
                 }
             }

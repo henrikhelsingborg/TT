@@ -43,12 +43,17 @@
                     </div>
                   </li>';
 
-
-
-
-        $wrap .= '<li class="item-translate"><a href="#translate"><i class="fa fa-globe"></i></a> </li>';
-
-
+        $wrap .= '<li class="item-translate">
+                        <a href="#translate"><i class="fa fa-globe"></i></a>
+                        <div id="translate" class="translate-container google-translate google-translate-fold target-toggle">
+                            <h3>Translate</h3>
+                            <p>
+                                You can use Google Translate to translate the contents of this site. To do that, select the language you would like to translate into in the lost below.
+                            </p>
+                            <div id="google-translate-element" class="gutter gutter-vertical"></div>
+                            <a href="#" class="btn btn-primary">Close</a>
+                        </div>
+                    </li>';
 
 
         $wrap .= '</ul>';

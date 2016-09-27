@@ -102,13 +102,14 @@ jQuery(document).ready(function ($) {
 
 var googleTranslateLoaded = false;
 
-if (location.href.indexOf('translate=true') > -1) {
-    loadGoogleTranslate();
-}
+    if (location.href.indexOf('translate=true') > -1) {
+        loadGoogleTranslate();
+    }
 
-$('[href="#translate"]').on('click', function (e) {
-    loadGoogleTranslate();
-});
+    $('[href="#translate"]').on('click', function (e) {
+        loadGoogleTranslate();
+    });
+
 
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({

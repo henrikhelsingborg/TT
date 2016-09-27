@@ -49,15 +49,18 @@ body[data-theme="blue"] {
             }
 
             // Search
-            .item-search {
+            .item-search,
+            .item-translate {
                 &.show-search {
                     background: darken($band-blue-4, 5%);
                 }
 
-                .search-container {
+                .search-container,
+                .translate-container {
                     background: darken($band-blue-4, 5%);
 
-                    .button.search {
+                    .button.search,
+                    .btn.btn-primary {
                         background: $band-blue-1;
                     }
                 }
