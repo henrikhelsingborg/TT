@@ -64,6 +64,10 @@ article {
                 background-color: #999;
             }
         }
+
+        h2 {
+            font-size: 1.8rem;
+        }
     }
 
     .article-ingress {
@@ -147,15 +151,15 @@ p {
 
         a[href*="facebook"] {
             color: #43609C;
-        } 
+        }
 
         a[href*="twitter"] {
             color: #55ACEE;
-        } 
+        }
 
         a[href*="linkedin"] {
             color: #1C87BD;
-        }        
+        }
 
         a::before {
             display: none;
