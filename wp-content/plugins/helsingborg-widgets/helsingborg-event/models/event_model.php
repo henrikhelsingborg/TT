@@ -7,6 +7,40 @@ class HelsingborgEventModel
 {
 
     /**
+     * Create view
+     *
+     */
+
+    public static function create_happy_view()
+    {
+        global $wpdb;
+
+        $wpdb->query("
+                CREATE OR REPLACE VIEW _view_happy_event AS
+                SELECT DISTINCT
+                    e.EventID,
+                    e.Name,
+                    e.Description,
+                    e.Link,
+                    e.Location,
+                    et.Date,
+                    et.Time,
+                    i.ImagePath,
+                    eau.AdministrationUnitID
+                FROM happy_event e
+                    INNER JOIN happy_event_times et ON e.EventID = et.EventID
+                    INNER JOIN happy_event_administration_unit eau ON e.EventID = eau.EventID
+                    INNER JOIN happy_administration_unit au ON eau.AdministrationUnitID = au.AdministrationUnitID
+                    LEFT JOIN happy_images i ON e.EventID = i.EventID
+                WHERE
+                    e.Approved = 1
+                    AND et.Date >= CURDATE()
+                GROUP BY e.Name, et.Date, et.Time
+                ORDER BY et.Date, et.Time ASC
+            ");
+    }
+
+    /**
      * Loads event without event types
      * @param  integer $amount                 Number of events to load
      * @param  string  $administation_unit_ids Administration units
@@ -14,29 +48,15 @@ class HelsingborgEventModel
      */
     public static function load_events_simple($amount = 5, $administation_unit_ids = 0)
     {
+        self::create_happy_view();
+
         global $wpdb;
         $events = $wpdb->get_results('
-            SELECT
-                e.EventID,
-                e.Name,
-                e.Description,
-                e.Link,
-                e.Location,
-                et.Date,
-                et.Time,
-                i.ImagePath
-            FROM happy_event e
-                INNER JOIN happy_event_times et ON e.EventID = et.EventID
-                INNER JOIN happy_event_administration_unit eau ON e.EventID = eau.EventID
-                INNER JOIN happy_administration_unit au ON eau.AdministrationUnitID = au.AdministrationUnitID
-                LEFT JOIN happy_images i ON e.EventID = i.EventID
+            SELECT *
+            FROM _view_happy_event
             WHERE
-                e.Approved = 1
-                AND et.Date >= CURDATE()
-                AND eau.AdministrationUnitID IN (' . $administation_unit_ids . ')
-            GROUP BY e.Name, et.Date, et.Time
-            ORDER BY et.Date, et.Time ASC LIMIT ' . $amount, OBJECT);
-
+                AdministrationUnitID IN (' . $administation_unit_ids . ')
+            LIMIT ' . $amount, OBJECT);
         return $events;
     }
 
@@ -45,48 +65,19 @@ class HelsingborgEventModel
      * @param  string $administation_unit_ids Administartion units to select
      * @return object                         Object with selected data
      */
-    public static function load_events($administation_unit_ids)
+    public static function load_events($administation_unit_ids, $amount = 2500)
     {
+        self::create_happy_view();
+
         global $wpdb;
 
         // Query events
-        $events = $wpdb->get_results('SELECT DISTINCT
-                                    		e.EventID,
-                                    		e.Name,
-                                    		e.Description,
-                                            e.Link,
-                                    		e.Location,
-                                    		et.Date,
-                                            et.Time,
-                                    		i.ImagePath
-                                		FROM happy_event e
-                                    		INNER JOIN happy_event_times et ON e.EventID = et.EventID
-                                    		INNER JOIN happy_event_administration_unit eau ON e.EventID = eau.EventID
-                                    		INNER JOIN happy_administration_unit au ON eau.AdministrationUnitID = au.AdministrationUnitID
-                                    		LEFT JOIN happy_images i ON e.EventID = i.EventID
-                                		WHERE
-                                    		e.Approved = 1
-                                    		AND et.Date >= CURDATE()
-                                            AND eau.AdministrationUnitID IN (' . $administation_unit_ids . ')
-                                        GROUP BY e.Name, et.Date, et.Time
-                                		ORDER BY et.Date, et.Time ASC LIMIT ' . $amount, OBJECT);
-
-        // Loop events to get their event types then add to events object
-        foreach ($events as $event) {
-            $rows = $wpdb->get_results('SELECT DISTINCT hETG.EventTypesName
-                                        FROM happy_event_types_group hETG
-                                        WHERE hETG.EventID = ' . $event->EventID, ARRAY_A);
-
-            $event_types = array();
-            foreach ($rows as $row) {
-                foreach ($row as $key => $value) {
-                    array_push($event_types, $value);
-                }
-            }
-
-            $event_types_string = implode(',', $event_types);
-            $event->EventTypesName = $event_types_string;
-        }
+        $events = $wpdb->get_results('SELECT
+                *
+            FROM _view_happy_event
+            WHERE
+                AdministrationUnitID IN (' . $administation_unit_ids . ')
+            LIMIT ' . $amount, OBJECT);
 
         return $events;
     }
