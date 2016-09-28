@@ -28,7 +28,6 @@
             ul {
                 position: absolute;
                 z-index: 99;
-                background: $band-color-4;
                 background: darken($band-color-4, 5%);
                 list-style-type: none;
                 margin: 0;
@@ -123,9 +122,23 @@
 
             &.show-search {
                 background: darken($band-color-4, 5%);
-
                 .search-container {
                     display: block;
+                }
+
+                a, a:active, a:focus {
+                    color: #fff;
+                }
+            }
+
+            &.show-translate {
+                background: darken($band-color-4, 5%);
+                .translate-container {
+                    display: block;
+                }
+
+                a, a:active, a:focus {
+                    color: #fff;
                 }
             }
 
@@ -138,10 +151,6 @@
                 width: 400px;
                 background: darken($band-color-4, 5%);
                 padding: 10px;
-
-                &:target {
-                    display: block !important;
-                }
 
                 .input-field {
                     margin: 0;
@@ -172,18 +181,23 @@
                 }
 
                 .button.search,
-                .btn.btn-primary {
+                .button.translate {
                     padding: 9px 15px;
                     border-radius: 0;
-                    background: $band-color-1;
                     margin: 0;
                     font-weight: bold;
                     width: 100%;
+                    color: #fff;
+
+                    &:hover,
+                    &:focus {
+
+                    }
                 }
 
-                .btn.btn-primary {
-                    display: inline-block;
+                .button.translate {
                     width: auto;
+                    display: inline-block;
                 }
 
                 #google-translate-element {

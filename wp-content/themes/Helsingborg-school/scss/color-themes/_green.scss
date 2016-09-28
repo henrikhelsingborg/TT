@@ -49,15 +49,19 @@ body[data-theme="green"] {
             }
 
             // Search
-            .item-search {
-                &.show-search {
+            .item-search,
+            .item-translate {
+                &.show-search,
+                &.show-translate {
                     background: darken($band-green-4, 5%);
                 }
 
-                .search-container {
+                .search-container,
+                .translate-container {
                     background: darken($band-green-4, 5%);
 
-                    .button.search {
+                    .button.search,
+                    .button.translate {
                         background: $band-green-1;
                     }
                 }

@@ -16,7 +16,15 @@ jQuery(document).ready(function ($) {
     $('.item-search a').on('click', function (e) {
         e.preventDefault();
         $(this).parent('.item-search').toggleClass('show-search');
+        $(".item-translate").removeClass('show-translate');
         $(this).parent('.item-search').find('input[type="text"]').focus();
+        return false;
+    });
+
+    $('.item-translate > a').on('click', function (e) {
+        e.preventDefault();
+        $(this).parent('.item-translate').toggleClass('show-translate');
+        $(".item-search").removeClass('show-search');
         return false;
     });
 

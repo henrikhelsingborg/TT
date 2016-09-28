@@ -51,7 +51,6 @@
                                 You can use Google Translate to translate the contents of this site. To do that, select the language you would like to translate into in the lost below.
                             </p>
                             <div id="google-translate-element" class="gutter gutter-vertical"></div>
-                            <a href="#" class="btn btn-primary">Close</a>
                         </div>
                     </li>';
 

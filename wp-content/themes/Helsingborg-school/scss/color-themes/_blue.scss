@@ -51,7 +51,8 @@ body[data-theme="blue"] {
             // Search
             .item-search,
             .item-translate {
-                &.show-search {
+                &.show-search,
+                &.show-translate {
                     background: darken($band-blue-4, 5%);
                 }
 
@@ -60,7 +61,7 @@ body[data-theme="blue"] {
                     background: darken($band-blue-4, 5%);
 
                     .button.search,
-                    .btn.btn-primary {
+                    .button.translate {
                         background: $band-blue-1;
                     }
                 }
