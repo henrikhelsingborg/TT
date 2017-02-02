@@ -6,7 +6,7 @@ class GoogleSearch
 {
 
     private $apiKey = 'AIzaSyCMGfdDaSfjqv5zYoS0mTJnOT3e9MURWkU';
-    private $apiCx = '016534817360440217175:ndsqkc_wtzg';
+    private $apiCx = '012276956617751253430:ndsqkc_wtzg';
 
     public $keyword = null;
     public $results = null;
@@ -79,7 +79,7 @@ class GoogleSearch
             case 'Microsoft Word':
                 return 'word-item';
                 break;
-            
+
             default:
                 return 'link-item';
                 break;
