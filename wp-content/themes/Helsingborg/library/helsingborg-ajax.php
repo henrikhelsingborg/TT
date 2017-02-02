@@ -121,7 +121,7 @@ add_action('wp_ajax_nopriv_search', 'search_callback');
 add_action('wp_ajax_search', 'search_callback');
 function search_callback() {
     $key       = 'AIzaSyCMGfdDaSfjqv5zYoS0mTJnOT3e9MURWkU';
-    $cx        = '016534817360440217175:ndsqkc_wtzg';
+    $cx        = '012276956617751253430:ndsqkc_wtzg';
     $index     = $_POST['index'];
     $keyword   = $_POST['keyword'];
 

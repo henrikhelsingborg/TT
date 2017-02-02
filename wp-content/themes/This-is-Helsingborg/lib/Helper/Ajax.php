@@ -29,7 +29,7 @@ class Ajax
     public static function searchCallback()
     {
         $key       = 'AIzaSyCMGfdDaSfjqv5zYoS0mTJnOT3e9MURWkU';
-        $cx        = '016534817360440217175:ndsqkc_wtzg';
+        $cx        = '012276956617751253430:ndsqkc_wtzg';
         $index     = $_POST['index'];
         $keyword   = $_POST['keyword'];
 
@@ -174,7 +174,7 @@ class Ajax
         $id        = $_POST['id'];
         $name      = $_POST['name'];
 
-        $query = "SELECT ID, post_title FROM $wpdb->posts 
+        $query = "SELECT ID, post_title FROM $wpdb->posts
                  WHERE post_type = 'page' AND post_title LIKE '%" . $title . "%' ORDER BY post_title ASC";
         $pages = $wpdb->get_results($query);
         $list = '<select id="' . $id . '" name="' . $name . '">';
