@@ -1,10 +1,10 @@
 {
-    "name": "(#composer_project#)",
-    "license": "(#composer_license#)",
+    "name": "helsingborgse",
+    "license": "GPL",
     "authors": [
         {
-            "name": "(#composer_author_name#)",
-            "email": "(#composer_author_email#)"
+            "name": "Sebastian Thulin",
+            "email": "sebastian.thulin@helsingborg.se"
         }
     ],
     "minimum-stability" : "stable",

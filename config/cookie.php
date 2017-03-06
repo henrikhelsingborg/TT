@@ -5,8 +5,8 @@
  * @var bool
  */
 
-if (strpos($_SERVER['HTTP_HOST'], "(#cookie_domain#)") !== false) {
-    define('COOKIE_DOMAIN', ".(#cookie_domain#)");
+if (strpos($_SERVER['HTTP_HOST'], "helsingborg.dev") !== false) {
+    define('COOKIE_DOMAIN', ".helsingborg.dev");
 } else {
     define('COOKIE_DOMAIN', $_SERVER['HTTP_HOST']);
 }
