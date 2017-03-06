@@ -18,9 +18,9 @@
  * @package WordPress
  */
 
+require_once 'config/salts.php';
 require_once 'config/content.php';
 require_once 'config/database.php';
-require_once 'config/salts.php';
 require_once 'config/plugins.php';
 require_once 'config/update.php';
 require_once 'config/upload.php';
