@@ -31,7 +31,8 @@ RewriteRule . index.php [L]
 </IfModule>
 
 # Admin redirect
-RedirectMatch 301 /admin/(.*) /wp/wp-admin/$1
+RedirectMatch 301 /admin /wp-admin
+RedirectMatch 301 /secure /wp-admin
 
 # Prevent access to XML RPC & Pingback
 <FilesMatch "^(xmlrpc\.php|wp-trackback\.php)">
