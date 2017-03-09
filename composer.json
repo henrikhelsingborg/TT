@@ -71,7 +71,6 @@
         "helsingborg-stad/broken-link-detector": ">=1.0.0",
         "helsingborg-stad/better-post-ui": ">=1.0.0",
         "helsingborg-stad/acf-ux-collapse": ">=1.0.0",
-        "wpackagist-plugin/wp-nested-pages": "^1.6.5",
         "wpackagist-plugin/wp-editor-widget": "^0.5.5",
         "wpackagist-plugin/all-in-one-seo-pack": "^2.2.7.5",
         "wpackagist-plugin/varnish-http-purge": "^3.7.2",
