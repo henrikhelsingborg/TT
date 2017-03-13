@@ -13,14 +13,16 @@ class MigrationEngine
 
     protected $failed = array();
 
-    public function __construct()
+    public function __construct($start = true)
     {
         global $wpdb, $wpdbFrom;
 
         $this->toDb = $wpdb;
         $this->fromDb = $wpdbFrom;
 
-        $this->start(0, 500);
+        if ($start) {
+            $this->start(0, 500);
+        }
     }
 
     /**
@@ -37,6 +39,11 @@ class MigrationEngine
             'post_type' => 'page',
             'post_status' => 'publish'
         ));
+
+        if (empty($posts)) {
+            echo "NO POSTS";
+            return;
+        }
 
         echo "<strong>START</strong><br>";
 
@@ -157,5 +164,45 @@ class MigrationEngine
         $widgetType = str_replace('-' . $widgetId, '', $widgetIdentifier);
 
         return $widgetType;
+    }
+
+    /**
+     * View structure for random widget of type
+     * @param  string $widgetType Widget type
+     * @return array
+     */
+    public function getWidgetStructure($widgetType)
+    {
+        $data = $this->fromDb->get_results($this->fromDb->prepare(
+            "SELECT option_value FROM wp_options WHERE (option_name REGEXP %s) ORDER BY RAND() LIMIT 1",
+            '^widget_([0-9]+)_' . $widgetType
+        ));
+
+        $values = maybe_unserialize($data[0]->option_value);
+        $values = array_values($values);
+
+        return $values[0];
+    }
+
+    public function getWidgetTypes()
+    {
+        $data = $this->fromDb->get_results($this->fromDb->prepare(
+            "SELECT * FROM wp_options WHERE (option_name REGEXP %s)",
+            '^widget_([0-9]+)_(.*)'
+        ));
+
+        $types = array();
+
+        foreach ($data as $item) {
+            preg_match_all('/^widget_([0-9]+)_(.*)/i', $item->option_name, $matches);
+            if (!isset($matches[2][0])) {
+                continue;
+            }
+
+            $types[] = $matches[2][0];
+        }
+
+        $types = array_values(array_unique($types));
+        return $types;
     }
 }
