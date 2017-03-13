@@ -2,19 +2,24 @@
 
 namespace HbgMigrate;
 
-class WidgetText extends \HbgMigrate\Migrate
+class WidgetText extends \HbgMigrate\Widget
 {
-    public function __construct()
-    {
-        parent::__contsruct();
-    }
+    public $widgetType = 'text';
+    public $moduleType = 'mod-text';
 
-    public function init()
+    /**
+     * Rebuilds widget to module and saves it
+     * @param  array  $data
+     * @return bool|int         int (post_id) if succes, else false
+     */
+    public function migrate(array $widgetData, int $postId)
     {
-        $textWidgets = $this->fromDb->get_results("SELECT * FROM wp_options WHERE option_name REGEXP '^widget_([0-9]+)_text'");
-        var_dump($textWidgets);
+        $data = array(
+            'post_title' => $widgetData['title'],
+            'post_content' => $widgetData['text']
+        );
 
-        exit;
+        $this->save($data, $postId, $widgetData['widget_meta']['widget_id'], $widgetData['widget_meta']['sidebar']);
     }
 }
 
