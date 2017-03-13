@@ -21,7 +21,7 @@ class MigrationEngine
         $this->fromDb = $wpdbFrom;
 
         if ($start) {
-            $this->start(0, 500);
+            $this->start(0, 2000);
         }
     }
 
@@ -80,6 +80,11 @@ class MigrationEngine
     public function getWidgetsForPost(int $postId) : array
     {
         $sidebars = array_filter($this->getSidebarsForPost($postId));
+
+        if (isset($sidebars['wp_inactive_widgets'])) {
+            unset($sidebars['wp_inactive_widgets']);
+        }
+
         $retWidgets = array();
 
         foreach ($sidebars as $sidebar => $widgets) {

@@ -11,7 +11,7 @@ class WidgetImageList extends \HbgMigrate\Widget
     {
         $images = array();
 
-        for ($i = 1; $i < $widgetData['amount']; $i++) {
+        for ($i = 1; $i <= $widgetData['amount']; $i++) {
             // Upload image
             $imageId = $this->saveImageFromUrl($widgetData['imageurl' . $i], $postId);
 
@@ -53,7 +53,7 @@ class WidgetImageList extends \HbgMigrate\Widget
             )
         );
 
-        $moduleId = $this->save($data, $postId, $widgetData['widget_meta']['widget_id'], $widgetData['widget_meta']['sidebar']);
+        $this->save($data, $postId, $widgetData['widget_meta']['widget_id'], $widgetData['widget_meta']['sidebar']);
     }
 }
 

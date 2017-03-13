@@ -15,8 +15,8 @@ class WidgetText extends \HbgMigrate\Widget
     public function migrate(array $widgetData, int $postId)
     {
         $data = array(
-            'post_title' => $widgetData['title'],
-            'post_content' => $widgetData['text']
+            'post_title' => isset($widgetData['title']) ? $widgetData['title'] : '',
+            'post_content' => isset($widgetData['text']) ? $widgetData['text'] : ''
         );
 
         $this->save($data, $postId, $widgetData['widget_meta']['widget_id'], $widgetData['widget_meta']['sidebar']);
