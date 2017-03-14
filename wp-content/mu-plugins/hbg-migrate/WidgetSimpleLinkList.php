@@ -29,14 +29,15 @@ class WidgetSimpleLinkList extends \HbgMigrate\Widget
             'acf' => array(
                 'field_571dfd4c0d9d9' => 'list', // posts_display_as
                 'field_571e01e7f246c' => array('title'), // posts_fields
-                'field_576258d3110b0' => 'input', // posts_data_source
-                'field_571dfc6ff8115' => $items, // data
+                'field_571dfaafe6984' => 'input', // posts_data_source
+                'field_576258d3110b0' => array_values($items), // data
                 'field_571dff4eb46c3' => -1, // posts_count
+                'field_571dffca1d90b' => 'date', // posts_sort_by
+                'field_571e00241d90c' => 'asc' // posts_sort_order
             )
         );
 
         $this->save($data, $postId, $widgetData['widget_meta']['widget_id'], $widgetData['widget_meta']['sidebar']);
-        exit;
     }
 }
 
