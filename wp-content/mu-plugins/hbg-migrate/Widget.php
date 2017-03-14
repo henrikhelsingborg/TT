@@ -61,7 +61,7 @@ abstract class Widget
         $pageModules[$sidebar][uniqid()] = array(
             'hidden' => false,
             'columnWidth' => '',
-            'postid' => $moduleId
+            'postid' => (string) $moduleId
         );
 
         update_post_meta($postId, 'modularity-modules', $pageModules);
