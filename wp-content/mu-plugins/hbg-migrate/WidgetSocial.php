@@ -60,7 +60,6 @@ class WidgetSocial extends \HbgMigrate\Widget
         $data['acf']['field_56e01f2577390'] = 300; // Max height
 
         $this->save($data, $postId, $widgetData['widget_meta']['widget_id'], $widgetData['widget_meta']['sidebar']);
-        exit;
     }
 
     /**
