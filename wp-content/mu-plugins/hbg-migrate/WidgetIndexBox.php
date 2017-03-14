@@ -23,11 +23,22 @@ class WidgetIndexBox extends \HbgMigrate\Widget
             );
         }
 
+        $columns = 'grid-md-6';
+
+        switch ($widgetData['widget_meta']['sidebar']) {
+            case 'right-sidebar':
+            case 'left-sidebar':
+            case 'left-sidebar-bottom':
+                $columns = 'grid-md-12';
+                break;
+        }
+
         $data = array(
             'post_title' => '',
             'post_content' => '',
             'acf' => array(
-                'field_569ceabc2cfc8' => $indexes
+                'field_569ceabc2cfc8' => $indexes,
+                'field_56eab26cd3a86' => $columns
             )
         );
 
