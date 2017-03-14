@@ -5,7 +5,7 @@ namespace HbgMigrate;
 class WidgetIndexLargeBox extends \HbgMigrate\Widget
 {
     public $widgetType = 'index_large_box';
-    public $moduleType = 'mod-index';
+    public $moduleType = 'mod-posts';
 
     /**
      * Rebuilds widget to module and saves it
@@ -14,20 +14,34 @@ class WidgetIndexLargeBox extends \HbgMigrate\Widget
      */
     public function migrate(array $widgetData, int $postId)
     {
-        $indexes = array();
+        $news = array();
 
         for ($i = 1; $i <= $widgetData['amount']; $i++) {
-            $indexes[$i] = array(
-                'field_5743f66719b62' => 'internal', // link_type
-                'field_569cf1252cfc9' => (int) $widgetData['item_id' . $i]
-            );
+            $news[] = (int)$widgetData['item_id' . $i];
+        }
+
+        $columns = 'grid-md-6';
+
+        switch ($widgetData['widget_meta']['sidebar']) {
+            case 'right-sidebar':
+            case 'left-sidebar':
+            case 'left-sidebar-bottom':
+                $columns = 'grid-md-12';
+                break;
         }
 
         $data = array(
             'post_title' => '',
             'post_content' => '',
             'acf' => array(
-                'field_569ceabc2cfc8' => $indexes
+                'field_571dfd4c0d9d9' => 'items', // posts_display_as
+                'field_571dfdf50d9da' => $columns, // posts_columns
+                'field_571e01e7f246c' => array('title'), // posts_fields
+                'field_571dfaafe6984' => 'manual', // posts_data_source
+                'field_571dfc6ff8115' => $news, // posts_data_posts
+                'field_571dff4eb46c3' => -1, // posts_count
+                'field_571dffca1d90b' => 'date', // posts_sort_by
+                'field_571e00241d90c' => 'desc' // posts_sort_order
             )
         );
 
