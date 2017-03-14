@@ -14,15 +14,23 @@ class WidetInheritPost extends \HbgMigrate\Widget
      */
     public function migrate(array $widgetData, int $postId)
     {
+        if (!isset($widgetData['post_id'])) {
+            return;
+        }
+
         global $wpdbFrom;
-        $postContent = $wpdbFrom->get_var("SELECT post_content FROM wp_posts WHERE ID = " . $widgetData['post_id']);
+        $post = $wpdbFrom->get_row("SELECT post_title, post_content FROM " . \HbgMigrate\MigrationEngine::getTable('posts') . " WHERE ID = " . $widgetData['post_id']);
+
+        if (empty($post)) {
+            return;
+        }
 
         $data = array(
             'post_title' => isset($widgetData['title']) ? $widgetData['title'] : '',
-            'post_content' => $postContent
+            'post_content' => $post->post_content
         );
 
-        $this->save($data, $postId, $widgetData['widget_meta']['widget_id'], $widgetData['widget_meta']['sidebar']);
+        $this->save($data, $postId, $widgetData['widget_meta']['widget_id'], $widgetData['widget_meta']['sidebar'], $post->post_title . ' (migrated)');
     }
 }
 

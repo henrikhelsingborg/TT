@@ -20,9 +20,21 @@ class MigrationEngine
         $this->toDb = $wpdb;
         $this->fromDb = $wpdbFrom;
 
+
         if ($start) {
             $this->start(0, 2000);
         }
+    }
+
+    public static function getTable($table = 'posts')
+    {
+        $prefix = 'wp_';
+
+        if (isset($_GET['site_id']) && !empty($_GET['site_id'])) {
+            $prefix .= $_GET['site_id'] . '_';
+        }
+
+        return $prefix . $table;
     }
 
     /**
@@ -113,7 +125,7 @@ class MigrationEngine
     public function getSidebarsForPost(int $postId) : array
     {
         $sidebars = $this->fromDb->get_var($this->fromDb->prepare(
-            "SELECT meta_value FROM wp_postmeta WHERE post_id = %d AND meta_key = %s",
+            "SELECT meta_value FROM " . self::getTable('postmeta') . " WHERE post_id = %d AND meta_key = %s",
             $postId,
             '_sidebars_widgets'
         ));
@@ -144,7 +156,7 @@ class MigrationEngine
         $widgetType = str_replace('-' . $widgetId, '', $widgetIdString);
 
         $widgets = $this->fromDb->get_var($this->fromDb->prepare(
-            "SELECT option_value FROM wp_options WHERE option_name = %s",
+            "SELECT option_value FROM " . self::getTable('options') .  " WHERE option_name = %s",
             'widget_' . $postId . '_' . $widgetType
         ));
 
@@ -179,7 +191,7 @@ class MigrationEngine
     public function getWidgetStructure($widgetType)
     {
         $data = $this->fromDb->get_results($this->fromDb->prepare(
-            "SELECT option_value FROM wp_options WHERE (option_name REGEXP %s) ORDER BY RAND() LIMIT 1",
+            "SELECT option_value FROM " . self::getTable('options') . " WHERE (option_name REGEXP %s) ORDER BY RAND() LIMIT 1",
             '^widget_([0-9]+)_' . $widgetType
         ));
 
@@ -192,7 +204,7 @@ class MigrationEngine
     public function getWidgetTypes()
     {
         $data = $this->fromDb->get_results($this->fromDb->prepare(
-            "SELECT * FROM wp_options WHERE (option_name REGEXP %s)",
+            "SELECT * FROM " . self::getTable('options') . " WHERE (option_name REGEXP %s)",
             '^widget_([0-9]+)_(.*)'
         ));
 

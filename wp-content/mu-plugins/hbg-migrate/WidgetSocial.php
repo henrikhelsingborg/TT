@@ -81,17 +81,17 @@ class WidgetSocial extends \HbgMigrate\Widget
 
         switch ($provider) {
             case 'facebook':
-                $public = $wpdbFrom->get_var("SELECT option_value FROM wp_options WHERE option_name = 'hbgsf_facebook_app_id'");
-                $secret = $wpdbFrom->get_var("SELECT option_value FROM wp_options WHERE option_name = 'hbgsf_facebook_app_secret'");
+                $public = $wpdbFrom->get_var("SELECT option_value FROM " . \HbgMigrate\MigrationEngine::getTable('options') . " WHERE option_name = 'hbgsf_facebook_app_id'");
+                $secret = $wpdbFrom->get_var("SELECT option_value FROM " . \HbgMigrate\MigrationEngine::getTable('options') . " WHERE option_name = 'hbgsf_facebook_app_secret'");
                 break;
 
             case 'instagram':
-                $public = $wpdbFrom->get_var("SELECT option_value FROM wp_options WHERE option_name = 'hbgsf_instagram_client_id'");
+                $public = $wpdbFrom->get_var("SELECT option_value FROM " . \HbgMigrate\MigrationEngine::getTable('options') . " WHERE option_name = 'hbgsf_instagram_client_id'");
                 break;
 
             case 'twitter':
-                $public = $wpdbFrom->get_var("SELECT option_value FROM wp_options WHERE option_name = 'hbgsf_twitter_consumer_key'");
-                $secret = $wpdbFrom->get_var("SELECT option_value FROM wp_options WHERE option_name = 'hbgsf_twitter_consumer_secret'");
+                $public = $wpdbFrom->get_var("SELECT option_value FROM " . \HbgMigrate\MigrationEngine::getTable('options') . " WHERE option_name = 'hbgsf_twitter_consumer_key'");
+                $secret = $wpdbFrom->get_var("SELECT option_value FROM " . \HbgMigrate\MigrationEngine::getTable('options') . " WHERE option_name = 'hbgsf_twitter_consumer_secret'");
                 break;
         }
 

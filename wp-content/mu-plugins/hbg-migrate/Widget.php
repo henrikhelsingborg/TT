@@ -25,7 +25,7 @@ abstract class Widget
      * @param  array  $data The module data
      * @return bool|int
      */
-    public function save(array $data, int $postId, string $widgetId, string $sidebar)
+    public function save(array $data, int $postId, string $widgetId, string $sidebar, $description = null)
     {
         $migrated = get_option('hbgmigrate_migrated_widgets', array());
         $isMigrated = in_array($widgetId, $migrated);
@@ -46,7 +46,12 @@ abstract class Widget
 
         // Save the module
         $moduleId = wp_insert_post($data);
-        update_post_meta($moduleId, 'module-description', 'Migrated');
+
+        if (!$description) {
+            $description = 'Migrated';
+        }
+
+        update_post_meta($moduleId, 'module-description', $description);
 
         // Set modularity option for placing the module on the page
         $pageModules = get_post_meta($postId, 'modularity-modules', true);
