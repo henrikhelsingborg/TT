@@ -22,7 +22,7 @@ class MigrationEngine
 
 
         if ($start) {
-            $this->start(0, 2000);
+            $this->start(0, -1);
         }
     }
 
