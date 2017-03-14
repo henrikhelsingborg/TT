@@ -35,7 +35,6 @@ class WidgetNewsListBox extends \HbgMigrate\Widget
         );
 
         $this->save($data, $postId, $widgetData['widget_meta']['widget_id'], $widgetData['widget_meta']['sidebar']);
-        exit;
     }
 }
 
