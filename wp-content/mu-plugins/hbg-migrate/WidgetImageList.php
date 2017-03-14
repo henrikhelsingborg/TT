@@ -9,6 +9,10 @@ class WidgetImageList extends \HbgMigrate\Widget
 
     public function migrate(array $widgetData, int $postId)
     {
+        if (!isset($widgetData['amount'])) {
+            return;
+        }
+
         $images = array();
 
         for ($i = 1; $i <= $widgetData['amount']; $i++) {
