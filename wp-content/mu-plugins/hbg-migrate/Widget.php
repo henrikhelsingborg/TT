@@ -46,6 +46,7 @@ abstract class Widget
 
         // Save the module
         $moduleId = wp_insert_post($data);
+        update_post_meta($moduleId, 'module-description', 'Migrated');
 
         // Set modularity option for placing the module on the page
         $pageModules = get_post_meta($postId, 'modularity-modules', true);
