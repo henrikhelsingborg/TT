@@ -26,7 +26,7 @@ class WidgetImageList extends \HbgMigrate\Widget
             if (!empty($widgetData['item_text' . $i])) {
                 $images[$i]['field_56ab224ac2c28'] = 1;
                 $images[$i]['field_56e7fa620ee0a'] = 'bottom';
-                $images[$i]['field_56b9f3b8d7720'] = $widgetData['item_text' . $i];
+                $images[$i]['field_56ab235393f04'] = $widgetData['item_text' . $i];
             }
 
             // Link
