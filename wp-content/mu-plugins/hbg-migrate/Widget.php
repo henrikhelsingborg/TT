@@ -35,6 +35,9 @@ abstract class Widget
             return false;
         }
 
+        // Check if sidebar should be remapped
+        $sidebar = $this->remapSidebar($sidebar, $postId);
+
         $acfFields = array();
         if (isset($data['acf'])) {
             $acfFields = $data['acf'];
@@ -84,6 +87,25 @@ abstract class Widget
         echo 'Migrated widget <strong>"' . $widgetId . '"</strong> of type <strong>"' . $this->widgetType . '"</strong> for post with id <strong>"' . $postId . '"</strong><br>';
 
         return $moduleId;
+    }
+
+    /**
+     * Remap sidebars
+     * @param  string $sidebar Default sidebbar
+     * @param  int    $postId  Post id
+     * @return string          Modified sidebar
+     */
+    public function remapSidebar(string $sidebar, int $postId)
+    {
+        $postType = get_post_type($postId);
+        $template = get_post_meta($postId, '_wp_page_template', true);
+
+        // slider-area => content-area-top
+        if ($sidebar === 'slider-area' && $postType === 'page' && !$template) {
+            return 'content-area-top';
+        }
+
+        return $sidebar;
     }
 
     /**
