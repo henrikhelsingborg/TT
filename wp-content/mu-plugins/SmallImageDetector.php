@@ -12,7 +12,11 @@ class SmallImageDetector
 
     public function __construct()
     {
-        add_action('init', array($this, 'start'));
+        if (isset($_GET['small-image-detector']) && $_GET['small-image-detector'] === 'true') {
+            add_action('init', array($this, 'start'));
+        }
+
+        add_filter('image_make_intermediate_size', array($this, 'watermarkThumbnail'));
     }
 
     public function start()
@@ -103,11 +107,20 @@ class SmallImageDetector
             return false;
         }
 
+        $imageSize = getimagesize($path);
         $image = imagecreatefromjpeg($path);
 
+        $width = $imageSize[0];
+        $height = $imageSize[1];
+
+        $pos = array(
+            $width / 2,
+            $height - 12 - 10
+        );
+
         // First circle
-        imagefilledellipse($image, 12, 12, 10, 10, imagecolorallocate($image, 0, 0, 0));
-        imagefilledellipse($image, 12, 12, 6, 6, imagecolorallocate($image, 255, 255, 255));
+        imagefilledellipse($image, $pos[0], $pos[1], 10, 10, imagecolorallocate($image, 0, 0, 0));
+        imagefilledellipse($image, $pos[0], $pos[1], 6, 6, imagecolorallocate($image, 255, 255, 255));
 
         imagejpeg($image, $path, 100);
         return true;
@@ -128,8 +141,12 @@ class SmallImageDetector
 
         return true;
     }
+
+    public function watermarkThumbnail($file)
+    {
+        $this->waterstamp($file);
+        return $file;
+    }
 }
 
-if (isset($_GET['small-image-detector']) && $_GET['small-image-detector'] === 'true') {
-    new \SmallImageDetector\SmallImageDetector();
-}
+new \SmallImageDetector\SmallImageDetector();
