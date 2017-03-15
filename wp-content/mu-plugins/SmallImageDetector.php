@@ -150,7 +150,7 @@ class SmallImageDetector
             return $file;
         }
 
-        $imageSize = getimagesize($path);
+        $imageSize = getimagesize($file);
 
         if ($imageSize[0] >= 1000) {
             return $file;
