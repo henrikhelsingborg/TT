@@ -1,3 +1,6 @@
+## Start migration
+{ url }?migrate=yes-please
+
 ## Check available widget types (fetched from db)
 { url }?view_widget_types
 

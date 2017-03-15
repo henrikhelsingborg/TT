@@ -9,6 +9,7 @@
 # Municipio dependencies #
 ##########################
 wp/
+srdb/
 vendor/
 wp-content/*
 !wp-content/mu-plugins
