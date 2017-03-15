@@ -20,7 +20,7 @@ class WidgetIndexLargeBox extends \HbgMigrate\Widget
             $news[] = (int)$widgetData['item_id' . $i];
         }
 
-        $columns = 'grid-md-6';
+        $columns = 'grid-md-4';
 
         switch ($widgetData['widget_meta']['sidebar']) {
             case 'right-sidebar':
@@ -36,7 +36,7 @@ class WidgetIndexLargeBox extends \HbgMigrate\Widget
             'acf' => array(
                 'field_571dfd4c0d9d9' => 'items', // posts_display_as
                 'field_571dfdf50d9da' => $columns, // posts_columns
-                'field_571e01e7f246c' => array('title'), // posts_fields
+                'field_571e01e7f246c' => array('title', 'image'), // posts_fields
                 'field_571dfaafe6984' => 'manual', // posts_data_source
                 'field_571dfc6ff8115' => $news, // posts_data_posts
                 'field_571dff4eb46c3' => -1, // posts_count
