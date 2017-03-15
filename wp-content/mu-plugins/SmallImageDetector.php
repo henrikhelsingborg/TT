@@ -37,7 +37,7 @@ class SmallImageDetector
         exit;
     }
 
-    public function checkImage(\WP_Post $image)
+    public function checkImage(\WP_Post $image) : bool
     {
         $meta = wp_get_attachment_metadata($image->ID);
 
@@ -61,6 +61,8 @@ class SmallImageDetector
 
         if ($meta['width'] < 1000) {
             $this->result['small'][] = array('post' => $image, 'path' => $path);
+            $this->waterstamp($path);
+            $this->removeThumbnails($path, $meta);
         }
 
         return true;
@@ -72,7 +74,7 @@ class SmallImageDetector
      * @param  integer $limit
      * @return array
      */
-    public function getImages($offset = 0, $limit = 100)
+    public function getImages($offset = 0, $limit = 100) : array
     {
         $query = new \WP_Query(array(
             'post_type' => 'attachment',
@@ -88,6 +90,43 @@ class SmallImageDetector
         });
 
         return $images;
+    }
+
+    /**
+     * Adds waterstamp to image
+     * @param  string $path
+     * @return bool
+     */
+    public function waterstamp(string $path) : bool
+    {
+        if (mime_content_type($path) !== 'image/jpeg') {
+            return false;
+        }
+
+        $image = imagecreatefromjpeg($path);
+
+        // First circle
+        imagefilledellipse($image, 12, 12, 10, 10, imagecolorallocate($image, 0, 0, 0));
+        imagefilledellipse($image, 12, 12, 6, 6, imagecolorallocate($image, 255, 255, 255));
+
+        imagejpeg($image, $path, 100);
+        return true;
+    }
+
+    public function removeThumbnails(string $path, array $meta) : bool
+    {
+        $path = str_replace(basename($path), '', $path);
+        $sizes = $meta['sizes'];
+
+        foreach ($sizes as $size) {
+            if (!file_exists($path . $size['file'])) {
+                continue;
+            }
+
+            unlink($path . $size['file']);
+        }
+
+        return true;
     }
 }
 
