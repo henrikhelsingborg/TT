@@ -101,7 +101,7 @@ abstract class Widget
         $template = get_post_meta($postId, '_wp_page_template', true);
 
         // slider-area => content-area-top
-        if ($sidebar === 'slider-area' && $postType === 'page' && !$template) {
+        if ($sidebar === 'slider-area' && $postType === 'page' && (!$template|| $template === 'default')) {
             return 'content-area-top';
         }
 
