@@ -144,6 +144,18 @@ class SmallImageDetector
 
     public function watermarkThumbnail($file)
     {
+        $original = preg_replace('/-(\d+)x(\d+).jpg$/i', '.jpg', $file);
+
+        if (!file_exists($original)) {
+            return $file;
+        }
+
+        $imageSize = getimagesize($path);
+
+        if ($imageSize[0] >= 1000) {
+            return $file;
+        }
+
         $this->waterstamp($file);
         return $file;
     }
