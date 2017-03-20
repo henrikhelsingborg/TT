@@ -70,6 +70,36 @@ abstract class Shortcode
         return $moduleId;
     }
 
+    /**
+     * Saves migration without creating a module
+     * @param  \WP_Post    $post            The post where the shortcode is
+     * @param  string      $shortcodeBefore Shortcode before migration
+     * @param  string|null $replacement     Shortcode should be replaced with
+     * @return boolean
+     */
+    public function saveWithoutModule(\WP_Post $post, string $shortcodeBefore, string $replacement = null)
+    {
+        $hash = $this->hash(array($post->ID, $shortcodeBefore));
+        $migrated = get_option('hbgmigrate_migrated_shortcode_posts', array());
+
+        // Update postcontent
+        if ($replacement) {
+            $postContent = str_replace($shortcodeBefore, $replacement, $post->post_content);
+
+            wp_update_post(array(
+                'ID' => $post->ID,
+                'post_content' => $postContent
+            ));
+        }
+
+        // Add to list of migrated shortcodes
+        $migrated[] = $hash;
+        update_option('hbgmigrate_migrated_shortcode_posts', $migrated);
+
+        echo 'Migrated shortcode <strong>"' . $shortcodeBefore . '"</strong> for post with id <strong>"' . $post->ID . '"</strong><br>';
+        return true;
+    }
+
     public function getShortcode(int $moduleId)
     {
         return '[modularity id="' . $moduleId . '"]';
