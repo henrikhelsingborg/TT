@@ -9,7 +9,7 @@ abstract class Widget
 
     public function __construct()
     {
-        add_action('HbgMigrate/' . $this->widgetType, array($this, 'migrate'), 10, 2);
+        add_action('HbgMigrate/widget/' . $this->widgetType, array($this, 'migrate'), 10, 2);
     }
 
     /**
