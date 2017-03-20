@@ -62,8 +62,6 @@ abstract class Shortcode
         update_option('hbgmigrate_migrated_shortcode_posts', $migrated);
 
         echo 'Migrated shortcode <strong>"' . $shortcodeBefore . '"</strong> for post with id <strong>"' . $post->ID . '"</strong><br>';
-        exit;
-
         return $moduleId;
     }
 
