@@ -7,7 +7,7 @@ class ShortcodeSuCarousel extends \HbgMigrate\Shortcode
     public $shortcode = 'su_carousel';
     public $moduleType = 'mod-slider';
 
-    public function migrate(\WP_Post $post, string $full, string $base, array $attributes = null)
+    public function migrate(\WP_Post $post, string $full, string $base, array $attributes = null, string $content = null)
     {
         $source = $attributes['source'];
         $source = explode(':', $source);

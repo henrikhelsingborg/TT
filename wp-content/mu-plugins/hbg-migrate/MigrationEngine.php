@@ -94,8 +94,13 @@ class MigrationEngine
      */
     public function migrateShortcodesForPost(\WP_Post $post)
     {
-        preg_match_all('/\\[([a-z_]+)\s?(.*)?\]/i', $post->post_content, $matches);
+        preg_match_all('/\[(.+?)?\](?:(.+?)?\[\/(.+?)\])?/i', $post->post_content, $matches);
         $matches = array_filter($matches);
+
+        // $matches[0] = full
+        // $matches[1] = {shortcode} {attributes}
+        // $matches[2] = content
+        // $matches[3] = end tag
 
         if (empty($matches)) {
             return;
@@ -107,9 +112,10 @@ class MigrationEngine
         }
 
         for ($i = 0; $i < count($matches[0]); $i++) {
-            $attributes = null;
-            if (isset($matches[2][$i])) {
-                $htmlAttributes = preg_split('/\s+(?=([^"]*"[^"]*")*[^"]*$)/i', $matches[2][$i]);
+            $attributes = array();
+
+            if (isset(explode(' ', $matches[1][$i], 2)[1])) {
+                $htmlAttributes = preg_split('/\s+(?=([^"]*"[^"]*")*[^"]*$)/i',explode(' ', $matches[1][$i], 2)[1]);
 
                 foreach ($htmlAttributes as &$attribute) {
                     $attribute = explode('=', $attribute);
@@ -122,7 +128,14 @@ class MigrationEngine
                 }
             }
 
-            do_action('HbgMigrate/shortcode/' . $matches[1][$i], $post, $matches[0][$i], isset($matches[1][$i]) ? $matches[1][$i] : null, $attributes);
+            $shortcodeData = array(
+                'full' => $matches[0][$i],
+                'shortcode' => explode(' ', $matches[1][$i], 2)[0],
+                'attributes' => $attributes,
+                'content' => $matches[2][$i]
+            );
+
+            do_action('HbgMigrate/shortcode/' . $shortcodeData['shortcode'], $post, $shortcodeData['full'], $shortcodeData['shortcode'], $shortcodeData['attributes'], $shortcodeData['content']);
         }
     }
 

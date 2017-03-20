@@ -9,11 +9,16 @@ abstract class Shortcode
 
     public function __construct()
     {
-        add_action('HbgMigrate/shortcode/' . $this->shortcode, array($this, 'migrate'), 10, 4);
+        add_action('HbgMigrate/shortcode/' . $this->shortcode, array($this, 'migrate'), 10, 5);
     }
 
-    abstract public function migrate(\WP_Post $post, string $full, string $base, array $attributes = null);
+    abstract public function migrate(\WP_Post $post, string $full, string $base, array $attributes = null, string $content = null);
 
+    /**
+     * Saves migrated module
+     * @param  array  $data The module data
+     * @return bool|int
+     */
     public function save(array $data, \WP_Post $post, string $shortcodeBefore, $description = null)
     {
         $hash = $this->hash(array($post->ID, $shortcodeBefore));
