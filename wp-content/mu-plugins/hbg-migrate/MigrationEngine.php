@@ -62,15 +62,8 @@ class MigrationEngine
         echo "<strong>START</strong><br>";
 
         foreach ($posts as $post) {
-            $this->migrateWidgetsForPost($post->ID);
+            //$this->migrateWidgetsForPost($post->ID);
             $this->migrateShortcodesForPost($post);
-        }
-
-        if (isset($_GET['list_shortcodes']) && $_GET['list_shortcodes'] === 'true') {
-            $shortcodes = array_unique($this->shortcodes);
-            foreach ($shortcodes as $shortcode) {
-                echo $shortcode . '<br>';
-            }
         }
 
         echo "<strong>END</strong>";
@@ -94,6 +87,11 @@ class MigrationEngine
         }
     }
 
+    /**
+     * Migration proccess for shortcodes
+     * @param  \WP_Post $post
+     * @return void
+     */
     public function migrateShortcodesForPost(\WP_Post $post)
     {
         preg_match_all('/\\[([a-z_]+)\s?(.*)?\]/i', $post->post_content, $matches);
@@ -104,26 +102,28 @@ class MigrationEngine
         }
 
         if (isset($_GET['list_shortcodes']) && $_GET['list_shortcodes'] === 'true') {
-            $this->shortcodes[] = $matches[1][0];
+            echo $matches[1][0] . ' (<a href="' . get_edit_post_link($post->ID) . '">' . $post->ID . '</a>)<br>';
             return;
         }
 
-        $attributes = null;
-        if (isset($matches[2])) {
-            $htmlAttributes = preg_split('/\s+(?=([^"]*"[^"]*")*[^"]*$)/i', $matches[2][0]);
+        for ($i = 0; $i < count($matches[0]); $i++) {
+            $attributes = null;
+            if (isset($matches[2][$i])) {
+                $htmlAttributes = preg_split('/\s+(?=([^"]*"[^"]*")*[^"]*$)/i', $matches[2][$i]);
 
-            foreach ($htmlAttributes as &$attribute) {
-                $attribute = explode('=', $attribute);
+                foreach ($htmlAttributes as &$attribute) {
+                    $attribute = explode('=', $attribute);
 
-                if (count($attribute) == 2) {
-                    $attributes[$attribute[0]] = str_replace('"', '', $attribute[1]);
-                } else {
-                    $attributes[] = $attribute;
+                    if (count($attribute) == 2) {
+                        $attributes[$attribute[0]] = str_replace('"', '', $attribute[1]);
+                    } else {
+                        $attributes[] = $attribute;
+                    }
                 }
             }
-        }
 
-        do_action('HbgMigrate/shortcode/' . $matches[1][0], $post, $matches[0][0], isset($matches[1]) ? $matches[1][0] : null, $attributes);
+            do_action('HbgMigrate/shortcode/' . $matches[1][$i], $post, $matches[0][$i], isset($matches[1][$i]) ? $matches[1][$i] : null, $attributes);
+        }
     }
 
     /**
@@ -243,7 +243,11 @@ class MigrationEngine
         return $values[0];
     }
 
-    public function getWidgetTypes()
+    /**
+     * Gets all types of widgets from the database
+     * @return array
+     */
+    public function getWidgetTypes() : array
     {
         $data = $this->fromDb->get_results($this->fromDb->prepare(
             "SELECT * FROM " . self::getTable('options') . " WHERE (option_name REGEXP %s)",
