@@ -19,6 +19,11 @@ class ShortcodeSuCarousel extends \HbgMigrate\Shortcode
         $sourceImages = explode(',', $source[1]);
         $sourceImages = array_map('trim', $sourceImages);
 
+        if (count($sourceImages) === 1) {
+            $this->saveWithoutModule($post, $full, wp_get_attachment_image($sourceImages[0], 'full'));
+            return;
+        }
+
         $images = array();
 
         foreach ($sourceImages as $image) {
