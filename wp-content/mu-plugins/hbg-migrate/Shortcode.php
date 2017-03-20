@@ -82,6 +82,8 @@ abstract class Shortcode
         $hash = $this->hash(array($post->ID, $shortcodeBefore));
         $migrated = get_option('hbgmigrate_migrated_shortcode_posts', array());
 
+        $post = get_post($post->ID);
+
         // Update postcontent
         if ($replacement) {
             $postContent = str_replace($shortcodeBefore, $replacement, $post->post_content);
