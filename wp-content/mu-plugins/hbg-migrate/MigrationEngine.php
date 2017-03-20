@@ -13,6 +13,8 @@ class MigrationEngine
 
     protected $failed = array();
 
+    protected $shortcodes = array();
+
     public function __construct($start = true)
     {
         global $wpdb, $wpdbFrom;
@@ -61,6 +63,14 @@ class MigrationEngine
 
         foreach ($posts as $post) {
             $this->migrateWidgetsForPost($post->ID);
+            $this->migrateShortcodesForPost($post);
+        }
+
+        if (isset($_GET['list_shortcodes']) && $_GET['list_shortcodes'] === 'true') {
+            $shortcodes = array_unique($this->shortcodes);
+            foreach ($shortcodes as $shortcode) {
+                echo $shortcode . '<br>';
+            }
         }
 
         echo "<strong>END</strong>";
@@ -77,11 +87,43 @@ class MigrationEngine
 
         foreach ($widgets as $widget) {
             // HbgMigrate/{widget_type}
-            do_action('HbgMigrate/' . $widget['widget_meta']['type'], $widget, $postId);
+            do_action('HbgMigrate/widget/' . $widget['widget_meta']['type'], $widget, $postId);
 
             // HbgMigrate/{widget_id}
-            do_action('HbgMigrate/' . $widget['widget_meta']['widget_id'], $widget, $postId);
+            do_action('HbgMigrate/widget/' . $widget['widget_meta']['widget_id'], $widget, $postId);
         }
+    }
+
+    public function migrateShortcodesForPost(\WP_Post $post)
+    {
+        preg_match_all('/\\[([a-z_]+)\s?(.*)?\]/i', $post->post_content, $matches);
+        $matches = array_filter($matches);
+
+        if (empty($matches)) {
+            return;
+        }
+
+        if (isset($_GET['list_shortcodes']) && $_GET['list_shortcodes'] === 'true') {
+            $this->shortcodes[] = $matches[1][0];
+            return;
+        }
+
+        $attributes = null;
+        if (isset($matches[2])) {
+            $htmlAttributes = preg_split('/\s+(?=([^"]*"[^"]*")*[^"]*$)/i', $matches[2][0]);
+
+            foreach ($htmlAttributes as &$attribute) {
+                $attribute = explode('=', $attribute);
+
+                if (count($attribute) == 2) {
+                    $attributes[$attribute[0]] = str_replace('"', '', $attribute[1]);
+                } else {
+                    $attributes[] = $attribute;
+                }
+            }
+        }
+
+        do_action('HbgMigrate/shortcode/' . $matches[1][0], $post, $matches[0][0], isset($matches[1]) ? $matches[1][0] : null, $attributes);
     }
 
     /**
