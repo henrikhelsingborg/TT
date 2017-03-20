@@ -118,7 +118,7 @@ class MigrationEngine
                 $htmlAttributes = preg_split('/\s+(?=([^"]*"[^"]*")*[^"]*$)/i',explode(' ', $matches[1][$i], 2)[1]);
 
                 foreach ($htmlAttributes as &$attribute) {
-                    $attribute = explode('=', $attribute);
+                    $attribute = explode('=', $attribute, 2);
 
                     if (count($attribute) == 2) {
                         $attributes[$attribute[0]] = str_replace('"', '', $attribute[1]);
