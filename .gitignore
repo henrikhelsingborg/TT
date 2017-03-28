@@ -17,6 +17,12 @@ wp-content/*
 !wp-content/object-cache.php
 composer.lock
 
+# Themes dependencies #
+##########################
+wp-content/themes/*
+!wp-content/themes
+!wp-content/themes/helsingborg
+wp-content/themes/helsingborg/node_modules
 
 # Compiled source #
 ###################
