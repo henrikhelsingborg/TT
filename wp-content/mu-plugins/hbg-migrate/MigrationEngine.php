@@ -62,11 +62,26 @@ class MigrationEngine
         echo "<strong>START</strong><br>";
 
         foreach ($posts as $post) {
-            //$this->migrateWidgetsForPost($post->ID);
+            $this->migrateWidgetsForPost($post->ID);
             $this->migrateShortcodesForPost($post);
+            $this->migrateTemplateForPost($post);
         }
 
         echo "<strong>END</strong>";
+    }
+
+    /**
+     * Run migration actions for widget from post
+     * @param  int    $postId
+     * @return void
+     */
+    public function migrateTemplateForPost(\WP_Post $post)
+    {
+        $template = get_post_meta($post->ID, '_wp_page_template', true);
+
+        if ($template && $template !== 'default') {
+            do_action('HbgMigrate/template/' . basename($template), $template, $post);
+        }
     }
 
     /**
