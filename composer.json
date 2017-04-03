@@ -65,7 +65,6 @@
 
     "require": {
         "composer/installers": "~1.0",
-        "johnpbloch/wordpress": "^4.6.0",
         "helsingborg-stad/modularity": ">=1.0.0",
         "helsingborg-stad/municipio": ">=1.0.0",
         "helsingborg-stad/lix-calculator": ">=1.0.1",
@@ -80,7 +79,8 @@
         "wpackagist-plugin/all-in-one-seo-pack": "^2.2.7.5",
         "wpackagist-plugin/varnish-http-purge": "^3.7.2",
         "wpackagist-plugin/stream": "^3.0.4",
-        "wpackagist-plugin/wp-nested-pages": "^1.5.4"
+        "wpackagist-plugin/wp-nested-pages": "^1.5.4",
+        "johnpbloch/wordpress": "^4.7"
     },
 
     "extra": {
