@@ -45,4 +45,4 @@ class ComposerNetworkAdmin
     }
 }
 
-new \ComposerNetworkAdmin\ComposerNetworkAdmin();
+//new \ComposerNetworkAdmin\ComposerNetworkAdmin();

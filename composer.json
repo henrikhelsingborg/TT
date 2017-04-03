@@ -5,6 +5,14 @@
         {
             "name": "Sebastian Thulin",
             "email": "sebastian.thulin@helsingborg.se"
+        },
+        {
+            "name": "Kristoffer Svanmark",
+            "email": "kristoffer.svanmark@knowit.se"
+        },
+        {
+            "name": "Jonatan Hansson",
+            "email": "jonatan.hansson@hiq.se"
         }
     ],
     "minimum-stability" : "stable",
@@ -76,7 +84,6 @@
         "helsingborg-stad/acf-ux-collapse": ">=1.0.0",
         "helsingborg-stad/api-event-manager-integration": ">=0.1.0",
         "wpackagist-plugin/wp-editor-widget": "^0.5.5",
-        "wpackagist-plugin/all-in-one-seo-pack": "^2.2.7.5",
         "wpackagist-plugin/varnish-http-purge": "^3.7.2",
         "wpackagist-plugin/stream": "^3.0.4",
         "wpackagist-plugin/wp-nested-pages": "^1.5.4",
