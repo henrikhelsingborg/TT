@@ -67,7 +67,62 @@ class MigrationEngine
             $this->migrateTemplateForPost($post);
         }
 
+        $this->migrateRedirectRules();
+
         echo "<strong>END</strong>";
+    }
+
+    /**
+     * Migrate all shortcodes/redirect rules
+     * @return bool
+     */
+    public function migrateRedirectRules()
+    {
+        $redirects = get_posts(array(
+            'post_type' => 'redirect_rule',
+            'posts_per_page' => -1,
+            'post_status' => 'publish'
+        ));
+
+        foreach ($redirects as &$redirect) {
+            $rule = array(
+                'status_code' => get_post_meta($redirect->ID, '_redirect_rule_status_code', true),
+                'redirect_to' => get_post_meta($redirect->ID, '_redirect_rule_to', true),
+                'shortlink' => get_post_meta($redirect->ID, '_redirect_rule_from', true),
+            );
+
+            if ($postId = url_to_postid(home_url($rule['redirect_to']))) {
+                $rule['redirect_to'] = $postId;
+            }
+
+            if (!in_array($rule['status_code'], array('301', '302'))) {
+                $rule['status_code'] = '301';
+            }
+
+            $redirectId = wp_insert_post(array(
+                'post_type' => 'custom-short-link',
+                'post_status' => 'publish',
+                'post_title' => ltrim($rule['shortlink'], '/'),
+            ));
+
+            // Redirect status code
+            update_field('field_57060b8ceb9d2', $rule['status_code'], $redirectId);
+
+            // Redirect type (internal/external)
+            if (is_numeric($rule['redirect_to'])) {
+                update_field('field_5706052e80c31', 'internal', $redirectId);
+                update_field('field_5706060880c32', $rule['redirect_to'], $redirectId);
+            } else {
+                update_field('field_5706052e80c31', 'external', $redirectId);
+                update_field('field_5706048280c30', $rule['redirect_to'], $redirectId);
+            }
+
+            wp_trash_post($redirect->ID);
+
+            echo 'Migrated redirect rule <strong>"' . $rule['shortlink'] . '"</strong> to <strong>"' . $rule['redirect_to'] . '"</strong><br>';
+        }
+
+        return true;
     }
 
     /**
