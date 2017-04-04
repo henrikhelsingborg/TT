@@ -90,6 +90,10 @@
             "url": "https://github.com/helsingborg-stad/modularity-guides.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/Customer-feedback.git"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "humanmade/page-for-post-type",
