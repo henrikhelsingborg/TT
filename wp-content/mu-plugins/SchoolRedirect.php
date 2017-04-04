@@ -74,6 +74,10 @@ class SchoolRedirect
         $response = wp_remote_retrieve_body($request);
         $response = json_decode($response);
 
+        if (!$response) {
+            return array();
+        }
+
         // Remove main site from array
         $response = array_filter($response, function ($site) {
             return $site->path !== '/';
