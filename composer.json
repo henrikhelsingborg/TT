@@ -66,6 +66,46 @@
             "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/force-ssl.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/Search-notices.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/search-statistics.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/attachment-revisions.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/modularity-dictionary.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/modularity-guides.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/Customer-feedback.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "humanmade/page-for-post-type",
+                "version": "1.0.1",
+                "dist": {
+                    "url": "https://github.com/humanmade/page-for-post-type/archive/4104277b2140a5b5badb6796979c6e2373c25048.zip",
+                    "type": "zip"
+                },
+                "type": "wordpress-plugin"
+            }
+        },
+        {
             "type":"composer",
             "url":"https://wpackagist.org"
         }
@@ -73,6 +113,8 @@
 
     "require": {
         "composer/installers": "~1.0",
+        "johnpbloch/wordpress": "^4.7",
+        "humanmade/page-for-post-type": "^1.0.0",
         "helsingborg-stad/modularity": ">=1.0.0",
         "helsingborg-stad/municipio": ">=1.0.0",
         "helsingborg-stad/lix-calculator": ">=1.0.1",
@@ -83,11 +125,19 @@
         "helsingborg-stad/better-post-ui": ">=1.0.0",
         "helsingborg-stad/acf-ux-collapse": ">=1.0.0",
         "helsingborg-stad/api-event-manager-integration": ">=0.1.0",
+        "helsingborg-stad/force-ssl": ">=1.0.0",
+        "helsingborg-stad/search-notices": ">=1.0.0",
+        "helsingborg-stad/wp-search-statistics": ">=0.1.0",
+        "helsingborg-stad/attachment-revisions": ">=1.0.0",
+        "helsingborg-stad/modularity-guides": ">=1.0.0",
+        "helsingborg-stad/modularity-dictionary": ">=1.0.0",
+        "helsingborg-stad/Customer-feedback": ">=1.0.0",
         "wpackagist-plugin/wp-editor-widget": "^0.5.5",
         "wpackagist-plugin/varnish-http-purge": "^3.7.2",
         "wpackagist-plugin/stream": "^3.0.4",
         "wpackagist-plugin/wp-nested-pages": "^1.5.4",
-        "johnpbloch/wordpress": "^4.7"
+        "wpackagist-plugin/mce-table-buttons": "^3.0.0",
+        "wpackagist-plugin/user-switching" : ">=1.0.0"
     },
 
     "extra": {
