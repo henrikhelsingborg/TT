@@ -85,7 +85,7 @@ echo "\033[39m\033   x. Installation done, plugin activated.\033[0m"
 echo
 echo "\033[95m\033   MANUAL ACTIONS REQUIRED: You need to manually run the SEO Data Transporter process now.\033[0m"
 echo
-echo "\033[95m\033   1. Go to http://helsingborg.dev/wp/wp-admin/tools.php?page=seodt\033[0m"
+echo "\033[95m\033   1. Go to http://${request_url}/wp-admin/tools.php?page=seodt\033[0m"
 echo "\033[95m\033   2. Select from \"All in One SEO Pack\" to \"Genesis\".\033[0m"
 echo "\033[95m\033   3. Click the \"Analyze\" button and check the results.\033[0m"
 echo "\033[95m\033   4. Click the \"Convert\" button to run the migration.\033[0m"
