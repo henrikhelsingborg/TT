@@ -1,5 +1,9 @@
 #!/bin/bash
 
+function clearLastLine() {
+    tput cuu 1 && tput el
+}
+
 clear
 
 echo
@@ -70,6 +74,36 @@ case ${run_small_img_detector:0:1} in
         curl $request_url -sS > /dev/null
     ;;
 esac
+
+# SEO data
+echo "\033[39m\033 - Migrating All in one SEO data to The SEO Framework…\033[0m"
+
+echo "\033[39m\033   x. Installing SEO Data Transporter plugin…\033[0m"
+wp plugin install seo-data-transporter --activate-network --quiet
+echo "\033[39m\033   x. Installation done, plugin activated.\033[0m"
+
+echo
+echo "\033[95m\033   MANUAL ACTIONS REQUIRED: You need to manually run the SEO Data Transporter process now.\033[0m"
+echo
+echo "\033[95m\033   1. Go to http://${request_url}/wp-admin/tools.php?page=seodt\033[0m"
+echo "\033[95m\033   2. Select from \"All in One SEO Pack\" to \"Genesis\".\033[0m"
+echo "\033[95m\033   3. Click the \"Analyze\" button and check the results.\033[0m"
+echo "\033[95m\033   4. Click the \"Convert\" button to run the migration.\033[0m"
+echo
+
+read -n 1 -s -p "  Press any key when done"
+clearLastLine
+echo
+clearLastLine
+echo
+clearLastLine
+echo
+
+echo "\033[32m\033   SEO migration marked as completed.\033[0m "
+echo
+
+echo -e "\r\033[39m\033   x. Uninstalling SEO Data Transporter plugin…\033"
+wp plugin deactivate seo-data-transporter --network --uninstall --quiet
 
 # Done
 echo
