@@ -20,6 +20,9 @@ read site_url
 echo
 read -p "Do you want to run the small image detector (y/n)? " run_small_img_detector
 
+echo
+read -p "Do you want search-replace all HTTP:// to HTTPS:// (y/n)? " run_search_replace
+
 clear
 
 echo
@@ -42,6 +45,14 @@ curl $request_url -sS > /dev/null
 request_url=$site_url
 request_url+="?change-post-types=step-2"
 curl $request_url -sS > /dev/null
+
+# Https
+case ${run_search_replace:0:1} in
+    y|Y )
+        echo "\033[39m\033 - Replaceing http://${request_url} with https://${request_url}…\033"
+        wp search-replace 'http://${request_url}' 'https://${request_url}' --skip-columns=guid --network
+    ;;
+esac
 
 # Small image detector
 case ${run_small_img_detector:0:1} in
