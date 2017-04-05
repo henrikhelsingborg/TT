@@ -51,4 +51,19 @@ add_action('init', function () {
         wp_send_json($engine->getWidgetTypes());
         exit;
     }
+
+    if (isset($_GET['migrate-colors']) && $_GET['migrate-colors'] == 'true') {
+        // helsingborg_color_theme
+        // helsingborg_color_code
+        add_action('init', function () {
+            $theme = get_option('helsingborg_color_theme');
+            $code = get_option('helsingborg_color_code');
+
+            // Set color theme
+            update_field('field_56a0a7e36365b', $theme, 'option');
+
+            // Set primary theme color
+            update_field('field_' . sha1('school-colorscheme-' . $theme), $code, 'option');
+        });
+    }
 });

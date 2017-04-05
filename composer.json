@@ -94,6 +94,10 @@
             "url": "https://github.com/helsingborg-stad/Customer-feedback.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/acf-export-manager.git"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "humanmade/page-for-post-type",
