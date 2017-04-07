@@ -62,6 +62,12 @@ class MigrationEngine
         echo "<strong>START</strong><br>";
 
         foreach ($posts as $post) {
+<<<<<<< HEAD
+            //$this->migrateWidgetsForPost($post->ID);
+            $this->migrateShortcodesForPost($post);
+        }
+
+=======
             $this->migrateWidgetsForPost($post->ID);
             $this->migrateShortcodesForPost($post);
             $this->migrateTemplateForPost($post);
@@ -69,10 +75,13 @@ class MigrationEngine
 
         $this->migrateRedirectRules();
 
+>>>>>>> develop
         echo "<strong>END</strong>";
     }
 
     /**
+<<<<<<< HEAD
+=======
      * Migrate all shortcodes/redirect rules
      * @return bool
      */
@@ -140,6 +149,7 @@ class MigrationEngine
     }
 
     /**
+>>>>>>> develop
      * Run migration actions for widget from post
      * @param  int    $postId
      * @return void

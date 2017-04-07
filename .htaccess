@@ -6,6 +6,9 @@ RewriteEngine On
 RewriteBase /wp/
 RewriteRule ^index\.php$ - [L]
 
+#Fixing network admin urls
+RewriteRule ^wp-admin/network/(.*)$ wp/wp-admin/network/$1 [L]
+
 # add a trailing slash to /wp-admin
 RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
 

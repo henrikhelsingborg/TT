@@ -1,5 +1,5 @@
 {
-    "name": "helsingborgse",
+    "name": "helsingborg-stad/helsingborg.se",
     "license": "GPL",
     "authors": [
         {
@@ -24,10 +24,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/helsingborg-stad/Municipio.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/xcap-import.git"
         },
         {
             "type": "vcs",
