@@ -94,6 +94,10 @@
             "url": "https://github.com/helsingborg-stad/acf-export-manager.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/active-directory-api-wp-integration.git"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "humanmade/page-for-post-type",
@@ -132,13 +136,15 @@
         "helsingborg-stad/modularity-guides": ">=1.0.0",
         "helsingborg-stad/modularity-dictionary": ">=1.0.0",
         "helsingborg-stad/Customer-feedback": ">=1.0.0",
+        "helsingborg-stad/active-directory-api-wp-integration": ">=1.0.0",
         "wpackagist-plugin/wp-editor-widget": "^0.5.5",
         "wpackagist-plugin/varnish-http-purge": "^3.7.2",
         "wpackagist-plugin/stream": "^3.0.4",
         "wpackagist-plugin/wp-nested-pages": "^1.5.4",
         "wpackagist-plugin/mce-table-buttons": "^3.0.0",
         "wpackagist-plugin/user-switching" : ">=1.0.0",
-        "wpackagist-plugin/autodescription" : ">=2.9.0"
+        "wpackagist-plugin/autodescription" : ">=2.9.0",
+
     },
 
     "extra": {
