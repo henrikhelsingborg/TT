@@ -58,18 +58,18 @@ class UpdatePostTypes
     public function updatePosts()
     {
         foreach ($this->post_types as $key => $post) {
-            // Update descendants post types
+
+            // Update all descendants post types
             $descendants = $this->getPostChildren($post['parent'], 'any', 'page');
             foreach ($descendants as $key => $descendant) {
                 set_post_type($descendant->ID, $post['name']);
             }
 
-            // Update post parent and post type
+            // Remove post parent from parents
             wp_update_post(
                 array(
                     'ID' => $post['parent'],
                     'post_parent' => 0,
-                    'post_type' => $post['name'],
                 )
             );
         }
@@ -216,6 +216,15 @@ class UpdatePostTypes
                         )
                     );
                     wp_set_post_terms($child->ID, array("Okategoriserat"), 'kategorier');
+                } else {
+                   // Remove first level childrens parents
+                    wp_update_post(
+                        array(
+                            'ID' => $child->ID,
+                            'post_parent' => 0,
+                        )
+                    );
+
                 }
             }
         }
