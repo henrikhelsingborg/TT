@@ -102,6 +102,14 @@
             "url": "https://github.com/helsingborg-stad/easy-to-read-alternative.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/multisite-role-propagation.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/modularity-form-builder.git"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "humanmade/page-for-post-type",
@@ -142,6 +150,8 @@
         "helsingborg-stad/Customer-feedback": ">=1.0.0",
         "helsingborg-stad/active-directory-api-wp-integration": ">=1.0.0",
         "helsingborg-stad/easy-to-read-alternative": ">=1.0.0",
+        "helsingborg-stad/multisite-role-propagation": ">=1.0.0",
+        "helsingborg-stad/modularity-form-builder": ">=1.0.0",
         "wpackagist-plugin/wp-editor-widget": "^0.5.5",
         "wpackagist-plugin/varnish-http-purge": "^3.7.2",
         "wpackagist-plugin/stream": "^3.0.4",
