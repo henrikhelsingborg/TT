@@ -19,16 +19,8 @@ class UpdatePostTypes
         }
     }
 
-    public function startSession()
-    {
-        if (!session_id()) {
-            session_start();
-        }
-    }
-
     public function stepOne()
     {
-        $this->startSession();
         $this->savePostTypes();
         $this->addTaxonomy();
         $this->updatePosts();
@@ -131,7 +123,7 @@ class UpdatePostTypes
             $new_post_types[] = array('name' => $name, 'parent' => $child->ID, 'title' => $child->post_title);
         }
 
-        $_SESSION['post_types'] = $new_post_types;
+        add_option('new_post_types_temp', $new_post_types, '', 'yes' );
         $this->post_types = $new_post_types;
 
         return true;
@@ -154,14 +146,14 @@ class UpdatePostTypes
         return $children;
     }
 
-    // Step 2
+    // Step 2. Save taxonomies and News
 
     public function stepTwo()
     {
-        $this->startSession();
-        $this->post_types = $_SESSION['post_types'];
+        $this->post_types = get_option('new_post_types_temp');
         $this->saveTaxonomies();
         $this->saveNews();
+        delete_option('new_post_types_temp');
         $this->end();
     }
 
@@ -169,7 +161,7 @@ class UpdatePostTypes
     {
         foreach ($this->post_types as $post_type) {
             if ($post_type['title'] != "Nyheter") {
-                wp_insert_term($post_type['title'], 'kategorier');
+                $term = wp_insert_term($post_type['title'], 'kategorier');
             }
         }
 
