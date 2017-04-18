@@ -24,3 +24,9 @@ define('WEB_FONT', 'Roboto');
  * @var string
  */
  define('AD_INTEGRATION_URL', 'https://intranat.helsingborg.se/ad-api/');
+
+/**
+ * Integration with ad (domain used for ad-accounts)
+ * @var string
+ */
+ define('AD_USER_DOMAIN', 'helsingborg.se');
