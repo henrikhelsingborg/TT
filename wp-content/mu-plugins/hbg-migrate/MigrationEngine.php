@@ -47,6 +47,8 @@ class MigrationEngine
      */
     public function start(int $offset = 0, int $perPage = 100)
     {
+        $this->movePosts();
+
         $posts = get_posts(array(
             'posts_per_page' => $perPage,
             'offset' => $offset,
@@ -62,12 +64,6 @@ class MigrationEngine
         echo "<strong>START</strong><br>";
 
         foreach ($posts as $post) {
-<<<<<<< HEAD
-            //$this->migrateWidgetsForPost($post->ID);
-            $this->migrateShortcodesForPost($post);
-        }
-
-=======
             $this->migrateWidgetsForPost($post->ID);
             $this->migrateShortcodesForPost($post);
             $this->migrateTemplateForPost($post);
@@ -75,13 +71,38 @@ class MigrationEngine
 
         $this->migrateRedirectRules();
 
->>>>>>> develop
         echo "<strong>END</strong>";
     }
 
+    public function movePosts()
+    {
+        global $wpdb, $wpdbFrom;
+
+        $blogId = get_current_blog_id();
+        $tables = array(
+            'wp_posts' => $wpdb->posts,
+            'wp_postmeta' => $wpdb->postmeta
+        );
+
+        if ($blogId > 1) {
+            $tables = array(
+                'wp_' . $blogId . '_posts' => $wpdb->posts,
+                'wp_' . $blogId . '_postmeta' => $wpdb->postmeta
+            );
+        }
+
+        foreach ($tables as $from => $to) {
+            $data = $wpdbFrom->get_results("SELECT * FROM $from", ARRAY_A);
+
+            foreach ($data as $row) {
+                $wpdb->insert($to, $row);
+            }
+        }
+
+        return true;
+    }
+
     /**
-<<<<<<< HEAD
-=======
      * Migrate all shortcodes/redirect rules
      * @return bool
      */
@@ -149,7 +170,6 @@ class MigrationEngine
     }
 
     /**
->>>>>>> develop
      * Run migration actions for widget from post
      * @param  int    $postId
      * @return void
