@@ -54,7 +54,7 @@ request_url="${site_url}?change-post-types=step-2"
 curl $request_url -sS > /dev/null
 
 # Https
-case ${run_search_replace:0:1} in
+case $run_search_replace in
     y|Y )
         echo "\033[39m\033 - Replaceing http://${request_url} with https://${request_url}…\033"
         wp search-replace 'http://${request_url}' 'https://${request_url}' --skip-columns=guid --network
@@ -62,7 +62,7 @@ case ${run_search_replace:0:1} in
 esac
 
 # Small image detector
-case ${run_small_img_detector:0:1} in
+case $run_small_img_detector in
     y|Y )
         echo "\033[39m\033 - Detecting small images…\033"
         request_url="${site_url}?small-image-detector=true"
@@ -70,7 +70,7 @@ case ${run_small_img_detector:0:1} in
     ;;
 esac
 
-case ${run_network_op:0:1} in
+case $run_network_op in
     y|Y )
         # Iframe/embed http to https
         echo "\033[39m\033 - SSL on iframes, scripts and links…\033[0m"
