@@ -74,7 +74,7 @@ case $run_network_op in
     y|Y )
         # Iframe/embed http to https
         echo "\033[39m\033 - SSL on iframes, scripts and links…\033[0m"
-        wp search-replace '(<(?:iframe|script|link)[^>]*(?:src|href)=[\\ \s\"]*?)(http)(:.*?>)' '${1}${2}s${3}' wp_*post* --include-columns=meta_value,post_content --regex --regex-flags='i' --network --allow-root
+        wp search-replace '(<(?:iframe|script|link)[^>]*(?:src|href)=[\\ \s\"]*?)(http)(:.*?>)' '${1}${2}s${3}' hbg_*post* --include-columns=meta_value,post_content --regex --regex-flags='i' --network --allow-root
 
         # Google Analytics
         echo "\033[39m\033 - Setting Google Analytics id…\033[0m"
@@ -99,9 +99,7 @@ echo "\033[95m\033   3. Click the \"Analyze\" button and check the results.\033[
 echo "\033[95m\033   4. Click the \"Convert\" button to run the migration.\033[0m"
 echo
 
-read -n 1 -s -p "  Press any key when done"
-echo
-echo
+read -p "Press enter continue" enter_to_continue
 echo
 
 echo "\033[32m\033   SEO migration marked as completed.\033[0m "
