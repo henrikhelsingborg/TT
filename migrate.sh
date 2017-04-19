@@ -1,9 +1,5 @@
 #!/bin/bash
 
-service apache2 restart
-service varnish restart
-service memcached restart
-
 clear
 
 echo
@@ -17,6 +13,11 @@ echo "\033[35m\033[1mI will be your guide on this exciting journey. Please follo
 echo
 echo "\033[35m\033[1m##########\033[0m"
 echo
+
+echo "Clearing caches…"
+service apache2 restart
+service varnish restart
+service memcached restart
 
 echo "\033[34m\033[1mEnter the url for the new Helsingborg.se site to continue:\033[0m "
 read site_url

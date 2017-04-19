@@ -17,6 +17,8 @@ add_action('init', function () {
 
     // Create sites
     if (isset($_GET['create-sites']) && $_GET['create-sites'] === 'true') {
+        set_time_limit(9999999);
+
         global $wpdbFrom;
         $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
         $placeholders = array();
@@ -63,6 +65,8 @@ add_action('init', function () {
 
     // Migration process
     if (isset($_GET['migrate']) && $_GET['migrate'] === 'yes-please') {
+        set_time_limit(9999999);
+
         global $wpdbFrom;
         $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
 
@@ -78,6 +82,8 @@ add_action('init', function () {
 
     // Check data strucutre for widget of type
     if (isset($_GET['view_widget_structure'])) {
+        set_time_limit(9999999);
+
         global $wpdbFrom;
         $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
 
@@ -89,6 +95,8 @@ add_action('init', function () {
 
     // Check data strucutre for widget of type
     if (isset($_GET['view_widget_types'])) {
+        set_time_limit(9999999);
+
         global $wpdbFrom;
         $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
 
@@ -99,6 +107,8 @@ add_action('init', function () {
     }
 
     if (isset($_GET['migrate-colors']) && $_GET['migrate-colors'] == 'true') {
+        set_time_limit(9999999);
+
         // helsingborg_color_theme
         // helsingborg_color_code
         add_action('init', function () {
