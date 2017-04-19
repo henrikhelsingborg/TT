@@ -10,7 +10,7 @@ class SaveAnalyticsKey
 
     public function __construct()
     {
-        if (isset($_GET['save-analytics']) && $_GET['save-analytics'] === 'true') {
+        if (isset($_GET['save-analytics']) && $_GET['save-analytics'] == 'true') {
             add_action('init', array($this, 'saveKey'), 20);
         }
     }

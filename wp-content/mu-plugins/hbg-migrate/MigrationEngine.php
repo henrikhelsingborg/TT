@@ -76,6 +76,10 @@ class MigrationEngine
 
     public function movePosts()
     {
+        if (get_option('hbgmigrate_moved_posts', false)) {
+            return;
+        }
+
         global $wpdb, $wpdbFrom;
 
         $blogId = get_current_blog_id();
@@ -92,12 +96,14 @@ class MigrationEngine
         }
 
         foreach ($tables as $from => $to) {
-            $data = $wpdbFrom->get_results("SELECT * FROM $from", ARRAY_A);
+            $data = $wpdbFrom->get_results("SELECT * FROM $from ORDER BY ID DESC", ARRAY_A);
 
             foreach ($data as $row) {
                 $wpdb->insert($to, $row);
             }
         }
+
+        update_option('hbgmigrate_moved_posts', true);
 
         return true;
     }
