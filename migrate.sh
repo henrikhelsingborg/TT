@@ -1,5 +1,8 @@
 #!/bin/bash
 
+service apache2 restart
+service varnish restart
+service memcached restart
 
 clear
 
@@ -99,7 +102,7 @@ echo "\033[95m\033   3. Click the \"Analyze\" button and check the results.\033[
 echo "\033[95m\033   4. Click the \"Convert\" button to run the migration.\033[0m"
 echo
 
-read -p "Press enter continue" enter_to_continue
+read -p "Press enter to continue" enter_to_continue
 echo
 
 echo "\033[32m\033   SEO migration marked as completed.\033[0m "
