@@ -82,6 +82,9 @@ class MigrationEngine
 
         global $wpdb, $wpdbFrom;
 
+        $wpdb->query("TRUNCATE {$wpdb->posts}");
+        $wpdb->query("TRUNCATE {$wpdb->postmeta}");
+
         $blogId = get_current_blog_id();
         $tables = array(
             'wp_posts' => $wpdb->posts,
