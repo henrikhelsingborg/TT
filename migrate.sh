@@ -40,7 +40,7 @@ request_url+="?migrate-colors=true"
 curl $request_url -sS > /dev/null
 
 # Widgets, shortcodes and templates
-echo "\033[39m\033 - Migrating widgets, shortcodes and templates…\033"
+echo "\033[39m\033 - Migrating posts, shortcodes, templates and converting widgets to modules…\033"
 
 request_url=$site_url
 request_url+="?migrate=yes-please"
