@@ -35,22 +35,22 @@ echo "\033[31m\033[1mThe migration is running, do not abort! You will get a succ
 # Color scheme
 echo "\033[39m\033 - Migrating color scheme…\033"
 
-request_url="${$site_url}?migrate-colors=true"
+request_url="${site_url}?migrate-colors=true"
 curl $request_url -sS > /dev/null
 
 # Widgets, shortcodes and templates
 echo "\033[39m\033 - Migrating posts, shortcodes, templates and converting widgets to modules…\033"
 
-request_url="${$site_url}?migrate=yes-please"
+request_url="${site_url}?migrate=yes-please"
 curl $request_url -sS > /dev/null
 
 # Post types
 echo "\033[39m\033 - Updating post types…\033"
 
-request_url="${$site_url}?change-post-types=step-1"
+request_url="${site_url}?change-post-types=step-1"
 curl $request_url -sS > /dev/null
 
-request_url="${$site_url}?change-post-types=step-2"
+request_url="${site_url}?change-post-types=step-2"
 curl $request_url -sS > /dev/null
 
 # Https
@@ -65,7 +65,7 @@ esac
 case ${run_small_img_detector:0:1} in
     y|Y )
         echo "\033[39m\033 - Detecting small images…\033"
-        request_url="${$site_url}?small-image-detector=true"
+        request_url="${site_url}?small-image-detector=true"
         curl $request_url -sS > /dev/null
     ;;
 esac
@@ -78,7 +78,7 @@ case ${run_network_op:0:1} in
 
         # Google Analytics
         echo "\033[39m\033 - Setting Google Analytics id…\033[0m"
-        request_url="${$site_url}?save-analytics=true"
+        request_url="${site_url}?save-analytics=true"
         curl $request_url -sS > /dev/null
     ;;
 esac
