@@ -15,6 +15,52 @@
 
 add_action('init', function () {
 
+    // Create sites
+    if (isset($_GET['create-sites']) && $_GET['create-sites'] === 'true') {
+        global $wpdbFrom;
+        $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
+        $placeholders = array();
+
+        // Get sites in old db
+        $sites = $wpdbFrom->get_results("SELECT * FROM wp_blogs");
+
+        $i = 0;
+        foreach ($sites as $site) {
+            $i++;
+            $site->blog_id = (int)$site->blog_id;
+
+            // Skip main site
+            if ($site->blog_id == 1) {
+                continue;
+            }
+
+            // If not correct blog_id create a false placeholder blog to get correct blog_id
+            while ($i < $site->blog_id) {
+                $placeholder = wpmu_create_blog('helsingborg.se', uniqid(), 'Placeholder blog', 1);
+                $placeholders[] = $placeholder;
+                echo '<span style="color:#ff0000">Created placeholder: ' . $placeholder . ')</span><br>';
+                $i++;
+            }
+
+            // Get blogname
+            $blogname = $wpdbFrom->get_var("SELECT option_value FROM wp_" . $site->blog_id . "_options WHERE option_name = 'blogname'");
+
+            // Create blog
+            wpmu_create_blog(str_replace('/', '', $site->path) . '.helsingborg.se', '/', $blogname, 1);
+            echo 'Created blog: ' . $blogname . ' (' . str_replace('/', '', $site->path) . ')<br>';
+        }
+
+        // Remove placeholder blogs
+        foreach ($placeholders as $placeholder) {
+            wpmu_delete_blog($placeholder, true);
+            echo '<span style="color:#ff0000">Removed placeholder: ' . $placeholder . ')</span><br>';
+        }
+
+        echo '<strong>DONE</strong>';
+
+        exit;
+    }
+
     // Migration process
     if (isset($_GET['migrate']) && $_GET['migrate'] === 'yes-please') {
         global $wpdbFrom;
