@@ -17,7 +17,7 @@ class SaveAnalyticsKey
 
     public function saveKey()
     {
-        $sites = get_sites();
+        $sites = \get_sites();
         $updated = array();
 
         if (is_array($sites) && !empty($sites)) {
