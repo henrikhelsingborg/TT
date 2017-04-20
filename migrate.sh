@@ -36,6 +36,12 @@ clear
 echo
 echo "\033[31m\033[1mThe migration is running, do not abort! You will get a success message when migration is completed.\033[0m"
 
+# Logos
+echo "\033[39m\033 - Migrating logotypes…\033"
+
+request_url="${site_url}?migrate-logotype=true"
+curl $request_url -sS > /dev/null
+
 # Color scheme
 echo "\033[39m\033 - Migrating color scheme…\033"
 

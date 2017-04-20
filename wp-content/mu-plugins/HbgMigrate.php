@@ -121,6 +121,66 @@ add_action('init', function () {
 
             // Set primary theme color
             update_field('field_' . sha1('school-colorscheme-' . $theme), $code, 'option');
+
+            exit;
         });
     }
+
+    // Migrate logotype
+    if (isset($_GET['migrate-logotype']) && $_GET['migrate-logotype'] == 'true') {
+        set_time_limit(9999999);
+
+        global $wpdbFrom, $wpdb;
+        $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
+
+        $table = 'wp_options';
+        if (get_current_blog_id() > 1) {
+            $table = 'wp_' . get_current_blog_id() . '_options';
+        }
+
+        $logotypeUrl = $wpdbFrom->get_var("SELECT option_value FROM $table WHERE option_name = 'helsingborg_header_image_imageurl'");
+
+        if ($logotypeUrl && substr($logotypeUrl, -4, 4) === '.svg') {
+            // Save logotype
+            $svg = file_get_contents($logotypeUrl);
+            $uploaded = hbg_migrate_upload_image(basename($logotypeUrl), $svg);
+
+            update_field('logotype', $uploaded, 'option');
+            update_field('logotype_negative', $uploaded, 'option');
+
+            echo "Logos migrated";
+            exit;
+        }
+
+        echo "No logos to migrate.";
+        exit;
+    }
 });
+
+function hbg_migrate_upload_image($filename, $data) {
+    $uploadDir = wp_upload_dir();
+
+    // Save file to server
+    $save = fopen($uploadDir['path'] . $filename, 'w');
+    fwrite($save, $data);
+    fclose($save);
+
+    // Detect filetype
+    $filetype = wp_check_filetype($filename, null);
+
+    // Insert the file to media library
+    $attachmentId = wp_insert_attachment(array(
+        'guid' => $uploadDir['path'] . $filename,
+        'post_mime_type' => $filetype['type'],
+        'post_title' => $filename,
+        'post_content' => '',
+        'post_status' => 'inherit'
+    ), $uploadDir['path'] . $filename);
+
+    // Generate attachment meta
+    require_once(ABSPATH . 'wp-admin/includes/image.php');
+    $attachData = wp_generate_attachment_metadata($attachmentId, $uploadDir['path'] . $filename);
+    wp_update_attachment_metadata($attachmentId, $attachData);
+
+    return $attachmentId;
+}
