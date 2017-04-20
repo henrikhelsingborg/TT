@@ -106,6 +106,7 @@ add_action('init', function () {
         exit;
     }
 
+    // Migrate color schemes
     if (isset($_GET['migrate-colors']) && $_GET['migrate-colors'] == 'true') {
         set_time_limit(9999999);
 
