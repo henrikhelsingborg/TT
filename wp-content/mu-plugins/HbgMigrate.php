@@ -163,6 +163,142 @@ add_action('init', function () {
         update_field('nav_primary_type', 'wp', 'option');
         update_filed('nav_primary_align', 'justify', 'option');
     }
+
+    # Modularity settings
+    if (isset($_GET['migrate-modularity-options']) && $_GET['migrate-modularity-options'] == 'true') {
+        $modularityOptions = array(
+            'show-modules-in-menu' => 'on',
+            'enabled-post-types' => array(
+                'post',
+                'page',
+            ),
+            'enabled-areas' => array(
+                'index' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'front-page' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'single' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'single-listing' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'archive' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'archive-listing' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'page' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'author' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'search' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'full-width.blade.php' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+            ),
+            'enabled-modules' => array(
+                'mod-contacts',
+                'mod-fileslist',
+                'mod-gallery',
+                'mod-iframe',
+                'mod-image',
+                'mod-index',
+                'mod-inlaylist',
+                'mod-notice',
+                'mod-inheritpost',
+                'mod-posts',
+                'mod-script',
+                'mod-slider',
+                'mod-social',
+                'mod-table',
+                'mod-text',
+                'mod-video',
+                'mod-wpwidget',
+            ),
+        );
+
+        update_option('modularity-options', $modularityOptions);
+        echo "Updated Modularity options";
+        exit;
+    }
 });
 
 function hbg_migrate_upload_image($filename, $data) {

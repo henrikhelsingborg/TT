@@ -54,6 +54,12 @@ echo "\033[39m\033 - Configurating the theme options…\033"
 request_url="${site_url}?migrate-theme-options=true"
 curl $request_url -sS > /dev/null
 
+# Modularity options
+echo "\033[39m\033 - Configurating Modularity options…\033"
+
+request_url="${site_url}?migrate-modularity-options=true"
+curl $request_url -sS > /dev/null
+
 # Widgets, shortcodes and templates
 echo "\033[39m\033 - Migrating posts, shortcodes, templates and converting widgets to modules…\033"
 
