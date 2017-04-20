@@ -48,6 +48,12 @@ echo "\033[39m\033 - Migrating color scheme…\033"
 request_url="${site_url}?migrate-colors=true"
 curl $request_url -sS > /dev/null
 
+# Theme options
+echo "\033[39m\033 - Configurating the theme options…\033"
+
+request_url="${site_url}?migrate-theme-options=true"
+curl $request_url -sS > /dev/null
+
 # Widgets, shortcodes and templates
 echo "\033[39m\033 - Migrating posts, shortcodes, templates and converting widgets to modules…\033"
 

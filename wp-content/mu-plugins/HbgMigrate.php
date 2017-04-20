@@ -155,6 +155,14 @@ add_action('init', function () {
         echo "No logos to migrate.";
         exit;
     }
+
+    # Theme options
+    if (isset($_GET['migrate-theme-options']) && $_GET['migrate-theme-options'] == 'true') {
+        // Navigation
+        update_field('nav_primary_enable', true, 'option');
+        update_field('nav_primary_type', 'wp', 'option');
+        update_filed('nav_primary_align', 'justify', 'option');
+    }
 });
 
 function hbg_migrate_upload_image($filename, $data) {
