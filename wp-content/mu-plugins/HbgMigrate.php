@@ -156,7 +156,7 @@ add_action('init', function () {
         exit;
     }
 
-    # Theme options
+    // Theme options
     if (isset($_GET['migrate-theme-options']) && $_GET['migrate-theme-options'] == 'true') {
         // Navigation
         update_field('nav_primary_enable', true, 'option');
@@ -164,7 +164,21 @@ add_action('init', function () {
         update_filed('nav_primary_align', 'justify', 'option');
     }
 
-    # Modularity settings
+    // Event settings
+    if (isset($_GET['migrate-event-integration']) && $_GET['migrate-event-integration'] == 'true') {
+        update_field('event_api_url', 'https://api.helsingborg.se/event/json/wp/v2', 'option');
+        update_field('days_ahead', 60, 'option');
+        update_field('event_daily_import', true, 'option');
+        update_field('event_post_status', 'publish', 'option');
+        update_field('event_geographic_distance', 30, 'option');
+        update_field('event_import_geographic', array(
+            'address' => 'Helsingborg',
+            'lat' => '56.0464674',
+            'lng' => '12.694512099999997'
+        ), 'option');
+    }
+
+    // Modularity settings
     if (isset($_GET['migrate-modularity-options']) && $_GET['migrate-modularity-options'] == 'true') {
         $modularityOptions = array(
             'show-modules-in-menu' => 'on',
