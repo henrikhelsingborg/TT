@@ -6,7 +6,7 @@ namespace SaveAnalyticsKey;
 
 class SaveAnalyticsKey
 {
-    public $key = "UA-XXXXX-Y";
+    public $key = "UA-16678811-1";
 
     public function __construct()
     {

@@ -36,10 +36,34 @@ clear
 echo
 echo "\033[31m\033[1mThe migration is running, do not abort! You will get a success message when migration is completed.\033[0m"
 
+# Logos
+echo "\033[39m\033 - Migrating logotypes…\033"
+
+request_url="${site_url}?migrate-logotype=true"
+curl $request_url -sS > /dev/null
+
 # Color scheme
 echo "\033[39m\033 - Migrating color scheme…\033"
 
 request_url="${site_url}?migrate-colors=true"
+curl $request_url -sS > /dev/null
+
+# Theme options
+echo "\033[39m\033 - Configurating the theme options…\033"
+
+request_url="${site_url}?migrate-theme-options=true"
+curl $request_url -sS > /dev/null
+
+# Modularity options
+echo "\033[39m\033 - Configurating Modularity options…\033"
+
+request_url="${site_url}?migrate-modularity-options=true"
+curl $request_url -sS > /dev/null
+
+# Modularity options
+echo "\033[39m\033 - Configurating Event API integration…\033"
+
+request_url="${site_url}?migrate-event-integration=true"
 curl $request_url -sS > /dev/null
 
 # Widgets, shortcodes and templates
@@ -97,7 +121,7 @@ echo "\033[39m\033   x. Installation done, plugin activated.\033[0m"
 echo
 echo "\033[95m\033   MANUAL ACTIONS REQUIRED: You need to manually run the SEO Data Transporter process now.\033[0m"
 echo
-echo "\033[95m\033   1. Go to ${request_url}/wp-admin/tools.php?page=seodt\033[0m"
+echo "\033[95m\033   1. Go to ${site_url}/wp/wp-admin/tools.php?page=seodt\033[0m"
 echo "\033[95m\033   2. Select from \"All in One SEO Pack\" to \"Genesis\".\033[0m"
 echo "\033[95m\033   3. Click the \"Analyze\" button and check the results.\033[0m"
 echo "\033[95m\033   4. Click the \"Convert\" button to run the migration.\033[0m"

@@ -108,7 +108,7 @@ class UpdatePostTypes
             $parent_pages[] = array(
                 'post_type_name' => $child->post_title,
                 'slug' => $child->post_name,
-                'with_front' => true,
+                'with_front' => false,
                 'menu_position' => 20,
                 'public' => true,
                 'exclude_from_search' => false,

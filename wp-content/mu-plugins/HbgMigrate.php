@@ -106,6 +106,7 @@ add_action('init', function () {
         exit;
     }
 
+    // Migrate color schemes
     if (isset($_GET['migrate-colors']) && $_GET['migrate-colors'] == 'true') {
         set_time_limit(9999999);
 
@@ -120,6 +121,224 @@ add_action('init', function () {
 
             // Set primary theme color
             update_field('field_' . sha1('school-colorscheme-' . $theme), $code, 'option');
+
+            exit;
         });
     }
+
+    // Migrate logotype
+    if (isset($_GET['migrate-logotype']) && $_GET['migrate-logotype'] == 'true') {
+        set_time_limit(9999999);
+
+        global $wpdbFrom, $wpdb;
+        $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
+
+        $table = 'wp_options';
+        if (get_current_blog_id() > 1) {
+            $table = 'wp_' . get_current_blog_id() . '_options';
+        }
+
+        $logotypeUrl = $wpdbFrom->get_var("SELECT option_value FROM $table WHERE option_name = 'helsingborg_header_image_imageurl'");
+
+        if ($logotypeUrl && substr($logotypeUrl, -4, 4) === '.svg') {
+            // Save logotype
+            $svg = file_get_contents($logotypeUrl);
+            $uploaded = hbg_migrate_upload_image(basename($logotypeUrl), $svg);
+
+            update_field('logotype', $uploaded, 'option');
+            update_field('logotype_negative', $uploaded, 'option');
+
+            echo "Logos migrated";
+            exit;
+        }
+
+        echo "No logos to migrate.";
+        exit;
+    }
+
+    // Theme options
+    if (isset($_GET['migrate-theme-options']) && $_GET['migrate-theme-options'] == 'true') {
+        // Navigation
+        update_field('nav_primary_enable', true, 'option');
+        update_field('nav_primary_type', 'wp', 'option');
+        update_filed('nav_primary_align', 'justify', 'option');
+    }
+
+    // Event settings
+    if (isset($_GET['migrate-event-integration']) && $_GET['migrate-event-integration'] == 'true') {
+        update_field('event_api_url', 'https://api.helsingborg.se/event/json/wp/v2', 'option');
+        update_field('days_ahead', 60, 'option');
+        update_field('event_daily_import', true, 'option');
+        update_field('event_post_status', 'publish', 'option');
+        update_field('event_geographic_distance', 30, 'option');
+        update_field('event_import_geographic', array(
+            'address' => 'Helsingborg',
+            'lat' => '56.0464674',
+            'lng' => '12.694512099999997'
+        ), 'option');
+    }
+
+    // Modularity settings
+    if (isset($_GET['migrate-modularity-options']) && $_GET['migrate-modularity-options'] == 'true') {
+        $modularityOptions = array(
+            'show-modules-in-menu' => 'on',
+            'enabled-post-types' => array(
+                'post',
+                'page',
+            ),
+            'enabled-areas' => array(
+                'index' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'front-page' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'single' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'single-listing' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'archive' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'archive-listing' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'page' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'author' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'search' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+                'full-width.blade.php' => array(
+                    'slider-area',
+                    'right-sidebar',
+                    'content-area',
+                    'content-area-top',
+                    'content-area-bottom',
+                    'footer-area',
+                    'left-sidebar',
+                    'left-sidebar-bottom',
+                ),
+            ),
+            'enabled-modules' => array(
+                'mod-contacts',
+                'mod-fileslist',
+                'mod-gallery',
+                'mod-iframe',
+                'mod-image',
+                'mod-index',
+                'mod-inlaylist',
+                'mod-notice',
+                'mod-inheritpost',
+                'mod-posts',
+                'mod-script',
+                'mod-slider',
+                'mod-social',
+                'mod-table',
+                'mod-text',
+                'mod-video',
+                'mod-wpwidget',
+            ),
+        );
+
+        update_option('modularity-options', $modularityOptions);
+        echo "Updated Modularity options";
+        exit;
+    }
 });
+
+function hbg_migrate_upload_image($filename, $data) {
+    $uploadDir = wp_upload_dir();
+
+    // Save file to server
+    $save = fopen($uploadDir['path'] . $filename, 'w');
+    fwrite($save, $data);
+    fclose($save);
+
+    // Detect filetype
+    $filetype = wp_check_filetype($filename, null);
+
+    // Insert the file to media library
+    $attachmentId = wp_insert_attachment(array(
+        'guid' => $uploadDir['path'] . $filename,
+        'post_mime_type' => $filetype['type'],
+        'post_title' => $filename,
+        'post_content' => '',
+        'post_status' => 'inherit'
+    ), $uploadDir['path'] . $filename);
+
+    // Generate attachment meta
+    require_once(ABSPATH . 'wp-admin/includes/image.php');
+    $attachData = wp_generate_attachment_metadata($attachmentId, $uploadDir['path'] . $filename);
+    wp_update_attachment_metadata($attachmentId, $attachData);
+
+    return $attachmentId;
+}
