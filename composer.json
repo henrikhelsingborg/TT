@@ -110,16 +110,8 @@
             "url": "https://github.com/helsingborg-stad/modularity-form-builder.git"
         },
         {
-            "type": "package",
-            "package": {
-                "name": "humanmade/page-for-post-type",
-                "version": "1.0.1",
-                "dist": {
-                    "url": "https://github.com/humanmade/page-for-post-type/archive/4104277b2140a5b5badb6796979c6e2373c25048.zip",
-                    "type": "zip"
-                },
-                "type": "wordpress-plugin"
-            }
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/wp-page-for-posttype.git"
         },
         {
             "type":"composer",
@@ -130,7 +122,6 @@
     "require": {
         "composer/installers": "~1.0",
         "johnpbloch/wordpress": "^4.7",
-        "humanmade/page-for-post-type": "^1.0.0",
         "helsingborg-stad/modularity": ">=1.0.0",
         "helsingborg-stad/municipio": ">=1.0.0",
         "helsingborg-stad/lix-calculator": ">=1.0.1",
@@ -152,6 +143,7 @@
         "helsingborg-stad/easy-to-read-alternative": ">=1.0.0",
         "helsingborg-stad/multisite-role-propagation": ">=1.0.0",
         "helsingborg-stad/modularity-form-builder": ">=1.0.0",
+        "helsingborg-stad/wp-page-for-post-type": ">=1.0.0",
         "wpackagist-plugin/wp-editor-widget": "^0.5.5",
         "wpackagist-plugin/varnish-http-purge": "^3.7.2",
         "wpackagist-plugin/stream": "^3.0.4",
