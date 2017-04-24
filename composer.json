@@ -114,6 +114,10 @@
             "url": "https://github.com/helsingborg-stad/wp-page-for-posttype.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/api-alarm-integration.git"
+        },
+        {
             "type":"composer",
             "url":"https://wpackagist.org"
         }
@@ -144,6 +148,7 @@
         "helsingborg-stad/multisite-role-propagation": ">=1.0.0",
         "helsingborg-stad/modularity-form-builder": ">=1.0.0",
         "helsingborg-stad/wp-page-for-post-type": ">=1.0.0",
+        "helsingborg-stad/api-alarm-integration": ">=1.0.0",
         "wpackagist-plugin/wp-editor-widget": "^0.5.5",
         "wpackagist-plugin/varnish-http-purge": "^3.7.2",
         "wpackagist-plugin/stream": "^3.0.4",
