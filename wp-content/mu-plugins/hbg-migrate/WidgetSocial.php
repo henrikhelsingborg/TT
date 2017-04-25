@@ -40,7 +40,8 @@ class WidgetSocial extends \HbgMigrate\Widget
             case 'instagram':
                 $data['acf'] = array(
                     'field_56dedc3548ed9' => 'instagram', // feed_type
-                    'field_56deddb348edc' => $widgetData['username'], // Instagram username
+                    'field_56deddcd48edd' => 'user',
+                    'field_56dede6048ee0' => $widgetData['username'], // Instagram username
                     'field_56e038fa40a78' => $widgetData['col_count'] // Image columns
                 );
                 break;
