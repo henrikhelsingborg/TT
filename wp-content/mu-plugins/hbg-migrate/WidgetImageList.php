@@ -15,15 +15,20 @@ class WidgetImageList extends \HbgMigrate\Widget
 
         $images = array();
 
+        global $wpdbFrom, $wpdb;
+        $table = "wp_posts";
+        if (get_current_blog_id() > 1) {
+            $table = "wp_" . get_current_blog_id() . "_posts";
+        }
+
         for ($i = 1; $i <= $widgetData['amount']; $i++) {
-            // Upload image
-            $imageId = $this->saveImageFromUrl($widgetData['imageurl' . $i], $postId);
+            $imageId = $wpdbFrom->get_var("SELECT ID FROM $table WHERE guid = '" . $widgetData['imageurl' . $i] . "'");
 
             // Initial slide data
             $images[$i] = array(
                 'acf_fc_layout' => 'image',
-                'field_56a5ed2f398dc' => $imageId, // image
-                'field_570f4e9b10c26' => $imageId // mobile_image
+                'field_56a5ed2f398dc' => intval($imageId), // image
+                'field_570f4e9b10c26' => intval($imageId) // mobile_image
             );
 
             // Text
