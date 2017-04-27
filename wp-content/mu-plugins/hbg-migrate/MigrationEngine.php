@@ -83,6 +83,9 @@ class MigrationEngine
         //  return;
         global $wpdb, $wpdbFrom;
 
+        //Delete options
+        delete_option('widget_text');
+        delete_option('sidebars_widgets');
 
         //Move the actual widget
         $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $wpdbFrom->options WHERE option_name = 'widget_text' LIMIT 1");
@@ -118,7 +121,7 @@ class MigrationEngine
 
         //Create a copy
         foreach ($tables as $from => $to) {
-            $wpdb->query("CREATE TABLE {$to} AS SELECT * FROM $from");
+            $wpdb->query("CREATE TABLE {$wpdb->dbname}.{$to} AS SELECT * FROM {$wpdbFrom->dbname}.{$from}");
         }
 
         //Mark as done.
