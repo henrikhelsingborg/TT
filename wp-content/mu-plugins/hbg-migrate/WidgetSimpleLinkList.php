@@ -24,7 +24,7 @@ class WidgetSimpleLinkList extends \HbgMigrate\Widget
         }
 
         $data = array(
-            'post_title' => '',
+            'post_title' => isset($widgetData['title']) ? $widgetData['title'] : '',
             'post_content' => '',
             'acf' => array(
                 'field_571dfd4c0d9d9' => 'list', // posts_display_as

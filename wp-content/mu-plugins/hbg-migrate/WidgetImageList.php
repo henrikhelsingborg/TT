@@ -48,7 +48,7 @@ class WidgetImageList extends \HbgMigrate\Widget
         }
 
         $data = array(
-            'post_title' => $widgetData['title'],
+            'post_title' => isset($widgetData['title']) ? $widgetData['title'] : '',
             'post_content' => '',
             'acf' => array(
                 'field_573dce058a66t' => 'default', // slider_layout
