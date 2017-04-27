@@ -47,18 +47,25 @@ class MigrationEngine
      */
     public function start(int $offset = 0, int $perPage = 100)
     {
-        $this->moveUsers();
+        if (!isset($_GET['post_id']) || !is_numeric($_GET['post_id'])) {
+            $this->moveUsers();
+            $this->movePosts();
+            $this->moveWidgets();
+        }
 
-        $this->movePosts();
-
-        $this->moveWidgets();
-
-        $posts = get_posts(array(
-            'posts_per_page' => $perPage,
-            'offset' => $offset,
-            'post_type' => 'page',
-            'post_status' => 'publish'
-        ));
+        $posts = array();
+        if (isset($_GET['post_id']) && is_numeric($_GET['post_id'])) {
+            $posts = array(
+                get_post($_GET['post_id'])
+            );
+        } else {
+            $posts = get_posts(array(
+                'posts_per_page' => $perPage,
+                'offset' => $offset,
+                'post_type' => 'page',
+                'post_status' => 'publish'
+            ));
+        }
 
         if (empty($posts)) {
             echo "NO POSTS";
