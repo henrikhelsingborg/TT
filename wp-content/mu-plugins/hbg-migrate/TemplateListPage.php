@@ -5,6 +5,7 @@ namespace HbgMigrate;
 class TemplateListPage extends \HbgMigrate\Template
 {
     public $template = 'list-page.php';
+    public $templateTo = 'default';
     public $moduleType = 'mod-posts';
 
     public function migrate(string $template, \WP_Post $post)
@@ -159,6 +160,7 @@ class TemplateListPage extends \HbgMigrate\Template
             foreach ($columns as $key => $column) {
                 $meta = get_post_meta($page->ID, '_helsingborg_meta', true);
 
+                $data = null;
                 if (is_array($meta)) {
                     $data = isset($meta['article_options_' . $key]) && !empty($meta['article_options_' . $key]) ? $meta['article_options_' . $key] : '-';
                 }
