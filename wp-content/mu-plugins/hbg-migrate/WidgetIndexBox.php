@@ -16,7 +16,7 @@ class WidgetIndexBox extends \HbgMigrate\Widget
     {
         $indexes = array();
 
-        for ($i = 1; $i < $widgetData['amount']; $i++) {
+        for ($i = 1; $i <= $widgetData['amount']; $i++) {
             $indexes[$i] = array(
                 'field_5743f66719b62' => 'internal', // link_type
                 'field_569cf1252cfc9' => (int)$widgetData['item_id' . $i]
