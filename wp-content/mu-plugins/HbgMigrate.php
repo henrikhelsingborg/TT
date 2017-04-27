@@ -102,7 +102,16 @@ add_action('init', function () {
 
         require __DIR__ . '/hbg-migrate/MigrationEngine.php';
         $engine = new \HbgMigrate\MigrationEngine(false);
-        wp_send_json($engine->getWidgetTypes());
+
+        $types = array();
+
+        if (isset($_GET['post_id']) && is_numeric($_GET['post_id'])) {
+            $types = $engine->getWidgetTypes($_GET['post_id']);
+        } else {
+            $types = $engine->getWidgetTypes();
+        }
+
+        wp_send_json($types);
         exit;
     }
 

@@ -420,17 +420,23 @@ class MigrationEngine
      * Gets all types of widgets from the database
      * @return array
      */
-    public function getWidgetTypes() : array
+    public function getWidgetTypes($postId = null) : array
     {
+        $pattern = '^widget_([0-9]+)_(.*)';
+        if (is_numeric($postId)) {
+            $pattern = '^widget_' . $postId . '_(.*)';
+        }
+
         $data = $this->fromDb->get_results($this->fromDb->prepare(
             "SELECT * FROM " . self::getTable('options') . " WHERE (option_name REGEXP %s)",
-            '^widget_([0-9]+)_(.*)'
+            $pattern
         ));
 
         $types = array();
 
         foreach ($data as $item) {
             preg_match_all('/^widget_([0-9]+)_(.*)/i', $item->option_name, $matches);
+
             if (!isset($matches[2][0])) {
                 continue;
             }
