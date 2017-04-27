@@ -132,7 +132,7 @@ class MigrationEngine
         }
 
         //Update meta keys to new prefix
-        $wpdb->query("UPDATE {$wpdb->dbname}.{$wpdb->users} SET meta_key = REPLACE('meta_key', 'wp_', 'hbg_')");
+        $wpdb->query("UPDATE {$wpdb->dbname}.{$wpdb->users} SET meta_key = REPLACE(meta_key, 'wp_', 'hbg_')");
 
         //Mark as done.
         update_option('hbgmigrate_moved_users', true);
