@@ -47,6 +47,8 @@ class MigrationEngine
      */
     public function start(int $offset = 0, int $perPage = 100)
     {
+        $this->moveUsers();
+
         $this->movePosts();
 
         $posts = get_posts(array(
@@ -74,10 +76,35 @@ class MigrationEngine
         echo "<strong>END</strong>";
     }
 
+    public function moveUsers()
+    {
+        //     return;
+        global $wpdb, $wpdbFrom;
+
+        //Remove tables
+        $wpdb->query("DROP TABLE IF EXISTS {$wpdb->users}");
+        $wpdb->query("DROP TABLE IF EXISTS  {$wpdb->usermeta}");
+
+        //Define tables
+        $tables = array(
+            'wp_users' => $wpdb->users,
+            'wp_usermeta' => $wpdb->usermeta
+        );
+
+        //Create a copy
+        foreach ($tables as $from => $to) {
+            $wpdb->query("CREATE TABLE {$to} AS SELECT * FROM $from");
+        }
+
+        //Mark as done.
+        update_option('hbgmigrate_moved_users', true);
+
+        return true;
+    }
+
     public function movePosts()
     {
         //     return;
-        // }
 
         global $wpdb, $wpdbFrom;
 
@@ -223,7 +250,7 @@ class MigrationEngine
             $attributes = array();
 
             if (isset(explode(' ', $matches[1][$i], 2)[1])) {
-                $htmlAttributes = preg_split('/\s+(?=([^"]*"[^"]*")*[^"]*$)/i',explode(' ', $matches[1][$i], 2)[1]);
+                $htmlAttributes = preg_split('/\s+(?=([^"]*"[^"]*")*[^"]*$)/i', explode(' ', $matches[1][$i], 2)[1]);
 
                 foreach ($htmlAttributes as &$attribute) {
                     $attribute = explode('=', $attribute, 2);
