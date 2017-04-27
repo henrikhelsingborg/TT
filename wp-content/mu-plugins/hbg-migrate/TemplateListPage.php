@@ -82,6 +82,7 @@ class TemplateListPage extends \HbgMigrate\Template
 
         foreach ($postmeta as $key => $value) {
             update_post_meta($key, 'modularity-mod-posts-expandable-list', $value);
+            update_post_meta($key, 'hide_in_menu', true);
         }
 
         // Check if sidebar should be remapped
