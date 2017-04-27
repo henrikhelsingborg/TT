@@ -7,17 +7,21 @@
             continue;
         }
 
-        if (isset($_GET['mapping'])) {
-            echo ' 139.162.153.238 ';
-        }
+        if (isset($_GET['links'])) {
+            echo '<a href="'. $site->domain .'">' . $site->domain . '</a><br/>';
+        } else {
+            if (isset($_GET['mapping'])) {
+                echo ' 139.162.153.238 ';
+            }
 
-        if (isset($_GET['separator'])) {
-            echo ';';
-        }
+            if (isset($_GET['separator'])) {
+                echo ';';
+            }
 
-        echo trim($site->path, "/") . str_replace("www", "", $site->domain);
+            echo trim($site->path, "/") . str_replace("www", "", $site->domain);
 
-        if (!isset($_GET['separator'])) {
-            echo "\n";
+            if (!isset($_GET['separator'])) {
+                echo "\n";
+            }
         }
     }
