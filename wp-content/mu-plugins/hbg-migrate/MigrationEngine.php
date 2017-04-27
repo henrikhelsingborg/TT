@@ -83,7 +83,16 @@ class MigrationEngine
         //  return;
         global $wpdb, $wpdbFrom;
 
+
+        //Move the actual widget
         $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $wpdbFrom->options WHERE option_name = 'widget_text' LIMIT 1");
+
+        foreach ($data as $option) {
+            $wpdb->insert($wpdb->options, $option);
+        }
+
+        //Move the reference
+        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $wpdbFrom->options WHERE option_name = 'sidebars_widgets' LIMIT 1");
 
         foreach ($data as $option) {
             $wpdb->insert($wpdb->options, $option);
