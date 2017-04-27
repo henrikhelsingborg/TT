@@ -51,6 +51,8 @@ class MigrationEngine
 
         $this->movePosts();
 
+        $this->moveWidgets();
+
         $posts = get_posts(array(
             'posts_per_page' => $perPage,
             'offset' => $offset,
@@ -74,6 +76,20 @@ class MigrationEngine
         $this->migrateRedirectRules();
 
         echo "<strong>END</strong>";
+    }
+
+    public function moveWidgets()
+    {
+        //  return;
+        global $wpdb, $wpdbFrom;
+
+        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $wpdbFrom->options WHERE option_name = 'widget_text' LIMIT 1");
+
+        foreach ($data as $option) {
+            $wpdb->insert($wpdb->options, $option);
+        }
+
+        return true;
     }
 
     public function moveUsers()
