@@ -154,9 +154,8 @@ class MigrationEngine
 
         global $wpdb, $wpdbFrom;
 
-        //Remove tables
-        $wpdb->query("DROP TABLE IF EXISTS {$wpdb->posts}");
-        $wpdb->query("DROP TABLE IF EXISTS  {$wpdb->postmeta}");
+        $wpdb->query("TRUNCATE {$wpdb->posts}");
+        $wpdb->query("TRUNCATE {$wpdb->postmeta}");
 
         $blogId = get_current_blog_id();
         $tables = array(
@@ -171,12 +170,14 @@ class MigrationEngine
             );
         }
 
-        //Create a copy
         foreach ($tables as $from => $to) {
-            $wpdb->query("CREATE TABLE {$wpdb->dbname}.{$to} AS SELECT * FROM {$wpdbFrom->dbname}.{$from}");
+            $data = $wpdbFrom->get_results("SELECT * FROM $from", ARRAY_A);
+
+            foreach ($data as $row) {
+                $wpdb->insert($to, $row);
+            }
         }
 
-        //Mark as done
         update_option('hbgmigrate_moved_posts', true);
 
         return true;
