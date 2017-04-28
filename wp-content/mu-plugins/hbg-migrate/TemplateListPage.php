@@ -30,7 +30,7 @@ class TemplateListPage extends \HbgMigrate\Template
             'acf' => array(
                 'field_571dfd4c0d9d9' => 'expandable-list', // posts_display_as
                 'field_57e3bcae3826e' => $titleColumn, // title_column_label
-                'field_571f5776592e6' => array_values($columns),
+                'field_571f5776592e6' => is_array($columns) ? array_values($columns) : array(),
                 'field_571dfaafe6984' => 'manual', // posts_data_source
                 'field_571dfc6ff8115' => $this->getPagesIds($pages), // posts_data_posts
                 'field_571dff4eb46c3' => -1, // posts_count
@@ -52,6 +52,10 @@ class TemplateListPage extends \HbgMigrate\Template
 
     public function isFirstColumnTheTitle($columns, $pages)
     {
+        if (!isset(array_values($columns)[0])) {
+            return false;
+        }
+
         $firstColumn = array_values($columns)[0];
         $firstColumn = array_values($firstColumn)[0];
         $firstColumn = sanitize_title($firstColumn);
@@ -158,19 +162,21 @@ class TemplateListPage extends \HbgMigrate\Template
         foreach ($pages as &$page) {
             $page->list_columns = array();
 
-            foreach ($columns as $key => $column) {
-                $meta = get_post_meta($page->ID, '_helsingborg_meta', true);
+            if ($columns) {
+                foreach ($columns as $key => $column) {
+                    $meta = get_post_meta($page->ID, '_helsingborg_meta', true);
 
-                $data = null;
-                if (is_array($meta)) {
-                    $data = isset($meta['article_options_' . $key]) && !empty($meta['article_options_' . $key]) ? $meta['article_options_' . $key] : '-';
+                    $data = null;
+                    if (is_array($meta)) {
+                        $data = isset($meta['article_options_' . $key]) && !empty($meta['article_options_' . $key]) ? $meta['article_options_' . $key] : '-';
+                    }
+
+                    $page->list_columns[sanitize_title(end($column))] = $data;
                 }
-
-                $page->list_columns[sanitize_title(end($column))] = $data;
             }
         }
 
-        return $pages;
+        return is_array($pages) ? $pages : array();
     }
 
     /**
