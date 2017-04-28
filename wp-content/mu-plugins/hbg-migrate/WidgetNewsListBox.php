@@ -17,7 +17,17 @@ class WidgetNewsListBox extends \HbgMigrate\Widget
         $news = array();
 
         for ($i = 1; $i <= $widgetData['amount']; $i++) {
-            $news[] = (int)$widgetData['item_id' . $i];
+            // Skip non-published posts
+            if (get_post_status($widgetData['item_id' . $i]) !== 'publish') {
+                continue;
+            }
+
+            $news[] = (int) $widgetData['item_id' . $i];
+        }
+
+        // Bail if empty
+        if (empty($news)) {
+            return false;
         }
 
         $data = array(

@@ -17,10 +17,20 @@ class WidgetIndexBox extends \HbgMigrate\Widget
         $indexes = array();
 
         for ($i = 1; $i <= $widgetData['amount']; $i++) {
+            // Skip non-published posts
+            if (get_post_status($widgetData['item_id' . $i]) !== 'publish') {
+                continue;
+            }
+
             $indexes[$i] = array(
                 'field_5743f66719b62' => 'internal', // link_type
                 'field_569cf1252cfc9' => (int)$widgetData['item_id' . $i]
             );
+        }
+
+        // Bail if empty
+        if (empty($news)) {
+            return false;
         }
 
         $columns = 'grid-md-6';
