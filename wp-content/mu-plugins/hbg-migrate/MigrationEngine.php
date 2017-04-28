@@ -48,10 +48,18 @@ class MigrationEngine
     public function start(int $offset = 0, int $perPage = 100)
     {
         if (!isset($_GET['post_id']) || !is_numeric($_GET['post_id'])) {
+            delete_option('hbgmigrate_moved_users');
             $this->moveUsers();
+
+            delete_option('hbgmigrate_moved_posts');
             $this->movePosts();
+
             $this->moveWidgets();
         }
+
+        delete_option('hbgmigrate_migrated_widgets');
+        delete_option('hbgmigrate_migrated_templates');
+        delete_option('hbgmigrate_migrated_shortcode_posts');
 
         $posts = array();
         if (isset($_GET['post_id']) && is_numeric($_GET['post_id'])) {
