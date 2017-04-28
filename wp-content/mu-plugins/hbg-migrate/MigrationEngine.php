@@ -179,6 +179,14 @@ class MigrationEngine
             }
         }
 
+        // Custom menu title
+        $wpdb->query("
+            INSERT INTO $wpdb->postmeta (post_id, meta_key, meta_value)
+            SELECT post_id, 'custom_menu_title', meta_value
+                FROM $wpdb->postmeta
+                WHERE meta_key = '_aioseop_menulabel'
+        ");
+
         update_option('hbgmigrate_moved_posts', true);
 
         return true;
