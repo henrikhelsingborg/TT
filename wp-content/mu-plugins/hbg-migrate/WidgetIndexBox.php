@@ -29,7 +29,7 @@ class WidgetIndexBox extends \HbgMigrate\Widget
         }
 
         // Bail if empty
-        if (empty($news)) {
+        if (empty($indexes)) {
             return false;
         }
 
