@@ -136,7 +136,8 @@ class MigrationEngine
 
         //Create a copy
         foreach ($tables as $from => $to) {
-            $wpdb->query("CREATE TABLE {$wpdb->dbname}.{$to} AS SELECT * FROM {$wpdbFrom->dbname}.{$from}");
+            $wpdb->query("CREATE TABLE {$wpdb->dbname}.{$to} LIKE {$wpdbFrom->dbname}.{$from}");
+            $wpdb->query("INSERT {$wpdb->dbname}.{$to} SELECT * FROM {$wpdbFrom->dbname}.{$from}");
         }
 
         //Update meta keys to new prefix
