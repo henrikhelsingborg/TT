@@ -18,6 +18,7 @@ echo "Clearing caches…"
 service apache2 restart
 service varnish restart
 service memcached restart
+service redis-server restart
 
 echo "\033[34m\033[1mEnter the url for the new Helsingborg.se site to continue:\033[0m "
 read site_url
