@@ -6,6 +6,9 @@ RewriteEngine On
 RewriteBase /wp/
 RewriteRule ^index\.php$ - [L]
 
+# Remove /startsida/
+RewriteRule ^startsida/(.+)$ http://%{HTTP_HOST}/$1 [R=301,L]
+
 #Fixing network admin urls
 RewriteRule ^wp-admin/network/(.*)$ wp/wp-admin/network/$1 [L]
 
