@@ -112,6 +112,10 @@ case $run_network_op in
     ;;
 esac
 
+echo "Clearing caches again…"
+service memcached restart
+service redis-server restart
+
 # SEO data
 echo "\033[39m\033 - Migrating All in one SEO data to The SEO Framework…\033[0m"
 
