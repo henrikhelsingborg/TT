@@ -32,6 +32,7 @@ abstract class Widget
 
         // Bail if already migrated
         if ($isMigrated) {
+            echo '<span style="color:#ff0000;">ALDREADY MIGRATED, ' . $widgetId . '</span><br>';
             return false;
         }
 
@@ -49,6 +50,11 @@ abstract class Widget
 
         // Save the module
         $moduleId = wp_insert_post($data);
+
+        if (!$moduleId) {
+            echo '<span style="color:#ff0000;">MODULE NOT SAVED, SHIT HAPPENS</span><br>';
+            return false;
+        }
 
         if (!$description) {
             $description = 'Migrated';
@@ -81,7 +87,7 @@ abstract class Widget
         }
 
         // Add widget to list of completed migrations
-        $migrated[] = $widgetId;
+        $migrated[] = $postId . '-' . $widgetId;
         update_option('hbgmigrate_migrated_widgets', $migrated);
 
         echo 'Migrated widget <strong>"' . $widgetId . '"</strong> of type <strong>"' . $this->widgetType . '"</strong> for post with id <strong>"' . $postId . '"</strong><br>';
