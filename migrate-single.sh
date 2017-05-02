@@ -43,6 +43,7 @@ echo "Clearing caches…"
 service apache2 restart
 service varnish restart
 service memcached restart
+service redis-server restart
 
 if [ -z "$site_url" ]; then
     echo "\033[34m\033[1mEnter the url for the new Helsingborg.se site to continue:\033[0m "
@@ -143,6 +144,10 @@ case $run_network_op in
         curl $request_url -sS > /dev/null
     ;;
 esac
+
+echo "Clearing caches again…"
+service memcached restart
+service redis-server restart
 
 # SEO data
 case $run_seo_migration in
