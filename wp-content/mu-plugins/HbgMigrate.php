@@ -15,6 +15,10 @@
 
 add_action('init', function () {
 
+    if (function_exists('kses_remove_filters')) {
+        kses_remove_filters();
+    }
+
     // Create sites
     if (isset($_GET['create-sites']) && $_GET['create-sites'] === 'true') {
         set_time_limit(9999999);
