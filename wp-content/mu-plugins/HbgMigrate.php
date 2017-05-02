@@ -168,10 +168,10 @@ add_action('init', function () {
     // Theme options
     if (isset($_GET['migrate-theme-options']) && $_GET['migrate-theme-options'] == 'true') {
         if (is_multisite()) {
-            \WP_Theme::network_enable_theme('municipio');
+            \WP_Theme::network_enable_theme('helsingborg');
         }
 
-        switch_theme('municipio');
+        switch_theme('helsingborg');
 
         // Navigation
         update_field('nav_primary_enable', true, 'option');
