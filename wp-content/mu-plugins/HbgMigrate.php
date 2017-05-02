@@ -167,6 +167,12 @@ add_action('init', function () {
 
     // Theme options
     if (isset($_GET['migrate-theme-options']) && $_GET['migrate-theme-options'] == 'true') {
+        if (is_multisite()) {
+            \WP_Theme::network_enable_theme('municipio');
+        }
+
+        switch_theme('municipio');
+
         // Navigation
         update_field('nav_primary_enable', true, 'option');
         update_field('nav_primary_type', 'wp', 'option');
@@ -186,6 +192,18 @@ add_action('init', function () {
         update_field('404_home_link_text', 'Gå till startsidan', 'option');
         update_field('404_back_button_text', 'Tillbaka till föregående sida', 'option');
         update_field('404_search_link_text', 'Sök efter "%s"', 'option');
+    }
+
+    // School options
+    if (isset($_GET['migrate-school-options']) && $_GET['migrate-school-options'] == 'true') {
+        if (is_multisite()) {
+            \WP_Theme::network_enable_theme('municipio-school');
+        }
+
+        switch_theme('municipio-school');
+
+        update_field('header_layout', 'jumbo', 'option');
+        update_field('header_logotype', 'negative', 'option');
     }
 
     // Event settings
