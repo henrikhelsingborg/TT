@@ -128,7 +128,7 @@ curl $request_url -sS > /dev/null
 
 # Post types
 case $is_school in
-    y|Y )
+    n|N )
         echo "\033[39m\033 - Updating post types…\033"
 
         request_url="${site_url}?change-post-types=step-1"
