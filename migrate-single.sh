@@ -25,19 +25,21 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-clear
+if [ "$use_params" != "y" ]; then
+    clear
 
-echo
-echo "\033[35m\033[1m##########\033[0m"
-echo
-echo "\033[35m\033[1mHi there!\033[0m"
-echo
-echo "\033[35m\033[1mSo, it's time to migrate old Helsingborg.se to new Helsingborg.se?\033[0m"
-echo
-echo "\033[35m\033[1mI will be your guide on this exciting journey. Please follow the steps and the migration will hopefully be a smooth process.\033[0m"
-echo
-echo "\033[35m\033[1m##########\033[0m"
-echo
+    echo
+    echo "\033[35m\033[1m##########\033[0m"
+    echo
+    echo "\033[35m\033[1mHi there!\033[0m"
+    echo
+    echo "\033[35m\033[1mSo, it's time to migrate old Helsingborg.se to new Helsingborg.se?\033[0m"
+    echo
+    echo "\033[35m\033[1mI will be your guide on this exciting journey. Please follow the steps and the migration will hopefully be a smooth process.\033[0m"
+    echo
+    echo "\033[35m\033[1m##########\033[0m"
+    echo
+fi
 
 echo "Clearing caches…"
 
@@ -71,7 +73,9 @@ if [ "$use_params" != "y" ] && [ -z "$run_network_op" ]; then
     read -p "Do you want to run network-wide operations (setting Google Analytics id and search/replace https to http for embeds) (y/n)? " run_network_op
 fi
 
+if [ "$use_params" != "y" ]; then
 clear
+fi
 
 echo
 echo "\033[31m\033[1mThe migration is running, do not abort! You will get a success message when migration is completed.\033[0m"
