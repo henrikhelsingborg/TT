@@ -1,5 +1,29 @@
 #!/bin/bash
 
+run_seo_migration="y"
+use_params="n"
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --site_url=*)
+            use_params="y"
+            site_url="${1#*=}"
+        ;;
+
+        --img_detector) run_small_img_detector="y" ;;
+        --search_replace) run_search_replace="y" ;;
+        --network_op) run_network_op="y" ;;
+        --no-seo) run_seo_migration="n" ;;
+
+        *)
+        printf "*******************************\n"
+        printf "*   Error: Invalid argument   *\n"
+        printf "*******************************\n"
+        exit 1
+        esac
+    shift
+done
+
 clear
 
 echo
@@ -15,21 +39,30 @@ echo "\033[35m\033[1m##########\033[0m"
 echo
 
 echo "Clearing caches…"
+
 service apache2 restart
 service varnish restart
 service memcached restart
 
-echo "\033[34m\033[1mEnter the url for the new Helsingborg.se site to continue:\033[0m "
-read site_url
+if [ -z "$site_url" ]; then
+    echo "\033[34m\033[1mEnter the url for the new Helsingborg.se site to continue:\033[0m "
+    read site_url
+fi
 
-echo
-read -p "Do you want to run the small image detector (y/n)? " run_small_img_detector
+if [ "$use_params" != "y" ] && [ -z "$run_small_img_detector" ]; then
+    echo
+    read -p "Do you want to run the small image detector (y/n)? " run_small_img_detector
+fi
 
-echo
-read -p "Do you want search-replace all HTTP:// to HTTPS:// (y/n)? " run_search_replace
+if [ "$use_params" != "y" ] && [ -z "$run_search_replace" ]; then
+    echo
+    read -p "Do you want search-replace all HTTP:// to HTTPS:// (y/n)? " run_search_replace
+fi
 
-echo
-read -p "Do you want to run network-wide operations (setting Google Analytics id and search/replace https to http for embeds) (y/n)? " run_network_op
+if [ "$use_params" != "y" ] && [ -z "$run_network_op" ]; then
+    echo
+    read -p "Do you want to run network-wide operations (setting Google Analytics id and search/replace https to http for embeds) (y/n)? " run_network_op
+fi
 
 clear
 
@@ -112,30 +145,34 @@ case $run_network_op in
 esac
 
 # SEO data
-echo "\033[39m\033 - Migrating All in one SEO data to The SEO Framework…\033[0m"
+case $run_seo_migration in
+    y|Y)
+        echo "\033[39m\033 - Migrating All in one SEO data to The SEO Framework…\033[0m"
 
-echo "\033[39m\033   x. Installing SEO Data Transporter plugin…\033[0m"
-wp plugin install seo-data-transporter --activate-network --quiet --allow-root
-echo "\033[39m\033   x. Installation done, plugin activated.\033[0m"
+        echo "\033[39m\033   x. Installing SEO Data Transporter plugin…\033[0m"
+        wp plugin install seo-data-transporter --activate-network --quiet --allow-root
+        echo "\033[39m\033   x. Installation done, plugin activated.\033[0m"
 
-echo
-echo "\033[95m\033   MANUAL ACTIONS REQUIRED: You need to manually run the SEO Data Transporter process now.\033[0m"
-echo
-echo "\033[95m\033   1. Go to ${site_url}/wp/wp-admin/tools.php?page=seodt\033[0m"
-echo "\033[95m\033   2. Select from \"All in One SEO Pack\" to \"Genesis\".\033[0m"
-echo "\033[95m\033   3. Click the \"Analyze\" button and check the results.\033[0m"
-echo "\033[95m\033   4. Click the \"Convert\" button to run the migration.\033[0m"
-echo
+        echo
+        echo "\033[95m\033   MANUAL ACTIONS REQUIRED: You need to manually run the SEO Data Transporter process now.\033[0m"
+        echo
+        echo "\033[95m\033   1. Go to ${site_url}/wp/wp-admin/tools.php?page=seodt\033[0m"
+        echo "\033[95m\033   2. Select from \"All in One SEO Pack\" to \"Genesis\".\033[0m"
+        echo "\033[95m\033   3. Click the \"Analyze\" button and check the results.\033[0m"
+        echo "\033[95m\033   4. Click the \"Convert\" button to run the migration.\033[0m"
+        echo
 
-read -p "Press enter to continue" enter_to_continue
-echo
+        read -p "Press enter to continue" enter_to_continue
+        echo
 
-echo "\033[32m\033   SEO migration marked as completed.\033[0m "
-echo
+        echo "\033[32m\033   SEO migration marked as completed.\033[0m "
+        echo
 
-echo -e "\r\033[39m\033   x. Uninstalling SEO Data Transporter plugin…\033"
-wp plugin deactivate seo-data-transporter --network --uninstall --quiet --allow-root
+        echo -e "\r\033[39m\033   x. Uninstalling SEO Data Transporter plugin…\033"
+        wp plugin deactivate seo-data-transporter --network --uninstall --quiet --allow-root
+    ;;
+esac
 
 # Done
 echo
-echo "\033[32m\033[1mAll done! Woho!\033[0m "
+echo "\033[32m\033[1m$site_url migrated\033[0m "
