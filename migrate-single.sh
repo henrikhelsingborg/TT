@@ -14,6 +14,7 @@ while [ $# -gt 0 ]; do
         --search_replace) run_search_replace="y" ;;
         --network_op) run_network_op="y" ;;
         --no-seo) run_seo_migration="n" ;;
+        --school) is_school="y" ;;
 
         *)
         printf "*******************************\n"
@@ -24,19 +25,21 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-clear
+if [ "$use_params" != "y" ]; then
+    clear
 
-echo
-echo "\033[35m\033[1m##########\033[0m"
-echo
-echo "\033[35m\033[1mHi there!\033[0m"
-echo
-echo "\033[35m\033[1mSo, it's time to migrate old Helsingborg.se to new Helsingborg.se?\033[0m"
-echo
-echo "\033[35m\033[1mI will be your guide on this exciting journey. Please follow the steps and the migration will hopefully be a smooth process.\033[0m"
-echo
-echo "\033[35m\033[1m##########\033[0m"
-echo
+    echo
+    echo "\033[35m\033[1m##########\033[0m"
+    echo
+    echo "\033[35m\033[1mHi there!\033[0m"
+    echo
+    echo "\033[35m\033[1mSo, it's time to migrate old Helsingborg.se to new Helsingborg.se?\033[0m"
+    echo
+    echo "\033[35m\033[1mI will be your guide on this exciting journey. Please follow the steps and the migration will hopefully be a smooth process.\033[0m"
+    echo
+    echo "\033[35m\033[1m##########\033[0m"
+    echo
+fi
 
 echo "Clearing caches…"
 
@@ -48,6 +51,11 @@ service redis-server restart
 if [ -z "$site_url" ]; then
     echo "\033[34m\033[1mEnter the url for the new Helsingborg.se site to continue:\033[0m "
     read site_url
+fi
+
+if [ "$use_params" != "y" ] && [ -z "$is_school" ]; then
+    echo
+    read -p "Is this a school site (y/n)? " is_school
 fi
 
 if [ "$use_params" != "y" ] && [ -z "$run_small_img_detector" ]; then
@@ -65,7 +73,9 @@ if [ "$use_params" != "y" ] && [ -z "$run_network_op" ]; then
     read -p "Do you want to run network-wide operations (setting Google Analytics id and search/replace https to http for embeds) (y/n)? " run_network_op
 fi
 
+if [ "$use_params" != "y" ]; then
 clear
+fi
 
 echo
 echo "\033[31m\033[1mThe migration is running, do not abort! You will get a success message when migration is completed.\033[0m"
@@ -88,6 +98,16 @@ echo "\033[39m\033 - Configurating the theme options…\033"
 request_url="${site_url}?migrate-theme-options=true"
 curl $request_url -sS > /dev/null
 
+# School options
+case $is_school in
+    y|Y )
+        echo "\033[39m\033 - Configurating school theme options…\033"
+
+        request_url="${site_url}?migrate-school-options=true"
+        curl $request_url -sS > /dev/null
+    ;;
+esac
+
 # Modularity options
 echo "\033[39m\033 - Configurating Modularity options…\033"
 
@@ -107,13 +127,17 @@ request_url="${site_url}?migrate=yes-please"
 curl $request_url -sS > /dev/null
 
 # Post types
-echo "\033[39m\033 - Updating post types…\033"
+case $is_school in
+    n|N )
+        echo "\033[39m\033 - Updating post types…\033"
 
-request_url="${site_url}?change-post-types=step-1"
-curl $request_url -sS > /dev/null
+        request_url="${site_url}?change-post-types=step-1"
+        curl $request_url -sS > /dev/null
 
-request_url="${site_url}?change-post-types=step-2"
-curl $request_url -sS > /dev/null
+        request_url="${site_url}?change-post-types=step-2"
+        curl $request_url -sS > /dev/null
+    ;;
+esac
 
 # Https
 case $run_search_replace in
