@@ -177,6 +177,18 @@ add_action('init', function () {
 
         switch_theme('helsingborg');
 
+        global $wpdbFrom;
+        $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
+
+        // Front page
+        $table = "wp_options";
+        if (get_current_blog_id() > 1) {
+            $table = "wp_" . get_current_blog_id() . "_options";
+        }
+
+        $oldFront = $wpdbFrom->get_var("SELECT option_value FROM $table WHERE option_name = 'page_on_front'");
+        update_option('page_on_front', $oldFront);
+
         // Navigation
         update_field('nav_primary_enable', true, 'option');
         update_field('nav_primary_type', 'wp', 'option');
