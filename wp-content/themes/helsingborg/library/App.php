@@ -6,7 +6,7 @@ class App
     public function __construct()
     {
         new \Helsingborg\Theme\AdminMenu();
-
+        new \Helsingborg\Theme\Enqueue();
         add_filter('single_template', array($this, 'updateTemplate'), 20);
     }
 
