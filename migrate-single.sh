@@ -136,7 +136,6 @@ if [ "$is_school" != "y"]; then
 
         request_url="${site_url}?change-post-types=step-2"
         curl $request_url -sS > /dev/null
-    ;;
 fi
 
 # Https
