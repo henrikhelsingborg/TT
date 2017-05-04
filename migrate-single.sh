@@ -40,14 +40,15 @@ if [ "$use_params" != "y" ]; then
     echo
     echo "\033[35m\033[1m##########\033[0m"
     echo
+
+    echo "Clearing caches…"
+    echo
+
+    service apache2 restart
+    service varnish restart
+    service memcached restart
+    service redis-server restart
 fi
-
-echo "Clearing caches…"
-
-service apache2 restart
-service varnish restart
-service memcached restart
-service redis-server restart
 
 if [ -z "$site_url" ]; then
     echo "\033[34m\033[1mEnter the url for the new Helsingborg.se site to continue:\033[0m "

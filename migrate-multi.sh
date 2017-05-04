@@ -32,5 +32,12 @@ mysql $db_name -u $db_user -p$db_password -e "SELECT domain, path FROM hbg_blogs
     iterate_num=$((iterate_num+1))
 done
 
+echo "Clearing caches…"
+
+service apache2 restart
+service varnish restart
+service memcached restart
+service redis-server restart
+
 echo
 echo "\033[32m\033[1mMultisite migration done! Woho!\033[0m "
