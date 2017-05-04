@@ -8,6 +8,7 @@ while [ $# -gt 0 ]; do
         --site_url=*)
             use_params="y"
             site_url="${1#*=}"
+            is_school="n"
         ;;
 
         --img_detector) run_small_img_detector="y" ;;
@@ -128,7 +129,7 @@ request_url="${site_url}?migrate=yes-please"
 curl $request_url -sS > /dev/null
 
 # Post types
-if [ "$is_school" != "y"]; then
+if [ "$is_school" != "y" ]; then
         echo "\033[39m\033 - Updating post types…\033"
 
         request_url="${site_url}?change-post-types=step-1"
