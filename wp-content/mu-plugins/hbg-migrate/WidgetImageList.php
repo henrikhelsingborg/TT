@@ -37,11 +37,6 @@ class WidgetImageList extends \HbgMigrate\Widget
                 'field_570f4e9b10c26' => (int)$imageId // mobile_image
             );
 
-            if (!wp_get_attachment_image_src($imageId)) {
-                var_dump($sql);
-                exit;
-            }
-
             // Text
             if (!empty($widgetData['item_text' . $i])) {
                 $images[$i]['field_56ab224ac2c28'] = 1;
