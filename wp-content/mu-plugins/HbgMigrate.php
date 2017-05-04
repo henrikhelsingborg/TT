@@ -198,7 +198,7 @@ add_action('init', function () {
         // Navigation
         update_field('nav_primary_enable', true, 'option');
         update_field('nav_primary_type', 'wp', 'option');
-        update_filed('nav_primary_align', 'justify', 'option');
+        update_field('nav_primary_align', 'justify', 'option');
 
         update_field('cookie_consent_message', 'På helsingborg.se använder vi cookies (kakor) för att webbplatsen ska fungera på ett bra sätt för dig. Genom att klicka vidare godkänner du att vi använder cookies.', 'option');
         update_field('cookie_consent_button', 'Jag godkänner', 'option');
