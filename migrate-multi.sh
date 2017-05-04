@@ -18,7 +18,7 @@ iterate_num=0
 current_num=0
 
 mysql $db_name -u $db_user -p$db_password -e "SELECT domain, path FROM hbg_blogs" | while read domain path; do
-    if (( $iterate_num > 0 )); then
+    if [ "$domain" != "domain" ]; then
         current_num=$((current_num+1))
         echo "Migrating ($current_num/$total_result) http://$domain$path"
 

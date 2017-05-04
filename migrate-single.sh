@@ -2,6 +2,7 @@
 
 run_seo_migration="y"
 use_params="n"
+is_school="n"
 
 while [ $# -gt 0 ]; do
     case "$1" in
