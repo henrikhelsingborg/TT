@@ -55,6 +55,8 @@ class MigrationEngine
             $this->movePosts();
 
             $this->moveWidgets();
+
+            $this->moveTerms();
         }
 
         delete_option('hbgmigrate_migrated_widgets');
@@ -185,6 +187,42 @@ class MigrationEngine
         ");
 
         update_option('hbgmigrate_moved_posts', true);
+
+        return true;
+    }
+
+
+    public function moveTerms()
+    {
+        //     return;
+
+        global $wpdb, $wpdbFrom;
+
+        $wpdb->query("DROP TABLE IF EXISTS {$wpdb->terms}");
+        $wpdb->query("DROP TABLE IF EXISTS  {$wpdb->term_taxonomy}");
+        $wpdb->query("DROP TABLE IF EXISTS  {$wpdb->term_relationships}");
+
+        $blogId = get_current_blog_id();
+        $tables = array(
+            'wp_terms' => $wpdb->terms,
+            'wp_term_taxonomy' => $wpdb->term_taxonomy,
+            'wp_term_relationships' => $wpdb->term_relationships
+        );
+
+        if ($blogId > 1) {
+            $tables = array(
+                'wp_' . $blogId . '_terms' => $wpdb->terms,
+                'wp_' . $blogId . '_term_taxonomy' => $wpdb->term_taxonomy,
+                'wp_' . $blogId . '_term_relationships' => $wpdb->term_relationships
+            );
+        }
+
+        foreach ($tables as $from => $to) {
+            $wpdb->query("CREATE TABLE {$wpdb->dbname}.{$to} LIKE {$wpdbFrom->dbname}.{$from}");
+            $wpdb->query("INSERT {$wpdb->dbname}.{$to} SELECT * FROM {$wpdbFrom->dbname}.{$from}");
+        }
+
+        update_option('hbgmigrate_moved_terms', true);
 
         return true;
     }
