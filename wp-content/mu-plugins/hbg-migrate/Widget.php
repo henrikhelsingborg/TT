@@ -28,7 +28,7 @@ abstract class Widget
     public function save(array $data, int $postId, string $widgetId, string $sidebar, $description = null)
     {
         $migrated = get_option('hbgmigrate_migrated_widgets', array());
-        $isMigrated = in_array($widgetId, $migrated);
+        $isMigrated = in_array($postId . '-' . $widgetId, $migrated);
 
         // Bail if already migrated
         if ($isMigrated) {
