@@ -126,8 +126,16 @@ add_action('init', function () {
         // helsingborg_color_theme
         // helsingborg_color_code
         add_action('init', function () {
-            $theme = get_option('helsingborg_color_theme');
-            $code = get_option('helsingborg_color_code');
+            global $wpdbFrom, $wpdb;
+            $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
+
+            $table = 'wp_options';
+            if (get_current_blog_id() > 1) {
+                $table = 'wp_' . get_current_blog_id() . '_options';
+            }
+
+            $theme = $wpdbFrom->get_var("SELECT option_value FROM $table WHERE option_name = 'helsingborg_color_theme'");
+            $code = $wpdbFrom->get_var("SELECT option_value FROM $table WHERE option_name = 'helsingborg_color_code'");
 
             // Set color theme
             update_field('field_56a0a7e36365b', $theme, 'option');
