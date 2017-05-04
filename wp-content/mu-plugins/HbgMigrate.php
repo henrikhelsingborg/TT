@@ -178,10 +178,20 @@ add_action('init', function () {
     // Theme options
     if (isset($_GET['migrate-theme-options']) && $_GET['migrate-theme-options'] == 'true') {
         if (is_multisite()) {
-            \WP_Theme::network_enable_theme('helsingborg');
+
+            if (get_current_blog_id() > 1) {
+                \WP_Theme::network_enable_theme('municipio-school');
+            } else {
+                \WP_Theme::network_enable_theme('helsingborg');
+            }
+
         }
 
-        switch_theme('helsingborg');
+        if (get_current_blog_id() > 1) {
+            switch_theme('municipio-school');
+        } else {
+            switch_theme('helsingborg');
+        }
 
         global $wpdbFrom;
         $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
@@ -198,7 +208,7 @@ add_action('init', function () {
         // Navigation
         update_field('nav_primary_enable', true, 'option');
         update_field('nav_primary_type', 'wp', 'option');
-        update_filed('nav_primary_align', 'justify', 'option');
+        update_field('nav_primary_align', 'justify', 'option');
 
         update_field('cookie_consent_message', 'På helsingborg.se använder vi cookies (kakor) för att webbplatsen ska fungera på ett bra sätt för dig. Genom att klicka vidare godkänner du att vi använder cookies.', 'option');
         update_field('cookie_consent_button', 'Jag godkänner', 'option');
