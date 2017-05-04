@@ -178,10 +178,20 @@ add_action('init', function () {
     // Theme options
     if (isset($_GET['migrate-theme-options']) && $_GET['migrate-theme-options'] == 'true') {
         if (is_multisite()) {
-            \WP_Theme::network_enable_theme('helsingborg');
+
+            if (get_current_blog_id() > 1) {
+                \WP_Theme::network_enable_theme('municipio-school');
+            } else {
+                \WP_Theme::network_enable_theme('helsingborg');
+            }
+
         }
 
-        switch_theme('helsingborg');
+        if (get_current_blog_id() > 1) {
+            switch_theme('municipio-school');
+        } else {
+            switch_theme('helsingborg');
+        }
 
         global $wpdbFrom;
         $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
