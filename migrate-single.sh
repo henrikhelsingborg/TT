@@ -2,7 +2,6 @@
 
 run_seo_migration="y"
 use_params="n"
-is_school="n"
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -129,8 +128,7 @@ request_url="${site_url}?migrate=yes-please"
 curl $request_url -sS > /dev/null
 
 # Post types
-case $is_school in
-    n|N )
+if [ "$is_school" != "y"]; then
         echo "\033[39m\033 - Updating post types…\033"
 
         request_url="${site_url}?change-post-types=step-1"
@@ -139,7 +137,7 @@ case $is_school in
         request_url="${site_url}?change-post-types=step-2"
         curl $request_url -sS > /dev/null
     ;;
-esac
+fi
 
 # Https
 case $run_search_replace in
