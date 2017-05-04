@@ -38,6 +38,16 @@ class WidgetSocial extends \HbgMigrate\Widget
                 break;
 
             case 'instagram':
+                $isToken = explode('.', $widgetData['username']);
+                $isToken = count($isToken) === 3;
+
+                if ($isToken) {
+                    $usernameRequest = wp_remote_get('https://api.instagram.com/v1/users/self/media/recent/?access_token=' . $widgetData['username']);
+                    $response = json_decode(wp_remote_retrieve_body($usernameRequest));
+
+                    $widgetData['username'] = $response->data[0]->user->username;
+                }
+
                 $data['acf'] = array(
                     'field_56dedc3548ed9' => 'instagram', // feed_type
                     'field_56deddcd48edd' => 'user',
