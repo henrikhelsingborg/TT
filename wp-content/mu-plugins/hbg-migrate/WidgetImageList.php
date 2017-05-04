@@ -22,14 +22,25 @@ class WidgetImageList extends \HbgMigrate\Widget
         }
 
         for ($i = 1; $i <= $widgetData['amount']; $i++) {
-            $imageId = $wpdbFrom->get_var("SELECT ID FROM $table WHERE guid = '" . $widgetData['imageurl' . $i] . "'");
+            $guidSearch = explode('/wp-content/', $widgetData['imageurl' . $i]);
+            $guidSearch = preg_replace('/\\.[^.\\s]{3,4}$/', '', $guidSearch);
+            $guidSearch = $guidSearch[1];
+            $guidSearch = preg_replace('/-e([0-9]{13})/i', '', $guidSearch);
+
+            $sql = "SELECT ID FROM $table WHERE guid LIKE '%" . $guidSearch . "%'";
+            $imageId = $wpdbFrom->get_var($sql);
 
             // Initial slide data
             $images[$i] = array(
                 'acf_fc_layout' => 'image',
-                'field_56a5ed2f398dc' => intval($imageId), // image
-                'field_570f4e9b10c26' => intval($imageId) // mobile_image
+                'field_56a5ed2f398dc' => (int)$imageId, // image
+                'field_570f4e9b10c26' => (int)$imageId // mobile_image
             );
+
+            if (!wp_get_attachment_image_src($imageId)) {
+                var_dump($sql);
+                exit;
+            }
 
             // Text
             if (!empty($widgetData['item_text' . $i])) {
