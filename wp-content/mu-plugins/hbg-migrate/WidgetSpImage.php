@@ -14,6 +14,10 @@ class WidgetSpImage extends \HbgMigrate\Widget
      */
     public function migrate(array $widgetData, int $postId)
     {
+        if (!isset($widgetData['attachment_id'])) {
+            return;
+        }
+
         $data = array(
             'post_title' => isset($widgetData['title']) ? $widgetData['title'] : '',
             'post_content' => '',
