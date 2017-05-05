@@ -263,6 +263,9 @@ add_action('init', function () {
 
         update_field('nav_mobile_enable', '1', 'option');
 
+        //Footer
+        update_field('footer_signature_show', '1', 'option');
+
         exit;
 
     }
