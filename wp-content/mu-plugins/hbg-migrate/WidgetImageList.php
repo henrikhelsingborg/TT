@@ -68,6 +68,10 @@ class WidgetImageList extends \HbgMigrate\Widget
             )
         );
 
+        if (get_current_blog_id() > 1 && $widgetData['widget_meta']['sidebar'] === 'slider-area') {
+            $data['acf']['field_573dce058a66e'] = 'ratio-36-7';
+        }
+
         $this->save($data, $postId, $widgetData['widget_meta']['widget_id'], $widgetData['widget_meta']['sidebar']);
     }
 }
