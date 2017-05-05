@@ -213,20 +213,32 @@ add_action('init', function () {
         update_field('nav_primary_type', 'wp', 'option');
         update_field('nav_primary_align', 'justify', 'option');
 
+        //Cookies
         update_field('cookie_consent_message', 'På helsingborg.se använder vi cookies (kakor) för att webbplatsen ska fungera på ett bra sätt för dig. Genom att klicka vidare godkänner du att vi använder cookies.', 'option');
         update_field('cookie_consent_button', 'Jag godkänner', 'option');
 
+        //Logotype
         update_field('footer_logotype', 'negative', 'option');
 
+        //Search stuff
         update_field('search_display', array('mainmenu', 'header_sub', 'hero'), 'option');
         update_field('search_label_text', 'Sök', 'option');
         update_field('search_placeholder_text', 'Vad letar du efter?', 'option');
         update_field('search_button_text', 'Sök', 'option');
 
+        // 404 stuff
         update_field('404_display', array('home', 'search', 'back'), 'option');
         update_field('404_home_link_text', 'Gå till startsidan', 'option');
         update_field('404_back_button_text', 'Tillbaka till föregående sida', 'option');
         update_field('404_search_link_text', 'Sök efter "%s"', 'option');
+
+        //Author stuff
+        update_field('page_show_author', '0', 'option');
+        update_field('page_show_author_image', '0', 'option');
+
+        //Last updated stuff
+        update_field('show_date_published', array('post', 'page'), 'option');
+        update_field('show_date_updated', array('post', 'page'), 'option');
     }
 
     // School options
