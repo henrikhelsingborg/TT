@@ -164,8 +164,8 @@ add_action('init', function () {
             $svg = file_get_contents($logotypeUrl);
             $uploaded = hbg_migrate_upload_image(basename($logotypeUrl), $svg);
 
-            update_field('logotype', $uploaded, 'option');
-            update_field('logotype_negative', $uploaded, 'option');
+            update_option('logotype', $uploaded);
+            update_option('logotype_negative', $uploaded);
 
             echo "Logos migrated";
             exit;
