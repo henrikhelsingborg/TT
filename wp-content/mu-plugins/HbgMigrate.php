@@ -278,16 +278,19 @@ add_action('init', function () {
         //Footer
         update_field('footer_signature_show', '1', 'option');
 
-        if ($frontpage = get_option('page_on_front')) {
+
+        $frontpage = get_option('page_on_front');
+        if ($frontpage) {
             global $wpdbFrom;
             $wpdbFrom = new \wpdb(DB_USER, DB_PASSWORD, 'hbg_old', DB_HOST);
 
             $table = "wp_options";
             if (get_current_blog_id() > 1) {
-                $table = "wp_" . get_current_blog_id() . "_options";
+                $table = "wp_" . get_current_blog_id() . "_postmeta";
             }
 
-            $welcomeText = $wpdbFrom->get_var("SELECT option_value FROM $table WHERE option_name = 'hbgWelcomeText'");
+            $welcomeText = $wpdbFrom->get_var("SELECT meta_value FROM $table WHERE meta_key = 'hbgWelcomeText' AND post_id = $frontpage");
+
             if ($welcomeText) {
                 $welcomeText = maybe_unserialize($welcomeText);
                 $post = get_post($frontpage);
