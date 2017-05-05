@@ -137,10 +137,10 @@ add_action('init', function () {
         $code = $wpdbFrom->get_var("SELECT option_value FROM $table WHERE option_name = 'helsingborg_color_code'");
 
         // Set color theme
-        update_field('field_56a0a7e36365b', $theme, 'option');
+        update_field('color_scheme', $theme, 'option');
 
         // Set primary theme color
-        update_field('field_' . sha1('school-colorscheme-' . $theme), $code, 'option');
+        update_field('school-primary-color', $code, 'option');
 
         exit;
     }
@@ -251,6 +251,8 @@ add_action('init', function () {
         update_field('nav_sub_render', 'active', 'option');
 
         update_field('nav_mobile_enable', '1', 'option');
+
+        exit;
 
     }
 
