@@ -21,7 +21,7 @@ iterate_num=0
 current_num=0
 
 sql="SELECT domain, path FROM hbg_blogs"
-if [ "$is_school" == "y" ]; then
+if [ "$is_school" = "y" ]; then
     sql="SELECT domain, path FROM hbg_blogs WHERE blog_id < 2"
 fi
 
