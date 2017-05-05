@@ -22,7 +22,6 @@ class MigrationEngine
         $this->toDb = $wpdb;
         $this->fromDb = $wpdbFrom;
 
-
         if ($start) {
             $this->start(0, -1);
         }
@@ -118,6 +117,9 @@ class MigrationEngine
         if ($blogId > 1) {
             $table = "wp_".$blogId."options";
         }
+
+        //Clean previosly migrated data
+        $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE 'widget_%'");
 
         //Move the actual widget
         $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $table WHERE option_name = 'widget_text'");
