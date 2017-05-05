@@ -203,7 +203,10 @@ add_action('init', function () {
         }
 
         $oldFront = $wpdbFrom->get_var("SELECT option_value FROM $table WHERE option_name = 'page_on_front'");
-        update_option('page_on_front', $oldFront);
+        if (strlen($oldFront)) {
+            update_option('show_on_front', 'page');
+            update_option('page_on_front', $oldFront);
+        }
 
         // Navigation
         update_field('nav_primary_enable', true, 'option');
