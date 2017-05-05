@@ -107,7 +107,7 @@ abstract class Widget
         $template = get_post_meta($postId, '_wp_page_template', true);
 
         // slider-area => content-area-top
-        if (get_current_blog_id() > 1 && $sidebar === 'slider-area' && $postType === 'page' && (!$template|| $template === 'default')) {
+        if (get_current_blog_id() < 2 && $sidebar === 'slider-area' && $postType === 'page' && (!$template|| $template === 'default')) {
             return 'content-area-top';
         }
 
