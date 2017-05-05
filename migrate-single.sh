@@ -47,7 +47,7 @@ if [ "$use_params" != "y" ]; then
     service apache2 restart
     service varnish restart
     service memcached restart
-    service redis-server restart
+    redis-cli flushall
 fi
 
 if [ -z "$site_url" ]; then
