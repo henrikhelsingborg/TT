@@ -237,6 +237,14 @@ add_action('init', function () {
 
         switch_theme('municipio-school');
 
+        //Menu location
+        $term = get_term_by('name', 'huvudmeny', 'nav_menu');
+
+        if (is_object($term)) {
+            $locations['main-menu'] = $term->term_id;
+            set_theme_mod('nav_menu_locations', $locations);
+        }
+
         //Site url
         update_option('siteurl', get_option('home') . '/wp/');
 
