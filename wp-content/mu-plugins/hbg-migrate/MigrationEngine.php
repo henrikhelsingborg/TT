@@ -63,6 +63,10 @@ class MigrationEngine
             //Term taxonomy data
             delete_option('hbgmigrate_moved_terms');
             $this->moveTerms();
+
+            //Tablepress
+            delete_option('hbgmigrate_moved_tables');
+            $this->moveTablePress();
         }
 
         delete_option('hbgmigrate_migrated_widgets');
@@ -244,6 +248,40 @@ class MigrationEngine
         }
 
         update_option('hbgmigrate_moved_terms', true);
+
+        return true;
+    }
+
+    public function moveTablePress()
+    {
+        //     return;
+
+        global $wpdb, $wpdbFrom;
+
+        //Tables
+        $table = "wp_options";
+
+        $blogId = get_current_blog_id();
+        if ($blogId > 1) {
+            $table = "wp_".$blogId."_options";
+        }
+
+        //Move the reference
+        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $table WHERE option_name = 'tablepress_tables'", ARRAY_A);
+
+        foreach ($data as $option) {
+            $wpdb->insert($wpdb->options, $option);
+        }
+
+        //Move the settings
+        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $table WHERE option_name = 'tablepress_plugin_options'", ARRAY_A);
+
+        foreach ($data as $option) {
+            $wpdb->insert($wpdb->options, $option);
+        }
+
+        //Mark as done
+        update_option('hbgmigrate_moved_tables', true);
 
         return true;
     }
