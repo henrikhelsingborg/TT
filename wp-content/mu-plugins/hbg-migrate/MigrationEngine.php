@@ -114,8 +114,9 @@ class MigrationEngine
         //Tables
         $table = "wp_options";
 
+        $blogId = get_current_blog_id();
         if ($blogId > 1) {
-            $table = "wp_".$blogId."options";
+            $table = "wp_".$blogId."_options";
         }
 
         //Clean previosly migrated data
