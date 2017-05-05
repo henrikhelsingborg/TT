@@ -299,11 +299,9 @@ add_action('init', function () {
                 $post = get_post($frontpage);
                 $content = $post->post_content;
 
-                if (strpos('<!--more-->', $content) > -1) {
-                    $content = str_replace('<!--more-->', '', $content);
-                }
-
-                $content = $welcomeText['content'] . "\n<!--more-->\n" . $content;
+                $content = str_replace('<!--more-->', '', $content);
+                $content = str_replace($welcomeText['content'], '', $content);
+                $content = $welcomeText['content'] . "\n\n" . '<!--more-->' . "\n\n" . $content;
 
                 wp_update_post(array(
                     'ID' => $frontpage,
