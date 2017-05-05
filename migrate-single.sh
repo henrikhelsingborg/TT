@@ -169,10 +169,6 @@ case $run_network_op in
     ;;
 esac
 
-echo "Clearing caches again…"
-service memcached restart
-service redis-server restart
-
 # SEO data
 case $run_seo_migration in
     y|Y)
