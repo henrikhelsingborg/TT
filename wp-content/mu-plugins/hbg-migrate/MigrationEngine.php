@@ -123,14 +123,14 @@ class MigrationEngine
         $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE 'widget_%'");
 
         //Move the actual widget
-        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $table WHERE option_name = 'widget_text'");
+        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $table WHERE option_name = 'widget_text'", ARRAY_A);
 
         foreach ($data as $option) {
             $wpdb->insert($wpdb->options, $option);
         }
 
         //Move the reference
-        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $table WHERE option_name = 'sidebars_widgets'");
+        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $table WHERE option_name = 'sidebars_widgets'", ARRAY_A);
 
         foreach ($data as $option) {
             $wpdb->insert($wpdb->options, $option);
