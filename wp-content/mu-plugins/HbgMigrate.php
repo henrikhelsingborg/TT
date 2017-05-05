@@ -234,20 +234,23 @@ add_action('init', function () {
 
         switch_theme('municipio-school');
 
+        //Site url
+        update_option('siteurl', get_option('home') . '/wp/');
+
         //Header
         update_field('header_layout', 'jumbo', 'option');
         update_field('header_logotype', 'negative', 'option');
 
         //Menu
-        update_field('nav_primary_enable', '1');
-        update_field('options_nav_primary_type', 'wp');
-        update_field('nav_primary_align', 'right');
+        update_field('nav_primary_enable', '1', 'option');
+        update_field('nav_primary_type', 'wp', 'option');
+        update_field('nav_primary_align', 'right', 'option');
 
-        update_field('options_nav_sub_enable', '1');
-        update_field('options_nav_sub_type', 'auto');
-        update_field('options_nav_sub_render', 'active');
+        update_field('nav_sub_enable', '1', 'option');
+        update_field('nav_sub_type', 'auto', 'option');
+        update_field('nav_sub_render', 'active', 'option');
 
-        update_field('options_nav_mobile_enable', '1');
+        update_field('nav_mobile_enable', '1', 'option');
 
     }
 
