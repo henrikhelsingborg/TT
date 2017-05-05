@@ -12,12 +12,20 @@ read db_password
 is_school="n"
 read -p "Is this a network with school sites? (y/n)? " is_school
 
+#echo "Activating plugins (network)"
+#wp plugin activate redis-cache --network --allow-root
+
 total_result=`mysql $db_name -u $db_user -p$db_password -s -e "SELECT COUNT(*) FROM hbg_blogs;"`
 
 iterate_num=0
 current_num=0
 
-mysql $db_name -u $db_user -p$db_password -e "SELECT domain, path FROM hbg_blogs" | while read domain path; do
+sql="SELECT domain, path FROM hbg_blogs"
+if [ "$is_school" == "y" ]; then
+    sql="SELECT domain, path FROM hbg_blogs WHERE blog_id < 2"
+fi
+
+mysql $db_name -u $db_user -p$db_password -e "$sql" | while read domain path; do
     if [ "$domain" != "domain" ]; then
         current_num=$((current_num+1))
         echo "Migrating ($current_num/$total_result) http://$domain$path"
