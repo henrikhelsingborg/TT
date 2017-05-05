@@ -257,6 +257,9 @@ add_action('init', function () {
             set_theme_mod('nav_menu_locations', $locations);
         }
 
+        //Search
+        update_field('search_display', array('mainmenu', 'header_sub'), 'option');
+
         //Site url
         update_option('siteurl', get_option('home') . '/wp/');
 
