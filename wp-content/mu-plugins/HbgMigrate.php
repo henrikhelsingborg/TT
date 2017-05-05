@@ -257,11 +257,11 @@ add_action('init', function () {
             set_theme_mod('nav_menu_locations', $locations);
         }
 
-        //Search
-        update_field('search_display', array('mainmenu', 'header_sub'), 'option');
-
         //Site url
         update_option('siteurl', get_option('home') . '/wp/');
+
+        //Search
+        update_field('search_display', array('mainmenu', 'header_sub'), 'option');
 
         //Header
         update_field('header_layout', 'jumbo', 'option');
@@ -319,7 +319,7 @@ add_action('init', function () {
     // Event settings
     if (isset($_GET['migrate-event-integration']) && $_GET['migrate-event-integration'] == 'true') {
         update_field('event_api_url', 'https://api.helsingborg.se/event/json/wp/v2', 'option');
-        update_field('days_ahead', 60, 'option');
+        update_field('days_ahead', 90, 'option');
         update_field('event_daily_import', true, 'option');
         update_field('event_post_status', 'publish', 'option');
         update_field('event_geographic_distance', 30, 'option');
