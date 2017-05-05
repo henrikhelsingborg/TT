@@ -48,14 +48,21 @@ class MigrationEngine
     public function start(int $offset = 0, int $perPage = 100)
     {
         if (!isset($_GET['post_id']) || !is_numeric($_GET['post_id'])) {
+
+            //Users
             delete_option('hbgmigrate_moved_users');
             $this->moveUsers();
 
+            //Posts
             delete_option('hbgmigrate_moved_posts');
             $this->movePosts();
 
+            //Global widgets
+            delete_option('hbgmigrate_moved_global_widgets');
             $this->moveWidgets();
 
+            //Term taxonomy data
+            delete_option('hbgmigrate_moved_terms');
             $this->moveTerms();
         }
 
@@ -105,19 +112,29 @@ class MigrationEngine
         delete_option('widget_text');
         delete_option('sidebars_widgets');
 
+        //Tables
+        $table = "wp_options";
+
+        if ($blogId > 1) {
+            $table = "wp_".$blogId."options";
+        }
+
         //Move the actual widget
-        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $wpdbFrom->options WHERE option_name = 'widget_text' LIMIT 1");
+        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $table WHERE option_name = 'widget_text'");
 
         foreach ($data as $option) {
             $wpdb->insert($wpdb->options, $option);
         }
 
         //Move the reference
-        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $wpdbFrom->options WHERE option_name = 'sidebars_widgets' LIMIT 1");
+        $data = $wpdbFrom->get_results("SELECT option_name, option_value, autoload FROM $table WHERE option_name = 'sidebars_widgets'");
 
         foreach ($data as $option) {
             $wpdb->insert($wpdb->options, $option);
         }
+
+        //Mark as done.
+        update_option('hbgmigrate_moved_global_widgets', true);
 
         return true;
     }
