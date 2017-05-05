@@ -403,7 +403,7 @@ add_action('init', function () {
         echo "Updated Modularity options";
         exit;
     }
-});
+}, 9999);
 
 function hbg_migrate_upload_image($filename, $data) {
     $uploadDir = wp_upload_dir();
