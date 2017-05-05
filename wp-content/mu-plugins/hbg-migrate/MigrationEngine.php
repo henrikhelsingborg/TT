@@ -32,8 +32,8 @@ class MigrationEngine
     {
         $prefix = 'wp_';
 
-        if (isset($_GET['site_id']) && !empty($_GET['site_id'])) {
-            $prefix .= $_GET['site_id'] . '_';
+        if (get_current_blog_id() > 1) {
+            $prefix .= get_current_blog_id() . '_';
         }
 
         return $prefix . $table;
@@ -85,6 +85,7 @@ class MigrationEngine
         echo "<strong>START</strong><br>";
 
         foreach ($posts as $post) {
+            echo "<i>Migrating post <strong>{$post->post_title}</strong> ({$post->ID})</i><br>";
             $this->migrateWidgetsForPost($post->ID);
             $this->migrateShortcodesForPost($post);
             $this->migrateTemplateForPost($post);
@@ -404,12 +405,13 @@ class MigrationEngine
      */
     public function getSidebarsForPost(int $postId) : array
     {
-        $sidebars = $this->fromDb->get_var($this->fromDb->prepare(
+        $sql = $this->fromDb->prepare(
             "SELECT meta_value FROM " . self::getTable('postmeta') . " WHERE post_id = %d AND meta_key = %s",
             $postId,
             '_sidebars_widgets'
-        ));
+        );
 
+        $sidebars = $this->fromDb->get_var($sql);
         $sidebars = maybe_unserialize($sidebars);
 
         if (is_null($sidebars) || !is_array($sidebars)) {
