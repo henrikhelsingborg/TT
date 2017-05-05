@@ -82,6 +82,12 @@ fi
 echo
 echo "\033[31m\033[1mThe migration is running, do not abort! You will get a success message when migration is completed.\033[0m"
 
+# Widgets, shortcodes and templates
+echo "\033[39m\033 - Migrating posts, shortcodes, templates and converting widgets to modules…\033"
+
+request_url="${site_url}?migrate=yes-please"
+curl $request_url -sS > /dev/null
+
 # Logos
 echo "\033[39m\033 - Migrating logotypes…\033"
 
@@ -120,12 +126,6 @@ curl $request_url -sS > /dev/null
 echo "\033[39m\033 - Configurating Event API integration…\033"
 
 request_url="${site_url}?migrate-event-integration=true"
-curl $request_url -sS > /dev/null
-
-# Widgets, shortcodes and templates
-echo "\033[39m\033 - Migrating posts, shortcodes, templates and converting widgets to modules…\033"
-
-request_url="${site_url}?migrate=yes-please"
 curl $request_url -sS > /dev/null
 
 # Post types
