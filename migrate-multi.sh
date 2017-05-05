@@ -15,14 +15,19 @@ read -p "Is this a network with school sites? (y/n)? " is_school
 #echo "Activating plugins (network)"
 #wp plugin activate redis-cache --network --allow-root
 
-total_result=`mysql $db_name -u $db_user -p$db_password -s -e "SELECT COUNT(*) FROM hbg_blogs;"`
+total_result=0
+if [ "$is_school" = "y" ]; then
+    total_result=`mysql $db_name -u $db_user -p$db_password -s -e "SELECT COUNT(*) FROM hbg_blogs WHERE blog_id > 1;"`
+else
+    total_result=`mysql $db_name -u $db_user -p$db_password -s -e "SELECT COUNT(*) FROM hbg_blogs;"`
+fi
 
 iterate_num=0
 current_num=0
 
-sql="SELECT domain, path FROM hbg_blogs"
+sql="SELECT domain, path FROM hbg_blogs;"
 if [ "$is_school" = "y" ]; then
-    sql="SELECT domain, path FROM hbg_blogs WHERE blog_id < 2"
+    sql="SELECT domain, path FROM hbg_blogs WHERE blog_id > 1;"
 fi
 
 mysql $db_name -u $db_user -p$db_password -e "$sql" | while read domain path; do
