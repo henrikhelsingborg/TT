@@ -311,7 +311,6 @@ add_action('init', function () {
         }
 
         exit;
-
     }
 
     // Event settings
@@ -326,6 +325,27 @@ add_action('init', function () {
             'lat' => '56.0464674',
             'lng' => '12.694512099999997'
         ), 'option');
+    }
+
+    if (isset($_GET['after-migration-updates']) && $_GET['after-migration-updates'] == 'true') {
+        foreach (get_sites() as $site) {
+            switch_to_blog($site->blog_id);
+
+            // Activate Google Translate
+            update_field('google_translate_menu', 'main-menu', 'option');
+            update_field('google_translate_show_as', 'icon', 'option');
+
+            // Activate modularity form builder
+            $modularity = get_option('modularity-options');
+            $modularity['enabled-modules'][] = 'mod-form';
+            $modularity['enabled-modules'][] = 'mod-event';
+
+            restore_current_blog();
+        }
+
+        echo "done";
+
+        exit;
     }
 
     // Modularity settings
@@ -456,6 +476,8 @@ add_action('init', function () {
                 'mod-text',
                 'mod-video',
                 'mod-wpwidget',
+                'mod-form',
+                'mod-event'
             ),
         );
 
