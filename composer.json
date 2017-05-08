@@ -118,6 +118,10 @@
             "url": "https://github.com/helsingborg-stad/api-alarm-integration.git"
         },
         {
+            "type": "vcs",
+            "url": "git@github.com:netSolutionab/volontar-wordpress.git"
+        },
+        {
             "type":"composer",
             "url":"https://wpackagist.org"
         }
@@ -149,6 +153,7 @@
         "helsingborg-stad/modularity-form-builder": ">=1.0.0",
         "helsingborg-stad/wp-page-for-post-type": ">=1.0.0",
         "helsingborg-stad/api-alarm-integration": ">=1.0.0",
+        "netsolutionab/volontar-wp": "1.0.3",
         "wpackagist-plugin/wp-editor-widget": "^0.5.5",
         "wpackagist-plugin/varnish-http-purge": "^3.7.2",
         "wpackagist-plugin/stream": "^3.0.4",
@@ -159,7 +164,6 @@
         "wpackagist-plugin/disable-comments": "2.6",
         "wpackagist-plugin/redis-cache": "1.3.5",
         "wpackagist-plugin/tablepress": "1.8",
-        "netsolutionab/volontar-wp": "^1.0",
         "wpackagist-plugin/username-changer": "3.1.0"
     },
 
