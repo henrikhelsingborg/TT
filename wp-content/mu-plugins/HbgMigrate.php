@@ -456,6 +456,8 @@ add_action('init', function () {
                 'mod-text',
                 'mod-video',
                 'mod-wpwidget',
+                'mod-form',
+                'mod-event'
             ),
         );
 
