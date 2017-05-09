@@ -70,7 +70,7 @@ class SchoolRedirect
             return array();
         }
 
-        $request = wp_remote_get('http://municipio.dev/wp-json/wp/v2/sites/');
+        $request = wp_remote_get($endpointUrl);
         $response = wp_remote_retrieve_body($request);
         $response = json_decode($response);
 
