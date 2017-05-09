@@ -2,7 +2,7 @@
 
 namespace Helsingborg\Controller;
 
-class FullWidth extends \Municipio\Controller\BaseController
+class Page extends \Municipio\Controller\BaseController
 {
     public function init()
     {
