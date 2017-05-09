@@ -16,7 +16,7 @@ class SmallImageDetector
             add_action('init', array($this, 'start'));
         }
 
-        add_filter('image_make_intermediate_size', array($this, 'watermarkThumbnail'));
+        //add_filter('image_make_intermediate_size', array($this, 'watermarkThumbnail'));
     }
 
     public function start()
