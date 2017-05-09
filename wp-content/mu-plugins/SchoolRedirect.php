@@ -35,10 +35,13 @@ class SchoolRedirect
      */
     public function maybeRedirect(array $sites) : bool
     {
-        $currentPath = $this->currentPath();
+        $currentPath = str_replace('/', '', $this->currentPath());
 
         foreach ($sites as $site) {
-            if ($site->path !== $currentPath) {
+            $subdomain = explode('.', $site->domain);
+            $subdomain = reset($subdomain);
+
+            if ($subdomain !== $currentPath) {
                 continue;
             }
 
@@ -80,7 +83,7 @@ class SchoolRedirect
 
         // Remove main site from array
         $response = array_filter($response, function ($site) {
-            return $site->path !== '/';
+            return !is_main_site($site->blog_id);
         });
 
         wp_cache_add('sites', $response, 'school-redirect', 60*60*24);
