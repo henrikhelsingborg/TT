@@ -6,6 +6,9 @@ RewriteEngine On
 RewriteBase /wp/
 RewriteRule ^index\.php$ - [L]
 
+# Removed sites redirect
+RewriteRule ^(drottningh/.*)$ https://drottningh.helsingborg.se/$1 [R=301,L,NC]
+
 # Remove /startsida/
 RewriteRule ^startsida/(.+)$ http://%{HTTP_HOST}/$1 [R=301,L]
 
