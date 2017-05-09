@@ -334,11 +334,17 @@ add_action('init', function () {
             // Activate Google Translate
             update_field('google_translate_menu', 'main-menu', 'option');
             update_field('google_translate_show_as', 'icon', 'option');
+            update_field('show_google_translate', 'fold', 'options');
+            update_filed('google_translate_ga_track', true, 'options');
 
             // Activate modularity form builder
             $modularity = get_option('modularity-options');
             $modularity['enabled-modules'][] = 'mod-form';
             $modularity['enabled-modules'][] = 'mod-event';
+
+            update_option('modularity-options', $modularity);
+
+            echo "Updated: " . $site->domain . "<br>";
 
             restore_current_blog();
         }

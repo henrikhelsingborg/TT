@@ -39,7 +39,7 @@ class UpdatePostTypes
         $taxonomies = array(array(
             'label'                => 'Kategorier',
             'slug'                 => 'kategorier',
-            'hierarchical'         => true,
+            'hierarchical'         => false,
             'connected_post_types' => array('nyheter'),
             'public'               => true,
             'show_ui'              => true
