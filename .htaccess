@@ -6,9 +6,6 @@ RewriteEngine On
 RewriteBase /wp/
 RewriteRule ^index\.php$ - [L]
 
-# Removed sites redirect
-RewriteRule ^(drottningh/.*)$ https://drottningh.helsingborg.se/$1 [R=301,L,NC]
-
 # Remove www.
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]

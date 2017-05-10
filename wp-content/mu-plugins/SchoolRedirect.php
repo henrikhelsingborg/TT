@@ -25,6 +25,8 @@ class SchoolRedirect
             $response = $this->getSites();
         }
 
+        $response = apply_filters('siteRedirect', $response);
+
         $this->maybeRedirect($response);
     }
 
