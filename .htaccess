@@ -13,6 +13,9 @@ RewriteRule ^(drottningh/.*)$ https://drottningh.helsingborg.se/$1 [R=301,L,NC]
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
+# Nyhetskatalog
+RewriteRule (^|.*?/)nyhetskatalog(.*)$ /nyheter$2 [R=302,L,NC]
+
 # Remove /startsida/
 RewriteRule ^startsida/(.+)$ http://%{HTTP_HOST}/$1 [R=301,L]
 
