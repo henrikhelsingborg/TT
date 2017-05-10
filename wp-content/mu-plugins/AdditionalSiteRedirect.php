@@ -20,10 +20,7 @@ class AdditionalSiteRedirect
     {
         foreach (array(
                 "foretagare.helsingborg.se",
-                "larlingsgymnasium.helsingborg.se",
-                "drottningh.helsingborg.se",
-                "komvuxkarnan.helsingborg.se",
-                "gustavslundsskolan.helsingborg.se"
+                "drottningh.helsingborg.se"
             ) as $site) {
 
             $sitesItems[] = (object) array(
