@@ -22,7 +22,8 @@ class AdditionalSiteRedirect
                 "foretagare.helsingborg.se",
                 "larlingsgymnasium.helsingborg.se",
                 "drottningh.helsingborg.se",
-                "komvuxkarnan.helsingborg.se"
+                "komvuxkarnan.helsingborg.se",
+                "gustavslundsskolan.helsingborg.se"
             ) as $site) {
 
             $sitesItems[] = (object) array(
