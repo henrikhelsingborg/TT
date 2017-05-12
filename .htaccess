@@ -16,6 +16,11 @@ RewriteRule (^|.*?/)nyhetskatalog(.*)$ /nyheter$2 [R=302,L,NC]
 # Remove /startsida/
 RewriteRule ^startsida/(.+)$ http://%{HTTP_HOST}/$1 [R=301,L]
 
+# Alarm service rss
+
+RewriteCond %{HTTP_HOST} ^helsingborg.se/kommun-och-politik/vid-olyckor-och-kris/dold-sida/rss-larm/$ [NC]
+RewriteRule ^(.*)$ https://api.helsingborg.se/alarm/alarms/feed/ [R=301,L]
+
 #Fixing network admin urls
 RewriteRule ^wp-admin/network/(.*)$ wp/wp-admin/network/$1 [L]
 
