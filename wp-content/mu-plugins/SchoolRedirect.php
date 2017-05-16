@@ -25,6 +25,8 @@ class SchoolRedirect
             $response = $this->getSites();
         }
 
+        $response = apply_filters('siteRedirect', $response);
+
         $this->maybeRedirect($response);
     }
 
@@ -35,17 +37,17 @@ class SchoolRedirect
      */
     public function maybeRedirect(array $sites) : bool
     {
-        $currentPath = str_replace('/', '', $this->currentPath());
+        $currentPath = trim($this->currentPath(), '/');
 
         foreach ($sites as $site) {
             $subdomain = explode('.', $site->domain);
             $subdomain = reset($subdomain);
 
-            if ($subdomain !== $currentPath) {
+            if (substr($currentPath, 0, strlen($subdomain)) != $subdomain) {
                 continue;
             }
 
-            wp_redirect($site->url, '302');
+            wp_redirect($site->url."/". str_ireplace($subdomain."/", "", $currentPath . "/"), '302');
             exit;
         }
 
