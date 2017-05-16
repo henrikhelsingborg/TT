@@ -1,5 +1,5 @@
 <?php
-namespace Municipio\Theme;
+namespace Helsingborg\Theme;
 
 class Seo
 {
