@@ -1,6 +1,14 @@
 # Enshure that uft-8 is used
 AddDefaultCharset utf-8
 
+# Deny ddos bots
+<Files *>
+order allow,deny
+allow from all
+deny from 5.188.211.170
+deny from 46.161.14.99
+</Files>
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /wp/
@@ -28,8 +36,11 @@ RewriteRule ^wp-cron.php /wp/wp-cron.php [L,R=301]
 # Redirect wp-signup
 RewriteRule ^wp-signup.php /wp/wp-signup.php [L,R=301]
 
-# Redirect wp-ajax
-RewriteRule ^wp-admin/admin-ajax.php /wp/wp-admin/admin-ajax.php [L,R=301]
+# Rewrite old asset links
+RewriteCond %{HTTP_HOST} ^helsingborg.se$ [NC]
+RewriteCond %{REQUEST_URI} !/wp/wp-content/uploads/sites/2/(.*) [NC]
+RewriteCond %{REQUEST_URI} /wp/wp-content/uploads/sites/(.*) [NC]
+RewriteRule ^(.*)wp/wp-content/uploads/sites/(.*)$ http://skola.helsingborg.se/$1wp-content/uploads/sites/$2 [L,R=301]
 
 # Redirect old assets
 RewriteRule ^wp-content/themes/This-is-Helsingborg/assets/images/helsingborg.svg /wp-content/uploads/2017/05/helsingborg-1.svg [L,R=301]
