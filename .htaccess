@@ -36,6 +36,9 @@ RewriteRule ^wp-cron.php /wp/wp-cron.php [L,R=301]
 # Redirect wp-signup
 RewriteRule ^wp-signup.php /wp/wp-signup.php [L,R=301]
 
+# Redirect wp-admin
+RewriteRule ^/wp-admin/admin-ajax.php /wp/wp-admin/admin-ajax.php [L,R=301]
+
 # Rewrite old asset links
 RewriteCond %{HTTP_HOST} ^helsingborg.se$ [NC]
 RewriteCond %{REQUEST_URI} !/wp/wp-content/uploads/sites/2/(.*) [NC]
