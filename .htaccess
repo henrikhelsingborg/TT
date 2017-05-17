@@ -28,6 +28,9 @@ RewriteRule ^wp-cron.php /wp/wp-cron.php [L,R=301]
 # Redirect wp-signup
 RewriteRule ^wp-signup.php /wp/wp-signup.php [L,R=301]
 
+# Redirect wp-ajax
+RewriteRule ^wp-admin/admin-ajax.php /wp/wp-admin/admin-ajax.php [L,R=301]
+
 # Redirect old assets
 RewriteRule ^wp-content/themes/This-is-Helsingborg/assets/images/helsingborg.svg /wp-content/uploads/2017/05/helsingborg-1.svg [L,R=301]
 RewriteRule ^wp-content/themes/This-is-Helsingborg/assets/images/icons/apple-touch-icon-144x144-precomposed.png /wp-content/uploads/2017/05/touch-icon-ms.png [L,R=301]
