@@ -29,3 +29,9 @@ define('WEB_FONT', 'Roboto');
  define('AD_SAVE_PASSWORD', false);
  define('AD_RANDOM_PASSWORD', true);
  define('AD_USER_DOMAIN', 'helsingborg.se');
+
+/**
+ * Enable ssl proxy mode in ssl plugin
+ * @var bool
+ */
+ define('SSL_PROXY', true);
