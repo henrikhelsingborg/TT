@@ -43,7 +43,7 @@ RewriteRule ^/wp-admin/admin-ajax.php /wp/wp-admin/admin-ajax.php [L,R=301]
 RewriteCond %{HTTP_HOST} ^helsingborg.se$ [NC]
 RewriteCond %{REQUEST_URI} !/wp/wp-content/uploads/sites/2/(.*) [NC]
 RewriteCond %{REQUEST_URI} /wp/wp-content/uploads/sites/(.*) [NC]
-RewriteRule ^(.*)wp/wp-content/uploads/sites/(.*)$ http://skola.helsingborg.se/$1wp-content/uploads/sites/$2 [L,R=301]
+RewriteRule ^(.*)wp/wp-content/uploads/sites/(.*)$ https://skola.helsingborg.se/$1wp-content/uploads/sites/$2 [L,R=301]
 
 # Redirect old assets
 RewriteRule ^wp-content/themes/This-is-Helsingborg/assets/images/helsingborg.svg /wp-content/uploads/2017/05/helsingborg-1.svg [L,R=301]
