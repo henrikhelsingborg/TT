@@ -16,13 +16,13 @@ RewriteRule ^index\.php$ - [L]
 
 # Remove www.
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 # Nyhetskatalog
 RewriteRule (^|.*?/)nyhetskatalog(.*)$ /nyheter$2 [R=302,L,NC]
 
 # Remove /startsida/
-RewriteRule ^startsida/(.+)$ http://%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^startsida/(.+)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 #Fixing network admin urls
 RewriteRule ^wp-admin/network/(.*)$ wp/wp-admin/network/$1 [L]
@@ -59,19 +59,18 @@ RewriteRule . index.php [L]
 
 # Force use of SSL (SERVER)
 <IfModule mod_rewrite.c>
-    #RewriteEngine On
-    #RewriteCond %{HTTPS} !=on
-    #RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    #RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
+    RewriteEngine On
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
 </IfModule>
 
 # Force use of SSL (CLIENT)
 <IfModule mod_headers.c>
-    #Header always set Strict-Transport-Security "max-age=16070400; includeSubDomains"
+    Header always set Strict-Transport-Security "max-age=16070400; includeSubDomains"
 </IfModule>
 
 # Admin redirect
-#RedirectMatch 301 /admin/(.*) /wp-admin/$1
 RedirectMatch 301 /secure /wp-admin
 
 # Prevent access to XML RPC & Pingback
