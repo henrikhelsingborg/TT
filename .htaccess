@@ -70,7 +70,7 @@ RewriteRule . index.php [L]
 
 # Force use of SSL (CLIENT)
 <IfModule mod_headers.c>
-    Header set Strict-Transport-Security "max-age=0; includeSubDomains"
+    Header set Strict-Transport-Security "max-age=60;"
 </IfModule>
 
 # Admin redirect
