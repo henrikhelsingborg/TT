@@ -7,19 +7,5 @@ class App
     {
         new \Helsingborg\Theme\AdminMenu();
         new \Helsingborg\Theme\Seo();
-
-        add_filter('single_template', array($this, 'updateTemplate'), 20);
-    }
-
-    public function updateTemplate($template_path)
-    {
-        if ($post_type = get_post_type()) {
-            $post_type_object = get_post_type_object($post_type);
-            if (is_object($post_type_object) && $post_type_object->hierarchical == true && $post_type_object->_builtin == false) {
-                $template_path = \Municipio\Helper\Template::locateTemplate('page');
-            }
-        }
-
-        return($template_path);
     }
 }
