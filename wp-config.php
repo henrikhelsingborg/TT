@@ -24,6 +24,7 @@ require_once 'config/database.php';
 require_once 'config/plugins.php';
 require_once 'config/update.php';
 require_once 'config/upload.php';
+require_once 'config/cron.php';
 
 /**
  * Cookie settings
