@@ -12,9 +12,12 @@ wp/
 srdb/
 vendor/
 wp-content/*
+wp-content/plugins/*
+!wp-content/plugins
 !wp-content/mu-plugins
 !wp-content/mu-plugins/*
 !wp-content/object-cache.php
+!wp-content/plugins/vizzit-analytics
 composer.lock
 
 # Themes dependencies #
