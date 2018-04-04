@@ -51,6 +51,7 @@
         "helsingborg-stad/wp-page-for-post-type": ">=1.0.0",
         "helsingborg-stad/api-alarm-integration": ">=1.0.0",
         "helsingborg-stad/google-analythics": ">=1.0.0",
+        "helsingborg-stad/algolia-frontend": ">=1.0.0",
         "netsolutionab/volontar-wp": "1.0.3",
         "wpackagist-plugin/varnish-http-purge": "^4.1.1",
         "wpackagist-plugin/stream": "^3.0.4",
