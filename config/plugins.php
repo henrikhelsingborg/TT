@@ -35,3 +35,12 @@ define('WEB_FONT', 'Roboto');
  * @var bool
  */
  define('SSL_PROXY', true);
+
+/**
+ * Searchable indexes
+ * @var bool
+ */
+define('ALGOLIA_FRONTEND_INDEXES', array(
+    array('hbg_searchable_posts', 100, 'Invånare'),
+    array('foretag_searchable_posts', 50, 'Företagare')
+));
