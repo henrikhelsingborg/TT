@@ -16,6 +16,7 @@ wp-content/plugins/*
 !wp-content/plugins
 !wp-content/mu-plugins
 !wp-content/mu-plugins/*
+wp-content/mu-plugins/attachmentDownloader.php
 !wp-content/object-cache.php
 !wp-content/plugins/vizzit-analytics
 
