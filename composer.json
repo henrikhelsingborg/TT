@@ -31,7 +31,7 @@
         "composer/installers": "~1.0",
         "johnpbloch/wordpress": "^4.8.3",
         "helsingborg-stad/modularity": ">=1.0.0",
-        "helsingborg-stad/municipio": ">=1.0.0",
+        "helsingborg-stad/municipio": "1.18.9",
         "helsingborg-stad/lix-calculator": ">=1.0.1",
         "helsingborg-stad/custom-short-links": ">=1.0.0",
         "helsingborg-stad/readspeaker-helper": ">=1.0.0",
