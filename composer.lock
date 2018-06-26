@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0652047f7b5ced27042a56ab0020c6f1",
+    "content-hash": "832008e21e53329e93d801c16e5f1669",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -827,16 +827,16 @@
         },
         {
             "name": "helsingborg-stad/api-alarm-integration",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-alarm-integration.git",
-                "reference": "a03c94e6fe41fc1690d0589e6cd257db325dda02"
+                "reference": "81af947d2f7e39a0c80bcb83a75810c76adbc696"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-alarm-integration/zipball/a03c94e6fe41fc1690d0589e6cd257db325dda02",
-                "reference": "a03c94e6fe41fc1690d0589e6cd257db325dda02",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-alarm-integration/zipball/81af947d2f7e39a0c80bcb83a75810c76adbc696",
+                "reference": "81af947d2f7e39a0c80bcb83a75810c76adbc696",
                 "shasum": ""
             },
             "require": {
@@ -853,7 +853,7 @@
                     "email": "kristoffer.svanmark@knowit.se"
                 }
             ],
-            "time": "2018-06-07T11:31:27+00:00"
+            "time": "2018-06-26T08:02:32+00:00"
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
@@ -2811,6 +2811,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/varnish-http-purge/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-mail-smtp",
+            "version": "1.2.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
+                "reference": "tags/1.2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.1.2.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-mail-smtp/"
         },
         {
             "name": "wpackagist-plugin/wp-nested-pages",
