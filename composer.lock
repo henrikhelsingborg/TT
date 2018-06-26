@@ -1296,16 +1296,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "1.19.22",
+            "version": "1.19.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "aa753ce86bfe4d53a043bdc9f325391a091e1f12"
+                "reference": "07ec7e91bc9f68a050c52b1506862d22ff964a2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/aa753ce86bfe4d53a043bdc9f325391a091e1f12",
-                "reference": "aa753ce86bfe4d53a043bdc9f325391a091e1f12",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/07ec7e91bc9f68a050c52b1506862d22ff964a2d",
+                "reference": "07ec7e91bc9f68a050c52b1506862d22ff964a2d",
                 "shasum": ""
             },
             "require": {
@@ -1339,7 +1339,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2018-06-25T14:44:58+00:00"
+            "time": "2018-06-26T12:50:59+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
