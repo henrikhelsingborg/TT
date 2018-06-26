@@ -17,6 +17,19 @@ class Seo
 
         // Remove plugin hidden comments.
         add_filter('the_seo_framework_indicator', '__return_false');
+
+        // Customize robots.txt file
+        add_filter('the_seo_framework_robots_txt_pro', array($this, 'seoRobots'), 99);
+    }
+
+    /**
+     * Disallow Event post typ
+     * @return string
+     */
+    public function seoRobots()
+    {
+        $output = "Disallow: /event/\r\n";
+        return $output;
     }
 
     public function fallbackImage()

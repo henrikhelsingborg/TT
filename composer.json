@@ -62,8 +62,9 @@
         "wpackagist-plugin/redis-cache": "1.3.5",
         "wpackagist-plugin/tablepress": "1.8",
         "wpackagist-plugin/username-changer": "3.1.0",
-        "wpackagist-plugin/search-by-algolia-instant-relevant-results": "2.9.3",
-        "helsingborg-stad/Customer-feedback": ">=2.2.18"
+        "helsingborg-stad/Customer-feedback": ">=2.2.18",
+        "helsingborg-stad/algolia-multisite-enabler": "^1.0",
+        "wpackagist-plugin/wp-mail-smtp": "^1.2"
     },
 
     "extra": {
