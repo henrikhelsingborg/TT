@@ -857,16 +857,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.5.4",
+            "version": "0.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "a80bcab57fb50dc1dc33b1ab7e551449f45dfc69"
+                "reference": "bd98c53cd9504422d650aa4294965d34e4ef1324"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/a80bcab57fb50dc1dc33b1ab7e551449f45dfc69",
-                "reference": "a80bcab57fb50dc1dc33b1ab7e551449f45dfc69",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/bd98c53cd9504422d650aa4294965d34e4ef1324",
+                "reference": "bd98c53cd9504422d650aa4294965d34e4ef1324",
                 "shasum": ""
             },
             "require": {
@@ -885,7 +885,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2018-06-21T08:04:06+00:00"
+            "time": "2018-06-27T14:56:58+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1296,16 +1296,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "1.19.24",
+            "version": "1.19.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "07ec7e91bc9f68a050c52b1506862d22ff964a2d"
+                "reference": "df5a1055ee04c96f88302c52f9d177338fe1a88a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/07ec7e91bc9f68a050c52b1506862d22ff964a2d",
-                "reference": "07ec7e91bc9f68a050c52b1506862d22ff964a2d",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/df5a1055ee04c96f88302c52f9d177338fe1a88a",
+                "reference": "df5a1055ee04c96f88302c52f9d177338fe1a88a",
                 "shasum": ""
             },
             "require": {
@@ -1339,7 +1339,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2018-06-26T12:50:59+00:00"
+            "time": "2018-06-27T14:13:45+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
