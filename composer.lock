@@ -409,16 +409,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.63",
+            "version": "v0.64",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client-services.git",
-                "reference": "a009a33246e90bf1f60f745f8e47039ac5a87fdf"
+                "reference": "0250aa8cadbe58e790aa07d736b675f3bdd87a1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/a009a33246e90bf1f60f745f8e47039ac5a87fdf",
-                "reference": "a009a33246e90bf1f60f745f8e47039ac5a87fdf",
+                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/0250aa8cadbe58e790aa07d736b675f3bdd87a1c",
+                "reference": "0250aa8cadbe58e790aa07d736b675f3bdd87a1c",
                 "shasum": ""
             },
             "require": {
@@ -442,7 +442,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-06-07T00:22:54+00:00"
+            "time": "2018-06-30T00:22:51+00:00"
         },
         {
             "name": "google/auth",
@@ -1229,16 +1229,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.3.6",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "876cb07f2a5ccdab85ee9e535db2f84fb8f4941c"
+                "reference": "34d3260af1eb0123fa8fa7c6e329528d1e2f7cf0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/876cb07f2a5ccdab85ee9e535db2f84fb8f4941c",
-                "reference": "876cb07f2a5ccdab85ee9e535db2f84fb8f4941c",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/34d3260af1eb0123fa8fa7c6e329528d1e2f7cf0",
+                "reference": "34d3260af1eb0123fa8fa7c6e329528d1e2f7cf0",
                 "shasum": ""
             },
             "require": {
@@ -1264,7 +1264,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2018-06-27T12:10:35+00:00"
+            "time": "2018-07-02T07:17:01+00:00"
         },
         {
             "name": "helsingborg-stad/multisite-role-propagation",
@@ -2814,15 +2814,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "1.3.0",
+            "version": "1.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/1.3.0"
+                "reference": "tags/1.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.1.3.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.1.3.2.zip",
                 "reference": null,
                 "shasum": null
             },
