@@ -1229,16 +1229,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.5.2",
+            "version": "1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "5c20cd04dafa3d602f3f4cc9707ed12770bc6f09"
+                "reference": "abeb9d4cbc67730f4fe43f8abf9ae04ca51aedc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/5c20cd04dafa3d602f3f4cc9707ed12770bc6f09",
-                "reference": "5c20cd04dafa3d602f3f4cc9707ed12770bc6f09",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/abeb9d4cbc67730f4fe43f8abf9ae04ca51aedc8",
+                "reference": "abeb9d4cbc67730f4fe43f8abf9ae04ca51aedc8",
                 "shasum": ""
             },
             "require": {
@@ -1264,7 +1264,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2018-07-03T12:44:40+00:00"
+            "time": "2018-07-03T13:21:42+00:00"
         },
         {
             "name": "helsingborg-stad/multisite-role-propagation",
