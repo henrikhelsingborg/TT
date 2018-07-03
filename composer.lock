@@ -409,16 +409,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.64",
+            "version": "v0.63",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client-services.git",
-                "reference": "0250aa8cadbe58e790aa07d736b675f3bdd87a1c"
+                "reference": "a009a33246e90bf1f60f745f8e47039ac5a87fdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/0250aa8cadbe58e790aa07d736b675f3bdd87a1c",
-                "reference": "0250aa8cadbe58e790aa07d736b675f3bdd87a1c",
+                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/a009a33246e90bf1f60f745f8e47039ac5a87fdf",
+                "reference": "a009a33246e90bf1f60f745f8e47039ac5a87fdf",
                 "shasum": ""
             },
             "require": {
@@ -442,7 +442,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-06-30T00:22:51+00:00"
+            "time": "2018-06-07T00:22:54+00:00"
         },
         {
             "name": "google/auth",
@@ -857,6 +857,7 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
+<<<<<<< HEAD
             "version": "0.5.6",
             "source": {
                 "type": "git",
@@ -867,6 +868,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/0a8107166d42a24bb47fe6e101a45c5e9a6f0b8f",
                 "reference": "0a8107166d42a24bb47fe6e101a45c5e9a6f0b8f",
+=======
+            "version": "0.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
+                "reference": "a80bcab57fb50dc1dc33b1ab7e551449f45dfc69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/a80bcab57fb50dc1dc33b1ab7e551449f45dfc69",
+                "reference": "a80bcab57fb50dc1dc33b1ab7e551449f45dfc69",
+>>>>>>> 8c78cf9ea31e8f760fbc954b0a04c2568f60e889
                 "shasum": ""
             },
             "require": {
@@ -885,7 +898,11 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
+<<<<<<< HEAD
             "time": "2018-07-02T12:00:10+00:00"
+=======
+            "time": "2018-06-21T08:04:06+00:00"
+>>>>>>> 8c78cf9ea31e8f760fbc954b0a04c2568f60e889
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1229,6 +1246,7 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
+<<<<<<< HEAD
             "version": "1.5.0",
             "source": {
                 "type": "git",
@@ -1239,6 +1257,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/81a189f2ad6c75bbfe3d120a21c3c71cb2b13870",
                 "reference": "81a189f2ad6c75bbfe3d120a21c3c71cb2b13870",
+=======
+            "version": "1.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
+                "reference": "625d3e96bdc2c6c8ba6f108c59475b11080cb0df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/625d3e96bdc2c6c8ba6f108c59475b11080cb0df",
+                "reference": "625d3e96bdc2c6c8ba6f108c59475b11080cb0df",
+>>>>>>> 8c78cf9ea31e8f760fbc954b0a04c2568f60e889
                 "shasum": ""
             },
             "require": {
@@ -1264,7 +1294,11 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
+<<<<<<< HEAD
             "time": "2018-07-03T11:19:30+00:00"
+=======
+            "time": "2018-06-27T11:56:39+00:00"
+>>>>>>> 8c78cf9ea31e8f760fbc954b0a04c2568f60e889
         },
         {
             "name": "helsingborg-stad/multisite-role-propagation",
@@ -1296,6 +1330,7 @@
         },
         {
             "name": "helsingborg-stad/municipio",
+<<<<<<< HEAD
             "version": "1.19.28",
             "source": {
                 "type": "git",
@@ -1306,6 +1341,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/5a4e9b1089ba486bfc12a049cdc42ca7394ebe3a",
                 "reference": "5a4e9b1089ba486bfc12a049cdc42ca7394ebe3a",
+=======
+            "version": "1.19.24",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/Municipio.git",
+                "reference": "07ec7e91bc9f68a050c52b1506862d22ff964a2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/07ec7e91bc9f68a050c52b1506862d22ff964a2d",
+                "reference": "07ec7e91bc9f68a050c52b1506862d22ff964a2d",
+>>>>>>> 8c78cf9ea31e8f760fbc954b0a04c2568f60e889
                 "shasum": ""
             },
             "require": {
@@ -1339,7 +1386,11 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
+<<<<<<< HEAD
             "time": "2018-07-03T09:46:59+00:00"
+=======
+            "time": "2018-06-26T12:50:59+00:00"
+>>>>>>> 8c78cf9ea31e8f760fbc954b0a04c2568f60e889
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2814,15 +2865,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "1.3.2",
+            "version": "1.2.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/1.3.2"
+                "reference": "tags/1.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.1.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.1.2.5.zip",
                 "reference": null,
                 "shasum": null
             },
