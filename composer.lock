@@ -857,16 +857,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.5.6",
+            "version": "0.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "0a8107166d42a24bb47fe6e101a45c5e9a6f0b8f"
+                "reference": "b2832498b452ac364b65813a93d04d8c29295cf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/0a8107166d42a24bb47fe6e101a45c5e9a6f0b8f",
-                "reference": "0a8107166d42a24bb47fe6e101a45c5e9a6f0b8f",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/b2832498b452ac364b65813a93d04d8c29295cf7",
+                "reference": "b2832498b452ac364b65813a93d04d8c29295cf7",
                 "shasum": ""
             },
             "require": {
@@ -885,7 +885,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2018-07-02T12:00:10+00:00"
+            "time": "2018-07-04T08:54:03+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1229,16 +1229,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.5.6",
+            "version": "1.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "fb347c343ecf54062686dd45074a2b1fccae46d0"
+                "reference": "fbe4869371f4ef50ca90c674dd43f6da9862d1a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/fb347c343ecf54062686dd45074a2b1fccae46d0",
-                "reference": "fb347c343ecf54062686dd45074a2b1fccae46d0",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/fbe4869371f4ef50ca90c674dd43f6da9862d1a6",
+                "reference": "fbe4869371f4ef50ca90c674dd43f6da9862d1a6",
                 "shasum": ""
             },
             "require": {
@@ -1264,7 +1264,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2018-07-04T08:34:50+00:00"
+            "time": "2018-07-04T09:20:51+00:00"
         },
         {
             "name": "helsingborg-stad/multisite-role-propagation",
