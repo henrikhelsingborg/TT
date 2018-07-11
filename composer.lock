@@ -1184,16 +1184,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "2.6.16",
+            "version": "2.6.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "f69d1cba8cd1a773bc716e1a80f6be06ed80b637"
+                "reference": "bc5d049d750b7be1c92aa15e113bff903ab4858e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/f69d1cba8cd1a773bc716e1a80f6be06ed80b637",
-                "reference": "f69d1cba8cd1a773bc716e1a80f6be06ed80b637",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/bc5d049d750b7be1c92aa15e113bff903ab4858e",
+                "reference": "bc5d049d750b7be1c92aa15e113bff903ab4858e",
                 "shasum": ""
             },
             "require": {
@@ -1225,20 +1225,20 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2018-07-10T12:12:41+00:00"
+            "time": "2018-07-10T13:54:00+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.5.16",
+            "version": "1.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "ce9786ca12b24b89c82b4c81e08cf3292c092d31"
+                "reference": "4802682e10862e79e242391761b40467944651f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/ce9786ca12b24b89c82b4c81e08cf3292c092d31",
-                "reference": "ce9786ca12b24b89c82b4c81e08cf3292c092d31",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/4802682e10862e79e242391761b40467944651f3",
+                "reference": "4802682e10862e79e242391761b40467944651f3",
                 "shasum": ""
             },
             "require": {
@@ -1264,7 +1264,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2018-07-10T12:41:55+00:00"
+            "time": "2018-07-11T09:31:12+00:00"
         },
         {
             "name": "helsingborg-stad/multisite-role-propagation",
@@ -2794,15 +2794,15 @@
         },
         {
             "name": "wpackagist-plugin/varnish-http-purge",
-            "version": "4.5.2",
+            "version": "4.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/varnish-http-purge/",
-                "reference": "tags/4.5.2"
+                "reference": "tags/4.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/varnish-http-purge.4.5.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/varnish-http-purge.4.6.1.zip",
                 "reference": null,
                 "shasum": null
             },
