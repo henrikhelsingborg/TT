@@ -1032,16 +1032,16 @@
         },
         {
             "name": "helsingborg-stad/customer-feedback",
-            "version": "2.2.20",
+            "version": "2.2.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Customer-feedback.git",
-                "reference": "2d379a6d395f48c1657b1863b1977ca987273460"
+                "reference": "37ef7cdb27672a667117d183541a96a3d8a1ccd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Customer-feedback/zipball/2d379a6d395f48c1657b1863b1977ca987273460",
-                "reference": "2d379a6d395f48c1657b1863b1977ca987273460",
+                "url": "https://api.github.com/repos/helsingborg-stad/Customer-feedback/zipball/37ef7cdb27672a667117d183541a96a3d8a1ccd3",
+                "reference": "37ef7cdb27672a667117d183541a96a3d8a1ccd3",
                 "shasum": ""
             },
             "require": {
@@ -1059,7 +1059,7 @@
                 }
             ],
             "description": "This WordPress plugin adds a feedback form to the end of every page (or any other activated post type).",
-            "time": "2018-07-12T07:31:41+00:00"
+            "time": "2018-07-12T07:45:35+00:00"
         },
         {
             "name": "helsingborg-stad/easy-to-read-alternative",
