@@ -35,7 +35,7 @@ RewriteRule (^|.*?/)nyhetskatalog(.*)$ /nyheter$2 [R=302,L,NC]
 # Remove /startsida/
 RewriteRule ^startsida/(.+)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
-#F ixing network admin urls
+#Fixing network admin urls
 RewriteRule ^wp-admin/network/(.*)$ wp/wp-admin/network/$1 [L]
 
 # Add a trailing slash to /wp-admin
@@ -93,11 +93,6 @@ RedirectMatch 301 /secure /wp-admin
     RewriteCond %{HTTP_REFERER} ^.*(ranksonic\.|semalt\.|kambasoft\.|buttons-for-website\.|buttons-for-your-website\.com|4webmasters\.org|social-buttons\.com|best-seo-offer\.com|best-seo-solution\.com).*$ [NC]
     RewriteRule ^(.*)$ - [F]
 </ifModule>
-
-# Prevent drive-by-download attacks
-<IfModule mod_headers.c>
-    Header set X-Content-Type-Options nosniff
-</IfModule>
 
 # Prevent clickjacking attempts
 <IfModule mod_headers.c>
@@ -243,7 +238,6 @@ RedirectMatch 301 /secure /wp-admin
 
     ExpiresByType text/css                              "access plus 1 year"
 
-
   # Data interchange
 
     ExpiresByType application/atom+xml                  "access plus 1 hour"
@@ -257,7 +251,6 @@ RedirectMatch 301 /secure /wp-admin
     ExpiresByType application/xml                       "access plus 0 seconds"
     ExpiresByType text/xml                              "access plus 0 seconds"
 
-
   # Favicon (cannot be renamed!) and cursor images
 
     ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
@@ -266,7 +259,6 @@ RedirectMatch 301 /secure /wp-admin
   # HTML
 
     ExpiresByType text/html                             "access plus 0 seconds"
-
 
   # JavaScript
 
@@ -281,7 +273,6 @@ RedirectMatch 301 /secure /wp-admin
     ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
     ExpiresByType text/cache-manifest                   "access plus 0 seconds"
 
-
   # Media files
 
     ExpiresByType audio/ogg                             "access plus 1 month"
@@ -294,7 +285,6 @@ RedirectMatch 301 /secure /wp-admin
     ExpiresByType video/mp4                             "access plus 1 month"
     ExpiresByType video/ogg                             "access plus 1 month"
     ExpiresByType video/webm                            "access plus 1 month"
-
 
   # Web fonts
 
@@ -321,13 +311,4 @@ RedirectMatch 301 /secure /wp-admin
 
     ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
 
-</IfModule>
-
-# File name cache busting
-# Route all requests such as `/style.12345.css` to `/style.css`.
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.+)\.(\d+)\.(bmp|css|cur|gif|ico|jpe?g|js|png|svgz?|webp|webmanifest)$ $1.$3 [L]
 </IfModule>
