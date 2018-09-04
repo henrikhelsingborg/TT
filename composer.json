@@ -44,7 +44,7 @@
         "helsingborg-stad/search-notices": ">=1.0.0",
         "helsingborg-stad/wp-search-statistics": ">=0.1.0",
         "helsingborg-stad/attachment-revisions": ">=1.0.0",
-        "helsingborg-stad/active-directory-api-wp-integration": ">=1.0.0",
+        "helsingborg-stad/active-directory-api-wp-integration": ">=2.0.0",
         "helsingborg-stad/easy-to-read-alternative": ">=1.0.0",
         "helsingborg-stad/multisite-role-propagation": ">=1.0.0",
         "helsingborg-stad/modularity-form-builder": ">=1.0.0",
