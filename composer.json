@@ -64,7 +64,8 @@
         "wpackagist-plugin/username-changer": "3.1.0",
         "helsingborg-stad/Customer-feedback": ">=2.2.18",
         "helsingborg-stad/algolia-multisite-enabler": "^1.0",
-        "wpackagist-plugin/wp-mail-smtp": "^1.2"
+        "wpackagist-plugin/wp-mail-smtp": "^1.2",
+        "wpackagist-plugin/classic-editor": "^0.4.0"
     },
 
     "extra": {
