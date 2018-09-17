@@ -29,9 +29,6 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 # Rewrite /wp/wp-content to /wp-content
 RewriteRule ^wp/wp-content/(.*)$ /wp-content/$1 [R=301,L]
 
-# Nyhetskatalog
-RewriteRule (^|.*?/)nyhetskatalog(.*)$ /nyheter$2 [R=302,L,NC]
-
 # Remove /startsida/
 RewriteRule ^startsida/(.+)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
