@@ -1187,16 +1187,16 @@
         },
         {
             "name": "helsingborg-stad/media-usage",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/media-usage.git",
-                "reference": "80fc8971eae81d69b3f6b934d4ffdb243aca70d0"
+                "reference": "0b8fc3bc7fa0f68b3a7eecc2db83e93440bb3139"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/80fc8971eae81d69b3f6b934d4ffdb243aca70d0",
-                "reference": "80fc8971eae81d69b3f6b934d4ffdb243aca70d0",
+                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/0b8fc3bc7fa0f68b3a7eecc2db83e93440bb3139",
+                "reference": "0b8fc3bc7fa0f68b3a7eecc2db83e93440bb3139",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1211,7 +1211,7 @@
                 }
             ],
             "description": "Track the use of attachments across posts, meta and options",
-            "time": "2018-09-18T12:15:29+00:00"
+            "time": "2018-09-18T13:31:18+00:00"
         },
         {
             "name": "helsingborg-stad/modularity",
