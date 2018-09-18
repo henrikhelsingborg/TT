@@ -309,3 +309,9 @@ RedirectMatch 301 /secure /wp-admin
     ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
 
 </IfModule>
+
+# Force download of pdf files
+<FilesMatch "\.(pdf)$" >
+    ForceType application/octet-stream
+    Header add Content-Disposition "attachment"
+</FilesMatch>
