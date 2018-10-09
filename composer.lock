@@ -1260,16 +1260,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.6.4",
+            "version": "1.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "2f07ac0d0b9308ec18dc8ae592f329c436ed8b6d"
+                "reference": "8a294b12536653f71fa9e5e4afc09461f66f5057"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/2f07ac0d0b9308ec18dc8ae592f329c436ed8b6d",
-                "reference": "2f07ac0d0b9308ec18dc8ae592f329c436ed8b6d",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/8a294b12536653f71fa9e5e4afc09461f66f5057",
+                "reference": "8a294b12536653f71fa9e5e4afc09461f66f5057",
                 "shasum": ""
             },
             "require": {
@@ -1295,7 +1295,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2018-10-08T13:14:43+00:00"
+            "time": "2018-10-09T08:01:11+00:00"
         },
         {
             "name": "helsingborg-stad/multisite-role-propagation",
@@ -2947,15 +2947,15 @@
         },
         {
             "name": "wpackagist-plugin/varnish-http-purge",
-            "version": "4.6.6",
+            "version": "4.7.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/varnish-http-purge/",
-                "reference": "tags/4.6.6"
+                "reference": "tags/4.7.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/varnish-http-purge.4.6.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/varnish-http-purge.4.7.0.zip",
                 "reference": null,
                 "shasum": null
             },
