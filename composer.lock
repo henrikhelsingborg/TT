@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e624ecbb6fc3dc62286fb5813c4fa477",
+    "content-hash": "ecc8b62f45b71381cdebd573b63bd255",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1260,16 +1260,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.55.26",
+            "version": "1.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "e80e049227e71eee7064de79b353de71ed0f3c11"
+                "reference": "2f07ac0d0b9308ec18dc8ae592f329c436ed8b6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/e80e049227e71eee7064de79b353de71ed0f3c11",
-                "reference": "e80e049227e71eee7064de79b353de71ed0f3c11",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/2f07ac0d0b9308ec18dc8ae592f329c436ed8b6d",
+                "reference": "2f07ac0d0b9308ec18dc8ae592f329c436ed8b6d",
                 "shasum": ""
             },
             "require": {
@@ -1295,7 +1295,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2018-08-15T12:26:28+00:00"
+            "time": "2018-10-08T13:14:43+00:00"
         },
         {
             "name": "helsingborg-stad/multisite-role-propagation",
