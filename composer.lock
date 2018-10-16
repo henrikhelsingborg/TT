@@ -409,16 +409,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.71",
+            "version": "v0.72",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "f066aac8c0ea88cf5880611d589fd1e01c4fd082"
+                "reference": "e8c6b72963b19e707b8a6c46fe3515207bb03bd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/f066aac8c0ea88cf5880611d589fd1e01c4fd082",
-                "reference": "f066aac8c0ea88cf5880611d589fd1e01c4fd082",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/e8c6b72963b19e707b8a6c46fe3515207bb03bd2",
+                "reference": "e8c6b72963b19e707b8a6c46fe3515207bb03bd2",
                 "shasum": ""
             },
             "require": {
@@ -442,7 +442,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-10-09T00:22:49+00:00"
+            "time": "2018-10-13T00:23:17+00:00"
         },
         {
             "name": "google/auth",
@@ -857,16 +857,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.6.7",
+            "version": "0.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "5f73d6968110ca1188063b2f7d8ab2b978b56842"
+                "reference": "4b0ff8be0ac96d2e3674c50c13c7c3a0269b9eba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/5f73d6968110ca1188063b2f7d8ab2b978b56842",
-                "reference": "5f73d6968110ca1188063b2f7d8ab2b978b56842",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/4b0ff8be0ac96d2e3674c50c13c7c3a0269b9eba",
+                "reference": "4b0ff8be0ac96d2e3674c50c13c7c3a0269b9eba",
                 "shasum": ""
             },
             "require": {
@@ -885,7 +885,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2018-10-12T11:52:16+00:00"
+            "time": "2018-10-16T09:35:02+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -2947,15 +2947,15 @@
         },
         {
             "name": "wpackagist-plugin/varnish-http-purge",
-            "version": "4.7.1",
+            "version": "4.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/varnish-http-purge/",
-                "reference": "tags/4.7.1"
+                "reference": "tags/4.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/varnish-http-purge.4.7.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/varnish-http-purge.4.7.2.zip",
                 "reference": null,
                 "shasum": null
             },
