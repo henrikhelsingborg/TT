@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ecc8b62f45b71381cdebd573b63bd255",
+    "content-hash": "1642870b940934f8fd4c29fbd7b11324",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1296,6 +1296,69 @@
                 }
             ],
             "time": "2018-10-09T13:04:29+00:00"
+        },
+        {
+            "name": "helsingborg-stad/modularity-guides",
+            "version": "2.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-guides.git",
+                "reference": "c05750a263b651e7e30ffcdcf9b631213c99f78c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-guides/zipball/c05750a263b651e7e30ffcdcf9b631213c99f78c",
+                "reference": "c05750a263b651e7e30ffcdcf9b631213c99f78c",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                },
+                {
+                    "name": "Kristoffer Svanmark",
+                    "email": "kristoffer.svanmark@knowit.se"
+                }
+            ],
+            "description": "Addon for Modularity for creating guides",
+            "time": "2018-07-12T08:33:00+00:00"
+        },
+        {
+            "name": "helsingborg-stad/modularity-timeline",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-timeline.git",
+                "reference": "544a8529cf685e0f43be069ddc1d9088ead4e883"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-timeline/zipball/544a8529cf685e0f43be069ddc1d9088ead4e883",
+                "reference": "544a8529cf685e0f43be069ddc1d9088ead4e883",
+                "shasum": ""
+            },
+            "require": {
+                "helsingborg-stad/acf-export-manager": ">=1.0.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonatan Hanson",
+                    "email": "jonatan.hanson@hiq.se"
+                }
+            ],
+            "description": "A module to display a timeline.",
+            "time": "2018-03-02T10:16:17+00:00"
         },
         {
             "name": "helsingborg-stad/multisite-role-propagation",
@@ -2964,6 +3027,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/varnish-http-purge/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-editor-widget",
+            "version": "0.5.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-editor-widget/",
+                "reference": "tags/0.5.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-editor-widget.0.5.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-editor-widget/"
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
