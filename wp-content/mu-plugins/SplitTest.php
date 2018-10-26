@@ -12,8 +12,7 @@ class SplitTest
 {
     private $_postIds = array();
     private $_postType = "page";
-    private $_Ttl = 60*60*60*24;
-    private $_cookieName = "split_test";
+    private $_sessionName = "split_test";
     private $_selectedPostId = null;
 
     /**
@@ -105,8 +104,8 @@ class SplitTest
     private function _getPostId() : int
     {
         //Get stored page
-        if (isset($_COOKIE[$this->_cookieName])) {
-            return $_COOKIE[$this->_cookieName];
+        if (isset($_SESSION[$this->_sessionName])) {
+            return $_SESSION[$this->_sessionName];
         }
 
         //Get id stored for this instance
@@ -115,15 +114,10 @@ class SplitTest
         }
 
         //Randomize a new page
-        $randomPage = $this->_postIds[array_rand($this->_postIds)];
-
-        //Store to instance of object
-        $this->_selectedPostId = $randomPage;
+        $this->_selectedPostId  = $this->_postIds[array_rand($this->_postIds)];
 
         //Store as future cookie
-        setcookie($this->_cookieName, $randomPage, time()+$this->_Ttl, "/");
-
-        return $randomPage;
+        return $_SESSION[$this->_sessionName] = $this->_selectedPostId;
     }
 
     /**
