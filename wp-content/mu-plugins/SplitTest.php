@@ -23,6 +23,15 @@ class SplitTest
      */
     public function __construct()
     {
+        //Default to homepage uri
+        if (!defined('SPLIT_TEST_URI')) {
+            define("SPLIT_TEST_URI", "");
+        }
+
+        if (!$this->_matchingUri()) {
+            return;
+        }
+
         if (defined('SPLIT_TEST_PAGE_IDS') && is_array(SPLIT_TEST_PAGE_IDS) && !empty(SPLIT_TEST_PAGE_IDS)) {
 
             $this->_postIds = SPLIT_TEST_PAGE_IDS; // Adds post id array to object
@@ -41,11 +50,6 @@ class SplitTest
      */
     public function fixSeoIssues()
     {
-        //Check if front page
-        if (!is_front_page()) {
-            return;
-        }
-
         //Check it's not default front page
         if ($this->_getPostId() == get_option('page_on_front')) {
             return;
@@ -63,11 +67,6 @@ class SplitTest
      */
     public function bypassCache()
     {
-        //Check if front page
-        if (!is_front_page()) {
-            return;
-        }
-
         header('Pragma: no-cache');
         header('Cache-Control: private, no-cache, no-store, max-age=0, must-revalidate, proxy-revalidate');
     }
@@ -87,11 +86,6 @@ class SplitTest
             return;
         }
 
-        //Check if front page
-        if (!is_front_page()) {
-            return;
-        }
-
         //Check if prevview
         if (is_preview()) {
             return;
@@ -100,6 +94,7 @@ class SplitTest
         //Set random page
         $query->set('post_type', $this->_postType);
         $query->set('page_id', $this->_getPostID());
+
     }
 
     /**
@@ -129,6 +124,19 @@ class SplitTest
         setcookie($this->_cookieName, $randomPage, time()+$this->_Ttl, "/");
 
         return $randomPage;
+    }
+
+    /**
+     * Check if defined uri
+     *
+     * @return bool
+     */
+    private function _matchingUri()
+    {
+        if (rtrim($_SERVER['REQUEST_URI'], "/") == rtrim(SPLIT_TEST_URI, "/")) {
+            return true;
+        }
+        return false;
     }
 }
 
