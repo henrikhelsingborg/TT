@@ -33,6 +33,8 @@ class SplitTest
 
         if (defined('SPLIT_TEST_PAGE_IDS') && is_array(SPLIT_TEST_PAGE_IDS) && !empty(SPLIT_TEST_PAGE_IDS)) {
 
+            session_start();
+
             $this->_postIds = SPLIT_TEST_PAGE_IDS; // Adds post id array to object
 
             //Run filters
