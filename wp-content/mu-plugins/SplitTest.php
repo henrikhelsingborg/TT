@@ -106,7 +106,7 @@ class SplitTest
     private function _getPostId() : int
     {
         //Get stored page
-        if (isset($_SESSION[$this->_sessionName])) {
+        if (isset($_SESSION[$this->_sessionName]) && is_numeric($_SESSION[$this->_sessionName])) {
             return $_SESSION[$this->_sessionName];
         }
 
@@ -116,7 +116,7 @@ class SplitTest
         }
 
         //Randomize a new page
-        $this->_selectedPostId  = $this->_postIds[array_rand($this->_postIds)];
+        $this->_selectedPostId = $this->_postIds[array_rand($this->_postIds)];
 
         //Store as future cookie
         return $_SESSION[$this->_sessionName] = $this->_selectedPostId;
