@@ -54,6 +54,7 @@
         "helsingborg-stad/algolia-frontend": ">=1.0.0",
         "helsingborg-stad/modularity-guides": ">=2.0.10",
         "helsingborg-stad/modularity-timeline": ">=1.1.4",
+        "helsingborg-stad/modularity-json-render": ">=1.0.0",
         "netsolutionab/volontar-wp": "1.0.3",
         "wpackagist-plugin/varnish-http-purge": "^4.1.1",
         "wpackagist-plugin/stream": "^3.0.4",
