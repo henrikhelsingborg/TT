@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0502c7a26a29a3b7d27c82bde592e4df",
+    "content-hash": "5842569f48a7de89ba0c73ba29b2f924",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1333,6 +1333,36 @@
             ],
             "description": "Addon for Modularity for creating guides",
             "time": "2018-07-12T08:33:00+00:00"
+        },
+        {
+            "name": "helsingborg-stad/modularity-json-render",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-json-render.git",
+                "reference": "2f9e5136590e2a450a47e80f6f769d314fecf5ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/2f9e5136590e2a450a47e80f6f769d314fecf5ce",
+                "reference": "2f9e5136590e2a450a47e80f6f769d314fecf5ce",
+                "shasum": ""
+            },
+            "require": {
+                "helsingborg-stad/acf-export-manager": ">=1.0.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                }
+            ],
+            "time": "2018-11-20T10:10:12+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-sections",
