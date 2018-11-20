@@ -1336,16 +1336,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-json-render",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-json-render.git",
-                "reference": "2f9e5136590e2a450a47e80f6f769d314fecf5ce"
+                "reference": "e80e506e677a8dabc07c0947ad16a11f78090600"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/2f9e5136590e2a450a47e80f6f769d314fecf5ce",
-                "reference": "2f9e5136590e2a450a47e80f6f769d314fecf5ce",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/e80e506e677a8dabc07c0947ad16a11f78090600",
+                "reference": "e80e506e677a8dabc07c0947ad16a11f78090600",
                 "shasum": ""
             },
             "require": {
@@ -1362,7 +1362,7 @@
                     "email": "sebastian.thulin@helsingborg.se"
                 }
             ],
-            "time": "2018-11-20T10:10:12+00:00"
+            "time": "2018-11-20T10:50:37+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-sections",
