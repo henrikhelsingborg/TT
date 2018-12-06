@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5842569f48a7de89ba0c73ba29b2f924",
+    "content-hash": "fffa00237cca6c74e5ae2109eae189e1",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1338,16 +1338,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-json-render",
-            "version": "1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-json-render.git",
-                "reference": "e8c166517c580e8228a74991ea3cbf4e3074e8ec"
+                "reference": "4dbec2dbb72b2217eb821bf822676c4d4709ebc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/e8c166517c580e8228a74991ea3cbf4e3074e8ec",
-                "reference": "e8c166517c580e8228a74991ea3cbf4e3074e8ec",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/4dbec2dbb72b2217eb821bf822676c4d4709ebc0",
+                "reference": "4dbec2dbb72b2217eb821bf822676c4d4709ebc0",
                 "shasum": ""
             },
             "require": {
@@ -1364,7 +1364,7 @@
                     "email": "sebastian.thulin@helsingborg.se"
                 }
             ],
-            "time": "2018-12-06T09:28:10+00:00"
+            "time": "2018-12-06T13:45:36+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-sections",
@@ -3036,7 +3036,7 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "3.2.0",
+            "version": "3.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
@@ -3044,7 +3044,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1543949900",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1544095852",
                 "reference": null,
                 "shasum": null
             },
