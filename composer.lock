@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fffa00237cca6c74e5ae2109eae189e1",
+    "content-hash": "20ebd15c70aa106a3c25658a171c9aa2",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1338,16 +1338,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-json-render",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-json-render.git",
-                "reference": "4dbec2dbb72b2217eb821bf822676c4d4709ebc0"
+                "reference": "80b3c4158f931937d5ef0ae27719117e1f023a82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/4dbec2dbb72b2217eb821bf822676c4d4709ebc0",
-                "reference": "4dbec2dbb72b2217eb821bf822676c4d4709ebc0",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/80b3c4158f931937d5ef0ae27719117e1f023a82",
+                "reference": "80b3c4158f931937d5ef0ae27719117e1f023a82",
                 "shasum": ""
             },
             "require": {
@@ -1364,7 +1364,7 @@
                     "email": "sebastian.thulin@helsingborg.se"
                 }
             ],
-            "time": "2018-12-06T13:45:36+00:00"
+            "time": "2018-12-06T14:58:12+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-sections",
@@ -2665,16 +2665,16 @@
         },
         {
             "name": "symfony/contracts",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/contracts.git",
-                "reference": "3edf0ab943d1985a356721952cba36ff31bd6e5f"
+                "reference": "1aa7ab2429c3d594dd70689604b5cf7421254cdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/contracts/zipball/3edf0ab943d1985a356721952cba36ff31bd6e5f",
-                "reference": "3edf0ab943d1985a356721952cba36ff31bd6e5f",
+                "url": "https://api.github.com/repos/symfony/contracts/zipball/1aa7ab2429c3d594dd70689604b5cf7421254cdf",
+                "reference": "1aa7ab2429c3d594dd70689604b5cf7421254cdf",
                 "shasum": ""
             },
             "require": {
@@ -2729,7 +2729,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2018-11-24T09:35:08+00:00"
+            "time": "2018-12-05T08:06:11+00:00"
         },
         {
             "name": "symfony/debug",
