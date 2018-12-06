@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0502c7a26a29a3b7d27c82bde592e4df",
+    "content-hash": "5842569f48a7de89ba0c73ba29b2f924",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -614,16 +614,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.5.0",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "53662d6688033a5eccde987bdd5a4a98ebe2d952"
+                "reference": "9f83dded91781a01c63574e387eaa769be769115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/53662d6688033a5eccde987bdd5a4a98ebe2d952",
-                "reference": "53662d6688033a5eccde987bdd5a4a98ebe2d952",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/9f83dded91781a01c63574e387eaa769be769115",
+                "reference": "9f83dded91781a01c63574e387eaa769be769115",
                 "shasum": ""
             },
             "require": {
@@ -677,7 +677,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-12-03T05:07:51+00:00"
+            "time": "2018-12-04T20:46:45+00:00"
         },
         {
             "name": "helsingborg-stad/acf-export-manager",
@@ -1222,16 +1222,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "2.10.0",
+            "version": "2.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "24388c827e68062a9bd6b4ed24879b44a3f3ebe0"
+                "reference": "1e112349f1bfabdfa80f81cd20c5023ddf02f628"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/24388c827e68062a9bd6b4ed24879b44a3f3ebe0",
-                "reference": "24388c827e68062a9bd6b4ed24879b44a3f3ebe0",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/1e112349f1bfabdfa80f81cd20c5023ddf02f628",
+                "reference": "1e112349f1bfabdfa80f81cd20c5023ddf02f628",
                 "shasum": ""
             },
             "require": {
@@ -1263,7 +1263,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2018-11-29T13:53:14+00:00"
+            "time": "2018-12-06T08:29:42+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
@@ -1335,6 +1335,36 @@
             ],
             "description": "Addon for Modularity for creating guides",
             "time": "2018-07-12T08:33:00+00:00"
+        },
+        {
+            "name": "helsingborg-stad/modularity-json-render",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-json-render.git",
+                "reference": "e8c166517c580e8228a74991ea3cbf4e3074e8ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/e8c166517c580e8228a74991ea3cbf4e3074e8ec",
+                "reference": "e8c166517c580e8228a74991ea3cbf4e3074e8ec",
+                "shasum": ""
+            },
+            "require": {
+                "helsingborg-stad/acf-export-manager": ">=1.0.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                }
+            ],
+            "time": "2018-12-06T09:28:10+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-sections",
@@ -3006,15 +3036,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "3.1.4",
+            "version": "3.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/3.1.4"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.3.1.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1543949900",
                 "reference": null,
                 "shasum": null
             },
