@@ -28,13 +28,21 @@ class AddAlgoliaAttribute
     public function addLevel($attributes, $post)
     {
 
+        //Count post levels
         $numberOfLevels = (substr_count(get_permalink($post), "/")-3);
 
+        //Calculated importance
         if ($numberOfLevels != 0) {
             $attributes['post_level_importance'] = $numberOfLevels;
         } else {
             $attributes['post_level_importance'] = 5;
         }
+
+        //Higher for event posttype
+        if (get_post_type($post) == "event") {
+            $attributes['post_level_importance'] = 4;
+        }
+
         return $attributes;
     }
 
