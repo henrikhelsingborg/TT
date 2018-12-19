@@ -40,7 +40,12 @@ class AddAlgoliaAttribute
 
         //Higher for event posttype
         if (get_post_type($post) == "event") {
-            $attributes['post_level_importance'] = 4;
+            $attributes['post_level_importance'] = 5;
+        }
+
+        //Higher for news posttype
+        if (get_post_type($post) == "nyheter") {
+            $attributes['post_level_importance'] = 3;
         }
 
         return $attributes;
