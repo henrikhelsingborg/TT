@@ -18,13 +18,13 @@
  * @package WordPress
  */
 
-require_once 'config/salts.php';
-require_once 'config/content.php';
-require_once 'config/database.php';
-require_once 'config/plugins.php';
-require_once 'config/update.php';
-require_once 'config/upload.php';
-require_once 'config/cron.php';
+require_once __DIR__ . '/config/salts.php';
+require_once __DIR__ . '/config/content.php';
+require_once __DIR__ . '/config/database.php';
+require_once __DIR__ . '/config/plugins.php';
+require_once __DIR__ . '/config/update.php';
+require_once __DIR__ . '/config/upload.php';
+require_once __DIR__ . '/config/cron.php';
 
 /**
  * Cookie settings
@@ -33,7 +33,7 @@ require_once 'config/cron.php';
  * cookie.php, then go ahead and edit the configurations
  */
 if (file_exists(__DIR__ . '/config/cookie.php')) {
-    require_once 'config/cookie.php';
+    require_once __DIR__ . '/config/cookie.php';
 }
 
 /**
@@ -43,7 +43,7 @@ if (file_exists(__DIR__ . '/config/cookie.php')) {
  * cache.php, then go ahead and edit the configurations
  */
 if (file_exists(__DIR__ . '/config/cache.php')) {
-    require_once 'config/cache.php';
+    require_once __DIR__ . '/config/cache.php';
 }
 
 /**
@@ -53,7 +53,7 @@ if (file_exists(__DIR__ . '/config/cache.php')) {
  * multisite.php, then go ahead and edit the configurations
  */
 if (file_exists(__DIR__ . '/config/multisite.php')) {
-    require_once 'config/multisite.php';
+    require_once __DIR__ . '/config/multisite.php';
 }
 
 /**
@@ -63,7 +63,7 @@ if (file_exists(__DIR__ . '/config/multisite.php')) {
  * put your dev-stuff and overrides inside.
  */
 if (file_exists(__DIR__ . '/config/developer.php')) {
-    require_once 'config/developer.php';
+    require_once __DIR__ . '/config/developer.php';
 }
 
 /* That's all, stop editing! Happy blogging. */
