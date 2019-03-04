@@ -36,11 +36,8 @@ define('WEB_FONT', 'Roboto');
  */
  define('SSL_PROXY', true);
 
-/**
- * Searchable indexes
+ /**
+ * Set a priority to load algolia search at
  * @var bool
  */
-define('ALGOLIA_FRONTEND_INDEXES', array(
-    array('hbg_searchable_posts', 100, 'Invånare'),
-    array('foretag_searchable_posts', 50, 'Företagare')
-));
+define('ALGOLIA_INIT_PRIORITY', 5);
