@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a1143fbb51f1822ed9673ec089133af",
+    "content-hash": "5842569f48a7de89ba0c73ba29b2f924",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -64,16 +64,16 @@
         },
         {
             "name": "aristath/kirki",
-            "version": "v3.0.37",
+            "version": "v3.0.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aristath/kirki.git",
-                "reference": "276958600817fdbd9320a26d67c98da9ef449714"
+                "reference": "feb8863ea9ceb9f4f30f178d70c0b8858599a95c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aristath/kirki/zipball/276958600817fdbd9320a26d67c98da9ef449714",
-                "reference": "276958600817fdbd9320a26d67c98da9ef449714",
+                "url": "https://api.github.com/repos/aristath/kirki/zipball/feb8863ea9ceb9f4f30f178d70c0b8858599a95c",
+                "reference": "feb8863ea9ceb9f4f30f178d70c0b8858599a95c",
                 "shasum": ""
             },
             "require": {
@@ -111,7 +111,7 @@
                 "customizer",
                 "wordpress"
             ],
-            "time": "2019-02-26T22:11:16+00:00"
+            "time": "2019-02-28T23:16:42+00:00"
         },
         {
             "name": "composer/installers",
@@ -857,16 +857,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.6.13",
+            "version": "0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "957b31a7943895c2bcd6ba816861421e5349c062"
+                "reference": "ed4b744f43622988effc40bc24dc102a95c7a158"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/957b31a7943895c2bcd6ba816861421e5349c062",
-                "reference": "957b31a7943895c2bcd6ba816861421e5349c062",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/ed4b744f43622988effc40bc24dc102a95c7a158",
+                "reference": "ed4b744f43622988effc40bc24dc102a95c7a158",
                 "shasum": ""
             },
             "require": {
@@ -885,7 +885,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2019-02-13T13:34:19+00:00"
+            "time": "2019-02-28T15:44:34+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -3086,26 +3086,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/mce-table-buttons/"
-        },
-        {
-            "name": "wpackagist-plugin/redirection",
-            "version": "4.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/4.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.4.0.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
             "name": "wpackagist-plugin/redis-cache",
