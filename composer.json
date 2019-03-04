@@ -51,7 +51,6 @@
         "helsingborg-stad/wp-page-for-post-type": ">=1.0.0",
         "helsingborg-stad/api-alarm-integration": ">=1.0.0",
         "helsingborg-stad/google-analythics": ">=1.0.0",
-        "helsingborg-stad/algolia-frontend": ">=1.0.0",
         "helsingborg-stad/modularity-guides": ">=2.0.10",
         "helsingborg-stad/modularity-timeline": ">=1.1.4",
         "helsingborg-stad/modularity-json-render": ">=1.0.0",

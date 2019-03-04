@@ -4,64 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b512a253f5d7116c69c954a3bdd5aa38",
+    "content-hash": "2da94de4078e93624d486c5d2278b881",
     "packages": [
-        {
-            "name": "algolia/algoliasearch-client-php",
-            "version": "1.28.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "c167ba3247b38b028fc05b1c58e8b5fb5e08d114"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/c167ba3247b38b028fc05b1c58e8b5fb5e08d114",
-                "reference": "c167ba3247b38b028fc05b1c58e8b5fb5e08d114",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-mbstring": "*",
-                "php": "^5.3 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
-                "satooshi/php-coveralls": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.0": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "AlgoliaSearch": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Algolia Team",
-                    "email": "contact@algolia.com"
-                },
-                {
-                    "name": "Ryan T. Catlin",
-                    "email": "ryan.catlin@gmail.com"
-                },
-                {
-                    "name": "Jonathan H. Wage",
-                    "email": "jonwage@gmail.com"
-                }
-            ],
-            "description": "Algolia Search API Client for PHP",
-            "homepage": "https://github.com/algolia/algoliasearch-client-php",
-            "time": "2018-11-06T10:48:00+00:00"
-        },
         {
             "name": "aristath/kirki",
             "version": "v3.0.38",
@@ -760,37 +704,6 @@
             ],
             "description": "Simple plugin for verification of existing WordPress users with api.",
             "time": "2019-02-12T08:59:43+00:00"
-        },
-        {
-            "name": "helsingborg-stad/algolia-frontend",
-            "version": "1.0.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/helsingborg-stad/algolia-frontend.git",
-                "reference": "5ced7b71b3f7d4c2e6196cd638472ba5ef847d38"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/algolia-frontend/zipball/5ced7b71b3f7d4c2e6196cd638472ba5ef847d38",
-                "reference": "5ced7b71b3f7d4c2e6196cd638472ba5ef847d38",
-                "shasum": ""
-            },
-            "require": {
-                "algolia/algoliasearch-client-php": "^1.25"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Thulin",
-                    "email": "sebastian.thulin@helsingborg.se"
-                }
-            ],
-            "description": "Replaces the standard algolia frontend with our own. Forces algolia to use specific settings.",
-            "time": "2018-04-23T14:26:39+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-multisite-enabler",
