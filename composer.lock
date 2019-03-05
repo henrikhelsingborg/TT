@@ -805,16 +805,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.7.2",
+            "version": "0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "2ffc9b1a4cdc7c01649de5fd796bda1bed5aabb7"
+                "reference": "f2d2b201d38215ee498deccd45f339fee4ef57bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/2ffc9b1a4cdc7c01649de5fd796bda1bed5aabb7",
-                "reference": "2ffc9b1a4cdc7c01649de5fd796bda1bed5aabb7",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/f2d2b201d38215ee498deccd45f339fee4ef57bf",
+                "reference": "f2d2b201d38215ee498deccd45f339fee4ef57bf",
                 "shasum": ""
             },
             "require": {
@@ -833,7 +833,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2019-03-04T12:15:41+00:00"
+            "time": "2019-03-05T13:15:01+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
