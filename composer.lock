@@ -805,16 +805,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.7.2",
+            "version": "0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "2ffc9b1a4cdc7c01649de5fd796bda1bed5aabb7"
+                "reference": "f2d2b201d38215ee498deccd45f339fee4ef57bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/2ffc9b1a4cdc7c01649de5fd796bda1bed5aabb7",
-                "reference": "2ffc9b1a4cdc7c01649de5fd796bda1bed5aabb7",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/f2d2b201d38215ee498deccd45f339fee4ef57bf",
+                "reference": "f2d2b201d38215ee498deccd45f339fee4ef57bf",
                 "shasum": ""
             },
             "require": {
@@ -833,7 +833,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2019-03-04T12:15:41+00:00"
+            "time": "2019-03-05T13:15:01+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1208,16 +1208,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.7.3",
+            "version": "1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "d6a101cc99b71df4f9b9800b9a3d8903b70bf948"
+                "reference": "3d2b9475fee189cf503802451361795260aa6b76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/d6a101cc99b71df4f9b9800b9a3d8903b70bf948",
-                "reference": "d6a101cc99b71df4f9b9800b9a3d8903b70bf948",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/3d2b9475fee189cf503802451361795260aa6b76",
+                "reference": "3d2b9475fee189cf503802451361795260aa6b76",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1243,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2018-10-29T12:46:22+00:00"
+            "time": "2019-03-06T13:48:37+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-guides",
@@ -1561,16 +1561,16 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.8.2",
+            "version": "v5.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "2b390ea16656162a7c1a5f2ad547b4de917324bf"
+                "reference": "b984960d2634c6be97b0dd368a8953e8c4e06ec7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/2b390ea16656162a7c1a5f2ad547b4de917324bf",
-                "reference": "2b390ea16656162a7c1a5f2ad547b4de917324bf",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/b984960d2634c6be97b0dd368a8953e8c4e06ec7",
+                "reference": "b984960d2634c6be97b0dd368a8953e8c4e06ec7",
                 "shasum": ""
             },
             "require": {
@@ -1602,11 +1602,11 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-23T13:57:12+00:00"
+            "time": "2019-03-03T15:13:35+00:00"
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.8.2",
+            "version": "v5.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -1650,7 +1650,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v5.8.2",
+            "version": "v5.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -1695,7 +1695,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v5.8.2",
+            "version": "v5.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -1747,16 +1747,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.8.2",
+            "version": "v5.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "013cfab5d44c530b56d70cc9ccb891c8b25ebbce"
+                "reference": "0f0291d1bc2f036af3fceb8e46900b58812533c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/013cfab5d44c530b56d70cc9ccb891c8b25ebbce",
-                "reference": "013cfab5d44c530b56d70cc9ccb891c8b25ebbce",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/0f0291d1bc2f036af3fceb8e46900b58812533c4",
+                "reference": "0f0291d1bc2f036af3fceb8e46900b58812533c4",
                 "shasum": ""
             },
             "require": {
@@ -1804,11 +1804,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-27T14:00:44+00:00"
+            "time": "2019-03-05T13:38:58+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v5.8.2",
+            "version": "v5.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
