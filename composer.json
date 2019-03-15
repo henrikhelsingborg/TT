@@ -12,7 +12,15 @@
         },
         {
             "name": "Jonatan Hansson",
-            "email": "jonatan.hansson@hiq.se"
+            "email": "jonatan.hansson@helsingborg.se"
+        },
+        {
+            "name": "Nikolas Ramstedt",
+            "email": "nikolas.ramstedt@helsingborg.se"
+        },
+        {
+            "name": "Johan Silvergrund",
+            "email": "johan.silvergrund@hiq.se"
         }
     ],
     "minimum-stability" : "stable",
@@ -29,7 +37,7 @@
 
     "require": {
         "composer/installers": "~1.0",
-        "johnpbloch/wordpress": "^4.8.3",
+        "johnpbloch/wordpress": "^5.0",
         "helsingborg-stad/modularity": ">=1.0.0",
         "helsingborg-stad/municipio": ">=1.0.0",
         "helsingborg-stad/lix-calculator": ">=1.0.1",
