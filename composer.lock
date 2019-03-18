@@ -351,16 +351,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.89",
+            "version": "v0.90",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "8a285822d48df1650c4c298653aa4961049a1ee8"
+                "reference": "7ec8bd600d813d1307aafb4ab46d97495b4a88cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/8a285822d48df1650c4c298653aa4961049a1ee8",
-                "reference": "8a285822d48df1650c4c298653aa4961049a1ee8",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/7ec8bd600d813d1307aafb4ab46d97495b4a88cf",
+                "reference": "7ec8bd600d813d1307aafb4ab46d97495b4a88cf",
                 "shasum": ""
             },
             "require": {
@@ -384,7 +384,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-03-10T00:23:16+00:00"
+            "time": "2019-03-16T00:23:00+00:00"
         },
         {
             "name": "google/auth",
@@ -805,16 +805,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.9.2",
+            "version": "0.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "a67738c40f627914adbd85af2141150e43201ca6"
+                "reference": "9a9d2272cc165fdfa34403f50f68242cbf15ecae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/a67738c40f627914adbd85af2141150e43201ca6",
-                "reference": "a67738c40f627914adbd85af2141150e43201ca6",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/9a9d2272cc165fdfa34403f50f68242cbf15ecae",
+                "reference": "9a9d2272cc165fdfa34403f50f68242cbf15ecae",
                 "shasum": ""
             },
             "require": {
@@ -833,7 +833,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2019-03-08T15:32:37+00:00"
+            "time": "2019-03-18T08:10:22+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1402,16 +1402,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "1.23.6",
+            "version": "1.24.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "208cfbe0338c98742af91cfaee7d2799a0530e90"
+                "reference": "92bfce203d530ced58d9e6f3d436874f6eb59c47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/208cfbe0338c98742af91cfaee7d2799a0530e90",
-                "reference": "208cfbe0338c98742af91cfaee7d2799a0530e90",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/92bfce203d530ced58d9e6f3d436874f6eb59c47",
+                "reference": "92bfce203d530ced58d9e6f3d436874f6eb59c47",
                 "shasum": ""
             },
             "require": {
@@ -1446,7 +1446,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2019-03-08T14:06:00+00:00"
+            "time": "2019-03-18T07:58:49+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -3047,15 +3047,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.0.1",
+            "version": "4.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/4.0.1"
+                "reference": "tags/4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.4.0.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.4.1.zip",
                 "reference": null,
                 "shasum": null
             },
