@@ -679,16 +679,16 @@
         },
         {
             "name": "helsingborg-stad/active-directory-api-wp-integration",
-            "version": "2.2.17",
+            "version": "2.2.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/active-directory-api-wp-integration.git",
-                "reference": "a9f7eb8cbac026eadce269d45ad67cb01caa31da"
+                "reference": "acea0b1dc8ddf0fcf31c71d3a86db58d3a474e17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/a9f7eb8cbac026eadce269d45ad67cb01caa31da",
-                "reference": "a9f7eb8cbac026eadce269d45ad67cb01caa31da",
+                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/acea0b1dc8ddf0fcf31c71d3a86db58d3a474e17",
+                "reference": "acea0b1dc8ddf0fcf31c71d3a86db58d3a474e17",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -703,7 +703,7 @@
                 }
             ],
             "description": "Simple plugin for verification of existing WordPress users with api.",
-            "time": "2019-03-14T09:39:42+00:00"
+            "time": "2019-03-19T08:27:36+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-multisite-enabler",
@@ -1208,16 +1208,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.7.5",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "3d2b9475fee189cf503802451361795260aa6b76"
+                "reference": "39df093a6635d339f027249beb88278943ecba65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/3d2b9475fee189cf503802451361795260aa6b76",
-                "reference": "3d2b9475fee189cf503802451361795260aa6b76",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/39df093a6635d339f027249beb88278943ecba65",
+                "reference": "39df093a6635d339f027249beb88278943ecba65",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1243,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2019-03-06T13:48:37+00:00"
+            "time": "2019-03-20T14:42:18+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-guides",
@@ -2987,15 +2987,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "3.2.3",
+            "version": "3.2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/3.2.3"
+                "reference": "tags/3.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.3.2.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.3.2.4.zip",
                 "reference": null,
                 "shasum": null
             },
