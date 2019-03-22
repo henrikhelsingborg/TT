@@ -65,6 +65,16 @@ RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
 RewriteRule . index.php [L]
 </IfModule>
 
+# Prevent spam form submit
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} POST
+    RewriteCond %{REQUEST_URI} .(wp-comments-post|wp-login)\.php*
+    RewriteCond %{HTTP_REFERER} !.*helsingborg.se.*
+    RewriteCond %{HTTP_USER_AGENT} ^$
+    RewriteRule (.*) http://%{REMOTE_ADDR}/$1 [R=301,L]
+</ifModule>
+
 # Force use of SSL (CLIENT)
 <IfModule mod_headers.c>
     Header set Strict-Transport-Security "max-age=60;"
