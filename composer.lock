@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa1ce594b9abf177b99b70d10ef15fc9",
+    "content-hash": "49f1db8a984ae60ebdd8ef5602979aab",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1135,16 +1135,16 @@
         },
         {
             "name": "helsingborg-stad/media-usage",
-            "version": "1.3.8",
+            "version": "1.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/media-usage.git",
-                "reference": "f44a16a6997f1eb267d2d03d43113417ffbf851e"
+                "reference": "64dd854fd4247c1f1b69d440d0ffaabe7ea6df27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/f44a16a6997f1eb267d2d03d43113417ffbf851e",
-                "reference": "f44a16a6997f1eb267d2d03d43113417ffbf851e",
+                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/64dd854fd4247c1f1b69d440d0ffaabe7ea6df27",
+                "reference": "64dd854fd4247c1f1b69d440d0ffaabe7ea6df27",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1159,7 +1159,7 @@
                 }
             ],
             "description": "Track the use of attachments across posts, meta and options",
-            "time": "2018-11-06T08:31:47+00:00"
+            "time": "2019-03-26T15:52:47+00:00"
         },
         {
             "name": "helsingborg-stad/modularity",
