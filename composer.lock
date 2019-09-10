@@ -355,16 +355,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.112",
+            "version": "v0.113",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "0cc6d74aa99f5af8385c7b87599b97460e036dc2"
+                "reference": "93f926106f53ebb56e68f0219189dbf55fae0a11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/0cc6d74aa99f5af8385c7b87599b97460e036dc2",
-                "reference": "0cc6d74aa99f5af8385c7b87599b97460e036dc2",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/93f926106f53ebb56e68f0219189dbf55fae0a11",
+                "reference": "93f926106f53ebb56e68f0219189dbf55fae0a11",
                 "shasum": ""
             },
             "require": {
@@ -388,7 +388,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-08-31T00:23:10+00:00"
+            "time": "2019-09-08T00:23:09+00:00"
         },
         {
             "name": "google/auth",
@@ -1414,16 +1414,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "1.28.3",
+            "version": "1.28.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "9e94c4fcfe8486ac64fd5413d80dfe1262db8174"
+                "reference": "fd5adf33a4155b6eaeb555456b188b6a5410038b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/9e94c4fcfe8486ac64fd5413d80dfe1262db8174",
-                "reference": "9e94c4fcfe8486ac64fd5413d80dfe1262db8174",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/fd5adf33a4155b6eaeb555456b188b6a5410038b",
+                "reference": "fd5adf33a4155b6eaeb555456b188b6a5410038b",
                 "shasum": ""
             },
             "require": {
@@ -1458,7 +1458,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2019-09-04T09:46:39+00:00"
+            "time": "2019-09-10T09:35:40+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -1997,16 +1997,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.24.0",
+            "version": "1.25.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266"
+                "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
-                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
+                "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
                 "shasum": ""
             },
             "require": {
@@ -2071,7 +2071,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2018-11-05T09:00:11+00:00"
+            "time": "2019-09-06T13:49:17+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -2973,15 +2973,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "3.2.4",
+            "version": "4.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/3.2.4"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.3.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1568006486",
                 "reference": null,
                 "shasum": null
             },
