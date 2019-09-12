@@ -294,16 +294,16 @@
         },
         {
             "name": "google/apiclient",
-            "version": "v2.2.4",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client.git",
-                "reference": "d6c7563bdf88d6a0719ea63e21c74dc86032364e"
+                "reference": "ea5c94d975c150b6eb892abb5536d24205376d4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/d6c7563bdf88d6a0719ea63e21c74dc86032364e",
-                "reference": "d6c7563bdf88d6a0719ea63e21c74dc86032364e",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/ea5c94d975c150b6eb892abb5536d24205376d4e",
+                "reference": "ea5c94d975c150b6eb892abb5536d24205376d4e",
                 "shasum": ""
             },
             "require": {
@@ -312,7 +312,7 @@
                 "google/auth": "^1.0",
                 "guzzlehttp/guzzle": "~5.3.1||~6.0",
                 "guzzlehttp/psr7": "^1.2",
-                "monolog/monolog": "^1.17",
+                "monolog/monolog": "^1.17|^2.0",
                 "php": ">=5.4",
                 "phpseclib/phpseclib": "~0.3.10||~2.0"
             },
@@ -351,7 +351,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-08-19T18:09:46+00:00"
+            "time": "2019-09-09T16:04:18+00:00"
         },
         {
             "name": "google/apiclient-services",
@@ -1414,16 +1414,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "1.28.4",
+            "version": "1.28.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "fd5adf33a4155b6eaeb555456b188b6a5410038b"
+                "reference": "4e5097fac675682c600a2d2c2fcbb42c5d944517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/fd5adf33a4155b6eaeb555456b188b6a5410038b",
-                "reference": "fd5adf33a4155b6eaeb555456b188b6a5410038b",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/4e5097fac675682c600a2d2c2fcbb42c5d944517",
+                "reference": "4e5097fac675682c600a2d2c2fcbb42c5d944517",
                 "shasum": ""
             },
             "require": {
@@ -1458,7 +1458,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2019-09-10T09:35:40+00:00"
+            "time": "2019-09-12T09:27:08+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2973,7 +2973,7 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
@@ -2981,7 +2981,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1568006486",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1568206460",
                 "reference": null,
                 "shasum": null
             },
