@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "b1de42850d6ba34e27b469d4e247cd65",
+=======
+    "content-hash": "d37cecece5fe17524b743917395d60d3",
+>>>>>>> develop
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1116,6 +1120,51 @@
             ],
             "description": "Plugin to integrate Google Analytics and display simple statistics.",
             "time": "2018-12-13T08:27:31+00:00"
+        },
+        {
+            "name": "helsingborg-stad/job-listings",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/job-listings.git",
+                "reference": "d506b886a77519f161994cdbfc9bb82d894a59b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/d506b886a77519f161994cdbfc9bb82d894a59b5",
+                "reference": "d506b886a77519f161994cdbfc9bb82d894a59b5",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "helsingborg-stad/acf-export-manager": ">=1.0.0",
+                "philo/laravel-blade": "^3.1"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kristoffer Svanmark",
+                    "email": "kristoffer.svanmark@lexiconitkonsult.se"
+                },
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                },
+                {
+                    "name": "Nikolas Ramstedt",
+                    "email": "rikolas.ramstedt@helsingborg.se"
+                },
+                {
+                    "name": "Johan Silvergrund",
+                    "email": "johan.silvergrund@hiq.se"
+                }
+            ],
+            "description": "Improt available jobs",
+            "time": "2019-11-19T11:11:41+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
