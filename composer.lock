@@ -443,16 +443,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.4.1",
+            "version": "6.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "0895c932405407fd3a7368b6910c09a24d26db11"
+                "reference": "dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0895c932405407fd3a7368b6910c09a24d26db11",
-                "reference": "0895c932405407fd3a7368b6910c09a24d26db11",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5",
+                "reference": "dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5",
                 "shasum": ""
             },
             "require": {
@@ -467,12 +467,13 @@
                 "psr/log": "^1.1"
             },
             "suggest": {
+                "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.3-dev"
+                    "dev-master": "6.5-dev"
                 }
             },
             "autoload": {
@@ -505,7 +506,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2019-10-23T15:58:00+00:00"
+            "time": "2019-12-07T18:20:45+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -818,21 +819,22 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "0.13.2",
+            "version": "0.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "f16f2319cb6896d637c4399b9f04653d3352e5da"
+                "reference": "2d045713c463ae513f0e17dded154b7b0b19c382"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/f16f2319cb6896d637c4399b9f04653d3352e5da",
-                "reference": "f16f2319cb6896d637c4399b9f04653d3352e5da",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/2d045713c463ae513f0e17dded154b7b0b19c382",
+                "reference": "2d045713c463ae513f0e17dded154b7b0b19c382",
                 "shasum": ""
             },
             "require": {
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "philo/laravel-blade": "^3.1"
+                "philo/laravel-blade": "^3.1",
+                "ralouphie/mimey": "^2.1"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -846,7 +848,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2019-12-06T12:59:32+00:00"
+            "time": "2019-12-10T14:17:26+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1266,16 +1268,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.8.1",
+            "version": "1.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "0f8c127480219cc8108c1d2428809f3632710550"
+                "reference": "21f5daafea34e171c1d6feda644b2d07dde2430f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/0f8c127480219cc8108c1d2428809f3632710550",
-                "reference": "0f8c127480219cc8108c1d2428809f3632710550",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/21f5daafea34e171c1d6feda644b2d07dde2430f",
+                "reference": "21f5daafea34e171c1d6feda644b2d07dde2430f",
                 "shasum": ""
             },
             "require": {
@@ -1289,19 +1291,19 @@
             ],
             "authors": [
                 {
-                    "name": "Sebastian Thulin",
-                    "email": "sebastian.thulin@helsingborg.se"
-                },
-                {
                     "name": "Kristoffer Svanmark",
                     "email": "kristoffer.svanmark@knowit.se"
+                },
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
                 },
                 {
                     "name": "Jonatan Hanson",
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2019-03-29T10:03:55+00:00"
+            "time": "2019-12-10T08:21:09+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-guides",
@@ -2606,17 +2608,57 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
-            "name": "shortpixel/shortpixel-php",
-            "version": "v1.6.0",
+            "name": "ralouphie/mimey",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/short-pixel-optimizer/shortpixel-php.git",
-                "reference": "44691dbc22e52c6365dc79a30fe6d3b7ee6cfc4e"
+                "url": "https://github.com/ralouphie/mimey.git",
+                "reference": "8f74e6da73f9df7bd965e4e123f3d8fb9acb89ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/short-pixel-optimizer/shortpixel-php/zipball/44691dbc22e52c6365dc79a30fe6d3b7ee6cfc4e",
-                "reference": "44691dbc22e52c6365dc79a30fe6d3b7ee6cfc4e",
+                "url": "https://api.github.com/repos/ralouphie/mimey/zipball/8f74e6da73f9df7bd965e4e123f3d8fb9acb89ba",
+                "reference": "8f74e6da73f9df7bd965e4e123f3d8fb9acb89ba",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4|^7.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^1.1",
+                "phpunit/phpunit": "^4.8 || ^5.7 || ^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mimey\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ralph Khattar",
+                    "email": "ralph.khattar@gmail.com"
+                }
+            ],
+            "description": "PHP package for converting file extensions to MIME types and vice versa.",
+            "time": "2019-03-08T08:49:03+00:00"
+        },
+        {
+            "name": "shortpixel/shortpixel-php",
+            "version": "v1.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/short-pixel-optimizer/shortpixel-php.git",
+                "reference": "c009c1b6728ec8686760e4d2ab1a2606dc0a2695"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/short-pixel-optimizer/shortpixel-php/zipball/c009c1b6728ec8686760e4d2ab1a2606dc0a2695",
+                "reference": "c009c1b6728ec8686760e4d2ab1a2606dc0a2695",
                 "shasum": ""
             },
             "require": {
@@ -2658,7 +2700,7 @@
                 "optimize",
                 "shortpixel"
             ],
-            "time": "2019-10-22T10:01:41+00:00"
+            "time": "2019-12-10T12:42:58+00:00"
         },
         {
             "name": "symfony/debug",
