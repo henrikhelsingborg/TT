@@ -32,6 +32,10 @@
         {
             "type":"composer",
             "url":"https://wpackagist.org"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:helsingborg-stad/Municipio.git"
         }
     ],
 
@@ -39,7 +43,7 @@
         "composer/installers": "~1.0",
         "johnpbloch/wordpress": "^5.0",
         "helsingborg-stad/modularity": "^2.11",
-        "helsingborg-stad/municipio": ">=1.0.0",
+        "helsingborg-stad/municipio": "dev-dev-404-page-for-post-type",
         "helsingborg-stad/lix-calculator": ">=1.0.1",
         "helsingborg-stad/custom-short-links": ">=1.0.0",
         "helsingborg-stad/readspeaker-helper": ">=1.0.0",
