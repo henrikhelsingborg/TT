@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c7bc9577245d343456271f418b6ad98",
+    "content-hash": "37ac48c8784c9079a92a92d731b0aa5d",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1122,16 +1122,16 @@
         },
         {
             "name": "helsingborg-stad/job-listings",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "c8c8e8a08c7190c48e9e7af420d5794991315799"
+                "reference": "1124332c34b976e87b8e28da1e2af7142ca730c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/c8c8e8a08c7190c48e9e7af420d5794991315799",
-                "reference": "c8c8e8a08c7190c48e9e7af420d5794991315799",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/1124332c34b976e87b8e28da1e2af7142ca730c1",
+                "reference": "1124332c34b976e87b8e28da1e2af7142ca730c1",
                 "shasum": ""
             },
             "require": {
@@ -1163,7 +1163,7 @@
                 }
             ],
             "description": "Improt available jobs",
-            "time": "2020-01-15T13:26:30+00:00"
+            "time": "2020-01-16T15:28:32+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1268,16 +1268,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-contact-banner.git",
-                "reference": "3cefb68230d5bf229a20caf233c7cf6947f98257"
+                "reference": "a9f303c46e0009f9ca62c65b925ad08a34554292"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/3cefb68230d5bf229a20caf233c7cf6947f98257",
-                "reference": "3cefb68230d5bf229a20caf233c7cf6947f98257",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/a9f303c46e0009f9ca62c65b925ad08a34554292",
+                "reference": "a9f303c46e0009f9ca62c65b925ad08a34554292",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1292,7 +1292,7 @@
                 }
             ],
             "description": "Contact Banner",
-            "time": "2020-01-16T13:49:25+00:00"
+            "time": "2020-01-16T14:45:16+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
