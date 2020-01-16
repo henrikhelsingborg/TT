@@ -80,7 +80,8 @@
         "wpackagist-plugin/redirection": "^4.3.1",
         "helsingborg-stad/algoliasearch-wordpress": "^2.11",
         "helsingborg-stad/job-listings": "^2",
-        "helsingborg-stad/redirection-extended": "^1.0"
+        "helsingborg-stad/redirection-extended": "^1.0",
+        "helsingborg-stad/modularity-contact-banner": "^1.0"
     },
 
     "extra": {
