@@ -355,23 +355,23 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.121",
+            "version": "v0.122",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "a33fd9ed19fe4e27f2ccebbf45646f38e7cb95af"
+                "reference": "77bdb3cb12dd53bf5a0f23c86c0a57c439de77ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/a33fd9ed19fe4e27f2ccebbf45646f38e7cb95af",
-                "reference": "a33fd9ed19fe4e27f2ccebbf45646f38e7cb95af",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/77bdb3cb12dd53bf5a0f23c86c0a57c439de77ad",
+                "reference": "77bdb3cb12dd53bf5a0f23c86c0a57c439de77ad",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8"
+                "phpunit/phpunit": "^4.8|^5"
             },
             "type": "library",
             "autoload": {
@@ -388,7 +388,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-11-03T00:23:34+00:00"
+            "time": "2020-01-16T00:24:04+00:00"
         },
         {
             "name": "google/auth",
@@ -1122,16 +1122,16 @@
         },
         {
             "name": "helsingborg-stad/job-listings",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "1124332c34b976e87b8e28da1e2af7142ca730c1"
+                "reference": "c08ee657b1165d64441c9dbd663abda1d3744d95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/1124332c34b976e87b8e28da1e2af7142ca730c1",
-                "reference": "1124332c34b976e87b8e28da1e2af7142ca730c1",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/c08ee657b1165d64441c9dbd663abda1d3744d95",
+                "reference": "c08ee657b1165d64441c9dbd663abda1d3744d95",
                 "shasum": ""
             },
             "require": {
@@ -1163,7 +1163,7 @@
                 }
             ],
             "description": "Improt available jobs",
-            "time": "2020-01-16T15:28:32+00:00"
+            "time": "2020-01-17T14:29:56+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1223,16 +1223,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "2.12.1",
+            "version": "2.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "71e8c8d031c81e1f5817f1b687ef7ce2246b3205"
+                "reference": "d986a7b38acb3dd4f9e0aed180d909ab6a9d2f74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/71e8c8d031c81e1f5817f1b687ef7ce2246b3205",
-                "reference": "71e8c8d031c81e1f5817f1b687ef7ce2246b3205",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/d986a7b38acb3dd4f9e0aed180d909ab6a9d2f74",
+                "reference": "d986a7b38acb3dd4f9e0aed180d909ab6a9d2f74",
                 "shasum": ""
             },
             "require": {
@@ -1264,7 +1264,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-01-16T10:23:03+00:00"
+            "time": "2020-01-17T07:42:08+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1296,16 +1296,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.8.8",
+            "version": "1.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "b15432208c54733256a9fc977ceebb2e2da4d75d"
+                "reference": "713023c1abffcfd8ad4a1692d041cd7a573063e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/b15432208c54733256a9fc977ceebb2e2da4d75d",
-                "reference": "b15432208c54733256a9fc977ceebb2e2da4d75d",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/713023c1abffcfd8ad4a1692d041cd7a573063e4",
+                "reference": "713023c1abffcfd8ad4a1692d041cd7a573063e4",
                 "shasum": ""
             },
             "require": {
@@ -1331,7 +1331,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2020-01-10T13:33:56+00:00"
+            "time": "2020-01-17T10:03:13+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-guides",
