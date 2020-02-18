@@ -59,16 +59,16 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.7.0",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "141b272484481432cda342727a427dc1e206bfa0"
+                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/141b272484481432cda342727a427dc1e206bfa0",
-                "reference": "141b272484481432cda342727a427dc1e206bfa0",
+                "url": "https://api.github.com/repos/composer/installers/zipball/7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
+                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
                 "shasum": ""
             },
             "require": {
@@ -116,6 +116,7 @@
                 "Kanboard",
                 "Lan Management System",
                 "MODX Evo",
+                "MantisBT",
                 "Mautic",
                 "Maya",
                 "OXID",
@@ -170,6 +171,7 @@
                 "shopware",
                 "silverstripe",
                 "sydes",
+                "sylius",
                 "symfony",
                 "typo3",
                 "wordpress",
@@ -177,7 +179,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2019-08-12T15:00:31+00:00"
+            "time": "2020-02-07T10:39:20+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -355,16 +357,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.125",
+            "version": "v0.127",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "5c55c1a08610c22de13a5374d4aef408aa470f6e"
+                "reference": "19eacad739807e522891bf3f911ffab4a4c29869"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/5c55c1a08610c22de13a5374d4aef408aa470f6e",
-                "reference": "5c55c1a08610c22de13a5374d4aef408aa470f6e",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/19eacad739807e522891bf3f911ffab4a4c29869",
+                "reference": "19eacad739807e522891bf3f911ffab4a4c29869",
                 "shasum": ""
             },
             "require": {
@@ -388,20 +390,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-02-03T00:24:38+00:00"
+            "time": "2020-02-17T00:24:19+00:00"
         },
         {
             "name": "google/auth",
-            "version": "v1.6.1",
+            "version": "v1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-auth-library-php.git",
-                "reference": "45635ac69d0b95f38885531d4ebcdfcb2ebb6f36"
+                "reference": "39e243a7d8320b1889ab8bb4cd6f98f7af83c582"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/45635ac69d0b95f38885531d4ebcdfcb2ebb6f36",
-                "reference": "45635ac69d0b95f38885531d4ebcdfcb2ebb6f36",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/39e243a7d8320b1889ab8bb4cd6f98f7af83c582",
+                "reference": "39e243a7d8320b1889ab8bb4cd6f98f7af83c582",
                 "shasum": ""
             },
             "require": {
@@ -415,6 +417,7 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^1.11",
                 "guzzlehttp/promises": "0.1.1|^1.3",
+                "kelvinmo/simplejwt": "^0.2.5",
                 "phpseclib/phpseclib": "^2",
                 "phpunit/phpunit": "^4.8.36|^5.7",
                 "sebastian/comparator": ">=1.2.3"
@@ -439,7 +442,7 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2019-10-29T20:13:04+00:00"
+            "time": "2020-02-12T20:54:50+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -693,16 +696,16 @@
         },
         {
             "name": "helsingborg-stad/active-directory-api-wp-integration",
-            "version": "2.4.4",
+            "version": "2.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/active-directory-api-wp-integration.git",
-                "reference": "d72c5b9812c05ceb96e6ced71644cbf2a623f210"
+                "reference": "5684dac2a065908521571756150eb8fc02574fb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/d72c5b9812c05ceb96e6ced71644cbf2a623f210",
-                "reference": "d72c5b9812c05ceb96e6ced71644cbf2a623f210",
+                "url": "https://api.github.com/repos/helsingborg-stad/active-directory-api-wp-integration/zipball/5684dac2a065908521571756150eb8fc02574fb4",
+                "reference": "5684dac2a065908521571756150eb8fc02574fb4",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -717,7 +720,7 @@
                 }
             ],
             "description": "Simple plugin for verification of existing WordPress users with api.",
-            "time": "2020-01-09T14:54:26+00:00"
+            "time": "2020-02-18T14:05:08+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-multisite-enabler",
@@ -1268,16 +1271,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-contact-banner.git",
-                "reference": "a9f303c46e0009f9ca62c65b925ad08a34554292"
+                "reference": "8038f09f088f8887fb5d5835a3ef1ee68aec3cc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/a9f303c46e0009f9ca62c65b925ad08a34554292",
-                "reference": "a9f303c46e0009f9ca62c65b925ad08a34554292",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/8038f09f088f8887fb5d5835a3ef1ee68aec3cc5",
+                "reference": "8038f09f088f8887fb5d5835a3ef1ee68aec3cc5",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1292,7 +1295,7 @@
                 }
             ],
             "description": "Contact Banner",
-            "time": "2020-01-16T14:45:16+00:00"
+            "time": "2020-02-17T11:32:02+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
@@ -2182,16 +2185,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.29.1",
+            "version": "2.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "e509be5bf2d703390e69e14496d9a1168452b0a2"
+                "reference": "912dff66d2690ca66abddb9b291a1df5f371d3b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e509be5bf2d703390e69e14496d9a1168452b0a2",
-                "reference": "e509be5bf2d703390e69e14496d9a1168452b0a2",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/912dff66d2690ca66abddb9b291a1df5f371d3b4",
+                "reference": "912dff66d2690ca66abddb9b291a1df5f371d3b4",
                 "shasum": ""
             },
             "require": {
@@ -2248,7 +2251,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2020-01-21T09:36:43+00:00"
+            "time": "2020-02-07T15:25:46+00:00"
         },
         {
             "name": "philo/laravel-blade",
@@ -2865,16 +2868,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.13.1",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "7b4aab9743c30be783b73de055d24a39cf4b954f"
+                "reference": "34094cfa9abe1f0f14f48f490772db7a775559f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7b4aab9743c30be783b73de055d24a39cf4b954f",
-                "reference": "7b4aab9743c30be783b73de055d24a39cf4b954f",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/34094cfa9abe1f0f14f48f490772db7a775559f2",
+                "reference": "34094cfa9abe1f0f14f48f490772db7a775559f2",
                 "shasum": ""
             },
             "require": {
@@ -2886,7 +2889,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13-dev"
+                    "dev-master": "1.14-dev"
                 }
             },
             "autoload": {
@@ -2920,7 +2923,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-11-27T14:18:11+00:00"
+            "time": "2020-01-13T11:15:53+00:00"
         },
         {
             "name": "symfony/translation",
@@ -3112,9 +3115,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.12.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.12.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3132,9 +3133,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.4.0.4.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/autodescription.4.0.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3152,9 +3151,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mce-table-buttons.3.3.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/mce-table-buttons.3.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3164,7 +3161,7 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.6.2",
+            "version": "4.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
@@ -3172,9 +3169,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1578293412",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1581750837"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3192,9 +3187,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.4.3.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.4.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3212,9 +3205,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stream.3.4.2.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/stream.3.4.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3232,9 +3223,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tablepress.1.9.2.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/tablepress.1.9.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3244,17 +3233,15 @@
         },
         {
             "name": "wpackagist-plugin/user-switching",
-            "version": "1.5.3",
+            "version": "1.5.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.5.3"
+                "reference": "tags/1.5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.5.3.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.5.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3272,9 +3259,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/username-changer.3.1.3.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/username-changer.3.1.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3292,9 +3277,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/varnish-http-purge.4.8.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/varnish-http-purge.4.8.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3312,9 +3295,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-editor-widget.0.6.0.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/wp-editor-widget.0.6.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3332,9 +3313,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.1.8.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.1.8.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3352,9 +3331,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-nested-pages.3.1.4.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/wp-nested-pages.3.1.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
