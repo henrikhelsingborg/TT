@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85ced913b4b32656bdc4edf138016b02",
+    "content-hash": "37ac48c8784c9079a92a92d731b0aa5d",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1032,16 +1032,16 @@
         },
         {
             "name": "helsingborg-stad/easy-to-read-alternative",
-            "version": "1.0.16",
+            "version": "1.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/easy-to-read-alternative.git",
-                "reference": "0dfd7ea9168cbbde145d8b9e58a69ded3fa82ae0"
+                "reference": "285b1a12b1a7b5e4844803fd10f81627f3fb0292"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/easy-to-read-alternative/zipball/0dfd7ea9168cbbde145d8b9e58a69ded3fa82ae0",
-                "reference": "0dfd7ea9168cbbde145d8b9e58a69ded3fa82ae0",
+                "url": "https://api.github.com/repos/helsingborg-stad/easy-to-read-alternative/zipball/285b1a12b1a7b5e4844803fd10f81627f3fb0292",
+                "reference": "285b1a12b1a7b5e4844803fd10f81627f3fb0292",
                 "shasum": ""
             },
             "require": {
@@ -1059,7 +1059,7 @@
                 }
             ],
             "description": "Adds easy to read alternative content version.",
-            "time": "2017-10-26T15:03:21+00:00"
+            "time": "2020-03-24T08:14:57+00:00"
         },
         {
             "name": "helsingborg-stad/force-ssl",
@@ -1268,6 +1268,34 @@
             ],
             "description": "Modular component system for WordPress",
             "time": "2020-01-17T07:42:08+00:00"
+        },
+        {
+            "name": "helsingborg-stad/modularity-contact-banner",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-contact-banner.git",
+                "reference": "8038f09f088f8887fb5d5835a3ef1ee68aec3cc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/8038f09f088f8887fb5d5835a3ef1ee68aec3cc5",
+                "reference": "8038f09f088f8887fb5d5835a3ef1ee68aec3cc5",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                }
+            ],
+            "description": "Contact Banner",
+            "time": "2020-02-17T11:32:02+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
@@ -2268,16 +2296,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.25",
+            "version": "2.0.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "c18159618ed7cd7ff721ac1a8fec7860a475d2f0"
+                "reference": "09655fcc1f8bab65727be036b28f6f20311c126c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/c18159618ed7cd7ff721ac1a8fec7860a475d2f0",
-                "reference": "c18159618ed7cd7ff721ac1a8fec7860a475d2f0",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/09655fcc1f8bab65727be036b28f6f20311c126c",
+                "reference": "09655fcc1f8bab65727be036b28f6f20311c126c",
                 "shasum": ""
             },
             "require": {
@@ -2356,7 +2384,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2020-02-25T04:16:50+00:00"
+            "time": "2020-03-13T04:15:39+00:00"
         },
         {
             "name": "psr/cache",
@@ -3133,7 +3161,7 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.7",
+            "version": "4.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
@@ -3141,7 +3169,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1581750837"
+                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1584192505"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3169,15 +3197,15 @@
         },
         {
             "name": "wpackagist-plugin/stream",
-            "version": "3.4.2",
+            "version": "3.4.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/stream/",
-                "reference": "tags/3.4.2"
+                "reference": "tags/3.4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stream.3.4.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/stream.3.4.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3277,15 +3305,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "1.8.1",
+            "version": "1.9.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/1.8.1"
+                "reference": "tags/1.9.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.1.8.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.1.9.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
