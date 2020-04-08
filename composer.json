@@ -114,7 +114,7 @@
     "scripts": {
         "post-install-cmd": [
             "mkdir -p wp-content/uploads/cache/blade-cache",
-            "rm -R wp-content/plugins/wp-search-with-algolia",
+            "rm -R wp-content/plugins/wp-search-with-algolia || true",
             "cp -R vendor/webdevstudios/ wp-content/plugins/"
         ]
     }
