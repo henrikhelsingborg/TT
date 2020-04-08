@@ -41,7 +41,7 @@
         {
             "type":"package",
             "package": {
-                "name": "WebDevStudios/wp-search-with-algolia",
+                "name": "webdevstudios/wp-search-with-algolia",
                 "version":"master",
                 "source": {
                     "url": "https://github.com/WebDevStudios/wp-search-with-algolia.git",
@@ -99,21 +99,23 @@
         "helsingborg-stad/job-listings": "^2",
         "helsingborg-stad/redirection-extended": "^1.0",
         "helsingborg-stad/modularity-contact-banner": "^1.0",
-        "WebDevStudios/wp-search-with-algolia": "master"
+        "webdevstudios/wp-search-with-algolia": "master"
     },
 
     "extra": {
         "path": "/",
         "wordpress-install-dir": "wp",
         "installer-paths": {
-            "wp-content/plugins/{$name}": ["type:wordpress-plugin"],
+            "wp-content/plugins/{$name}": ["type:wordpress-plugin", "webdevstudios/wp-search-with-algolia"],
             "wp-content/themes/{$name}": ["type:wordpress-theme"]
         }
     },
 
     "scripts": {
         "post-install-cmd": [
-            "mkdir -p wp-content/uploads/cache/blade-cache"
+            "mkdir -p wp-content/uploads/cache/blade-cache",
+            "rm -R wp-content/plugins/wp-search-with-algolia",
+            "cp -R vendor/webdevstudios/ wp-content/plugins/"
         ]
     }
 }
