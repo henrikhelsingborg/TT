@@ -23,7 +23,8 @@
             "email": "johan.silvergrund@hiq.se"
         }
     ],
-    "minimum-stability" : "stable",
+    "prefer-stable": true,
+    "minimum-stability" : "dev",
     "repositories": [
         {
             "type":"composer",
@@ -36,6 +37,18 @@
         {
             "type": "git",
             "url": "git@github.com:helsingborg-stad/Municipio.git"
+        },
+        {
+            "type":"package",
+            "package": {
+                "name": "WebDevStudios/wp-search-with-algolia",
+                "version":"master",
+                "source": {
+                    "url": "https://github.com/WebDevStudios/wp-search-with-algolia.git",
+                    "type": "git",
+                    "reference":"master"
+                }
+            }
         }
     ],
 
@@ -85,7 +98,8 @@
         "helsingborg-stad/algoliasearch-wordpress": "^2.11",
         "helsingborg-stad/job-listings": "^2",
         "helsingborg-stad/redirection-extended": "^1.0",
-        "helsingborg-stad/modularity-contact-banner": "^1.0"
+        "helsingborg-stad/modularity-contact-banner": "^1.0",
+        "WebDevStudios/wp-search-with-algolia": "master"
     },
 
     "extra": {

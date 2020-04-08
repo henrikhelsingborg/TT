@@ -4,8 +4,19 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "37ac48c8784c9079a92a92d731b0aa5d",
+    "content-hash": "4f230d62b1f0bf53acb19d25f31a1b13",
     "packages": [
+        {
+            "name": "WebDevStudios/wp-search-with-algolia",
+            "version": "master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WebDevStudios/wp-search-with-algolia.git",
+                "reference": "master"
+            },
+            "type": "library",
+            "time": "2020-03-28T00:49:34+00:00"
+        },
         {
             "name": "aristath/kirki",
             "version": "v3.1.0",
@@ -3342,9 +3353,9 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
