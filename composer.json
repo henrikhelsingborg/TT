@@ -115,7 +115,7 @@
         "post-install-cmd": [
             "mkdir -p wp-content/uploads/cache/blade-cache",
             "rm -R -f wp-content/plugins/wp-search-with-algolia",
-            "cp -R vendor/WebDevStudios/wp-search-with-algolia wp-content/plugins/"
+            "cp -R vendor/webdevstudios/wp-search-with-algolia wp-content/plugins/"
         ]
     }
 }
