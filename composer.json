@@ -1,6 +1,7 @@
 {
     "name": "helsingborg-stad/helsingborg.se",
     "license": "MIT",
+    "description": "Site for helsingborg.se",
     "authors": [
         {
             "name": "Sebastian Thulin",
@@ -98,24 +99,21 @@
         "helsingborg-stad/algoliasearch-wordpress": "^2.11",
         "helsingborg-stad/job-listings": "^2",
         "helsingborg-stad/redirection-extended": "^1.0",
-        "helsingborg-stad/modularity-contact-banner": "^1.0",
-        "webdevstudios/wp-search-with-algolia": "master"
+        "helsingborg-stad/modularity-contact-banner": "^1.0"
     },
 
     "extra": {
         "path": "/",
         "wordpress-install-dir": "wp",
         "installer-paths": {
-            "wp-content/plugins/{$name}": ["type:wordpress-plugin", "webdevstudios/wp-search-with-algolia"],
+            "wp-content/plugins/{$name}": ["type:wordpress-plugin"],
             "wp-content/themes/{$name}": ["type:wordpress-theme"]
         }
     },
 
     "scripts": {
         "post-install-cmd": [
-            "mkdir -p wp-content/uploads/cache/blade-cache",
-            "rm -R -f wp-content/plugins/wp-search-with-algolia",
-            "cp -R vendor/webdevstudios/wp-search-with-algolia wp-content/plugins/"
+            "mkdir -p wp-content/uploads/cache/blade-cache"
         ]
     }
 }
