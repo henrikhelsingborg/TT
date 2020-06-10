@@ -1039,6 +1039,60 @@
             "time": "2020-06-09T09:31:45+00:00"
         },
         {
+            "name": "helsingborg-stad/blade-engine-wrapper",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/blade-engine-wrapper.git",
+                "reference": "db5a99d2c545056e9c439093835af1528b5d2e9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-engine-wrapper/zipball/db5a99d2c545056e9c439093835af1528b5d2e9e",
+                "reference": "db5a99d2c545056e9c439093835af1528b5d2e9e",
+                "shasum": ""
+            },
+            "require": {
+                "benjamincrozat/blade": "^2.0",
+                "doctrine/inflector": "^1.4.1",
+                "illuminate/container": "^5.8.36",
+                "illuminate/contracts": "^5.8.36",
+                "illuminate/events": "^5.8.36",
+                "illuminate/filesystem": "^5.8.36",
+                "illuminate/support": "^5.8.36",
+                "illuminate/view": "^5.8.36",
+                "nesbot/carbon": "^2.34.0",
+                "psr/container": "^1.0.0",
+                "psr/log": "^1.1.3",
+                "psr/simple-cache": "^1.0.1",
+                "symfony/debug": "^4.2",
+                "symfony/finder": "4.4.8",
+                "symfony/polyfill-mbstring": "1.17.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HelsingborgStad\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                },
+                {
+                    "name": "Eric Rosenborg",
+                    "email": "eric.rosenborg@hiq.se"
+                }
+            ],
+            "description": "An instantiated version of the global-blade-engine.",
+            "time": "2020-06-09T10:32:15+00:00"
+        },
+        {
             "name": "helsingborg-stad/broken-link-detector",
             "version": "1.3.14",
             "source": {
@@ -1409,12 +1463,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "1b62a5289f5177e49d00fb7f3e73784308b6afa9"
+                "reference": "60cfe981fe9b24e21cb583ab5599efa250e85f51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/1b62a5289f5177e49d00fb7f3e73784308b6afa9",
-                "reference": "1b62a5289f5177e49d00fb7f3e73784308b6afa9",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/60cfe981fe9b24e21cb583ab5599efa250e85f51",
+                "reference": "60cfe981fe9b24e21cb583ab5599efa250e85f51",
                 "shasum": ""
             },
             "require": {
@@ -1422,7 +1476,7 @@
                 "composer/installers": "~1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.3.9",
+                "helsingborg-stad/blade-component-library": "dev-master#0.5.1",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
                 "illuminate/contracts": "^5.8.36",
@@ -1465,7 +1519,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-06-08T13:02:51+00:00"
+            "time": "2020-06-10T10:05:43+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1695,12 +1749,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "6b97426dd095700ffa7705e3d2ae872c47bcf8ad"
+                "reference": "9da0885d21932d674efca21aac7c8734879d064e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/6b97426dd095700ffa7705e3d2ae872c47bcf8ad",
-                "reference": "6b97426dd095700ffa7705e3d2ae872c47bcf8ad",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/9da0885d21932d674efca21aac7c8734879d064e",
+                "reference": "9da0885d21932d674efca21aac7c8734879d064e",
                 "shasum": ""
             },
             "require": {
@@ -1708,7 +1762,8 @@
                 "composer/installers": "^1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.3.9",
+                "helsingborg-stad/blade-component-library": "dev-master#0.5.1",
+                "helsingborg-stad/blade-engine-wrapper": "dev-master",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
                 "illuminate/contracts": "^5.8.36",
@@ -1721,7 +1776,7 @@
                 "psr/log": "^1.1.3",
                 "psr/simple-cache": "^1.0.1",
                 "shortpixel/shortpixel-php": "^1.4",
-                "symfony/debug": "^4.0",
+                "symfony/debug": "^4.2",
                 "symfony/finder": "4.4.8",
                 "symfony/polyfill-mbstring": "1.17.0",
                 "symfony/translation": "5.0.8",
@@ -1751,7 +1806,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-06-02T11:28:58+00:00"
+            "time": "2020-06-10T10:06:57+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
