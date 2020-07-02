@@ -1334,16 +1334,16 @@
         },
         {
             "name": "helsingborg-stad/job-listings",
-            "version": "2.4.0",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "95612507ce6207acabc9cb0aaf0bd2342755fa94"
+                "reference": "b00d7e377072389b3fb0ef1a6dbe9a322f5d6bf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/95612507ce6207acabc9cb0aaf0bd2342755fa94",
-                "reference": "95612507ce6207acabc9cb0aaf0bd2342755fa94",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/b00d7e377072389b3fb0ef1a6dbe9a322f5d6bf9",
+                "reference": "b00d7e377072389b3fb0ef1a6dbe9a322f5d6bf9",
                 "shasum": ""
             },
             "require": {
@@ -1375,7 +1375,7 @@
                 }
             ],
             "description": "Improt available jobs",
-            "time": "2020-06-08T11:31:20+00:00"
+            "time": "2020-06-30T13:55:59+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1439,12 +1439,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "02ce783e0951ba0ec400162f8b58c06bce7ca3db"
+                "reference": "71f10fb568780b456ae20933b9081d4e08e47231"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/02ce783e0951ba0ec400162f8b58c06bce7ca3db",
-                "reference": "02ce783e0951ba0ec400162f8b58c06bce7ca3db",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/71f10fb568780b456ae20933b9081d4e08e47231",
+                "reference": "71f10fb568780b456ae20933b9081d4e08e47231",
                 "shasum": ""
             },
             "require": {
@@ -1495,7 +1495,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-06-26T07:27:11+00:00"
+            "time": "2020-07-02T11:58:55+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1527,16 +1527,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.9.1",
+            "version": "1.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "c9d948bdac268fc02c54d76c8e4a6fa63739b567"
+                "reference": "bc759d28292912e2ace8f6ec4523d5d6d579f911"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/c9d948bdac268fc02c54d76c8e4a6fa63739b567",
-                "reference": "c9d948bdac268fc02c54d76c8e4a6fa63739b567",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/bc759d28292912e2ace8f6ec4523d5d6d579f911",
+                "reference": "bc759d28292912e2ace8f6ec4523d5d6d579f911",
                 "shasum": ""
             },
             "require": {
@@ -1562,7 +1562,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2020-06-23T09:31:05+00:00"
+            "time": "2020-06-30T14:16:02+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-guides",
@@ -1725,12 +1725,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "344d4b9a16fe29151d7699378acb0a7af14b515a"
+                "reference": "f2de9515ba4e5b8663be84fb191b8b35e9758cb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/344d4b9a16fe29151d7699378acb0a7af14b515a",
-                "reference": "344d4b9a16fe29151d7699378acb0a7af14b515a",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/f2de9515ba4e5b8663be84fb191b8b35e9758cb5",
+                "reference": "f2de9515ba4e5b8663be84fb191b8b35e9758cb5",
                 "shasum": ""
             },
             "require": {
@@ -1782,7 +1782,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-06-26T07:59:33+00:00"
+            "time": "2020-07-02T11:59:11+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -1870,16 +1870,16 @@
         },
         {
             "name": "helsingborg-stad/wp-page-for-post-type",
-            "version": "1.2.0",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/wp-page-for-posttype.git",
-                "reference": "42b5d3ccd9111683fb70f078ad6b0502bfdbe828"
+                "reference": "4d5f0b528cd885a2a19a3602ca4b214e627acecb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/wp-page-for-posttype/zipball/42b5d3ccd9111683fb70f078ad6b0502bfdbe828",
-                "reference": "42b5d3ccd9111683fb70f078ad6b0502bfdbe828",
+                "url": "https://api.github.com/repos/helsingborg-stad/wp-page-for-posttype/zipball/4d5f0b528cd885a2a19a3602ca4b214e627acecb",
+                "reference": "4d5f0b528cd885a2a19a3602ca4b214e627acecb",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1897,7 +1897,7 @@
                     "email": "sebastian.thulin@helsingborg.se"
                 }
             ],
-            "time": "2020-05-07T13:22:40+00:00"
+            "time": "2020-06-24T07:58:55+00:00"
         },
         {
             "name": "helsingborg-stad/wp-search-statistics",
@@ -2436,16 +2436,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "4b9bd835261ef23d36397a46a76b496a458305e5"
+                "reference": "d0b65958d9942fd1b501fdb0800c67e8323aa08d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4b9bd835261ef23d36397a46a76b496a458305e5",
-                "reference": "4b9bd835261ef23d36397a46a76b496a458305e5",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d0b65958d9942fd1b501fdb0800c67e8323aa08d",
+                "reference": "d0b65958d9942fd1b501fdb0800c67e8323aa08d",
                 "shasum": ""
             },
             "require": {
@@ -2457,9 +2457,10 @@
             "require-dev": {
                 "doctrine/orm": "^2.7",
                 "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
-                "kylekatarnls/multi-tester": "^1.1",
+                "kylekatarnls/multi-tester": "^2.0",
                 "phpmd/phpmd": "^2.8",
-                "phpstan/phpstan": "^0.11",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12.30",
                 "phpunit/phpunit": "^7.5 || ^8.0",
                 "squizlabs/php_codesniffer": "^3.4"
             },
@@ -2475,6 +2476,11 @@
                 "laravel": {
                     "providers": [
                         "Carbon\\Laravel\\ServiceProvider"
+                    ]
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
                     ]
                 }
             },
@@ -2505,7 +2511,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2020-05-24T18:27:52+00:00"
+            "time": "2020-06-25T20:20:01+00:00"
         },
         {
             "name": "philo/laravel-blade",
@@ -2962,16 +2968,16 @@
         },
         {
             "name": "shortpixel/shortpixel-php",
-            "version": "v1.6.3",
+            "version": "v1.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/short-pixel-optimizer/shortpixel-php.git",
-                "reference": "502d93ebab5546b0d44b4bfdc5d6e93fe3aac509"
+                "reference": "8ddbdda375dc82c1f6623d3e9acc8ac7177fc6c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/short-pixel-optimizer/shortpixel-php/zipball/502d93ebab5546b0d44b4bfdc5d6e93fe3aac509",
-                "reference": "502d93ebab5546b0d44b4bfdc5d6e93fe3aac509",
+                "url": "https://api.github.com/repos/short-pixel-optimizer/shortpixel-php/zipball/8ddbdda375dc82c1f6623d3e9acc8ac7177fc6c4",
+                "reference": "8ddbdda375dc82c1f6623d3e9acc8ac7177fc6c4",
                 "shasum": ""
             },
             "require": {
@@ -3013,7 +3019,7 @@
                 "optimize",
                 "shortpixel"
             ],
-            "time": "2020-03-27T21:08:52+00:00"
+            "time": "2020-07-02T09:32:42+00:00"
         },
         {
             "name": "symfony/debug",
