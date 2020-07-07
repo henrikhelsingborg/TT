@@ -1725,12 +1725,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "f2de9515ba4e5b8663be84fb191b8b35e9758cb5"
+                "reference": "08bc9b4886efa03d1e2477e524a4986fe0f0d254"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/f2de9515ba4e5b8663be84fb191b8b35e9758cb5",
-                "reference": "f2de9515ba4e5b8663be84fb191b8b35e9758cb5",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/08bc9b4886efa03d1e2477e524a4986fe0f0d254",
+                "reference": "08bc9b4886efa03d1e2477e524a4986fe0f0d254",
                 "shasum": ""
             },
             "require": {
@@ -1782,7 +1782,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-07-02T11:59:11+00:00"
+            "time": "2020-07-07T09:34:05+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2436,16 +2436,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.36.0",
+            "version": "2.36.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d0b65958d9942fd1b501fdb0800c67e8323aa08d"
+                "reference": "ee7378a36cc62952100e718bcc58be4c7210e55f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d0b65958d9942fd1b501fdb0800c67e8323aa08d",
-                "reference": "d0b65958d9942fd1b501fdb0800c67e8323aa08d",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ee7378a36cc62952100e718bcc58be4c7210e55f",
+                "reference": "ee7378a36cc62952100e718bcc58be4c7210e55f",
                 "shasum": ""
             },
             "require": {
@@ -2511,7 +2511,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2020-06-25T20:20:01+00:00"
+            "time": "2020-07-04T12:29:56+00:00"
         },
         {
             "name": "philo/laravel-blade",
