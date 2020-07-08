@@ -1191,16 +1191,16 @@
         },
         {
             "name": "helsingborg-stad/easy-to-read-alternative",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/easy-to-read-alternative.git",
-                "reference": "be2db323c061bdde9eab74f8b7458b20e8444f96"
+                "reference": "71d54786115452de2b29cc24fd60a58605ab4e2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/easy-to-read-alternative/zipball/be2db323c061bdde9eab74f8b7458b20e8444f96",
-                "reference": "be2db323c061bdde9eab74f8b7458b20e8444f96",
+                "url": "https://api.github.com/repos/helsingborg-stad/easy-to-read-alternative/zipball/71d54786115452de2b29cc24fd60a58605ab4e2f",
+                "reference": "71d54786115452de2b29cc24fd60a58605ab4e2f",
                 "shasum": ""
             },
             "require": {
@@ -1209,7 +1209,7 @@
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GNU"
+                "MIT"
             ],
             "authors": [
                 {
@@ -1218,7 +1218,7 @@
                 }
             ],
             "description": "Adds easy to read alternative content version.",
-            "time": "2020-03-24T10:17:03+00:00"
+            "time": "2020-07-07T12:22:58+00:00"
         },
         {
             "name": "helsingborg-stad/force-ssl",
@@ -1439,12 +1439,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "71f10fb568780b456ae20933b9081d4e08e47231"
+                "reference": "336090babf44b97eef743d9f733cf8b968071fe0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/71f10fb568780b456ae20933b9081d4e08e47231",
-                "reference": "71f10fb568780b456ae20933b9081d4e08e47231",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/336090babf44b97eef743d9f733cf8b968071fe0",
+                "reference": "336090babf44b97eef743d9f733cf8b968071fe0",
                 "shasum": ""
             },
             "require": {
@@ -1495,7 +1495,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-07-02T11:58:55+00:00"
+            "time": "2020-07-08T12:50:22+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1725,12 +1725,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "08bc9b4886efa03d1e2477e524a4986fe0f0d254"
+                "reference": "edd909a0a2fd714908d1516df9365ceab16d1f2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/08bc9b4886efa03d1e2477e524a4986fe0f0d254",
-                "reference": "08bc9b4886efa03d1e2477e524a4986fe0f0d254",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/edd909a0a2fd714908d1516df9365ceab16d1f2d",
+                "reference": "edd909a0a2fd714908d1516df9365ceab16d1f2d",
                 "shasum": ""
             },
             "require": {
@@ -1782,7 +1782,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-07-07T09:34:05+00:00"
+            "time": "2020-07-08T12:54:29+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2556,16 +2556,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.27",
+            "version": "2.0.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "34620af4df7d1988d8f0d7e91f6c8a3bf931d8dc"
+                "reference": "d1ca58cf33cb21046d702ae3a7b14fdacd9f3260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/34620af4df7d1988d8f0d7e91f6c8a3bf931d8dc",
-                "reference": "34620af4df7d1988d8f0d7e91f6c8a3bf931d8dc",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/d1ca58cf33cb21046d702ae3a7b14fdacd9f3260",
+                "reference": "d1ca58cf33cb21046d702ae3a7b14fdacd9f3260",
                 "shasum": ""
             },
             "require": {
@@ -2644,7 +2644,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2020-04-04T23:17:33+00:00"
+            "time": "2020-07-08T09:08:33+00:00"
         },
         {
             "name": "psr/cache",
@@ -3645,15 +3645,15 @@
         },
         {
             "name": "wpackagist-plugin/stream",
-            "version": "3.4.3",
+            "version": "3.5.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/stream/",
-                "reference": "tags/3.4.3"
+                "reference": "tags/3.5.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stream.3.4.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/stream.3.5.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
