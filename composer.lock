@@ -1454,12 +1454,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
+<<<<<<< HEAD
                 "reference": "191ebb789ab245b9bfc8bc7de9ee7ad9c93cb6ef"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/191ebb789ab245b9bfc8bc7de9ee7ad9c93cb6ef",
                 "reference": "191ebb789ab245b9bfc8bc7de9ee7ad9c93cb6ef",
+=======
+                "reference": "80c503f3dd66a5880415a5a35a91d3ba879c4b5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/80c503f3dd66a5880415a5a35a91d3ba879c4b5d",
+                "reference": "80c503f3dd66a5880415a5a35a91d3ba879c4b5d",
+>>>>>>> dynamic sidebar, modules
                 "shasum": ""
             },
             "require": {
@@ -1510,7 +1519,11 @@
                 }
             ],
             "description": "Modular component system for WordPress",
+<<<<<<< HEAD
             "time": "2020-08-10T10:35:15+00:00"
+=======
+            "time": "2020-08-07T12:06:52+00:00"
+>>>>>>> dynamic sidebar, modules
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1740,12 +1753,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
+<<<<<<< HEAD
                 "reference": "2a1e0b279d436a9c9c1af00c5a7bca437c5179b5"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/2a1e0b279d436a9c9c1af00c5a7bca437c5179b5",
                 "reference": "2a1e0b279d436a9c9c1af00c5a7bca437c5179b5",
+=======
+                "reference": "78254b3fd5dc7bcca51ac079beed0a7413c6a42a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/78254b3fd5dc7bcca51ac079beed0a7413c6a42a",
+                "reference": "78254b3fd5dc7bcca51ac079beed0a7413c6a42a",
+>>>>>>> dynamic sidebar, modules
                 "shasum": ""
             },
             "require": {
@@ -1797,7 +1819,11 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
+<<<<<<< HEAD
             "time": "2020-08-10T10:33:13+00:00"
+=======
+            "time": "2020-08-07T12:06:54+00:00"
+>>>>>>> dynamic sidebar, modules
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
