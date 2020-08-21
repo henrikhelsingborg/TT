@@ -1909,16 +1909,16 @@
         },
         {
             "name": "helsingborg-stad/wp-page-for-post-type",
-            "version": "1.2.0",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/wp-page-for-posttype.git",
-                "reference": "42b5d3ccd9111683fb70f078ad6b0502bfdbe828"
+                "reference": "4d5f0b528cd885a2a19a3602ca4b214e627acecb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/wp-page-for-posttype/zipball/42b5d3ccd9111683fb70f078ad6b0502bfdbe828",
-                "reference": "42b5d3ccd9111683fb70f078ad6b0502bfdbe828",
+                "url": "https://api.github.com/repos/helsingborg-stad/wp-page-for-posttype/zipball/4d5f0b528cd885a2a19a3602ca4b214e627acecb",
+                "reference": "4d5f0b528cd885a2a19a3602ca4b214e627acecb",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1936,7 +1936,7 @@
                     "email": "sebastian.thulin@helsingborg.se"
                 }
             ],
-            "time": "2020-05-07T13:22:40+00:00"
+            "time": "2020-06-24T07:58:55+00:00"
         },
         {
             "name": "helsingborg-stad/wp-search-statistics",
