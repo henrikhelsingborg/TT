@@ -1026,12 +1026,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "a13815caeeaeb999a7d9571b1af0f5a2e0197b66"
+                "reference": "a8355a194411278d9f158b2f12977a5fb1f01d71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/a13815caeeaeb999a7d9571b1af0f5a2e0197b66",
-                "reference": "a13815caeeaeb999a7d9571b1af0f5a2e0197b66",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/a8355a194411278d9f158b2f12977a5fb1f01d71",
+                "reference": "a8355a194411278d9f158b2f12977a5fb1f01d71",
                 "shasum": ""
             },
             "type": "library",
@@ -1051,7 +1051,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-07-29T08:07:10+00:00"
+            "time": "2020-08-21T07:38:40+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1478,12 +1478,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "61d951b462dc9cae6d518a8e66e16c0ca81b3532"
+                "reference": "defe445bff905df6cbc59aef48d5c23e4ee9a4a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/61d951b462dc9cae6d518a8e66e16c0ca81b3532",
-                "reference": "61d951b462dc9cae6d518a8e66e16c0ca81b3532",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/defe445bff905df6cbc59aef48d5c23e4ee9a4a4",
+                "reference": "defe445bff905df6cbc59aef48d5c23e4ee9a4a4",
                 "shasum": ""
             },
             "require": {
@@ -1491,7 +1491,7 @@
                 "composer/installers": "~1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.5.1",
+                "helsingborg-stad/blade-component-library": "dev-master#0.5.8",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
                 "illuminate/contracts": "^5.8.36",
@@ -1534,7 +1534,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-08-03T11:38:09+00:00"
+            "time": "2020-08-21T07:40:08+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1764,12 +1764,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "45b42346e1ccd7a4555c1885d6d92da52f29ff36"
+                "reference": "9cafc569e8eff9e43aa9a8cdff238a174b8a3eda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/45b42346e1ccd7a4555c1885d6d92da52f29ff36",
-                "reference": "45b42346e1ccd7a4555c1885d6d92da52f29ff36",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/9cafc569e8eff9e43aa9a8cdff238a174b8a3eda",
+                "reference": "9cafc569e8eff9e43aa9a8cdff238a174b8a3eda",
                 "shasum": ""
             },
             "require": {
@@ -1777,7 +1777,7 @@
                 "composer/installers": "^1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.5.2",
+                "helsingborg-stad/blade-component-library": "dev-master#0.5.8",
                 "helsingborg-stad/blade-engine-wrapper": "dev-master",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
@@ -1821,7 +1821,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-08-03T10:10:53+00:00"
+            "time": "2020-08-20T12:56:29+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2264,20 +2264,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.4.2",
+            "version": "5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "18c41a328193d6f7425a3cea4e01faa220e90218"
+                "reference": "d8a952dd4aa7f7d4d8be6fa145840fde4e248450"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/18c41a328193d6f7425a3cea4e01faa220e90218",
-                "reference": "18c41a328193d6f7425a3cea4e01faa220e90218",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/d8a952dd4aa7f7d4d8be6fa145840fde4e248450",
+                "reference": "d8a952dd4aa7f7d4d8be6fa145840fde4e248450",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.4.2",
+                "johnpbloch/wordpress-core": "5.5.0",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=5.6.20"
             },
@@ -2299,20 +2299,20 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-06-10T22:05:43+00:00"
+            "time": "2020-08-11T18:47:19+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.4.2",
+            "version": "5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "3e67d8b6ee6c11e8ce404da4627117fb7fbf9266"
+                "reference": "c49d46de4e4c8972b8ed2aebe3e850f4f218186f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/3e67d8b6ee6c11e8ce404da4627117fb7fbf9266",
-                "reference": "3e67d8b6ee6c11e8ce404da4627117fb7fbf9266",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/c49d46de4e4c8972b8ed2aebe3e850f4f218186f",
+                "reference": "c49d46de4e4c8972b8ed2aebe3e850f4f218186f",
                 "shasum": ""
             },
             "require": {
@@ -2320,7 +2320,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.4.2"
+                "wordpress/core-implementation": "5.5.0"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -2340,7 +2340,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-06-10T22:05:38+00:00"
+            "time": "2020-08-11T18:47:13+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -3644,15 +3644,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "4.0.7",
+            "version": "4.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/4.0.7"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.4.0.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1596958291"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3716,15 +3716,15 @@
         },
         {
             "name": "wpackagist-plugin/stream",
-            "version": "3.5.0",
+            "version": "3.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/stream/",
-                "reference": "tags/3.5.0"
+                "reference": "tags/3.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stream.3.5.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/stream.3.5.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
