@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6362f70e84b0e91081d4e5579d34c550",
+    "content-hash": "a6bd7c144f7563112a8793b64aecd896",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -1474,16 +1474,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "dev-3.0/develop",
+            "version": "dev-3.0/fix/revert-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "7f89dc55da855d6ee3297c3ea3ec6215d25c0879"
+                "reference": "1db92722deaf5b65950a2765bc478debfa58c747"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/7f89dc55da855d6ee3297c3ea3ec6215d25c0879",
-                "reference": "7f89dc55da855d6ee3297c3ea3ec6215d25c0879",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/1db92722deaf5b65950a2765bc478debfa58c747",
+                "reference": "1db92722deaf5b65950a2765bc478debfa58c747",
                 "shasum": ""
             },
             "require": {
@@ -1491,7 +1491,7 @@
                 "composer/installers": "~1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.8.5",
+                "helsingborg-stad/blade-component-library": "dev-master#0.5.8",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
                 "illuminate/contracts": "^5.8.36",
@@ -1534,7 +1534,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-09-03T12:05:55+00:00"
+            "time": "2020-09-03T09:45:05+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
