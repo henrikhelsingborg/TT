@@ -454,16 +454,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.142",
+            "version": "v0.144",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "3baf0a665cd08975314214b075f28765c97282ae"
+                "reference": "74c5fc850d9ce441c6b3e52af11b986cd11d379a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/3baf0a665cd08975314214b075f28765c97282ae",
-                "reference": "3baf0a665cd08975314214b075f28765c97282ae",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/74c5fc850d9ce441c6b3e52af11b986cd11d379a",
+                "reference": "74c5fc850d9ce441c6b3e52af11b986cd11d379a",
                 "shasum": ""
             },
             "require": {
@@ -487,7 +487,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-07-28T00:24:58+00:00"
+            "time": "2020-08-30T00:24:57+00:00"
         },
         {
             "name": "google/auth",
@@ -966,16 +966,16 @@
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/attachment-revisions.git",
-                "reference": "761792963febb2a5eb8422f0765d7ae20368ef82"
+                "reference": "fd50973f244ce805c558465f543e9846e4160a50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/attachment-revisions/zipball/761792963febb2a5eb8422f0765d7ae20368ef82",
-                "reference": "761792963febb2a5eb8422f0765d7ae20368ef82",
+                "url": "https://api.github.com/repos/helsingborg-stad/attachment-revisions/zipball/fd50973f244ce805c558465f543e9846e4160a50",
+                "reference": "fd50973f244ce805c558465f543e9846e4160a50",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -990,7 +990,7 @@
                 }
             ],
             "description": "Enables attachment revisions and media file swapping",
-            "time": "2018-09-03T11:47:40+00:00"
+            "time": "2020-09-02T14:46:18+00:00"
         },
         {
             "name": "helsingborg-stad/better-post-ui",
@@ -1373,16 +1373,16 @@
         },
         {
             "name": "helsingborg-stad/job-listings",
-            "version": "2.4.1",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "b00d7e377072389b3fb0ef1a6dbe9a322f5d6bf9"
+                "reference": "b965c242345e55736e1b7202acc09f40147dcb76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/b00d7e377072389b3fb0ef1a6dbe9a322f5d6bf9",
-                "reference": "b00d7e377072389b3fb0ef1a6dbe9a322f5d6bf9",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/b965c242345e55736e1b7202acc09f40147dcb76",
+                "reference": "b965c242345e55736e1b7202acc09f40147dcb76",
                 "shasum": ""
             },
             "require": {
@@ -1414,7 +1414,7 @@
                 }
             ],
             "description": "Improt available jobs",
-            "time": "2020-06-30T13:55:59+00:00"
+            "time": "2020-08-24T14:20:33+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1446,16 +1446,16 @@
         },
         {
             "name": "helsingborg-stad/media-usage",
-            "version": "1.3.9",
+            "version": "1.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/media-usage.git",
-                "reference": "64dd854fd4247c1f1b69d440d0ffaabe7ea6df27"
+                "reference": "5a5ce7bcd24a248fec73368661c3d68218b80317"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/64dd854fd4247c1f1b69d440d0ffaabe7ea6df27",
-                "reference": "64dd854fd4247c1f1b69d440d0ffaabe7ea6df27",
+                "url": "https://api.github.com/repos/helsingborg-stad/media-usage/zipball/5a5ce7bcd24a248fec73368661c3d68218b80317",
+                "reference": "5a5ce7bcd24a248fec73368661c3d68218b80317",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1470,7 +1470,7 @@
                 }
             ],
             "description": "Track the use of attachments across posts, meta and options",
-            "time": "2019-03-26T15:52:47+00:00"
+            "time": "2020-09-01T08:48:55+00:00"
         },
         {
             "name": "helsingborg-stad/modularity",
@@ -1478,12 +1478,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "defe445bff905df6cbc59aef48d5c23e4ee9a4a4"
+                "reference": "7f89dc55da855d6ee3297c3ea3ec6215d25c0879"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/defe445bff905df6cbc59aef48d5c23e4ee9a4a4",
-                "reference": "defe445bff905df6cbc59aef48d5c23e4ee9a4a4",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/7f89dc55da855d6ee3297c3ea3ec6215d25c0879",
+                "reference": "7f89dc55da855d6ee3297c3ea3ec6215d25c0879",
                 "shasum": ""
             },
             "require": {
@@ -1491,7 +1491,7 @@
                 "composer/installers": "~1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.5.8",
+                "helsingborg-stad/blade-component-library": "dev-master#0.8.5",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
                 "illuminate/contracts": "^5.8.36",
@@ -1534,7 +1534,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-08-21T07:40:08+00:00"
+            "time": "2020-09-03T12:05:55+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1764,12 +1764,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "9cafc569e8eff9e43aa9a8cdff238a174b8a3eda"
+                "reference": "107ceee5d71680cc628f98c2a3188cf08aee700e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/9cafc569e8eff9e43aa9a8cdff238a174b8a3eda",
-                "reference": "9cafc569e8eff9e43aa9a8cdff238a174b8a3eda",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/107ceee5d71680cc628f98c2a3188cf08aee700e",
+                "reference": "107ceee5d71680cc628f98c2a3188cf08aee700e",
                 "shasum": ""
             },
             "require": {
@@ -1777,7 +1777,7 @@
                 "composer/installers": "^1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.5.8",
+                "helsingborg-stad/blade-component-library": "dev-master#0.8.5",
                 "helsingborg-stad/blade-engine-wrapper": "dev-master",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
@@ -1821,7 +1821,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-08-20T12:56:29+00:00"
+            "time": "2020-09-03T12:03:54+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2264,20 +2264,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.5.0",
+            "version": "5.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "d8a952dd4aa7f7d4d8be6fa145840fde4e248450"
+                "reference": "0973abd5c01ecce0b60bc1c81a6dd072827de930"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/d8a952dd4aa7f7d4d8be6fa145840fde4e248450",
-                "reference": "d8a952dd4aa7f7d4d8be6fa145840fde4e248450",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/0973abd5c01ecce0b60bc1c81a6dd072827de930",
+                "reference": "0973abd5c01ecce0b60bc1c81a6dd072827de930",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.5.0",
+                "johnpbloch/wordpress-core": "5.5.1",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=5.6.20"
             },
@@ -2299,20 +2299,20 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-08-11T18:47:19+00:00"
+            "time": "2020-09-01T19:07:41+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.5.0",
+            "version": "5.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "c49d46de4e4c8972b8ed2aebe3e850f4f218186f"
+                "reference": "fa5bcb1579eae33baef6c04355f8d6657e5bd349"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/c49d46de4e4c8972b8ed2aebe3e850f4f218186f",
-                "reference": "c49d46de4e4c8972b8ed2aebe3e850f4f218186f",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/fa5bcb1579eae33baef6c04355f8d6657e5bd349",
+                "reference": "fa5bcb1579eae33baef6c04355f8d6657e5bd349",
                 "shasum": ""
             },
             "require": {
@@ -2320,7 +2320,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.5.0"
+                "wordpress/core-implementation": "5.5.1"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -2340,7 +2340,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-08-11T18:47:13+00:00"
+            "time": "2020-09-01T19:07:35+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -2485,16 +2485,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.38.0",
+            "version": "2.39.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d8f6a6a91d1eb9304527b040500f61923e97674b"
+                "reference": "0a41ea7f7fedacf307b7a339800e10356a042918"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d8f6a6a91d1eb9304527b040500f61923e97674b",
-                "reference": "d8f6a6a91d1eb9304527b040500f61923e97674b",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/0a41ea7f7fedacf307b7a339800e10356a042918",
+                "reference": "0a41ea7f7fedacf307b7a339800e10356a042918",
                 "shasum": ""
             },
             "require": {
@@ -2570,7 +2570,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-04T19:12:46+00:00"
+            "time": "2020-08-24T12:35:58+00:00"
         },
         {
             "name": "philo/laravel-blade",
@@ -3145,16 +3145,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.4.11",
+            "version": "v4.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "47aa9064d75db36389692dd4d39895a0820f00f2"
+                "reference": "aeb73aca16a8f1fe958230fe44e6cf4c84cbb85e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/47aa9064d75db36389692dd4d39895a0820f00f2",
-                "reference": "47aa9064d75db36389692dd4d39895a0820f00f2",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/aeb73aca16a8f1fe958230fe44e6cf4c84cbb85e",
+                "reference": "aeb73aca16a8f1fe958230fe44e6cf4c84cbb85e",
                 "shasum": ""
             },
             "require": {
@@ -3212,7 +3212,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-23T08:31:43+00:00"
+            "time": "2020-08-10T07:47:39+00:00"
         },
         {
             "name": "symfony/finder",
