@@ -13,7 +13,7 @@ $contentDirectories = [
 ];
 
 // Build file name.
-$buildFile = 'build.sh';
+$buildFile = 'build.php';
 
 // Files and directories not suitable for prod to be removed.
 $removables = [
