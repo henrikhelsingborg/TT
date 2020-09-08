@@ -1,0 +1,40 @@
+name: Build site
+
+on:
+  push:
+    branches: [ beta ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install composer dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Inject access token in .npmrc
+      run: | 
+        echo "registry=https://npm.pkg.github.com/helsingborg-stad" >> ~/.npmrc
+        echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+
+    - name: Execute buildscript in theme if exists
+      run: php ./build.php
+
+    - name: Cleanup .npmrc
+      run: rm ~/.npmrc
+
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR }}
+        path: .
+        remote_path: ${{ secrets.DEPLOY_REMOTE_PATH }}
+        remote_host: ${{ secrets.DEPLOY_REMOTE_HOST }}
+        remote_user: ${{ secrets.DEPLOY_REMOTE_USER }}
+        remote_key: ${{ secrets.DEPLOY_KEY }}
