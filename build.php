@@ -1,5 +1,10 @@
 #!/bin/php
 <?php
+// Only allow run from cli.
+if (php_sapi_name() !== 'cli') {
+    exit(0);
+}
+
 // Directories to search for build script in.
 $contentDirectories = [
     'wp-content/themes',
