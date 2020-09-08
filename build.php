@@ -33,7 +33,7 @@ foreach ($contentDirectories as $contentDirectory) {
         if (file_exists("$directory/$buildFile")) {
             print "Running build script in $directory.\n";
             chdir($directory);
-            shell_exec('bash ' . $buildFile);
+            shell_exec('php ' . $buildFile);
             chdir($root);
         }
     }
