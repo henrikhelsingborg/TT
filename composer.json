@@ -56,7 +56,7 @@
     "require": {
         "composer/installers": "~1.0",
         "johnpbloch/wordpress": "^5.0",
-        "helsingborg-stad/modularity": "dev-3.0/fix/revert-develop",
+        "helsingborg-stad/modularity": "dev-3.0/develop",
         "helsingborg-stad/municipio": "dev-3.0/develop",
         "helsingborg-stad/lix-calculator": ">=1.0.1",
         "helsingborg-stad/custom-short-links": ">=1.0.0",
