@@ -1,5 +1,11 @@
 #!/bin/php
 <?php
+/**
+ * This script is meant to be run from github actions and not locally.
+ * It searches any sub folder from the folders in $contentDirectories for a build.php and runs it to prepare a compleate built package of the site.
+ * It cleans up files like .git and dev tools.
+ */
+
 // Only allow run from cli.
 if (php_sapi_name() !== 'cli') {
     exit(0);
@@ -22,7 +28,9 @@ $removables = [
     'config',
     'wp-content/uploads',
     '.github',
-    'build.php'
+    'build.php',
+    'composer.json',
+    'composer.lock'
 ];
 
 // Iterate through directories and try to find and run build scripts.
