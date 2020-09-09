@@ -32,9 +32,9 @@ jobs:
     - name: rsync deployments
       uses: burnett01/rsync-deployments@4.1
       with:
-        switches: -avzr --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR }}
+        switches: -avzr --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_HELSINGBORG_SE }}
         path: .
-        remote_path: ${{ secrets.DEPLOY_REMOTE_PATH }}
-        remote_host: ${{ secrets.DEPLOY_REMOTE_HOST }}
+        remote_path: ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
+        remote_host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
         remote_user: ${{ secrets.DEPLOY_REMOTE_USER }}
         remote_key: ${{ secrets.DEPLOY_KEY }}
