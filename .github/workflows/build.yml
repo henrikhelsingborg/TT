@@ -2,7 +2,7 @@ name: Build site
 
 on:
   push:
-    branches: [ beta ]
+    branches: [ feature/3.0/deploy ]
 
 jobs:
   build:

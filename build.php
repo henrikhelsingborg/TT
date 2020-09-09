@@ -3,7 +3,7 @@
 /**
  * This script is meant to be run from github actions and not locally.
  * It searches any sub folder from the folders in $contentDirectories for a build.php and runs it to prepare a compleate built package of the site.
- * It cleans up files like .git and dev tools.
+ * It cleans up files like .git and dev tools that should not be on a public facing server.
  */
 
 // Only allow run from cli.
@@ -21,7 +21,7 @@ $contentDirectories = [
 // Build file name.
 $buildFile = 'build.php';
 
-// Files and directories not suitable for prod to be removed.
+// Files and directories not suitable for public servers to be removed.
 $removables = [
     '.git',
     '.gitignore',
@@ -33,24 +33,63 @@ $removables = [
     'composer.lock'
 ];
 
+$dirName = basename(dirname(__FILE__));
+
 // Iterate through directories and try to find and run build scripts.
 $root = getcwd();
+$output = '';
+$exitCode = 0;
 foreach ($contentDirectories as $contentDirectory) {
     $directories = glob("$contentDirectory/*", GLOB_ONLYDIR);
     foreach ($directories as $directory) {
         if (file_exists("$directory/$buildFile")) {
-            print "Running build script in $directory.\n";
+            print "-- Running build script in $directory. --\n";
             chdir($directory);
-            shell_exec('php ' . $buildFile);
+
+            $exitCode = executeCommand("php $buildFile");
+            if ($exitCode > 0) {
+                exit($exitCode);
+            }
             chdir($root);
+            print "-- Done build script in $directory. --\n";
         }
     }
 }
 
+
 // Remove files and directories.
 foreach ($removables as $removable) {
     if (file_exists($removable)) {
-        print "Removing $removable\n";
+        print "Removing $removable from $dirName\n";
+        // Let this fail without breaking script as its not that important.
         shell_exec("rm -rf $removable");
     }
+}
+
+/**
+ * Better shell script execution with live output to STDOUT and status code return.
+ * @param  string $command Command to execute in shell.
+ * @return int             Exit code.
+ */
+function executeCommand($command)
+{
+    $proc = popen("$command 2>&1 ; echo Exit status : $?", 'r');
+
+    $liveOutput     = '';
+    $completeOutput = '';
+
+    while (!feof($proc)) {
+        $liveOutput     = fread($proc, 4096);
+        $completeOutput = $completeOutput . $liveOutput;
+        print $liveOutput;
+        @ flush();
+    }
+
+    pclose($proc);
+
+    // Get exit status.
+    preg_match('/[0-9]+$/', $completeOutput, $matches);
+
+    // Return exit status.
+    return intval($matches[0]);
 }
