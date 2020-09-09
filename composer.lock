@@ -4,8 +4,78 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6362f70e84b0e91081d4e5579d34c550",
+    "content-hash": "5d73558560983e500f4aad9da283dffa",
     "packages": [
+        {
+            "name": "algolia/algoliasearch-client-php",
+            "version": "2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/algolia/algoliasearch-client-php.git",
+                "reference": "ce8b35a5aa842ad3e0dc05bbd7aaf5ed82481d71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/ce8b35a5aa842ad3e0dc05bbd7aaf5ed82481d71",
+                "reference": "ce8b35a5aa842ad3e0dc05bbd7aaf5ed82481d71",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^5.3 || ^7.0",
+                "psr/http-message": "^1.0",
+                "psr/log": "^1.0",
+                "psr/simple-cache": "^1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "fzaninotto/faker": "^1.8",
+                "phpunit/phpunit": "^4.8",
+                "symfony/yaml": "^2.0 || ^4.0"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "If you prefer to use Guzzle HTTP client instead of the Http Client implementation provided by the package"
+            },
+            "bin": [
+                "bin/algolia-doctor"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.0": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Algolia\\AlgoliaSearch\\": "src/"
+                },
+                "files": [
+                    "src/Http/Psr7/functions.php",
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Algolia Team",
+                    "email": "contact@algolia.com"
+                }
+            ],
+            "description": "Algolia Search API Client for PHP",
+            "keywords": [
+                "algolia",
+                "api",
+                "client",
+                "php",
+                "search"
+            ],
+            "time": "2020-06-25T08:47:13+00:00"
+        },
         {
             "name": "aristath/kirki",
             "version": "v3.0.34",
@@ -810,22 +880,60 @@
             "time": "2020-06-04T13:36:26+00:00"
         },
         {
-            "name": "helsingborg-stad/algolia-multisite-enabler",
-            "version": "1.1.0",
+            "name": "helsingborg-stad/algolia-index",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/helsingborg-stad/algolia-multisite-enabler.git",
-                "reference": "7bba77b9fd8941eb981a8eaf574681f20459fc1b"
+                "url": "https://github.com/helsingborg-stad/algolia-index.git",
+                "reference": "7186ac6308b107f47dc92220b015e47b8539d00b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/algolia-multisite-enabler/zipball/7bba77b9fd8941eb981a8eaf574681f20459fc1b",
-                "reference": "7bba77b9fd8941eb981a8eaf574681f20459fc1b",
+                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index/zipball/7186ac6308b107f47dc92220b015e47b8539d00b",
+                "reference": "7186ac6308b107f47dc92220b015e47b8539d00b",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0",
-                "php": ">=7.0"
+                "algolia/algoliasearch-client-php": "^2.6"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "wordpress-install-dir": "wp",
+                "installer-paths": {
+                    "wp-content/plugins/{$name}": [
+                        "type:wordpress-plugin"
+                    ],
+                    "wp-content/themes/{$name}": [
+                        "type:wordpress-theme"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                }
+            ],
+            "description": "Index wordpress site content to algolia.",
+            "time": "2020-06-24T08:18:45+00:00"
+        },
+        {
+            "name": "helsingborg-stad/algolia-index-js-searchpage-addon",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon.git",
+                "reference": "c0d635525bd55a1860a360ee16ce0bc86f5741b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index-js-searchpage-addon/zipball/c0d635525bd55a1860a360ee16ce0bc86f5741b8",
+                "reference": "c0d635525bd55a1860a360ee16ce0bc86f5741b8",
+                "shasum": ""
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -838,44 +946,36 @@
                     "email": "sebastian.thulin@helsingborg.se"
                 }
             ],
-            "description": "Plugin to enable Algolia plugin to mix-content from multiple WordPress sites in one index.",
-            "homepage": "https://github.com/helsingborg-stad/algolia-multisite-enabler",
-            "time": "2018-04-27T09:43:27+00:00"
+            "description": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon",
+            "time": "2020-06-25T09:46:38+00:00"
         },
         {
-            "name": "helsingborg-stad/algoliasearch-wordpress",
-            "version": "2.11.4",
+            "name": "helsingborg-stad/algolia-index-modularity-addon",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/helsingborg-stad/algoliasearch-wordpress.git",
-                "reference": "9d53378668199a138d6ae433ad5b906e6d10139a"
+                "url": "https://github.com/helsingborg-stad/algolia-index-modularity-addon.git",
+                "reference": "a55e8cdaa8a6db92d636b5291c6c5cf1fbbd159c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/algoliasearch-wordpress/zipball/9d53378668199a138d6ae433ad5b906e6d10139a",
-                "reference": "9d53378668199a138d6ae433ad5b906e6d10139a",
+                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index-modularity-addon/zipball/a55e8cdaa8a6db92d636b5291c6c5cf1fbbd159c",
+                "reference": "a55e8cdaa8a6db92d636b5291c6c5cf1fbbd159c",
                 "shasum": ""
             },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "*",
-                "wimg/php-compatibility": "*",
-                "wp-coding-standards/wpcs": "*"
-            },
             "type": "wordpress-plugin",
-            "extra": {
-                "installer-name": "algolia"
-            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "(MIT or GPL-2.0)"
+                "MIT"
             ],
-            "description": "Forked version of algolia Search plugin for Wordpress. Fixes some issues, for more information see feature branches in git-repository.",
-            "homepage": "https://community.algolia.com/wordpress/",
-            "time": "2019-03-04T13:34:45+00:00"
+            "authors": [
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                }
+            ],
+            "description": "https://github.com/helsingborg-stad/algolia-index-modularity-addon",
+            "time": "2020-04-30T07:57:42+00:00"
         },
         {
             "name": "helsingborg-stad/api-alarm-integration",
@@ -1740,12 +1840,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "4c907a7b0873d9e23d21fcd3bfc7da0dbcce5c72"
+                "reference": "f93d4ca62cc4b1715ddec01910893f0f49dd4fcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/4c907a7b0873d9e23d21fcd3bfc7da0dbcce5c72",
-                "reference": "4c907a7b0873d9e23d21fcd3bfc7da0dbcce5c72",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/f93d4ca62cc4b1715ddec01910893f0f49dd4fcc",
+                "reference": "f93d4ca62cc4b1715ddec01910893f0f49dd4fcc",
                 "shasum": ""
             },
             "require": {
@@ -1753,7 +1853,7 @@
                 "composer/installers": "^1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.8.5",
+                "helsingborg-stad/blade-component-library": "dev-master#0.9.0",
                 "helsingborg-stad/blade-engine-wrapper": "dev-master",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
@@ -1797,7 +1897,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-09T11:37:07+00:00"
+            "time": "2020-09-09T12:03:22+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -1882,6 +1982,37 @@
             ],
             "description": "Enables option to add notices to search result of specific keywords",
             "time": "2017-03-03T08:00:18+00:00"
+        },
+        {
+            "name": "helsingborg-stad/skyfish-integration",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-skyfish-integration.git",
+                "reference": "6979d3c4b51c8771170380318f59ac208818a61d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-skyfish-integration/zipball/6979d3c4b51c8771170380318f59ac208818a61d",
+                "reference": "6979d3c4b51c8771170380318f59ac208818a61d",
+                "shasum": ""
+            },
+            "require": {
+                "helsingborg-stad/acf-export-manager": ">=1.0.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Ramstedt",
+                    "email": "nikolas.ramstedt@helsingborg.se"
+                }
+            ],
+            "description": "Skyfish integration for Wordpress",
+            "time": "2020-09-02T14:45:45+00:00"
         },
         {
             "name": "helsingborg-stad/wp-page-for-post-type",
@@ -3532,6 +3663,24 @@
             "homepage": "https://wordpress.org/plugins/autodescription/"
         },
         {
+            "name": "wpackagist-plugin/cookies-and-content-security-policy",
+            "version": "1.51",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cookies-and-content-security-policy/",
+                "reference": "tags/1.51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.51.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cookies-and-content-security-policy/"
+        },
+        {
             "name": "wpackagist-plugin/mce-table-buttons",
             "version": "3.3",
             "source": {
@@ -3569,15 +3718,15 @@
         },
         {
             "name": "wpackagist-plugin/redis-cache",
-            "version": "1.4.3",
+            "version": "1.5.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redis-cache/",
-                "reference": "tags/1.4.3"
+                "reference": "tags/1.5.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.4.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.5.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
