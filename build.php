@@ -39,6 +39,7 @@ $dirName = basename(dirname(__FILE__));
 $root = getcwd();
 $output = '';
 $exitCode = 0;
+$cleanup = (isset($argv[1]) && ($argv[1] === '--cleanup')) ? $argv[1] : '';
 foreach ($contentDirectories as $contentDirectory) {
     $directories = glob("$contentDirectory/*", GLOB_ONLYDIR);
     foreach ($directories as $directory) {
@@ -46,7 +47,7 @@ foreach ($contentDirectories as $contentDirectory) {
             print "-- Running build script in $directory. --\n";
             chdir($directory);
 
-            $exitCode = executeCommand("php $buildFile");
+            $exitCode = executeCommand("php $buildFile $cleanup");
             // Break script if any exit code other than 0 is returned.
             if ($exitCode > 0) {
                 exit($exitCode);
@@ -59,11 +60,13 @@ foreach ($contentDirectories as $contentDirectory) {
 
 
 // Remove files and directories.
-foreach ($removables as $removable) {
-    if (file_exists($removable)) {
-        print "Removing $removable from $dirName\n";
-        // Let this fail without breaking script as its not that important.
-        shell_exec("rm -rf $removable");
+if ($cleanup) {
+    foreach ($removables as $removable) {
+        if (file_exists($removable)) {
+            print "Removing $removable from $dirName\n";
+            // Let this fail without breaking script as its not that important.
+            shell_exec("rm -rf $removable");
+        }
     }
 }
 

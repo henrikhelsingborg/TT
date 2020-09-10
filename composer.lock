@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1e44569f2ec77b0913df40385232856",
+    "content-hash": "c21a21d884f700ec0a37893bd7f0b14d",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -933,16 +933,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "dev-3.0/develop",
+            "version": "dev-feature/3.0/deploy",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "ee9f6b8f38db4a5b9e84b2283d7e461457d88257"
+                "reference": "73d4be08408da66393644fc900ea873dc10a7d28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/ee9f6b8f38db4a5b9e84b2283d7e461457d88257",
-                "reference": "ee9f6b8f38db4a5b9e84b2283d7e461457d88257",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/73d4be08408da66393644fc900ea873dc10a7d28",
+                "reference": "73d4be08408da66393644fc900ea873dc10a7d28",
                 "shasum": ""
             },
             "require": {
@@ -962,7 +962,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2020-09-03T08:36:15+00:00"
+            "time": "2020-09-10T10:04:59+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1474,16 +1474,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "dev-3.0/fix/revert-develop",
+            "version": "dev-feature/3.0/deploy",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "98d99b9db58b2060dfc31d6f1693a0a6693dca03"
+                "reference": "af03f988292eb1908cb238a7792e08eb98950697"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/98d99b9db58b2060dfc31d6f1693a0a6693dca03",
-                "reference": "98d99b9db58b2060dfc31d6f1693a0a6693dca03",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/af03f988292eb1908cb238a7792e08eb98950697",
+                "reference": "af03f988292eb1908cb238a7792e08eb98950697",
                 "shasum": ""
             },
             "require": {
@@ -1491,7 +1491,7 @@
                 "composer/installers": "~1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.8.5",
+                "helsingborg-stad/blade-component-library": "dev-master#0.9.0",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
                 "illuminate/contracts": "^5.8.36",
@@ -1534,7 +1534,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-09-03T12:49:58+00:00"
+            "time": "2020-09-10T11:49:34+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1637,16 +1637,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-json-render",
-            "version": "dev-3.0/develop",
+            "version": "dev-feature/3.0/deploy",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-json-render.git",
-                "reference": "847f94c98eda6f108334373cb12839ebfde9e291"
+                "reference": "cc55f28f1ec80fc774ef3a2b782833058f49e30d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/847f94c98eda6f108334373cb12839ebfde9e291",
-                "reference": "847f94c98eda6f108334373cb12839ebfde9e291",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/cc55f28f1ec80fc774ef3a2b782833058f49e30d",
+                "reference": "cc55f28f1ec80fc774ef3a2b782833058f49e30d",
                 "shasum": ""
             },
             "require": {
@@ -1663,7 +1663,7 @@
                     "email": "sebastian.thulin@helsingborg.se"
                 }
             ],
-            "time": "2020-09-01T08:43:27+00:00"
+            "time": "2020-09-10T11:15:13+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-sections",
@@ -1764,12 +1764,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "ca5f697ca89109d223d69e8f5fcbf27cb4750d98"
+                "reference": "6ccbb2a884cb0ac502e9cd5e5ab4d122e3000065"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/ca5f697ca89109d223d69e8f5fcbf27cb4750d98",
-                "reference": "ca5f697ca89109d223d69e8f5fcbf27cb4750d98",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/6ccbb2a884cb0ac502e9cd5e5ab4d122e3000065",
+                "reference": "6ccbb2a884cb0ac502e9cd5e5ab4d122e3000065",
                 "shasum": ""
             },
             "require": {
@@ -1821,7 +1821,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-10T07:26:51+00:00"
+            "time": "2020-09-10T09:41:32+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",

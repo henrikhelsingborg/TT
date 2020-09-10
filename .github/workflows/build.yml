@@ -2,7 +2,7 @@ name: Build site
 
 on:
   push:
-    branches: [ beta ]
+    branches: [ feature/3.0/deploy ]
     paths-ignore:
       - '.github/**'
 jobs:
@@ -25,7 +25,7 @@ jobs:
         echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
 
     - name: Execute buildscripts in themes and plugins folders
-      run: php ./build.php
+      run: php ./build.php --cleanup
 
     - name: Cleanup .npmrc
       run: rm ~/.npmrc
