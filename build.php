@@ -47,6 +47,7 @@ foreach ($contentDirectories as $contentDirectory) {
             chdir($directory);
 
             $exitCode = executeCommand("php $buildFile");
+            // Break script if any exit code other than 0 is returned.
             if ($exitCode > 0) {
                 exit($exitCode);
             }
