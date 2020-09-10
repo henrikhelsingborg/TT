@@ -2,8 +2,9 @@ name: Build site
 
 on:
   push:
-    branches: [ feature/3.0/deploy ]
-
+    branches: [ beta ]
+    paths-ignore:
+      - '.github/**'
 jobs:
   build:
 
