@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d27f271a175efe3bca9b7cd134b87816",
+    "content-hash": "792806c12928110ce8e9330ec22f9a39",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1102,12 +1102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "2df5fbf502cde680a64e473a0c705927dabc318a"
+                "reference": "a2b03d7a22a77cb40f8c65992a89d3ab298d8590"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/2df5fbf502cde680a64e473a0c705927dabc318a",
-                "reference": "2df5fbf502cde680a64e473a0c705927dabc318a",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/a2b03d7a22a77cb40f8c65992a89d3ab298d8590",
+                "reference": "a2b03d7a22a77cb40f8c65992a89d3ab298d8590",
                 "shasum": ""
             },
             "type": "library",
@@ -1127,7 +1127,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-09-09T11:03:16+00:00"
+            "time": "2020-09-16T13:19:57+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1614,16 +1614,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
-            "version": "1.0.2",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-contact-banner.git",
-                "reference": "8038f09f088f8887fb5d5835a3ef1ee68aec3cc5"
+                "reference": "13e34063718ed78f07296f3b610c897c29242d09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/8038f09f088f8887fb5d5835a3ef1ee68aec3cc5",
-                "reference": "8038f09f088f8887fb5d5835a3ef1ee68aec3cc5",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/13e34063718ed78f07296f3b610c897c29242d09",
+                "reference": "13e34063718ed78f07296f3b610c897c29242d09",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1638,7 +1638,7 @@
                 }
             ],
             "description": "Contact Banner",
-            "time": "2020-02-17T11:32:02+00:00"
+            "time": "2020-09-15T10:47:33+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
@@ -3887,7 +3887,8 @@
         "helsingborg-stad/municipio": 20,
         "helsingborg-stad/api-event-manager-integration": 20,
         "helsingborg-stad/modularity-json-render": 20,
-        "helsingborg-stad/customer-feedback": 20
+        "helsingborg-stad/customer-feedback": 20,
+        "helsingborg-stad/modularity-contact-banner": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
