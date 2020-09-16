@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad992202a9785e5c12805e9bcc0c1b50",
+    "content-hash": "d27f271a175efe3bca9b7cd134b87816",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -500,16 +500,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.145",
+            "version": "v0.146",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "96de5dabadb693f161a31a1a1e018882fa05816e"
+                "reference": "029e20e81508cee6dc652529514eeeb1cf56ce54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/96de5dabadb693f161a31a1a1e018882fa05816e",
-                "reference": "96de5dabadb693f161a31a1a1e018882fa05816e",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/029e20e81508cee6dc652529514eeeb1cf56ce54",
+                "reference": "029e20e81508cee6dc652529514eeeb1cf56ce54",
                 "shasum": ""
             },
             "require": {
@@ -533,7 +533,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-09-05T00:24:41+00:00"
+            "time": "2020-09-12T00:24:59+00:00"
         },
         {
             "name": "google/auth",
@@ -1275,16 +1275,16 @@
         },
         {
             "name": "helsingborg-stad/customer-feedback",
-            "version": "2.2.24",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Customer-feedback.git",
-                "reference": "4ef1a6081f54630b18a624f04e1ae21c0f4a6e31"
+                "reference": "c07362a8bb0cc979e66621212f1a8f8d76e7859a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Customer-feedback/zipball/4ef1a6081f54630b18a624f04e1ae21c0f4a6e31",
-                "reference": "4ef1a6081f54630b18a624f04e1ae21c0f4a6e31",
+                "url": "https://api.github.com/repos/helsingborg-stad/Customer-feedback/zipball/c07362a8bb0cc979e66621212f1a8f8d76e7859a",
+                "reference": "c07362a8bb0cc979e66621212f1a8f8d76e7859a",
                 "shasum": ""
             },
             "require": {
@@ -1302,7 +1302,7 @@
                 }
             ],
             "description": "This WordPress plugin adds a feedback form to the end of every page (or any other activated post type).",
-            "time": "2019-02-22T09:23:50+00:00"
+            "time": "2020-09-16T12:45:30+00:00"
         },
         {
             "name": "helsingborg-stad/easy-to-read-alternative",
@@ -1554,12 +1554,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "a004fda079b7586804240ee6731086508187e31a"
+                "reference": "b86c76dbc39e7d3d915be453b3d6178d0f65a2c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/a004fda079b7586804240ee6731086508187e31a",
-                "reference": "a004fda079b7586804240ee6731086508187e31a",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/b86c76dbc39e7d3d915be453b3d6178d0f65a2c4",
+                "reference": "b86c76dbc39e7d3d915be453b3d6178d0f65a2c4",
                 "shasum": ""
             },
             "require": {
@@ -1567,7 +1567,7 @@
                 "composer/installers": "~1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.8.5",
+                "helsingborg-stad/blade-component-library": "dev-master#0.9.0",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
                 "illuminate/contracts": "^5.8.36",
@@ -1610,7 +1610,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-09-09T09:23:50+00:00"
+            "time": "2020-09-16T11:01:12+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1840,12 +1840,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "f93d4ca62cc4b1715ddec01910893f0f49dd4fcc"
+                "reference": "a10be04bf060389d2ad187f226326b26b62f8fba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/f93d4ca62cc4b1715ddec01910893f0f49dd4fcc",
-                "reference": "f93d4ca62cc4b1715ddec01910893f0f49dd4fcc",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/a10be04bf060389d2ad187f226326b26b62f8fba",
+                "reference": "a10be04bf060389d2ad187f226326b26b62f8fba",
                 "shasum": ""
             },
             "require": {
@@ -1897,7 +1897,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-09T12:03:22+00:00"
+            "time": "2020-09-11T08:23:31+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2582,16 +2582,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.39.1",
+            "version": "2.40.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "7af467873250583cc967a59ee9df29fabab193c1"
+                "reference": "6c7646154181013ecd55e80c201b9fd873c6ee5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7af467873250583cc967a59ee9df29fabab193c1",
-                "reference": "7af467873250583cc967a59ee9df29fabab193c1",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/6c7646154181013ecd55e80c201b9fd873c6ee5d",
+                "reference": "6c7646154181013ecd55e80c201b9fd873c6ee5d",
                 "shasum": ""
             },
             "require": {
@@ -2657,7 +2657,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2020-09-04T13:11:37+00:00"
+            "time": "2020-09-11T19:00:58+00:00"
         },
         {
             "name": "philo/laravel-blade",
@@ -3886,7 +3886,8 @@
         "helsingborg-stad/modularity": 20,
         "helsingborg-stad/municipio": 20,
         "helsingborg-stad/api-event-manager-integration": 20,
-        "helsingborg-stad/modularity-json-render": 20
+        "helsingborg-stad/modularity-json-render": 20,
+        "helsingborg-stad/customer-feedback": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
