@@ -1554,12 +1554,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "d6d4ad22eb31f77e221972f2e7a3d005397d4cde"
+                "reference": "a8f09fb38501b549c42ca912a48070faa4cf31bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/d6d4ad22eb31f77e221972f2e7a3d005397d4cde",
-                "reference": "d6d4ad22eb31f77e221972f2e7a3d005397d4cde",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/a8f09fb38501b549c42ca912a48070faa4cf31bc",
+                "reference": "a8f09fb38501b549c42ca912a48070faa4cf31bc",
                 "shasum": ""
             },
             "require": {
@@ -1567,7 +1567,7 @@
                 "composer/installers": "~1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.9.0",
+                "helsingborg-stad/blade-component-library": "dev-master#0.9.3",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
                 "illuminate/contracts": "^5.8.36",
@@ -1610,7 +1610,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-09-18T07:30:53+00:00"
+            "time": "2020-09-18T08:19:25+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
