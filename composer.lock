@@ -1102,12 +1102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "a2b03d7a22a77cb40f8c65992a89d3ab298d8590"
+                "reference": "b0a20681c8efd5618101f6994b9ee4e94e87ec5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/a2b03d7a22a77cb40f8c65992a89d3ab298d8590",
-                "reference": "a2b03d7a22a77cb40f8c65992a89d3ab298d8590",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/b0a20681c8efd5618101f6994b9ee4e94e87ec5f",
+                "reference": "b0a20681c8efd5618101f6994b9ee4e94e87ec5f",
                 "shasum": ""
             },
             "type": "library",
@@ -1127,7 +1127,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-09-16T13:19:57+00:00"
+            "time": "2020-09-18T07:29:43+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1554,12 +1554,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "f43d29321821b2fa162537cddc6c7e516ffe8d44"
+                "reference": "d6d4ad22eb31f77e221972f2e7a3d005397d4cde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/f43d29321821b2fa162537cddc6c7e516ffe8d44",
-                "reference": "f43d29321821b2fa162537cddc6c7e516ffe8d44",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/d6d4ad22eb31f77e221972f2e7a3d005397d4cde",
+                "reference": "d6d4ad22eb31f77e221972f2e7a3d005397d4cde",
                 "shasum": ""
             },
             "require": {
@@ -1610,7 +1610,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-09-17T08:56:19+00:00"
+            "time": "2020-09-18T07:30:53+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1840,12 +1840,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "3063477a2fe0de034d074af64d055933eeaacec8"
+                "reference": "7d572b6a6897a9c67681d7b3e7f0799d4eaed48a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/3063477a2fe0de034d074af64d055933eeaacec8",
-                "reference": "3063477a2fe0de034d074af64d055933eeaacec8",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/7d572b6a6897a9c67681d7b3e7f0799d4eaed48a",
+                "reference": "7d572b6a6897a9c67681d7b3e7f0799d4eaed48a",
                 "shasum": ""
             },
             "require": {
@@ -1853,7 +1853,7 @@
                 "composer/installers": "^1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.9.0",
+                "helsingborg-stad/blade-component-library": "dev-master#0.9.3",
                 "helsingborg-stad/blade-engine-wrapper": "dev-master",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
@@ -1897,7 +1897,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-17T09:10:14+00:00"
+            "time": "2020-09-18T07:42:27+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
