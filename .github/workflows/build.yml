@@ -2,9 +2,10 @@ name: Build site
 
 on:
   push:
-    branches: [ beta ]
-    paths-ignore:
-      - '.github/**'
+    branches: [ feature/3.0/deploy ]
+    # branches: [ beta ]
+    # paths-ignore:
+    #   - '.github/**'
 jobs:
   build:
 
@@ -30,12 +31,31 @@ jobs:
     - name: Cleanup .npmrc
       run: rm ~/.npmrc
 
-    - name: rsync deployments
+    - name: rsync deployment to www-data user.
       uses: burnett01/rsync-deployments@4.1
       with:
-        switches: -avzr --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_HELSINGBORG_SE }}
+        switches: -avzrog --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_HELSINGBORG_SE }} --chown=www-data:www-data
         path: .
         remote_path: ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
         remote_host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
         remote_user: ${{ secrets.DEPLOY_REMOTE_USER }}
         remote_key: ${{ secrets.DEPLOY_KEY }}
+
+    - name: Set file permissions.
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        command: chmod -R g+rw ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
+        host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
+        username: ${{ secrets.DEPLOY_REMOTE_USER }}
+        privateKey: ${{ secrets.DEPLOY_KEY }}
+
+    - name: Clear varnish and redis object cache.
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        command: |
+          cd ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
+          echo "wp varnish purge --allow-root"
+          echo "wp cache flush --allow-root"
+        host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
+        username: ${{ secrets.DEPLOY_REMOTE_USER }}
+        privateKey: ${{ secrets.DEPLOY_KEY }}
