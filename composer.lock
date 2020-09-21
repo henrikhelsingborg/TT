@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c21a21d884f700ec0a37893bd7f0b14d",
+    "content-hash": "ccbb686d0c3eca45034ffaa41f3b4ad6",
     "packages": [
         {
             "name": "aristath/kirki",
@@ -392,16 +392,16 @@
         },
         {
             "name": "google/apiclient",
-            "version": "v2.7.1",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client.git",
-                "reference": "e748d1d5a51166754f13809d35f1fa162cbec530"
+                "reference": "9df720d72c59456b5466e3f66e1e78cfe422a5ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/e748d1d5a51166754f13809d35f1fa162cbec530",
-                "reference": "e748d1d5a51166754f13809d35f1fa162cbec530",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/9df720d72c59456b5466e3f66e1e78cfe422a5ba",
+                "reference": "9df720d72c59456b5466e3f66e1e78cfe422a5ba",
                 "shasum": ""
             },
             "require": {
@@ -450,20 +450,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-09-08T16:38:08+00:00"
+            "time": "2020-09-18T20:02:04+00:00"
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.145",
+            "version": "v0.147",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "96de5dabadb693f161a31a1a1e018882fa05816e"
+                "reference": "8624bd004cfccb33b760ae7650d0b750168cd7f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/96de5dabadb693f161a31a1a1e018882fa05816e",
-                "reference": "96de5dabadb693f161a31a1a1e018882fa05816e",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/8624bd004cfccb33b760ae7650d0b750168cd7f7",
+                "reference": "8624bd004cfccb33b760ae7650d0b750168cd7f7",
                 "shasum": ""
             },
             "require": {
@@ -487,20 +487,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-09-05T00:24:41+00:00"
+            "time": "2020-09-20T00:24:43+00:00"
         },
         {
             "name": "google/auth",
-            "version": "v1.12.0",
+            "version": "v1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-auth-library-php.git",
-                "reference": "74cad289014f7ef747618480f6b59f6303357f34"
+                "reference": "173191f5defd1d9ae8bdfc28da31b63eb73dd34e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/74cad289014f7ef747618480f6b59f6303357f34",
-                "reference": "74cad289014f7ef747618480f6b59f6303357f34",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/173191f5defd1d9ae8bdfc28da31b63eb73dd34e",
+                "reference": "173191f5defd1d9ae8bdfc28da31b63eb73dd34e",
                 "shasum": ""
             },
             "require": {
@@ -539,7 +539,7 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2020-09-08T16:33:56+00:00"
+            "time": "2020-09-18T20:03:05+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -933,16 +933,16 @@
         },
         {
             "name": "helsingborg-stad/api-event-manager-integration",
-            "version": "dev-feature/3.0/deploy",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "73d4be08408da66393644fc900ea873dc10a7d28"
+                "reference": "2ba8993ac937ca4de4f44d27a9cafa90125d20d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/73d4be08408da66393644fc900ea873dc10a7d28",
-                "reference": "73d4be08408da66393644fc900ea873dc10a7d28",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/2ba8993ac937ca4de4f44d27a9cafa90125d20d4",
+                "reference": "2ba8993ac937ca4de4f44d27a9cafa90125d20d4",
                 "shasum": ""
             },
             "require": {
@@ -962,7 +962,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2020-09-10T10:04:59+00:00"
+            "time": "2020-09-17T08:58:55+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1026,12 +1026,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "2df5fbf502cde680a64e473a0c705927dabc318a"
+                "reference": "b0a20681c8efd5618101f6994b9ee4e94e87ec5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/2df5fbf502cde680a64e473a0c705927dabc318a",
-                "reference": "2df5fbf502cde680a64e473a0c705927dabc318a",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/b0a20681c8efd5618101f6994b9ee4e94e87ec5f",
+                "reference": "b0a20681c8efd5618101f6994b9ee4e94e87ec5f",
                 "shasum": ""
             },
             "type": "library",
@@ -1051,7 +1051,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-09-09T11:03:16+00:00"
+            "time": "2020-09-18T07:29:43+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1474,16 +1474,16 @@
         },
         {
             "name": "helsingborg-stad/modularity",
-            "version": "dev-feature/3.0/deploy",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "af03f988292eb1908cb238a7792e08eb98950697"
+                "reference": "8cd80d2672d717d9c704cb06852310fe2be9a683"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/af03f988292eb1908cb238a7792e08eb98950697",
-                "reference": "af03f988292eb1908cb238a7792e08eb98950697",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/8cd80d2672d717d9c704cb06852310fe2be9a683",
+                "reference": "8cd80d2672d717d9c704cb06852310fe2be9a683",
                 "shasum": ""
             },
             "require": {
@@ -1491,7 +1491,7 @@
                 "composer/installers": "~1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.9.0",
+                "helsingborg-stad/blade-component-library": "dev-master#0.9.3",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
                 "illuminate/contracts": "^5.8.36",
@@ -1534,7 +1534,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-09-10T11:49:34+00:00"
+            "time": "2020-09-18T13:11:52+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1637,16 +1637,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-json-render",
-            "version": "dev-feature/3.0/deploy",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-json-render.git",
-                "reference": "cc55f28f1ec80fc774ef3a2b782833058f49e30d"
+                "reference": "847f94c98eda6f108334373cb12839ebfde9e291"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/cc55f28f1ec80fc774ef3a2b782833058f49e30d",
-                "reference": "cc55f28f1ec80fc774ef3a2b782833058f49e30d",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/847f94c98eda6f108334373cb12839ebfde9e291",
+                "reference": "847f94c98eda6f108334373cb12839ebfde9e291",
                 "shasum": ""
             },
             "require": {
@@ -1663,7 +1663,7 @@
                     "email": "sebastian.thulin@helsingborg.se"
                 }
             ],
-            "time": "2020-09-10T11:15:13+00:00"
+            "time": "2020-09-01T08:43:27+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-sections",
@@ -1760,16 +1760,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "dev-feature/3.0/deploy",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "6ccbb2a884cb0ac502e9cd5e5ab4d122e3000065"
+                "reference": "20ee078de5cca3c465798fe6e068ad889d4ae03b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/6ccbb2a884cb0ac502e9cd5e5ab4d122e3000065",
-                "reference": "6ccbb2a884cb0ac502e9cd5e5ab4d122e3000065",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/20ee078de5cca3c465798fe6e068ad889d4ae03b",
+                "reference": "20ee078de5cca3c465798fe6e068ad889d4ae03b",
                 "shasum": ""
             },
             "require": {
@@ -1777,7 +1777,7 @@
                 "composer/installers": "^1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.8.5",
+                "helsingborg-stad/blade-component-library": "dev-master#0.9.3",
                 "helsingborg-stad/blade-engine-wrapper": "dev-master",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
@@ -1821,7 +1821,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-10T09:41:32+00:00"
+            "time": "2020-09-18T11:57:33+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2485,16 +2485,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.39.1",
+            "version": "2.40.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "7af467873250583cc967a59ee9df29fabab193c1"
+                "reference": "6c7646154181013ecd55e80c201b9fd873c6ee5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7af467873250583cc967a59ee9df29fabab193c1",
-                "reference": "7af467873250583cc967a59ee9df29fabab193c1",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/6c7646154181013ecd55e80c201b9fd873c6ee5d",
+                "reference": "6c7646154181013ecd55e80c201b9fd873c6ee5d",
                 "shasum": ""
             },
             "require": {
@@ -2570,7 +2570,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-04T13:11:37+00:00"
+            "time": "2020-09-11T19:00:58+00:00"
         },
         {
             "name": "philo/laravel-blade",
@@ -3751,15 +3751,15 @@
         },
         {
             "name": "wpackagist-plugin/user-switching",
-            "version": "1.5.5",
+            "version": "1.5.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.5.5"
+                "reference": "tags/1.5.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.5.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.5.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
