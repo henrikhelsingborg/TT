@@ -2,10 +2,8 @@ name: Build site
 
 on:
   push:
-    branches: [ feature/3.0/deploy ]
-    # branches: [ beta ]
-    # paths-ignore:
-    #   - '.github/**'
+    branches: [ beta ]
+
 jobs:
   build:
 
@@ -54,8 +52,8 @@ jobs:
       with:
         command: |
           cd ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
-          echo "wp varnish purge --allow-root"
-          echo "wp cache flush --allow-root"
+          wp varnish purge --allow-root
+          wp cache flush --allow-root
         host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
         username: ${{ secrets.DEPLOY_REMOTE_USER }}
         privateKey: ${{ secrets.DEPLOY_KEY }}
