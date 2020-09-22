@@ -613,16 +613,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.0.1",
+            "version": "7.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "2d9d3c186a6637a43193e66b097c50e4451eaab2"
+                "reference": "7edeaa528fbb57123028bd5a76b9ce9540194e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/2d9d3c186a6637a43193e66b097c50e4451eaab2",
-                "reference": "2d9d3c186a6637a43193e66b097c50e4451eaab2",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7edeaa528fbb57123028bd5a76b9ce9540194e26",
+                "reference": "7edeaa528fbb57123028bd5a76b9ce9540194e26",
                 "shasum": ""
             },
             "require": {
@@ -636,7 +636,6 @@
                 "psr/http-client-implementation": "1.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.0",
                 "ext-curl": "*",
                 "php-http/client-integration-tests": "dev-phpunit8",
                 "phpunit/phpunit": "^8.5.5",
@@ -650,7 +649,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.0-dev"
+                    "dev-master": "7.1-dev"
                 }
             },
             "autoload": {
@@ -690,7 +689,25 @@
                 "rest",
                 "web service"
             ],
-            "time": "2020-06-27T10:33:25+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/alexeyshockov",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/gmponos",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-09-22T09:10:04+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1642,12 +1659,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-contact-banner.git",
-                "reference": "13e34063718ed78f07296f3b610c897c29242d09"
+                "reference": "27256628a61e72bee21d9b4ddf128c157140fe61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/13e34063718ed78f07296f3b610c897c29242d09",
-                "reference": "13e34063718ed78f07296f3b610c897c29242d09",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/27256628a61e72bee21d9b4ddf128c157140fe61",
+                "reference": "27256628a61e72bee21d9b4ddf128c157140fe61",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1662,7 +1679,7 @@
                 }
             ],
             "description": "Contact Banner",
-            "time": "2020-09-15T10:47:33+00:00"
+            "time": "2020-09-22T14:07:47+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
@@ -1864,12 +1881,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "14bd822d5828a0fbadbaa4ecad7c7552ae0d9fb8"
+                "reference": "9ae8865fe1a7be8c902c7aeab7b4bde689cf5105"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/14bd822d5828a0fbadbaa4ecad7c7552ae0d9fb8",
-                "reference": "14bd822d5828a0fbadbaa4ecad7c7552ae0d9fb8",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/9ae8865fe1a7be8c902c7aeab7b4bde689cf5105",
+                "reference": "9ae8865fe1a7be8c902c7aeab7b4bde689cf5105",
                 "shasum": ""
             },
             "require": {
@@ -1921,7 +1938,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-22T08:41:54+00:00"
+            "time": "2020-09-22T09:08:58+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
