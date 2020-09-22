@@ -42,7 +42,7 @@ jobs:
     - name: Set file permissions.
       uses: appleboy/ssh-action@master
       with:
-        script: chmod -R g+rw ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}
+        script: find ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }} -path ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}/wp-content/uploads -prune -o ! -type l -exec chmod g+rw {} +
         host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
         username: ${{ secrets.DEPLOY_REMOTE_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
