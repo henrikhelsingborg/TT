@@ -2,7 +2,7 @@ name: Build site
 
 on:
   push:
-    branches: [ feature/3.0/deploy ]
+    branches: [ beta ]
 
 jobs:
   build:
@@ -32,18 +32,18 @@ jobs:
     - name: rsync deployment to www-data user.
       uses: burnett01/rsync-deployments@4.1
       with:
-        switches: -avzrog --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_HELSINGBORG_SE }}/$GITHUB_SHA --chown=www-data:www-data
+        switches: -avzrog --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_BETA_HELSINGBORG_SE }}/$GITHUB_SHA --chown=www-data:www-data
         path: .
-        remote_path: ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
-        remote_host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
+        remote_path: ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}
+        remote_host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
         remote_user: ${{ secrets.DEPLOY_REMOTE_USER }}
         remote_key: ${{ secrets.DEPLOY_KEY }}
 
     - name: Set file permissions.
       uses: appleboy/ssh-action@master
       with:
-        script: chmod -R g+rw ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
-        host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
+        script: chmod -R g+rw ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}
+        host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
         username: ${{ secrets.DEPLOY_REMOTE_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
 
@@ -51,9 +51,9 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         script: |
-          cd ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
+          cd ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}
           wp varnish purge --allow-root
           wp cache flush --allow-root
-        host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
+        host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
         username: ${{ secrets.DEPLOY_REMOTE_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
