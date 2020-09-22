@@ -1,0 +1,59 @@
+name: Build site
+
+on:
+  push:
+    branches: [ beta ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install composer dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Inject access token in .npmrc
+      run: | 
+        echo "registry=https://npm.pkg.github.com/helsingborg-stad" >> ~/.npmrc
+        echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
+
+    - name: Execute buildscripts in themes and plugins folders
+      run: php ./build.php --cleanup
+
+    - name: Cleanup .npmrc
+      run: rm ~/.npmrc
+
+    - name: rsync deployment to www-data user.
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzrog --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_BETA_HELSINGBORG_SE }}/$GITHUB_SHA --chown=www-data:www-data
+        path: .
+        remote_path: ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}
+        remote_host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
+        remote_user: ${{ secrets.DEPLOY_REMOTE_USER }}
+        remote_key: ${{ secrets.DEPLOY_KEY }}
+
+    - name: Set file permissions.
+      uses: appleboy/ssh-action@master
+      with:
+        script: chmod -R g+rw ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}
+        host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
+        username: ${{ secrets.DEPLOY_REMOTE_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}
+
+    - name: Clear varnish and redis object cache.
+      uses: appleboy/ssh-action@master
+      with:
+        script: |
+          cd ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}
+          wp varnish purge --allow-root
+          wp cache flush --allow-root
+        host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
+        username: ${{ secrets.DEPLOY_REMOTE_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}

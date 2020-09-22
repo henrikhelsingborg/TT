@@ -306,6 +306,16 @@
                 "zend",
                 "zikula"
             ],
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-04-07T06:57:05+00:00"
         },
         {
@@ -384,6 +394,20 @@
                 "uppercase",
                 "words"
             ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-05-29T07:19:59+00:00"
         },
         {
@@ -438,16 +462,16 @@
         },
         {
             "name": "google/apiclient",
-            "version": "v2.7.1",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client.git",
-                "reference": "e748d1d5a51166754f13809d35f1fa162cbec530"
+                "reference": "9df720d72c59456b5466e3f66e1e78cfe422a5ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/e748d1d5a51166754f13809d35f1fa162cbec530",
-                "reference": "e748d1d5a51166754f13809d35f1fa162cbec530",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/9df720d72c59456b5466e3f66e1e78cfe422a5ba",
+                "reference": "9df720d72c59456b5466e3f66e1e78cfe422a5ba",
                 "shasum": ""
             },
             "require": {
@@ -496,20 +520,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-09-08T16:38:08+00:00"
+            "time": "2020-09-18T20:02:04+00:00"
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.146",
+            "version": "v0.147",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "029e20e81508cee6dc652529514eeeb1cf56ce54"
+                "reference": "8624bd004cfccb33b760ae7650d0b750168cd7f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/029e20e81508cee6dc652529514eeeb1cf56ce54",
-                "reference": "029e20e81508cee6dc652529514eeeb1cf56ce54",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/8624bd004cfccb33b760ae7650d0b750168cd7f7",
+                "reference": "8624bd004cfccb33b760ae7650d0b750168cd7f7",
                 "shasum": ""
             },
             "require": {
@@ -533,20 +557,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-09-12T00:24:59+00:00"
+            "time": "2020-09-20T00:24:43+00:00"
         },
         {
             "name": "google/auth",
-            "version": "v1.12.0",
+            "version": "v1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-auth-library-php.git",
-                "reference": "74cad289014f7ef747618480f6b59f6303357f34"
+                "reference": "173191f5defd1d9ae8bdfc28da31b63eb73dd34e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/74cad289014f7ef747618480f6b59f6303357f34",
-                "reference": "74cad289014f7ef747618480f6b59f6303357f34",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/173191f5defd1d9ae8bdfc28da31b63eb73dd34e",
+                "reference": "173191f5defd1d9ae8bdfc28da31b63eb73dd34e",
                 "shasum": ""
             },
             "require": {
@@ -585,7 +609,7 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2020-09-08T16:33:56+00:00"
+            "time": "2020-09-18T20:03:05+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1013,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "2ba8993ac937ca4de4f44d27a9cafa90125d20d4"
+                "reference": "d5506e27b42a36ec80baa4f9cf278b1d7fa98956"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/2ba8993ac937ca4de4f44d27a9cafa90125d20d4",
-                "reference": "2ba8993ac937ca4de4f44d27a9cafa90125d20d4",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/d5506e27b42a36ec80baa4f9cf278b1d7fa98956",
+                "reference": "d5506e27b42a36ec80baa4f9cf278b1d7fa98956",
                 "shasum": ""
             },
             "require": {
@@ -1038,7 +1062,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2020-09-17T08:58:55+00:00"
+            "time": "2020-09-22T08:41:13+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1102,12 +1126,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "b0a20681c8efd5618101f6994b9ee4e94e87ec5f"
+                "reference": "49d0181bb867ac81ffc9385ede4051160c9a7cb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/b0a20681c8efd5618101f6994b9ee4e94e87ec5f",
-                "reference": "b0a20681c8efd5618101f6994b9ee4e94e87ec5f",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/49d0181bb867ac81ffc9385ede4051160c9a7cb0",
+                "reference": "49d0181bb867ac81ffc9385ede4051160c9a7cb0",
                 "shasum": ""
             },
             "type": "library",
@@ -1127,7 +1151,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-09-18T07:29:43+00:00"
+            "time": "2020-09-22T07:58:18+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1554,12 +1578,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "b31af41d70febdc9c646383aaa964741d961441e"
+                "reference": "5554d1b4aef6dd3ce0f1dd499a35ae4a76d4c86f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/b31af41d70febdc9c646383aaa964741d961441e",
-                "reference": "b31af41d70febdc9c646383aaa964741d961441e",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/5554d1b4aef6dd3ce0f1dd499a35ae4a76d4c86f",
+                "reference": "5554d1b4aef6dd3ce0f1dd499a35ae4a76d4c86f",
                 "shasum": ""
             },
             "require": {
@@ -1610,7 +1634,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-09-18T11:57:15+00:00"
+            "time": "2020-09-22T08:45:00+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1717,12 +1741,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-json-render.git",
-                "reference": "847f94c98eda6f108334373cb12839ebfde9e291"
+                "reference": "7ec3f62891df4c68dba9c80fa0d23d1612c3c318"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/847f94c98eda6f108334373cb12839ebfde9e291",
-                "reference": "847f94c98eda6f108334373cb12839ebfde9e291",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/7ec3f62891df4c68dba9c80fa0d23d1612c3c318",
+                "reference": "7ec3f62891df4c68dba9c80fa0d23d1612c3c318",
                 "shasum": ""
             },
             "require": {
@@ -1739,7 +1763,7 @@
                     "email": "sebastian.thulin@helsingborg.se"
                 }
             ],
-            "time": "2020-09-01T08:43:27+00:00"
+            "time": "2020-09-22T08:41:25+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-sections",
@@ -1840,12 +1864,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "20ee078de5cca3c465798fe6e068ad889d4ae03b"
+                "reference": "14bd822d5828a0fbadbaa4ecad7c7552ae0d9fb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/20ee078de5cca3c465798fe6e068ad889d4ae03b",
-                "reference": "20ee078de5cca3c465798fe6e068ad889d4ae03b",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/14bd822d5828a0fbadbaa4ecad7c7552ae0d9fb8",
+                "reference": "14bd822d5828a0fbadbaa4ecad7c7552ae0d9fb8",
                 "shasum": ""
             },
             "require": {
@@ -1897,7 +1921,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-18T11:57:33+00:00"
+            "time": "2020-09-22T08:41:54+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2578,6 +2602,16 @@
                 "logging",
                 "psr-3"
             ],
+            "funding": [
+                {
+                    "url": "https://github.com/Seldaek",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/monolog/monolog",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-23T08:41:23+00:00"
         },
         {
@@ -2656,6 +2690,16 @@
                 "date",
                 "datetime",
                 "time"
+            ],
+            "funding": [
+                {
+                    "url": "https://opencollective.com/Carbon",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/nesbot/carbon",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-09-11T19:00:58+00:00"
         },
@@ -2788,6 +2832,20 @@
                 "twofish",
                 "x.509",
                 "x509"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/terrafrost",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/phpseclib",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpseclib/phpseclib",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-09-08T04:24:43+00:00"
         },
@@ -3270,6 +3328,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-08-10T07:47:39+00:00"
         },
         {
@@ -3319,6 +3391,20 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-03-27T16:54:36+00:00"
         },
         {
@@ -3377,6 +3463,20 @@
                 "polyfill",
                 "portable",
                 "shim"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-05-12T16:47:27+00:00"
         },
@@ -3443,6 +3543,20 @@
                 "polyfill",
                 "portable",
                 "shim"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-07-14T12:35:20+00:00"
         },
@@ -3521,6 +3635,20 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-04-12T16:45:47+00:00"
         },
         {
@@ -3664,15 +3792,15 @@
         },
         {
             "name": "wpackagist-plugin/cookies-and-content-security-policy",
-            "version": "1.51",
+            "version": "1.54",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookies-and-content-security-policy/",
-                "reference": "tags/1.51"
+                "reference": "tags/1.54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.51.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.54.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3772,15 +3900,15 @@
         },
         {
             "name": "wpackagist-plugin/user-switching",
-            "version": "1.5.5",
+            "version": "1.5.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.5.5"
+                "reference": "tags/1.5.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.5.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.5.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3893,5 +4021,6 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
