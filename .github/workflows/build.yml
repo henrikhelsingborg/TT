@@ -32,7 +32,7 @@ jobs:
     - name: rsync deployment to www-data user.
       uses: burnett01/rsync-deployments@4.1
       with:
-        switches: -avzrog --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_HELSINGBORG_SE }}/${{ GITHUB_SHA }} --chown=www-data:www-data
+        switches: -avzrog --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_HELSINGBORG_SE }}/${ GITHUB_SHA } --chown=www-data:www-data
         path: .
         remote_path: ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
         remote_host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
