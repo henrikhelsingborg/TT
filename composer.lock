@@ -1595,12 +1595,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "5554d1b4aef6dd3ce0f1dd499a35ae4a76d4c86f"
+                "reference": "d546ef3c9033762475a54729318e8c3abbbfcf84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/5554d1b4aef6dd3ce0f1dd499a35ae4a76d4c86f",
-                "reference": "5554d1b4aef6dd3ce0f1dd499a35ae4a76d4c86f",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/d546ef3c9033762475a54729318e8c3abbbfcf84",
+                "reference": "d546ef3c9033762475a54729318e8c3abbbfcf84",
                 "shasum": ""
             },
             "require": {
@@ -1651,7 +1651,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-09-22T08:45:00+00:00"
+            "time": "2020-09-22T22:07:29+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1881,12 +1881,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "9ae8865fe1a7be8c902c7aeab7b4bde689cf5105"
+                "reference": "afdaf1e9af7ee42fceb859d0866571aeca94c309"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/9ae8865fe1a7be8c902c7aeab7b4bde689cf5105",
-                "reference": "9ae8865fe1a7be8c902c7aeab7b4bde689cf5105",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/afdaf1e9af7ee42fceb859d0866571aeca94c309",
+                "reference": "afdaf1e9af7ee42fceb859d0866571aeca94c309",
                 "shasum": ""
             },
             "require": {
@@ -1938,7 +1938,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-22T09:08:58+00:00"
+            "time": "2020-09-23T10:48:06+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2633,16 +2633,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.40.0",
+            "version": "2.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "6c7646154181013ecd55e80c201b9fd873c6ee5d"
+                "reference": "d9a76d8b7eb0f97cf3a82529393245212f40ba3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/6c7646154181013ecd55e80c201b9fd873c6ee5d",
-                "reference": "6c7646154181013ecd55e80c201b9fd873c6ee5d",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d9a76d8b7eb0f97cf3a82529393245212f40ba3b",
+                "reference": "d9a76d8b7eb0f97cf3a82529393245212f40ba3b",
                 "shasum": ""
             },
             "require": {
@@ -2718,7 +2718,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-11T19:00:58+00:00"
+            "time": "2020-09-23T08:17:37+00:00"
         },
         {
             "name": "philo/laravel-blade",
