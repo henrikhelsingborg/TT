@@ -3,8 +3,8 @@ name: Build site
 on:
   push:
     branches: [ beta ]
-    paths-ignore:
-    - '.github/**'
+    # paths-ignore:
+    # - '.github/**'
 jobs:
   build:
 
