@@ -12,19 +12,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Cache node modules
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ hashFiles('**/package.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ hashFiles('**/package.json') }}
-          ${{ runner.os }}-build-
+    # - name: Cache node modules
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: ~/.npm
+    #     key: ${{ runner.os }}-build-${{ hashFiles('**/package.json') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-build-${{ hashFiles('**/package.json') }}
+    #       ${{ runner.os }}-build-
 
-    - name: Get Composer Cache Directory
-      id: composer-cache
-      run: |
-        echo "::set-output name=dir::$(composer config cache-files-dir)"
+    # - name: Get Composer Cache Directory
+    #   id: composer-cache
+    #   run: |
+    #     echo "::set-output name=dir::$(composer config cache-files-dir)"
 
     - name: Cache composer packages
       uses: actions/cache@v2
