@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fbab246c791e1316087c0539f37ee77a",
+    "content-hash": "5776fe04e66084e35f40a65f077aad3f",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -922,16 +922,16 @@
         },
         {
             "name": "helsingborg-stad/algolia-index-js-searchpage-addon",
-            "version": "1.1.3",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon.git",
-                "reference": "c0d635525bd55a1860a360ee16ce0bc86f5741b8"
+                "reference": "915b2815d4eea4d4f7fee5ebbbe90d7b7041fec0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index-js-searchpage-addon/zipball/c0d635525bd55a1860a360ee16ce0bc86f5741b8",
-                "reference": "c0d635525bd55a1860a360ee16ce0bc86f5741b8",
+                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index-js-searchpage-addon/zipball/915b2815d4eea4d4f7fee5ebbbe90d7b7041fec0",
+                "reference": "915b2815d4eea4d4f7fee5ebbbe90d7b7041fec0",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -946,7 +946,7 @@
                 }
             ],
             "description": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon",
-            "time": "2020-06-25T09:46:38+00:00"
+            "time": "2020-09-25T13:06:35+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-index-modularity-addon",
@@ -1417,20 +1417,20 @@
         },
         {
             "name": "helsingborg-stad/google-analythics",
-            "version": "1.0.7",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/google-analythics.git",
-                "reference": "99608d54bb80a317a60174e18eef434472b2f872"
+                "reference": "1cdaa83e6f3a02c431847de10abac1dd6ddd2cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/google-analythics/zipball/99608d54bb80a317a60174e18eef434472b2f872",
-                "reference": "99608d54bb80a317a60174e18eef434472b2f872",
+                "url": "https://api.github.com/repos/helsingborg-stad/google-analythics/zipball/1cdaa83e6f3a02c431847de10abac1dd6ddd2cb8",
+                "reference": "1cdaa83e6f3a02c431847de10abac1dd6ddd2cb8",
                 "shasum": ""
             },
             "require": {
-                "google/apiclient": "^2.0"
+                "google/apiclient": "^2.7.2"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -1444,7 +1444,7 @@
                 }
             ],
             "description": "Plugin to integrate Google Analytics and display simple statistics.",
-            "time": "2020-04-06T12:45:54+00:00"
+            "time": "2020-09-25T12:55:08+00:00"
         },
         {
             "name": "helsingborg-stad/job-listings",
@@ -1553,12 +1553,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "10b64487f3e0ec3ab3511639e9da826b94852b60"
+                "reference": "e6feb19e5f716798ca54598243e251a4c9101ae6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/10b64487f3e0ec3ab3511639e9da826b94852b60",
-                "reference": "10b64487f3e0ec3ab3511639e9da826b94852b60",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/e6feb19e5f716798ca54598243e251a4c9101ae6",
+                "reference": "e6feb19e5f716798ca54598243e251a4c9101ae6",
                 "shasum": ""
             },
             "require": {
@@ -1609,7 +1609,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-09-24T10:52:04+00:00"
+            "time": "2020-09-25T11:13:10+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -3888,7 +3888,8 @@
         "helsingborg-stad/modularity-form-builder": 20,
         "helsingborg-stad/modularity-json-render": 20,
         "helsingborg-stad/customer-feedback": 20,
-        "helsingborg-stad/modularity-contact-banner": 20
+        "helsingborg-stad/modularity-contact-banner": 20,
+        "helsingborg-stad/algolia-index-js-searchpage-addon": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
