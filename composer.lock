@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "792806c12928110ce8e9330ec22f9a39",
+    "content-hash": "fbab246c791e1316087c0539f37ee77a",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1641,16 +1641,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
-            "version": "1.9.2",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "bc759d28292912e2ace8f6ec4523d5d6d579f911"
+                "reference": "259aac2167e2cec50c08518f9a453e235e58ae18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/bc759d28292912e2ace8f6ec4523d5d6d579f911",
-                "reference": "bc759d28292912e2ace8f6ec4523d5d6d579f911",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/259aac2167e2cec50c08518f9a453e235e58ae18",
+                "reference": "259aac2167e2cec50c08518f9a453e235e58ae18",
                 "shasum": ""
             },
             "require": {
@@ -1676,7 +1676,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2020-06-30T14:16:02+00:00"
+            "time": "2020-09-24T14:44:24+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-guides",
@@ -1839,12 +1839,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "4723db7d594e86afad656ad99f7b6659b7b94b5d"
+                "reference": "89abb404f64a35ca6375b443fb9a8b7bf790c946"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/4723db7d594e86afad656ad99f7b6659b7b94b5d",
-                "reference": "4723db7d594e86afad656ad99f7b6659b7b94b5d",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/89abb404f64a35ca6375b443fb9a8b7bf790c946",
+                "reference": "89abb404f64a35ca6375b443fb9a8b7bf790c946",
                 "shasum": ""
             },
             "require": {
@@ -1896,7 +1896,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-24T14:52:09+00:00"
+            "time": "2020-09-24T14:57:34+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -3885,6 +3885,7 @@
         "helsingborg-stad/modularity": 20,
         "helsingborg-stad/municipio": 20,
         "helsingborg-stad/api-event-manager-integration": 20,
+        "helsingborg-stad/modularity-form-builder": 20,
         "helsingborg-stad/modularity-json-render": 20,
         "helsingborg-stad/customer-feedback": 20,
         "helsingborg-stad/modularity-contact-banner": 20
