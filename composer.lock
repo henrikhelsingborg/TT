@@ -1101,12 +1101,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "5723d4f7073db9f168571b83fb1f87e47a440688"
+                "reference": "19af3776ff5692220a09f854d84f39efac7f3155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/5723d4f7073db9f168571b83fb1f87e47a440688",
-                "reference": "5723d4f7073db9f168571b83fb1f87e47a440688",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/19af3776ff5692220a09f854d84f39efac7f3155",
+                "reference": "19af3776ff5692220a09f854d84f39efac7f3155",
                 "shasum": ""
             },
             "type": "library",
@@ -1126,7 +1126,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-09-24T14:50:09+00:00"
+            "time": "2020-09-29T13:36:23+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1839,12 +1839,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "b99c06c24ad40d7b3188d071304a6455586f2cdd"
+                "reference": "5479a53c080ea6be917af01a99e65f4c98ee6826"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/b99c06c24ad40d7b3188d071304a6455586f2cdd",
-                "reference": "b99c06c24ad40d7b3188d071304a6455586f2cdd",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/5479a53c080ea6be917af01a99e65f4c98ee6826",
+                "reference": "5479a53c080ea6be917af01a99e65f4c98ee6826",
                 "shasum": ""
             },
             "require": {
@@ -1896,7 +1896,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-29T13:22:13+00:00"
+            "time": "2020-09-29T16:51:21+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
