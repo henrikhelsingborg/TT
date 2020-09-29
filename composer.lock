@@ -500,16 +500,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.147",
+            "version": "v0.148",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "8624bd004cfccb33b760ae7650d0b750168cd7f7"
+                "reference": "692a8d4c6a89458570e0d804624c50120cdd6388"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/8624bd004cfccb33b760ae7650d0b750168cd7f7",
-                "reference": "8624bd004cfccb33b760ae7650d0b750168cd7f7",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/692a8d4c6a89458570e0d804624c50120cdd6388",
+                "reference": "692a8d4c6a89458570e0d804624c50120cdd6388",
                 "shasum": ""
             },
             "require": {
@@ -533,7 +533,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-09-20T00:24:43+00:00"
+            "time": "2020-09-26T00:26:16+00:00"
         },
         {
             "name": "google/auth",
@@ -1553,12 +1553,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "e6feb19e5f716798ca54598243e251a4c9101ae6"
+                "reference": "2accd4004221edfbc9e3d03fdd46a034d5d52e32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/e6feb19e5f716798ca54598243e251a4c9101ae6",
-                "reference": "e6feb19e5f716798ca54598243e251a4c9101ae6",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/2accd4004221edfbc9e3d03fdd46a034d5d52e32",
+                "reference": "2accd4004221edfbc9e3d03fdd46a034d5d52e32",
                 "shasum": ""
             },
             "require": {
@@ -1566,7 +1566,7 @@
                 "composer/installers": "~1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "helsingborg-stad/blade-component-library": "dev-master#0.9.5",
+                "helsingborg-stad/blade-component-library": "dev-master#0.11.0",
                 "helsingborg-stad/global-blade-engine": "^1.2",
                 "illuminate/container": "^5.8.36",
                 "illuminate/contracts": "^5.8.36",
@@ -1609,7 +1609,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-09-25T11:13:10+00:00"
+            "time": "2020-09-29T13:17:56+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1839,12 +1839,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "b718cd83b98bac6948217ef6cc1b135be69fc8f6"
+                "reference": "b99c06c24ad40d7b3188d071304a6455586f2cdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/b718cd83b98bac6948217ef6cc1b135be69fc8f6",
-                "reference": "b718cd83b98bac6948217ef6cc1b135be69fc8f6",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/b99c06c24ad40d7b3188d071304a6455586f2cdd",
+                "reference": "b99c06c24ad40d7b3188d071304a6455586f2cdd",
                 "shasum": ""
             },
             "require": {
@@ -1896,7 +1896,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-25T13:21:23+00:00"
+            "time": "2020-09-29T13:22:13+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -3216,16 +3216,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.4.13",
+            "version": "v4.4.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "aeb73aca16a8f1fe958230fe44e6cf4c84cbb85e"
+                "reference": "726b85e69342e767d60e3853b98559a68ff74183"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/aeb73aca16a8f1fe958230fe44e6cf4c84cbb85e",
-                "reference": "aeb73aca16a8f1fe958230fe44e6cf4c84cbb85e",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/726b85e69342e767d60e3853b98559a68ff74183",
+                "reference": "726b85e69342e767d60e3853b98559a68ff74183",
                 "shasum": ""
             },
             "require": {
@@ -3269,7 +3269,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2020-08-10T07:47:39+00:00"
+            "time": "2020-09-09T05:20:36+00:00"
         },
         {
             "name": "symfony/finder",
