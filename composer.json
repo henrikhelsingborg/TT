@@ -75,7 +75,7 @@
         "helsingborg-stad/multisite-role-propagation": ">=1.0.0",
         "helsingborg-stad/modularity-form-builder": "dev-3.0/develop",
         "helsingborg-stad/wp-page-for-post-type": ">=1.0.0",
-        "helsingborg-stad/api-alarm-integration": ">=1.0.0",
+        "helsingborg-stad/api-alarm-integration": "dev-3.0/develop",
         "helsingborg-stad/google-analythics": ">=1.0.0",
         "helsingborg-stad/modularity-guides": ">=2.0.10",
         "helsingborg-stad/modularity-timeline": ">=1.1.4",
