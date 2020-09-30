@@ -306,16 +306,6 @@
                 "zend",
                 "zikula"
             ],
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-04-07T06:57:05+00:00"
         },
         {
@@ -393,20 +383,6 @@
                 "strings",
                 "uppercase",
                 "words"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.doctrine-project.org/sponsorship.html",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.patreon.com/phpdoctrine",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-05-29T07:19:59+00:00"
         },
@@ -688,24 +664,6 @@
                 "psr-7",
                 "rest",
                 "web service"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/GrahamCampbell",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/Nyholm",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/alexeyshockov",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/gmponos",
-                    "type": "github"
-                }
             ],
             "time": "2020-09-30T08:51:17+00:00"
         },
@@ -1054,12 +1012,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "d5506e27b42a36ec80baa4f9cf278b1d7fa98956"
+                "reference": "a8df891f0dd6084b06236d2f116e01edb5aefe4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/d5506e27b42a36ec80baa4f9cf278b1d7fa98956",
-                "reference": "d5506e27b42a36ec80baa4f9cf278b1d7fa98956",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/a8df891f0dd6084b06236d2f116e01edb5aefe4c",
+                "reference": "a8df891f0dd6084b06236d2f116e01edb5aefe4c",
                 "shasum": ""
             },
             "require": {
@@ -1079,7 +1037,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2020-09-22T08:41:13+00:00"
+            "time": "2020-09-30T12:51:02+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1143,12 +1101,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "66a106b918285eb87077760570ed804c46a8793e"
+                "reference": "2ac583e6f770f1fd2d09c3eab085f7ff437257c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/66a106b918285eb87077760570ed804c46a8793e",
-                "reference": "66a106b918285eb87077760570ed804c46a8793e",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/2ac583e6f770f1fd2d09c3eab085f7ff437257c3",
+                "reference": "2ac583e6f770f1fd2d09c3eab085f7ff437257c3",
                 "shasum": ""
             },
             "type": "library",
@@ -1168,7 +1126,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-09-30T10:50:39+00:00"
+            "time": "2020-09-30T14:22:32+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1881,12 +1839,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "abe1bee7ea8499250ca048767f8c5efb73086341"
+                "reference": "b2442589ffccd0e6c29799cc91a8f17e472265d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/abe1bee7ea8499250ca048767f8c5efb73086341",
-                "reference": "abe1bee7ea8499250ca048767f8c5efb73086341",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/b2442589ffccd0e6c29799cc91a8f17e472265d9",
+                "reference": "b2442589ffccd0e6c29799cc91a8f17e472265d9",
                 "shasum": ""
             },
             "require": {
@@ -1938,7 +1896,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-09-30T11:37:42+00:00"
+            "time": "2020-09-30T14:30:50+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2619,16 +2577,6 @@
                 "logging",
                 "psr-3"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/Seldaek",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/monolog/monolog",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-07-23T08:41:23+00:00"
         },
         {
@@ -2707,16 +2655,6 @@
                 "date",
                 "datetime",
                 "time"
-            ],
-            "funding": [
-                {
-                    "url": "https://opencollective.com/Carbon",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/nesbot/carbon",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-09-23T08:17:37+00:00"
         },
@@ -2849,20 +2787,6 @@
                 "twofish",
                 "x.509",
                 "x509"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/terrafrost",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/phpseclib",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/phpseclib/phpseclib",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-09-08T04:24:43+00:00"
         },
@@ -3345,20 +3269,6 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-09-09T05:20:36+00:00"
         },
         {
@@ -3408,20 +3318,6 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-27T16:54:36+00:00"
         },
         {
@@ -3480,20 +3376,6 @@
                 "polyfill",
                 "portable",
                 "shim"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-05-12T16:47:27+00:00"
         },
@@ -3560,20 +3442,6 @@
                 "polyfill",
                 "portable",
                 "shim"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-07-14T12:35:20+00:00"
         },
@@ -3652,20 +3520,6 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-04-12T16:45:47+00:00"
         },
         {
@@ -4041,6 +3895,5 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }
