@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c868cc12efd5d0da56627647c41ae33f",
+    "content-hash": "69b7862de8277d6b931fc1555fab30a4",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -3720,15 +3720,15 @@
         },
         {
             "name": "wpackagist-plugin/redis-cache",
-            "version": "1.5.7",
+            "version": "2.0.15",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redis-cache/",
-                "reference": "tags/1.5.7"
+                "reference": "tags/2.0.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.5.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.2.0.15.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
