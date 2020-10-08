@@ -1554,12 +1554,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "20f3559a98de71f5c82836de0d4a9ab6b57ebc4c"
+                "reference": "b3d8b62652e1f4cd9945f3ba97f8b5339d040459"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/20f3559a98de71f5c82836de0d4a9ab6b57ebc4c",
-                "reference": "20f3559a98de71f5c82836de0d4a9ab6b57ebc4c",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/b3d8b62652e1f4cd9945f3ba97f8b5339d040459",
+                "reference": "b3d8b62652e1f4cd9945f3ba97f8b5339d040459",
                 "shasum": ""
             },
             "require": {
@@ -1610,7 +1610,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-10-08T12:11:31+00:00"
+            "time": "2020-10-08T12:36:09+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1842,12 +1842,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "4dbcc84214f3503ab899f261efcd50272e8d4cdb"
+                "reference": "a46cf251f43ad7170edd1a8188bd8fca32ea9455"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/4dbcc84214f3503ab899f261efcd50272e8d4cdb",
-                "reference": "4dbcc84214f3503ab899f261efcd50272e8d4cdb",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/a46cf251f43ad7170edd1a8188bd8fca32ea9455",
+                "reference": "a46cf251f43ad7170edd1a8188bd8fca32ea9455",
                 "shasum": ""
             },
             "require": {
@@ -1899,7 +1899,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-10-08T12:13:24+00:00"
+            "time": "2020-10-08T12:36:01+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
