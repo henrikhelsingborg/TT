@@ -1554,12 +1554,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "8f75706b4fc16c0e581f855b2884b6694558ef30"
+                "reference": "41f569c966c3ca74c8fd0ff54445f687c94685ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/8f75706b4fc16c0e581f855b2884b6694558ef30",
-                "reference": "8f75706b4fc16c0e581f855b2884b6694558ef30",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/41f569c966c3ca74c8fd0ff54445f687c94685ce",
+                "reference": "41f569c966c3ca74c8fd0ff54445f687c94685ce",
                 "shasum": ""
             },
             "require": {
@@ -1610,7 +1610,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-10-12T13:33:36+00:00"
+            "time": "2020-10-12T16:07:47+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
