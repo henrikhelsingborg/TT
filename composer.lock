@@ -1013,12 +1013,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "91e69263a161f71dd1c29f44b9da6c76bb83055d"
+                "reference": "d6115228dece9a3b36f19943747037d859eec73c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/91e69263a161f71dd1c29f44b9da6c76bb83055d",
-                "reference": "91e69263a161f71dd1c29f44b9da6c76bb83055d",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/d6115228dece9a3b36f19943747037d859eec73c",
+                "reference": "d6115228dece9a3b36f19943747037d859eec73c",
                 "shasum": ""
             },
             "require": {
@@ -1038,7 +1038,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2020-10-07T13:34:37+00:00"
+            "time": "2020-10-13T11:10:12+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1102,12 +1102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "eb187e324a068d83bada6acf7064531b7afcd0f0"
+                "reference": "52e4338da9e01d0fbd63abdd602723653f8065ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/eb187e324a068d83bada6acf7064531b7afcd0f0",
-                "reference": "eb187e324a068d83bada6acf7064531b7afcd0f0",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/52e4338da9e01d0fbd63abdd602723653f8065ed",
+                "reference": "52e4338da9e01d0fbd63abdd602723653f8065ed",
                 "shasum": ""
             },
             "type": "library",
@@ -1127,7 +1127,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-10-12T13:54:18+00:00"
+            "time": "2020-10-13T12:38:31+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1554,12 +1554,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "41f569c966c3ca74c8fd0ff54445f687c94685ce"
+                "reference": "2e320b1702a8962d5f9882759944ec0b086d0ae7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/41f569c966c3ca74c8fd0ff54445f687c94685ce",
-                "reference": "41f569c966c3ca74c8fd0ff54445f687c94685ce",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/2e320b1702a8962d5f9882759944ec0b086d0ae7",
+                "reference": "2e320b1702a8962d5f9882759944ec0b086d0ae7",
                 "shasum": ""
             },
             "require": {
@@ -1610,7 +1610,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-10-12T16:07:47+00:00"
+            "time": "2020-10-13T12:59:59+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1842,12 +1842,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "e5bc8b42c91455b5ee9b681449b33d8dc944c7a9"
+                "reference": "44f0cf0f52f9d146fcae72c8d823b9474791b2cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/e5bc8b42c91455b5ee9b681449b33d8dc944c7a9",
-                "reference": "e5bc8b42c91455b5ee9b681449b33d8dc944c7a9",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/44f0cf0f52f9d146fcae72c8d823b9474791b2cd",
+                "reference": "44f0cf0f52f9d146fcae72c8d823b9474791b2cd",
                 "shasum": ""
             },
             "require": {
@@ -1899,7 +1899,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-10-12T14:14:03+00:00"
+            "time": "2020-10-13T12:59:39+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2584,16 +2584,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.41.2",
+            "version": "2.41.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "35959c93ada06469107a05df6b15b65074a960cf"
+                "reference": "e148788eeae9b9b7b87996520358b86faad37b52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/35959c93ada06469107a05df6b15b65074a960cf",
-                "reference": "35959c93ada06469107a05df6b15b65074a960cf",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e148788eeae9b9b7b87996520358b86faad37b52",
+                "reference": "e148788eeae9b9b7b87996520358b86faad37b52",
                 "shasum": ""
             },
             "require": {
@@ -2659,7 +2659,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2020-10-10T23:35:06+00:00"
+            "time": "2020-10-12T20:36:09+00:00"
         },
         {
             "name": "philo/laravel-blade",
