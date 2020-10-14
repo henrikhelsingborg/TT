@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "31e8535c42d5fcf68403af3e1fd37985",
+    "content-hash": "d0fe915221a251f61e0ab35593fea455",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -306,6 +306,16 @@
                 "zend",
                 "zikula"
             ],
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-04-07T06:57:05+00:00"
         },
         {
@@ -383,6 +393,20 @@
                 "strings",
                 "uppercase",
                 "words"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-05-29T07:19:59+00:00"
         },
@@ -1449,22 +1473,21 @@
         },
         {
             "name": "helsingborg-stad/job-listings",
-            "version": "2.5.0",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "b965c242345e55736e1b7202acc09f40147dcb76"
+                "reference": "27a5f4e102cb0c9526b7e86c9a0862e2a846a70c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/b965c242345e55736e1b7202acc09f40147dcb76",
-                "reference": "b965c242345e55736e1b7202acc09f40147dcb76",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/27a5f4e102cb0c9526b7e86c9a0862e2a846a70c",
+                "reference": "27a5f4e102cb0c9526b7e86c9a0862e2a846a70c",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0",
-                "helsingborg-stad/acf-export-manager": ">=1.0.0",
-                "philo/laravel-blade": "^3.1"
+                "helsingborg-stad/acf-export-manager": ">=1.0.0"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -1490,7 +1513,7 @@
                 }
             ],
             "description": "Improt available jobs",
-            "time": "2020-08-24T14:20:33+00:00"
+            "time": "2020-10-14T08:44:17+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1554,12 +1577,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "2e320b1702a8962d5f9882759944ec0b086d0ae7"
+                "reference": "56d8cb3fea490a63c5f2ce9e0434cadf2a387c47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/2e320b1702a8962d5f9882759944ec0b086d0ae7",
-                "reference": "2e320b1702a8962d5f9882759944ec0b086d0ae7",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/56d8cb3fea490a63c5f2ce9e0434cadf2a387c47",
+                "reference": "56d8cb3fea490a63c5f2ce9e0434cadf2a387c47",
                 "shasum": ""
             },
             "require": {
@@ -1610,7 +1633,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-10-13T12:59:59+00:00"
+            "time": "2020-10-13T13:31:48+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2580,6 +2603,16 @@
                 "logging",
                 "psr-3"
             ],
+            "funding": [
+                {
+                    "url": "https://github.com/Seldaek",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/monolog/monolog",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-23T08:41:23+00:00"
         },
         {
@@ -2658,6 +2691,16 @@
                 "date",
                 "datetime",
                 "time"
+            ],
+            "funding": [
+                {
+                    "url": "https://opencollective.com/Carbon",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/nesbot/carbon",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-10-12T20:36:09+00:00"
         },
@@ -2790,6 +2833,20 @@
                 "twofish",
                 "x.509",
                 "x509"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/terrafrost",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/phpseclib",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpseclib/phpseclib",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-09-08T04:24:43+00:00"
         },
@@ -3272,6 +3329,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-09-09T05:20:36+00:00"
         },
         {
@@ -3321,6 +3392,20 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-03-27T16:54:36+00:00"
         },
         {
@@ -3379,6 +3464,20 @@
                 "polyfill",
                 "portable",
                 "shim"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-05-12T16:47:27+00:00"
         },
@@ -3445,6 +3544,20 @@
                 "polyfill",
                 "portable",
                 "shim"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-07-14T12:35:20+00:00"
         },
@@ -3523,6 +3636,20 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-04-12T16:45:47+00:00"
         },
         {
@@ -3893,11 +4020,13 @@
         "helsingborg-stad/modularity-guides": 20,
         "helsingborg-stad/modularity-json-render": 20,
         "helsingborg-stad/customer-feedback": 20,
+        "helsingborg-stad/job-listings": 20,
         "helsingborg-stad/modularity-contact-banner": 20,
         "helsingborg-stad/algolia-index-js-searchpage-addon": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
