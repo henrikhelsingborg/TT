@@ -8,8 +8,6 @@ on:
 
 jobs:
   build:
-    paths-ignore:
-    - '.github/**'
     runs-on: ubuntu-latest
 
     steps:
