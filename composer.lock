@@ -1013,12 +1013,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "dddeb3db4ba6e0f86164e050caabdca4e9cad68e"
+                "reference": "9de538533fdc9a4518de5a09f8a87e3df6f166a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/dddeb3db4ba6e0f86164e050caabdca4e9cad68e",
-                "reference": "dddeb3db4ba6e0f86164e050caabdca4e9cad68e",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/9de538533fdc9a4518de5a09f8a87e3df6f166a3",
+                "reference": "9de538533fdc9a4518de5a09f8a87e3df6f166a3",
                 "shasum": ""
             },
             "require": {
@@ -1038,7 +1038,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2020-10-26T08:53:21+00:00"
+            "time": "2020-10-26T08:55:38+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1102,12 +1102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "801a81cd2a3271b7f3123e51f7d634d07927534c"
+                "reference": "ae58e6d3361f5cd47e69212be14b45b537cfff06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/801a81cd2a3271b7f3123e51f7d634d07927534c",
-                "reference": "801a81cd2a3271b7f3123e51f7d634d07927534c",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/ae58e6d3361f5cd47e69212be14b45b537cfff06",
+                "reference": "ae58e6d3361f5cd47e69212be14b45b537cfff06",
                 "shasum": ""
             },
             "type": "library",
@@ -1127,7 +1127,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-10-28T09:40:28+00:00"
+            "time": "2020-10-28T13:14:07+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1279,12 +1279,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Customer-feedback.git",
-                "reference": "c904258c82a7ceae681e00e3149b3d9780ad2c4d"
+                "reference": "88a019692b8c6cf6a41e16c0ad8ceb2ee94f361d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Customer-feedback/zipball/c904258c82a7ceae681e00e3149b3d9780ad2c4d",
-                "reference": "c904258c82a7ceae681e00e3149b3d9780ad2c4d",
+                "url": "https://api.github.com/repos/helsingborg-stad/Customer-feedback/zipball/88a019692b8c6cf6a41e16c0ad8ceb2ee94f361d",
+                "reference": "88a019692b8c6cf6a41e16c0ad8ceb2ee94f361d",
                 "shasum": ""
             },
             "require": {
@@ -1302,7 +1302,7 @@
                 }
             ],
             "description": "This WordPress plugin adds a feedback form to the end of every page (or any other activated post type).",
-            "time": "2020-10-22T10:08:34+00:00"
+            "time": "2020-10-28T12:56:17+00:00"
         },
         {
             "name": "helsingborg-stad/easy-to-read-alternative",
@@ -1553,12 +1553,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "11d5343d7d2a2368c9f9febc30f65cd161dd512a"
+                "reference": "e3c525e4b054ecebf8a609473dc20810f924886c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/11d5343d7d2a2368c9f9febc30f65cd161dd512a",
-                "reference": "11d5343d7d2a2368c9f9febc30f65cd161dd512a",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/e3c525e4b054ecebf8a609473dc20810f924886c",
+                "reference": "e3c525e4b054ecebf8a609473dc20810f924886c",
                 "shasum": ""
             },
             "require": {
@@ -1609,7 +1609,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-10-28T09:40:13+00:00"
+            "time": "2020-10-28T13:28:10+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1841,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "b2b4b50fc6551119c368aada48ea92d4950b9423"
+                "reference": "58dcd64805ce86a5567dd39f484ced88a619a64a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/b2b4b50fc6551119c368aada48ea92d4950b9423",
-                "reference": "b2b4b50fc6551119c368aada48ea92d4950b9423",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/58dcd64805ce86a5567dd39f484ced88a619a64a",
+                "reference": "58dcd64805ce86a5567dd39f484ced88a619a64a",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1898,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-10-28T12:36:33+00:00"
+            "time": "2020-10-28T13:28:25+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
