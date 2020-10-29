@@ -80,3 +80,5 @@ jobs:
         host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
         username: ${{ secrets.DEPLOY_REMOTE_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
+    - name: Cleanup temp blade cache
+      run: rm -rf /tmp/blade-engine-cache
