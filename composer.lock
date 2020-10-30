@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c83a38ee2e803508a8c72ae3d30e1d8",
+    "content-hash": "6861d40c44159616174accd03701991d",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1306,16 +1306,16 @@
         },
         {
             "name": "helsingborg-stad/easy-to-read-alternative",
-            "version": "1.1.2",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/easy-to-read-alternative.git",
-                "reference": "71d54786115452de2b29cc24fd60a58605ab4e2f"
+                "reference": "175a9e575c38ef5dc592210aedb7636b3ac9a87c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/easy-to-read-alternative/zipball/71d54786115452de2b29cc24fd60a58605ab4e2f",
-                "reference": "71d54786115452de2b29cc24fd60a58605ab4e2f",
+                "url": "https://api.github.com/repos/helsingborg-stad/easy-to-read-alternative/zipball/175a9e575c38ef5dc592210aedb7636b3ac9a87c",
+                "reference": "175a9e575c38ef5dc592210aedb7636b3ac9a87c",
                 "shasum": ""
             },
             "require": {
@@ -1333,7 +1333,7 @@
                 }
             ],
             "description": "Adds easy to read alternative content version.",
-            "time": "2020-07-07T12:22:58+00:00"
+            "time": "2020-10-30T08:33:29+00:00"
         },
         {
             "name": "helsingborg-stad/force-ssl",
@@ -3900,6 +3900,7 @@
         "helsingborg-stad/modularity": 20,
         "helsingborg-stad/municipio": 20,
         "helsingborg-stad/api-event-manager-integration": 20,
+        "helsingborg-stad/easy-to-read-alternative": 20,
         "helsingborg-stad/modularity-form-builder": 20,
         "helsingborg-stad/api-alarm-integration": 20,
         "helsingborg-stad/modularity-guides": 20,
