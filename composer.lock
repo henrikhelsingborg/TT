@@ -1310,12 +1310,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/easy-to-read-alternative.git",
-                "reference": "175a9e575c38ef5dc592210aedb7636b3ac9a87c"
+                "reference": "b8916e41a8bde5b033bc4329c06faebd50f0a39e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/easy-to-read-alternative/zipball/175a9e575c38ef5dc592210aedb7636b3ac9a87c",
-                "reference": "175a9e575c38ef5dc592210aedb7636b3ac9a87c",
+                "url": "https://api.github.com/repos/helsingborg-stad/easy-to-read-alternative/zipball/b8916e41a8bde5b033bc4329c06faebd50f0a39e",
+                "reference": "b8916e41a8bde5b033bc4329c06faebd50f0a39e",
                 "shasum": ""
             },
             "require": {
@@ -1333,7 +1333,7 @@
                 }
             ],
             "description": "Adds easy to read alternative content version.",
-            "time": "2020-10-30T08:33:29+00:00"
+            "time": "2020-10-30T22:38:04+00:00"
         },
         {
             "name": "helsingborg-stad/force-ssl",
@@ -2372,20 +2372,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.5.2",
+            "version": "5.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "0bdf3c984207e5c1fd37bb911f907fbdbe446f93"
+                "reference": "f706595a0be04446e1c6c4ff984be414d1a3064b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/0bdf3c984207e5c1fd37bb911f907fbdbe446f93",
-                "reference": "0bdf3c984207e5c1fd37bb911f907fbdbe446f93",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/f706595a0be04446e1c6c4ff984be414d1a3064b",
+                "reference": "f706595a0be04446e1c6c4ff984be414d1a3064b",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.5.2",
+                "johnpbloch/wordpress-core": "5.5.3",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=5.6.20"
             },
@@ -2407,20 +2407,20 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-10-29T20:32:34+00:00"
+            "time": "2020-10-30T20:48:17+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.5.2",
+            "version": "5.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "6d75bf6a9c4d1e0b7558976fbedd80b4ef30779b"
+                "reference": "6f25ae53f3d4058f8dd702c097d5a4a45667af61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/6d75bf6a9c4d1e0b7558976fbedd80b4ef30779b",
-                "reference": "6d75bf6a9c4d1e0b7558976fbedd80b4ef30779b",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/6f25ae53f3d4058f8dd702c097d5a4a45667af61",
+                "reference": "6f25ae53f3d4058f8dd702c097d5a4a45667af61",
                 "shasum": ""
             },
             "require": {
@@ -2428,7 +2428,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.5.2"
+                "wordpress/core-implementation": "5.5.3"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -2448,7 +2448,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-10-29T20:32:28+00:00"
+            "time": "2020-10-30T20:48:12+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -3714,15 +3714,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.9.1",
+            "version": "4.9.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/4.9.1"
+                "reference": "tags/4.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.4.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.4.9.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
