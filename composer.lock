@@ -1102,12 +1102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "ae58e6d3361f5cd47e69212be14b45b537cfff06"
+                "reference": "4199b8acafbda4d0278a5b97770b18ae95ceb112"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/ae58e6d3361f5cd47e69212be14b45b537cfff06",
-                "reference": "ae58e6d3361f5cd47e69212be14b45b537cfff06",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/4199b8acafbda4d0278a5b97770b18ae95ceb112",
+                "reference": "4199b8acafbda4d0278a5b97770b18ae95ceb112",
                 "shasum": ""
             },
             "type": "library",
@@ -1127,7 +1127,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-10-28T13:14:07+00:00"
+            "time": "2020-10-29T15:17:05+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1553,12 +1553,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "e3c525e4b054ecebf8a609473dc20810f924886c"
+                "reference": "70f5a7a1aa97854d67be1496504b0f28d9e902d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/e3c525e4b054ecebf8a609473dc20810f924886c",
-                "reference": "e3c525e4b054ecebf8a609473dc20810f924886c",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/70f5a7a1aa97854d67be1496504b0f28d9e902d9",
+                "reference": "70f5a7a1aa97854d67be1496504b0f28d9e902d9",
                 "shasum": ""
             },
             "require": {
@@ -1609,7 +1609,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-10-28T13:28:10+00:00"
+            "time": "2020-10-28T14:46:37+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1841,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "58dcd64805ce86a5567dd39f484ced88a619a64a"
+                "reference": "ad3a69f6f130352e7bddac24e4ebbf440b0b34ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/58dcd64805ce86a5567dd39f484ced88a619a64a",
-                "reference": "58dcd64805ce86a5567dd39f484ced88a619a64a",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/ad3a69f6f130352e7bddac24e4ebbf440b0b34ce",
+                "reference": "ad3a69f6f130352e7bddac24e4ebbf440b0b34ce",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1898,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-10-28T13:28:25+00:00"
+            "time": "2020-10-30T07:47:55+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2372,20 +2372,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.5.1",
+            "version": "5.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "0973abd5c01ecce0b60bc1c81a6dd072827de930"
+                "reference": "0bdf3c984207e5c1fd37bb911f907fbdbe446f93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/0973abd5c01ecce0b60bc1c81a6dd072827de930",
-                "reference": "0973abd5c01ecce0b60bc1c81a6dd072827de930",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/0bdf3c984207e5c1fd37bb911f907fbdbe446f93",
+                "reference": "0bdf3c984207e5c1fd37bb911f907fbdbe446f93",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.5.1",
+                "johnpbloch/wordpress-core": "5.5.2",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=5.6.20"
             },
@@ -2407,20 +2407,20 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-09-01T19:07:41+00:00"
+            "time": "2020-10-29T20:32:34+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.5.1",
+            "version": "5.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "fa5bcb1579eae33baef6c04355f8d6657e5bd349"
+                "reference": "6d75bf6a9c4d1e0b7558976fbedd80b4ef30779b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/fa5bcb1579eae33baef6c04355f8d6657e5bd349",
-                "reference": "fa5bcb1579eae33baef6c04355f8d6657e5bd349",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/6d75bf6a9c4d1e0b7558976fbedd80b4ef30779b",
+                "reference": "6d75bf6a9c4d1e0b7558976fbedd80b4ef30779b",
                 "shasum": ""
             },
             "require": {
@@ -2428,7 +2428,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.5.1"
+                "wordpress/core-implementation": "5.5.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -2448,7 +2448,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-09-01T19:07:35+00:00"
+            "time": "2020-10-29T20:32:28+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
