@@ -1453,12 +1453,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "b23e32bb719df5d0a611c73fb76919f81fe09cdc"
+                "reference": "74f62368203546156e2af338ad95bf7c2ce78979"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/b23e32bb719df5d0a611c73fb76919f81fe09cdc",
-                "reference": "b23e32bb719df5d0a611c73fb76919f81fe09cdc",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/74f62368203546156e2af338ad95bf7c2ce78979",
+                "reference": "74f62368203546156e2af338ad95bf7c2ce78979",
                 "shasum": ""
             },
             "require": {
@@ -1489,7 +1489,7 @@
                 }
             ],
             "description": "Improt available jobs",
-            "time": "2020-10-28T09:48:32+00:00"
+            "time": "2020-11-16T14:36:29+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1841,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "f1a05c579ca1d8a751ba72f216435d3a1d795562"
+                "reference": "8701cb63a8ed28c68a727679444e6061ea1d57da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/f1a05c579ca1d8a751ba72f216435d3a1d795562",
-                "reference": "f1a05c579ca1d8a751ba72f216435d3a1d795562",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/8701cb63a8ed28c68a727679444e6061ea1d57da",
+                "reference": "8701cb63a8ed28c68a727679444e6061ea1d57da",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1898,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-11-13T10:02:04+00:00"
+            "time": "2020-11-16T15:33:06+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
