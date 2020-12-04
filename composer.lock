@@ -500,16 +500,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.154",
+            "version": "v0.156",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "7f44a314836c444b7894d648c1c49f83fb9d37ca"
+                "reference": "2f5e54fdef034f856208328126bddd8376dae4b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/7f44a314836c444b7894d648c1c49f83fb9d37ca",
-                "reference": "7f44a314836c444b7894d648c1c49f83fb9d37ca",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/2f5e54fdef034f856208328126bddd8376dae4b3",
+                "reference": "2f5e54fdef034f856208328126bddd8376dae4b3",
                 "shasum": ""
             },
             "require": {
@@ -533,7 +533,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-11-19T19:01:11+00:00"
+            "time": "2020-11-30T20:03:55+00:00"
         },
         {
             "name": "google/auth",
@@ -1013,12 +1013,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "13062c7de73c839e70adffb5ced14bff843dca19"
+                "reference": "79b4458a2be59a659e34f69ac1a59e9f6521efe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/13062c7de73c839e70adffb5ced14bff843dca19",
-                "reference": "13062c7de73c839e70adffb5ced14bff843dca19",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/79b4458a2be59a659e34f69ac1a59e9f6521efe8",
+                "reference": "79b4458a2be59a659e34f69ac1a59e9f6521efe8",
                 "shasum": ""
             },
             "require": {
@@ -1038,7 +1038,7 @@
                 }
             ],
             "description": "Import and display events from Event Manager API.",
-            "time": "2020-11-27T09:26:59+00:00"
+            "time": "2020-12-03T12:41:51+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1102,12 +1102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "aeda3afad3ea1113334fa06360b81843cfe6ab3d"
+                "reference": "ee0523ccf6528416d8350e0dd1b121ab8928240f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/aeda3afad3ea1113334fa06360b81843cfe6ab3d",
-                "reference": "aeda3afad3ea1113334fa06360b81843cfe6ab3d",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/ee0523ccf6528416d8350e0dd1b121ab8928240f",
+                "reference": "ee0523ccf6528416d8350e0dd1b121ab8928240f",
                 "shasum": ""
             },
             "type": "library",
@@ -1127,7 +1127,7 @@
                 }
             ],
             "description": "A component library based upon blade engine.",
-            "time": "2020-11-27T09:27:25+00:00"
+            "time": "2020-12-04T13:25:28+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1553,12 +1553,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "02a38e88393dbc2d5fddc4d8bad7c7554ee2d306"
+                "reference": "f586e8166f4a90475a144a29fdb6c223e5c7b05b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/02a38e88393dbc2d5fddc4d8bad7c7554ee2d306",
-                "reference": "02a38e88393dbc2d5fddc4d8bad7c7554ee2d306",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/f586e8166f4a90475a144a29fdb6c223e5c7b05b",
+                "reference": "f586e8166f4a90475a144a29fdb6c223e5c7b05b",
                 "shasum": ""
             },
             "require": {
@@ -1609,7 +1609,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-11-27T13:49:08+00:00"
+            "time": "2020-12-03T12:32:36+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1841,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "0b6ac8513c1f38b05f16e280da9934d5acc9b4b1"
+                "reference": "c3e3b6e0d8c326c8e5aab8b24c7597025354df04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/0b6ac8513c1f38b05f16e280da9934d5acc9b4b1",
-                "reference": "0b6ac8513c1f38b05f16e280da9934d5acc9b4b1",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/c3e3b6e0d8c326c8e5aab8b24c7597025354df04",
+                "reference": "c3e3b6e0d8c326c8e5aab8b24c7597025354df04",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1898,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-11-27T14:24:32+00:00"
+            "time": "2020-12-04T13:17:30+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2583,16 +2583,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.41.5",
+            "version": "2.42.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "c4a9caf97cfc53adfc219043bcecf42bc663acee"
+                "reference": "d0463779663437392fe42ff339ebc0213bd55498"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/c4a9caf97cfc53adfc219043bcecf42bc663acee",
-                "reference": "c4a9caf97cfc53adfc219043bcecf42bc663acee",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d0463779663437392fe42ff339ebc0213bd55498",
+                "reference": "d0463779663437392fe42ff339ebc0213bd55498",
                 "shasum": ""
             },
             "require": {
@@ -2607,7 +2607,7 @@
                 "kylekatarnls/multi-tester": "^2.0",
                 "phpmd/phpmd": "^2.9",
                 "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^0.12.35",
+                "phpstan/phpstan": "^0.12.54",
                 "phpunit/phpunit": "^7.5 || ^8.0",
                 "squizlabs/php_codesniffer": "^3.4"
             },
@@ -2658,7 +2658,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2020-10-23T06:02:30+00:00"
+            "time": "2020-11-28T14:25:28+00:00"
         },
         {
             "name": "philo/laravel-blade",
@@ -3218,16 +3218,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.4.16",
+            "version": "v4.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "c87adf3fc1cd0bf4758316a3a150d50a8f957ef4"
+                "reference": "65fe7b49868378319b82da3035fb30801b931c47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/c87adf3fc1cd0bf4758316a3a150d50a8f957ef4",
-                "reference": "c87adf3fc1cd0bf4758316a3a150d50a8f957ef4",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/65fe7b49868378319b82da3035fb30801b931c47",
+                "reference": "65fe7b49868378319b82da3035fb30801b931c47",
                 "shasum": ""
             },
             "require": {
@@ -3266,7 +3266,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2020-10-24T11:50:19+00:00"
+            "time": "2020-10-28T20:42:29+00:00"
         },
         {
             "name": "symfony/finder",
@@ -3642,7 +3642,7 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "4.1.1",
+            "version": "4.1.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
@@ -3650,7 +3650,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1599248291"
+                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1606880304"
             },
             "require": {
                 "composer/installers": "~1.0"
