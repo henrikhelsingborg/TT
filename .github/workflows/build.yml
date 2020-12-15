@@ -7,11 +7,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    with:
-      php-version: '7.4'
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Setup PHP with composer v2
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        tools: composer:v2
 
     # - name: Cache node modules
     #   uses: actions/cache@v2
