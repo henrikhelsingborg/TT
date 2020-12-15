@@ -6,7 +6,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
+    with:
+      php-version: '7.4'
 
     steps:
     - uses: actions/checkout@v2
