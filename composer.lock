@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6861d40c44159616174accd03701991d",
+    "content-hash": "2122e808ae40e8f8aeb74c11084005ae",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1899,6 +1899,34 @@
             ],
             "description": "A bootstrap theme for creating municipality sites.",
             "time": "2020-12-15T09:18:02+00:00"
+        },
+        {
+            "name": "helsingborg-stad/municipio-blue",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/municipio-blue.git",
+                "reference": "1921e0f0bb02d4bfc8a6e68fd83d3bba083382c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/municipio-blue/zipball/1921e0f0bb02d4bfc8a6e68fd83d3bba083382c1",
+                "reference": "1921e0f0bb02d4bfc8a6e68fd83d3bba083382c1",
+                "shasum": ""
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                }
+            ],
+            "description": "Blue version of the municipio theme",
+            "time": "2020-12-15T14:59:47+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -3909,7 +3937,8 @@
         "helsingborg-stad/customer-feedback": 20,
         "helsingborg-stad/job-listings": 20,
         "helsingborg-stad/modularity-contact-banner": 20,
-        "helsingborg-stad/algolia-index-js-searchpage-addon": 20
+        "helsingborg-stad/algolia-index-js-searchpage-addon": 20,
+        "helsingborg-stad/municipio-blue": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
