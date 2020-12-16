@@ -1553,12 +1553,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "bad56f1929c1dc7ba811f5b0d0b65292c69de7af"
+                "reference": "8129bafab5f8f1d03b087b703ffb96fed4da7aa1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/bad56f1929c1dc7ba811f5b0d0b65292c69de7af",
-                "reference": "bad56f1929c1dc7ba811f5b0d0b65292c69de7af",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/8129bafab5f8f1d03b087b703ffb96fed4da7aa1",
+                "reference": "8129bafab5f8f1d03b087b703ffb96fed4da7aa1",
                 "shasum": ""
             },
             "require": {
@@ -1609,7 +1609,7 @@
                 }
             ],
             "description": "Modular component system for WordPress",
-            "time": "2020-12-14T13:09:20+00:00"
+            "time": "2020-12-16T08:41:53+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1617,12 +1617,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-contact-banner.git",
-                "reference": "6e0a60e9b1059c770597471194f5128c10f9b166"
+                "reference": "b56293214530b74cae4616bfa4038f49dad972b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/6e0a60e9b1059c770597471194f5128c10f9b166",
-                "reference": "6e0a60e9b1059c770597471194f5128c10f9b166",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/b56293214530b74cae4616bfa4038f49dad972b6",
+                "reference": "b56293214530b74cae4616bfa4038f49dad972b6",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1637,7 +1637,7 @@
                 }
             ],
             "description": "Contact Banner",
-            "time": "2020-10-30T11:37:39+00:00"
+            "time": "2020-12-16T08:43:07+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
@@ -1841,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "a887da3946605dd8645563573cb2ab79f2c93d4d"
+                "reference": "90b033f9cd5afdb315f21a99ab3812add3294792"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/a887da3946605dd8645563573cb2ab79f2c93d4d",
-                "reference": "a887da3946605dd8645563573cb2ab79f2c93d4d",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/90b033f9cd5afdb315f21a99ab3812add3294792",
+                "reference": "90b033f9cd5afdb315f21a99ab3812add3294792",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1898,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-12-15T09:18:02+00:00"
+            "time": "2020-12-16T08:39:40+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -1906,12 +1906,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/municipio-blue.git",
-                "reference": "1921e0f0bb02d4bfc8a6e68fd83d3bba083382c1"
+                "reference": "cc081cb4b5bbbe102e9ac22e628a4e3d0fc4930f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/municipio-blue/zipball/1921e0f0bb02d4bfc8a6e68fd83d3bba083382c1",
-                "reference": "1921e0f0bb02d4bfc8a6e68fd83d3bba083382c1",
+                "url": "https://api.github.com/repos/helsingborg-stad/municipio-blue/zipball/cc081cb4b5bbbe102e9ac22e628a4e3d0fc4930f",
+                "reference": "cc081cb4b5bbbe102e9ac22e628a4e3d0fc4930f",
                 "shasum": ""
             },
             "type": "wordpress-theme",
@@ -1926,7 +1926,7 @@
                 }
             ],
             "description": "Blue version of the municipio theme",
-            "time": "2020-12-15T14:59:47+00:00"
+            "time": "2020-12-16T08:55:31+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
