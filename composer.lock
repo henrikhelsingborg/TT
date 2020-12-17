@@ -1841,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "90b033f9cd5afdb315f21a99ab3812add3294792"
+                "reference": "d4a81ad602080ec59d1dfc1b95072690fecd3749"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/90b033f9cd5afdb315f21a99ab3812add3294792",
-                "reference": "90b033f9cd5afdb315f21a99ab3812add3294792",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/d4a81ad602080ec59d1dfc1b95072690fecd3749",
+                "reference": "d4a81ad602080ec59d1dfc1b95072690fecd3749",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1898,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2020-12-16T08:39:40+00:00"
+            "time": "2020-12-17T07:19:04+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -1906,12 +1906,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/municipio-blue.git",
-                "reference": "8808430de2b0bb5bb579011baab8e425778855ee"
+                "reference": "fe2a77fd7b171aa82a443063f91243b25bf219e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/municipio-blue/zipball/8808430de2b0bb5bb579011baab8e425778855ee",
-                "reference": "8808430de2b0bb5bb579011baab8e425778855ee",
+                "url": "https://api.github.com/repos/helsingborg-stad/municipio-blue/zipball/fe2a77fd7b171aa82a443063f91243b25bf219e0",
+                "reference": "fe2a77fd7b171aa82a443063f91243b25bf219e0",
                 "shasum": ""
             },
             "type": "wordpress-theme",
@@ -1926,7 +1926,7 @@
                 }
             ],
             "description": "Blue version of the municipio theme",
-            "time": "2020-12-16T09:34:05+00:00"
+            "time": "2020-12-16T11:39:06+00:00"
         },
         {
             "name": "helsingborg-stad/readspeaker-helper",
@@ -2732,16 +2732,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.29",
+            "version": "2.0.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "497856a8d997f640b4a516062f84228a772a48a8"
+                "reference": "136b9ca7eebef78be14abf90d65c5e57b6bc5d36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/497856a8d997f640b4a516062f84228a772a48a8",
-                "reference": "497856a8d997f640b4a516062f84228a772a48a8",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/136b9ca7eebef78be14abf90d65c5e57b6bc5d36",
+                "reference": "136b9ca7eebef78be14abf90d65c5e57b6bc5d36",
                 "shasum": ""
             },
             "require": {
@@ -2749,7 +2749,7 @@
             },
             "require-dev": {
                 "phing/phing": "~2.7",
-                "phpunit/phpunit": "^4.8.35|^5.7|^6.0",
+                "phpunit/phpunit": "^4.8.35|^5.7|^6.0|^9.4",
                 "squizlabs/php_codesniffer": "~2.0"
             },
             "suggest": {
@@ -2819,7 +2819,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2020-09-08T04:24:43+00:00"
+            "time": "2020-12-17T05:42:04+00:00"
         },
         {
             "name": "psr/cache",
