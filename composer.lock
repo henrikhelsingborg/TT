@@ -1720,12 +1720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "8129bafab5f8f1d03b087b703ffb96fed4da7aa1"
+                "reference": "6f5467ad2e7fe3aa2a9c79643040670a328c72d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/8129bafab5f8f1d03b087b703ffb96fed4da7aa1",
-                "reference": "8129bafab5f8f1d03b087b703ffb96fed4da7aa1",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/6f5467ad2e7fe3aa2a9c79643040670a328c72d9",
+                "reference": "6f5467ad2e7fe3aa2a9c79643040670a328c72d9",
                 "shasum": ""
             },
             "require": {
@@ -1780,7 +1780,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2020-12-16T08:41:53+00:00"
+            "time": "2020-12-18T14:39:44+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2040,12 +2040,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "d4a81ad602080ec59d1dfc1b95072690fecd3749"
+                "reference": "0402c9141ced76c748eab934884881546c7d5b74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/d4a81ad602080ec59d1dfc1b95072690fecd3749",
-                "reference": "d4a81ad602080ec59d1dfc1b95072690fecd3749",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/0402c9141ced76c748eab934884881546c7d5b74",
+                "reference": "0402c9141ced76c748eab934884881546c7d5b74",
                 "shasum": ""
             },
             "require": {
@@ -2101,7 +2101,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2020-12-17T07:19:04+00:00"
+            "time": "2020-12-18T14:30:47+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -3603,16 +3603,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.4.17",
+            "version": "v4.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "65fe7b49868378319b82da3035fb30801b931c47"
+                "reference": "5dfc7825f3bfe9bb74b23d8b8ce0e0894e32b544"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/65fe7b49868378319b82da3035fb30801b931c47",
-                "reference": "65fe7b49868378319b82da3035fb30801b931c47",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/5dfc7825f3bfe9bb74b23d8b8ce0e0894e32b544",
+                "reference": "5dfc7825f3bfe9bb74b23d8b8ce0e0894e32b544",
                 "shasum": ""
             },
             "require": {
@@ -3652,7 +3652,7 @@
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/debug/tree/v4.4.17"
+                "source": "https://github.com/symfony/debug/tree/v4.4.18"
             },
             "funding": [
                 {
@@ -3668,7 +3668,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-28T20:42:29+00:00"
+            "time": "2020-12-10T16:34:26+00:00"
         },
         {
             "name": "symfony/finder",
