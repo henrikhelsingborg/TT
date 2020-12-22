@@ -1215,12 +1215,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "ee0523ccf6528416d8350e0dd1b121ab8928240f"
+                "reference": "bea3d3178384cbc00d22f49f735476654723433a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/ee0523ccf6528416d8350e0dd1b121ab8928240f",
-                "reference": "ee0523ccf6528416d8350e0dd1b121ab8928240f",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/bea3d3178384cbc00d22f49f735476654723433a",
+                "reference": "bea3d3178384cbc00d22f49f735476654723433a",
                 "shasum": ""
             },
             "default-branch": true,
@@ -1245,7 +1245,7 @@
                 "issues": "https://github.com/helsingborg-stad/blade-component-library/issues",
                 "source": "https://github.com/helsingborg-stad/blade-component-library/tree/master"
             },
-            "time": "2020-12-04T13:25:28+00:00"
+            "time": "2020-12-21T15:01:30+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1720,12 +1720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "6f5467ad2e7fe3aa2a9c79643040670a328c72d9"
+                "reference": "f799d87a517b8b6c6c1409d54d53d0cdc530e2e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/6f5467ad2e7fe3aa2a9c79643040670a328c72d9",
-                "reference": "6f5467ad2e7fe3aa2a9c79643040670a328c72d9",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/f799d87a517b8b6c6c1409d54d53d0cdc530e2e1",
+                "reference": "f799d87a517b8b6c6c1409d54d53d0cdc530e2e1",
                 "shasum": ""
             },
             "require": {
@@ -1780,7 +1780,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2020-12-18T14:39:44+00:00"
+            "time": "2020-12-22T10:20:44+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1901,12 +1901,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-json-render.git",
-                "reference": "51ae1df71e56b587e701535c9bdc8ab13c29eafb"
+                "reference": "7f3f2de4300c229e84af59ecce4e98ca1224d5ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/51ae1df71e56b587e701535c9bdc8ab13c29eafb",
-                "reference": "51ae1df71e56b587e701535c9bdc8ab13c29eafb",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/7f3f2de4300c229e84af59ecce4e98ca1224d5ff",
+                "reference": "7f3f2de4300c229e84af59ecce4e98ca1224d5ff",
                 "shasum": ""
             },
             "require": {
@@ -1927,7 +1927,7 @@
                 "issues": "https://github.com/helsingborg-stad/modularity-json-render/issues",
                 "source": "https://github.com/helsingborg-stad/modularity-json-render/tree/3.0/develop"
             },
-            "time": "2020-12-16T09:09:16+00:00"
+            "time": "2020-12-22T10:55:50+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-sections",
@@ -2040,12 +2040,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "0402c9141ced76c748eab934884881546c7d5b74"
+                "reference": "da7db6277c65b3c04c1941415f2cba8de990ac09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/0402c9141ced76c748eab934884881546c7d5b74",
-                "reference": "0402c9141ced76c748eab934884881546c7d5b74",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/da7db6277c65b3c04c1941415f2cba8de990ac09",
+                "reference": "da7db6277c65b3c04c1941415f2cba8de990ac09",
                 "shasum": ""
             },
             "require": {
@@ -2071,8 +2071,7 @@
                 "symfony/finder": "4.4.8",
                 "symfony/polyfill-mbstring": "1.17.0",
                 "symfony/translation": "5.0.8",
-                "symfony/translation-contracts": "2.0.1",
-                "wpackagist-plugin/advanced-custom-fields": "^4.4.7"
+                "symfony/translation-contracts": "2.0.1"
             },
             "type": "wordpress-theme",
             "extra": {
@@ -2101,7 +2100,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2020-12-18T14:30:47+00:00"
+            "time": "2020-12-22T10:59:28+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -2900,16 +2899,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.42.0",
+            "version": "2.43.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d0463779663437392fe42ff339ebc0213bd55498"
+                "reference": "d32c57d8389113742f4a88725a170236470012e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d0463779663437392fe42ff339ebc0213bd55498",
-                "reference": "d0463779663437392fe42ff339ebc0213bd55498",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d32c57d8389113742f4a88725a170236470012e2",
+                "reference": "d32c57d8389113742f4a88725a170236470012e2",
                 "shasum": ""
             },
             "require": {
@@ -2989,7 +2988,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-28T14:25:28+00:00"
+            "time": "2020-12-17T20:55:32+00:00"
         },
         {
             "name": "philo/laravel-blade",
@@ -4098,24 +4097,6 @@
                 "source": "https://github.com/true/php-punycode/tree/master"
             },
             "time": "2016-11-16T10:37:54+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "4.4.12",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
-                "reference": "tags/4.4.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.12.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
         },
         {
             "name": "wpackagist-plugin/autodescription",
