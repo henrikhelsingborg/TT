@@ -1720,12 +1720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "f799d87a517b8b6c6c1409d54d53d0cdc530e2e1"
+                "reference": "b76e43fb2ddad873d98bbcbd46c69b892826d8c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/f799d87a517b8b6c6c1409d54d53d0cdc530e2e1",
-                "reference": "f799d87a517b8b6c6c1409d54d53d0cdc530e2e1",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/b76e43fb2ddad873d98bbcbd46c69b892826d8c7",
+                "reference": "b76e43fb2ddad873d98bbcbd46c69b892826d8c7",
                 "shasum": ""
             },
             "require": {
@@ -1780,7 +1780,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2020-12-22T10:20:44+00:00"
+            "time": "2021-01-11T15:13:37+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2002,12 +2002,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "40ae5a4a4828531cb3e23f74eaedf72e903173d2"
+                "reference": "c6c073cf9ff8f9be33950109f2b3e126263a6551"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/40ae5a4a4828531cb3e23f74eaedf72e903173d2",
-                "reference": "40ae5a4a4828531cb3e23f74eaedf72e903173d2",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/c6c073cf9ff8f9be33950109f2b3e126263a6551",
+                "reference": "c6c073cf9ff8f9be33950109f2b3e126263a6551",
                 "shasum": ""
             },
             "require": {
@@ -2061,7 +2061,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2020-12-23T10:38:35+00:00"
+            "time": "2021-01-13T09:23:55+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
