@@ -1121,12 +1121,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "263e0a79e3a3db8c62d8b2207b0cd818ca5d2904"
+                "reference": "59220729a23178fe6badcd1dfcfaa51d1707936d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/263e0a79e3a3db8c62d8b2207b0cd818ca5d2904",
-                "reference": "263e0a79e3a3db8c62d8b2207b0cd818ca5d2904",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/59220729a23178fe6badcd1dfcfaa51d1707936d",
+                "reference": "59220729a23178fe6badcd1dfcfaa51d1707936d",
                 "shasum": ""
             },
             "require": {
@@ -1150,7 +1150,7 @@
                 "issues": "https://github.com/helsingborg-stad/api-event-manager-integration/issues",
                 "source": "https://github.com/helsingborg-stad/api-event-manager-integration/tree/3.0/develop"
             },
-            "time": "2021-01-11T12:41:07+00:00"
+            "time": "2021-01-15T12:01:49+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1727,12 +1727,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "46b5105d999c457c0d96503c1946256c683193e5"
+                "reference": "62c7f7d38650950e3b40bb9ea4b4dc442fe3dc67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/46b5105d999c457c0d96503c1946256c683193e5",
-                "reference": "46b5105d999c457c0d96503c1946256c683193e5",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/62c7f7d38650950e3b40bb9ea4b4dc442fe3dc67",
+                "reference": "62c7f7d38650950e3b40bb9ea4b4dc442fe3dc67",
                 "shasum": ""
             },
             "require": {
@@ -1787,7 +1787,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-01-14T15:44:33+00:00"
+            "time": "2021-01-15T12:35:53+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2009,12 +2009,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "fb3304455022236c2ea025bf77b63ee5397774d3"
+                "reference": "9108e708d2e5405ddd1f7e9ef9bc05941b14b8fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/fb3304455022236c2ea025bf77b63ee5397774d3",
-                "reference": "fb3304455022236c2ea025bf77b63ee5397774d3",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/9108e708d2e5405ddd1f7e9ef9bc05941b14b8fd",
+                "reference": "9108e708d2e5405ddd1f7e9ef9bc05941b14b8fd",
                 "shasum": ""
             },
             "require": {
@@ -2068,7 +2068,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-01-14T15:43:51+00:00"
+            "time": "2021-01-15T12:17:23+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -4104,15 +4104,15 @@
         },
         {
             "name": "wpackagist-plugin/cookies-and-content-security-policy",
-            "version": "1.71",
+            "version": "1.72",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookies-and-content-security-policy/",
-                "reference": "tags/1.71"
+                "reference": "tags/1.72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.71.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.72.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
