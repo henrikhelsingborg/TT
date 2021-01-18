@@ -60,7 +60,6 @@
         "helsingborg-stad/municipio": "dev-3.0/develop",
         "helsingborg-stad/lix-calculator": ">=1.0.1",
         "helsingborg-stad/custom-short-links": ">=1.0.0",
-        "helsingborg-stad/readspeaker-helper": ">=1.0.0",
         "helsingborg-stad/content-scheduler": ">=1.0.0",
         "helsingborg-stad/broken-link-detector": ">=1.0.0",
         "helsingborg-stad/better-post-ui": ">=1.0.0",
