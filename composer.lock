@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cdafa984e35a87003fb1074f1133fd6",
+    "content-hash": "d92ff42226b6377701846f577763e438",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1222,12 +1222,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "862a275eb5b2be15369c95182714ad4d7c94d2ea"
+                "reference": "2da95f74fe24d246e183e85dc61803b1792c285f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/862a275eb5b2be15369c95182714ad4d7c94d2ea",
-                "reference": "862a275eb5b2be15369c95182714ad4d7c94d2ea",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/2da95f74fe24d246e183e85dc61803b1792c285f",
+                "reference": "2da95f74fe24d246e183e85dc61803b1792c285f",
                 "shasum": ""
             },
             "default-branch": true,
@@ -1252,7 +1252,7 @@
                 "issues": "https://github.com/helsingborg-stad/blade-component-library/issues",
                 "source": "https://github.com/helsingborg-stad/blade-component-library/tree/master"
             },
-            "time": "2021-01-15T14:57:59+00:00"
+            "time": "2021-01-18T13:32:24+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -2009,12 +2009,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "575fad94eff359b9c5e5a752cb0cd7a2fea667ca"
+                "reference": "6df81abc725bae83ac9ef0328775edec7ebe56c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/575fad94eff359b9c5e5a752cb0cd7a2fea667ca",
-                "reference": "575fad94eff359b9c5e5a752cb0cd7a2fea667ca",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/6df81abc725bae83ac9ef0328775edec7ebe56c1",
+                "reference": "6df81abc725bae83ac9ef0328775edec7ebe56c1",
                 "shasum": ""
             },
             "require": {
@@ -2068,7 +2068,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-01-15T15:12:44+00:00"
+            "time": "2021-01-18T13:49:25+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -2102,38 +2102,6 @@
                 "source": "https://github.com/helsingborg-stad/municipio-blue/tree/master"
             },
             "time": "2020-12-16T11:39:06+00:00"
-        },
-        {
-            "name": "helsingborg-stad/readspeaker-helper",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/helsingborg-stad/readspeaker-helper.git",
-                "reference": "6c789d90c07467109245624ccc7529c92bf86a6a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/readspeaker-helper/zipball/6c789d90c07467109245624ccc7529c92bf86a6a",
-                "reference": "6c789d90c07467109245624ccc7529c92bf86a6a",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache License 2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Kristoffer Svanmark",
-                    "email": "kristoffer.svanmark@lexiconitkonsult.se"
-                }
-            ],
-            "description": "This is a WordPress plugin that will help you use the ReadSpeaker from readspeaker.com",
-            "support": {
-                "issues": "https://github.com/helsingborg-stad/readspeaker-helper/issues",
-                "source": "https://github.com/helsingborg-stad/readspeaker-helper/tree/2.0.1"
-            },
-            "time": "2017-01-23T09:54:35+00:00"
         },
         {
             "name": "helsingborg-stad/redirection-extended",
