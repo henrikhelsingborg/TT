@@ -1872,12 +1872,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-guides.git",
-                "reference": "c172ea6e0b457a95af9cb0164329b6ea230615a9"
+                "reference": "69deb2c0aa64ed3671f25a38433cf7b6675861d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-guides/zipball/c172ea6e0b457a95af9cb0164329b6ea230615a9",
-                "reference": "c172ea6e0b457a95af9cb0164329b6ea230615a9",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-guides/zipball/69deb2c0aa64ed3671f25a38433cf7b6675861d1",
+                "reference": "69deb2c0aa64ed3671f25a38433cf7b6675861d1",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1900,7 +1900,7 @@
                 "issues": "https://github.com/helsingborg-stad/modularity-guides/issues",
                 "source": "https://github.com/helsingborg-stad/modularity-guides/tree/3.0/feature/accordion"
             },
-            "time": "2021-01-19T07:50:11+00:00"
+            "time": "2021-01-19T14:47:25+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-json-render",
