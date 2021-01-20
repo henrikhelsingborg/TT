@@ -2,7 +2,7 @@ name: Build site
 
 on:
   push:
-    branches: [ beta ]
+    branches: [ 3.0/master ]
 
 jobs:
   build:
@@ -59,18 +59,18 @@ jobs:
     - name: rsync deployment to www-data user.
       uses: burnett01/rsync-deployments@4.1
       with:
-        switches: -avzrog --delete --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_BETA_HELSINGBORG_SE }}/$GITHUB_SHA --chown=www-data:www-data --exclude config --exclude wp-content/uploads --exclude wp-content/plugins/advanced-custom-fields-pro --exclude wp-content/plugins/gravityforms --exclude wp-content/plugins/wp-schema-pro
+        switches: -avzrog --delete --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_HELSINGBORG_SE }}/$GITHUB_SHA --chown=www-data:www-data --exclude config --exclude wp-content/uploads --exclude wp-content/plugins/advanced-custom-fields-pro --exclude wp-content/plugins/gravityforms --exclude wp-content/plugins/wp-schema-pro --exclude track-assets
         path: .
-        remote_path: ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}
-        remote_host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
+        remote_path: ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
+        remote_host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
         remote_user: ${{ secrets.DEPLOY_REMOTE_USER }}
         remote_key: ${{ secrets.DEPLOY_KEY }}
 
     - name: Set file permissions.
       uses: appleboy/ssh-action@master
       with:
-        script: find ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }} -path ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}/wp-content/uploads -prune -o ! -type l -exec chmod g+rw {} +
-        host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
+        script: find ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }} -path ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}/wp-content/uploads -prune -o ! -type l -exec chmod g+rw {} +
+        host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
         username: ${{ secrets.DEPLOY_REMOTE_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
 
@@ -78,11 +78,10 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         script: |
-          cd ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}
+          cd ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
           wp varnish purge --allow-root
           wp cache flush --allow-root
-        host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
+          rm  /mnt/persist/www/docroot_master/wp-content/uploads/cache/blade-cache/*
+        host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
         username: ${{ secrets.DEPLOY_REMOTE_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
-    - name: Cleanup temp blade cache
-      run: rm -rf /tmp/blade-engine-cache
