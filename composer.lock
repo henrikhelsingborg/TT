@@ -1456,12 +1456,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/easy-to-read-alternative.git",
-                "reference": "636898f6da024a83dac33d3b3261d72d098df0da"
+                "reference": "b7ab9de6ff12466686f8223b91ca7f4d9d4d68e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/easy-to-read-alternative/zipball/636898f6da024a83dac33d3b3261d72d098df0da",
-                "reference": "636898f6da024a83dac33d3b3261d72d098df0da",
+                "url": "https://api.github.com/repos/helsingborg-stad/easy-to-read-alternative/zipball/b7ab9de6ff12466686f8223b91ca7f4d9d4d68e9",
+                "reference": "b7ab9de6ff12466686f8223b91ca7f4d9d4d68e9",
                 "shasum": ""
             },
             "require": {
@@ -1483,7 +1483,7 @@
                 "issues": "https://github.com/helsingborg-stad/easy-to-read-alternative/issues",
                 "source": "https://github.com/helsingborg-stad/easy-to-read-alternative/tree/3.0/develop"
             },
-            "time": "2020-12-16T09:12:22+00:00"
+            "time": "2021-01-20T13:38:19+00:00"
         },
         {
             "name": "helsingborg-stad/force-ssl",
@@ -1727,12 +1727,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "cd6904e4334dcbba4255620e51bc16bbc61a8cc4"
+                "reference": "95cb35d01a99bba184563c64b664495900ea824d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/cd6904e4334dcbba4255620e51bc16bbc61a8cc4",
-                "reference": "cd6904e4334dcbba4255620e51bc16bbc61a8cc4",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/95cb35d01a99bba184563c64b664495900ea824d",
+                "reference": "95cb35d01a99bba184563c64b664495900ea824d",
                 "shasum": ""
             },
             "require": {
@@ -1787,7 +1787,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-01-20T12:34:28+00:00"
+            "time": "2021-01-20T13:49:18+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
