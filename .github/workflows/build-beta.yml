@@ -81,7 +81,7 @@ jobs:
           cd ${{ secrets.DEPLOY_REMOTE_PATH_BETA_HELSINGBORG_SE }}
           wp varnish purge --allow-root
           wp cache flush --allow-root
-          rm -rf /tmp/blade-engine-cache
+          rm -rf /tmp/blade-engine-cache/*
         host: ${{ secrets.DEPLOY_REMOTE_HOST_BETA_HELSINGBORG_SE }}
         username: ${{ secrets.DEPLOY_REMOTE_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
