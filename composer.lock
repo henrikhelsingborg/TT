@@ -1121,12 +1121,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "eccf5b2d45c40c4140a59e36935d3522f8502ae6"
+                "reference": "905719cb8b79aeb270b0b6e5a312899fa86da02f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/eccf5b2d45c40c4140a59e36935d3522f8502ae6",
-                "reference": "eccf5b2d45c40c4140a59e36935d3522f8502ae6",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/905719cb8b79aeb270b0b6e5a312899fa86da02f",
+                "reference": "905719cb8b79aeb270b0b6e5a312899fa86da02f",
                 "shasum": ""
             },
             "require": {
@@ -1150,7 +1150,7 @@
                 "issues": "https://github.com/helsingborg-stad/api-event-manager-integration/issues",
                 "source": "https://github.com/helsingborg-stad/api-event-manager-integration/tree/3.0/develop"
             },
-            "time": "2021-01-19T13:25:48+00:00"
+            "time": "2021-01-21T14:54:17+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
