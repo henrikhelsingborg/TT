@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d545eac2ecd1bdbebb31b0bcb93b280",
+    "content-hash": "d92ff42226b6377701846f577763e438",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1868,16 +1868,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-guides",
-            "version": "dev-3.0/feature/accordion",
+            "version": "dev-3.0/develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-guides.git",
-                "reference": "d77581be08bd8ff7dfc1f794a12198ce016ffd5b"
+                "reference": "052f41ff329b2a6d9510c2c0006a29594a209d1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-guides/zipball/d77581be08bd8ff7dfc1f794a12198ce016ffd5b",
-                "reference": "d77581be08bd8ff7dfc1f794a12198ce016ffd5b",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-guides/zipball/052f41ff329b2a6d9510c2c0006a29594a209d1a",
+                "reference": "052f41ff329b2a6d9510c2c0006a29594a209d1a",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1898,9 +1898,9 @@
             "description": "Addon for Modularity for creating guides",
             "support": {
                 "issues": "https://github.com/helsingborg-stad/modularity-guides/issues",
-                "source": "https://github.com/helsingborg-stad/modularity-guides/tree/3.0/feature/accordion"
+                "source": "https://github.com/helsingborg-stad/modularity-guides/tree/3.0/develop"
             },
-            "time": "2021-01-20T14:21:34+00:00"
+            "time": "2021-01-21T10:11:30+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-json-render",
