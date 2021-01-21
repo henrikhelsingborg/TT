@@ -81,7 +81,7 @@ jobs:
           cd ${{ secrets.DEPLOY_REMOTE_PATH_HELSINGBORG_SE }}
           wp varnish purge --allow-root
           wp cache flush --allow-root
-          rm  /mnt/persist/www/docroot_master/wp-content/uploads/cache/blade-cache/*
+          rm  /mnt/persist/www/docroot_master/wp-content/uploads/cache/blade-cache/* || true
         host: ${{ secrets.DEPLOY_REMOTE_HOST_HELSINGBORG_SE }}
         username: ${{ secrets.DEPLOY_REMOTE_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
