@@ -1222,12 +1222,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "c47e4317c5a819b29a1c9672e6de5e0e0ce09347"
+                "reference": "91fa0d367fa5e446f0bc77e676811cf6dd90074c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/c47e4317c5a819b29a1c9672e6de5e0e0ce09347",
-                "reference": "c47e4317c5a819b29a1c9672e6de5e0e0ce09347",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/91fa0d367fa5e446f0bc77e676811cf6dd90074c",
+                "reference": "91fa0d367fa5e446f0bc77e676811cf6dd90074c",
                 "shasum": ""
             },
             "default-branch": true,
@@ -1252,7 +1252,7 @@
                 "issues": "https://github.com/helsingborg-stad/blade-component-library/issues",
                 "source": "https://github.com/helsingborg-stad/blade-component-library/tree/master"
             },
-            "time": "2021-01-22T14:51:32+00:00"
+            "time": "2021-01-26T15:06:41+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1827,12 +1827,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "f1d6d0dfac30323f79087b6b64ea6f1975738a68"
+                "reference": "0dd1cf721d74b2b319533d89c15fedff8f91c9da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/f1d6d0dfac30323f79087b6b64ea6f1975738a68",
-                "reference": "f1d6d0dfac30323f79087b6b64ea6f1975738a68",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/0dd1cf721d74b2b319533d89c15fedff8f91c9da",
+                "reference": "0dd1cf721d74b2b319533d89c15fedff8f91c9da",
                 "shasum": ""
             },
             "require": {
@@ -1864,7 +1864,7 @@
                 "issues": "https://github.com/helsingborg-stad/modularity-form-builder/issues",
                 "source": "https://github.com/helsingborg-stad/modularity-form-builder/tree/3.0/develop"
             },
-            "time": "2021-01-26T10:36:17+00:00"
+            "time": "2021-01-26T15:08:38+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-guides",
