@@ -1023,12 +1023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon.git",
-                "reference": "2e762324834c5646150e510d33319b2a82824edb"
+                "reference": "4d136ab20ab038959ff2310d86d1a027314114fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index-js-searchpage-addon/zipball/2e762324834c5646150e510d33319b2a82824edb",
-                "reference": "2e762324834c5646150e510d33319b2a82824edb",
+                "url": "https://api.github.com/repos/helsingborg-stad/algolia-index-js-searchpage-addon/zipball/4d136ab20ab038959ff2310d86d1a027314114fe",
+                "reference": "4d136ab20ab038959ff2310d86d1a027314114fe",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1047,7 +1047,7 @@
                 "issues": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon/issues",
                 "source": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon/tree/3.0/develop"
             },
-            "time": "2021-01-27T11:59:22+00:00"
+            "time": "2021-01-28T09:43:00+00:00"
         },
         {
             "name": "helsingborg-stad/algolia-index-modularity-addon",
@@ -1727,12 +1727,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "894aeb4374af112f9d3549c678c93346ba37d382"
+                "reference": "728008c0913c638b5fa52618092fabfa7a3d49f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/894aeb4374af112f9d3549c678c93346ba37d382",
-                "reference": "894aeb4374af112f9d3549c678c93346ba37d382",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/728008c0913c638b5fa52618092fabfa7a3d49f9",
+                "reference": "728008c0913c638b5fa52618092fabfa7a3d49f9",
                 "shasum": ""
             },
             "require": {
@@ -1787,7 +1787,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-01-27T15:52:26+00:00"
+            "time": "2021-01-28T09:07:06+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
