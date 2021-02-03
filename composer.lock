@@ -559,16 +559,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.157.0",
+            "version": "v0.158.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "957846303c28c10033fa83d8688ffd325c260a3e"
+                "reference": "859f9c95ed85df02370f355b69c0dcad99367728"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/957846303c28c10033fa83d8688ffd325c260a3e",
-                "reference": "957846303c28c10033fa83d8688ffd325c260a3e",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/859f9c95ed85df02370f355b69c0dcad99367728",
+                "reference": "859f9c95ed85df02370f355b69c0dcad99367728",
                 "shasum": ""
             },
             "require": {
@@ -594,9 +594,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.157.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.158.0"
             },
-            "time": "2021-01-19T12:20:06+00:00"
+            "time": "2021-01-30T12:20:03+00:00"
         },
         {
             "name": "google/auth",
@@ -1827,12 +1827,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "b14cb8b2ab264964bb4d21780c9c1b34e86f80a7"
+                "reference": "1e8b183c68a96edc9a219b5472885c9b447c46a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/b14cb8b2ab264964bb4d21780c9c1b34e86f80a7",
-                "reference": "b14cb8b2ab264964bb4d21780c9c1b34e86f80a7",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/1e8b183c68a96edc9a219b5472885c9b447c46a2",
+                "reference": "1e8b183c68a96edc9a219b5472885c9b447c46a2",
                 "shasum": ""
             },
             "require": {
@@ -1864,7 +1864,7 @@
                 "issues": "https://github.com/helsingborg-stad/modularity-form-builder/issues",
                 "source": "https://github.com/helsingborg-stad/modularity-form-builder/tree/3.0/develop"
             },
-            "time": "2021-01-27T13:22:52+00:00"
+            "time": "2021-02-02T11:30:34+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-guides",
@@ -1908,12 +1908,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-json-render.git",
-                "reference": "bfbc97ff576de60d3d75e02adc5e99d63a4c6e62"
+                "reference": "8bc47299c17f93234bf3e6e7050b6c7e6f98e7b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/bfbc97ff576de60d3d75e02adc5e99d63a4c6e62",
-                "reference": "bfbc97ff576de60d3d75e02adc5e99d63a4c6e62",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-json-render/zipball/8bc47299c17f93234bf3e6e7050b6c7e6f98e7b6",
+                "reference": "8bc47299c17f93234bf3e6e7050b6c7e6f98e7b6",
                 "shasum": ""
             },
             "require": {
@@ -1934,7 +1934,7 @@
                 "issues": "https://github.com/helsingborg-stad/modularity-json-render/issues",
                 "source": "https://github.com/helsingborg-stad/modularity-json-render/tree/3.0/develop"
             },
-            "time": "2021-01-27T13:00:59+00:00"
+            "time": "2021-02-02T12:49:14+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-timeline",
@@ -2009,12 +2009,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "e8cea403897b9375cf18885aefea4415b0f04429"
+                "reference": "6293e39b9f9fa92f49991d6582b3d5af0923cb3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/e8cea403897b9375cf18885aefea4415b0f04429",
-                "reference": "e8cea403897b9375cf18885aefea4415b0f04429",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/6293e39b9f9fa92f49991d6582b3d5af0923cb3b",
+                "reference": "6293e39b9f9fa92f49991d6582b3d5af0923cb3b",
                 "shasum": ""
             },
             "require": {
@@ -2068,7 +2068,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-01-27T15:52:37+00:00"
+            "time": "2021-02-03T10:44:37+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -2835,16 +2835,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.43.0",
+            "version": "2.44.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d32c57d8389113742f4a88725a170236470012e2"
+                "reference": "e6ef33cb1f67a4bed831ed6d0f7e156739a5d8cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d32c57d8389113742f4a88725a170236470012e2",
-                "reference": "d32c57d8389113742f4a88725a170236470012e2",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e6ef33cb1f67a4bed831ed6d0f7e156739a5d8cd",
+                "reference": "e6ef33cb1f67a4bed831ed6d0f7e156739a5d8cd",
                 "shasum": ""
             },
             "require": {
@@ -2860,7 +2860,7 @@
                 "phpmd/phpmd": "^2.9",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^0.12.54",
-                "phpunit/phpunit": "^7.5 || ^8.0",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.14",
                 "squizlabs/php_codesniffer": "^3.4"
             },
             "bin": [
@@ -2924,7 +2924,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-17T20:55:32+00:00"
+            "time": "2021-01-26T20:46:41+00:00"
         },
         {
             "name": "philo/laravel-blade",
@@ -4072,15 +4072,15 @@
         },
         {
             "name": "wpackagist-plugin/cookies-and-content-security-policy",
-            "version": "1.73",
+            "version": "1.75",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookies-and-content-security-policy/",
-                "reference": "tags/1.73"
+                "reference": "tags/1.75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.73.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.75.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
