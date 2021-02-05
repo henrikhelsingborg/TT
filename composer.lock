@@ -1265,12 +1265,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/component-library.git",
-                "reference": "1e34143f5d971d7d855fb4ef11041c169914f60c"
+                "reference": "db88a31aa6b99b484a6265a498673ed594c96211"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/1e34143f5d971d7d855fb4ef11041c169914f60c",
-                "reference": "1e34143f5d971d7d855fb4ef11041c169914f60c",
+                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/db88a31aa6b99b484a6265a498673ed594c96211",
+                "reference": "db88a31aa6b99b484a6265a498673ed594c96211",
                 "shasum": ""
             },
             "require": {
@@ -1284,7 +1284,7 @@
                     "email": "eric.rosenborg@hiq.se"
                 }
             ],
-            "time": "2021-02-05T07:57:24+00:00"
+            "time": "2021-02-05T08:23:15+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
