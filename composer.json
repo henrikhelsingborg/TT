@@ -120,6 +120,9 @@
         "post-install-cmd": [
             "mkdir -p wp-content/uploads/cache/blade-cache",
             "@php post-install.php"
+        ],
+        "post-update-cmd": [
+            "@php post-install.php"
         ]
     }
 }
