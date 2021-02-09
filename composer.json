@@ -116,7 +116,8 @@
 
     "scripts": {
         "post-install-cmd": [
-            "mkdir -p wp-content/uploads/cache/blade-cache"
+            "mkdir -p wp-content/uploads/cache/blade-cache",
+            "@php post-install.php"
         ]
     }
 }
