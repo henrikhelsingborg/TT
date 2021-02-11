@@ -1167,12 +1167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "279457c90928e8b05d084e0585ee167b37ec73e4"
+                "reference": "24c854b02c3192c7add730cd8a7868d75ebe29e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/279457c90928e8b05d084e0585ee167b37ec73e4",
-                "reference": "279457c90928e8b05d084e0585ee167b37ec73e4",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/24c854b02c3192c7add730cd8a7868d75ebe29e0",
+                "reference": "24c854b02c3192c7add730cd8a7868d75ebe29e0",
                 "shasum": ""
             },
             "require": {
@@ -1196,7 +1196,7 @@
                 "issues": "https://github.com/helsingborg-stad/api-event-manager-integration/issues",
                 "source": "https://github.com/helsingborg-stad/api-event-manager-integration/tree/3.0/develop"
             },
-            "time": "2021-01-27T13:34:47+00:00"
+            "time": "2021-02-11T13:16:34+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1268,12 +1268,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-component-library.git",
-                "reference": "879c7edede4463bb49ebcde2703e9d22fbca632b"
+                "reference": "6bf3ad9ab832ed85150432464c3bb47cf581108b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/879c7edede4463bb49ebcde2703e9d22fbca632b",
-                "reference": "879c7edede4463bb49ebcde2703e9d22fbca632b",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-component-library/zipball/6bf3ad9ab832ed85150432464c3bb47cf581108b",
+                "reference": "6bf3ad9ab832ed85150432464c3bb47cf581108b",
                 "shasum": ""
             },
             "default-branch": true,
@@ -1298,7 +1298,7 @@
                 "issues": "https://github.com/helsingborg-stad/blade-component-library/issues",
                 "source": "https://github.com/helsingborg-stad/blade-component-library/tree/master"
             },
-            "time": "2021-01-27T15:50:23+00:00"
+            "time": "2021-02-11T08:46:25+00:00"
         },
         {
             "name": "helsingborg-stad/blade-engine-wrapper",
@@ -1306,12 +1306,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/blade-engine-wrapper.git",
-                "reference": "db5a99d2c545056e9c439093835af1528b5d2e9e"
+                "reference": "d7e651f5f0a9535a976cbe771e77d7d0b75b62d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/blade-engine-wrapper/zipball/db5a99d2c545056e9c439093835af1528b5d2e9e",
-                "reference": "db5a99d2c545056e9c439093835af1528b5d2e9e",
+                "url": "https://api.github.com/repos/helsingborg-stad/blade-engine-wrapper/zipball/d7e651f5f0a9535a976cbe771e77d7d0b75b62d5",
+                "reference": "d7e651f5f0a9535a976cbe771e77d7d0b75b62d5",
                 "shasum": ""
             },
             "require": {
@@ -1357,7 +1357,7 @@
                 "issues": "https://github.com/helsingborg-stad/blade-engine-wrapper/issues",
                 "source": "https://github.com/helsingborg-stad/blade-engine-wrapper/tree/master"
             },
-            "time": "2020-06-09T10:32:15+00:00"
+            "time": "2021-02-11T15:22:54+00:00"
         },
         {
             "name": "helsingborg-stad/broken-link-detector",
@@ -1400,12 +1400,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/component-library.git",
-                "reference": "e1a977eddfde71b40f5fcf0a49fb864b413c473d"
+                "reference": "bd100ab1868e69c744bd9b673656b922e34c6fed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/e1a977eddfde71b40f5fcf0a49fb864b413c473d",
-                "reference": "e1a977eddfde71b40f5fcf0a49fb864b413c473d",
+                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/bd100ab1868e69c744bd9b673656b922e34c6fed",
+                "reference": "bd100ab1868e69c744bd9b673656b922e34c6fed",
                 "shasum": ""
             },
             "require": {
@@ -1424,7 +1424,7 @@
                 "issues": "https://github.com/helsingborg-stad/component-library/issues",
                 "source": "https://github.com/helsingborg-stad/component-library/tree/master"
             },
-            "time": "2021-02-10T13:01:59+00:00"
+            "time": "2021-02-11T14:57:23+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
@@ -1805,12 +1805,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "e835a638ee3ec0eb1c542d30c075540716200800"
+                "reference": "47bafb4c5ea492eee8b3592bed030c267e8057f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/e835a638ee3ec0eb1c542d30c075540716200800",
-                "reference": "e835a638ee3ec0eb1c542d30c075540716200800",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/47bafb4c5ea492eee8b3592bed030c267e8057f1",
+                "reference": "47bafb4c5ea492eee8b3592bed030c267e8057f1",
                 "shasum": ""
             },
             "require": {
@@ -1865,7 +1865,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-02-11T08:38:18+00:00"
+            "time": "2021-02-11T15:32:52+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2087,12 +2087,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "68cc074e14c8f23c9f49e6fe85d56898bccae5ab"
+                "reference": "531d1a0f21e8ac7e3906bd7da8af092dd95655c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/68cc074e14c8f23c9f49e6fe85d56898bccae5ab",
-                "reference": "68cc074e14c8f23c9f49e6fe85d56898bccae5ab",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/531d1a0f21e8ac7e3906bd7da8af092dd95655c7",
+                "reference": "531d1a0f21e8ac7e3906bd7da8af092dd95655c7",
                 "shasum": ""
             },
             "require": {
@@ -2145,7 +2145,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-02-04T12:24:36+00:00"
+            "time": "2021-02-11T15:04:09+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -4149,15 +4149,15 @@
         },
         {
             "name": "wpackagist-plugin/cookies-and-content-security-policy",
-            "version": "1.76",
+            "version": "1.77",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookies-and-content-security-policy/",
-                "reference": "tags/1.76"
+                "reference": "tags/1.77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.76.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.77.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -4221,15 +4221,15 @@
         },
         {
             "name": "wpackagist-plugin/stream",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/stream/",
-                "reference": "tags/3.6.0"
+                "reference": "tags/3.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stream.3.6.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/stream.3.6.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
