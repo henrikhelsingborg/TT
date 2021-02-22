@@ -1717,12 +1717,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-form-builder.git",
-                "reference": "95f27ee7ed3ed63137e2ac6edb820de078156fd6"
+                "reference": "c05f45b1ad86fba6e5cbe6369fb1b37c3cf07232"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/95f27ee7ed3ed63137e2ac6edb820de078156fd6",
-                "reference": "95f27ee7ed3ed63137e2ac6edb820de078156fd6",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-form-builder/zipball/c05f45b1ad86fba6e5cbe6369fb1b37c3cf07232",
+                "reference": "c05f45b1ad86fba6e5cbe6369fb1b37c3cf07232",
                 "shasum": ""
             },
             "require": {
@@ -1750,7 +1750,7 @@
                     "email": "jonatan.hanson@hiq.se"
                 }
             ],
-            "time": "2021-02-22T08:46:18+00:00"
+            "time": "2021-02-22T09:57:11+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-guides",
