@@ -1884,12 +1884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "b890f81ae6cdb64ffbb447dd6c904b8c7ee18d04"
+                "reference": "84f0a53e7f110f3c5f61308560de0b058b36a9eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/b890f81ae6cdb64ffbb447dd6c904b8c7ee18d04",
-                "reference": "b890f81ae6cdb64ffbb447dd6c904b8c7ee18d04",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/84f0a53e7f110f3c5f61308560de0b058b36a9eb",
+                "reference": "84f0a53e7f110f3c5f61308560de0b058b36a9eb",
                 "shasum": ""
             },
             "require": {
@@ -1905,7 +1905,6 @@
                 "illuminate/filesystem": "^5.8.36",
                 "illuminate/support": "^5.8.36",
                 "illuminate/view": "^5.8.36",
-                "mcguffin/acf-customizer": "dev-master",
                 "nesbot/carbon": "^2.34.0",
                 "pragmarx/ia-arr": "^7.3",
                 "psr/container": "^1.0.0",
@@ -1941,7 +1940,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2021-03-09T09:37:45+00:00"
+            "time": "2021-03-09T14:42:46+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -2575,50 +2574,6 @@
                 "wordpress"
             ],
             "time": "2020-04-16T21:44:57+00:00"
-        },
-        {
-            "name": "mcguffin/acf-customizer",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mcguffin/acf-customizer.git",
-                "reference": "edc1cfc87c0f88cbce0c1e934f902490b2208295"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mcguffin/acf-customizer/zipball/edc1cfc87c0f88cbce0c1e934f902490b2208295",
-                "reference": "edc1cfc87c0f88cbce0c1e934f902490b2208295",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.2",
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "pheromone/phpcs-security-audit": "*",
-                "phpcompatibility/php-compatibility": "*",
-                "squizlabs/php_codesniffer": "*",
-                "wp-coding-standards/wpcs": "*"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Jörn Lund"
-                }
-            ],
-            "description": "Use ACF Fields in customizer.",
-            "homepage": "https://github.com/mcguffin/acf-customizer",
-            "keywords": [
-                "Repeater",
-                "acf",
-                "plugin",
-                "wordpress"
-            ],
-            "time": "2021-03-03T09:23:31+00:00"
         },
         {
             "name": "monolog/monolog",
