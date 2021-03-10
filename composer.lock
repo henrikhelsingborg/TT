@@ -1265,12 +1265,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/component-library.git",
-                "reference": "bb3ecd9faa2cbca89eee276084a583a2afdd4278"
+                "reference": "6e76908885e377b3ed0de6d2799379a00f2cd4c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/bb3ecd9faa2cbca89eee276084a583a2afdd4278",
-                "reference": "bb3ecd9faa2cbca89eee276084a583a2afdd4278",
+                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/6e76908885e377b3ed0de6d2799379a00f2cd4c5",
+                "reference": "6e76908885e377b3ed0de6d2799379a00f2cd4c5",
                 "shasum": ""
             },
             "require": {
@@ -1284,7 +1284,7 @@
                     "email": "eric.rosenborg@hiq.se"
                 }
             ],
-            "time": "2021-03-08T10:47:15+00:00"
+            "time": "2021-03-10T09:36:30+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
@@ -1884,12 +1884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "84f0a53e7f110f3c5f61308560de0b058b36a9eb"
+                "reference": "67430e5f89b84c08651c838e7bc68b541d998444"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/84f0a53e7f110f3c5f61308560de0b058b36a9eb",
-                "reference": "84f0a53e7f110f3c5f61308560de0b058b36a9eb",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/67430e5f89b84c08651c838e7bc68b541d998444",
+                "reference": "67430e5f89b84c08651c838e7bc68b541d998444",
                 "shasum": ""
             },
             "require": {
@@ -1940,7 +1940,7 @@
                 }
             ],
             "description": "A bootstrap theme for creating municipality sites.",
-            "time": "2021-03-09T14:42:46+00:00"
+            "time": "2021-03-10T09:01:49+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -2447,20 +2447,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.6.2",
+            "version": "5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "784b3440c9a11c3b65b988cc441db332ab0e6c49"
+                "reference": "22ea3c6aa631e296c528f58a67371fb2a5e674f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/784b3440c9a11c3b65b988cc441db332ab0e6c49",
-                "reference": "784b3440c9a11c3b65b988cc441db332ab0e6c49",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/22ea3c6aa631e296c528f58a67371fb2a5e674f2",
+                "reference": "22ea3c6aa631e296c528f58a67371fb2a5e674f2",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.6.2",
+                "johnpbloch/wordpress-core": "5.7.0",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=5.6.20"
             },
@@ -2482,20 +2482,20 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2021-02-22T15:30:37+00:00"
+            "time": "2021-03-09T20:32:28+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.6.2",
+            "version": "5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "e48e723c0d7e38c5580631e6ffea29a4388c5dd0"
+                "reference": "8b057056692ca196aaa7a7ddd915f29426922c6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/e48e723c0d7e38c5580631e6ffea29a4388c5dd0",
-                "reference": "e48e723c0d7e38c5580631e6ffea29a4388c5dd0",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/8b057056692ca196aaa7a7ddd915f29426922c6d",
+                "reference": "8b057056692ca196aaa7a7ddd915f29426922c6d",
                 "shasum": ""
             },
             "require": {
@@ -2503,7 +2503,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.6.2"
+                "wordpress/core-implementation": "5.7.0"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -2523,7 +2523,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2021-02-22T15:30:31+00:00"
+            "time": "2021-03-09T20:32:23+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
