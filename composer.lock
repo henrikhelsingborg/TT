@@ -1874,12 +1874,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-contact-banner.git",
-                "reference": "3ac4a702a279484766a1782d2537977d0d967325"
+                "reference": "d8a3c8b3999f04742bee6a52c32f8e68a2c4a7fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/3ac4a702a279484766a1782d2537977d0d967325",
-                "reference": "3ac4a702a279484766a1782d2537977d0d967325",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/d8a3c8b3999f04742bee6a52c32f8e68a2c4a7fb",
+                "reference": "d8a3c8b3999f04742bee6a52c32f8e68a2c4a7fb",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
