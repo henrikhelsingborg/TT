@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f55ae74eff8f9ee2a47d8e893cabdeec",
+    "content-hash": "14cb4774ae51e31c801ae321a44ab5ba",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1694,12 +1694,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "f85246cc607b811ef875a9cfafc9eedd82cd236f"
+                "reference": "9a86750dc8e31a610f545ed153bef8027f92ff78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/f85246cc607b811ef875a9cfafc9eedd82cd236f",
-                "reference": "f85246cc607b811ef875a9cfafc9eedd82cd236f",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/9a86750dc8e31a610f545ed153bef8027f92ff78",
+                "reference": "9a86750dc8e31a610f545ed153bef8027f92ff78",
                 "shasum": ""
             },
             "require": {
@@ -1734,7 +1734,7 @@
                 "issues": "https://github.com/helsingborg-stad/job-listings/issues",
                 "source": "https://github.com/helsingborg-stad/job-listings/tree/3.0/develop"
             },
-            "time": "2021-02-22T12:43:50+00:00"
+            "time": "2021-03-23T07:59:54+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1806,12 +1806,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "05493a8b32de72911119eee607ca544315087e01"
+                "reference": "9b8b142818df752ebb35aeb54bf96e692ca140f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/05493a8b32de72911119eee607ca544315087e01",
-                "reference": "05493a8b32de72911119eee607ca544315087e01",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/9b8b142818df752ebb35aeb54bf96e692ca140f4",
+                "reference": "9b8b142818df752ebb35aeb54bf96e692ca140f4",
                 "shasum": ""
             },
             "require": {
@@ -1866,7 +1866,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-03-19T12:38:19+00:00"
+            "time": "2021-03-23T09:33:31+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2092,12 +2092,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "c62b462c840d46da9245ba2d509cc6badeefee21"
+                "reference": "487d18fc5721c6faeaeb1f766d57a52b0149812d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/c62b462c840d46da9245ba2d509cc6badeefee21",
-                "reference": "c62b462c840d46da9245ba2d509cc6badeefee21",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/487d18fc5721c6faeaeb1f766d57a52b0149812d",
+                "reference": "487d18fc5721c6faeaeb1f766d57a52b0149812d",
                 "shasum": ""
             },
             "require": {
@@ -2152,7 +2152,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-03-22T09:00:25+00:00"
+            "time": "2021-03-23T09:22:12+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
