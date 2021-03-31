@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14cb4774ae51e31c801ae321a44ab5ba",
+    "content-hash": "017a0f41d9dea269298bd06d12fc30a0",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -4589,6 +4589,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-nested-pages/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-piwik",
+            "version": "1.0.24",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-piwik/",
+                "reference": "tags/1.0.24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-piwik.1.0.24.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-piwik/"
         }
     ],
     "packages-dev": [],
