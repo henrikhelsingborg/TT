@@ -1694,12 +1694,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "9a86750dc8e31a610f545ed153bef8027f92ff78"
+                "reference": "aedf827a5e1db2104ef10581fbe8d0aa3c9995ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/9a86750dc8e31a610f545ed153bef8027f92ff78",
-                "reference": "9a86750dc8e31a610f545ed153bef8027f92ff78",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/aedf827a5e1db2104ef10581fbe8d0aa3c9995ed",
+                "reference": "aedf827a5e1db2104ef10581fbe8d0aa3c9995ed",
                 "shasum": ""
             },
             "require": {
@@ -1734,7 +1734,7 @@
                 "issues": "https://github.com/helsingborg-stad/job-listings/issues",
                 "source": "https://github.com/helsingborg-stad/job-listings/tree/3.0/develop"
             },
-            "time": "2021-03-23T07:59:54+00:00"
+            "time": "2021-03-31T07:36:38+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -2092,12 +2092,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "895ee9b8c8dca3226debdefd53b5162ac769c606"
+                "reference": "e749806a12f4f99a4bcdf61119f68cbf1a94cd29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/895ee9b8c8dca3226debdefd53b5162ac769c606",
-                "reference": "895ee9b8c8dca3226debdefd53b5162ac769c606",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/e749806a12f4f99a4bcdf61119f68cbf1a94cd29",
+                "reference": "e749806a12f4f99a4bcdf61119f68cbf1a94cd29",
                 "shasum": ""
             },
             "require": {
@@ -2152,7 +2152,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-03-30T07:29:33+00:00"
+            "time": "2021-03-31T13:33:38+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
