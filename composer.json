@@ -75,7 +75,6 @@
         "helsingborg-stad/modularity-form-builder": "dev-3.0/develop",
         "helsingborg-stad/wp-page-for-post-type": ">=1.0.0",
         "helsingborg-stad/api-alarm-integration": "dev-3.0/develop",
-        "helsingborg-stad/google-analythics": "1.0.7",
         "helsingborg-stad/modularity-guides": "dev-3.0/develop",
         "helsingborg-stad/modularity-timeline": ">=1.1.4",
         "helsingborg-stad/modularity-json-render": "dev-3.0/develop",
