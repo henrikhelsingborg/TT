@@ -81,68 +81,6 @@
             "time": "2021-04-07T16:50:58+00:00"
         },
         {
-            "name": "aristath/kirki",
-            "version": "v3.0.34",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aristath/kirki.git",
-                "reference": "8fb938f34e8093cbfa887ca9349898dd5a9084af"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aristath/kirki/zipball/8fb938f34e8093cbfa887ca9349898dd5a9084af",
-                "reference": "8fb938f34e8093cbfa887ca9349898dd5a9084af",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2"
-            },
-            "require-dev": {
-                "codacy/coverage": "dev-master",
-                "composer/installers": "*",
-                "dealerdirect/phpcodesniffer-composer-installer": "*",
-                "php-coveralls/php-coveralls": "^2.0",
-                "phpcompatibility/phpcompatibility-wp": "*",
-                "phpunit/phpunit": "*",
-                "wp-coding-standards/wpcs": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "kirki.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "aristath",
-                    "email": "aristath@gmail.com",
-                    "homepage": "https://aristath.github.io",
-                    "role": "Developer"
-                },
-                {
-                    "name": "fovoc",
-                    "email": "kalliris.d@gmail.com",
-                    "homepage": "https://github.com/fovoc",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Extending the WordPress customizer",
-            "homepage": "https://aristath.github.io/kirki",
-            "keywords": [
-                "customizer",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/aristath/kirki/issues",
-                "source": "https://github.com/aristath/kirki/tree/develop"
-            },
-            "time": "2018-09-14T19:07:16+00:00"
-        },
-        {
             "name": "benjamincrozat/blade",
             "version": "2.0.1",
             "source": {
@@ -605,7 +543,7 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.167.0",
+            "version": "v0.168.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
@@ -640,7 +578,7 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.167.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.168.0"
             },
             "time": "2021-03-22T11:26:04+00:00"
         },
@@ -1400,12 +1338,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/component-library.git",
-                "reference": "fae716627a28b57754f2c13518aa04e790119bc5"
+                "reference": "be9b40457a10633bd02d38355d27f7dcbce982eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/fae716627a28b57754f2c13518aa04e790119bc5",
-                "reference": "fae716627a28b57754f2c13518aa04e790119bc5",
+                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/be9b40457a10633bd02d38355d27f7dcbce982eb",
+                "reference": "be9b40457a10633bd02d38355d27f7dcbce982eb",
                 "shasum": ""
             },
             "require": {
@@ -1424,7 +1362,7 @@
                 "issues": "https://github.com/helsingborg-stad/component-library/issues",
                 "source": "https://github.com/helsingborg-stad/component-library/tree/master"
             },
-            "time": "2021-04-06T06:41:00+00:00"
+            "time": "2021-04-12T12:10:31+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
@@ -1771,16 +1709,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "f4de2cfb6c0c824e4163cdfe0c9cb3a653887206"
+                "reference": "c9ed061b1764c9504587449e5cd65245cb59336a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/f4de2cfb6c0c824e4163cdfe0c9cb3a653887206",
-                "reference": "f4de2cfb6c0c824e4163cdfe0c9cb3a653887206",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/c9ed061b1764c9504587449e5cd65245cb59336a",
+                "reference": "c9ed061b1764c9504587449e5cd65245cb59336a",
                 "shasum": ""
             },
             "require": {
-                "aristath/kirki": "3.0.34",
                 "composer/installers": "~1.0",
                 "doctrine/inflector": "^1.4.1",
                 "helsingborg-stad/acf-export-manager": ">=1.0.0",
@@ -1831,7 +1768,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-03-25T08:14:44+00:00"
+            "time": "2021-04-12T08:52:45+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2057,12 +1994,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "21c69fd65a404add028f9e79870224b35d40eb95"
+                "reference": "ad0e070989aaa3fc9c00541888adf4d601d92975"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/21c69fd65a404add028f9e79870224b35d40eb95",
-                "reference": "21c69fd65a404add028f9e79870224b35d40eb95",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/ad0e070989aaa3fc9c00541888adf4d601d92975",
+                "reference": "ad0e070989aaa3fc9c00541888adf4d601d92975",
                 "shasum": ""
             },
             "require": {
@@ -2117,7 +2054,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-04-08T06:50:44+00:00"
+            "time": "2021-04-12T09:22:49+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
