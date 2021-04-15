@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a6437ce06331bd1fa062bb02d3e8811a",
+    "content-hash": "f8875421596059f29f0e17e61e0d028f",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1338,12 +1338,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/component-library.git",
-                "reference": "be9b40457a10633bd02d38355d27f7dcbce982eb"
+                "reference": "c626cfa4fab83ba7baf7c060d3bc773244ec107d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/be9b40457a10633bd02d38355d27f7dcbce982eb",
-                "reference": "be9b40457a10633bd02d38355d27f7dcbce982eb",
+                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/c626cfa4fab83ba7baf7c060d3bc773244ec107d",
+                "reference": "c626cfa4fab83ba7baf7c060d3bc773244ec107d",
                 "shasum": ""
             },
             "require": {
@@ -1362,7 +1362,7 @@
                 "issues": "https://github.com/helsingborg-stad/component-library/issues",
                 "source": "https://github.com/helsingborg-stad/component-library/tree/master"
             },
-            "time": "2021-04-12T12:10:31+00:00"
+            "time": "2021-04-13T09:21:47+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
@@ -1709,12 +1709,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "c9ed061b1764c9504587449e5cd65245cb59336a"
+                "reference": "7194964eb527bd52b67786d3711eeb44636060b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/c9ed061b1764c9504587449e5cd65245cb59336a",
-                "reference": "c9ed061b1764c9504587449e5cd65245cb59336a",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/7194964eb527bd52b67786d3711eeb44636060b4",
+                "reference": "7194964eb527bd52b67786d3711eeb44636060b4",
                 "shasum": ""
             },
             "require": {
@@ -1768,7 +1768,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-04-12T08:52:45+00:00"
+            "time": "2021-04-13T09:21:30+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -1800,7 +1800,7 @@
                 "issues": "https://github.com/helsingborg-stad/modularity-contact-banner/issues",
                 "source": "https://github.com/helsingborg-stad/modularity-contact-banner/tree/3.0/develop"
             },
-            "time": "2021-03-19T12:38:08+00:00"
+            "time": "2021-04-15T07:38:19+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
@@ -1994,12 +1994,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "ad0e070989aaa3fc9c00541888adf4d601d92975"
+                "reference": "dd2381a4de7b2a0163cd6167f53aee02db14e89e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/ad0e070989aaa3fc9c00541888adf4d601d92975",
-                "reference": "ad0e070989aaa3fc9c00541888adf4d601d92975",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/dd2381a4de7b2a0163cd6167f53aee02db14e89e",
+                "reference": "dd2381a4de7b2a0163cd6167f53aee02db14e89e",
                 "shasum": ""
             },
             "require": {
@@ -2054,7 +2054,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-04-12T09:22:49+00:00"
+            "time": "2021-04-14T18:35:19+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -2614,20 +2614,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.7.0",
+            "version": "5.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "22ea3c6aa631e296c528f58a67371fb2a5e674f2"
+                "reference": "921c59df22d69339d1a8135b9463791b8431b007"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/22ea3c6aa631e296c528f58a67371fb2a5e674f2",
-                "reference": "22ea3c6aa631e296c528f58a67371fb2a5e674f2",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/921c59df22d69339d1a8135b9463791b8431b007",
+                "reference": "921c59df22d69339d1a8135b9463791b8431b007",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.7.0",
+                "johnpbloch/wordpress-core": "5.7.1",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=5.6.20"
             },
@@ -2656,20 +2656,20 @@
                 "source": "http://core.trac.wordpress.org/browser",
                 "wiki": "http://codex.wordpress.org/"
             },
-            "time": "2021-03-09T20:32:28+00:00"
+            "time": "2021-04-15T02:15:53+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.7.0",
+            "version": "5.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "8b057056692ca196aaa7a7ddd915f29426922c6d"
+                "reference": "4d368c02f3e842b446c867589656382f95c6ac58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/8b057056692ca196aaa7a7ddd915f29426922c6d",
-                "reference": "8b057056692ca196aaa7a7ddd915f29426922c6d",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/4d368c02f3e842b446c867589656382f95c6ac58",
+                "reference": "4d368c02f3e842b446c867589656382f95c6ac58",
                 "shasum": ""
             },
             "require": {
@@ -2677,7 +2677,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.7.0"
+                "wordpress/core-implementation": "5.7.1"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -2704,7 +2704,7 @@
                 "source": "https://core.trac.wordpress.org/browser",
                 "wiki": "https://codex.wordpress.org/"
             },
-            "time": "2021-03-09T20:32:23+00:00"
+            "time": "2021-04-15T02:15:49+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -4350,15 +4350,15 @@
         },
         {
             "name": "wpackagist-plugin/redis-cache",
-            "version": "2.0.15",
+            "version": "2.0.18",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redis-cache/",
-                "reference": "tags/2.0.15"
+                "reference": "tags/2.0.18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.2.0.15.zip"
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.2.0.18.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
