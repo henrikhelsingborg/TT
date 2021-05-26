@@ -17,7 +17,7 @@ class RedirectSubdomainWWW
     public function __construct()
     {
         if (!defined('WP_CLI')) {
-            add_action('muplugins_loaded', array($this, 'redirect'), 1);
+            $this->redirect();
         }
     }
     /**
