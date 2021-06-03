@@ -1778,12 +1778,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-contact-banner.git",
-                "reference": "b3448ac5b446f47cce7f9221f8cd21f53c4ecb59"
+                "reference": "f9a51db909f552d517cded1640227e226bad07d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/b3448ac5b446f47cce7f9221f8cd21f53c4ecb59",
-                "reference": "b3448ac5b446f47cce7f9221f8cd21f53c4ecb59",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-contact-banner/zipball/f9a51db909f552d517cded1640227e226bad07d1",
+                "reference": "f9a51db909f552d517cded1640227e226bad07d1",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1802,7 +1802,7 @@
                 "issues": "https://github.com/helsingborg-stad/modularity-contact-banner/issues",
                 "source": "https://github.com/helsingborg-stad/modularity-contact-banner/tree/3.0/develop"
             },
-            "time": "2021-06-03T14:34:44+00:00"
+            "time": "2021-06-03T15:14:13+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-form-builder",
