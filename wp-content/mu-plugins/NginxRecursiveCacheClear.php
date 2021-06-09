@@ -36,8 +36,8 @@ class NginxRecursiveCacheClear
 
             // Command to grep for key in cache files.
             $command = 'find ' . RT_WP_NGINX_HELPER_CACHE_PATH . ' -type f | ' .
-                        'xargs --no-run-if-empty -n1000 grep -El -m 1 ' .
-                        '"^KEY: ' . $cacheKey . '"';
+                       'xargs --no-run-if-empty -n1000 grep -El -m 1 ' .
+                       '"^KEY: ' . $cacheKey . '"';
 
             // Get recursive files and nuke em!
             $cacheFiles = [];
