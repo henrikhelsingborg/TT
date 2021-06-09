@@ -21,6 +21,7 @@ class NginxRecursiveCacheClear
             add_filter('rt_nginx_helper_purge_url', [$this, 'recursiveCacheClear'], 10, 1);
         }
     }
+
     /**
      * Cache clear recursive based on url.
      * @param string $url Url sent in filter.
