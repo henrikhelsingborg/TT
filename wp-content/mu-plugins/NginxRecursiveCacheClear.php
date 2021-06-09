@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Nginx Helper Cache Clear Recursive
-Description: Hooks into Nginx Helper plugin after url purge to clear recursive urls like query string etc.
+Description: Hooks into Nginx Helper plugin when url purge to clear recursive urls like query string etc.
 Version:     1.0
 Author:      Joel Bernerman, Helsingborg Stad
 */
@@ -23,6 +23,7 @@ class NginxRecursiveCacheClear
     }
     /**
      * Cache clear recursive based on url.
+     * @param string $url Url sent in filter.
      *
      * @return string $url Return url untouched.
      */
