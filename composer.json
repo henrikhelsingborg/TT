@@ -78,7 +78,6 @@
         "helsingborg-stad/modularity-guides": "dev-3.0/develop",
         "helsingborg-stad/modularity-timeline": ">=1.1.4",
         "helsingborg-stad/modularity-json-render": "dev-3.0/develop",
-        "wpackagist-plugin/varnish-http-purge": "^4.1.1",
         "wpackagist-plugin/stream": "^3.0.4",
         "wpackagist-plugin/wp-nested-pages": "3.1.4",
         "wpackagist-plugin/mce-table-buttons": "^3.0.0",
