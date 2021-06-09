@@ -43,7 +43,9 @@ class NginxRecursiveCacheClear
             $cacheFiles = [];
             exec($command, $cacheFiles);
             foreach ($cacheFiles as $cacheFile) {
-                unlink($cacheFile);
+                if (file_exists($cacheFile)) {
+                    unlink($cacheFile);
+                }
             }
         }
         return $url;
