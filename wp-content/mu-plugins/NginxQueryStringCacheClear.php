@@ -1,15 +1,15 @@
 <?php
 
 /*
-Plugin Name: Nginx Helper Cache Clear Recursive
-Description: Hooks into Nginx Helper plugin when url purge to clear recursive urls like query string etc.
+Plugin Name: Nginx Helper Query String Cache Clear
+Description: Hooks into Nginx Helper plugin when url purge to also clear cached versions with query strings.
 Version:     1.0
 Author:      Joel Bernerman, Helsingborg Stad
 */
 
-namespace NginxRecursiveCacheClear;
+namespace NginxQueryStringCacheClear;
 
-class NginxRecursiveCacheClear
+class NginxQueryStringCacheClear
 {
     /**
      * Constructor.
@@ -18,23 +18,23 @@ class NginxRecursiveCacheClear
     {
         // Nginx helper wp cli command clears entire cache folder and will not be any use here.
         if (!defined('WP_CLI') && defined('RT_WP_NGINX_HELPER_CACHE_PATH')) {
-            add_filter('rt_nginx_helper_purge_url', [$this, 'recursiveCacheClear'], 10, 1);
+            add_filter('rt_nginx_helper_purge_url', [$this, 'queryStringCacheClear'], 10, 1);
         }
     }
 
     /**
-     * Cache clear recursive based on url.
+     * Cache clear query string versions based on url.
      * @param string $url Url sent in filter.
      *
      * @return string $url Return url untouched.
      */
-    public function recursiveCacheClear($url)
+    public function queryStringCacheClear($url)
     {
         // Skip home url so we dont purge everything all the time.
         if ($url !== get_home_url() . '/') {
             // Build the cache key and add wildcard * in the end.
             $urlData = wp_parse_url($url);
-            $cacheKey = $urlData['scheme'] . 'GET' . $urlData['host'] . $urlData['path'] . '.*';
+            $cacheKey = $urlData['scheme'] . 'GET' . $urlData['host'] . $urlData['path'] . '\?.*';
 
             // Command to grep for key in cache files.
             $command = 'find ' . RT_WP_NGINX_HELPER_CACHE_PATH . ' -type f | ' .
@@ -54,4 +54,4 @@ class NginxRecursiveCacheClear
     }
 }
 
-new \NginxRecursiveCacheClear\NginxRecursiveCacheClear();
+new \NginxQueryStringCacheClear\NginxQueryStringCacheClear();
