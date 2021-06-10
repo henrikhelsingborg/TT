@@ -16,8 +16,8 @@ class NginxQueryStringCacheClear
      */
     public function __construct()
     {
-        // Nginx helper wp cli command clears entire cache folder and will not be any use here.
-        if (!defined('WP_CLI') && defined('RT_WP_NGINX_HELPER_CACHE_PATH')) {
+        // Only run if nginx helper local file delete constant is set.
+        if (defined('RT_WP_NGINX_HELPER_CACHE_PATH')) {
             add_filter('rt_nginx_helper_purge_url', [$this, 'queryStringCacheClear'], 10, 1);
         }
     }
