@@ -1996,12 +1996,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "72a6a3f4889f2cccb7e015f71bef1e5228720742"
+                "reference": "fe13a490d5ade7faacb035905eef010119721de7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/72a6a3f4889f2cccb7e015f71bef1e5228720742",
-                "reference": "72a6a3f4889f2cccb7e015f71bef1e5228720742",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/fe13a490d5ade7faacb035905eef010119721de7",
+                "reference": "fe13a490d5ade7faacb035905eef010119721de7",
                 "shasum": ""
             },
             "require": {
@@ -2056,7 +2056,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-06-16T09:49:19+00:00"
+            "time": "2021-06-17T06:45:40+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
