@@ -1711,12 +1711,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "594240f8518ec98cd389cd46f25d18cec6529e84"
+                "reference": "83ddf887f5b5d072bd2b56a472d148c8837631b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/594240f8518ec98cd389cd46f25d18cec6529e84",
-                "reference": "594240f8518ec98cd389cd46f25d18cec6529e84",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/83ddf887f5b5d072bd2b56a472d148c8837631b0",
+                "reference": "83ddf887f5b5d072bd2b56a472d148c8837631b0",
                 "shasum": ""
             },
             "require": {
@@ -1770,7 +1770,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-06-15T11:36:00+00:00"
+            "time": "2021-06-17T08:02:17+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -4298,15 +4298,15 @@
         },
         {
             "name": "wpackagist-plugin/cookies-and-content-security-policy",
-            "version": "1.87",
+            "version": "1.88",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookies-and-content-security-policy/",
-                "reference": "tags/1.87"
+                "reference": "tags/1.88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.87.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookies-and-content-security-policy.1.88.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
