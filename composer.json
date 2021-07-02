@@ -34,58 +34,6 @@
         {
             "type":"composer",
             "url":"https://wpackagist.org"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:helsingborg-stad/Municipio.git"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "acf-field/focus-point",
-                "version": "1.1.8",
-                "source": {
-                    "url": "https://github.com/ooksanen/acf-focuspoint",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "acf-field/table",
-                "version": "1.0.0",
-                "source": {
-                    "url": "https://github.com/johannheyne/advanced-custom-fields-table-field",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "acf-field/post-type-select",
-                "version": "1.0.0",
-                "source": {
-                    "url": "https://github.com/Clark-Nikdel-Powell/Post-Type-Select-for-ACF",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "acf-field/website",
-                "version": "2.1.0",
-                "source": {
-                    "url": "https://github.com/Jeradin/acf-website-field",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
         }
     ],
 
