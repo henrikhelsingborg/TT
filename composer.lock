@@ -580,16 +580,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.205.0",
+            "version": "v0.208.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "75ff6a81838493bb9b5aad0458ebd4226e0c0557"
+                "reference": "77fdacfc99f582970dcb3c41233158b02cc4ba5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/75ff6a81838493bb9b5aad0458ebd4226e0c0557",
-                "reference": "75ff6a81838493bb9b5aad0458ebd4226e0c0557",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/77fdacfc99f582970dcb3c41233158b02cc4ba5e",
+                "reference": "77fdacfc99f582970dcb3c41233158b02cc4ba5e",
                 "shasum": ""
             },
             "require": {
@@ -618,9 +618,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.205.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.208.0"
             },
-            "time": "2021-07-24T11:20:23+00:00"
+            "time": "2021-08-15T11:18:25+00:00"
         },
         {
             "name": "google/auth",
@@ -1637,12 +1637,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "ae97caffa5033504f528498f076e4ac0c8c715e7"
+                "reference": "ed2e693f76dd0f0778960ee38cdaf61eb5156dcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/ae97caffa5033504f528498f076e4ac0c8c715e7",
-                "reference": "ae97caffa5033504f528498f076e4ac0c8c715e7",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/ed2e693f76dd0f0778960ee38cdaf61eb5156dcb",
+                "reference": "ed2e693f76dd0f0778960ee38cdaf61eb5156dcb",
                 "shasum": ""
             },
             "require": {
@@ -1677,7 +1677,7 @@
                 "issues": "https://github.com/helsingborg-stad/job-listings/issues",
                 "source": "https://github.com/helsingborg-stad/job-listings/tree/3.0/develop"
             },
-            "time": "2021-07-30T11:51:44+00:00"
+            "time": "2021-08-16T09:02:30+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
@@ -1749,12 +1749,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "02f3869db74c863b1d1d90b390ed2a6c627d4a95"
+                "reference": "4c20fee093e2dbb97489ec991ab387534d2bc214"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/02f3869db74c863b1d1d90b390ed2a6c627d4a95",
-                "reference": "02f3869db74c863b1d1d90b390ed2a6c627d4a95",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/4c20fee093e2dbb97489ec991ab387534d2bc214",
+                "reference": "4c20fee093e2dbb97489ec991ab387534d2bc214",
                 "shasum": ""
             },
             "require": {
@@ -1812,7 +1812,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-07-28T11:25:21+00:00"
+            "time": "2021-08-16T07:49:59+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2038,12 +2038,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "8a53424168eda98f4445c48747a5a7d1c526b0df"
+                "reference": "15b5cc4501e67fd303addc685c080cf2ff513d82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/8a53424168eda98f4445c48747a5a7d1c526b0df",
-                "reference": "8a53424168eda98f4445c48747a5a7d1c526b0df",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/15b5cc4501e67fd303addc685c080cf2ff513d82",
+                "reference": "15b5cc4501e67fd303addc685c080cf2ff513d82",
                 "shasum": ""
             },
             "require": {
@@ -2099,7 +2099,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-07-07T09:12:36+00:00"
+            "time": "2021-08-16T08:22:10+00:00"
         },
         {
             "name": "helsingborg-stad/municipio-blue",
@@ -3192,16 +3192,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.32",
+            "version": "2.0.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "f5c4c19880d45d0be3e7d24ae8ac434844a898cd"
+                "reference": "fb53b7889497ec7c1362c94e61d8127ac67ea094"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/f5c4c19880d45d0be3e7d24ae8ac434844a898cd",
-                "reference": "f5c4c19880d45d0be3e7d24ae8ac434844a898cd",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/fb53b7889497ec7c1362c94e61d8127ac67ea094",
+                "reference": "fb53b7889497ec7c1362c94e61d8127ac67ea094",
                 "shasum": ""
             },
             "require": {
@@ -3281,7 +3281,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpseclib/phpseclib/issues",
-                "source": "https://github.com/phpseclib/phpseclib/tree/2.0.32"
+                "source": "https://github.com/phpseclib/phpseclib/tree/2.0.33"
             },
             "funding": [
                 {
@@ -3297,7 +3297,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-12T12:12:59+00:00"
+            "time": "2021-08-16T04:20:12+00:00"
         },
         {
             "name": "pragmarx/ia-arr",
