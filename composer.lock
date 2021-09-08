@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8af8f917740628896e4141d6b6b5afdc",
+    "content-hash": "04d27f0d11018cb0eac9c4b35939d5e3",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -627,16 +627,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.210.0",
+            "version": "v0.211.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "2be187c5c7c6b6325ddc99015ac6b00ebb8ec764"
+                "reference": "01b020d4d7f120a5ac3c12e1d7e3a6067bc93881"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/2be187c5c7c6b6325ddc99015ac6b00ebb8ec764",
-                "reference": "2be187c5c7c6b6325ddc99015ac6b00ebb8ec764",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/01b020d4d7f120a5ac3c12e1d7e3a6067bc93881",
+                "reference": "01b020d4d7f120a5ac3c12e1d7e3a6067bc93881",
                 "shasum": ""
             },
             "require": {
@@ -665,9 +665,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.210.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.211.0"
             },
-            "time": "2021-08-29T11:20:24+00:00"
+            "time": "2021-09-03T11:20:26+00:00"
         },
         {
             "name": "google/auth",
@@ -1424,12 +1424,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/component-library.git",
-                "reference": "b0ea12c2c11b004c5e8ad914a36138225b0b38b6"
+                "reference": "2df4d7914700de69c7d1a9554439fc8ee51907bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/b0ea12c2c11b004c5e8ad914a36138225b0b38b6",
-                "reference": "b0ea12c2c11b004c5e8ad914a36138225b0b38b6",
+                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/2df4d7914700de69c7d1a9554439fc8ee51907bf",
+                "reference": "2df4d7914700de69c7d1a9554439fc8ee51907bf",
                 "shasum": ""
             },
             "require": {
@@ -1448,7 +1448,7 @@
                 "issues": "https://github.com/helsingborg-stad/component-library/issues",
                 "source": "https://github.com/helsingborg-stad/component-library/tree/master"
             },
-            "time": "2021-09-02T11:37:33+00:00"
+            "time": "2021-09-06T08:19:49+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
@@ -1795,12 +1795,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "7dcd30b23b9ce1b2993a14afaba4c77c9583e9f0"
+                "reference": "1070a49331efb9c7f103b7635751e33404ae2ff0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/7dcd30b23b9ce1b2993a14afaba4c77c9583e9f0",
-                "reference": "7dcd30b23b9ce1b2993a14afaba4c77c9583e9f0",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/1070a49331efb9c7f103b7635751e33404ae2ff0",
+                "reference": "1070a49331efb9c7f103b7635751e33404ae2ff0",
                 "shasum": ""
             },
             "require": {
@@ -1860,7 +1860,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-09-02T12:40:57+00:00"
+            "time": "2021-09-07T07:43:07+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2086,12 +2086,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "3f4df0029481cdae5f26c2d2981d41351cb9a165"
+                "reference": "549425ae76e2ad192ade9d5e4b79e4c692ee7271"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/3f4df0029481cdae5f26c2d2981d41351cb9a165",
-                "reference": "3f4df0029481cdae5f26c2d2981d41351cb9a165",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/549425ae76e2ad192ade9d5e4b79e4c692ee7271",
+                "reference": "549425ae76e2ad192ade9d5e4b79e4c692ee7271",
                 "shasum": ""
             },
             "require": {
@@ -2147,40 +2147,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-09-03T07:44:36+00:00"
-        },
-        {
-            "name": "helsingborg-stad/municipio-blue",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/helsingborg-stad/municipio-blue.git",
-                "reference": "fe2a77fd7b171aa82a443063f91243b25bf219e0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/municipio-blue/zipball/fe2a77fd7b171aa82a443063f91243b25bf219e0",
-                "reference": "fe2a77fd7b171aa82a443063f91243b25bf219e0",
-                "shasum": ""
-            },
-            "default-branch": true,
-            "type": "wordpress-theme",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Thulin",
-                    "email": "sebastian.thulin@helsingborg.se"
-                }
-            ],
-            "description": "Blue version of the municipio theme",
-            "support": {
-                "issues": "https://github.com/helsingborg-stad/municipio-blue/issues",
-                "source": "https://github.com/helsingborg-stad/municipio-blue/tree/master"
-            },
-            "time": "2020-12-16T11:39:06+00:00"
+            "time": "2021-09-08T14:15:43+00:00"
         },
         {
             "name": "helsingborg-stad/recaptcha-integration",
@@ -3095,16 +3062,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.52.0",
+            "version": "2.53.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "369c0e2737c56a0f39c946dd261855255a6fccbe"
+                "reference": "f4655858a784988f880c1b8c7feabbf02dfdf045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/369c0e2737c56a0f39c946dd261855255a6fccbe",
-                "reference": "369c0e2737c56a0f39c946dd261855255a6fccbe",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/f4655858a784988f880c1b8c7feabbf02dfdf045",
+                "reference": "f4655858a784988f880c1b8c7feabbf02dfdf045",
                 "shasum": ""
             },
             "require": {
@@ -3116,7 +3083,7 @@
             },
             "require-dev": {
                 "doctrine/orm": "^2.7",
-                "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
+                "friendsofphp/php-cs-fixer": "^3.0",
                 "kylekatarnls/multi-tester": "^2.0",
                 "phpmd/phpmd": "^2.9",
                 "phpstan/extension-installer": "^1.0",
@@ -3185,7 +3152,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-14T19:10:52+00:00"
+            "time": "2021-09-06T09:29:23+00:00"
         },
         {
             "name": "ooksanen/acf-focuspoint",
@@ -4819,7 +4786,6 @@
         "helsingborg-stad/job-listings": 20,
         "helsingborg-stad/modularity-contact-banner": 20,
         "helsingborg-stad/algolia-index-js-searchpage-addon": 20,
-        "helsingborg-stad/municipio-blue": 20,
         "helsingborg-stad/component-library": 20
     },
     "prefer-stable": true,
