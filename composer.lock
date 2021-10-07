@@ -813,16 +813,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.4.1",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d"
+                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/8e7d04f1f6450fef59366c399cfad4b9383aa30d",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
+                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
                 "shasum": ""
             },
             "require": {
@@ -834,7 +834,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -851,9 +851,24 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
             "description": "Guzzle promises library",
@@ -862,9 +877,23 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/1.4.1"
+                "source": "https://github.com/guzzle/promises/tree/1.5.0"
             },
-            "time": "2021-03-07T09:25:29+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/promises",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-07T13:05:22+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -1192,12 +1221,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "23b2e205821d3fbfdbad29f1cb3ce9cfaa9297be"
+                "reference": "f5d64e651d085b2774a87536725c52b15a5da052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/23b2e205821d3fbfdbad29f1cb3ce9cfaa9297be",
-                "reference": "23b2e205821d3fbfdbad29f1cb3ce9cfaa9297be",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/f5d64e651d085b2774a87536725c52b15a5da052",
+                "reference": "f5d64e651d085b2774a87536725c52b15a5da052",
                 "shasum": ""
             },
             "require": {
@@ -1221,7 +1250,7 @@
                 "issues": "https://github.com/helsingborg-stad/api-event-manager-integration/issues",
                 "source": "https://github.com/helsingborg-stad/api-event-manager-integration/tree/3.0/develop"
             },
-            "time": "2021-09-29T08:25:41+00:00"
+            "time": "2021-10-07T13:21:23+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1425,12 +1454,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/component-library.git",
-                "reference": "9aedf947d69c268a282339fe6d74e92efcfc9127"
+                "reference": "d48dd064e6d4d17be479878edcbdd638dd973fdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/9aedf947d69c268a282339fe6d74e92efcfc9127",
-                "reference": "9aedf947d69c268a282339fe6d74e92efcfc9127",
+                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/d48dd064e6d4d17be479878edcbdd638dd973fdb",
+                "reference": "d48dd064e6d4d17be479878edcbdd638dd973fdb",
                 "shasum": ""
             },
             "require": {
@@ -1449,7 +1478,7 @@
                 "issues": "https://github.com/helsingborg-stad/component-library/issues",
                 "source": "https://github.com/helsingborg-stad/component-library/tree/master"
             },
-            "time": "2021-10-04T12:55:52+00:00"
+            "time": "2021-10-07T14:08:34+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
@@ -1796,12 +1825,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "6715e6f8b254590ae7b43a8e476bbe572e31994d"
+                "reference": "b64feafedb5dfa2d02e4374c15580315c82382b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/6715e6f8b254590ae7b43a8e476bbe572e31994d",
-                "reference": "6715e6f8b254590ae7b43a8e476bbe572e31994d",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/b64feafedb5dfa2d02e4374c15580315c82382b9",
+                "reference": "b64feafedb5dfa2d02e4374c15580315c82382b9",
                 "shasum": ""
             },
             "require": {
@@ -1861,7 +1890,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-10-05T12:03:58+00:00"
+            "time": "2021-10-07T14:08:26+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2087,12 +2116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "30e2c9cced1c0318ce5a5fcb5cfe6646d1c4a66c"
+                "reference": "0fcb3d9a0b248806f8cc21792ae6e2670d760898"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/30e2c9cced1c0318ce5a5fcb5cfe6646d1c4a66c",
-                "reference": "30e2c9cced1c0318ce5a5fcb5cfe6646d1c4a66c",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/0fcb3d9a0b248806f8cc21792ae6e2670d760898",
+                "reference": "0fcb3d9a0b248806f8cc21792ae6e2670d760898",
                 "shasum": ""
             },
             "require": {
@@ -2148,7 +2177,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-10-05T18:03:18+00:00"
+            "time": "2021-10-07T14:52:34+00:00"
         },
         {
             "name": "helsingborg-stad/recaptcha-integration",
