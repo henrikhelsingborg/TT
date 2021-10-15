@@ -76,8 +76,8 @@ class MaxPageDepth
       $parentId   = $object->post_parent;
       $depth      = 0;
       while($parentId > 0){
-          $page     = get_page($parentId);
-          $parentId = $page->post_parent;
+          $post     = get_post($parentId);
+          $parentId = $post->post_parent;
           $depth++;
       }
       return $depth;
