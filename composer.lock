@@ -1221,12 +1221,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/api-event-manager-integration.git",
-                "reference": "79f796f4af72d2304a64cb625b4519bc149de04e"
+                "reference": "77f41e46813743a1c56c5b3c2fa77d71dda89bd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/79f796f4af72d2304a64cb625b4519bc149de04e",
-                "reference": "79f796f4af72d2304a64cb625b4519bc149de04e",
+                "url": "https://api.github.com/repos/helsingborg-stad/api-event-manager-integration/zipball/77f41e46813743a1c56c5b3c2fa77d71dda89bd6",
+                "reference": "77f41e46813743a1c56c5b3c2fa77d71dda89bd6",
                 "shasum": ""
             },
             "require": {
@@ -1250,7 +1250,7 @@
                 "issues": "https://github.com/helsingborg-stad/api-event-manager-integration/issues",
                 "source": "https://github.com/helsingborg-stad/api-event-manager-integration/tree/3.0/develop"
             },
-            "time": "2021-10-19T08:23:35+00:00"
+            "time": "2021-10-20T06:43:53+00:00"
         },
         {
             "name": "helsingborg-stad/attachment-revisions",
@@ -1454,12 +1454,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/component-library.git",
-                "reference": "afc5c74b26e3b2c53ebb7c7536025b7856ee1619"
+                "reference": "22585cf26f903600f556eea366c2166d1a59b05c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/afc5c74b26e3b2c53ebb7c7536025b7856ee1619",
-                "reference": "afc5c74b26e3b2c53ebb7c7536025b7856ee1619",
+                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/22585cf26f903600f556eea366c2166d1a59b05c",
+                "reference": "22585cf26f903600f556eea366c2166d1a59b05c",
                 "shasum": ""
             },
             "require": {
@@ -1478,7 +1478,7 @@
                 "issues": "https://github.com/helsingborg-stad/component-library/issues",
                 "source": "https://github.com/helsingborg-stad/component-library/tree/master"
             },
-            "time": "2021-10-18T09:26:56+00:00"
+            "time": "2021-10-20T07:48:23+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
@@ -3842,16 +3842,16 @@
         },
         {
             "name": "shortpixel/shortpixel-php",
-            "version": "V1.7.3",
+            "version": "v1.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/short-pixel-optimizer/shortpixel-php.git",
-                "reference": "2b654571c203399c3db967318db23e82233f632d"
+                "reference": "47c0be1abad7c8fb5b7569de03f05fc6d2487a9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/short-pixel-optimizer/shortpixel-php/zipball/2b654571c203399c3db967318db23e82233f632d",
-                "reference": "2b654571c203399c3db967318db23e82233f632d",
+                "url": "https://api.github.com/repos/short-pixel-optimizer/shortpixel-php/zipball/47c0be1abad7c8fb5b7569de03f05fc6d2487a9d",
+                "reference": "47c0be1abad7c8fb5b7569de03f05fc6d2487a9d",
                 "shasum": ""
             },
             "require": {
@@ -3896,9 +3896,9 @@
             "support": {
                 "email": "support@shortpixel.com",
                 "issues": "https://github.com/short-pixel-optimizer/shortpixel-php/issues",
-                "source": "https://github.com/short-pixel-optimizer/shortpixel-php/tree/V1.7.3"
+                "source": "https://github.com/short-pixel-optimizer/shortpixel-php/tree/v1.8.4"
             },
-            "time": "2021-03-09T12:29:46+00:00"
+            "time": "2021-10-19T10:12:06+00:00"
         },
         {
             "name": "symfony/debug",
