@@ -1454,12 +1454,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/component-library.git",
-                "reference": "532ea873a253cb256fea43573fb00ee1760db07f"
+                "reference": "cf306973b51a2e80492a1b363fed168bcfa11e87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/532ea873a253cb256fea43573fb00ee1760db07f",
-                "reference": "532ea873a253cb256fea43573fb00ee1760db07f",
+                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/cf306973b51a2e80492a1b363fed168bcfa11e87",
+                "reference": "cf306973b51a2e80492a1b363fed168bcfa11e87",
                 "shasum": ""
             },
             "require": {
@@ -1476,9 +1476,9 @@
             ],
             "support": {
                 "issues": "https://github.com/helsingborg-stad/component-library/issues",
-                "source": "https://github.com/helsingborg-stad/component-library/tree/feature/refactor-form"
+                "source": "https://github.com/helsingborg-stad/component-library/tree/master"
             },
-            "time": "2021-11-30T11:52:08+00:00"
+            "time": "2021-12-01T14:09:14+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
