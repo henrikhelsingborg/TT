@@ -1476,7 +1476,7 @@
             ],
             "support": {
                 "issues": "https://github.com/helsingborg-stad/component-library/issues",
-                "source": "https://github.com/helsingborg-stad/component-library/tree/master"
+                "source": "https://github.com/helsingborg-stad/component-library/tree/feature/refactor-form"
             },
             "time": "2021-11-30T11:52:08+00:00"
         },
@@ -2116,12 +2116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "7fa3f997fcc1512b0c3b6b3d82f685610b522467"
+                "reference": "6efb7aff91bfdb2e728db37316a9137a59b417ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/7fa3f997fcc1512b0c3b6b3d82f685610b522467",
-                "reference": "7fa3f997fcc1512b0c3b6b3d82f685610b522467",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/6efb7aff91bfdb2e728db37316a9137a59b417ca",
+                "reference": "6efb7aff91bfdb2e728db37316a9137a59b417ca",
                 "shasum": ""
             },
             "require": {
@@ -2178,7 +2178,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-11-30T11:02:04+00:00"
+            "time": "2021-12-01T13:31:19+00:00"
         },
         {
             "name": "helsingborg-stad/recaptcha-integration",
