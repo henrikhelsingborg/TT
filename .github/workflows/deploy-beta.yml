@@ -20,5 +20,5 @@ jobs:
         deploy-host-backup-path: ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_BETA_HELSINGBORG_SE }}
         deploy-host-user: ${{ secrets.DEPLOY_REMOTE_USER }}
         deploy-host-user-key: ${{ secrets.DEPLOY_KEY }}
+        deploy-host-web-server-user: ${{ secrets.WEB_SERVER_USER }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        host-web-server-user: ${{ secrets.WEB_SERVER_USER }}
