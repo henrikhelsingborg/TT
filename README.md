@@ -25,7 +25,7 @@ The official repository for the site Helsingborg.se. Based on municipio theme an
 
 ## Fetching dependencies
 
-To build the current version of helsingborg.se run below command.
+To fetch the current version of helsingborg.se run below command.
 
 ```
 composer install
