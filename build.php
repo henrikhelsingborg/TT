@@ -31,7 +31,7 @@ $removables = [
     '.github',
     'build.php',
     'composer.json',
-    'composer.lock'
+    'composer.lock',
     'images'
 ];
 
