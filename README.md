@@ -20,25 +20,29 @@
 </p>
 
 ## About
+
 The official repository for the site Helsingborg.se. Based on municipio theme and modularity among other plugins. 
 
-## Building assets
-To build the current assets of helsingborg.se run below command.
+## Fetching dependencies
 
-```
-npm run build
-```
-
-## Building dependencies
 To build the current version of helsingborg.se run below command.
 
 ```
 composer install
 ```
 
-## General build
+## Building assets
 
-The complete package can be built with github actions. Specifications is embedded in .github folder. 
+To build the current assets of helsingborg.se run below command.
+
+```
+php ./build.php
+```
+
+## Deploy
+
+Deploys are handled with github actions using [municipio-deploy](https://github.com/helsingborg-stad/municipio-deploy) centralized action.
+Look at `.github/workflows/ files for details.
 
 ## Want to create your own site? 
 
