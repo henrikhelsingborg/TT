@@ -1454,12 +1454,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/component-library.git",
-                "reference": "bd512abb50301beffdca0159b9b6f39ab43231fd"
+                "reference": "7150b2d275e28f8c9e43ec1584190992d0e72163"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/bd512abb50301beffdca0159b9b6f39ab43231fd",
-                "reference": "bd512abb50301beffdca0159b9b6f39ab43231fd",
+                "url": "https://api.github.com/repos/helsingborg-stad/component-library/zipball/7150b2d275e28f8c9e43ec1584190992d0e72163",
+                "reference": "7150b2d275e28f8c9e43ec1584190992d0e72163",
                 "shasum": ""
             },
             "require": {
@@ -1478,7 +1478,7 @@
                 "issues": "https://github.com/helsingborg-stad/component-library/issues",
                 "source": "https://github.com/helsingborg-stad/component-library/tree/master"
             },
-            "time": "2021-12-06T15:06:27+00:00"
+            "time": "2021-12-08T13:00:07+00:00"
         },
         {
             "name": "helsingborg-stad/content-scheduler",
@@ -1825,12 +1825,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Modularity.git",
-                "reference": "d80c2ae47a39ee16f244b066065fddbb001492a7"
+                "reference": "76a3e027e63d0d9acb781d73fc5dfc03a9e06437"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/d80c2ae47a39ee16f244b066065fddbb001492a7",
-                "reference": "d80c2ae47a39ee16f244b066065fddbb001492a7",
+                "url": "https://api.github.com/repos/helsingborg-stad/Modularity/zipball/76a3e027e63d0d9acb781d73fc5dfc03a9e06437",
+                "reference": "76a3e027e63d0d9acb781d73fc5dfc03a9e06437",
                 "shasum": ""
             },
             "require": {
@@ -1890,7 +1890,7 @@
                 "issues": "https://github.com/helsingborg-stad/Modularity/issues",
                 "source": "https://github.com/helsingborg-stad/Modularity/tree/3.0/develop"
             },
-            "time": "2021-12-06T13:41:09+00:00"
+            "time": "2021-12-08T11:40:22+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-contact-banner",
@@ -2116,12 +2116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "f96a11aecc226dba5d1067bb3dd082ef34f881c0"
+                "reference": "86a265e3f832ef775ec2add9e095f0ce0446e641"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/f96a11aecc226dba5d1067bb3dd082ef34f881c0",
-                "reference": "f96a11aecc226dba5d1067bb3dd082ef34f881c0",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/86a265e3f832ef775ec2add9e095f0ce0446e641",
+                "reference": "86a265e3f832ef775ec2add9e095f0ce0446e641",
                 "shasum": ""
             },
             "require": {
@@ -2178,7 +2178,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2021-12-06T14:50:16+00:00"
+            "time": "2021-12-09T12:20:20+00:00"
         },
         {
             "name": "helsingborg-stad/recaptcha-integration",
@@ -4556,15 +4556,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "4.2.1",
+            "version": "4.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/4.2.1"
+                "reference": "tags/4.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.4.2.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/autodescription.4.2.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
