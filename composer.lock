@@ -1713,12 +1713,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/job-listings.git",
-                "reference": "dac64c6d09f382fd251a923812cfdc9ef1a94602"
+                "reference": "c69d6a0d3f97f0850f7dea84c5eb06a25aeae5b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/dac64c6d09f382fd251a923812cfdc9ef1a94602",
-                "reference": "dac64c6d09f382fd251a923812cfdc9ef1a94602",
+                "url": "https://api.github.com/repos/helsingborg-stad/job-listings/zipball/c69d6a0d3f97f0850f7dea84c5eb06a25aeae5b3",
+                "reference": "c69d6a0d3f97f0850f7dea84c5eb06a25aeae5b3",
                 "shasum": ""
             },
             "require": {
@@ -1753,7 +1753,7 @@
                 "issues": "https://github.com/helsingborg-stad/job-listings/issues",
                 "source": "https://github.com/helsingborg-stad/job-listings/tree/3.0/develop"
             },
-            "time": "2022-01-12T07:53:02+00:00"
+            "time": "2022-01-12T08:51:25+00:00"
         },
         {
             "name": "helsingborg-stad/lix-calculator",
