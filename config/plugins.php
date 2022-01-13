@@ -46,4 +46,4 @@ define('ALGOLIA_INIT_PRIORITY', 5);
  * Email send from name used in modularity-form-builder
  * @var string
  */
-define('MAIL_FROM_NAME', 'Helsingborgs stad');
+define('MOD_FORMS_MAIL_FROM_NAME', 'Helsingborgs stad');
