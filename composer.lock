@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1dc50b24f2377d6069700142a409e73a",
+    "content-hash": "1c54612a3156751f43ab2915c08cb679",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2042,6 +2042,39 @@
                 "source": "https://github.com/helsingborg-stad/modularity-json-render/tree/3.0/develop"
             },
             "time": "2021-06-11T08:46:10+00:00"
+        },
+        {
+            "name": "helsingborg-stad/modularity-recommend",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helsingborg-stad/modularity-recommend.git",
+                "reference": "dab27d124bcd163c3dfaf8f50c8d411473cfb238"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-recommend/zipball/dab27d124bcd163c3dfaf8f50c8d411473cfb238",
+                "reference": "dab27d124bcd163c3dfaf8f50c8d411473cfb238",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thulin",
+                    "email": "sebastian.thulin@helsingborg.se"
+                }
+            ],
+            "description": "Modularity RekAI",
+            "support": {
+                "issues": "https://github.com/helsingborg-stad/modularity-recommend/issues",
+                "source": "https://github.com/helsingborg-stad/modularity-recommend/tree/master"
+            },
+            "time": "2022-01-24T10:22:05+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-timeline",
@@ -4859,7 +4892,8 @@
         "helsingborg-stad/job-listings": 20,
         "helsingborg-stad/modularity-contact-banner": 20,
         "helsingborg-stad/algolia-index-js-searchpage-addon": 20,
-        "helsingborg-stad/component-library": 20
+        "helsingborg-stad/component-library": 20,
+        "helsingborg-stad/modularity-recommend": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
