@@ -2049,12 +2049,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-recommend.git",
-                "reference": "7828cb71260b2f852408482f20a61ade9bcccee9"
+                "reference": "998734d2049c0ca1aff7c30575bbb96f6436483f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-recommend/zipball/7828cb71260b2f852408482f20a61ade9bcccee9",
-                "reference": "7828cb71260b2f852408482f20a61ade9bcccee9",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-recommend/zipball/998734d2049c0ca1aff7c30575bbb96f6436483f",
+                "reference": "998734d2049c0ca1aff7c30575bbb96f6436483f",
                 "shasum": ""
             },
             "default-branch": true,
@@ -2074,7 +2074,7 @@
                 "issues": "https://github.com/helsingborg-stad/modularity-recommend/issues",
                 "source": "https://github.com/helsingborg-stad/modularity-recommend/tree/master"
             },
-            "time": "2022-01-24T13:40:55+00:00"
+            "time": "2022-01-24T14:11:21+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-timeline",
