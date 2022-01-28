@@ -88,7 +88,7 @@
         "mcguffin/acf-customizer": "0.2.13",
         "wpackagist-plugin/wp-piwik": "^1.0",
         "wpackagist-plugin/nginx-helper": "^2.2",
-        "wpackagist-plugin/wp-sentry-integration": "^4.10",
+        "wpackagist-plugin/wp-sentry-integration": "4.13.0",
         "helsingborg-stad/modularity-recommend": "dev-master"
     },
 
