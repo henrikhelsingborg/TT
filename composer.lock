@@ -628,16 +628,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.231.1",
+            "version": "v0.233.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "d6bf7109fc77d1c67110103a42e2a7d480b217a0"
+                "reference": "c3632d433742f1e0660460c1d9c220adf4e83885"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/d6bf7109fc77d1c67110103a42e2a7d480b217a0",
-                "reference": "d6bf7109fc77d1c67110103a42e2a7d480b217a0",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/c3632d433742f1e0660460c1d9c220adf4e83885",
+                "reference": "c3632d433742f1e0660460c1d9c220adf4e83885",
                 "shasum": ""
             },
             "require": {
@@ -666,9 +666,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.231.1"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.233.0"
             },
-            "time": "2022-01-26T23:24:19+00:00"
+            "time": "2022-01-30T12:26:38+00:00"
         },
         {
             "name": "google/auth",
@@ -2149,12 +2149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "adb565c3b03d42270a7e4508db12229ad54b8cfc"
+                "reference": "3ba5ada742d2b416392328a36ab91babcb4b8ae6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/adb565c3b03d42270a7e4508db12229ad54b8cfc",
-                "reference": "adb565c3b03d42270a7e4508db12229ad54b8cfc",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/3ba5ada742d2b416392328a36ab91babcb4b8ae6",
+                "reference": "3ba5ada742d2b416392328a36ab91babcb4b8ae6",
                 "shasum": ""
             },
             "require": {
@@ -2211,7 +2211,7 @@
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
                 "source": "https://github.com/helsingborg-stad/Municipio/tree/3.0/develop"
             },
-            "time": "2022-01-13T15:11:00+00:00"
+            "time": "2022-02-01T10:46:48+00:00"
         },
         {
             "name": "helsingborg-stad/recaptcha-integration",
@@ -3308,16 +3308,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.35",
+            "version": "2.0.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "4e16cf3f5f927a7d3f5317820af795c0366c0420"
+                "reference": "a97547126396548c224703a267a30af1592be146"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/4e16cf3f5f927a7d3f5317820af795c0366c0420",
-                "reference": "4e16cf3f5f927a7d3f5317820af795c0366c0420",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/a97547126396548c224703a267a30af1592be146",
+                "reference": "a97547126396548c224703a267a30af1592be146",
                 "shasum": ""
             },
             "require": {
@@ -3397,7 +3397,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpseclib/phpseclib/issues",
-                "source": "https://github.com/phpseclib/phpseclib/tree/2.0.35"
+                "source": "https://github.com/phpseclib/phpseclib/tree/2.0.36"
             },
             "funding": [
                 {
@@ -3413,7 +3413,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-28T23:30:39+00:00"
+            "time": "2022-01-30T08:48:36+00:00"
         },
         {
             "name": "pragmarx/ia-arr",
